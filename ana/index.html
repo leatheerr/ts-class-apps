@@ -112,6 +112,15 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 @keyframes clockMin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
 @keyframes clockHr{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
 @keyframes clockRing{from{stroke-dashoffset:289}to{stroke-dashoffset:0}}
+
+/* Phrase Bank — proper screen shape */
+.pbPhrase{font-family:'Poppins',system-ui,sans-serif;font-size:28px;font-weight:600;text-align:center;color:var(--go)}
+.forceUse{display:flex;align-items:center;gap:10px;width:100%;padding:12px 4px;font-size:14px;color:rgba(244,238,246,.8)}
+.forceUse input[type=checkbox]{appearance:none;width:22px;height:22px;border:2px solid rgba(244,238,246,.4);
+ border-radius:6px;flex:none;position:relative;background:transparent}
+.forceUse input[type=checkbox]:checked{background:var(--go);border-color:var(--go)}
+.forceUse input[type=checkbox]:checked::after{content:"\2713";position:absolute;inset:0;display:flex;
+ align-items:center;justify-content:center;font-weight:900;color:#2D0130;font-size:14px}
 </style></head>
 <body>
 
@@ -241,34 +250,37 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
   <button class="btn go" data-next>Continue</button>
  </div></div>
 
-<div class="scr" data-t="production">
+<div class="scr" data-t="phrasebank" data-phrase="1">
  <div class="plain"></div>
  <div class="stack">
   <div class="badge">Phrase Bank · 1 of 3</div>
-  <div class="es">Someone asks if your job is always busy. You want to be precise, not vague:</div>
-  <button class="audio" data-audio="" onclick="playAudio(this)">✎</button>
-  <div class="word">It depends on the day.</div>
-  <button class="btn go" data-next>Say it out loud, then continue</button>
+  <div class="think">Someone asks if your job is always busy. You want to be precise, not vague — what do you say?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">It depends on the day.</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the CORE round</label>
+  <button class="btn go" data-next>Continue</button>
  </div></div>
 
-<div class="scr" data-t="production">
+<div class="scr" data-t="phrasebank" data-phrase="2">
  <div class="plain"></div>
  <div class="stack">
   <div class="badge">Phrase Bank · 2 of 3</div>
-  <div class="es">Someone asks what you actually do all day. Give a specific answer:</div>
-  <button class="audio none">✎</button>
-  <div class="word">The biggest part of my job is ___.</div>
-  <button class="btn go" data-next>Say it out loud, then continue</button>
+  <div class="think">Someone asks what you actually do all day. Give a specific answer, not a vague one — what do you say?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">The biggest part of my job is ___.</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the CORE round</label>
+  <button class="btn go" data-next>Continue</button>
  </div></div>
 
-<div class="scr" data-t="production">
+<div class="scr" data-t="phrasebank" data-phrase="3">
  <div class="plain"></div>
  <div class="stack">
   <div class="badge">Phrase Bank · 3 of 3</div>
-  <div class="es">You want to be real with someone instead of giving a polished non-answer:</div>
-  <button class="audio none">✎</button>
-  <div class="word">To be honest, ___.</div>
-  <button class="btn go" data-next>Say it out loud, then continue</button>
+  <div class="think">You want to be real with someone instead of giving a polished non-answer — what do you say?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">To be honest, ___.</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the CORE round</label>
+  <button class="btn go" data-next>Continue</button>
  </div></div>
 
 <div class="scr" data-t="meetfix">
