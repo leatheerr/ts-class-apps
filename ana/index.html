@@ -84,9 +84,13 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
  font-size:15px;line-height:1.7;color:rgba(244,238,246,.85);display:none;text-align:left}
 .keyBox.show{display:block}
 .keyBox b{color:var(--go)}
-.scrambleRow{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;width:100%}
+.scrambleRow{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;width:100%;min-height:20px}
 .chip{background:rgba(255,255,255,.08);border:1.5px solid rgba(244,238,246,.2);border-radius:10px;
- padding:8px 14px;font-family:'Poppins',system-ui,sans-serif;font-size:15px}
+ padding:8px 14px;font-family:'Poppins',system-ui,sans-serif;font-size:15px;color:var(--ink)}
+.scrambleBank .chip{cursor:pointer}
+.scrambleBank .chip.used{opacity:.25;pointer-events:none}
+.scrambleBuilt{border-bottom:2px solid rgba(244,238,246,.18);padding-bottom:10px;min-height:44px}
+.scrambleBuilt .chip{background:rgba(255,190,0,.14);border-color:var(--go);cursor:pointer}
 .timerTag{background:rgba(255,190,0,.16);color:var(--go);font-family:'Poppins',system-ui,sans-serif;
  font-size:13px;font-weight:700;padding:5px 12px;border-radius:20px;letter-spacing:.5px}
 .badge{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:rgba(244,238,246,.4);font-family:'Poppins',system-ui,sans-serif}
@@ -241,13 +245,22 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
  <div class="plain"></div>
  <div class="stack">
   <div class="badge">Build The Chunk</div>
-  <div class="es">Put these in the correct order, then say the full sentence out loud:</div>
-  <div class="scrambleRow">
-   <span class="chip">very supportive</span><span class="chip">the job</span><span class="chip">is</span><span class="chip">my manager</span><span class="chip">at</span>
+  <div class="es">Tap the pieces in order, then check your sentence:</div>
+  <div class="scramble" data-answer="My manager is very supportive at work.">
+   <div class="scrambleRow scrambleBank">
+    <button class="chip" onclick="scrambleTap(this)">is</button>
+    <button class="chip" onclick="scrambleTap(this)">at work</button>
+    <button class="chip" onclick="scrambleTap(this)">My manager</button>
+    <button class="chip" onclick="scrambleTap(this)">very supportive</button>
+   </div>
+   <div class="scrambleRow scrambleBuilt"></div>
+   <div class="row">
+    <button class="btn" onclick="scrambleReset(this)">Reset</button>
+    <button class="btn go" onclick="scrambleCheck(this)">Check</button>
+   </div>
+   <div class="correct scrambleFeedback" style="display:none"></div>
+   <button class="btn go scrambleNext" data-next style="display:none">Continue</button>
   </div>
-  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal the natural order</button>
-  <div class="keyBox"><b>My manager is very supportive at work.</b></div>
-  <button class="btn go" data-next>Continue</button>
  </div></div>
 
 <div class="scr" data-t="phrasebank" data-phrase="1">
@@ -410,6 +423,44 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 <script>
 function toggleMenu(){ document.getElementById('classMenu').classList.toggle('open'); }
+
+// Word-scramble / reorder — reusable across any .scramble container, no unique IDs needed
+function scrambleTap(chipBtn){
+  const wrap = chipBtn.closest('.scramble');
+  const built = wrap.querySelector('.scrambleBuilt');
+  chipBtn.classList.add('used');
+  const piece = document.createElement('button');
+  piece.className = 'chip';
+  piece.textContent = chipBtn.textContent;
+  piece.onclick = function(){
+    chipBtn.classList.remove('used');
+    piece.remove();
+  };
+  built.appendChild(piece);
+}
+function scrambleReset(btn){
+  const wrap = btn.closest('.scramble');
+  wrap.querySelectorAll('.scrambleBank .chip').forEach(c=>c.classList.remove('used'));
+  wrap.querySelector('.scrambleBuilt').innerHTML = '';
+  wrap.querySelector('.scrambleFeedback').style.display = 'none';
+  wrap.querySelector('.scrambleNext').style.display = 'none';
+}
+function scrambleCheck(btn){
+  const wrap = btn.closest('.scramble');
+  const answer = wrap.getAttribute('data-answer');
+  const built = [...wrap.querySelectorAll('.scrambleBuilt .chip')].map(c=>c.textContent).join(' ');
+  const norm = s => s.toLowerCase().replace(/[.,]/g,'').trim();
+  const fb = wrap.querySelector('.scrambleFeedback');
+  fb.style.display = 'block';
+  if(norm(built) === norm(answer)){
+    fb.textContent = '✓ ' + answer;
+    fb.style.color = 'var(--go)';
+    wrap.querySelector('.scrambleNext').style.display = 'block';
+  } else {
+    fb.textContent = 'Not quite — reset and try again.';
+    fb.style.color = '#E08A83';
+  }
+}
 const motionGradients = [
   'radial-gradient(circle at 30% 30%,#6B0876,#20081F 70%)',
   'radial-gradient(circle at 70% 60%,#FFBE00,#20081F 65%)',
