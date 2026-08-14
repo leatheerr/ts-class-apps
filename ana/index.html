@@ -109,7 +109,8 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 .modeToggle{position:absolute;top:56px;right:14px;z-index:65;background:rgba(244,238,246,.12);
  border:none;color:var(--ink);font-family:'Poppins',system-ui,sans-serif;font-size:11px;font-weight:600;
  padding:7px 12px;border-radius:20px;display:flex;align-items:center;gap:5px}
-.motion-clock,.motion-timeline{display:flex;align-items:center;justify-content:center;position:relative;z-index:2;height:100%}
+.motionStage{position:absolute;inset:0;z-index:0}
+.motion-clock,.motion-timeline{position:absolute;top:64px;left:0;right:0;display:flex;align-items:center;justify-content:center}
 .clock-hand-min{transform-origin:50px 50px;animation:clockMin 6s linear infinite}
 .clock-hand-hr{transform-origin:50px 50px;animation:clockHr 24s linear infinite}
 .clock-ring{animation:clockRing 6s linear infinite}
@@ -221,14 +222,17 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 <div class="scr" data-t="recognition" data-word="4">
  <div class="plain"></div>
- <div class="motion-clock" aria-hidden="true" style="position:absolute;inset:0;z-index:1">
-  <svg viewBox="0 0 100 100" width="130" height="130">
-   <circle cx="50" cy="50" r="46" fill="none" stroke="rgba(244,238,246,.18)" stroke-width="2"/>
-   <circle cx="50" cy="50" r="46" fill="none" stroke="#FFBE00" stroke-width="2" stroke-dasharray="289" stroke-dashoffset="289" class="clock-ring"/>
-   <line x1="50" y1="50" x2="50" y2="22" stroke="#F4EEF6" stroke-width="3" stroke-linecap="round" class="clock-hand-min"/>
-   <line x1="50" y1="50" x2="50" y2="30" stroke="#FFBE00" stroke-width="3" stroke-linecap="round" class="clock-hand-hr"/>
-   <circle cx="50" cy="50" r="3" fill="#FFBE00"/>
-  </svg>
+ <div class="motionStage" aria-hidden="true">
+  <div class="motion-clock">
+   <svg viewBox="0 0 100 100" width="110" height="110">
+    <circle cx="50" cy="50" r="46" fill="none" stroke="rgba(244,238,246,.18)" stroke-width="2"/>
+    <circle cx="50" cy="50" r="46" fill="none" stroke="#FFBE00" stroke-width="2" stroke-dasharray="289" stroke-dashoffset="289" class="clock-ring"/>
+    <line x1="50" y1="50" x2="50" y2="22" stroke="#F4EEF6" stroke-width="3" stroke-linecap="round" class="clock-hand-min"/>
+    <line x1="50" y1="50" x2="50" y2="30" stroke="#FFBE00" stroke-width="3" stroke-linecap="round" class="clock-hand-hr"/>
+    <circle cx="50" cy="50" r="3" fill="#FFBE00"/>
+   </svg>
+  </div>
+  <div class="veil"></div>
  </div>
  <div class="stack">
   <div class="badge">Vocabulary · Retrieve it</div>
