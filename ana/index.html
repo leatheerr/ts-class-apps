@@ -93,6 +93,10 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 .scrambleBuilt .chip{background:rgba(255,190,0,.14);border-color:var(--go);cursor:pointer}
 .timerTag{background:rgba(255,190,0,.16);color:var(--go);font-family:'Poppins',system-ui,sans-serif;
  font-size:13px;font-weight:700;padding:5px 12px;border-radius:20px;letter-spacing:.5px}
+.timerRing{position:relative;width:96px;height:96px;display:flex;align-items:center;justify-content:center}
+.timerArc{transition:stroke-dashoffset 1s linear}
+.timerNum{position:absolute;font-family:'Poppins',system-ui,sans-serif;font-size:26px;font-weight:700;color:var(--ink)}
+.timerNum.warn{color:#E08A83}
 .badge{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:rgba(244,238,246,.4);font-family:'Poppins',system-ui,sans-serif}
 .navBtn{position:fixed;top:56px;width:42px;height:42px;border-radius:50%;
  background:rgba(244,238,246,.10);border:none;color:var(--ink);font-size:22px;
@@ -336,10 +340,18 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
  <div class="bg" data-img="photos/coworkers.jpg"></div><div class="veil"></div>
  <div class="stack">
   <div class="badge">CORE · Round 2 — Under The Clock</div>
-  <span class="timerTag">⏱ 90 SECONDS</span>
+  <div class="timerRing" data-seconds="90">
+   <svg viewBox="0 0 100 100" width="96" height="96">
+    <circle cx="50" cy="50" r="44" fill="none" stroke="rgba(244,238,246,.18)" stroke-width="5"/>
+    <circle cx="50" cy="50" r="44" fill="none" stroke="#FFBE00" stroke-width="5" stroke-linecap="round"
+     class="timerArc" style="stroke-dasharray:276.5;stroke-dashoffset:0;transform:rotate(-90deg);transform-origin:50px 50px"/>
+   </svg>
+   <div class="timerNum">90</div>
+  </div>
+  <button class="btn go" onclick="timerStart(this)">Start 90s</button>
   <div class="think">Same story — but fast. Tell it like you're catching a coworker between patients.</div>
   <div class="es">Use at least one Phrase Bank line somewhere in this round.</div>
-  <button class="btn go" data-next>Continue</button>
+  <button class="btn go" data-next style="display:none">Continue</button>
  </div></div>
 
 <div class="scr" data-t="pronunciation">
@@ -449,6 +461,32 @@ function scrambleReset(btn){
   wrap.querySelector('.scrambleFeedback').style.display = 'none';
   wrap.querySelector('.scrambleNext').style.display = 'none';
 }
+// Countdown timer — reusable, resolves its own container via closest('.stack'), no unique IDs needed
+function timerStart(startBtn){
+  const stack = startBtn.closest('.stack');
+  const ring = stack.querySelector('.timerRing');
+  const total = parseInt(ring.getAttribute('data-seconds'), 10);
+  const numEl = ring.querySelector('.timerNum');
+  const arc = ring.querySelector('.timerArc');
+  const circumference = 2 * Math.PI * 44;
+  const nextBtn = stack.querySelector('[data-next]');
+  let remaining = total;
+  startBtn.disabled = true;
+  startBtn.textContent = 'Running…';
+  const interval = setInterval(() => {
+    remaining--;
+    numEl.textContent = remaining;
+    arc.style.strokeDashoffset = circumference * (1 - remaining / total);
+    if (remaining <= 10) { numEl.classList.add('warn'); }
+    if (remaining <= 0) {
+      clearInterval(interval);
+      numEl.textContent = '0';
+      startBtn.style.display = 'none';
+      if (nextBtn) nextBtn.style.display = 'block';
+    }
+  }, 1000);
+}
+
 function scrambleCheck(btn){
   const wrap = btn.closest('.scramble');
   const answer = wrap.getAttribute('data-answer');
