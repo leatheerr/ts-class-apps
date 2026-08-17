@@ -130,6 +130,9 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 .forceUse input[type=checkbox]:checked{background:var(--go);border-color:var(--go)}
 .forceUse input[type=checkbox]:checked::after{content:"\2713";position:absolute;inset:0;display:flex;
  align-items:center;justify-content:center;font-weight:900;color:#2D0130;font-size:14px}
+
+/* word-stress marker */
+.stress{color:var(--go)}
 </style></head>
 <body>
 
@@ -138,14 +141,14 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
   <button id="classSelect" onclick="toggleMenu()">Class 1 ▾</button>
 </div>
 <div id="classMenu">
-  <div class="item active" onclick="toggleMenu()">Class 1: Clinic — describe your role and daily routine <span>✓</span></div>
-  <div class="item locked">Class 2 — locked until Class 1 is marked Done</div>
+  <div class="item active" onclick="selectClass(1)">Class 1: Clinic — describe your role and daily routine <span>✓</span></div>
 </div>
 
 <div id="bar"></div>
 <button class="navBtn left" data-navback disabled>&#8249;</button>
 <button class="navBtn right" data-navfwd>&#8250;</button>
 
+<div class="classBlock" data-class="1">
 <div class="scr" data-t="open">
  <div class="bg" data-img="photos/coworkers.jpg"></div><div class="veil"></div>
  <div class="stack">
@@ -436,6 +439,319 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
   <div class="es">See you at Class 2.</div>
   <div class="credits">Teacher's Station · The Milestone Method</div>
  </div></div>
+</div>
+
+<div class="classBlock" data-class="2" style="display:none">
+<div class="scr" data-t="open">
+ <div class="bg" data-img="photos/blood_draw.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="cue">Class 2</div>
+  <div class="big">Clinic: what you do vs. what you're doing right now</div>
+  <div class="es" style="font-size:16px;line-height:1.5;color:rgba(244,238,246,.85)">By the end of this class, you can clearly separate "what I normally do" from "what's happening right now" — a distinction your real job constantly demands (routine duties vs. an active procedure in progress).</div>
+  <button class="btn go" data-next>Begin</button>
+ </div></div>
+
+<div class="scr" data-t="ritual">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Before We Start</div>
+  <div class="think">Think back to last class. What's one thing you did better than in the placement test?</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Critical Thinking · 1 of 3</div>
+  <div class="think">What's something you do every single shift, no matter what?</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Critical Thinking · 2 of 3</div>
+  <div class="think">Right now, at this exact moment, what do you think your coworkers are doing back at the clinic?</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Critical Thinking · 3 of 3</div>
+  <div class="think">What's one thing that used to be hard for you at work that isn't hard anymore?</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="spiral">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Quick Review · Class 1 Phrases</div>
+  <div class="think">How's the new schedule? Answer using "It depends on the day" and "To be honest" — both, naturally.</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="production" data-word="1">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Vocabulary · Say It</div>
+  <button class="audio" data-audio="audio/def_label.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="sent">"You do this so the sample goes to the right patient."</div>
+  <div class="dots"><div class="dot lit"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="es">Say the verb out loud, then reveal</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>label</b><br><button class="audio" style="width:70px;height:70px;font-size:26px;margin-top:8px" data-audio="audio/word_label.mp3" onclick="playAudio(this)">🔊</button></div>
+  <button class="btn go" data-next>Next word</button>
+ </div></div>
+
+<div class="scr" data-t="production" data-word="2">
+ <div class="visual photo" data-visual><div class="bg" data-img="photos/lab_paperwork.jpg"></div><div class="veil"></div></div>
+ <button class="modeToggle" onclick="toggleVisual(this)">🎞 Movimiento</button>
+ <div class="stack">
+  <div class="badge">Vocabulary · Say It</div>
+  <button class="audio" data-audio="audio/def_process.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="sent">"You do this before you send the sample anywhere."</div>
+  <div class="dots"><div class="dot"></div><div class="dot lit"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="es">Say the verb out loud, then reveal</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>process</b><br><button class="audio" style="width:70px;height:70px;font-size:26px;margin-top:8px" data-audio="audio/word_process.mp3" onclick="playAudio(this)">🔊</button></div>
+  <button class="btn go" data-next>Next word</button>
+ </div></div>
+
+<div class="scr" data-t="production" data-word="3">
+ <div class="visual photo" data-visual><div class="bg" data-img="photos/coworkers_talk.jpg"></div><div class="veil"></div></div>
+ <button class="modeToggle" onclick="toggleVisual(this)">🎞 Movimiento</button>
+ <div class="stack">
+  <div class="badge">Vocabulary · Say It</div>
+  <button class="audio" data-audio="audio/def_collect.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="sent">"You do this when someone brings you a package."</div>
+  <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot lit"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="es">Say the verb out loud, then reveal</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>collect</b><br><button class="audio" style="width:70px;height:70px;font-size:26px;margin-top:8px" data-audio="audio/word_collect.mp3" onclick="playAudio(this)">🔊</button></div>
+  <button class="btn go" data-next>Next word</button>
+ </div></div>
+
+<div class="scr" data-t="production" data-word="4">
+ <div class="visual photo" data-visual><div class="bg" data-img="photos/blood_draw.jpg"></div><div class="veil"></div></div>
+ <button class="modeToggle" onclick="toggleVisual(this)">🎞 Movimiento</button>
+ <div class="stack">
+  <div class="badge">Vocabulary · Say It Better</div>
+  <button class="audio" data-audio="audio/def_draw.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="sent">"This is the precise word for taking a blood sample — not just 'do the blood.'"</div>
+  <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot lit"></div><div class="dot"></div></div>
+  <div class="es">Say the verb out loud, then reveal</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>draw</b><br><button class="audio" style="width:70px;height:70px;font-size:26px;margin-top:8px" data-audio="audio/word_draw.mp3" onclick="playAudio(this)">🔊</button></div>
+  <button class="btn go" data-next>Next word</button>
+ </div></div>
+
+<div class="scr" data-t="production" data-word="5">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Vocabulary · Say It Better</div>
+  <button class="audio" data-audio="audio/def_deliver.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="sent">"This is the precise word for sending a sample to the lab — not just 'do the sample.'"</div>
+  <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot lit"></div></div>
+  <div class="es">Say the verb out loud, then reveal</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>deliver</b><br><button class="audio" style="width:70px;height:70px;font-size:26px;margin-top:8px" data-audio="audio/word_deliver.mp3" onclick="playAudio(this)">🔊</button></div>
+  <button class="btn go" data-next>Next word</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="1">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 1 of 3</div>
+  <div class="think">Someone interrupts you mid-task and needs something right away. You need a second before you can help — what do you say?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">Give me one second.</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the CORE round</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="2">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 2 of 3</div>
+  <div class="think">A coworker asks "How's it going?" — it's a normal day, nothing special. What's the precise, native answer?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">Same as usual.</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the CORE round</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="3">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 3 of 3</div>
+  <div class="think">You're actively doing a task right now and someone asks you to do something else. How do you explain what you're doing this exact moment?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">I'm in the middle of ___.</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the CORE round</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="meetfix">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Meet Fix</div>
+  <div class="cue">Answer fast, no thinking time</div>
+  <div class="sent">"Two child—?"</div>
+  <div class="es">Say the whole word, correctly, right away.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>children</b><br>Already plural — no extra -s.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="meetfix">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Notice The Gap</div>
+  <div class="sent">"What you do at work?"</div>
+  <div class="es">Something's missing from this question, the way a native speaker would ask it. What is it?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>What do you do at work?</b><br>Questions need "do" — this is just a first look, we'll drill it properly next class.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="meetfix">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Work Out The Rule</div>
+  <div class="sent">"I draw blood every day." vs. "Right now, I'm drawing blood."</div>
+  <div class="es">When do we use the first one? When do we use the second? Say your answer out loud before revealing.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>"I draw"</b> — routine, every day.<br><b>"I'm drawing"</b> — happening right now, this exact moment.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/coworkers_talk.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">CORE · Round 1 — Build It</div>
+  <div class="think">Picture it's 9am. Tell me what you always do at 9am — then tell me what you're doing right this second in that scene.</div>
+  <div class="es">Push the contrast: which one is routine, and which one is happening right now?</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/coworkers_talk.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">CORE · Round 2 — Teach It Back</div>
+  <div class="think">Now explain it to me like I'm a new student — when do I use "I draw" and when do I use "I'm drawing"?</div>
+  <div class="es">Use your own words. This is the real test of whether you own the rule.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/coworkers_talk.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">CORE · Round 3 — Under The Clock</div>
+  <div class="timerRing" data-seconds="75">
+   <svg viewBox="0 0 100 100" width="96" height="96">
+    <circle cx="50" cy="50" r="44" fill="none" stroke="rgba(244,238,246,.18)" stroke-width="5"/>
+    <circle cx="50" cy="50" r="44" fill="none" stroke="#FFBE00" stroke-width="5" stroke-linecap="round"
+     class="timerArc" style="stroke-dasharray:276.5;stroke-dashoffset:0;transform:rotate(-90deg);transform-origin:50px 50px"/>
+   </svg>
+   <div class="timerNum">75</div>
+  </div>
+  <button class="btn go" onclick="timerStart(this)">Start 75s</button>
+  <div class="think">Same task — but fast, like a coworker asked you in passing between patients.</div>
+  <div class="es">Use at least 2 of today's Phrase Bank lines somewhere in this round.</div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Pronunciation · Word Stress · 1 of 4</div>
+  <button class="audio" data-audio="audio/word_process.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="word">pro<span class="stress">CESS</span></div>
+  <div class="es">The stress is on the second syllable. Say it, then use it in a sentence from Round 1.</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Pronunciation · Word Stress · 2 of 4</div>
+  <button class="audio" data-audio="audio/word_collect.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="word">col<span class="stress">LECT</span></div>
+  <div class="es">The stress is on the second syllable. Say it, then use it in a sentence from Round 1.</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Pronunciation · Word Stress · 3 of 4</div>
+  <button class="audio" data-audio="audio/word_deliver.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="word">de<span class="stress">LIV</span>er</div>
+  <div class="es">The stress is on the middle syllable. Say it, then use it in a sentence from Round 1.</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Pronunciation · Word Stress · 4 of 4</div>
+  <button class="audio" data-audio="audio/word_confirm.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="word">con<span class="stress">FIRM</span></div>
+  <div class="es">The stress is on the second syllable. Say it out loud.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/coworkers_talk.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">Real-Life Conversation</div>
+  <div class="think">A coworker asks you to cover a task mid-shift and needs to know what you're doing right now vs. what you'll get to later.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Only open this if you get stuck</button>
+  <div class="keyBox">
+   <b>Coworker:</b> Hey, can you grab this sample real quick?<br>
+   <b>You:</b> Give me one second — I'm in the middle of labeling this one.<br>
+   <b>Coworker:</b> No rush. What do you usually do first thing in the morning, anyway?<br>
+   <b>You:</b> I usually check the requisitions before I draw anything. Same as usual today.<br>
+   <b>Coworker:</b> Makes sense. I'll come back in five.
+  </div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Comprehension Check</div>
+  <div class="think">In the dialogue, why can't you grab the sample right away?</div>
+  <button class="btn go" data-next>Next question</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Comprehension Check</div>
+  <div class="think">What do you usually do first thing in the morning, according to what you practiced?</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="homework">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Homework</div>
+  <div class="sent" style="text-align:left">1. Record a 60-second "typical day vs. right now" narration, alternating both forms on purpose. Send the voice memo.</div>
+  <div class="sent" style="text-align:left">2. Notice log: catch yourself starting a sentence with "What you..." instead of "What do you..." once this week — text Juan the moment.</div>
+  <div class="sent" style="text-align:left">3. Practice the stress pattern on "process" and "collect" out loud 5 times each.</div>
+  <button class="btn go" data-next>Done for today</button>
+ </div></div>
+
+<div class="scr" data-t="close">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="big">Nice work today.</div>
+  <div class="es">See you at Class 3.</div>
+  <div class="credits">Teacher's Station · The Milestone Method</div>
+ </div></div>
+</div>
 
 <script>
 function toggleMenu(){ document.getElementById('classMenu').classList.toggle('open'); }
@@ -530,8 +846,29 @@ function playAudio(btn){
   if(!a){ a = new Audio(src); btn._player = a; a.addEventListener('ended', ()=>btn.classList.add('done')); }
   a.currentTime = 0; a.play();
 }
-const screens = [...document.querySelectorAll('.scr')];
+// Screens are scoped to the active classBlock only — a class that isn't in the
+// dropdown (not yet Done) has no path into `screens`, so Next/Back/arrow nav
+// can never leak into it even though its markup already exists in the DOM.
+let screens = [];
 let idx = 0;
+let currentClass = 1;
+
+function loadScreens(classNum){
+  document.querySelectorAll('.classBlock').forEach(b=>{
+    b.style.display = (b.getAttribute('data-class') === String(classNum)) ? '' : 'none';
+  });
+  screens = [...document.querySelectorAll('.classBlock[data-class="'+classNum+'"] .scr')];
+  currentClass = classNum;
+  idx = 0;
+  show(0);
+}
+function selectClass(classNum){
+  document.getElementById('classMenu').classList.remove('open');
+  document.querySelectorAll('#classMenu .item').forEach(it=>it.classList.remove('active'));
+  event.target.closest('.item').classList.add('active');
+  document.getElementById('classSelect').textContent = 'Class ' + classNum + ' ▾';
+  loadScreens(classNum);
+}
 function show(i){
   screens.forEach((s,n)=>s.classList.toggle('on', n===i));
   document.querySelector('[data-navback]').disabled = (i===0);
@@ -549,6 +886,6 @@ document.querySelectorAll('.bg[data-img]').forEach(el=>{
   const visualParent = el.closest('.visual');
   if(visualParent){ visualParent.setAttribute('data-img-src', src); }
 });
-show(0);
+loadScreens(1);
 </script>
 </body></html>
