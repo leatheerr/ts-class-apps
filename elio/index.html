@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Teacher's Station — Elio</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{--ob:#0D0014;--pu:#440249;--go:#FFBE00;--ink:#F4EEF6}
+html,body{height:100%;overflow:hidden;background:var(--ob);color:var(--ink);
+ font-family:'Lora',Georgia,'Times New Roman',serif;font-size:18px}
+h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
+#bar{position:fixed;top:44px;left:0;height:4px;background:rgba(255,190,0,.35);
+ width:0;transition:width .35s ease;z-index:50}
+
+/* class-index shell header */
+#classHeader{position:fixed;top:0;left:0;right:0;height:44px;background:var(--pu);
+ display:flex;align-items:center;justify-content:space-between;padding:0 14px;z-index:80;
+ font-family:'Poppins',system-ui,sans-serif;box-shadow:0 2px 8px rgba(0,0,0,.3)}
+#classHeader .brand{font-size:10px;letter-spacing:1.5px;color:rgba(244,238,246,.6);font-weight:600}
+#classSelect{background:rgba(244,238,246,.1);border:none;color:var(--ink);font-family:inherit;
+ font-size:13px;font-weight:600;padding:6px 10px;border-radius:8px;display:flex;align-items:center;gap:6px}
+#classMenu{position:fixed;top:44px;left:0;right:0;background:var(--pu);z-index:79;
+ max-height:0;overflow:hidden;transition:max-height .25s ease;box-shadow:0 8px 16px rgba(0,0,0,.4)}
+#classMenu.open{max-height:220px}
+#classMenu .item{padding:12px 16px;font-size:13px;border-top:1px solid rgba(244,238,246,.08);
+ display:flex;justify-content:space-between;align-items:center}
+#classMenu .item.active{background:rgba(255,190,0,.12);color:var(--go);font-weight:600}
+
+.scr{position:fixed;inset:0;top:44px;display:none;flex-direction:column;align-items:center;
+ justify-content:flex-end;overflow:hidden}
+.scr.on{display:flex}
+.bg{position:absolute;inset:0;background-size:cover;background-position:center;z-index:0}
+.veil{position:absolute;inset:0;z-index:1;
+ background:linear-gradient(180deg,rgba(13,0,20,.35) 0%,rgba(13,0,20,.55) 45%,rgba(13,0,20,.94) 100%)}
+.stack{position:relative;z-index:2;width:100%;max-width:520px;padding:24px 22px 34px;
+ display:flex;flex-direction:column;align-items:center;gap:18px}
+.audio{width:112px;height:112px;border-radius:50%;border:none;background:var(--go);
+ color:#2D0130;font-size:44px;line-height:1;display:grid;place-items:center;
+ box-shadow:0 0 0 0 rgba(255,190,0,.55);animation:pulse 2.4s infinite}
+.audio:active{transform:scale(.94)}
+.audio.done{animation:none;background:rgba(255,190,0,.22);color:var(--go)}
+.audio.none{background:rgba(244,238,246,.12);color:rgba(244,238,246,.5);animation:none;font-size:30px}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,190,0,.5)}70%{box-shadow:0 0 0 26px rgba(255,190,0,0)}100%{box-shadow:0 0 0 0 rgba(255,190,0,0)}}
+.dots{display:flex;gap:14px}
+.dot{width:16px;height:16px;border-radius:50%;background:rgba(244,238,246,.2)}
+.dot.lit{background:var(--go)}
+.word{font-family:'Poppins',system-ui,sans-serif;font-size:34px;font-weight:600;
+ letter-spacing:.5px;text-align:center}
+.es{font-size:15px;color:rgba(244,238,246,.62);font-style:italic;text-align:center}
+.sent{font-size:20px;text-align:center;line-height:1.5;color:rgba(244,238,246,.92)}
+.cue{font-size:13px;letter-spacing:2px;text-transform:uppercase;
+ color:rgba(244,238,246,.5);font-family:'Poppins',system-ui,sans-serif}
+.btn{width:100%;min-height:64px;border:none;border-radius:14px;background:var(--pu);
+ color:var(--ink);font-family:'Poppins',system-ui,sans-serif;font-size:18px;
+ font-weight:500;padding:16px}
+.btn:active{transform:scale(.985)}
+.btn[disabled]{opacity:.32}
+.btn.go{background:var(--go);color:#2D0130;font-weight:600}
+.row{display:flex;gap:12px;width:100%}
+.opt{width:100%;min-height:68px;border-radius:14px;border:2px solid transparent;
+ background:var(--pu);color:var(--ink);display:flex;align-items:center;gap:14px;
+ padding:0 18px;font-family:'Poppins',system-ui,sans-serif;font-size:17px}
+.mid{justify-content:center}
+.credits{font-size:11px;line-height:1.6;color:rgba(244,238,246,.45);text-align:center}
+.big{font-size:26px;text-align:center;font-family:'Poppins',system-ui,sans-serif}
+.plain{position:absolute;inset:0;background:radial-gradient(120% 100% at 50% 100%,#3a0140 0%,#0D0014 70%)}
+.think{font-size:22px;line-height:1.5;text-align:center;color:var(--ink)}
+.toggleBtn{width:100%;min-height:52px;border-radius:12px;border:1.5px dashed rgba(255,190,0,.5);
+ background:transparent;color:var(--go);font-family:'Poppins',system-ui,sans-serif;font-size:14px;font-weight:600}
+.keyBox{width:100%;background:rgba(255,255,255,.04);border-radius:12px;padding:14px 16px;
+ font-size:15px;line-height:1.7;color:rgba(244,238,246,.85);display:none;text-align:left}
+.keyBox.show{display:block}
+.keyBox b{color:var(--go)}
+.badge{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:rgba(244,238,246,.4);font-family:'Poppins',system-ui,sans-serif}
+.navBtn{position:fixed;top:56px;width:42px;height:42px;border-radius:50%;
+ background:rgba(244,238,246,.10);border:none;color:var(--ink);font-size:22px;
+ line-height:1;display:grid;place-items:center;z-index:60}
+.navBtn.left{left:14px}
+.navBtn.right{right:14px}
+.navBtn[disabled]{opacity:.2}
+.navBtn:active{transform:scale(.92)}
+
+/* visual mode toggle: photo <-> motion */
+.visual{position:absolute;inset:0;z-index:0}
+.visual .bg{position:absolute;inset:0}
+.motionGrad{position:absolute;inset:0}
+.modeToggle{position:absolute;top:56px;right:14px;z-index:65;background:rgba(244,238,246,.12);
+ border:none;color:var(--ink);font-family:'Poppins',system-ui,sans-serif;font-size:11px;font-weight:600;
+ padding:7px 12px;border-radius:20px;display:flex;align-items:center;gap:5px}
+
+/* Phrase Bank */
+.pbPhrase{font-family:'Poppins',system-ui,sans-serif;font-size:28px;font-weight:600;text-align:center;color:var(--go)}
+.forceUse{display:flex;align-items:center;gap:10px;width:100%;padding:12px 4px;font-size:14px;color:rgba(244,238,246,.8)}
+.forceUse input[type=checkbox]{appearance:none;width:22px;height:22px;border:2px solid rgba(244,238,246,.4);
+ border-radius:6px;flex:none;position:relative;background:transparent}
+.forceUse input[type=checkbox]:checked{background:var(--go);border-color:var(--go)}
+.forceUse input[type=checkbox]:checked::after{content:"\2713";position:absolute;inset:0;display:flex;
+ align-items:center;justify-content:center;font-weight:900;color:#2D0130;font-size:14px}
+
+/* empty-state (no classes marked Done yet) */
+#emptyState{position:fixed;inset:0;top:44px;display:none;flex-direction:column;align-items:center;
+ justify-content:center;gap:14px;padding:24px;text-align:center}
+#emptyState.on{display:flex}
+</style></head>
+<body>
+
+<div id="classHeader">
+  <span class="brand">TEACHER'S STATION</span>
+  <button id="classSelect" onclick="toggleMenu()">Elio ▾</button>
+</div>
+<div id="classMenu">
+</div>
+
+<div id="bar"></div>
+<button class="navBtn left" data-navback disabled>&#8249;</button>
+<button class="navBtn right" data-navfwd>&#8250;</button>
+
+<div id="emptyState" class="on">
+  <div class="big">Your first class isn't unlocked yet.</div>
+  <div class="es">It'll appear here as soon as it's marked Done.</div>
+</div>
+
+<div class="classBlock" data-class="1">
+<div class="scr" data-t="open">
+ <div class="bg" data-img="photos/electrician.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="cue">Class 1</div>
+  <div class="big">Job Identity: answer "what's your job / who do you work for" without freezing</div>
+  <div class="es" style="font-size:16px;line-height:1.5;color:rgba(244,238,246,.85)">By the end of this class, you can answer "What's your job?" and "Who do you work for?" out loud, confidently, using a fixed frame — no freezing, no "I don't know."</div>
+  <button class="btn go" data-next>Begin</button>
+ </div></div>
+
+<div class="scr" data-t="ritual">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Before We Start</div>
+  <div class="think">Say your voltage numbers out loud, fast: "110... 120... 240."</div>
+  <div class="es">You already know these cold — this is your warm-up win.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Critical Thinking · 1 of 3</div>
+  <div class="think">Finish this: "The best part of my job is ___."</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Critical Thinking · 2 of 3</div>
+  <div class="think">Finish this: "One thing I'm good at is ___."</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Critical Thinking · 3 of 3</div>
+  <div class="think">True or false, then say why in one sentence: "Electricians only work with wires."</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="production" data-word="1">
+ <div class="visual photo" data-visual><div class="bg" data-img="photos/electrician.jpg"></div><div class="veil"></div></div>
+ <button class="modeToggle" onclick="toggleVisual(this)">🎞 Movimiento</button>
+ <div class="stack">
+  <div class="badge">Vocabulary · Job Identity</div>
+  <button class="audio" data-audio="audio/def_electrician.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="sent">"A person who installs and fixes wiring and electrical systems."</div>
+  <div class="dots"><div class="dot lit"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="es">Say the word out loud, then reveal</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>electrician</b><br><button class="audio" style="width:70px;height:70px;font-size:26px;margin-top:8px" data-audio="audio/word_electrician.mp3" onclick="playAudio(this)">🔊</button></div>
+  <button class="btn go" data-next>Next word</button>
+ </div></div>
+
+<div class="scr" data-t="production" data-word="2">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Vocabulary · Job Identity</div>
+  <button class="audio" data-audio="audio/def_boss.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="sent">"The person you report to at work."</div>
+  <div class="dots"><div class="dot"></div><div class="dot lit"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="es">Say the word out loud, then reveal</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>boss</b><br><button class="audio" style="width:70px;height:70px;font-size:26px;margin-top:8px" data-audio="audio/word_boss.mp3" onclick="playAudio(this)">🔊</button></div>
+  <button class="btn go" data-next>Next word</button>
+ </div></div>
+
+<div class="scr" data-t="production" data-word="3">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Vocabulary · Job Identity</div>
+  <button class="audio" data-audio="audio/def_foreman.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="sent">"The person you report to on a job site."</div>
+  <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot lit"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="es">Say the word out loud, then reveal</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>foreman</b><br><button class="audio" style="width:70px;height:70px;font-size:26px;margin-top:8px" data-audio="audio/word_foreman.mp3" onclick="playAudio(this)">🔊</button></div>
+  <button class="btn go" data-next>Next word</button>
+ </div></div>
+
+<div class="scr" data-t="production" data-word="4">
+ <div class="visual photo" data-visual><div class="bg" data-img="photos/jobsite_crew.jpg"></div><div class="veil"></div></div>
+ <button class="modeToggle" onclick="toggleVisual(this)">🎞 Movimiento</button>
+ <div class="stack">
+  <div class="badge">Vocabulary · Job Identity</div>
+  <button class="audio" data-audio="audio/def_crew.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="sent">"The group of people you work with on a job."</div>
+  <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot lit"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="es">Say the word out loud, then reveal</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>crew</b><br><button class="audio" style="width:70px;height:70px;font-size:26px;margin-top:8px" data-audio="audio/word_crew.mp3" onclick="playAudio(this)">🔊</button></div>
+  <button class="btn go" data-next>Next word</button>
+ </div></div>
+
+<div class="scr" data-t="production" data-word="5">
+ <div class="visual photo" data-visual><div class="bg" data-img="photos/jobsite_crew.jpg"></div><div class="veil"></div></div>
+ <button class="modeToggle" onclick="toggleVisual(this)">🎞 Movimiento</button>
+ <div class="stack">
+  <div class="badge">Vocabulary · Job Identity</div>
+  <button class="audio" data-audio="audio/def_jobsite.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="sent">"The place where you do the electrical work."</div>
+  <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot lit"></div><div class="dot"></div></div>
+  <div class="es">Say the phrase out loud, then reveal</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>job site</b><br><button class="audio" style="width:70px;height:70px;font-size:26px;margin-top:8px" data-audio="audio/word_jobsite.mp3" onclick="playAudio(this)">🔊</button></div>
+  <button class="btn go" data-next>Next word</button>
+ </div></div>
+
+<div class="scr" data-t="production" data-word="6">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Vocabulary · Job Identity</div>
+  <button class="audio" data-audio="audio/def_workfor.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="sent">"Who pays you and gives you your work."</div>
+  <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot lit"></div></div>
+  <div class="es">Say the phrase out loud, then reveal</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>work for</b><br><button class="audio" style="width:70px;height:70px;font-size:26px;margin-top:8px" data-audio="audio/word_workfor.mp3" onclick="playAudio(this)">🔊</button></div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="1">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 1 of 3</div>
+  <div class="think">A coworker introduces themselves. What do you say back?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">Nice to meet you.</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the CORE round</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="2">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 2 of 3</div>
+  <div class="think">Someone asks how long you've been doing your job. Answer with a number.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">I've been doing this for ___ years.</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the CORE round</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="3">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 3 of 3</div>
+  <div class="think">Someone states something true about your job. Confirm it, simply.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">That's right.</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the CORE round</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="meetfix">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Meet Fix</div>
+  <div class="cue">Answer fast, no thinking time</div>
+  <div class="sent">"What's your job?"</div>
+  <div class="es">Cue if you freeze: "I'm a(n)___" — say the whole sentence, not just the missing word.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>I'm an electrician.</b><br>A full sentence beats a single word.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="frame">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Frame Practice · 1 of 3</div>
+  <div class="sent">"I'm a(n) ___."</div>
+  <div class="es">Complete it with your own job, out loud, then reveal.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>I'm an electrician.</b></div>
+  <button class="btn go" data-next>Next frame</button>
+ </div></div>
+
+<div class="scr" data-t="frame">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Frame Practice · 2 of 3</div>
+  <div class="sent">"I work for ___."</div>
+  <div class="es">Complete it with your own boss/company, out loud, then reveal.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>I work for [boss's name].</b></div>
+  <button class="btn go" data-next>Next frame</button>
+ </div></div>
+
+<div class="scr" data-t="frame">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Frame Practice · 3 of 3</div>
+  <div class="sent">"I've been an electrician for ___ years."</div>
+  <div class="es">Use your own number, out loud, then reveal.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>I've been an electrician for [number] years.</b></div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/jobsite_crew.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">CORE · Round 1 — Build It</div>
+  <div class="think">A new coworker introduces themselves and asks what you do. Use your 3 frames to answer.</div>
+  <div class="es">Take your time. Use "I'm a(n)___" and "I work for ___" at least once each.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/jobsite_crew.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">CORE · Round 2 — Same Frames, Faster</div>
+  <div class="think">Same introduction, same frames — just less thinking time between them.</div>
+  <div class="es">Not new content, just more comfort and speed with what you already said.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Pronunciation · Sentence Stress · Hear It</div>
+  <div class="row">
+   <button class="opt mid" style="gap:8px" onclick="playAudio(this)" data-audio="audio/pp_workfor_stressed.mp3">"I WORK for him." <span style="font-size:16px">🔊</span></button>
+   <button class="opt mid" style="gap:8px" onclick="playAudio(this)" data-audio="audio/pp_workfor_flat.mp3">"I work for him." <span style="font-size:16px">🔊</span></button>
+  </div>
+  <div class="es">Which one sounds more confident? Stress on the key word carries it.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Pronunciation · Sentence Stress · Say It</div>
+  <button class="audio" data-audio="audio/pp_electrician.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="word">I'm an eLECtrician</div>
+  <div class="es">Repeat it, then use it inside Round 1 of the CORE.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/jobsite_crew.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">Real-Life Conversation</div>
+  <div class="think">A new coworker introduces themselves on the job site and asks what you do.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Only open this if you get stuck</button>
+  <div class="keyBox">
+   <b>Coworker:</b> Hey, I'm Mike. I just started here. What's your job?<br>
+   <b>You:</b> Nice to meet you. I'm an electrician. I work for [boss's name].<br>
+   <b>Coworker:</b> How long have you been doing this?<br>
+   <b>You:</b> I've been doing this for [number] years. That's right — mostly wiring and panels.
+  </div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Comprehension Check</div>
+  <div class="think">What does the new coworker's name tell you about how to greet him?</div>
+  <button class="btn go" data-next>Next question</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Comprehension Check</div>
+  <div class="think">What two things does the model say about the job — the title and who he works for?</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="homework">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Homework</div>
+  <div class="sent" style="text-align:left">1. Record yourself saying the 3 frames again (voice memo): "I'm a(n)___," "I work for ___," "I've been an electrician for ___ years."</div>
+  <div class="sent" style="text-align:left">2. Notice log: this week, catch one moment where someone asks "what do you do" in English — text Juan what you actually said.</div>
+  <button class="btn go" data-next>Done for today</button>
+ </div></div>
+
+<div class="scr" data-t="close">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="big">Nice work today.</div>
+  <div class="es">See you at Class 2.</div>
+  <div class="credits">Teacher's Station · The Milestone Method</div>
+ </div></div>
+</div>
+
+<script>
+function toggleMenu(){ document.getElementById('classMenu').classList.toggle('open'); }
+
+let screens = [];
+let idx = 0;
+let currentClass = null;
+
+function loadScreens(classNum){
+  document.querySelectorAll('.classBlock').forEach(b=>{
+    b.style.display = (b.getAttribute('data-class') === String(classNum)) ? '' : 'none';
+  });
+  screens = [...document.querySelectorAll('.classBlock[data-class="'+classNum+'"] .scr')];
+  currentClass = classNum;
+  idx = 0;
+  document.getElementById('emptyState').classList.remove('on');
+  show(0);
+}
+function selectClass(classNum){
+  document.getElementById('classMenu').classList.remove('open');
+  document.querySelectorAll('#classMenu .item').forEach(it=>it.classList.remove('active'));
+  event.target.closest('.item').classList.add('active');
+  document.getElementById('classSelect').textContent = 'Class ' + classNum + ' ▾';
+  loadScreens(classNum);
+}
+function show(i){
+  if (screens.length === 0) return;
+  screens.forEach((s,n)=>s.classList.toggle('on', n===i));
+  document.querySelector('[data-navback]').disabled = (i===0);
+  document.getElementById('bar').style.width = ((i+1)/screens.length*100)+'%';
+  idx = i;
+}
+
+function scrambleTap(chipBtn){
+  const wrap = chipBtn.closest('.scramble');
+  const built = wrap.querySelector('.scrambleBuilt');
+  chipBtn.classList.add('used');
+  const piece = document.createElement('button');
+  piece.className = 'chip';
+  piece.textContent = chipBtn.textContent;
+  piece.onclick = function(){
+    chipBtn.classList.remove('used');
+    piece.remove();
+  };
+  built.appendChild(piece);
+}
+function scrambleReset(btn){
+  const wrap = btn.closest('.scramble');
+  wrap.querySelectorAll('.scrambleBank .chip').forEach(c=>c.classList.remove('used'));
+  wrap.querySelector('.scrambleBuilt').innerHTML = '';
+  wrap.querySelector('.scrambleFeedback').style.display = 'none';
+  wrap.querySelector('.scrambleNext').style.display = 'none';
+}
+function timerStart(startBtn){
+  const stack = startBtn.closest('.stack');
+  const ring = stack.querySelector('.timerRing');
+  const total = parseInt(ring.getAttribute('data-seconds'), 10);
+  const numEl = ring.querySelector('.timerNum');
+  const arc = ring.querySelector('.timerArc');
+  const circumference = 2 * Math.PI * 44;
+  const nextBtn = stack.querySelector('[data-next]');
+  let remaining = total;
+  startBtn.disabled = true;
+  startBtn.textContent = 'Running…';
+  const interval = setInterval(() => {
+    remaining--;
+    numEl.textContent = remaining;
+    arc.style.strokeDashoffset = circumference * (1 - remaining / total);
+    if (remaining <= 10) { numEl.classList.add('warn'); }
+    if (remaining <= 0) {
+      clearInterval(interval);
+      numEl.textContent = '0';
+      startBtn.style.display = 'none';
+      if (nextBtn) nextBtn.style.display = 'block';
+    }
+  }, 1000);
+}
+function scrambleCheck(btn){
+  const wrap = btn.closest('.scramble');
+  const answer = wrap.getAttribute('data-answer');
+  const built = [...wrap.querySelectorAll('.scrambleBuilt .chip')].map(c=>c.textContent).join(' ');
+  const norm = s => s.toLowerCase().replace(/[.,]/g,'').trim();
+  const fb = wrap.querySelector('.scrambleFeedback');
+  fb.style.display = 'block';
+  if(norm(built) === norm(answer)){
+    fb.textContent = '✓ ' + answer;
+    fb.style.color = 'var(--go)';
+    wrap.querySelector('.scrambleNext').style.display = 'block';
+  } else {
+    fb.textContent = 'Not quite — reset and try again.';
+    fb.style.color = '#E08A83';
+  }
+}
+const motionGradients = [
+  'radial-gradient(circle at 30% 30%,#6B0876,#20081F 70%)',
+  'radial-gradient(circle at 70% 60%,#FFBE00,#20081F 65%)',
+  'conic-gradient(from 45deg,#440249,#6B0876,#20081F)'
+];
+function toggleVisual(btn){
+  const visual = btn.previousElementSibling;
+  const isPhoto = visual.classList.contains('photo');
+  if(isPhoto){
+    visual.classList.remove('photo'); visual.classList.add('motion');
+    const g = motionGradients[Math.floor(Math.random()*motionGradients.length)];
+    visual.innerHTML = '<div class="motionGrad" style="background:'+g+'"></div>';
+    btn.innerHTML = '📷 Foto';
+  } else {
+    visual.classList.remove('motion'); visual.classList.add('photo');
+    const img = visual.getAttribute('data-img-src');
+    visual.innerHTML = '<div class="bg" style="background-image:url(\''+img+'\')"></div><div class="veil"></div>';
+    btn.innerHTML = '🎞 Movimiento';
+  }
+}
+function playAudio(btn){
+  const src = btn.getAttribute('data-audio');
+  if(!src){ return; }
+  let a = btn._player;
+  if(!a){ a = new Audio(src); btn._player = a; a.addEventListener('ended', ()=>btn.classList.add('done')); }
+  a.currentTime = 0; a.play();
+}
+document.addEventListener('click', e=>{
+  if(e.target.closest('[data-next]')) show(Math.min(idx+1, screens.length-1));
+  if(e.target.closest('[data-navfwd]')) show(Math.min(idx+1, screens.length-1));
+  if(e.target.closest('[data-navback]')) show(Math.max(idx-1, 0));
+});
+document.querySelectorAll('.bg[data-img]').forEach(el=>{
+  const src = el.getAttribute('data-img');
+  el.style.backgroundImage = "url('" + src + "')";
+  const visualParent = el.closest('.visual');
+  if(visualParent){ visualParent.setAttribute('data-img-src', src); }
+});
+document.querySelectorAll('.classBlock').forEach(b=> b.style.display='none');
+document.querySelector('[data-navback]').disabled = true;
+</script>
+</body></html>
