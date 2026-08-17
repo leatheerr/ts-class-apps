@@ -138,10 +138,11 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 <div id="classHeader">
   <span class="brand">TEACHER'S STATION</span>
-  <button id="classSelect" onclick="toggleMenu()">Class 1 ▾</button>
+  <button id="classSelect" onclick="toggleMenu()">Class 2 ▾</button>
 </div>
 <div id="classMenu">
-  <div class="item active" onclick="selectClass(1)">Class 1: Clinic — describe your role and daily routine <span>✓</span></div>
+  <div class="item" onclick="selectClass(1)">Class 1: Clinic — describe your role and daily routine <span>✓</span></div>
+  <div class="item active" onclick="selectClass(2)">Class 2: what you do vs. what you're doing right now <span>✓</span></div>
 </div>
 
 <div id="bar"></div>
@@ -441,7 +442,7 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
  </div></div>
 </div>
 
-<div class="classBlock" data-class="2" style="display:none">
+<div class="classBlock" data-class="2">
 <div class="scr" data-t="open">
  <div class="bg" data-img="photos/blood_draw.jpg"></div><div class="veil"></div>
  <div class="stack">
@@ -886,6 +887,6 @@ document.querySelectorAll('.bg[data-img]').forEach(el=>{
   const visualParent = el.closest('.visual');
   if(visualParent){ visualParent.setAttribute('data-img-src', src); }
 });
-loadScreens(1);
+loadScreens(2);
 </script>
 </body></html>
