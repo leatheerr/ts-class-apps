@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Teacher's Station — Diego</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{--ob:#0D0014;--pu:#440249;--go:#FFBE00;--ink:#F4EEF6}
+html,body{height:100%;overflow:hidden;background:var(--ob);color:var(--ink);
+ font-family:'Lora',Georgia,'Times New Roman',serif;font-size:18px}
+h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
+#bar{position:fixed;top:44px;left:0;height:4px;background:rgba(255,190,0,.35);
+ width:0;transition:width .35s ease;z-index:50}
+
+#classHeader{position:fixed;top:0;left:0;right:0;height:44px;background:var(--pu);
+ display:flex;align-items:center;justify-content:space-between;padding:0 14px;z-index:80;
+ font-family:'Poppins',system-ui,sans-serif;box-shadow:0 2px 8px rgba(0,0,0,.3)}
+#classHeader .brand{font-size:10px;letter-spacing:1.5px;color:rgba(244,238,246,.6);font-weight:600}
+#classSelect{background:rgba(244,238,246,.1);border:none;color:var(--ink);font-family:inherit;
+ font-size:13px;font-weight:600;padding:6px 10px;border-radius:8px;display:flex;align-items:center;gap:6px}
+#classMenu{position:fixed;top:44px;left:0;right:0;background:var(--pu);z-index:79;
+ max-height:0;overflow:hidden;transition:max-height .25s ease;box-shadow:0 8px 16px rgba(0,0,0,.4)}
+#classMenu.open{max-height:220px}
+#classMenu .item{padding:12px 16px;font-size:13px;border-top:1px solid rgba(244,238,246,.08);
+ display:flex;justify-content:space-between;align-items:center}
+#classMenu .item.active{background:rgba(255,190,0,.12);color:var(--go);font-weight:600}
+#classMenu .locked{opacity:.35;font-size:11px}
+
+.scr{position:fixed;inset:0;top:44px;display:none;flex-direction:column;align-items:center;
+ justify-content:flex-end;overflow:hidden}
+.scr.on{display:flex}
+.bg{position:absolute;inset:0;background-size:cover;background-position:center;z-index:0}
+.veil{position:absolute;inset:0;z-index:1;
+ background:linear-gradient(180deg,rgba(13,0,20,.35) 0%,rgba(13,0,20,.55) 45%,rgba(13,0,20,.94) 100%)}
+.stack{position:relative;z-index:2;width:100%;max-width:520px;padding:24px 22px 34px;
+ display:flex;flex-direction:column;align-items:center;gap:18px}
+.audio{width:112px;height:112px;border-radius:50%;border:none;background:var(--go);
+ color:#2D0130;font-size:44px;line-height:1;display:grid;place-items:center;
+ box-shadow:0 0 0 0 rgba(255,190,0,.55);animation:pulse 2.4s infinite}
+.audio:active{transform:scale(.94)}
+.audio.done{animation:none;background:rgba(255,190,0,.22);color:var(--go)}
+.audio.none{background:rgba(244,238,246,.12);color:rgba(244,238,246,.5);animation:none;font-size:30px}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,190,0,.5)}70%{box-shadow:0 0 0 26px rgba(255,190,0,0)}100%{box-shadow:0 0 0 0 rgba(255,190,0,0)}}
+.dots{display:flex;gap:14px}
+.dot{width:16px;height:16px;border-radius:50%;background:rgba(244,238,246,.2)}
+.dot.lit{background:var(--go)}
+.word{font-family:'Poppins',system-ui,sans-serif;font-size:34px;font-weight:600;
+ letter-spacing:.5px;text-align:center}
+.es{font-size:15px;color:rgba(244,238,246,.62);font-style:italic;text-align:center}
+.sent{font-size:20px;text-align:center;line-height:1.5;color:rgba(244,238,246,.92)}
+.cue{font-size:13px;letter-spacing:2px;text-transform:uppercase;
+ color:rgba(244,238,246,.5);font-family:'Poppins',system-ui,sans-serif}
+.btn{width:100%;min-height:64px;border:none;border-radius:14px;background:var(--pu);
+ color:var(--ink);font-family:'Poppins',system-ui,sans-serif;font-size:18px;
+ font-weight:500;padding:16px}
+.btn:active{transform:scale(.985)}
+.btn.go{background:var(--go);color:#2D0130;font-weight:600}
+.row{display:flex;gap:12px;width:100%}
+.credits{font-size:11px;line-height:1.6;color:rgba(244,238,246,.45);text-align:center}
+.big{font-size:26px;text-align:center;font-family:'Poppins',system-ui,sans-serif}
+.plain{position:absolute;inset:0;background:radial-gradient(120% 100% at 50% 100%,#3a0140 0%,#0D0014 70%)}
+.think{font-size:22px;line-height:1.5;text-align:center;color:var(--ink)}
+.toggleBtn{width:100%;min-height:52px;border-radius:12px;border:1.5px dashed rgba(255,190,0,.5);
+ background:transparent;color:var(--go);font-family:'Poppins',system-ui,sans-serif;font-size:14px;font-weight:600}
+.keyBox{width:100%;background:rgba(255,255,255,.04);border-radius:12px;padding:14px 16px;
+ font-size:15px;line-height:1.7;color:rgba(244,238,246,.85);display:none;text-align:left}
+.keyBox.show{display:block}
+.keyBox b{color:var(--go)}
+.badge{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:rgba(244,238,246,.4);font-family:'Poppins',system-ui,sans-serif}
+.navBtn{position:fixed;top:56px;width:42px;height:42px;border-radius:50%;
+ background:rgba(244,238,246,.10);border:none;color:var(--ink);font-size:22px;
+ line-height:1;display:grid;place-items:center;z-index:60}
+.navBtn.left{left:14px}
+.navBtn.right{right:14px}
+.navBtn[disabled]{opacity:.2}
+.navBtn:active{transform:scale(.92)}
+
+/* Checkpoint / Exam container */
+.partTag{display:flex;align-items:center;gap:8px;background:rgba(244,238,246,.08);
+ border:1px solid rgba(244,238,246,.15);border-radius:100px;padding:8px 16px;
+ font-family:'Poppins',system-ui,sans-serif;font-size:12.5px;font-weight:700;color:var(--go)}
+.partDots{display:flex;gap:5px;width:100%;max-width:280px}
+.partDots .seg{flex:1;height:4px;border-radius:2px;background:rgba(244,238,246,.15)}
+.partDots .seg.lit{background:var(--go)}
+.pTitle{font-family:'Poppins',system-ui,sans-serif;font-size:22px;font-weight:700;color:var(--ink);text-align:center}
+.verdictBadge{font-family:'Poppins',system-ui,sans-serif;font-size:15px;font-weight:700;
+ letter-spacing:.5px;color:#2D0130;background:var(--go);border-radius:100px;padding:10px 22px}
+.focusList{width:100%;text-align:left;display:flex;flex-direction:column;gap:10px}
+.focusItem{font-size:15px;line-height:1.5;color:rgba(244,238,246,.88);display:flex;gap:10px}
+.focusItem b{color:var(--go);flex:none}
+</style></head>
+<body>
+
+<div id="classHeader">
+  <span class="brand">TEACHER'S STATION</span>
+  <button id="classSelect" onclick="toggleMenu()">Class 24 ▾</button>
+</div>
+<div id="classMenu">
+  <div class="item active" onclick="selectClass(24)">Class 24: Phase 1 Final Assessment <span>✓</span></div>
+</div>
+
+<div id="bar"></div>
+<button class="navBtn left" data-navback disabled>&#8249;</button>
+<button class="navBtn right" data-navfwd>&#8250;</button>
+
+<div class="classBlock" data-class="24">
+
+<div class="scr" data-t="open">
+ <div class="bg" data-img="photos/open_jobsite.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="cue">Class 24 · Final Exam</div>
+  <div class="big">Phase 1 Final Assessment — Unscripted Roleplay</div>
+  <div class="es" style="font-size:16px;line-height:1.5;color:rgba(244,238,246,.85)">By the end of this class, you can hold a fast, unscripted conversation with your boss — introducing yourself, reporting your day, defending a mistake, asking questions, and relaying a message — using Phase 1 grammar accurately, not just bravely.</div>
+  <button class="btn go" data-next>Begin</button>
+ </div></div>
+
+<div class="scr" data-t="warmup">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Warm-Up Listening · 1 of 3</div>
+  <button class="audio" data-audio="audio/warmup1.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="think">Listen. This is fast, real speech — the kind a real boss uses.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">What did he say?</button>
+  <div class="keyBox">"Didja get it done?" → <b>Did you get it done?</b></div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="warmup">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Warm-Up Listening · 2 of 3</div>
+  <button class="audio" data-audio="audio/warmup2.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="think">Listen again.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">What did he say?</button>
+  <div class="keyBox">"Why's the unit still here?" → <b>Why is the unit still here?</b></div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="warmup">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Warm-Up Listening · 3 of 3</div>
+  <button class="audio" data-audio="audio/warmup3.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="think">One more.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">What did he say?</button>
+  <div class="keyBox">"Whaddya need from me?" → <b>What do you need from me?</b></div>
+  <button class="btn go" data-next>Your ear is ready. Start the exam.</button>
+ </div></div>
+
+<div class="scr" data-t="checkpoint">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="partTag">🔥 Parte 1 de 6</div>
+  <div class="partDots"><div class="seg lit"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div></div>
+  <div class="pTitle">Intro Under Fire</div>
+  <div class="think">Your boss meets you for the first time and fires off three fast questions.</div>
+  <button class="audio" data-audio="audio/boss1.mp3" onclick="playAudio(this)">🔊</button>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal your answer</button>
+  <div class="keyBox">
+   <button class="audio" style="width:70px;height:70px;font-size:26px;margin-bottom:10px" data-audio="audio/model1.mp3" onclick="playAudio(this)">🔊</button><br>
+   "<b>I'm</b> Diego, <b>I'm</b> 26, <b>I have</b> a lot of tools."<br>
+   Not "I have 26 years" — <i>to be</i> for age, <i>to have</i> for what you own.
+  </div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="checkpoint">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="partTag">🔥 Parte 2 de 6</div>
+  <div class="partDots"><div class="seg lit"></div><div class="seg lit"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div></div>
+  <div class="pTitle">The Daily Report</div>
+  <div class="think">He wants to know what you do here, every day.</div>
+  <button class="audio" data-audio="audio/boss2.mp3" onclick="playAudio(this)">🔊</button>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal your answer</button>
+  <div class="keyBox">
+   <button class="audio" style="width:70px;height:70px;font-size:26px;margin-bottom:10px" data-audio="audio/model2.mp3" onclick="playAudio(this)">🔊</button><br>
+   "Every day <b>I check</b> the blueprints, <b>I install</b> the units, and <b>I clean up</b> the site."
+  </div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="checkpoint">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="partTag">🔥 Parte 3 de 6</div>
+  <div class="partDots"><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div></div>
+  <div class="pTitle">Yesterday's Work</div>
+  <div class="think">Now he wants to know what happened yesterday — and what broke.</div>
+  <button class="audio" data-audio="audio/boss3.mp3" onclick="playAudio(this)">🔊</button>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal your answer</button>
+  <div class="keyBox">
+   <button class="audio" style="width:70px;height:70px;font-size:26px;margin-bottom:10px" data-audio="audio/model3.mp3" onclick="playAudio(this)">🔊</button><br>
+   "Yesterday <b>I install<u>ed</u></b> two units. One unit <b>broke</b> because the pressure was too high."<br>
+   Say the <b>-ed</b> out loud — don't drop it.
+  </div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="checkpoint">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="partTag">🔥 Parte 4 de 6</div>
+  <div class="partDots"><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg"></div><div class="seg"></div></div>
+  <div class="pTitle">Defend A Mistake</div>
+  <div class="think">Something didn't get finished. He wants an explanation — calm, not panicked.</div>
+  <button class="audio" data-audio="audio/boss4.mp3" onclick="playAudio(this)">🔊</button>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal your answer</button>
+  <div class="keyBox">
+   <button class="audio" style="width:70px;height:70px;font-size:26px;margin-bottom:10px" data-audio="audio/model4.mp3" onclick="playAudio(this)">🔊</button><br>
+   "I <b>didn't finish</b> because the foreman didn't bring the parts on time."
+  </div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="checkpoint">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="partTag">🔥 Parte 5 de 6</div>
+  <div class="partDots"><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg"></div></div>
+  <div class="pTitle">Ask The Right Questions</div>
+  <div class="think">Now it's your turn — you need information back from him. Ask about tomorrow's start time and where to get the parts.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal your questions</button>
+  <div class="keyBox">
+   <button class="audio" style="width:70px;height:70px;font-size:26px;margin-bottom:10px" data-audio="audio/model5.mp3" onclick="playAudio(this)">🔊</button><br>
+   "What time <b>do we</b> start tomorrow? Where <b>do I</b> pick up the parts?"<br>
+   Not "What time we start?" — the question word needs <b>do</b>.
+  </div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="checkpoint">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="partTag">🔥 Parte 6 de 6</div>
+  <div class="partDots"><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div></div>
+  <div class="pTitle">Relay A Message</div>
+  <div class="think">He gives you a message for the crew. You have to pass it on to someone else.</div>
+  <button class="audio" data-audio="audio/boss6.mp3" onclick="playAudio(this)">🔊</button>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal how you relay it</button>
+  <div class="keyBox">
+   <button class="audio" style="width:70px;height:70px;font-size:26px;margin-bottom:10px" data-audio="audio/model6.mp3" onclick="playAudio(this)">🔊</button><br>
+   "<b>He told me</b> we're starting at six and the inspector's coming Thursday."<br>
+   Not "he tell me" or "he said me" — it's <b>told</b>.
+  </div>
+  <button class="btn go" data-next>Finish the exam</button>
+ </div></div>
+
+<div class="scr" data-t="verdict">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Verdict</div>
+  <div class="verdictBadge">✓ Phase 1 Passed — On to Phase 2</div>
+  <div class="think" style="font-size:18px">Three months ago, a fast question from a boss made you freeze and reach for Spanish. Today you held a whole unscripted conversation, start to finish, in English.</div>
+  <div class="es">Your next target: making it just as accurate as it is fast. Keep an ear on:</div>
+  <div class="focusList">
+   <div class="focusItem"><b>①</b> The <b>-ed</b> ending on past verbs — install<u>ed</u>, finish<u>ed</u>. Say it, don't drop it.</div>
+   <div class="focusItem"><b>②</b> "I <b>was eating</b>" — never "I was eat."</div>
+   <div class="focusItem"><b>③</b> "He <b>told</b> me…" — never "he tell me."</div>
+  </div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="close">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="big">Nice work, Diego.</div>
+  <div class="es">See you in Phase 2.</div>
+  <div class="credits">Teacher's Station · The Milestone Method</div>
+ </div></div>
+
+</div>
+
+<script>
+function toggleMenu(){ document.getElementById('classMenu').classList.toggle('open'); }
+
+function playAudio(btn){
+  const src = btn.getAttribute('data-audio');
+  if(!src){ return; }
+  let a = btn._player;
+  if(!a){ a = new Audio(src); btn._player = a; a.addEventListener('ended', ()=>btn.classList.add('done')); }
+  a.currentTime = 0; a.play();
+}
+
+let screens = [];
+let idx = 0;
+let currentClass = 24;
+
+function loadScreens(classNum){
+  document.querySelectorAll('.classBlock').forEach(b=>{
+    b.style.display = (b.getAttribute('data-class') === String(classNum)) ? '' : 'none';
+  });
+  screens = [...document.querySelectorAll('.classBlock[data-class="'+classNum+'"] .scr')];
+  currentClass = classNum;
+  idx = 0;
+  show(0);
+}
+function selectClass(classNum){
+  document.getElementById('classMenu').classList.remove('open');
+  document.querySelectorAll('#classMenu .item').forEach(it=>it.classList.remove('active'));
+  event.target.closest('.item').classList.add('active');
+  document.getElementById('classSelect').textContent = 'Class ' + classNum + ' ▾';
+  loadScreens(classNum);
+}
+function show(i){
+  screens.forEach((s,n)=>s.classList.toggle('on', n===i));
+  document.querySelector('[data-navback]').disabled = (i===0);
+  document.getElementById('bar').style.width = ((i+1)/screens.length*100)+'%';
+  idx = i;
+}
+document.addEventListener('click', e=>{
+  if(e.target.closest('[data-next]')) show(Math.min(idx+1, screens.length-1));
+  if(e.target.closest('[data-navfwd]')) show(Math.min(idx+1, screens.length-1));
+  if(e.target.closest('[data-navback]')) show(Math.max(idx-1, 0));
+});
+document.querySelectorAll('.bg[data-img]').forEach(el=>{
+  const src = el.getAttribute('data-img');
+  el.style.backgroundImage = "url('" + src + "')";
+});
+loadScreens(24);
+</script>
+</body></html>
