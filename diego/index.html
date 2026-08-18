@@ -123,10 +123,11 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 <div id="classHeader">
   <span class="brand">TEACHER'S STATION</span>
-  <button id="classSelect" onclick="toggleMenu()">Class 24 ▾</button>
+  <button id="classSelect" onclick="toggleMenu()">Class 25 ▾</button>
 </div>
 <div id="classMenu">
-  <div class="item active" onclick="selectClass(24)">Class 24: Phase 1 Final Assessment <span>✓</span></div>
+  <div class="item" onclick="selectClass(24)">Class 24: Phase 1 Final Assessment <span>✓</span></div>
+  <div class="item active" onclick="selectClass(25)">Class 25: Setting the Scene <span>✓</span></div>
 </div>
 
 <div id="bar"></div>
@@ -301,11 +302,7 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 </div>
 
-<!-- Class 25 built 2026-08-18. Status on the roadmap is not yet Done, so this
-     classBlock is intentionally NOT wired into #classMenu and NOT part of the
-     default loadScreens() call — the content exists but is unreachable until
-     Juan flips Status and a follow-up run adds the one-line dropdown entry. -->
-<div class="classBlock" data-class="25" style="display:none">
+<div class="classBlock" data-class="25">
 
 <div class="scr" data-t="open">
  <div class="bg" data-img="photos/c25_rain_site.jpg"></div><div class="veil"></div>
@@ -719,6 +716,6 @@ document.querySelectorAll('.bg[data-img]').forEach(el=>{
   const src = el.getAttribute('data-img');
   el.style.backgroundImage = "url('" + src + "')";
 });
-loadScreens(24);
+loadScreens(25);
 </script>
 </body></html>
