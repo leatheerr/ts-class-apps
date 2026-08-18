@@ -107,16 +107,17 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 <div id="classHeader">
   <span class="brand">TEACHER'S STATION</span>
-  <button id="classSelect" onclick="toggleMenu()">Elio ▾</button>
+  <button id="classSelect" onclick="toggleMenu()">Class 1 ▾</button>
 </div>
 <div id="classMenu">
+  <div class="item active" onclick="selectClass(1)">Class 1: Job Identity <span>✓</span></div>
 </div>
 
 <div id="bar"></div>
 <button class="navBtn left" data-navback disabled>&#8249;</button>
 <button class="navBtn right" data-navfwd>&#8250;</button>
 
-<div id="emptyState" class="on">
+<div id="emptyState">
   <div class="big">Your first class isn't unlocked yet.</div>
   <div class="es">It'll appear here as soon as it's marked Done.</div>
 </div>
@@ -542,7 +543,7 @@ document.querySelectorAll('.bg[data-img]').forEach(el=>{
   const visualParent = el.closest('.visual');
   if(visualParent){ visualParent.setAttribute('data-img-src', src); }
 });
-document.querySelectorAll('.classBlock').forEach(b=> b.style.display='none');
+loadScreens(1);
 document.querySelector('[data-navback]').disabled = true;
 </script>
 </body></html>
