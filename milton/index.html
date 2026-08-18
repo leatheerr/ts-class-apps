@@ -27,6 +27,25 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
  display:flex;justify-content:space-between;align-items:center;gap:10px}
 #classMenu .item.active{background:rgba(255,190,0,.12);color:var(--go);font-weight:600}
 #classMenu .locked{opacity:.35;font-size:11px}
+#classMenu .groupLabel{padding:9px 16px 5px;font-size:9px;letter-spacing:1.6px;text-transform:uppercase;
+ color:rgba(244,238,246,.42);font-weight:600;border-top:1px solid rgba(244,238,246,.08)}
+#classMenu .groupLabel.vow{color:rgba(255,190,0,.65)}
+#classMenu .item.vow{border-top:none;padding-left:16px}
+#classMenu .item.vow::before{content:"🗣️";margin-right:8px}
+
+/* vowels course — sound cards and mouth-mechanic rows */
+.soundRow{display:flex;gap:10px;width:100%;justify-content:center;flex-wrap:wrap}
+.soundBtn{flex:1;min-width:96px;min-height:92px;border-radius:14px;border:2px solid rgba(255,190,0,.35);
+ background:rgba(68,2,73,.5);color:var(--ink);font-family:'Poppins',system-ui,sans-serif;
+ display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:10px}
+.soundBtn .sw{font-size:21px;font-weight:600}
+.soundBtn .sy{font-size:12px;color:var(--go);letter-spacing:.5px}
+.soundBtn:active{transform:scale(.96)}
+.mouth{width:100%;background:rgba(255,255,255,.04);border-radius:12px;padding:12px 14px;
+ font-size:15px;line-height:1.65;color:rgba(244,238,246,.88);text-align:left}
+.mouth b{color:var(--go)}
+.keySent{font-family:'Poppins',system-ui,sans-serif;font-size:25px;font-weight:600;
+ text-align:center;color:var(--go);line-height:1.35}
 
 .scr{position:fixed;inset:0;top:44px;display:none;flex-direction:column;align-items:center;
  justify-content:flex-end;overflow:hidden}
@@ -137,8 +156,11 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
   <button id="classSelect" onclick="toggleMenu()">Class 10 ▾</button>
 </div>
 <div id="classMenu">
-  <div class="item" onclick="selectClass(9)">Class 9: right now on the floor — the live walk-through <span>✓</span></div>
-  <div class="item active" onclick="selectClass(10)">Class 10: usually vs. right now <span>✓</span></div>
+  <div class="groupLabel">Main course</div>
+  <div class="item" onclick="selectClass(9,'Class 9')">Class 9: right now on the floor — the live walk-through <span>✓</span></div>
+  <div class="item active" onclick="selectClass(10,'Class 10')">Class 10: usually vs. right now <span>✓</span></div>
+  <div class="groupLabel vow">Vowels course</div>
+  <div class="item vow" onclick="selectClass('v1','Vowels 1')">Vowels 1: vowels are sounds, not letters <span>✓</span></div>
 </div>
 
 <div id="bar"></div>
@@ -826,6 +848,213 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 </div>
 
+<!-- ==================== VOWELS COURSE — CLASS 1 ==================== -->
+<div class="classBlock" data-class="v1">
+
+<div class="scr" data-t="open">
+ <div class="bg" data-img="photos/sound_waves.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="cue">Vowels Course · Class 1 of 4</div>
+  <div class="big">Vowels are sounds, not letters — and here are YOUR two</div>
+  <div class="es" style="font-size:16px;line-height:1.5;color:rgba(244,238,246,.85)">By the end of this class, you can name your own two problem sounds, hear the difference between them, and say why vowels decide whether people understand you.</div>
+  <button class="btn go" data-next>Begin</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Critical Thinking · 1 of 3</div>
+  <div class="think">When someone at Lenovo doesn't understand your English, what do you do?</div>
+  <div class="es">Full sentences, out loud.</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Critical Thinking · 2 of 3</div>
+  <div class="think">You catch about 50–60% of a podcast. What do you think the other 40% actually is — words you don't know, or words you know but didn't recognise?</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Critical Thinking · 3 of 3</div>
+  <div class="think">Which is worse for an audit: saying a word wrong, or not catching what the auditor said? Why?</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="concept">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">The one idea</div>
+  <div class="es">Read these three out loud first. Then listen.</div>
+  <div class="soundRow">
+   <button class="soundBtn" data-audio="audio/v_cat.mp3" onclick="playAudio(this)"><span class="sw">cat</span><span class="sy">🔊 æ</span></button>
+   <button class="soundBtn" data-audio="audio/v_car.mp3" onclick="playAudio(this)"><span class="sw">car</span><span class="sy">🔊 ɑ</span></button>
+   <button class="soundBtn" data-audio="audio/v_cake.mp3" onclick="playAudio(this)"><span class="sw">cake</span><span class="sy">🔊 ey</span></button>
+  </div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">How many sounds?</button>
+  <div class="keyBox">Same letter <b>a</b>. <b>Three different sounds.</b><br><br>Vowels are the <b>heart of the word</b> — and they are <b>sounds, not letters</b>. The letters only tell you how it's written. They don't tell you how it's said.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="concept">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">The trap · spelling lies</div>
+  <div class="soundRow">
+   <button class="soundBtn" data-audio="audio/v_now.mp3" onclick="playAudio(this)"><span class="sw">now</span><span class="sy">🔊 aw</span></button>
+   <button class="soundBtn" data-audio="audio/v_saw.mp3" onclick="playAudio(this)"><span class="sw">saw</span><span class="sy">🔊 ɔ</span></button>
+  </div>
+  <div class="mouth">Both are written with <b>aw</b>. They are <b>not</b> the same sound.<br><br>The symbol <b>aw</b> means the sound in <b>now</b>. The spelling <b>aw</b> in <b>saw</b> is something else entirely. Trust the symbol, never the spelling.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Anchor run · five sounds, one breath</div>
+  <button class="audio" data-audio="audio/v_anchor.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="keySent">BEAT · BIT · BAIT · BET · BAT</div>
+  <div class="es">Run it three times. Feel your jaw drop one step at a time.</div>
+  <div class="soundRow">
+   <button class="soundBtn" data-audio="audio/v_beat.mp3" onclick="playAudio(this)"><span class="sw">beat</span><span class="sy">🔊</span></button>
+   <button class="soundBtn" data-audio="audio/v_bit.mp3" onclick="playAudio(this)"><span class="sw">bit</span><span class="sy">🔊</span></button>
+   <button class="soundBtn" data-audio="audio/v_bait.mp3" onclick="playAudio(this)"><span class="sw">bait</span><span class="sy">🔊</span></button>
+  </div>
+  <div class="soundRow">
+   <button class="soundBtn" data-audio="audio/v_bet.mp3" onclick="playAudio(this)"><span class="sw">bet</span><span class="sy">🔊</span></button>
+   <button class="soundBtn" data-audio="audio/v_bat.mp3" onclick="playAudio(this)"><span class="sw">bat</span><span class="sy">🔊</span></button>
+  </div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Your sound #1 · hear it first</div>
+  <button class="audio" data-audio="audio/v_walk.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="es">Play it. Which one did you hear?</div>
+  <button class="choice" onclick="pick(this)">walk</button>
+  <button class="choice" onclick="pick(this)">work</button>
+  <div class="soundRow">
+   <button class="soundBtn" data-audio="audio/v_walk.mp3" onclick="playAudio(this)"><span class="sw">walk</span><span class="sy">🔊 ɔ</span></button>
+   <button class="soundBtn" data-audio="audio/v_work.mp3" onclick="playAudio(this)"><span class="sw">work</span><span class="sy">🔊 ɝ</span></button>
+  </div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Your sound #1 · the mouth</div>
+  <div class="es">Mirror out. Watch yourself say each one.</div>
+  <div class="mouth">
+   <b>walk</b> — jaw drops, tongue back and low, lips barely rounded. Your tongue tip does <b>nothing</b>.<br><br>
+   <b>work</b> — the tongue <b>curls back</b> or <b>bunches up</b> in the middle. Here the R <b>is</b> the vowel — it isn't a separate sound added on.<br><br>
+   Two ways to make that R. Both are correct — use the one your mouth prefers.
+  </div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Your sound #1 · say it ten times</div>
+  <button class="audio" data-audio="audio/v_walktowork.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="keySent">"I walk to work."</div>
+  <div class="es">Both sounds, back to back, in one short sentence. Ten times.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Your sound #2 · hear it first</div>
+  <button class="audio" data-audio="audio/v_look.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="es">Play it. Which one did you hear?</div>
+  <button class="choice" onclick="pick(this)">lock</button>
+  <button class="choice" onclick="pick(this)">look</button>
+  <button class="choice" onclick="pick(this)">lack</button>
+  <div class="soundRow">
+   <button class="soundBtn" data-audio="audio/v_lock.mp3" onclick="playAudio(this)"><span class="sw">lock</span><span class="sy">🔊 ɑ</span></button>
+   <button class="soundBtn" data-audio="audio/v_look.mp3" onclick="playAudio(this)"><span class="sw">look</span><span class="sy">🔊 ʊ</span></button>
+   <button class="soundBtn" data-audio="audio/v_lack.mp3" onclick="playAudio(this)"><span class="sw">lack</span><span class="sy">🔊 æ</span></button>
+  </div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Your sound #2 · the mouth</div>
+  <div class="mouth">
+   <b>lock</b> — mouth open <b>wide</b>, tongue low and back. Like the doctor's "aaah".<br><br>
+   <b>look</b> — lips <b>somewhat rounded</b>, tongue high and back but <b>relaxed</b>, not tense.<br><br>
+   <b>lack</b> — lips <b>wide and pulled sideways</b>, tongue low and pushed <b>forward</b>.<br><br>
+   The tell: <b>lock</b> and <b>lack</b> are both low — one is back, one is front. <b>look</b> is the odd one: high and rounded.
+  </div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Your sound #2 · say it ten times</div>
+  <button class="audio" data-audio="audio/v_lockbox.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="keySent">"Look — I lock the box."</div>
+  <div class="es">Ten times. Then swap in "lack" and hear how different it is.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/warehouse_floor.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">Your real English · 1 of 2</div>
+  <div class="es">Say each one out loud. Only the target sounds matter here — nothing else.</div>
+  <div class="row"><button class="btn" data-audio="audio/v_s1.mp3" onclick="playAudio(this)">🔊 I walk to work at six.</button></div>
+  <div class="row"><button class="btn" data-audio="audio/v_s2.mp3" onclick="playAudio(this)">🔊 The workers look at the shipment.</button></div>
+  <div class="row"><button class="btn" data-audio="audio/v_s3.mp3" onclick="playAudio(this)">🔊 I lock the warehouse after my shift.</button></div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Your real English · 2 of 2</div>
+  <div class="row"><button class="btn" data-audio="audio/v_s4.mp3" onclick="playAudio(this)">🔊 There's a lack of pallets, so the work is slow.</button></div>
+  <div class="row"><button class="btn" data-audio="audio/v_s5.mp3" onclick="playAudio(this)">🔊 Look — the box is locked.</button></div>
+  <div class="es">Target: 8 clean out of 10 attempts.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="close">
+ <div class="bg" data-img="photos/speaking_mic.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">Your own map</div>
+  <div class="think">Say it out loud: "My two sounds are ___ and ___."</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">And the good news</button>
+  <div class="keyBox">English has 14 vowel sounds. <b>You already own 12 of them.</b><br><br>Your diphthongs — <b>like</b>, <b>now</b>, <b>boy</b> — are correct. There is no error with them anywhere in your test or your classes. Two sounds need work. That's the whole list.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="homework">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Homework</div>
+  <div class="sent" style="text-align:left">
+   1. 🎙️ <b>Record the baseline set</b> and send it on WhatsApp: <i>walk, work, lock, look, lack, "I walk to work", "Look — I lock the box."</i> You'll record this exact set before every class.<br><br>
+   2. 🔁 <b>Five minutes daily</b> — the two key sentences, out loud, in the car or on the floor.<br><br>
+   3. 📓 <b>Journal</b> — every time someone at work doesn't understand a word, write that word down. Bring the list.<br><br>
+   4. 🎧 <b>Podcast, 10 minutes</b> — don't try to understand it. Just count how many times you hear a word you know but didn't catch in time.
+  </div>
+  <button class="btn go" data-next>Done for today</button>
+ </div></div>
+
+</div>
+
 <script>
 function toggleMenu(){ document.getElementById('classMenu').classList.toggle('open'); }
 
@@ -945,11 +1174,11 @@ function loadScreens(classNum){
   idx = 0;
   show(0);
 }
-function selectClass(classNum){
+function selectClass(classNum, label){
   document.getElementById('classMenu').classList.remove('open');
   document.querySelectorAll('#classMenu .item').forEach(it=>it.classList.remove('active'));
   event.target.closest('.item').classList.add('active');
-  document.getElementById('classSelect').textContent = 'Class ' + classNum + ' ▾';
+  document.getElementById('classSelect').textContent = (label || ('Class ' + classNum)) + ' ▾';
   loadScreens(classNum);
 }
 function show(i){
