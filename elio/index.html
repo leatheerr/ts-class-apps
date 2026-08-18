@@ -65,6 +65,24 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 .credits{font-size:11px;line-height:1.6;color:rgba(244,238,246,.45);text-align:center}
 .big{font-size:26px;text-align:center;font-family:'Poppins',system-ui,sans-serif}
 .plain{position:absolute;inset:0;background:radial-gradient(120% 100% at 50% 100%,#3a0140 0%,#0D0014 70%)}
+.motionStage{position:absolute;inset:0;z-index:0;background:#0D0014}
+.motion-growrings{position:absolute;top:34px;left:0;right:0;display:flex;align-items:center;justify-content:center}
+.growRing{transform-origin:55px 55px;transform:scale(0);opacity:0;animation:growAppear 4.8s ease-out infinite}
+.growRing.r1{animation-delay:0s}
+.growRing.r2{animation-delay:.5s}
+.growRing.r3{animation-delay:1s}
+.growRing.r4{animation-delay:1.5s}
+@keyframes growAppear{0%{transform:scale(.3);opacity:0}10%{transform:scale(1);opacity:.9}75%{transform:scale(1);opacity:.9}92%{opacity:0}100%{transform:scale(.3);opacity:0}}
+@media (prefers-reduced-motion: reduce){.growRing{animation:none;opacity:.7;transform:scale(1)}}
+.frameCard{background:rgba(255,255,255,.05);border:1px solid rgba(244,238,246,.14);border-radius:14px;
+ padding:18px 16px;display:flex;flex-direction:column;gap:6px;align-items:center;width:100%}
+.frameSentence{font-family:'Poppins',system-ui,sans-serif;font-size:19px;font-weight:600;text-align:center;color:var(--ink);line-height:1.5}
+.blank{display:inline-flex;align-items:center;justify-content:center;min-width:52px;height:22px;
+ border-bottom:2px dashed var(--go);position:relative;margin:0 2px;vertical-align:-4px}
+.cursor{width:1.5px;height:15px;background:var(--go);display:inline-block;animation:blink 1.1s steps(1) infinite}
+@keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}
+@media (prefers-reduced-motion: reduce){.cursor{animation:none;opacity:.7}}
+.frameHint{font-size:13px;color:rgba(244,238,246,.5);font-family:'Lora',Georgia,serif;font-style:italic}
 .think{font-size:22px;line-height:1.5;text-align:center;color:var(--ink)}
 .toggleBtn{width:100%;min-height:52px;border-radius:12px;border:1.5px dashed rgba(255,190,0,.5);
  background:transparent;color:var(--go);font-family:'Poppins',system-ui,sans-serif;font-size:14px;font-weight:600}
@@ -294,9 +312,12 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 <div class="scr" data-t="frame">
  <div class="plain"></div>
  <div class="stack">
-  <div class="badge">Frame Practice · 1 of 3</div>
-  <div class="sent">"I'm a(n) ___."</div>
-  <div class="es">Complete it with your own job, out loud, then reveal.</div>
+  <div class="dots"><div class="dot lit"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="badge">Frame Practice</div>
+  <div class="frameCard">
+   <div class="frameSentence">"I'm a(n) <span class="blank"><span class="cursor"></span></span>."</div>
+   <div class="frameHint">say your job title, out loud</div>
+  </div>
   <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
   <div class="keyBox"><b>I'm an electrician.</b></div>
   <button class="btn go" data-next>Next frame</button>
@@ -305,20 +326,37 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 <div class="scr" data-t="frame">
  <div class="plain"></div>
  <div class="stack">
-  <div class="badge">Frame Practice · 2 of 3</div>
-  <div class="sent">"I work for ___."</div>
-  <div class="es">Complete it with your own boss/company, out loud, then reveal.</div>
+  <div class="dots"><div class="dot lit"></div><div class="dot lit"></div><div class="dot"></div></div>
+  <div class="badge">Frame Practice</div>
+  <div class="frameCard">
+   <div class="frameSentence">"I work for <span class="blank"><span class="cursor"></span></span>."</div>
+   <div class="frameHint">say your boss or company, out loud</div>
+  </div>
   <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
   <div class="keyBox"><b>I work for [boss's name].</b></div>
   <button class="btn go" data-next>Next frame</button>
  </div></div>
 
 <div class="scr" data-t="frame">
- <div class="plain"></div>
+ <div class="motionStage">
+  <div class="motion-growrings" aria-hidden="true">
+   <svg width="110" height="110" viewBox="0 0 110 110">
+    <circle class="growRing r4" cx="55" cy="55" r="48" fill="none" stroke="rgba(244,238,246,.22)" stroke-width="1.5"/>
+    <circle class="growRing r3" cx="55" cy="55" r="37" fill="none" stroke="rgba(255,190,0,.35)" stroke-width="1.5"/>
+    <circle class="growRing r2" cx="55" cy="55" r="26" fill="none" stroke="rgba(244,238,246,.35)" stroke-width="1.5"/>
+    <circle class="growRing r1" cx="55" cy="55" r="15" fill="none" stroke="#FFBE00" stroke-width="2"/>
+    <circle cx="55" cy="55" r="3" fill="#FFBE00"/>
+   </svg>
+  </div>
+  <div class="veil"></div>
+ </div>
  <div class="stack">
-  <div class="badge">Frame Practice · 3 of 3</div>
-  <div class="sent">"I've been an electrician for ___ years."</div>
-  <div class="es">Use your own number, out loud, then reveal.</div>
+  <div class="dots"><div class="dot lit"></div><div class="dot lit"></div><div class="dot lit"></div></div>
+  <div class="badge">Frame Practice</div>
+  <div class="frameCard">
+   <div class="frameSentence">"...for <span class="blank"><span class="cursor"></span></span> years."</div>
+   <div class="frameHint">say your own number, out loud</div>
+  </div>
   <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
   <div class="keyBox"><b>I've been an electrician for [number] years.</b></div>
   <button class="btn go" data-next>Continue</button>
