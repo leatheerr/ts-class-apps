@@ -858,6 +858,7 @@ function loadScreens(classNum){
   document.querySelectorAll('.classBlock').forEach(b=>{
     b.style.display = (b.getAttribute('data-class') === String(classNum)) ? '' : 'none';
   });
+  document.querySelectorAll('.scr.on').forEach(s=>s.classList.remove('on'));
   screens = [...document.querySelectorAll('.classBlock[data-class="'+classNum+'"] .scr')];
   currentClass = classNum;
   idx = 0;
