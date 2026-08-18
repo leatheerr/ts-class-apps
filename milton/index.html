@@ -22,7 +22,7 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
  font-size:13px;font-weight:600;padding:6px 10px;border-radius:8px;display:flex;align-items:center;gap:6px}
 #classMenu{position:fixed;top:44px;left:0;right:0;background:var(--pu);z-index:79;
  max-height:0;overflow:hidden;transition:max-height .25s ease;box-shadow:0 8px 16px rgba(0,0,0,.4)}
-#classMenu.open{max-height:260px}
+#classMenu.open{max-height:320px;overflow-y:auto}
 #classMenu .item{padding:12px 16px;font-size:13px;border-top:1px solid rgba(244,238,246,.08);
  display:flex;justify-content:space-between;align-items:center;gap:10px}
 #classMenu .item.active{background:rgba(255,190,0,.12);color:var(--go);font-weight:600}
@@ -153,12 +153,13 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 <div id="classHeader">
   <span class="brand">TEACHER'S STATION</span>
-  <button id="classSelect" onclick="toggleMenu()">Class 10 ▾</button>
+  <button id="classSelect" onclick="toggleMenu()">Class 11 ▾</button>
 </div>
 <div id="classMenu">
   <div class="groupLabel">Main course</div>
   <div class="item" onclick="selectClass(9,'Class 9')">Class 9: right now on the floor — the live walk-through <span>✓</span></div>
-  <div class="item active" onclick="selectClass(10,'Class 10')">Class 10: usually vs. right now <span>✓</span></div>
+  <div class="item" onclick="selectClass(10,'Class 10')">Class 10: usually vs. right now <span>✓</span></div>
+  <div class="item active" onclick="selectClass(11,'Class 11')">Class 11: schedules & numbers <span>✓</span></div>
   <div class="groupLabel vow">Vowels course</div>
   <div class="item vow" onclick="selectClass('v1','Vowels 1')">Vowels 1: vowels are sounds, not letters <span>✓</span></div>
 </div>
@@ -848,6 +849,312 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 </div>
 
+<!-- ==================== CLASS 11 ==================== -->
+<div class="classBlock" data-class="11">
+
+<div class="scr" data-t="open">
+ <div class="bg" data-img="photos/phone_call.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="cue">Class 11</div>
+  <div class="big">Schedules & numbers: give your shift times and the figures auditors ask for</div>
+  <div class="es" style="font-size:16px;line-height:1.5;color:rgba(244,238,246,.85)">By the end of this class, you can give times and numbers clearly in an audit — even on the phone, with no one able to see your face.</div>
+  <button class="btn go" data-next>Begin</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Critical Thinking · 1 of 3</div>
+  <div class="think">Which numbers does an auditor care about most in a warehouse? Why?</div>
+  <div class="es">Full sentences, out loud.</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Critical Thinking · 2 of 3</div>
+  <div class="think">If a number is wrong on a report, what can happen?</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Critical Thinking · 3 of 3</div>
+  <div class="think">Is it better to give an exact number or an estimate — "about 200"? When?</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="listening">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">✍️ Take notes as I speak · ears before mouth</div>
+  <div class="es">You'll hear this once, at normal speed. Write down only the numbers.</div>
+  <button class="audio" data-audio="audio/c11_dictation.mp3" onclick="playAudio(this)">🔊</button>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal — check your numbers</button>
+  <div class="keyBox">"The morning shift runs from <b>six a.m.</b> to <b>two p.m.</b> We shipped <b>two hundred and fifteen</b> units, and we were <b>ninety-four percent</b> on time. <b>Thirteen</b> people were on the floor."<br><br>Target: <b>13</b> not 30, <b>215</b> not 250. A wrong number is a hearing problem, not a memory problem — re-listen, don't guess.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="recognition" data-word="1">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Which question word? · 1 of 4</div>
+  <button class="audio" data-audio="audio/c11_q_units.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="word">units</div>
+  <div class="es">Fire the whole question, out loud, then reveal.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>"How many units?"</b><br><button class="audio sm" data-audio="audio/c11_a_units.mp3" onclick="playAudio(this)">🔊</button></div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="recognition" data-word="2">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Which question word? · 2 of 4</div>
+  <button class="audio" data-audio="audio/c11_q_time.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="word">time</div>
+  <div class="es">Fire the whole question, out loud, then reveal.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>"How much time?"</b><br><button class="audio sm" data-audio="audio/c11_a_time.mp3" onclick="playAudio(this)">🔊</button></div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="recognition" data-word="3">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Which question word? · 3 of 4</div>
+  <button class="audio" data-audio="audio/c11_q_people.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="word">people</div>
+  <div class="es">Fire the whole question, out loud, then reveal.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>"How many people?"</b><br><button class="audio sm" data-audio="audio/c11_a_people.mp3" onclick="playAudio(this)">🔊</button></div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="recognition" data-word="4">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Which question word? · 4 of 4</div>
+  <button class="audio" data-audio="audio/c11_q_product.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="word">product</div>
+  <div class="es">Fire the whole question, out loud, then reveal.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>"How much product?"</b><br><button class="audio sm" data-audio="audio/c11_a_product.mp3" onclick="playAudio(this)">🔊</button></div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="race">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Race It · recycle Classes 9–10</div>
+  <div class="es">English in, English out. No Spanish in a speed round.</div>
+  <div class="wordList">
+   <span class="chip">pallet</span><span class="chip">scanning</span><span class="chip">shipment</span>
+   <span class="chip">usually</span><span class="chip">at the moment</span>
+  </div>
+  <div class="timerRing" data-seconds="60">
+   <svg width="96" height="96" viewBox="0 0 96 96">
+    <circle cx="48" cy="48" r="44" fill="none" stroke="rgba(244,238,246,.15)" stroke-width="4"/>
+    <circle class="timerArc" cx="48" cy="48" r="44" fill="none" stroke="#FFBE00" stroke-width="4"
+     stroke-linecap="round" stroke-dasharray="276.5" stroke-dashoffset="0" transform="rotate(-90 48 48)"/>
+   </svg>
+   <div class="timerNum">60</div>
+  </div>
+  <button class="btn go" onclick="timerStart(this)">Start 60s</button>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="1">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 1 of 3</div>
+  <div class="think">The auditor just gave you a figure and you want to confirm it before you write it down. What do you say?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">Let me double-check that.</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the CORE round</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="2">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 2 of 3</div>
+  <div class="think">You missed a number on the phone. Ask for it again — professionally, not apologetically.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">Say that again?</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the CORE round</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="3">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 3 of 3</div>
+  <div class="think">You don't have the exact figure, only a close estimate. What do you say instead of inventing a number?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">More or less.</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the CORE round</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="meetfix">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Meet Fix</div>
+  <div class="cue">Fix this out loud</div>
+  <div class="sent">"How many <s>person</s>?"</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>How many people?</b> — people is already plural.<br><button class="audio sm" data-audio="audio/c11_fix1.mp3" onclick="playAudio(this)">🔊</button></div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="meetfix">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Meet Fix</div>
+  <div class="cue">Fix this out loud</div>
+  <div class="sent">"I start <s>in</s> six."</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>I start at six.</b> — clock time takes "at".<br><button class="audio sm" data-audio="audio/c11_fix2.mp3" onclick="playAudio(this)">🔊</button></div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="grammar">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Work Out The Rule</div>
+  <div class="think">at, on, in — which one goes with a clock time? Which with a day? Which with a month?</div>
+  <div class="es">Try it out loud first. Then reveal.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>at</b> + clock time — <i>at six</i><br><b>on</b> + day — <i>on Monday</i><br><b>in</b> + month — <i>in May</i><br><br><b>How many</b> + countable — <i>units, people</i><br><b>How much</b> + uncountable — <i>time, product</i></div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/warehouse_floor.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">CORE · Round 1 — build</div>
+  <div class="think">State your real figures: shift hours, team size, units per shift, % on time.</div>
+  <div class="es">Full sentences. "at" for clock times.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">CORE · Round 2 — pressure · 📞 phone, cameras off</div>
+  <div class="es">No lip-reading, no gestures — exactly the condition that makes 13 and 30 dangerous. Listen and answer inside ~3 seconds.</div>
+  <div class="row"><button class="btn" data-audio="audio/c11_ph1.mp3" onclick="playAudio(this)">🔊 What time does your shift start?</button></div>
+  <div class="row"><button class="btn" data-audio="audio/c11_ph2.mp3" onclick="playAudio(this)">🔊 How many people?</button></div>
+  <div class="row"><button class="btn" data-audio="audio/c11_ph3.mp3" onclick="playAudio(this)">🔊 How many units?</button></div>
+  <div class="row"><button class="btn" data-audio="audio/c11_ph4.mp3" onclick="playAudio(this)">🔊 What percentage on time?</button></div>
+  <div class="row"><button class="btn" data-audio="audio/c11_ph5.mp3" onclick="playAudio(this)">🔊 From when to when?</button></div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Pronunciation · the test trap</div>
+  <div class="es">You read "walk" and said "work". Alternate until your jaw feels different.</div>
+  <div class="row">
+   <button class="btn" data-audio="audio/v_walk.mp3" onclick="playAudio(this)">🔊 walk /ɔː/</button>
+   <button class="btn" data-audio="audio/v_work.mp3" onclick="playAudio(this)">🔊 work /ɜːr/</button>
+  </div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Number stress · the audit-critical one</div>
+  <div class="sent">thir-<span class="stress">TEEN</span> vs <span class="stress">THIR</span>-ty · four-<span class="stress">TEEN</span> vs <span class="stress">FOR</span>-ty · fif-<span class="stress">TEEN</span> vs <span class="stress">FIF</span>-ty</div>
+  <div class="row">
+   <button class="btn" data-audio="audio/c11_thirteen.mp3" onclick="playAudio(this)">🔊 thirteen</button>
+   <button class="btn" data-audio="audio/c11_thirty.mp3" onclick="playAudio(this)">🔊 thirty</button>
+  </div>
+  <div class="row">
+   <button class="btn" data-audio="audio/c11_fourteen.mp3" onclick="playAudio(this)">🔊 fourteen</button>
+   <button class="btn" data-audio="audio/c11_forty.mp3" onclick="playAudio(this)">🔊 forty</button>
+  </div>
+  <div class="row">
+   <button class="btn" data-audio="audio/c11_fifteen.mp3" onclick="playAudio(this)">🔊 fifteen</button>
+   <button class="btn" data-audio="audio/c11_fifty.mp3" onclick="playAudio(this)">🔊 fifty</button>
+  </div>
+  <div class="es">"Thirty units" and "thirteen units" are a 200% reporting error.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Hear It · write the digits · 10 rounds</div>
+  <div class="es">Play each one, say the number out loud before moving on. Mixed order, on purpose.</div>
+  <div class="row">
+   <button class="btn" data-audio="audio/c11_nr1.mp3" onclick="playAudio(this)">▶ 1</button>
+   <button class="btn" data-audio="audio/c11_nr2.mp3" onclick="playAudio(this)">▶ 2</button>
+   <button class="btn" data-audio="audio/c11_nr3.mp3" onclick="playAudio(this)">▶ 3</button>
+  </div>
+  <div class="row">
+   <button class="btn" data-audio="audio/c11_nr4.mp3" onclick="playAudio(this)">▶ 4</button>
+   <button class="btn" data-audio="audio/c11_nr5.mp3" onclick="playAudio(this)">▶ 5</button>
+   <button class="btn" data-audio="audio/c11_nr6.mp3" onclick="playAudio(this)">▶ 6</button>
+  </div>
+  <div class="row">
+   <button class="btn" data-audio="audio/c11_nr7.mp3" onclick="playAudio(this)">▶ 7</button>
+   <button class="btn" data-audio="audio/c11_nr8.mp3" onclick="playAudio(this)">▶ 8</button>
+   <button class="btn" data-audio="audio/c11_nr9.mp3" onclick="playAudio(this)">▶ 9</button>
+  </div>
+  <div class="row"><button class="btn" data-audio="audio/c11_nr10.mp3" onclick="playAudio(this)">▶ 10</button></div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="conversation">
+ <div class="bg" data-img="photos/phone_call.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">Real-Life Conversation · the auditor wants numbers</div>
+  <div class="think">Sarah has a clipboard and is filling in figures as you speak.</div>
+  <div class="row"><button class="btn" data-audio="audio/c11_sarah1.mp3" onclick="playAudio(this)">🔊 What time does your shift start?</button></div>
+  <div class="row"><button class="btn" data-audio="audio/c11_sarah2.mp3" onclick="playAudio(this)">🔊 How many units do you ship per shift?</button></div>
+  <div class="row"><button class="btn" data-audio="audio/c11_sarah3.mp3" onclick="playAudio(this)">🔊 And how many people are on your team?</button></div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Answer key — open only if you stall</button>
+  <div class="keyBox">
+   <b>Sarah:</b> What time does your shift start?<br>
+   <b>You:</b> It starts at six a.m. and finishes at two p.m.<br>
+   <b>Sarah:</b> How many units do you ship per shift?<br>
+   <b>You:</b> We ship about 200 units.<br>
+   <b>Sarah:</b> And how many people are on your team?<br>
+   <b>You:</b> There are about ten people, and we're usually on time.
+  </div>
+  <div class="es">Say it better: not "a little late" — "twenty minutes late". Not "good numbers" — "ninety-four percent on time".</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="conversation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Comprehension</div>
+  <div class="think">1. What are your shift hours?<br><br>2. How many units does the team ship per shift?</div>
+  <div class="es">Answer both out loud, in full sentences.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="homework">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Homework</div>
+  <div class="sent" style="text-align:left">
+   1. 🔢 Write your real numbers in full sentences: shift hours, team size, units/day, % on time.<br><br>
+   2. 👂 Record yourself saying 13, 30, 14, 40, 15, 50 — play it back. Can you tell them apart?<br><br>
+   3. 🤖 ChatGPT voice: let it ask 5 "how many / what time" questions; answer fast.
+  </div>
+  <button class="btn go" data-next>Done for today</button>
+ </div></div>
+
+</div>
+
 <!-- ==================== VOWELS COURSE — CLASS 1 ==================== -->
 <div class="classBlock" data-class="v1">
 
@@ -1163,7 +1470,7 @@ function playAudio(btn){
 // Screens are scoped to the active classBlock only — nav can never leak between classes.
 let screens = [];
 let idx = 0;
-let currentClass = 10;
+let currentClass = 11;
 
 function loadScreens(classNum){
   document.querySelectorAll('.classBlock').forEach(b=>{
@@ -1202,6 +1509,6 @@ document.querySelectorAll('.bg[data-img]').forEach(el=>{
   const visualParent = el.closest('.visual');
   if(visualParent){ visualParent.setAttribute('data-img-src', src); }
 });
-loadScreens(10);
+loadScreens(11);
 </script>
 </body></html>
