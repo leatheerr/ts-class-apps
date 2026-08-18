@@ -1169,6 +1169,9 @@ function loadScreens(classNum){
   document.querySelectorAll('.classBlock').forEach(b=>{
     b.style.display = (b.getAttribute('data-class') === String(classNum)) ? '' : 'none';
   });
+  // clear stale .on from the class we're leaving — the block is hidden either way,
+  // but leaving it set means two screens claim to be active at once
+  document.querySelectorAll('.scr.on').forEach(s=>s.classList.remove('on'));
   screens = [...document.querySelectorAll('.classBlock[data-class="'+classNum+'"] .scr')];
   currentClass = classNum;
   idx = 0;
