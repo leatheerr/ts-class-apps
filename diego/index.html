@@ -3,14 +3,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Teacher's Station — Diego</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 :root{--ob:#0D0014;--pu:#440249;--go:#FFBE00;--ink:#F4EEF6}
 html,body{height:100%;overflow:hidden;background:var(--ob);color:var(--ink);
  font-family:'Lora',Georgia,'Times New Roman',serif;font-size:18px}
 h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
-#bar{position:fixed;top:44px;left:0;height:4px;background:rgba(255,190,0,.35);
+#bar{position:fixed;top:44px;left:0;height:4px;background:rgba(255,190,0,.7);
  width:0;transition:width .35s ease;z-index:50}
 
 #classHeader{position:fixed;top:0;left:0;right:0;height:44px;background:var(--pu);
@@ -57,7 +57,7 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 .btn:active{transform:scale(.985)}
 .btn.go{background:var(--go);color:#2D0130;font-weight:600}
 .row{display:flex;gap:12px;width:100%}
-.credits{font-size:11px;line-height:1.6;color:rgba(244,238,246,.45);text-align:center}
+.credits{font-size:11px;line-height:1.6;color:rgba(244,238,246,.6);text-align:center}
 .big{font-size:26px;text-align:center;font-family:'Poppins',system-ui,sans-serif}
 .plain{position:absolute;inset:0;background:radial-gradient(120% 100% at 50% 100%,#3a0140 0%,#0D0014 70%)}
 .think{font-size:22px;line-height:1.5;text-align:center;color:var(--ink)}
@@ -67,8 +67,8 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
  font-size:15px;line-height:1.7;color:rgba(244,238,246,.85);display:none;text-align:left}
 .keyBox.show{display:block}
 .keyBox b{color:var(--go)}
-.badge{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:rgba(244,238,246,.4);font-family:'Poppins',system-ui,sans-serif}
-.navBtn{position:fixed;top:56px;width:42px;height:42px;border-radius:50%;
+.badge{font-size:12px;letter-spacing:1px;text-transform:uppercase;color:rgba(244,238,246,.6);font-family:'Poppins',system-ui,sans-serif}
+.navBtn{position:fixed;top:56px;width:44px;height:44px;border-radius:50%;
  background:rgba(244,238,246,.10);border:none;color:var(--ink);font-size:22px;
  line-height:1;display:grid;place-items:center;z-index:60}
 .navBtn.left{left:14px}
@@ -93,7 +93,7 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 /* Scramble / word-order */
 .scrambleRow{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;width:100%;min-height:20px}
 .chip{background:rgba(255,255,255,.08);border:1.5px solid rgba(244,238,246,.2);border-radius:10px;
- padding:8px 14px;font-family:'Poppins',system-ui,sans-serif;font-size:15px;color:var(--ink)}
+ padding:8px 14px;font-family:'Poppins',system-ui,sans-serif;font-size:15px;color:var(--ink);min-height:44px;display:inline-flex;align-items:center}
 .scrambleBank .chip{cursor:pointer}
 .scrambleBank .chip.used{opacity:.25;pointer-events:none}
 .scrambleBuilt{border-bottom:2px solid rgba(244,238,246,.18);padding-bottom:10px;min-height:44px}
@@ -118,6 +118,10 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 .checkList div{font-size:14px;color:rgba(244,238,246,.85);display:flex;gap:8px;align-items:flex-start}
 .checkList b{color:var(--go)}
 .homeItem{font-size:16px;text-align:left;line-height:1.5;color:rgba(244,238,246,.9);width:100%}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;scroll-behavior:auto!important}}
+.modeToggle{position:absolute;top:56px;right:14px;z-index:65;background:rgba(244,238,246,.12);
+ border:none;color:var(--ink);font-family:'Poppins',system-ui,sans-serif;font-size:11px;font-weight:600;
+ padding:7px 12px;border-radius:20px;display:flex;align-items:center;gap:5px}
 </style></head>
 <body>
 
@@ -383,7 +387,7 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 <div class="scr" data-t="recognition" data-word="1">
  <div class="visual photo" data-visual><div class="bg" data-img="photos/c25_rain_site.jpg"></div><div class="veil"></div></div>
- <button class="modeToggle" onclick="toggleVisual(this)">🎞 Movimiento</button>
+ <button class="modeToggle" onclick="toggleVisual(this)">🎞 Motion</button>
  <div class="stack">
   <div class="badge">Vocabulary · Conditions</div>
   <button class="audio" data-audio="audio/c25_word_freezing.mp3" onclick="playAudio(this)">🔊</button>
@@ -541,7 +545,7 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
  <div class="stack">
   <div class="badge">Meet Fix</div>
   <div class="think" style="color:rgba(244,238,246,.5);text-decoration:line-through;text-decoration-color:rgba(255,100,100,.75)">"I was eat."</div>
-  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Toca para corregir</button>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Tap to fix</button>
   <div class="keyBox show" style="text-align:center">
    <div class="pbPhrase">"I was eating." / "I ate."</div>
    <div style="margin-top:10px;font-size:13px;color:rgba(244,238,246,.6)"><b style="color:var(--go)">was</b> is never followed by a bare verb.</div>
