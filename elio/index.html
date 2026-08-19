@@ -3,14 +3,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Teacher's Station — Elio</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 :root{--ob:#0D0014;--pu:#440249;--go:#FFBE00;--ink:#F4EEF6}
 html,body{height:100%;overflow:hidden;background:var(--ob);color:var(--ink);
  font-family:'Lora',Georgia,'Times New Roman',serif;font-size:18px}
 h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
-#bar{position:fixed;top:44px;left:0;height:4px;background:rgba(255,190,0,.35);
+#bar{position:fixed;top:44px;left:0;height:4px;background:rgba(255,190,0,.7);
  width:0;transition:width .35s ease;z-index:50}
 
 /* class-index shell header */
@@ -62,7 +62,7 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
  background:var(--pu);color:var(--ink);display:flex;align-items:center;gap:14px;
  padding:0 18px;font-family:'Poppins',system-ui,sans-serif;font-size:17px}
 .mid{justify-content:center}
-.credits{font-size:11px;line-height:1.6;color:rgba(244,238,246,.45);text-align:center}
+.credits{font-size:11px;line-height:1.6;color:rgba(244,238,246,.6);text-align:center}
 .big{font-size:26px;text-align:center;font-family:'Poppins',system-ui,sans-serif}
 .plain{position:absolute;inset:0;background:radial-gradient(120% 100% at 50% 100%,#3a0140 0%,#0D0014 70%)}
 .motionStage{position:absolute;inset:0;z-index:0;background:#0D0014}
@@ -90,8 +90,8 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
  font-size:15px;line-height:1.7;color:rgba(244,238,246,.85);display:none;text-align:left}
 .keyBox.show{display:block}
 .keyBox b{color:var(--go)}
-.badge{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:rgba(244,238,246,.4);font-family:'Poppins',system-ui,sans-serif}
-.navBtn{position:fixed;top:56px;width:42px;height:42px;border-radius:50%;
+.badge{font-size:12px;letter-spacing:1px;text-transform:uppercase;color:rgba(244,238,246,.6);font-family:'Poppins',system-ui,sans-serif}
+.navBtn{position:fixed;top:56px;width:44px;height:44px;border-radius:50%;
  background:rgba(244,238,246,.10);border:none;color:var(--ink);font-size:22px;
  line-height:1;display:grid;place-items:center;z-index:60}
 .navBtn.left{left:14px}
@@ -185,7 +185,7 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 <div class="scr" data-t="production" data-word="1">
  <div class="visual photo" data-visual><div class="bg" data-img="photos/electrician.jpg"></div><div class="veil"></div></div>
- <button class="modeToggle" onclick="toggleVisual(this)">🎞 Movimiento</button>
+ <button class="modeToggle" onclick="toggleVisual(this)">🎞 Motion</button>
  <div class="stack">
   <div class="badge">Vocabulary · Job Identity</div>
   <button class="audio" data-audio="audio/def_electrician.mp3" onclick="playAudio(this)">🔊</button>
@@ -225,7 +225,7 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 <div class="scr" data-t="production" data-word="4">
  <div class="visual photo" data-visual><div class="bg" data-img="photos/jobsite_crew.jpg"></div><div class="veil"></div></div>
- <button class="modeToggle" onclick="toggleVisual(this)">🎞 Movimiento</button>
+ <button class="modeToggle" onclick="toggleVisual(this)">🎞 Motion</button>
  <div class="stack">
   <div class="badge">Vocabulary · Job Identity</div>
   <button class="audio" data-audio="audio/def_crew.mp3" onclick="playAudio(this)">🔊</button>
@@ -239,7 +239,7 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 <div class="scr" data-t="production" data-word="5">
  <div class="visual photo" data-visual><div class="bg" data-img="photos/jobsite_crew.jpg"></div><div class="veil"></div></div>
- <button class="modeToggle" onclick="toggleVisual(this)">🎞 Movimiento</button>
+ <button class="modeToggle" onclick="toggleVisual(this)">🎞 Motion</button>
  <div class="stack">
   <div class="badge">Vocabulary · Job Identity</div>
   <button class="audio" data-audio="audio/def_jobsite.mp3" onclick="playAudio(this)">🔊</button>
@@ -556,12 +556,12 @@ function toggleVisual(btn){
     visual.classList.remove('photo'); visual.classList.add('motion');
     const g = motionGradients[Math.floor(Math.random()*motionGradients.length)];
     visual.innerHTML = '<div class="motionGrad" style="background:'+g+'"></div>';
-    btn.innerHTML = '📷 Foto';
+    btn.innerHTML = '📷 Photo';
   } else {
     visual.classList.remove('motion'); visual.classList.add('photo');
     const img = visual.getAttribute('data-img-src');
     visual.innerHTML = '<div class="bg" style="background-image:url(\''+img+'\')"></div><div class="veil"></div>';
-    btn.innerHTML = '🎞 Movimiento';
+    btn.innerHTML = '🎞 Motion';
   }
 }
 function playAudio(btn){
