@@ -127,11 +127,12 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 <div id="classHeader">
   <span class="brand">TEACHER'S STATION</span>
-  <button id="classSelect" onclick="toggleMenu()">Class 25 ▾</button>
+  <button id="classSelect" onclick="toggleMenu()">Class 26 ▾</button>
 </div>
 <div id="classMenu">
   <div class="item" onclick="selectClass(24)">Class 24: Phase 1 Final Assessment <span>✓</span></div>
-  <div class="item active" onclick="selectClass(25)">Class 25: Setting the Scene <span>✓</span></div>
+  <div class="item" onclick="selectClass(25)">Class 25: Setting the Scene <span>✓</span></div>
+  <div class="item active" onclick="selectClass(26)">Class 26: Running the Investigation <span>✓</span></div>
 </div>
 
 <div id="bar"></div>
@@ -637,6 +638,347 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 </div>
 
+<div class="classBlock" data-class="26">
+
+<div class="scr" data-t="open">
+ <div class="bg" data-img="photos/investigation_scene.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="cue">Class 26 · Reversed Interview</div>
+  <div class="big">Running the Investigation — you ask the questions</div>
+  <div class="es" style="font-size:16px;line-height:1.5;color:rgba(244,238,246,.85)">By the end of this class, you can find out what happened by asking the right past-continuous questions — the way a foreman does when he arrives after the fact.</div>
+  <button class="btn go" data-next>Begin</button>
+ </div></div>
+
+<div class="scr" data-t="warmup">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Fast-Speech Lab · 1 of 4</div>
+  <button class="audio" data-audio="audio/ear1.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="think">Listen. Real, fast foreman speech.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">What did he say?</button>
+  <div class="keyBox">"Wuzzee workin' on the second floor?" → <b>Was he working on the second floor?</b></div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="warmup">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Fast-Speech Lab · 2 of 4</div>
+  <button class="audio" data-audio="audio/ear2.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="think">Listen again.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">What did he say?</button>
+  <div class="keyBox">"Weren'tcha supposed to call?" → <b>Weren't you supposed to call?</b></div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="warmup">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Fast-Speech Lab · 3 of 4</div>
+  <button class="audio" data-audio="audio/ear3.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="think">Listen again.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">What did he say?</button>
+  <div class="keyBox">"What were they doin' up there?" → <b>What were they doing up there?</b></div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="warmup">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Fast-Speech Lab · 4 of 4</div>
+  <button class="audio" data-audio="audio/ear4.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="think">Listen again.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">What did he say?</button>
+  <div class="keyBox">"Wuz anybody with ya?" → <b>Was anybody with you?</b><br><span style="font-size:13px;opacity:.7">Target: Was/Were reduced almost to nothing at the front of a question.</span></div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Warm-Up · 1 of 3</div>
+  <div class="think">When something goes wrong, what's the first question a good foreman asks? Why that one?</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Warm-Up · 2 of 3</div>
+  <div class="think">Is it better to ask "Why did you do that?" or "What were you trying to do?" — what's the difference in how it lands?</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Warm-Up · 3 of 3</div>
+  <div class="think">Think of a time nobody asked you what happened. How did that feel?</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="recognition" data-word="1">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Vocabulary · Investigation</div>
+  <button class="audio" data-audio="audio/word_holdup.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="sent">"Something stopping the job from moving forward"</div>
+  <div class="dots"><div class="dot lit"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="es">Say the word out loud, then reveal</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>hold-up</b></div>
+  <button class="btn go" data-next>Next word</button>
+ </div></div>
+
+<div class="scr" data-t="recognition" data-word="2">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Vocabulary · Investigation</div>
+  <button class="audio" data-audio="audio/word_slackingoff.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="sent">"Not working when you're supposed to be"</div>
+  <div class="dots"><div class="dot"></div><div class="dot lit"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="es">Say the word out loud, then reveal</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>slacking off</b></div>
+  <button class="btn go" data-next>Next word</button>
+ </div></div>
+
+<div class="scr" data-t="recognition" data-word="3">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Vocabulary · Investigation</div>
+  <button class="audio" data-audio="audio/word_coveringfor.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="sent">"Doing someone else's part of the job for them"</div>
+  <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot lit"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="es">Say the word out loud, then reveal</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>covering for</b></div>
+  <button class="btn go" data-next>Next word</button>
+ </div></div>
+
+<div class="scr" data-t="recognition" data-word="4">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Vocabulary · Investigation</div>
+  <button class="audio" data-audio="audio/word_standingaround.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="sent">"Not doing anything, just there"</div>
+  <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot lit"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="es">Say the word out loud, then reveal</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>standing around</b></div>
+  <button class="btn go" data-next>Next word</button>
+ </div></div>
+
+<div class="scr" data-t="recognition" data-word="5">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Vocabulary · Investigation</div>
+  <button class="audio" data-audio="audio/word_waitingon.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="sent">"Stuck until something else arrives or finishes"</div>
+  <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot lit"></div><div class="dot"></div></div>
+  <div class="es">Say the word out loud, then reveal</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>waiting on</b></div>
+  <button class="btn go" data-next>Next word</button>
+ </div></div>
+
+<div class="scr" data-t="recognition" data-word="6">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Vocabulary · Investigation</div>
+  <button class="audio" data-audio="audio/word_signoff.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="sent">"Officially approve it before it's done"</div>
+  <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot lit"></div></div>
+  <div class="es">Say the word out loud, then reveal</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>sign off</b></div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Question Builder · 1 of 2</div>
+  <div class="think">Fact: "The unit sat outside all night." What question would have uncovered it?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>Where were you storing the units?</b></div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Question Builder · 2 of 2</div>
+  <div class="think">Fact: "Two guys left early." What question would have uncovered it?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>Who was working after four?</b></div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="meetfix">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Fix The Broken Question · 1 of 2</div>
+  <div class="think" style="color:rgba(244,238,246,.5);text-decoration:line-through;text-decoration-color:rgba(255,100,100,.75)">"You was working?"</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Tap to fix</button>
+  <div class="keyBox show" style="text-align:center">
+   <div class="pbPhrase">"Were you working?"</div>
+   <div style="margin-top:10px;font-size:13px;color:rgba(244,238,246,.6)"><b style="color:var(--go)">were</b> with you/we/they — and it moves to the front.</div>
+  </div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="meetfix">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Fix The Broken Question · 2 of 2</div>
+  <div class="think" style="color:rgba(244,238,246,.5);text-decoration:line-through;text-decoration-color:rgba(255,100,100,.75)">"What they were doing?"</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Tap to fix</button>
+  <div class="keyBox show" style="text-align:center">
+   <div class="pbPhrase">"What were they doing?"</div>
+   <div style="margin-top:10px;font-size:13px;color:rgba(244,238,246,.6)">The question word never enough alone — <b style="color:var(--go)">were</b> comes right after it.</div>
+  </div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Spiral Review · Word Order</div>
+  <div class="es">Tap the pieces in order, then check your sentence:</div>
+  <div class="scramble" data-answer="It was very strange something.">
+   <div class="scrambleRow scrambleBank">
+    <button class="chip" onclick="scrambleTap(this)">very strange</button>
+    <button class="chip" onclick="scrambleTap(this)">It was</button>
+    <button class="chip" onclick="scrambleTap(this)">something</button>
+   </div>
+   <div class="scrambleRow scrambleBuilt"></div>
+   <div class="row">
+    <button class="btn" onclick="scrambleReset(this)">Reset</button>
+    <button class="btn go" onclick="scrambleCheck(this)">Check</button>
+   </div>
+   <div class="correct scrambleFeedback" style="display:none"></div>
+   <button class="btn go scrambleNext" data-next style="display:none">Continue</button>
+  </div>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="1">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 1 of 3</div>
+  <div class="think">You need to know what happened, plainly, without accusing anyone yet. What's your opening question?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">What was the deal with…?</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the CORE round</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="2">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 2 of 3</div>
+  <div class="think">Someone gives you a vague, incomplete answer. How do you ask for the full story?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">Walk me through it.</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the CORE round</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="3">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 3 of 3</div>
+  <div class="think">Something unexpected happened and you want to know how it got to that point. What do you ask?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">How'd that happen?</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the CORE round</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/investigation_scene.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">CORE · Round 1 — You Ask, Coach Answers</div>
+  <div class="think">Something went wrong on the Fairview job yesterday. Find out the full story using only questions — the coach won't volunteer anything.</div>
+  <div class="checkList">
+   <div><b>✓</b> 12+ questions, mostly Past Continuous</div>
+   <div><b>✓</b> Zero "You was…" — agreement and inversion both hold</div>
+   <div><b>✓</b> All 3 phrases used naturally</div>
+  </div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/investigation_scene.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">CORE · Round 2 — Swap, Coach Answers Fast &amp; Vague</div>
+  <div class="think">A second incident. This time the coach answers fast and vague — you have to follow up: "Walk me through it." "What was the deal with the delivery?"</div>
+  <div class="es">Reconstruct the incident accurately at the end, in your own words.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Pronunciation · Linking</div>
+  <button class="audio" data-audio="audio/pron_wereyou.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="word">Were you working?</div>
+  <div class="es">"Were you" links to /wɜrjə/ — say it out loud, then try "What were you doing" → "whad-wer-ya-doin'."</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/investigation_scene.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">Real-Life Conversation</div>
+  <div class="think">A crew member says a unit got damaged. Find out what happened without accusing anyone.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Only open this if you get stuck</button>
+  <div class="keyBox">
+   <b>Diego:</b> Hey — what was the deal with the unit on three?<br>
+   <b>Crew:</b> It got scratched.<br>
+   <b>Diego:</b> Walk me through it. What were you doing when it happened?<br>
+   <b>Crew:</b> We were moving it with the dolly.<br>
+   <b>Diego:</b> Was anybody helping you?
+  </div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Comprehension Check</div>
+  <div class="think">What were they doing when it happened?</div>
+  <button class="btn go" data-next>Next question</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Comprehension Check</div>
+  <div class="think">Did Diego blame anyone?</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="homework">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Homework</div>
+  <div class="homeItem">1. Voice note: ask 8 past-continuous questions about a real event at work.</div>
+  <div class="homeItem">2. Ask your girlfriend about her day using "What were you doing when…?" three times.</div>
+  <div class="homeItem">3. Tracker: 3 phrases + 6 words.</div>
+  <button class="btn go" data-next>Done for today</button>
+ </div></div>
+
+<div class="scr" data-t="close">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="big">Nice work today.</div>
+  <div class="es">See you at Class 27.</div>
+  <div class="credits">Teacher's Station · The Milestone Method</div>
+ </div></div>
+
+</div>
+
 <script>
 function toggleMenu(){ document.getElementById('classMenu').classList.toggle('open'); }
 
@@ -693,6 +1035,7 @@ function loadScreens(classNum){
   document.querySelectorAll('.classBlock').forEach(b=>{
     b.style.display = (b.getAttribute('data-class') === String(classNum)) ? '' : 'none';
   });
+  document.querySelectorAll('.scr.on').forEach(s=>s.classList.remove('on'));
   screens = [...document.querySelectorAll('.classBlock[data-class="'+classNum+'"] .scr')];
   currentClass = classNum;
   idx = 0;
@@ -720,6 +1063,6 @@ document.querySelectorAll('.bg[data-img]').forEach(el=>{
   const src = el.getAttribute('data-img');
   el.style.backgroundImage = "url('" + src + "')";
 });
-loadScreens(25);
+loadScreens(26);
 </script>
 </body></html>
