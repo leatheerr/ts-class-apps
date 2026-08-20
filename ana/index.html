@@ -137,6 +137,26 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 /* word-stress marker */
 .stress{color:var(--go)}
+
+/* word-order motion: shows "do" sliding into its slot to build a question — do-support */
+.motion-wordorder{position:absolute;top:90px;left:0;right:0;display:flex;flex-direction:column;
+ align-items:center;gap:14px}
+.woRow{display:flex;gap:8px;align-items:center}
+.woTile{font-family:'Poppins',system-ui,sans-serif;font-size:17px;font-weight:600;color:var(--ink);
+ background:rgba(244,238,246,.08);border:1.5px solid rgba(244,238,246,.16);border-radius:10px;
+ padding:8px 14px}
+.woTile.slot{background:transparent;border-style:dashed;border-color:rgba(255,190,0,.4);
+ color:transparent;min-width:40px}
+.woTile.doTile{position:relative;background:rgba(255,190,0,.16);border-color:var(--go);color:var(--go);
+ animation:woSlide 3.2s ease-in-out infinite}
+.woRow.wrong .woTile{opacity:.4}
+.woRow.wrong .doTile{display:none}
+@keyframes woSlide{
+ 0%{transform:translateY(-46px);opacity:0}
+ 18%{transform:translateY(0);opacity:1}
+ 82%{transform:translateY(0);opacity:1}
+ 100%{transform:translateY(-46px);opacity:0}
+}
 @media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;scroll-behavior:auto!important}}
 </style></head>
 <body>
@@ -144,11 +164,12 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 <div id="classHeader">
   <span class="brand">TEACHER'S STATION</span>
-  <button id="classSelect" onclick="toggleMenu()">Class 2 ▾</button>
+  <button id="classSelect" onclick="toggleMenu()">Class 3 ▾</button>
 </div>
 <div id="classMenu">
   <div class="item" onclick="selectClass(1)">Class 1: Clinic — describe your role and daily routine <span>✓</span></div>
-  <div class="item active" onclick="selectClass(2)">Class 2: what you do vs. what you're doing right now <span>✓</span></div>
+  <div class="item" onclick="selectClass(2)">Class 2: what you do vs. what you're doing right now <span>✓</span></div>
+  <div class="item active" onclick="selectClass(3)">Class 3: Patient intake — asking name and date of birth correctly <span>✓</span></div>
 </div>
 
 <div id="bar"></div>
@@ -759,6 +780,335 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
   <div class="credits">Teacher's Station · The Milestone Method</div>
  </div></div>
 </div>
+
+<div class="classBlock" data-class="3">
+<div class="scr" data-t="open">
+ <div class="bg" data-img="photos/clinic_reception.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="cue">Class 3</div>
+  <div class="big">Patient intake: asking name and date of birth correctly, every time</div>
+  <div class="es" style="font-size:16px;line-height:1.5;color:rgba(244,238,246,.85)">By the end of this class, you can run a full patient intake — asking for name, date of birth and insurance — with natural questions every time, no "what you" slips.</div>
+  <button class="btn go" data-next>Begin</button>
+ </div></div>
+
+<div class="scr" data-t="ritual">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Before We Start</div>
+  <div class="think">This time, you're the one asking the questions — I'm the patient. Ready to switch seats?</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Critical Thinking · 1 of 3</div>
+  <div class="think">What's the very first question you ask a new patient when they walk up to your desk?</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Critical Thinking · 2 of 3</div>
+  <div class="think">What do you do if a patient's insurance card doesn't match what's in the system?</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Critical Thinking · 3 of 3</div>
+  <div class="think">What's the most important thing to get right during intake, and why?</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="meetfix">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Fossil Drill · 1 of 2</div>
+  <div class="cue">Answer fast, no thinking time</div>
+  <div class="sent">"Two child—?"</div>
+  <div class="es">Say the whole word, correctly, right away.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>children</b><br>Already plural — no extra -s. Still worth checking, from Class 1 &amp; 2.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="meetfix">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Fossil Drill · 2 of 2</div>
+  <div class="cue">Answer fast, no thinking time</div>
+  <div class="sent">"How many child—?"</div>
+  <div class="es">Say the whole word, correctly, right away.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>children</b><br>Two sessions in a row with no slip — this one's fading. One more clean pass and it's retired.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="meetfix">
+ <div class="plain"></div>
+ <div class="motionStage" aria-hidden="true">
+  <div class="motion-wordorder">
+   <div class="woRow wrong">
+    <div class="woTile">What</div><div class="woTile slot">·</div><div class="woTile">you</div><div class="woTile">do</div><div class="woTile">at work?</div>
+   </div>
+   <div class="woRow">
+    <div class="woTile">What</div><div class="woTile doTile">do</div><div class="woTile">you</div><div class="woTile">do</div><div class="woTile">at work?</div>
+   </div>
+  </div>
+  <div class="veil"></div>
+ </div>
+ <div class="stack">
+  <div class="badge">Meet Fix · Question Formation</div>
+  <div class="sent">"What is your name?" · "What is your date of birth?"</div>
+  <div class="es">Last class, this was a first look. Today it's a drill: every question you ask a patient needs "do" (or "is") in the second slot — never skipped.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal the rule</button>
+  <div class="keyBox"><b>What do you do at work?</b> — not "What you do."<br><b>What is your name?</b> — not "What your name?"<br>The question word is never enough alone — it needs "do" or "is" right after it.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="meetfix">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Drill It · 1 of 3</div>
+  <div class="sent">"___ your name?"</div>
+  <div class="es">Say the full question out loud, then reveal.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>What is your name?</b></div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="meetfix">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Drill It · 2 of 3</div>
+  <div class="sent">"___ your date of birth?"</div>
+  <div class="es">Say the full question out loud, then reveal.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>What is your date of birth?</b></div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="meetfix">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Drill It · 3 of 3</div>
+  <div class="sent">"___ you have your insurance card with you?"</div>
+  <div class="es">Say the full question out loud, then reveal.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>Do you have your insurance card with you?</b></div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="production" data-word="1">
+ <div class="visual photo" data-visual><div class="bg" data-img="photos/clinic_reception.jpg"></div><div class="veil"></div></div>
+ <button class="modeToggle" onclick="toggleVisual(this)">🎞 Motion</button>
+ <div class="stack">
+  <div class="badge">Vocabulary · Say It</div>
+  <button class="audio" data-audio="audio/def_fullname.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="sent">"First name and last name together."</div>
+  <div class="dots"><div class="dot lit"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="es">Say the phrase out loud, then reveal</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>full name</b><br><button class="audio" style="width:70px;height:70px;font-size:26px;margin-top:8px" data-audio="audio/word_fullname.mp3" onclick="playAudio(this)">🔊</button></div>
+  <button class="btn go" data-next>Next word</button>
+ </div></div>
+
+<div class="scr" data-t="production" data-word="2">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Vocabulary · Say It</div>
+  <button class="audio" data-audio="audio/def_dob.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="sent">"The day, month and year someone was born."</div>
+  <div class="dots"><div class="dot"></div><div class="dot lit"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="es">Say the phrase out loud, then reveal</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>date of birth</b><br><button class="audio" style="width:70px;height:70px;font-size:26px;margin-top:8px" data-audio="audio/word_dob.mp3" onclick="playAudio(this)">🔊</button></div>
+  <button class="btn go" data-next>Next word</button>
+ </div></div>
+
+<div class="scr" data-t="production" data-word="3">
+ <div class="visual photo" data-visual><div class="bg" data-img="photos/patient_intake.jpg"></div><div class="veil"></div></div>
+ <button class="modeToggle" onclick="toggleVisual(this)">🎞 Motion</button>
+ <div class="stack">
+  <div class="badge">Vocabulary · Say It</div>
+  <button class="audio" data-audio="audio/def_followme.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="sent">"You say this to a patient when you're walking them somewhere."</div>
+  <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot lit"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="es">Say the phrase out loud, then reveal</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>follow me</b><br><button class="audio" style="width:70px;height:70px;font-size:26px;margin-top:8px" data-audio="audio/word_followme.mp3" onclick="playAudio(this)">🔊</button></div>
+  <button class="btn go" data-next>Next word</button>
+ </div></div>
+
+<div class="scr" data-t="production" data-word="4">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Vocabulary · Say It</div>
+  <button class="audio" data-audio="audio/def_haveaseat.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="sent">"You say this to invite a patient to sit down."</div>
+  <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot lit"></div><div class="dot"></div></div>
+  <div class="es">Say the phrase out loud, then reveal</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>have a seat</b><br><button class="audio" style="width:70px;height:70px;font-size:26px;margin-top:8px" data-audio="audio/word_haveaseat.mp3" onclick="playAudio(this)">🔊</button></div>
+  <button class="btn go" data-next>Next word</button>
+ </div></div>
+
+<div class="scr" data-t="production" data-word="5">
+ <div class="visual photo" data-visual><div class="bg" data-img="photos/patient_intake.jpg"></div><div class="veil"></div></div>
+ <button class="modeToggle" onclick="toggleVisual(this)">🎞 Motion</button>
+ <div class="stack">
+  <div class="badge">Vocabulary · Say It</div>
+  <button class="audio" data-audio="audio/def_insurancecard.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="sent">"The card that proves a patient's coverage."</div>
+  <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot lit"></div></div>
+  <div class="es">Say the phrase out loud, then reveal</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>insurance card</b><br><button class="audio" style="width:70px;height:70px;font-size:26px;margin-top:8px" data-audio="audio/word_insurancecard.mp3" onclick="playAudio(this)">🔊</button></div>
+  <button class="btn go" data-next>Next word</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Pronunciation · Linking</div>
+  <button class="audio" data-audio="audio/pp_careful.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="word">What... is... your... name?</div>
+  <div class="es">Careful, word-by-word — how it looks on paper. Say it this way first.</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Pronunciation · Linking</div>
+  <button class="audio" data-audio="audio/pp_linked.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="word">Whatsyour name?</div>
+  <div class="es">Natural speed, linked: "what is your" runs together into "whatsyour." Say it this way now — this is what patients will actually hear from you, and what you'll hear from native speakers.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="1">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 1 of 3</div>
+  <div class="think">You need to walk a patient from the front desk to the exam room. What do you say as you start walking?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">Right this way.</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the CORE round</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="2">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 2 of 3</div>
+  <div class="think">The system is loading slowly and the patient is waiting at your desk. What do you say to ask for patience?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">Bear with me.</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the CORE round</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="3">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 3 of 3</div>
+  <div class="think">You've finished intake and everything checks out. How do you let the patient know they're done with this step?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">You're all set.</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the CORE round</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/patient_intake.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">CORE · Round 1 — You Ask, I Answer</div>
+  <div class="think">I'm a new patient at your desk. Run the full intake: greet me, ask my full name, date of birth, and insurance card — in that order.</div>
+  <div class="es">Every question needs "do" or "is" in the right slot. Use "Right this way" and "Have a seat" somewhere too.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/patient_intake.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">CORE · Round 2 — Under The Clock</div>
+  <div class="timerRing" data-seconds="75">
+   <svg viewBox="0 0 100 100" width="96" height="96">
+    <circle cx="50" cy="50" r="44" fill="none" stroke="rgba(244,238,246,.18)" stroke-width="5"/>
+    <circle cx="50" cy="50" r="44" fill="none" stroke="#FFBE00" stroke-width="5" stroke-linecap="round"
+     class="timerArc" style="stroke-dasharray:276.5;stroke-dashoffset:0;transform:rotate(-90deg);transform-origin:50px 50px"/>
+   </svg>
+   <div class="timerNum">75</div>
+  </div>
+  <button class="btn go" onclick="timerStart(this)">Start 75s</button>
+  <div class="think">Same intake — but now the system is slow and there's a line behind me. Use "Bear with me" and "You're all set" somewhere.</div>
+  <div class="es">This is a real Monday. Keep every question correctly formed, even under pressure.</div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/patient_intake.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">Real-Life Conversation</div>
+  <div class="think">A patient arrives for their first appointment and doesn't have their insurance card handy.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Only open this if you get stuck</button>
+  <div class="keyBox">
+   <b>You:</b> Hi, what is your name, please?<br>
+   <b>Patient:</b> Maria Torres.<br>
+   <b>You:</b> Thank you. What is your date of birth?<br>
+   <b>Patient:</b> March 3rd, 1990.<br>
+   <b>You:</b> Do you have your insurance card with you?<br>
+   <b>Patient:</b> Actually, I forgot it today.<br>
+   <b>You:</b> No problem, bear with me — I'll check the system. Have a seat and I'll call you shortly.
+  </div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Comprehension Check</div>
+  <div class="think">In the dialogue, why couldn't the patient show their insurance card?</div>
+  <button class="btn go" data-next>Next question</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Comprehension Check</div>
+  <div class="think">What did the receptionist ask the patient to do while she checked the system?</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="spiral">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Quick Review · Classes 1 &amp; 2</div>
+  <div class="think">Tell me one routine thing you always do at work, and one thing that's happening right now, at this exact moment, back at the clinic.</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="homework">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Homework</div>
+  <div class="sent" style="text-align:left">1. Record a 60-second voice memo running the full intake script on an imaginary patient — name, date of birth, insurance.</div>
+  <div class="sent" style="text-align:left">2. Notice log: catch yourself starting a question without "do" or "is" this week — text Juan the exact sentence.</div>
+  <button class="btn go" data-next>Done for today</button>
+ </div></div>
+
+<div class="scr" data-t="close">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="big">Nice work today.</div>
+  <div class="es">See you at Class 4.</div>
+  <div class="credits">Teacher's Station · The Milestone Method</div>
+ </div></div>
+</div>
 </div>
 
 <script>
@@ -895,6 +1245,6 @@ document.querySelectorAll('.bg[data-img]').forEach(el=>{
   const visualParent = el.closest('.visual');
   if(visualParent){ visualParent.setAttribute('data-img-src', src); }
 });
-loadScreens(2);
+loadScreens(3);
 </script>
 </body></html>
