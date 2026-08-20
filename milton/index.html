@@ -148,19 +148,34 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 .wordList{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;width:100%}
 .wordList .chip{font-size:14px}
 .stress{color:var(--go)}
+
+/* Checkpoint / Exam container */
+.partTag{display:flex;align-items:center;gap:8px;background:rgba(244,238,246,.08);
+ border:1px solid rgba(244,238,246,.15);border-radius:100px;padding:8px 16px;
+ font-family:'Poppins',system-ui,sans-serif;font-size:12.5px;font-weight:700;color:var(--go)}
+.partDots{display:flex;gap:5px;width:100%;max-width:280px}
+.partDots .seg{flex:1;height:4px;border-radius:2px;background:rgba(244,238,246,.15)}
+.partDots .seg.lit{background:var(--go)}
+.pTitle{font-family:'Poppins',system-ui,sans-serif;font-size:22px;font-weight:700;color:var(--ink);text-align:center}
+.verdictBadge{font-family:'Poppins',system-ui,sans-serif;font-size:15px;font-weight:700;
+ letter-spacing:.5px;color:#2D0130;background:var(--go);border-radius:100px;padding:10px 22px}
+.focusList{width:100%;text-align:left;display:flex;flex-direction:column;gap:10px}
+.focusItem{font-size:15px;line-height:1.5;color:rgba(244,238,246,.88);display:flex;gap:10px}
+.focusItem b{color:var(--go);flex:none}
 @media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;scroll-behavior:auto!important}}
 </style></head>
 <body>
 
 <div id="classHeader">
   <span class="brand">TEACHER'S STATION</span>
-  <button id="classSelect" onclick="toggleMenu()">Class 11 ▾</button>
+  <button id="classSelect" onclick="toggleMenu()">Class 12 ▾</button>
 </div>
 <div id="classMenu">
   <div class="groupLabel">Main course</div>
   <div class="item" onclick="selectClass(9,'Class 9')">Class 9: right now on the floor — the live walk-through <span>✓</span></div>
   <div class="item" onclick="selectClass(10,'Class 10')">Class 10: usually vs. right now <span>✓</span></div>
-  <div class="item active" onclick="selectClass(11,'Class 11')">Class 11: schedules & numbers <span>✓</span></div>
+  <div class="item" onclick="selectClass(11,'Class 11')">Class 11: schedules & numbers <span>✓</span></div>
+  <div class="item active" onclick="selectClass(12,'Class 12')">Class 12: Mid-Point Audit Checkpoint <span>✓</span></div>
   <div class="groupLabel vow">Vowels course</div>
   <div class="item vow" onclick="selectClass('v1','Vowels 1')">Vowels 1: vowels are sounds, not letters <span>✓</span></div>
 </div>
@@ -1156,6 +1171,253 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 </div>
 
+<!-- ==================== CLASS 12 — MID-POINT AUDIT CHECKPOINT ==================== -->
+<div class="classBlock" data-class="12">
+
+<div class="scr" data-t="open">
+ <div class="bg" data-img="photos/audit_scene.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="cue">Class 12 · Mid-Point Checkpoint</div>
+  <div class="big">Prove it: survive a basic Lenovo audit in English, solo</div>
+  <div class="es" style="font-size:16px;line-height:1.5;color:rgba(244,238,246,.85)">Six weeks ago you froze on "full name." Today you answer an auditor's questions about your role, routine, and numbers — alone, no translator. This is your halfway win.</div>
+  <button class="btn go" data-next>Begin</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Warm-Up · 1 of 3</div>
+  <div class="think">You've had 11 classes. What's one thing you can say now that you couldn't in Class 1?</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Warm-Up · 2 of 3</div>
+  <div class="think">In a real audit, what would still make you nervous? Why?</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Warm-Up · 3 of 3</div>
+  <div class="think">If the auditor asks something you don't understand, what's your plan?</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="spiral">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Reach-Back · Two Classes Back (Class 10)</div>
+  <button class="audio" data-audio="audio/reach1.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="think">Using "usually" and "right now," give your own usually/right-now pair — no re-teaching, just produce it.</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="spiral">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Reach-Back · Four Classes Back (Class 8)</div>
+  <div class="think">One sentence each, work context: team · practice · online · shift · delay.</div>
+  <div class="es">Note how many come back unprompted — anything that doesn't is a Class 13 re-teach target, not a failure.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="checkpoint">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="partTag">🎯 Question 1 of 10</div>
+  <div class="partDots"><div class="seg lit"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div></div>
+  <div class="pTitle">Introduce Yourself</div>
+  <button class="audio" data-audio="audio/q1.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="es">Answer in ≤3 seconds, full sentence, no translating.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal what a solid answer sounds like</button>
+  <div class="keyBox">"Good morning — I'm Milton." (full name if asked)</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="checkpoint">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="partTag">🎯 Question 2 of 10</div>
+  <div class="partDots"><div class="seg lit"></div><div class="seg lit"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div></div>
+  <div class="pTitle">Your Role</div>
+  <button class="audio" data-audio="audio/q2.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="es">Answer in ≤3 seconds, full sentence.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal what a solid answer sounds like</button>
+  <div class="keyBox">"I check the line and I load shipments." (not "I am work")</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="checkpoint">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="partTag">🎯 Question 3 of 10</div>
+  <div class="partDots"><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div></div>
+  <div class="pTitle">Your Department</div>
+  <button class="audio" data-audio="audio/q3.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="es">Answer in ≤3 seconds, full sentence.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal what a solid answer sounds like</button>
+  <div class="keyBox">"I'm in the warehouse, shipping team."</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="checkpoint">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="partTag">🎯 Question 4 of 10</div>
+  <div class="partDots"><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div></div>
+  <div class="pTitle">Routine Check</div>
+  <button class="audio" data-audio="audio/q4.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="es">Yes/no — answer fast and clean.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal what a solid answer sounds like</button>
+  <div class="keyBox">"Yes, I do." / "No, I don't." — full, not just "yes."</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="checkpoint">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="partTag">🎯 Question 5 of 10</div>
+  <div class="partDots"><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div></div>
+  <div class="pTitle">Responsibilities</div>
+  <button class="audio" data-audio="audio/q5.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="es">Answer in ≤3 seconds, full sentence.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal what a solid answer sounds like</button>
+  <div class="keyBox">"I'm responsible for the shipments." (not "responsible of")</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="checkpoint">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="partTag">🎯 Question 6 of 10</div>
+  <div class="partDots"><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div></div>
+  <div class="pTitle">The Live Walk-Through</div>
+  <button class="audio" data-audio="audio/q6.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="es">Present continuous — what's happening right now.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal what a solid answer sounds like</button>
+  <div class="keyBox">"Right now, the team is loading a shipment." (not "the team is load")</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="checkpoint">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="partTag">🎯 Question 7 of 10</div>
+  <div class="partDots"><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div></div>
+  <div class="pTitle">Schedule &amp; Numbers</div>
+  <button class="audio" data-audio="audio/q7.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="es">Two numbers in one answer — say them clearly.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal what a solid answer sounds like</button>
+  <div class="keyBox">"My shift starts at six, and there are twelve people on my team."</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="checkpoint">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="partTag">🎯 Question 8 of 10</div>
+  <div class="partDots"><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg"></div><div class="seg"></div></div>
+  <div class="pTitle">Time On The Job</div>
+  <button class="audio" data-audio="audio/q8.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="es">Receptive only — a number answer is a pass. The full past form arrives in Class 17.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal what a solid answer sounds like</button>
+  <div class="keyBox">"Seven years." — that's a pass at this stage.</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="checkpoint">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="partTag">🔥 Curveball 1 of 2</div>
+  <div class="partDots"><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg"></div></div>
+  <div class="pTitle">Unscripted — Repeat A Number</div>
+  <button class="audio" data-audio="audio/cv1.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="es">Real auditors don't follow a list. Can you repeat a number clearly under doubt?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal what a solid answer sounds like</button>
+  <div class="keyBox">"Twelve. One-two." — say it, then spell the digits if needed.</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="checkpoint">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="partTag">🔥 Curveball 2 of 2</div>
+  <div class="partDots"><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div></div>
+  <div class="pTitle">Unscripted — Usually vs. Now, Under Pressure</div>
+  <button class="audio" data-audio="audio/cv2.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="es">Last question. Answer confidently — voice falling at the end, not rising.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal what a solid answer sounds like</button>
+  <div class="keyBox">"Yes, we're on time today." / "Not today — we're a little behind." Either is fine if it's a full sentence.</div>
+  <button class="btn go" data-next>Finish the checkpoint</button>
+ </div></div>
+
+<div class="scr" data-t="verdict">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Verdict</div>
+  <div class="verdictBadge">Halfway Point Reached</div>
+  <div class="think" style="font-size:18px">Six weeks ago you froze on "full name." Today you answered a full mock audit, question by question, mostly in English on your own.</div>
+  <div class="es">Keep an ear on these going into the second half:</div>
+  <div class="focusList">
+   <div class="focusItem"><b>①</b> "I <b>am</b> work" — check yourself: is it a routine (no "am"), or happening right now ("am" + -ing)?</div>
+   <div class="focusItem"><b>②</b> A phrase instead of silence — "Let me check" or "Can you repeat?" the moment you freeze, before you guess.</div>
+   <div class="focusItem"><b>③</b> Voice falling ↘ at the end of an answer — not rising, like a question.</div>
+  </div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Reading 3 · Remote Work &amp; Technology</div>
+  <button class="audio" data-audio="audio/reading3.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="sent" style="text-align:left">Technology is changing how we work. Many people now work from home using computers and smartphones. While this is convenient, some people miss talking to their coworkers face-to-face. Finding a balance is key to a happy life.</div>
+  <div class="es">Listen once, then read it out loud yourself.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Comprehension Check</div>
+  <div class="think">How do many people work now?</div>
+  <button class="btn go" data-next>Next question</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Comprehension Check</div>
+  <div class="think">What do some people miss? Could your job be done from home — why not?</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="homework">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Homework</div>
+  <div class="sent" style="text-align:left">
+   1. 🎙️ Record your whole mock audit (all 8 answers) and listen back once.<br><br>
+   2. 🗂️ Re-drill only the words that didn't come back in the reach-back.<br><br>
+   3. 🤖 ChatGPT voice: ask it to be a Lenovo auditor and ask you 8 questions.
+  </div>
+  <button class="btn go" data-next>Done for today</button>
+ </div></div>
+
+<div class="scr" data-t="close">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="big">Halfway there, Milton.</div>
+  <div class="es">See you at Class 13.</div>
+  <div class="credits">Teacher's Station · The Milestone Method</div>
+ </div></div>
+
+</div>
+
 <!-- ==================== VOWELS COURSE — CLASS 1 ==================== -->
 <div class="classBlock" data-class="v1">
 
@@ -1471,7 +1733,7 @@ function playAudio(btn){
 // Screens are scoped to the active classBlock only — nav can never leak between classes.
 let screens = [];
 let idx = 0;
-let currentClass = 11;
+let currentClass = 12;
 
 function loadScreens(classNum){
   document.querySelectorAll('.classBlock').forEach(b=>{
@@ -1510,6 +1772,6 @@ document.querySelectorAll('.bg[data-img]').forEach(el=>{
   const visualParent = el.closest('.visual');
   if(visualParent){ visualParent.setAttribute('data-img-src', src); }
 });
-loadScreens(11);
+loadScreens(12);
 </script>
 </body></html>
