@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Teacher's Station — Alberto</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{--ob:#0D0014;--pu:#440249;--go:#FFBE00;--ink:#F4EEF6}
+html{height:100%;background:#000}
+body{height:100%;margin:0;overflow:hidden;background:#000;color:var(--ink);
+ font-family:'Lora',Georgia,'Times New Roman',serif;font-size:18px;
+ display:flex;justify-content:center;align-items:stretch}
+#appRoot{position:relative;width:100%;max-width:480px;height:100%;overflow:hidden;
+ background:var(--ob);box-shadow:0 0 0 1px rgba(255,255,255,.06),0 30px 90px -20px rgba(0,0,0,.9)}
+h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
+#bar{position:absolute;top:44px;left:0;height:4px;background:rgba(255,190,0,.7);
+ width:0;transition:width .35s ease;z-index:50}
+#classHeader{position:absolute;top:0;left:0;right:0;height:44px;background:var(--pu);
+ display:flex;align-items:center;justify-content:space-between;padding:0 14px;z-index:80;
+ font-family:'Poppins',system-ui,sans-serif;box-shadow:0 2px 8px rgba(0,0,0,.3)}
+#classHeader .brand{font-size:10px;letter-spacing:1.5px;color:rgba(244,238,246,.6);font-weight:600}
+#classSelect{background:rgba(244,238,246,.1);border:none;color:var(--ink);font-family:inherit;
+ font-size:13px;font-weight:600;padding:6px 10px;border-radius:8px;display:flex;align-items:center;gap:6px}
+#classMenu{position:absolute;top:44px;left:0;right:0;background:var(--pu);z-index:79;
+ max-height:0;overflow:hidden;transition:max-height .25s ease;box-shadow:0 8px 16px rgba(0,0,0,.4)}
+#classMenu.open{max-height:260px;overflow-y:auto}
+#classMenu .item{padding:12px 16px;font-size:13px;border-top:1px solid rgba(244,238,246,.08);
+ display:flex;justify-content:space-between;align-items:center}
+#classMenu .item.active{background:rgba(255,190,0,.12);color:var(--go);font-weight:600}
+.scr{position:absolute;inset:0;top:44px;display:none;flex-direction:column;align-items:center;
+ justify-content:flex-end;overflow:hidden}
+.scr.on{display:flex}
+.bg{position:absolute;inset:0;background-size:cover;background-position:center;z-index:0}
+.veil{position:absolute;inset:0;z-index:1;
+ background:linear-gradient(180deg,rgba(13,0,20,.35) 0%,rgba(13,0,20,.55) 45%,rgba(13,0,20,.94) 100%)}
+.stack{position:relative;z-index:2;width:100%;max-width:520px;padding:24px 22px 34px;
+ display:flex;flex-direction:column;align-items:center;gap:18px}
+.audio{width:112px;height:112px;border-radius:50%;border:none;background:var(--go);
+ color:#2D0130;font-size:44px;line-height:1;display:grid;place-items:center;
+ box-shadow:0 0 0 0 rgba(255,190,0,.55);animation:pulse 2.4s infinite}
+.audio:active{transform:scale(.94)}
+.audio.done{animation:none;background:rgba(255,190,0,.22);color:var(--go)}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,190,0,.5)}70%{box-shadow:0 0 0 26px rgba(255,190,0,0)}100%{box-shadow:0 0 0 0 rgba(255,190,0,0)}}
+.dots{display:flex;gap:14px}
+.dot{width:16px;height:16px;border-radius:50%;background:rgba(244,238,246,.2)}
+.dot.lit{background:var(--go)}
+.word{font-family:'Poppins',system-ui,sans-serif;font-size:34px;font-weight:600;
+ letter-spacing:.5px;text-align:center}
+.es{font-size:15px;color:rgba(244,238,246,.62);font-style:italic;text-align:center}
+.sent{font-size:20px;text-align:center;line-height:1.5;color:rgba(244,238,246,.92)}
+.cue{font-size:13px;letter-spacing:2px;text-transform:uppercase;
+ color:rgba(244,238,246,.5);font-family:'Poppins',system-ui,sans-serif}
+.btn{width:100%;min-height:64px;border:none;border-radius:14px;background:var(--pu);
+ color:var(--ink);font-family:'Poppins',system-ui,sans-serif;font-size:18px;
+ font-weight:500;padding:16px}
+.btn:active{transform:scale(.985)}
+.btn.go{background:var(--go);color:#2D0130;font-weight:600}
+.row{display:flex;gap:12px;width:100%}
+.opt{width:100%;min-height:68px;border-radius:14px;border:2px solid transparent;
+ background:var(--pu);color:var(--ink);display:flex;align-items:center;gap:14px;
+ padding:0 18px;font-family:'Poppins',system-ui,sans-serif;font-size:17px}
+.mid{justify-content:center}
+.credits{font-size:11px;line-height:1.6;color:rgba(244,238,246,.6);text-align:center}
+.big{font-size:26px;text-align:center;font-family:'Poppins',system-ui,sans-serif}
+.plain{position:absolute;inset:0;background:radial-gradient(120% 100% at 50% 100%,#3a0140 0%,#0D0014 70%)}
+.motionStage{position:absolute;inset:0;z-index:0;background:#0D0014}
+.frameCard{background:rgba(255,255,255,.05);border:1px solid rgba(244,238,246,.14);border-radius:14px;
+ padding:18px 16px;display:flex;flex-direction:column;gap:6px;align-items:center;width:100%}
+.frameSentence{font-family:'Poppins',system-ui,sans-serif;font-size:19px;font-weight:600;text-align:center;color:var(--ink);line-height:1.5}
+.frameHint{font-size:13px;color:rgba(244,238,246,.5);font-family:'Lora',Georgia,serif;font-style:italic}
+.think{font-size:22px;line-height:1.5;text-align:center;color:var(--ink)}
+.toggleBtn{width:100%;min-height:52px;border-radius:12px;border:1.5px dashed rgba(255,190,0,.5);
+ background:transparent;color:var(--go);font-family:'Poppins',system-ui,sans-serif;font-size:14px;font-weight:600}
+.keyBox{width:100%;background:rgba(255,255,255,.04);border-radius:12px;padding:14px 16px;
+ font-size:15px;line-height:1.7;color:rgba(244,238,246,.85);display:none;text-align:left}
+.keyBox.show{display:block}
+.keyBox b{color:var(--go)}
+.badge{font-size:12px;letter-spacing:1px;text-transform:uppercase;color:rgba(244,238,246,.6);font-family:'Poppins',system-ui,sans-serif}
+.navBtn{position:absolute;top:56px;width:44px;height:44px;border-radius:50%;
+ background:rgba(244,238,246,.10);border:none;color:var(--ink);font-size:22px;
+ line-height:1;display:grid;place-items:center;z-index:60}
+.navBtn.left{left:14px}
+.navBtn.right{right:14px}
+.navBtn[disabled]{opacity:.2}
+.navBtn:active{transform:scale(.92)}
+.visual{position:absolute;inset:0;z-index:0}
+.visual .bg{position:absolute;inset:0}
+.motionGrad{position:absolute;inset:0}
+.modeToggle{position:absolute;top:56px;right:14px;z-index:65;background:rgba(244,238,246,.12);
+ border:none;color:var(--ink);font-family:'Poppins',system-ui,sans-serif;font-size:11px;font-weight:600;
+ padding:7px 12px;border-radius:20px;display:flex;align-items:center;gap:5px}
+.pbPhrase{font-family:'Poppins',system-ui,sans-serif;font-size:28px;font-weight:600;text-align:center;color:var(--go)}
+.forceUse{display:flex;align-items:center;gap:10px;width:100%;padding:12px 4px;font-size:14px;color:rgba(244,238,246,.8)}
+.forceUse input[type=checkbox]{appearance:none;width:22px;height:22px;border:2px solid rgba(244,238,246,.4);
+ border-radius:6px;flex:none;position:relative;background:transparent}
+.forceUse input[type=checkbox]:checked{background:var(--go);border-color:var(--go)}
+.forceUse input[type=checkbox]:checked::after{content:"\2713";position:absolute;inset:0;display:flex;
+ align-items:center;justify-content:center;font-weight:900;color:#2D0130;font-size:14px}
+/* countdown timer */
+.timerRing{position:relative;width:104px;height:104px}
+.timerRing svg{transform:rotate(-90deg)}
+.timerNum{position:absolute;inset:0;display:grid;place-items:center;
+ font-family:'Poppins',system-ui,sans-serif;font-size:32px;font-weight:700;color:var(--go)}
+.timerNum.warn{color:#E8837B}
+.timerArc{transition:stroke-dashoffset 1s linear}
+/* word scramble */
+.scramble{width:100%;display:flex;flex-direction:column;gap:12px;align-items:center}
+.scrambleBank,.scrambleBuilt{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;width:100%}
+.scrambleBuilt{min-height:52px;border:1.5px dashed rgba(244,238,246,.22);border-radius:12px;padding:10px}
+.chip{border:none;border-radius:10px;background:var(--pu);color:var(--ink);
+ font-family:'Poppins',system-ui,sans-serif;font-size:16px;padding:10px 14px}
+.chip.used{opacity:.25}
+.scrambleFeedback{display:none;font-family:'Poppins',system-ui,sans-serif;font-size:16px;text-align:center}
+.scrambleNext{display:none}
+/* concept motion: obligation ladder */
+.motion-ladder{position:absolute;top:30px;left:0;right:0;display:flex;align-items:center;justify-content:center}
+.ladderBar{transform-origin:left center;transform:scaleX(0);animation:ladderGrow 4.2s ease-in-out infinite}
+.ladderBar.b1{animation-delay:0s}.ladderBar.b2{animation-delay:.45s}.ladderBar.b3{animation-delay:.9s}
+@keyframes ladderGrow{0%{transform:scaleX(0);opacity:0}14%{transform:scaleX(1);opacity:1}72%{transform:scaleX(1);opacity:1}88%{opacity:0}100%{transform:scaleX(0);opacity:0}}
+@media (prefers-reduced-motion: reduce){.ladderBar{animation:none;transform:scaleX(1);opacity:.8}}
+#emptyState{position:absolute;inset:0;top:44px;display:none;flex-direction:column;align-items:center;
+ justify-content:center;gap:14px;padding:24px;text-align:center}
+#emptyState.on{display:flex}
+</style></head>
+<body>
+<div id="appRoot">
+
+<div id="classHeader">
+  <span class="brand">TEACHER'S STATION</span>
+  <button id="classSelect" onclick="toggleMenu()">Class 25 ▾</button>
+</div>
+<div id="classMenu">
+  <div class="item active" onclick="selectClass(25)">Class 25: Giving Advice <span>✓</span></div>
+</div>
+
+<div id="bar"></div>
+<button class="navBtn left" data-navback disabled>&#8249;</button>
+<button class="navBtn right" data-navfwd>&#8250;</button>
+
+<div id="emptyState">
+  <div class="big">No class unlocked yet.</div>
+  <div class="es">It'll appear here as soon as it's marked Done.</div>
+</div>
+
+<!-- ================= CLASS 25 ================= -->
+<div class="classBlock" data-class="25">
+
+<div class="scr" data-t="open">
+ <div class="bg" data-img="photos/consultant_meeting.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="cue">Class 25</div>
+  <div class="big">Advising on safety protocol updates: use modals for advice to recommend corrective actions</div>
+  <div class="es" style="font-size:16px;line-height:1.5;color:rgba(244,238,246,.85)">By the end of this class, you can give sharp professional advice on a safety problem — and defend it when someone pushes back.</div>
+  <button class="btn go" data-next>Begin</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Ear Sprint · 1 of 3</div>
+  <button class="audio" data-audio="audio/pp_shoulda.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="es">Listen once. Write what you hear, then say it back with the same rhythm.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>"You shoulda told me sooner."</b><br>shoulda = should have</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Ear Sprint · 2 of 3</div>
+  <button class="audio" data-audio="audio/pp_oughta.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="es">Listen once. Write what you hear, then say it back.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>"They oughta run a second audit."</b><br>oughta = ought to</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Ear Sprint · 3 of 3</div>
+  <button class="audio" data-audio="audio/pp_wedbetter.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="es">Listen once. Write what you hear, then say it back.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>"We'd better fix that before Friday."</b><br>we'd better = a warning, not just advice</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Warm-Up · Bad Advice Only · 1 of 3</div>
+  <div class="think">A batch failed QC the day before shipment.</div>
+  <div class="es">First give the WORST possible advice out loud. Then give the good version — with "should" or "ought to."</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Warm-Up · Bad Advice Only · 2 of 3</div>
+  <div class="think">A supplier sent expired certificates.</div>
+  <div class="es">Worst advice first. Then the real one.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Warm-Up · Bad Advice Only · 3 of 3</div>
+  <div class="think">Your boss copied the health authority on an angry email.</div>
+  <div class="es">Worst advice first. Then the real one.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="meetfix">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Meet Fix</div>
+  <div class="cue">Fix it fast, out loud</div>
+  <div class="sent">"You should to upgrade the system."</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>"You should upgrade the system."</b><br>should + verb — no "to".<br>But: <b>ought TO</b> upgrade — that one keeps it.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="frame">
+ <div class="visual photo" data-visual><div class="bg" data-img="photos/boardroom.jpg"></div><div class="veil"></div></div>
+ <button class="modeToggle" onclick="toggleVisual(this)">🎞 Motion</button>
+ <div class="stack">
+  <div class="badge">Work Out The Rule</div>
+  <div class="frameCard">
+   <div class="frameSentence">"You <b style="color:var(--go)">should</b> upgrade the SOP."</div>
+   <div class="frameHint">normal advice</div>
+  </div>
+  <div class="frameCard">
+   <div class="frameSentence">"We <b style="color:var(--go)">ought to</b> notify the authority."</div>
+   <div class="frameHint">the same, but more formal</div>
+  </div>
+  <div class="frameCard">
+   <div class="frameSentence">"We'<b style="color:var(--go)">d better</b> fix it before the audit."</div>
+   <div class="frameHint">a warning — there's a consequence</div>
+  </div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="production" data-word="1">
+ <div class="visual photo" data-visual><div class="bg" data-img="photos/cosmetics_lab.jpg"></div><div class="veil"></div></div>
+ <button class="modeToggle" onclick="toggleVisual(this)">🎞 Motion</button>
+ <div class="stack">
+  <div class="badge">Vocabulary · Corrective Actions</div>
+  <button class="audio" data-audio="audio/def_suggest.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="sent">"To offer an idea or a plan for someone to consider."</div>
+  <div class="dots"><div class="dot lit"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="es">Say the word out loud, then reveal</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>suggest</b><br><button class="audio" style="width:70px;height:70px;font-size:26px;margin-top:8px" data-audio="audio/word_suggest.mp3" onclick="playAudio(this)">🔊</button></div>
+  <button class="btn go" data-next>Next word</button>
+ </div></div>
+
+<div class="scr" data-t="production" data-word="2">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Vocabulary · Corrective Actions</div>
+  <button class="audio" data-audio="audio/def_mitigate.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="sent">"To make a risk or a problem less serious."</div>
+  <div class="dots"><div class="dot"></div><div class="dot lit"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="es">Say the word out loud, then reveal</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>mitigate</b><br><button class="audio" style="width:70px;height:70px;font-size:26px;margin-top:8px" data-audio="audio/word_mitigate.mp3" onclick="playAudio(this)">🔊</button></div>
+  <button class="btn go" data-next>Next word</button>
+ </div></div>
+
+<div class="scr" data-t="production" data-word="3">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Vocabulary · Corrective Actions</div>
+  <button class="audio" data-audio="audio/def_implement.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="sent">"To put a plan or a system into action."</div>
+  <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot lit"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="es">Say the word out loud, then reveal</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>implement</b><br><button class="audio" style="width:70px;height:70px;font-size:26px;margin-top:8px" data-audio="audio/word_implement.mp3" onclick="playAudio(this)">🔊</button></div>
+  <button class="btn go" data-next>Next word</button>
+ </div></div>
+
+<div class="scr" data-t="production" data-word="4">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Vocabulary · Corrective Actions</div>
+  <button class="audio" data-audio="audio/def_alternative.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="sent">"Another option you can choose instead."</div>
+  <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot lit"></div><div class="dot"></div></div>
+  <div class="es">Say the word out loud, then reveal</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>alternative</b><br><button class="audio" style="width:70px;height:70px;font-size:26px;margin-top:8px" data-audio="audio/word_alternative.mp3" onclick="playAudio(this)">🔊</button></div>
+  <button class="btn go" data-next>Next word</button>
+ </div></div>
+
+<div class="scr" data-t="production" data-word="5">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Vocabulary · Corrective Actions</div>
+  <button class="audio" data-audio="audio/def_upgrade.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="sent">"To improve something to a better version."</div>
+  <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot lit"></div></div>
+  <div class="es">Say the word out loud, then reveal</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>upgrade</b><br><button class="audio" style="width:70px;height:70px;font-size:26px;margin-top:8px" data-audio="audio/word_upgrade.mp3" onclick="playAudio(this)">🔊</button></div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="1">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 1 of 3</div>
+  <div class="think">You want to propose a fix without sounding like you're giving orders.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">I'd suggest we…</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the CORE round</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="2">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 2 of 3</div>
+  <div class="think">Someone rejects your advice. You still think it matters.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">I understand, but you really ought to…</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the CORE round</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="3">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 3 of 3</div>
+  <div class="think">There's a real consequence if nothing is done.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">We'd better… or…</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the CORE round</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/cosmetics_lab.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">CORE · The $500-an-Hour Consultant</div>
+  <div class="think">A cream shipped with the wrong preservative concentration. 4,000 units are already in stores.</div>
+  <div class="es">30 seconds. Give your verdict — advice + one reason. Start the timer when you're ready.</div>
+  <div class="timerRing" data-seconds="30">
+   <svg width="104" height="104" viewBox="0 0 104 104">
+    <circle cx="52" cy="52" r="44" fill="none" stroke="rgba(244,238,246,.15)" stroke-width="6"/>
+    <circle class="timerArc" cx="52" cy="52" r="44" fill="none" stroke="#FFBE00" stroke-width="6"
+            stroke-linecap="round" stroke-dasharray="276.46" stroke-dashoffset="0"/>
+   </svg>
+   <div class="timerNum">30</div>
+  </div>
+  <button class="btn" onclick="timerStart(this)">Start 30s</button>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/cosmetics_lab.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">CORE · Disaster Card 2</div>
+  <div class="think">A lab tech has been signing off on tests he didn't run — for six months.</div>
+  <div class="es">30 seconds. Rotate your modal — don't repeat the one you just used.</div>
+  <div class="timerRing" data-seconds="30">
+   <svg width="104" height="104" viewBox="0 0 104 104">
+    <circle cx="52" cy="52" r="44" fill="none" stroke="rgba(244,238,246,.15)" stroke-width="6"/>
+    <circle class="timerArc" cx="52" cy="52" r="44" fill="none" stroke="#FFBE00" stroke-width="6"
+            stroke-linecap="round" stroke-dasharray="276.46" stroke-dashoffset="0"/>
+   </svg>
+   <div class="timerNum">30</div>
+  </div>
+  <button class="btn" onclick="timerStart(this)">Start 30s</button>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/boardroom.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">CORE · The Advice Duel</div>
+  <div class="think">Now the client fights back: "That's too expensive." · "We don't have time." · "My boss will never approve that."</div>
+  <div class="es">Hold your ground. Use a second modal, then offer an alternative.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Only open this if you get stuck</button>
+  <div class="keyBox">"I understand, but you really <b>ought to</b> report it. If that's too expensive, you <b>should</b> at least run one retained sample — that would <b>mitigate</b> most of the risk. Honestly, we'<b>d better</b> do something, or the authority finds it first."</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Pronunciation · The Silent L</div>
+  <button class="audio" data-audio="audio/pp_should.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="word">shou(l)d · wou(l)d · cou(l)d</div>
+  <div class="es">The L is written, not spoken. Say all three, then use one in a full sentence.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/consultant_meeting.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">Final Challenge · 60-Second Verdict</div>
+  <div class="think">"A product you approved last year is now linked to allergic reactions. What should we do?"</div>
+  <div class="es">3 pieces of advice · 2 vocabulary words · 1 warning with "had better" · one clear recommendation.</div>
+  <div class="timerRing" data-seconds="60">
+   <svg width="104" height="104" viewBox="0 0 104 104">
+    <circle cx="52" cy="52" r="44" fill="none" stroke="rgba(244,238,246,.15)" stroke-width="6"/>
+    <circle class="timerArc" cx="52" cy="52" r="44" fill="none" stroke="#FFBE00" stroke-width="6"
+            stroke-linecap="round" stroke-dasharray="276.46" stroke-dashoffset="0"/>
+   </svg>
+   <div class="timerNum">60</div>
+  </div>
+  <button class="btn" onclick="timerStart(this)">Start 60s</button>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="homework">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Homework</div>
+  <div class="sent" style="text-align:left">1. Voice note (60s): give advice on a real problem at your job this week — 3 modals, 2 vocabulary words, 1 "had better."</div>
+  <div class="sent" style="text-align:left">2. Log 5 phrases: "I'd suggest we…", "You ought to…", "We'd better…", "A better alternative would be…", "…to mitigate the risk."</div>
+  <div class="sent" style="text-align:left">3. Fix these: "You should to call them." · "We ought fix this." · "He should implements a new controls."</div>
+  <button class="btn go" data-next>Done for today</button>
+ </div></div>
+
+<div class="scr" data-t="close">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="big">Nice work today.</div>
+  <div class="es">See you next class.</div>
+  <div class="credits">Teacher's Station · The Milestone Method</div>
+ </div></div>
+</div>
+
+<!-- ================= CLASS 26 (built, not yet unlocked) ================= -->
+<div class="classBlock" data-class="26">
+
+<div class="scr" data-t="open">
+ <div class="bg" data-img="photos/new_hire_training.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="cue">Class 26</div>
+  <div class="big">Explaining strict rules to a new hire: internal vs. external obligation — and why the rule exists</div>
+  <div class="es" style="font-size:16px;line-height:1.5;color:rgba(244,238,246,.85)">By the end of this class, you can tell someone new what they must do, what they're not allowed to do — and explain why the rule exists, without translating in your head.</div>
+  <button class="btn go" data-next>Begin</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Ear Sprint · 1 of 3</div>
+  <button class="audio" data-audio="audio/pp_hafta.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="es">Listen once. Write what you hear, then say it back.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>"You hafta log in before you start."</b><br>have to → "hafta"</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Ear Sprint · 2 of 3</div>
+  <button class="audio" data-audio="audio/pp_notallowed.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="es">Listen once. Catch the small word in the middle.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>"We're not allowed to open that."</b><br>"to" almost disappears — it sounds like "tə"</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Ear Sprint · 3 of 3</div>
+  <button class="audio" data-audio="audio/pp_calledtoask.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="es">Listen once. How many words do you hear after "I"?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>"I called to ask about the certificate."</b><br>called_tə_ask — three words, one sound block</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="production" data-word="1">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Chunk Bank · 1 of 4</div>
+  <button class="audio" data-audio="audio/chunk_mandatory.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="pbPhrase">It's mandatory to…</div>
+  <div class="es">For a hard legal requirement. Say it, then finish it with a real rule from your job.</div>
+  <button class="btn go" data-next>Next chunk</button>
+ </div></div>
+
+<div class="scr" data-t="production" data-word="2">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Chunk Bank · 2 of 4</div>
+  <button class="audio" data-audio="audio/chunk_required.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="pbPhrase">You're required to…</div>
+  <div class="es">For an obligation on the person. Say it, then finish it.</div>
+  <button class="btn go" data-next>Next chunk</button>
+ </div></div>
+
+<div class="scr" data-t="production" data-word="3">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Chunk Bank · 3 of 4</div>
+  <button class="audio" data-audio="audio/chunk_notallowed.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="pbPhrase">We're not allowed to…</div>
+  <div class="es">For a prohibition. Say it, then finish it.</div>
+  <button class="btn go" data-next>Next chunk</button>
+ </div></div>
+
+<div class="scr" data-t="production" data-word="4">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Chunk Bank · 4 of 4</div>
+  <button class="audio" data-audio="audio/chunk_rulestates.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="pbPhrase">The rule states that…</div>
+  <div class="es">For quoting the SOP or the authority. Say it, then finish it.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="scramble">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Build The Chunk · 1 of 2</div>
+  <div class="es">Tap the pieces in the right order.</div>
+  <div class="scramble" data-answer="It's mandatory to sign it">
+   <div class="scrambleBank">
+    <button class="chip" onclick="scrambleTap(this)">sign</button>
+    <button class="chip" onclick="scrambleTap(this)">to</button>
+    <button class="chip" onclick="scrambleTap(this)">it</button>
+    <button class="chip" onclick="scrambleTap(this)">It's</button>
+    <button class="chip" onclick="scrambleTap(this)">mandatory</button>
+   </div>
+   <div class="scrambleBuilt"></div>
+   <div class="row">
+    <button class="btn" onclick="scrambleReset(this)">Reset</button>
+    <button class="btn" onclick="scrambleCheck(this)">Check</button>
+   </div>
+   <div class="scrambleFeedback"></div>
+   <button class="btn go scrambleNext" data-next>Continue</button>
+  </div>
+ </div></div>
+
+<div class="scr" data-t="scramble">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Build The Chunk · 2 of 2</div>
+  <div class="es">Tap the pieces in the right order.</div>
+  <div class="scramble" data-answer="You're required to fill out the form">
+   <div class="scrambleBank">
+    <button class="chip" onclick="scrambleTap(this)">the form</button>
+    <button class="chip" onclick="scrambleTap(this)">required</button>
+    <button class="chip" onclick="scrambleTap(this)">You're</button>
+    <button class="chip" onclick="scrambleTap(this)">fill out</button>
+    <button class="chip" onclick="scrambleTap(this)">to</button>
+   </div>
+   <div class="scrambleBuilt"></div>
+   <div class="row">
+    <button class="btn" onclick="scrambleReset(this)">Reset</button>
+    <button class="btn" onclick="scrambleCheck(this)">Check</button>
+   </div>
+   <div class="scrambleFeedback"></div>
+   <button class="btn go scrambleNext" data-next>Continue</button>
+  </div>
+ </div></div>
+
+<div class="scr" data-t="meetfix">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Meet Fix</div>
+  <div class="cue">Fix it fast, out loud</div>
+  <div class="sent">"We must to fix this."</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>"We must fix this."</b> / <b>"We have to fix this."</b><br>must + verb — no "to".</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="frame">
+ <div class="motionStage">
+  <div class="motion-ladder" aria-hidden="true">
+   <svg width="150" height="86" viewBox="0 0 150 86">
+    <rect class="ladderBar b1" x="15" y="12" width="120" height="10" rx="5" fill="#FFBE00"/>
+    <rect class="ladderBar b2" x="15" y="38" width="120" height="10" rx="5" fill="rgba(244,238,246,.45)"/>
+    <rect class="ladderBar b3" x="15" y="64" width="120" height="10" rx="5" fill="rgba(255,190,0,.35)"/>
+   </svg>
+  </div>
+  <div class="veil"></div>
+ </div>
+ <div class="stack">
+  <div class="badge">Work Out The Rule</div>
+  <div class="frameCard">
+   <div class="frameSentence">"We <b style="color:var(--go)">must</b> double-check the label."</div>
+   <div class="frameHint">we decide it — internal</div>
+  </div>
+  <div class="frameCard">
+   <div class="frameSentence">"We <b style="color:var(--go)">have to</b> submit within 30 days."</div>
+   <div class="frameHint">the law decides it — external</div>
+  </div>
+  <div class="frameCard">
+   <div class="frameSentence">"You <b style="color:var(--go)">must submit it in order to</b> comply."</div>
+   <div class="frameHint">rule + WHY = authority</div>
+  </div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/new_hire_training.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">CORE · The New Hire · Level 1</div>
+  <div class="think">"Do I actually have to fill in all these forms? Can't I just do it later?"</div>
+  <div class="es">Answer starting from a chunk — and add the WHY.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/factory_floor.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">CORE · The New Hire · Level 2</div>
+  <div class="think">"My last company didn't do it this way. That seems like a waste of time, honestly."</div>
+  <div class="es">Hold the rule. Chunk first, then the reason.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/factory_floor.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">CORE · The New Hire · Level 3</div>
+  <div class="think">He signs a document he never verified: "Relax, nobody checks."</div>
+  <div class="es">Confront him. Name it, and say what happens next.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Only open this if you get stuck</button>
+  <div class="keyBox"><b>It's mandatory to</b> verify before you sign. <b>We're not allowed to</b> sign anything we didn't check — <b>the rule states that</b> every entry needs a verified source, <b>so that</b> the batch can be traced. If an auditor finds it, the company <b>has to</b> report it.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">The WHY Chain</div>
+  <div class="think">"You're required to log in."<br>— Why? … Why does that matter? … Why?</div>
+  <div class="es">Five levels deep. Every answer needs "to", "in order to", or "so that". Don't repeat a reason.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="1">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 1 of 3</div>
+  <div class="think">You need to say something isn't optional — without sounding harsh.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">It's not optional, I'm afraid.</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the CORE round</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="2">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 2 of 3</div>
+  <div class="think">You want to make clear the rule isn't yours — it's the authority's.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">That's not our rule — it's the regulation.</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the CORE round</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="3">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 3 of 3</div>
+  <div class="think">You're about to explain the reason behind a rule.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">The reason for that is…</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the CORE round</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/new_hire_training.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">Final Challenge · 60-Second Induction</div>
+  <div class="think">"Welcome to the department. Tell me the 5 rules I cannot break — and why each one exists."</div>
+  <div class="es">5 rules from the chunks · 5 reasons · 1 prohibition · no sentence built in Spanish first.</div>
+  <div class="timerRing" data-seconds="60">
+   <svg width="104" height="104" viewBox="0 0 104 104">
+    <circle cx="52" cy="52" r="44" fill="none" stroke="rgba(244,238,246,.15)" stroke-width="6"/>
+    <circle class="timerArc" cx="52" cy="52" r="44" fill="none" stroke="#FFBE00" stroke-width="6"
+            stroke-linecap="round" stroke-dasharray="276.46" stroke-dashoffset="0"/>
+   </svg>
+   <div class="timerNum">60</div>
+  </div>
+  <button class="btn" onclick="timerStart(this)">Start 60s</button>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="homework">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Homework</div>
+  <div class="sent" style="text-align:left">1. Voice note (60s): 5 real rules at your job — each starting from a chunk, each with a WHY. Mark which are internal and which are legal.</div>
+  <div class="sent" style="text-align:left">2. Log the 4 chunks + fill out, log in, hand in, follow up, carry out.</div>
+  <div class="sent" style="text-align:left">3. Listening: find 3 moments in a series where you hear the reduced "tə". Write the full sentence.</div>
+  <button class="btn go" data-next>Done for today</button>
+ </div></div>
+
+<div class="scr" data-t="close">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="big">Nice work today.</div>
+  <div class="es">See you next class.</div>
+  <div class="credits">Teacher's Station · The Milestone Method</div>
+ </div></div>
+</div>
+
+</div>
+
+<script>
+function toggleMenu(){ document.getElementById('classMenu').classList.toggle('open'); }
+
+let screens = [];
+let idx = 0;
+let currentClass = null;
+
+function loadScreens(classNum){
+  document.querySelectorAll('.classBlock').forEach(b=>{
+    b.style.display = (b.getAttribute('data-class') === String(classNum)) ? '' : 'none';
+  });
+  document.querySelectorAll('.scr.on').forEach(s=>s.classList.remove('on'));
+  screens = [...document.querySelectorAll('.classBlock[data-class="'+classNum+'"] .scr')];
+  currentClass = classNum;
+  idx = 0;
+  document.getElementById('emptyState').classList.remove('on');
+  show(0);
+}
+function selectClass(classNum){
+  document.getElementById('classMenu').classList.remove('open');
+  document.querySelectorAll('#classMenu .item').forEach(it=>it.classList.remove('active'));
+  event.target.closest('.item').classList.add('active');
+  document.getElementById('classSelect').textContent = 'Class ' + classNum + ' ▾';
+  loadScreens(classNum);
+}
+function show(i){
+  if (screens.length === 0) return;
+  screens.forEach((s,n)=>s.classList.toggle('on', n===i));
+  document.querySelector('[data-navback]').disabled = (i===0);
+  document.getElementById('bar').style.width = ((i+1)/screens.length*100)+'%';
+  idx = i;
+}
+function scrambleTap(chipBtn){
+  const wrap = chipBtn.closest('.scramble');
+  const built = wrap.querySelector('.scrambleBuilt');
+  chipBtn.classList.add('used');
+  const piece = document.createElement('button');
+  piece.className = 'chip';
+  piece.textContent = chipBtn.textContent;
+  piece.onclick = function(){ chipBtn.classList.remove('used'); piece.remove(); };
+  built.appendChild(piece);
+}
+function scrambleReset(btn){
+  const wrap = btn.closest('.scramble');
+  wrap.querySelectorAll('.scrambleBank .chip').forEach(c=>c.classList.remove('used'));
+  wrap.querySelector('.scrambleBuilt').innerHTML = '';
+  wrap.querySelector('.scrambleFeedback').style.display = 'none';
+  wrap.querySelector('.scrambleNext').style.display = 'none';
+}
+function scrambleCheck(btn){
+  const wrap = btn.closest('.scramble');
+  const answer = wrap.getAttribute('data-answer');
+  const built = [...wrap.querySelectorAll('.scrambleBuilt .chip')].map(c=>c.textContent).join(' ');
+  const norm = s => s.toLowerCase().replace(/[.,]/g,'').replace(/\s+/g,' ').trim();
+  const fb = wrap.querySelector('.scrambleFeedback');
+  fb.style.display = 'block';
+  if(norm(built) === norm(answer)){
+    fb.textContent = '✓ ' + answer;
+    fb.style.color = 'var(--go)';
+    wrap.querySelector('.scrambleNext').style.display = 'block';
+  } else {
+    fb.textContent = 'Not quite — reset and try again.';
+    fb.style.color = '#E08A83';
+  }
+}
+function timerStart(startBtn){
+  const stack = startBtn.closest('.stack');
+  const ring = stack.querySelector('.timerRing');
+  const total = parseInt(ring.getAttribute('data-seconds'), 10);
+  const numEl = ring.querySelector('.timerNum');
+  const arc = ring.querySelector('.timerArc');
+  const circumference = 2 * Math.PI * 44;
+  const nextBtn = stack.querySelector('[data-next]');
+  let remaining = total;
+  startBtn.disabled = true;
+  startBtn.textContent = 'Running…';
+  const interval = setInterval(() => {
+    remaining--;
+    numEl.textContent = remaining;
+    arc.style.strokeDashoffset = circumference * (1 - remaining / total);
+    if (remaining <= 10) { numEl.classList.add('warn'); }
+    if (remaining <= 0) {
+      clearInterval(interval);
+      numEl.textContent = '0';
+      startBtn.style.display = 'none';
+      if (nextBtn) nextBtn.style.display = 'block';
+    }
+  }, 1000);
+}
+const motionGradients = [
+  'radial-gradient(circle at 30% 30%,#6B0876,#20081F 70%)',
+  'radial-gradient(circle at 70% 60%,#FFBE00,#20081F 65%)',
+  'conic-gradient(from 45deg,#440249,#6B0876,#20081F)'
+];
+function toggleVisual(btn){
+  const visual = btn.previousElementSibling;
+  const isPhoto = visual.classList.contains('photo');
+  if(isPhoto){
+    visual.classList.remove('photo'); visual.classList.add('motion');
+    const g = motionGradients[Math.floor(Math.random()*motionGradients.length)];
+    visual.innerHTML = '<div class="motionGrad" style="background:'+g+'"></div>';
+    btn.innerHTML = '📷 Photo';
+  } else {
+    visual.classList.remove('motion'); visual.classList.add('photo');
+    const img = visual.getAttribute('data-img-src');
+    visual.innerHTML = '<div class="bg" style="background-image:url(\''+img+'\')"></div><div class="veil"></div>';
+    btn.innerHTML = '🎞 Motion';
+  }
+}
+function playAudio(btn){
+  const src = btn.getAttribute('data-audio');
+  if(!src){ return; }
+  let a = btn._player;
+  if(!a){ a = new Audio(src); btn._player = a; a.addEventListener('ended', ()=>btn.classList.add('done')); }
+  a.currentTime = 0; a.play();
+}
+document.addEventListener('click', e=>{
+  if(e.target.closest('[data-next]')) show(Math.min(idx+1, screens.length-1));
+  if(e.target.closest('[data-navfwd]')) show(Math.min(idx+1, screens.length-1));
+  if(e.target.closest('[data-navback]')) show(Math.max(idx-1, 0));
+});
+document.querySelectorAll('.bg[data-img]').forEach(el=>{
+  const src = el.getAttribute('data-img');
+  el.style.backgroundImage = "url('" + src + "')";
+  const visualParent = el.closest('.visual');
+  if(visualParent){ visualParent.setAttribute('data-img-src', src); }
+});
+loadScreens(25);
+document.querySelector('[data-navback]').disabled = true;
+</script>
+</body></html>
