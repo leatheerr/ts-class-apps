@@ -135,6 +135,9 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 <div id="classMenu">
   <div class="item active" onclick="selectClass(1)">Class 1: Job Identity <span>✓</span></div>
 </div>
+<!-- Class 2 built below but NOT yet in the dropdown — its Notion Status is still "Not started".
+     Add its <div class="item" onclick="selectClass(2)">Class 2: Job Site Tools <span>✓</span></div>
+     entry above once Juan flips the roadmap row to Done. -->
 
 <div id="bar"></div>
 <button class="navBtn left" data-navback disabled>&#8249;</button>
@@ -452,6 +455,293 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
  <div class="stack">
   <div class="big">Nice work today.</div>
   <div class="es">See you at Class 2.</div>
+  <div class="credits">Teacher's Station · The Milestone Method</div>
+ </div></div>
+</div>
+
+<div class="classBlock" data-class="2">
+<div class="scr" data-t="open">
+ <div class="bg" data-img="photos/tools_ladder.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="cue">Class 2</div>
+  <div class="big">Job Site: describe your daily tools and duties using frames</div>
+  <div class="es" style="font-size:16px;line-height:1.5;color:rgba(244,238,246,.85)">By the end of this class, you can name and use your everyday job-site tools — ladder, outlet, hammer, wire, breaker — inside real sentences about what you check, use, and fix.</div>
+  <button class="btn go" data-next>Begin</button>
+ </div></div>
+
+<div class="scr" data-t="ritual">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Before We Start</div>
+  <div class="think">Say your two frames from Class 1 out loud, fast: "I'm a(n)___," "I work for___."</div>
+  <div class="es">You already know these cold — this is your warm-up win.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Critical Thinking · 1 of 3</div>
+  <div class="think">Finish this: "The tool I use most is ___."</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Critical Thinking · 2 of 3</div>
+  <div class="think">Finish this: "One thing I always check before I start is ___."</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Critical Thinking · 3 of 3</div>
+  <div class="think">True or false, then say why in one sentence: "Electricians only use a hammer."</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="production" data-word="1">
+ <div class="visual photo" data-visual><div class="bg" data-img="photos/tools_ladder.jpg"></div><div class="veil"></div></div>
+ <button class="modeToggle" onclick="toggleVisual(this)">🎞 Motion</button>
+ <div class="stack">
+  <div class="badge">Vocabulary · Job-Site Tools</div>
+  <button class="audio" data-audio="audio/def_ladder.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="sent">"You climb this to reach something high."</div>
+  <div class="dots"><div class="dot lit"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="es">Say the word out loud, then reveal</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>ladder</b><br><button class="audio" style="width:70px;height:70px;font-size:26px;margin-top:8px" data-audio="audio/word_ladder.mp3" onclick="playAudio(this)">🔊</button></div>
+  <button class="btn go" data-next>Next word</button>
+ </div></div>
+
+<div class="scr" data-t="production" data-word="2">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Vocabulary · Job-Site Tools</div>
+  <button class="audio" data-audio="audio/def_outlet.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="sent">"The wall socket you plug something into."</div>
+  <div class="dots"><div class="dot"></div><div class="dot lit"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="es">Say the word out loud, then reveal</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>outlet</b><br><button class="audio" style="width:70px;height:70px;font-size:26px;margin-top:8px" data-audio="audio/word_outlet.mp3" onclick="playAudio(this)">🔊</button></div>
+  <button class="btn go" data-next>Next word</button>
+ </div></div>
+
+<div class="scr" data-t="production" data-word="3">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Vocabulary · Job-Site Tools</div>
+  <button class="audio" data-audio="audio/def_hammer.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="sent">"The tool you use to hit a nail."</div>
+  <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot lit"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="es">Say the word out loud, then reveal</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>hammer</b><br><button class="audio" style="width:70px;height:70px;font-size:26px;margin-top:8px" data-audio="audio/word_hammer.mp3" onclick="playAudio(this)">🔊</button></div>
+  <button class="btn go" data-next>Next word</button>
+ </div></div>
+
+<div class="scr" data-t="production" data-word="4">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Vocabulary · Job-Site Tools</div>
+  <button class="audio" data-audio="audio/def_wire.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="sent">"The thin metal line that carries electricity."</div>
+  <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot lit"></div><div class="dot"></div></div>
+  <div class="es">Say the word out loud, then reveal</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>wire</b><br><button class="audio" style="width:70px;height:70px;font-size:26px;margin-top:8px" data-audio="audio/word_wire.mp3" onclick="playAudio(this)">🔊</button></div>
+  <button class="btn go" data-next>Next word</button>
+ </div></div>
+
+<div class="scr" data-t="production" data-word="5">
+ <div class="visual photo" data-visual><div class="bg" data-img="photos/breaker_panel.jpg"></div><div class="veil"></div></div>
+ <button class="modeToggle" onclick="toggleVisual(this)">🎞 Motion</button>
+ <div class="stack">
+  <div class="badge">Vocabulary · Job-Site Tools</div>
+  <button class="audio" data-audio="audio/def_breaker.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="sent">"The box that turns the power on and off for the whole house."</div>
+  <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot lit"></div></div>
+  <div class="es">Say the word out loud, then reveal</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>breaker</b><br><button class="audio" style="width:70px;height:70px;font-size:26px;margin-top:8px" data-audio="audio/word_breaker.mp3" onclick="playAudio(this)">🔊</button></div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="1">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 1 of 3</div>
+  <div class="think">You're going to get a tool from your truck or the crew's stash. What do you say?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">Let me grab it.</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the CORE round</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="2">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 2 of 3</div>
+  <div class="think">You need someone to help you hold or lift something. What do you say?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">I need a hand.</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the CORE round</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="3">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 3 of 3</div>
+  <div class="think">There's a hazard nearby — wet floor, a hole, a low beam. What do you say to warn someone?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">Watch your step.</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the CORE round</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="meetfix">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Meet Fix · Review (Class 1)</div>
+  <div class="cue">Answer fast, no thinking time</div>
+  <div class="sent">"What's your job?" / "Who do you work for?"</div>
+  <div class="es">Cue if you freeze: "I'm a(n)___" or "I work for___" — say the whole sentence, not just the missing word.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>I'm an electrician. I work for [boss's name].</b><br>Same frames as Class 1 — this time under a cold ask, no warm-up first.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="frame">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="dots"><div class="dot lit"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="badge">Frame Practice</div>
+  <div class="frameCard">
+   <div class="frameSentence">"I use a <span class="blank"><span class="cursor"></span></span>."</div>
+   <div class="frameHint">name the tool, out loud</div>
+  </div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>I use a ladder. / I use a hammer.</b></div>
+  <button class="btn go" data-next>Next frame</button>
+ </div></div>
+
+<div class="scr" data-t="frame">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="dots"><div class="dot lit"></div><div class="dot lit"></div><div class="dot"></div></div>
+  <div class="badge">Frame Practice</div>
+  <div class="frameCard">
+   <div class="frameSentence">"I check the <span class="blank"><span class="cursor"></span></span>."</div>
+   <div class="frameHint">name what you check, out loud</div>
+  </div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>I check the wires. / I check the breaker.</b></div>
+  <button class="btn go" data-next>Next frame</button>
+ </div></div>
+
+<div class="scr" data-t="frame">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="dots"><div class="dot lit"></div><div class="dot lit"></div><div class="dot lit"></div></div>
+  <div class="badge">Frame Practice</div>
+  <div class="frameCard">
+   <div class="frameSentence">"I fix the <span class="blank"><span class="cursor"></span></span>."</div>
+   <div class="frameHint">name what you fix, out loud</div>
+  </div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>I fix the outlet.</b></div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/breaker_panel.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">CORE · Round 1 — Build It</div>
+  <div class="think">The foreman walks up mid-shift and asks what you're doing. Use your 3 frames to answer.</div>
+  <div class="es">Use "I use a___," "I check the___," and at least one Phrase Bank line.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/breaker_panel.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">CORE · Round 2 — Same Frames, Faster</div>
+  <div class="think">Same foreman check-in, same frames — just less thinking time between them.</div>
+  <div class="es">Not new content, just more comfort and speed with what you already said.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Pronunciation · Word Stress · Hear It</div>
+  <div class="row">
+   <button class="opt mid" style="gap:8px" onclick="playAudio(this)" data-audio="audio/word_ladder.mp3">LADder <span style="font-size:16px">🔊</span></button>
+   <button class="opt mid" style="gap:8px" onclick="playAudio(this)" data-audio="audio/word_hammer.mp3">HAMmer <span style="font-size:16px">🔊</span></button>
+  </div>
+  <div class="es">Both stress the FIRST part of the word. Say them both out loud, matching that pattern.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Pronunciation · Consonant Cluster · Say It</div>
+  <button class="audio" data-audio="audio/word_breaker.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="word">BREAKer</div>
+  <div class="es">Say the "br-" together, clean — not "buh-reaker." Repeat it, then use it inside Round 1 of the CORE.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/breaker_panel.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">Real-Life Conversation</div>
+  <div class="think">The foreman checks in mid-shift and asks what you're working on.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Only open this if you get stuck</button>
+  <div class="keyBox">
+   <b>Foreman:</b> Hey, what are you working on?<br>
+   <b>You:</b> I'm checking the breaker on the second floor.<br>
+   <b>Foreman:</b> You got everything you need?<br>
+   <b>You:</b> Yeah — I need a hand with the ladder, if you've got a second.<br>
+   <b>Foreman:</b> Sure thing. Watch your step, the floor's wet over there.
+  </div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Comprehension Check</div>
+  <div class="think">What is Elio checking, and where?</div>
+  <button class="btn go" data-next>Next question</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Comprehension Check</div>
+  <div class="think">What does Elio ask the foreman for help with?</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="homework">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Homework</div>
+  <div class="sent" style="text-align:left">1. Record yourself saying the 3 new frames (voice memo): "I use a___," "I check the___," "I fix the___."</div>
+  <div class="sent" style="text-align:left">2. Notice log: catch one moment at work where you'd use "watch your step" or "I need a hand" in English — text Juan what actually happened.</div>
+  <button class="btn go" data-next>Done for today</button>
+ </div></div>
+
+<div class="scr" data-t="close">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="big">Nice work today.</div>
+  <div class="es">See you at Class 3.</div>
   <div class="credits">Teacher's Station · The Milestone Method</div>
  </div></div>
 </div>
