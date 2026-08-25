@@ -3,14 +3,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Teacher's Station — Milton</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 :root{--ob:#0D0014;--pu:#440249;--go:#FFBE00;--ink:#F4EEF6}
 html,body{height:100%;overflow:hidden;background:var(--ob);color:var(--ink);
  font-family:'Lora',Georgia,'Times New Roman',serif;font-size:18px}
 h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
-#bar{position:fixed;top:44px;left:0;height:4px;background:rgba(255,190,0,.35);
+#bar{position:fixed;top:44px;left:0;height:4px;background:rgba(255,190,0,.7);
  width:0;transition:width .35s ease;z-index:50}
 
 /* class-index shell header */
@@ -97,7 +97,7 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 .keyBox b{color:var(--go)}
 .scrambleRow{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;width:100%;min-height:20px}
 .chip{background:rgba(255,255,255,.08);border:1.5px solid rgba(244,238,246,.2);border-radius:10px;
- padding:8px 14px;font-family:'Poppins',system-ui,sans-serif;font-size:15px;color:var(--ink)}
+ padding:8px 14px;font-family:'Poppins',system-ui,sans-serif;font-size:15px;color:var(--ink);min-height:44px;display:inline-flex;align-items:center}
 .scrambleBank .chip{cursor:pointer}
 .scrambleBank .chip.used{opacity:.25;pointer-events:none}
 .scrambleBuilt{border-bottom:2px solid rgba(244,238,246,.18);padding-bottom:10px;min-height:44px}
@@ -106,8 +106,8 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 .timerArc{transition:stroke-dashoffset 1s linear}
 .timerNum{position:absolute;font-family:'Poppins',system-ui,sans-serif;font-size:26px;font-weight:700;color:var(--ink)}
 .timerNum.warn{color:#E08A83}
-.badge{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:rgba(244,238,246,.4);font-family:'Poppins',system-ui,sans-serif}
-.navBtn{position:fixed;top:56px;width:42px;height:42px;border-radius:50%;
+.badge{font-size:12px;letter-spacing:1px;text-transform:uppercase;color:rgba(244,238,246,.6);font-family:'Poppins',system-ui,sans-serif}
+.navBtn{position:fixed;top:56px;width:44px;height:44px;border-radius:50%;
  background:rgba(244,238,246,.10);border:none;color:var(--ink);font-size:22px;
  line-height:1;display:grid;place-items:center;z-index:60}
 .navBtn.left{left:14px}
@@ -149,12 +149,20 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 .wordList .chip{font-size:14px}
 .stress{color:var(--go)}
 
-/* checkpoint / exam container */
-.partTag{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--go);
- font-family:'Poppins',system-ui,sans-serif;font-weight:700;background:rgba(255,190,0,.12);
- padding:6px 14px;border-radius:20px}
-.qNum{font-size:13px;color:rgba(244,238,246,.5);font-family:'Poppins',system-ui,sans-serif}
-.curveball{border:1.5px dashed rgba(255,190,0,.5);border-radius:14px;padding:14px;width:100%}
+/* Checkpoint / Exam container */
+.partTag{display:flex;align-items:center;gap:8px;background:rgba(244,238,246,.08);
+ border:1px solid rgba(244,238,246,.15);border-radius:100px;padding:8px 16px;
+ font-family:'Poppins',system-ui,sans-serif;font-size:12.5px;font-weight:700;color:var(--go)}
+.partDots{display:flex;gap:5px;width:100%;max-width:280px}
+.partDots .seg{flex:1;height:4px;border-radius:2px;background:rgba(244,238,246,.15)}
+.partDots .seg.lit{background:var(--go)}
+.pTitle{font-family:'Poppins',system-ui,sans-serif;font-size:22px;font-weight:700;color:var(--ink);text-align:center}
+.verdictBadge{font-family:'Poppins',system-ui,sans-serif;font-size:15px;font-weight:700;
+ letter-spacing:.5px;color:#2D0130;background:var(--go);border-radius:100px;padding:10px 22px}
+.focusList{width:100%;text-align:left;display:flex;flex-direction:column;gap:10px}
+.focusItem{font-size:15px;line-height:1.5;color:rgba(244,238,246,.88);display:flex;gap:10px}
+.focusItem b{color:var(--go);flex:none}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;scroll-behavior:auto!important}}
 </style></head>
 <body>
 
@@ -167,7 +175,7 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
   <div class="item" onclick="selectClass(9,'Class 9')">Class 9: right now on the floor — the live walk-through <span>✓</span></div>
   <div class="item" onclick="selectClass(10,'Class 10')">Class 10: usually vs. right now <span>✓</span></div>
   <div class="item" onclick="selectClass(11,'Class 11')">Class 11: schedules & numbers <span>✓</span></div>
-  <div class="item active" onclick="selectClass(12,'Class 12')">🎯 Class 12: Mid-Point Audit Checkpoint <span>✓</span></div>
+  <div class="item active" onclick="selectClass(12,'Class 12')">Class 12: Mid-Point Audit Checkpoint <span>✓</span></div>
   <div class="groupLabel vow">Vowels course</div>
   <div class="item vow" onclick="selectClass('v1','Vowels 1')">Vowels 1: vowels are sounds, not letters <span>✓</span></div>
 </div>
@@ -215,7 +223,7 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 <div class="scr" data-t="recognition" data-word="1">
  <div class="visual photo" data-visual><div class="bg" data-img="photos/assembly_line.jpg"></div><div class="veil"></div></div>
- <button class="modeToggle" onclick="toggleVisual(this)">🎞 Movimiento</button>
+ <button class="modeToggle" onclick="toggleVisual(this)">🎞 Motion</button>
  <div class="stack">
   <div class="badge">Vocabulary · Name it</div>
   <div class="sent">"The moving line where the product is built"</div>
@@ -228,7 +236,7 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 <div class="scr" data-t="recognition" data-word="2">
  <div class="visual photo" data-visual><div class="bg" data-img="photos/loading_truck.jpg"></div><div class="veil"></div></div>
- <button class="modeToggle" onclick="toggleVisual(this)">🎞 Movimiento</button>
+ <button class="modeToggle" onclick="toggleVisual(this)">🎞 Motion</button>
  <div class="stack">
   <div class="badge">Vocabulary · Name it</div>
   <div class="sent">"Putting the boxes onto the truck"</div>
@@ -241,7 +249,7 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 <div class="scr" data-t="recognition" data-word="3">
  <div class="visual photo" data-visual><div class="bg" data-img="photos/packing_boxes.jpg"></div><div class="veil"></div></div>
- <button class="modeToggle" onclick="toggleVisual(this)">🎞 Movimiento</button>
+ <button class="modeToggle" onclick="toggleVisual(this)">🎞 Motion</button>
  <div class="stack">
   <div class="badge">Vocabulary · Name it</div>
   <div class="sent">"Putting the product inside the box"</div>
@@ -254,7 +262,7 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 <div class="scr" data-t="recognition" data-word="4">
  <div class="visual photo" data-visual><div class="bg" data-img="photos/scanning_barcode.jpg"></div><div class="veil"></div></div>
- <button class="modeToggle" onclick="toggleVisual(this)">🎞 Movimiento</button>
+ <button class="modeToggle" onclick="toggleVisual(this)">🎞 Motion</button>
  <div class="stack">
   <div class="badge">Vocabulary · Name it</div>
   <div class="sent">"Reading the code on the box with the machine"</div>
@@ -267,7 +275,7 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 <div class="scr" data-t="recognition" data-word="5">
  <div class="visual photo" data-visual><div class="bg" data-img="photos/shipment_cargo.jpg"></div><div class="veil"></div></div>
- <button class="modeToggle" onclick="toggleVisual(this)">🎞 Movimiento</button>
+ <button class="modeToggle" onclick="toggleVisual(this)">🎞 Motion</button>
  <div class="stack">
   <div class="badge">Vocabulary · Name it</div>
   <div class="sent">"All the product that goes out together to one customer"</div>
@@ -280,7 +288,7 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 <div class="scr" data-t="recognition" data-word="6">
  <div class="visual photo" data-visual><div class="bg" data-img="photos/pallet.jpg"></div><div class="veil"></div></div>
- <button class="modeToggle" onclick="toggleVisual(this)">🎞 Movimiento</button>
+ <button class="modeToggle" onclick="toggleVisual(this)">🎞 Motion</button>
  <div class="stack">
   <div class="badge">Vocabulary · Name it</div>
   <div class="sent">"The wooden base the boxes are stacked on"</div>
@@ -1163,31 +1171,30 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 </div>
 
-<!-- ==================== CLASS 12 — CHECKPOINT/EXAM CONTAINER ==================== -->
+<!-- ==================== CLASS 12 — MID-POINT AUDIT CHECKPOINT ==================== -->
 <div class="classBlock" data-class="12">
 
 <div class="scr" data-t="open">
- <div class="bg" data-img="photos/supervisor_clipboard.jpg"></div><div class="veil"></div>
+ <div class="bg" data-img="photos/audit_scene.jpg"></div><div class="veil"></div>
  <div class="stack">
-  <div class="cue">🎯 Class 12 · Mid-Point Audit Checkpoint</div>
-  <div class="big">Prove you can answer 6–8 basic audit questions about your role, solo</div>
-  <div class="es" style="font-size:16px;line-height:1.5;color:rgba(244,238,246,.85)">By the end of this class, you can survive a basic Lenovo audit in English — present-tense questions about your role, routine, and numbers, no translator.</div>
-  <div class="es" style="font-size:15px;color:var(--go);font-style:normal">💪 This is your halfway win. Six weeks ago you froze on "full name." Today you handle an auditor's questions alone.</div>
+  <div class="cue">Class 12 · Mid-Point Checkpoint</div>
+  <div class="big">Prove it: survive a basic Lenovo audit in English, solo</div>
+  <div class="es" style="font-size:16px;line-height:1.5;color:rgba(244,238,246,.85)">Six weeks ago you froze on "full name." Today you answer an auditor's questions about your role, routine, and numbers — alone, no translator. This is your halfway win.</div>
   <button class="btn go" data-next>Begin</button>
  </div></div>
 
 <div class="scr" data-t="critical">
  <div class="plain"></div>
  <div class="stack">
-  <div class="badge">Critical Thinking · 1 of 3</div>
-  <div class="think">You've had 11 classes. What is one thing you can say now that you couldn't in Class 1?</div>
+  <div class="badge">Warm-Up · 1 of 3</div>
+  <div class="think">You've had 11 classes. What's one thing you can say now that you couldn't in Class 1?</div>
   <button class="btn go" data-next>Answer out loud, then continue</button>
  </div></div>
 
 <div class="scr" data-t="critical">
  <div class="plain"></div>
  <div class="stack">
-  <div class="badge">Critical Thinking · 2 of 3</div>
+  <div class="badge">Warm-Up · 2 of 3</div>
   <div class="think">In a real audit, what would still make you nervous? Why?</div>
   <button class="btn go" data-next>Answer out loud, then continue</button>
  </div></div>
@@ -1195,216 +1202,197 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 <div class="scr" data-t="critical">
  <div class="plain"></div>
  <div class="stack">
-  <div class="badge">Critical Thinking · 3 of 3</div>
+  <div class="badge">Warm-Up · 3 of 3</div>
   <div class="think">If the auditor asks something you don't understand, what's your plan?</div>
   <button class="btn go" data-next>Answer out loud, then continue</button>
  </div></div>
 
-<div class="scr" data-t="listening">
+<div class="scr" data-t="spiral">
  <div class="plain"></div>
  <div class="stack">
-  <div class="partTag">Part 1 of 4 · Reach-Back</div>
-  <div class="es">No re-teaching. This tests what survived. Two classes back:</div>
-  <div class="wordList">
-   <span class="chip">usually</span><span class="chip">at the moment</span><span class="chip">today</span>
-  </div>
-  <div class="es">Build a full "usually / right now" pair out loud, then continue.</div>
+  <div class="badge">Reach-Back · Two Classes Back (Class 10)</div>
+  <button class="audio" data-audio="audio/reach1.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="think">Using "usually" and "right now," give your own usually/right-now pair — no re-teaching, just produce it.</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="spiral">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Reach-Back · Four Classes Back (Class 8)</div>
+  <div class="think">One sentence each, work context: team · practice · online · shift · delay.</div>
+  <div class="es">Note how many come back unprompted — anything that doesn't is a Class 13 re-teach target, not a failure.</div>
   <button class="btn go" data-next>Continue</button>
  </div></div>
 
-<div class="scr" data-t="listening">
+<div class="scr" data-t="checkpoint">
  <div class="plain"></div>
  <div class="stack">
-  <div class="partTag">Part 1 of 4 · Reach-Back</div>
-  <div class="es">Four classes back — one sentence each, your real job:</div>
-  <div class="wordList">
-   <button class="chip" data-audio="audio/c12_team.mp3" onclick="playAudio(this)">🔊 team</button>
-   <button class="chip" data-audio="audio/c12_practice.mp3" onclick="playAudio(this)">🔊 practice</button>
-   <button class="chip" data-audio="audio/c12_online.mp3" onclick="playAudio(this)">🔊 online</button>
-   <span class="chip">shift</span>
-   <button class="chip" data-audio="audio/c12_delay.mp3" onclick="playAudio(this)">🔊 delay</button>
-  </div>
-  <div class="es">Anything that didn't come back is fine — that's just a note for next time.</div>
-  <button class="btn go" data-next>Continue</button>
+  <div class="partTag">🎯 Question 1 of 10</div>
+  <div class="partDots"><div class="seg lit"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div></div>
+  <div class="pTitle">Introduce Yourself</div>
+  <button class="audio" data-audio="audio/q1.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="es">Answer in ≤3 seconds, full sentence, no translating.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal what a solid answer sounds like</button>
+  <div class="keyBox">"Good morning — I'm Milton." (full name if asked)</div>
+  <button class="btn go" data-next>Next</button>
  </div></div>
 
-<div class="scr" data-t="phrasebank">
+<div class="scr" data-t="checkpoint">
  <div class="plain"></div>
  <div class="stack">
-  <div class="partTag">Phrase Bank · tested, not taught</div>
-  <div class="think">Someone asks for your opinion on something and you want a beat to gather it. What do you say?</div>
-  <div class="es">No reveal today — say your answer out loud, then continue.</div>
-  <button class="btn go" data-next>Continue</button>
+  <div class="partTag">🎯 Question 2 of 10</div>
+  <div class="partDots"><div class="seg lit"></div><div class="seg lit"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div></div>
+  <div class="pTitle">Your Role</div>
+  <button class="audio" data-audio="audio/q2.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="es">Answer in ≤3 seconds, full sentence.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal what a solid answer sounds like</button>
+  <div class="keyBox">"I check the line and I load shipments." (not "I am work")</div>
+  <button class="btn go" data-next>Next</button>
  </div></div>
 
-<div class="scr" data-t="phrasebank">
+<div class="scr" data-t="checkpoint">
  <div class="plain"></div>
  <div class="stack">
-  <div class="partTag">Phrase Bank · tested, not taught</div>
-  <div class="think">You've answered about yourself — now turn the question back to the other person. What do you say?</div>
-  <button class="btn go" data-next>Continue</button>
+  <div class="partTag">🎯 Question 3 of 10</div>
+  <div class="partDots"><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div></div>
+  <div class="pTitle">Your Department</div>
+  <button class="audio" data-audio="audio/q3.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="es">Answer in ≤3 seconds, full sentence.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal what a solid answer sounds like</button>
+  <div class="keyBox">"I'm in the warehouse, shipping team."</div>
+  <button class="btn go" data-next>Next</button>
  </div></div>
 
-<div class="scr" data-t="close">
- <div class="bg" data-img="photos/phone_call.jpg"></div><div class="veil"></div>
- <div class="stack">
-  <div class="partTag">Part 2 of 4 · The Mock Audit</div>
-  <div class="big" style="font-size:22px">The main event.</div>
-  <div class="es">Your coach plays the auditor. Answer each one inside ~3 seconds, full sentences, no translating. One question per screen — don't rush ahead to see the next one.</div>
-  <button class="btn go" data-next>Start the audit</button>
- </div></div>
-
-<div class="scr" data-t="core">
+<div class="scr" data-t="checkpoint">
  <div class="plain"></div>
  <div class="stack">
-  <div class="qNum">Question 1 of 8</div>
-  <button class="audio" data-audio="audio/c12_q1.mp3" onclick="playAudio(this)">🔊</button>
-  <div class="keySent" style="font-size:22px">"Good morning — what's your name?"</div>
-  <button class="btn go" data-next>Answered — next question</button>
+  <div class="partTag">🎯 Question 4 of 10</div>
+  <div class="partDots"><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div></div>
+  <div class="pTitle">Routine Check</div>
+  <button class="audio" data-audio="audio/q4.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="es">Yes/no — answer fast and clean.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal what a solid answer sounds like</button>
+  <div class="keyBox">"Yes, I do." / "No, I don't." — full, not just "yes."</div>
+  <button class="btn go" data-next>Next</button>
  </div></div>
 
-<div class="scr" data-t="core">
+<div class="scr" data-t="checkpoint">
  <div class="plain"></div>
  <div class="stack">
-  <div class="qNum">Question 2 of 8</div>
-  <button class="audio" data-audio="audio/c12_q2.mp3" onclick="playAudio(this)">🔊</button>
-  <div class="keySent" style="font-size:22px">"What do you do here?"</div>
-  <button class="btn go" data-next>Answered — next question</button>
+  <div class="partTag">🎯 Question 5 of 10</div>
+  <div class="partDots"><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div></div>
+  <div class="pTitle">Responsibilities</div>
+  <button class="audio" data-audio="audio/q5.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="es">Answer in ≤3 seconds, full sentence.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal what a solid answer sounds like</button>
+  <div class="keyBox">"I'm responsible for the shipments." (not "responsible of")</div>
+  <button class="btn go" data-next>Next</button>
  </div></div>
 
-<div class="scr" data-t="core">
+<div class="scr" data-t="checkpoint">
  <div class="plain"></div>
  <div class="stack">
-  <div class="qNum">Question 3 of 8</div>
-  <button class="audio" data-audio="audio/c12_q3.mp3" onclick="playAudio(this)">🔊</button>
-  <div class="keySent" style="font-size:22px">"What's your department?"</div>
-  <button class="btn go" data-next>Answered — next question</button>
+  <div class="partTag">🎯 Question 6 of 10</div>
+  <div class="partDots"><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div></div>
+  <div class="pTitle">The Live Walk-Through</div>
+  <button class="audio" data-audio="audio/q6.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="es">Present continuous — what's happening right now.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal what a solid answer sounds like</button>
+  <div class="keyBox">"Right now, the team is loading a shipment." (not "the team is load")</div>
+  <button class="btn go" data-next>Next</button>
  </div></div>
 
-<div class="scr" data-t="core">
+<div class="scr" data-t="checkpoint">
  <div class="plain"></div>
  <div class="stack">
-  <div class="qNum">Question 4 of 8</div>
-  <button class="audio" data-audio="audio/c12_q4.mp3" onclick="playAudio(this)">🔊</button>
-  <div class="keySent" style="font-size:22px">"Do you work on this line every day?"</div>
-  <button class="btn go" data-next>Answered — next question</button>
+  <div class="partTag">🎯 Question 7 of 10</div>
+  <div class="partDots"><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div></div>
+  <div class="pTitle">Schedule &amp; Numbers</div>
+  <button class="audio" data-audio="audio/q7.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="es">Two numbers in one answer — say them clearly.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal what a solid answer sounds like</button>
+  <div class="keyBox">"My shift starts at six, and there are twelve people on my team."</div>
+  <button class="btn go" data-next>Next</button>
  </div></div>
 
-<div class="scr" data-t="core">
+<div class="scr" data-t="checkpoint">
  <div class="plain"></div>
  <div class="stack">
-  <div class="qNum">Question 5 of 8</div>
-  <button class="audio" data-audio="audio/c12_q5.mp3" onclick="playAudio(this)">🔊</button>
-  <div class="keySent" style="font-size:22px">"What are you responsible for?"</div>
-  <button class="btn go" data-next>Answered — next question</button>
+  <div class="partTag">🎯 Question 8 of 10</div>
+  <div class="partDots"><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg"></div><div class="seg"></div></div>
+  <div class="pTitle">Time On The Job</div>
+  <button class="audio" data-audio="audio/q8.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="es">Receptive only — a number answer is a pass. The full past form arrives in Class 17.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal what a solid answer sounds like</button>
+  <div class="keyBox">"Seven years." — that's a pass at this stage.</div>
+  <button class="btn go" data-next>Next</button>
  </div></div>
 
-<div class="scr" data-t="core">
+<div class="scr" data-t="checkpoint">
  <div class="plain"></div>
  <div class="stack">
-  <div class="qNum">Question 6 of 8</div>
-  <button class="audio" data-audio="audio/c12_q6.mp3" onclick="playAudio(this)">🔊</button>
-  <div class="keySent" style="font-size:22px">"What's happening on the floor right now?"</div>
-  <button class="btn go" data-next>Answered — next question</button>
+  <div class="partTag">🔥 Curveball 1 of 2</div>
+  <div class="partDots"><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg"></div></div>
+  <div class="pTitle">Unscripted — Repeat A Number</div>
+  <button class="audio" data-audio="audio/cv1.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="es">Real auditors don't follow a list. Can you repeat a number clearly under doubt?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal what a solid answer sounds like</button>
+  <div class="keyBox">"Twelve. One-two." — say it, then spell the digits if needed.</div>
+  <button class="btn go" data-next>Next</button>
  </div></div>
 
-<div class="scr" data-t="core">
+<div class="scr" data-t="checkpoint">
  <div class="plain"></div>
  <div class="stack">
-  <div class="qNum">Question 7 of 8</div>
-  <button class="audio" data-audio="audio/c12_q7.mp3" onclick="playAudio(this)">🔊</button>
-  <div class="keySent" style="font-size:20px">"What time does your shift start, and how many people are on your team?"</div>
-  <button class="btn go" data-next>Answered — next question</button>
+  <div class="partTag">🔥 Curveball 2 of 2</div>
+  <div class="partDots"><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div><div class="seg lit"></div></div>
+  <div class="pTitle">Unscripted — Usually vs. Now, Under Pressure</div>
+  <button class="audio" data-audio="audio/cv2.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="es">Last question. Answer confidently — voice falling at the end, not rising.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal what a solid answer sounds like</button>
+  <div class="keyBox">"Yes, we're on time today." / "Not today — we're a little behind." Either is fine if it's a full sentence.</div>
+  <button class="btn go" data-next>Finish the checkpoint</button>
  </div></div>
 
-<div class="scr" data-t="core">
+<div class="scr" data-t="verdict">
  <div class="plain"></div>
  <div class="stack">
-  <div class="qNum">Question 8 of 8</div>
-  <button class="audio" data-audio="audio/c12_q8.mp3" onclick="playAudio(this)">🔊</button>
-  <div class="keySent" style="font-size:22px">"How long have you worked here?"</div>
-  <div class="es">"Seven years." is a full pass here — the complete past-tense form arrives in Class 17.</div>
-  <button class="btn go" data-next>Answered — next question</button>
- </div></div>
-
-<div class="scr" data-t="core">
- <div class="plain"></div>
- <div class="stack">
-  <div class="partTag">Two curveballs</div>
-  <div class="es">Real auditors don't follow a list. No warning, no rehearsal.</div>
-  <div class="curveball">
-   <button class="audio sm" data-audio="audio/c12_cv1.mp3" onclick="playAudio(this)">🔊</button>
-   <div class="sent">"Sorry, how many did you say?"</div>
-  </div>
-  <button class="btn go" data-next>Answered — next</button>
- </div></div>
-
-<div class="scr" data-t="core">
- <div class="plain"></div>
- <div class="stack">
-  <div class="partTag">Two curveballs</div>
-  <div class="curveball">
-   <button class="audio sm" data-audio="audio/c12_cv2.mp3" onclick="playAudio(this)">🔊</button>
-   <div class="sent">"Is everything running on time today?"</div>
-  </div>
-  <button class="btn go" data-next>Continue</button>
- </div></div>
-
-<div class="scr" data-t="close">
- <div class="plain"></div>
- <div class="stack">
-  <div class="badge">Debrief</div>
-  <div class="think">Your coach scores this live and will show it to you before correcting anything.</div>
-  <div class="es">Two strongest answers first, then one target for next class. Not five — one.</div>
-  <button class="btn go" data-next>Continue</button>
- </div></div>
-
-<div class="scr" data-t="reading">
- <div class="plain"></div>
- <div class="stack">
-  <div class="partTag">Part 3 of 4 · Reading 3 — Remote Work & Technology</div>
-  <div class="es">Listen once at normal speed. Then read it aloud yourself.</div>
-  <button class="audio" data-audio="audio/c12_reading.mp3" onclick="playAudio(this)">🔊</button>
-  <div class="sent" style="text-align:left">"Technology is changing how we work. Many people now work from home using computers and smartphones. While this is convenient, some people miss talking to their coworkers face-to-face. Finding a balance is key to a happy life."</div>
-  <button class="btn go" data-next>Continue</button>
- </div></div>
-
-<div class="scr" data-t="reading">
- <div class="plain"></div>
- <div class="stack">
-  <div class="badge">Comprehension</div>
-  <div class="think">1. How do many people work now?<br><br>2. What do some people miss?</div>
-  <div class="es">Answer both out loud, in full sentences.</div>
-  <button class="btn go" data-next>Continue</button>
- </div></div>
-
-<div class="scr" data-t="reading">
- <div class="bg" data-img="photos/warehouse_floor.jpg"></div><div class="veil"></div>
- <div class="stack">
-  <div class="badge">Discussion</div>
-  <div class="think">Could your job be done from home? Why not?</div>
-  <div class="es">Take your time — this one is worth a real, free answer.</div>
-  <button class="btn go" data-next>Continue</button>
- </div></div>
-
-<div class="scr" data-t="review">
- <div class="plain"></div>
- <div class="stack">
-  <div class="partTag">Part 4 of 4 · Quick Review — Classes 9–11</div>
-  <div class="sent" style="text-align:left">
-   ✅ <b>Present Continuous</b> — "The team is loading a shipment."<br><br>
-   ✅ <b>Usually vs. now</b> — "Usually I check the line, but right now I'm helping with shipping."<br><br>
-   ✅ <b>Numbers & time</b> — "at six a.m. … about 200 units … how many people."
+  <div class="badge">Verdict</div>
+  <div class="verdictBadge">Halfway Point Reached</div>
+  <div class="think" style="font-size:18px">Six weeks ago you froze on "full name." Today you answered a full mock audit, question by question, mostly in English on your own.</div>
+  <div class="es">Keep an ear on these going into the second half:</div>
+  <div class="focusList">
+   <div class="focusItem"><b>①</b> "I <b>am</b> work" — check yourself: is it a routine (no "am"), or happening right now ("am" + -ing)?</div>
+   <div class="focusItem"><b>②</b> A phrase instead of silence — "Let me check" or "Can you repeat?" the moment you freeze, before you guess.</div>
+   <div class="focusItem"><b>③</b> Voice falling ↘ at the end of an answer — not rising, like a question.</div>
   </div>
   <button class="btn go" data-next>Continue</button>
  </div></div>
 
-<div class="scr" data-t="close">
- <div class="bg" data-img="photos/supervisor_clipboard.jpg"></div><div class="veil"></div>
+<div class="scr" data-t="core">
+ <div class="plain"></div>
  <div class="stack">
-  <div class="badge">Halfway point</div>
-  <div class="think">Say it out loud: "I can answer real audit questions in English, alone."</div>
-  <div class="es">This class is scored live by your coach — there's no score shown here. What matters is what you just did, out loud, under pressure.</div>
+  <div class="badge">Reading 3 · Remote Work &amp; Technology</div>
+  <button class="audio" data-audio="audio/reading3.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="sent" style="text-align:left">Technology is changing how we work. Many people now work from home using computers and smartphones. While this is convenient, some people miss talking to their coworkers face-to-face. Finding a balance is key to a happy life.</div>
+  <div class="es">Listen once, then read it out loud yourself.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Comprehension Check</div>
+  <div class="think">How do many people work now?</div>
+  <button class="btn go" data-next>Next question</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Comprehension Check</div>
+  <div class="think">What do some people miss? Could your job be done from home — why not?</div>
   <button class="btn go" data-next>Continue</button>
  </div></div>
 
@@ -1413,11 +1401,19 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
  <div class="stack">
   <div class="badge">Homework</div>
   <div class="sent" style="text-align:left">
-   1. 🎙️ <b>Record your whole mock audit</b> — all 8 answers — and listen back once.<br><br>
-   2. 🗂️ <b>Re-drill only the words that didn't come back</b> in the reach-back.<br><br>
+   1. 🎙️ Record your whole mock audit (all 8 answers) and listen back once.<br><br>
+   2. 🗂️ Re-drill only the words that didn't come back in the reach-back.<br><br>
    3. 🤖 ChatGPT voice: ask it to be a Lenovo auditor and ask you 8 questions.
   </div>
   <button class="btn go" data-next>Done for today</button>
+ </div></div>
+
+<div class="scr" data-t="close">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="big">Halfway there, Milton.</div>
+  <div class="es">See you at Class 13.</div>
+  <div class="credits">Teacher's Station · The Milestone Method</div>
  </div></div>
 
 </div>
@@ -1719,12 +1715,12 @@ function toggleVisual(btn){
     visual.classList.remove('photo'); visual.classList.add('motion');
     const g = motionGradients[Math.floor(Math.random()*motionGradients.length)];
     visual.innerHTML = '<div class="motionGrad" style="background:'+g+'"></div>';
-    btn.innerHTML = '📷 Foto';
+    btn.innerHTML = '📷 Photo';
   } else {
     visual.classList.remove('motion'); visual.classList.add('photo');
     const img = visual.getAttribute('data-img-src');
     visual.innerHTML = '<div class="bg" style="background-image:url(\'' + img + '\')"></div><div class="veil"></div>';
-    btn.innerHTML = '🎞 Movimiento';
+    btn.innerHTML = '🎞 Motion';
   }
 }
 function playAudio(btn){
