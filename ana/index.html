@@ -164,12 +164,13 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 <div id="classHeader">
   <span class="brand">TEACHER'S STATION</span>
-  <button id="classSelect" onclick="toggleMenu()">Class 3 ▾</button>
+  <button id="classSelect" onclick="toggleMenu()">Class 4 ▾</button>
 </div>
 <div id="classMenu">
   <div class="item" onclick="selectClass(1)">Class 1: Clinic — describe your role and daily routine <span>✓</span></div>
   <div class="item" onclick="selectClass(2)">Class 2: what you do vs. what you're doing right now <span>✓</span></div>
-  <div class="item active" onclick="selectClass(3)">Class 3: Patient intake — asking name and date of birth correctly <span>✓</span></div>
+  <div class="item" onclick="selectClass(3)">Class 3: Patient intake — asking name and date of birth correctly <span>✓</span></div>
+  <div class="item active" onclick="selectClass(4)">Class 4: Reading — A Day in a Phlebotomist's Life <span>✓</span></div>
 </div>
 
 <div id="bar"></div>
@@ -1432,6 +1433,6 @@ document.querySelectorAll('.bg[data-img]').forEach(el=>{
   const visualParent = el.closest('.visual');
   if(visualParent){ visualParent.setAttribute('data-img-src', src); }
 });
-loadScreens(3);
+loadScreens(4);
 </script>
 </body></html>
