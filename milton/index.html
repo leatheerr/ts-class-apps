@@ -168,14 +168,15 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 <div id="classHeader">
   <span class="brand">TEACHER'S STATION</span>
-  <button id="classSelect" onclick="toggleMenu()">Class 12 ▾</button>
+  <button id="classSelect" onclick="toggleMenu()">Class 13 ▾</button>
 </div>
 <div id="classMenu">
   <div class="groupLabel">Main course</div>
   <div class="item" onclick="selectClass(9,'Class 9')">Class 9: right now on the floor — the live walk-through <span>✓</span></div>
   <div class="item" onclick="selectClass(10,'Class 10')">Class 10: usually vs. right now <span>✓</span></div>
   <div class="item" onclick="selectClass(11,'Class 11')">Class 11: schedules & numbers <span>✓</span></div>
-  <div class="item active" onclick="selectClass(12,'Class 12')">Class 12: Mid-Point Audit Checkpoint <span>✓</span></div>
+  <div class="item" onclick="selectClass(12,'Class 12')">Class 12: Mid-Point Audit Checkpoint <span>✓</span></div>
+  <div class="item active" onclick="selectClass(13,'Class 13')">Class 13: giving & following instructions <span>✓</span></div>
   <div class="groupLabel vow">Vowels course</div>
   <div class="item vow" onclick="selectClass('v1','Vowels 1')">Vowels 1: vowels are sounds, not letters <span>✓</span></div>
 </div>
@@ -1418,6 +1419,299 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 </div>
 
+<!-- ==================== CLASS 13 ==================== -->
+<div class="classBlock" data-class="13">
+
+<div class="scr" data-t="open">
+ <div class="bg" data-img="photos/warehouse_workers.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="cue">Class 13</div>
+  <div class="big">Giving & following instructions: understand and give simple workplace commands</div>
+  <div class="es" style="font-size:16px;line-height:1.5;color:rgba(244,238,246,.85)">By the end of this class, you can give and follow short instructions on the floor.</div>
+  <button class="btn go" data-next>Begin</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Critical Thinking · 1 of 3</div>
+  <div class="think">What is one instruction you give your team every day? Why is it important?</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Critical Thinking · 2 of 3</div>
+  <div class="think">If a US colleague gives you an instruction and you don't understand, what do you do?</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Critical Thinking · 3 of 3</div>
+  <div class="think">Is it better to give instructions that are short or detailed? When?</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="tpr">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Instruct & Do · your coach gives the orders</div>
+  <div class="es">No speaking needed here. Just do exactly what you hear.</div>
+  <div class="think">"Pick up your pen. Move it to the left. Turn on your phone screen. Bring it closer."</div>
+  <button class="btn go" data-next>Done — continue</button>
+ </div></div>
+
+<div class="scr" data-t="tpr">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Instruct & Do · now you give the orders</div>
+  <div class="es">Give your coach four instructions, one at a time. They'll do exactly what you say — even if it comes out wrong.</div>
+  <div class="think">If you say "You put here the box," watch what happens. Then fix it yourself.</div>
+  <button class="btn go" data-next>Done — continue</button>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Build The Chunk · phrasal verbs · 1 of 3</div>
+  <div class="es">Tap the pieces in order, then say the whole sentence out loud:</div>
+  <div class="scramble" data-answer="Fill out the form.">
+   <div class="scrambleRow scrambleBank">
+    <button class="chip" onclick="scrambleTap(this)">the form</button>
+    <button class="chip" onclick="scrambleTap(this)">out</button>
+    <button class="chip" onclick="scrambleTap(this)">Fill</button>
+   </div>
+   <div class="scrambleRow scrambleBuilt"></div>
+   <div class="row">
+    <button class="btn" onclick="scrambleReset(this)">Reset</button>
+    <button class="btn go" onclick="scrambleCheck(this)">Check</button>
+   </div>
+   <div class="correct scrambleFeedback" style="display:none"></div>
+   <button class="btn go scrambleNext" data-next style="display:none">Continue</button>
+  </div>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Build The Chunk · phrasal verbs · 2 of 3</div>
+  <div class="es">Tap the pieces in order, then say the whole sentence out loud:</div>
+  <div class="scramble" data-answer="Turn on the scanner.">
+   <div class="scrambleRow scrambleBank">
+    <button class="chip" onclick="scrambleTap(this)">the scanner</button>
+    <button class="chip" onclick="scrambleTap(this)">on</button>
+    <button class="chip" onclick="scrambleTap(this)">Turn</button>
+   </div>
+   <div class="scrambleRow scrambleBuilt"></div>
+   <div class="row">
+    <button class="btn" onclick="scrambleReset(this)">Reset</button>
+    <button class="btn go" onclick="scrambleCheck(this)">Check</button>
+   </div>
+   <div class="correct scrambleFeedback" style="display:none"></div>
+   <button class="btn go scrambleNext" data-next style="display:none">Continue</button>
+  </div>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Build The Chunk · phrasal verbs · 3 of 3</div>
+  <div class="es">Tap the pieces in order, then say the whole sentence out loud:</div>
+  <div class="scramble" data-answer="Hand in the report.">
+   <div class="scrambleRow scrambleBank">
+    <button class="chip" onclick="scrambleTap(this)">the report</button>
+    <button class="chip" onclick="scrambleTap(this)">in</button>
+    <button class="chip" onclick="scrambleTap(this)">Hand</button>
+   </div>
+   <div class="scrambleRow scrambleBuilt"></div>
+   <div class="row">
+    <button class="btn" onclick="scrambleReset(this)">Reset</button>
+    <button class="btn go" onclick="scrambleCheck(this)">Check</button>
+   </div>
+   <div class="correct scrambleFeedback" style="display:none"></div>
+   <button class="btn go scrambleNext" data-next style="display:none">Continue</button>
+  </div>
+ </div></div>
+
+<div class="scr" data-t="race">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Race It · recycle Classes 11–12</div>
+  <div class="es">English in, English out. No Spanish in a speed round.</div>
+  <div class="wordList">
+   <span class="chip">shift</span><span class="chip">units</span><span class="chip">on time</span>
+   <span class="chip">how many</span><span class="chip">at six</span>
+  </div>
+  <div class="timerRing" data-seconds="60">
+   <svg width="96" height="96" viewBox="0 0 96 96">
+    <circle cx="48" cy="48" r="44" fill="none" stroke="rgba(244,238,246,.15)" stroke-width="4"/>
+    <circle class="timerArc" cx="48" cy="48" r="44" fill="none" stroke="#FFBE00" stroke-width="4"
+     stroke-linecap="round" stroke-dasharray="276.5" stroke-dashoffset="0" transform="rotate(-90 48 48)"/>
+   </svg>
+   <div class="timerNum">60</div>
+  </div>
+  <button class="btn go" onclick="timerStart(this)">Start 60s</button>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="1">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 1 of 3</div>
+  <div class="think">You're explaining a process with several steps and want to make the order clear. What do you say?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">First… then…</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the CORE round</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="2">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 2 of 3</div>
+  <div class="think">Words alone aren't landing — you want to show, not just tell. What do you say?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">Like this.</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the CORE round</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="3">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 3 of 3</div>
+  <div class="think">You just gave someone an instruction and want to check they understood — put the pressure on them, not you. What do you say?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">Got it?</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the CORE round</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="meetfix">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Meet Fix</div>
+  <div class="cue">Fix this out loud</div>
+  <div class="sent">"<s>You put here the box.</s>"</div>
+  <div class="es">Instruction = just the verb. Object before place.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>Put the box here.</b><br><button class="audio sm" data-audio="audio/c13_fix.mp3" onclick="playAudio(this)">🔊</button></div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="grammar">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Work Out The Rule</div>
+  <div class="think">An instruction has no "you" in front. What goes first instead?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>Instruction = base verb, nothing before it.</b> "Check the headcount." "Bring the pallet."<br><br><b>Phrasal verb = verb + small word</b>, and the small word matters: fill <b>out</b> · hand <b>in</b> · turn <b>on</b>.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/warehouse_floor.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">CORE · Round 1 — build</div>
+  <div class="think">A US colleague needs to run your task without you. Give a real 4-step process from your shift.</div>
+  <div class="es">Use First… Then… After that… Finally…</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">CORE · Round 2 — pressure</div>
+  <div class="think">Your coach follows your instructions literally, mistakes included. If a step is ambiguous or out of order, it visibly fails.</div>
+  <div class="es">Repair it live, out loud. Base-verb imperatives, object before place, at least 2 phrasal verbs.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Pronunciation · the test trap, again</div>
+  <div class="es">You read "lock" and said "look / lack" back in Class 1. Same contrast, new context.</div>
+  <button class="audio" data-audio="audio/c13_lookvspull.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="sent">"Look at the door, then lock the door."</div>
+  <div class="row">
+   <button class="btn" data-audio="audio/v_look.mp3" onclick="playAudio(this)">🔊 look /ʊ/</button>
+   <button class="btn" data-audio="audio/v_lock.mp3" onclick="playAudio(this)">🔊 lock /ɑː/</button>
+  </div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Add pull / pool · your other test confusion</div>
+  <div class="row">
+   <button class="btn" data-audio="audio/c13_pull.mp3" onclick="playAudio(this)">🔊 pull</button>
+   <button class="btn" data-audio="audio/c13_pool.mp3" onclick="playAudio(this)">🔊 pool</button>
+  </div>
+  <div class="es">Ten mixed rounds coming next — point at which one you hear.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Hear It · look, lock, pull, pool · mixed</div>
+  <div class="es">Play each one, say the word out loud before moving to the next.</div>
+  <div class="row">
+   <button class="btn" data-audio="audio/c13_hr1.mp3" onclick="playAudio(this)">▶ 1</button>
+   <button class="btn" data-audio="audio/c13_hr2.mp3" onclick="playAudio(this)">▶ 2</button>
+   <button class="btn" data-audio="audio/c13_hr3.mp3" onclick="playAudio(this)">▶ 3</button>
+   <button class="btn" data-audio="audio/c13_hr4.mp3" onclick="playAudio(this)">▶ 4</button>
+  </div>
+  <div class="row">
+   <button class="btn" data-audio="audio/c13_hr5.mp3" onclick="playAudio(this)">▶ 5</button>
+   <button class="btn" data-audio="audio/c13_hr6.mp3" onclick="playAudio(this)">▶ 6</button>
+   <button class="btn" data-audio="audio/c13_hr7.mp3" onclick="playAudio(this)">▶ 7</button>
+   <button class="btn" data-audio="audio/c13_hr8.mp3" onclick="playAudio(this)">▶ 8</button>
+  </div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="conversation">
+ <div class="bg" data-img="photos/shipping_area.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">Real-Life Conversation · giving an instruction</div>
+  <div class="think">Sarah asks how a new shipment gets started.</div>
+  <div class="row"><button class="btn" data-audio="audio/c13_sarah1.mp3" onclick="playAudio(this)">🔊 How do you start a new shipment?</button></div>
+  <div class="row"><button class="btn" data-audio="audio/c13_milton1.mp3" onclick="playAudio(this)">🔊 First, turn on the scanner. Then check the pallet number.</button></div>
+  <div class="row"><button class="btn" data-audio="audio/c13_sarah2.mp3" onclick="playAudio(this)">🔊 And the paperwork?</button></div>
+  <div class="row"><button class="btn" data-audio="audio/c13_milton2.mp3" onclick="playAudio(this)">🔊 Fill out the form and hand it in to the supervisor.</button></div>
+  <div class="es">Say it better: "do the thing with the paper" → "fill out the form".</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="conversation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Comprehension</div>
+  <div class="think">1. What is the first step Milton gives?<br><br>2. What does he do with the form?</div>
+  <div class="es">Answer both out loud, in full sentences.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="homework">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Homework</div>
+  <div class="sent" style="text-align:left">
+   1. 📋 Write a 4-step instruction for a real task at work.<br><br>
+   2. 🗂️ Add the 3 phrasal verbs to your tracker with a drawing, not a translation.<br><br>
+   3. 🤖 ChatGPT voice: instruct it to "make a sandwich," step by step — see if it can follow you.
+  </div>
+  <button class="btn go" data-next>Done for today</button>
+ </div></div>
+
+</div>
+
 <!-- ==================== VOWELS COURSE — CLASS 1 ==================== -->
 <div class="classBlock" data-class="v1">
 
@@ -1733,7 +2027,7 @@ function playAudio(btn){
 // Screens are scoped to the active classBlock only — nav can never leak between classes.
 let screens = [];
 let idx = 0;
-let currentClass = 12;
+let currentClass = 13;
 
 function loadScreens(classNum){
   document.querySelectorAll('.classBlock').forEach(b=>{
@@ -1772,6 +2066,6 @@ document.querySelectorAll('.bg[data-img]').forEach(el=>{
   const visualParent = el.closest('.visual');
   if(visualParent){ visualParent.setAttribute('data-img-src', src); }
 });
-loadScreens(12);
+loadScreens(13);
 </script>
 </body></html>
