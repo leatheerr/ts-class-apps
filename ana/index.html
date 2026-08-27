@@ -170,7 +170,8 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
   <div class="item" onclick="selectClass(1)">Class 1: Clinic — describe your role and daily routine <span>✓</span></div>
   <div class="item" onclick="selectClass(2)">Class 2: what you do vs. what you're doing right now <span>✓</span></div>
   <div class="item" onclick="selectClass(3)">Class 3: Patient intake — asking name and date of birth correctly <span>✓</span></div>
-  <div class="item active" onclick="selectClass(4)">Class 4: Reading — A Day in a Phlebotomist's Life <span>✓</span></div>
+  <div class="item" onclick="selectClass(4)">Class 4: Reading — A Day in a Phlebotomist's Life <span>✓</span></div>
+  <div class="item active" onclick="selectClass(5)">Class 5: patient prep — eaten, fasting, allergies <span>✓</span></div>
 </div>
 
 <div id="bar"></div>
@@ -1297,6 +1298,265 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
   <div class="credits">Teacher's Station · The Milestone Method</div>
  </div></div>
 </div>
+
+<div class="classBlock" data-class="5">
+
+<div class="scr" data-t="open">
+ <div class="bg" data-img="photos/blood_draw.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="cue">Class 5</div>
+  <div class="big">Patient prep: "Have you eaten?" "Have you fasted?" — asking correctly under time pressure</div>
+  <div class="es" style="font-size:16px;line-height:1.5;color:rgba(244,238,246,.85)">By the end of this class, you can ask a patient about eating and fasting correctly, under real time pressure — without blending "eating" into the "have you" question.</div>
+  <button class="btn go" data-next>Begin</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Critical Thinking · 1 of 3</div>
+  <div class="think">Why does it matter, medically, whether a patient has eaten before a test?</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Critical Thinking · 2 of 3</div>
+  <div class="think">What happens if you ask this question too late, right before the procedure starts?</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Critical Thinking · 3 of 3</div>
+  <div class="think">How is asking about fasting different from asking about allergies? Why ask both?</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="meetfix">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Spiral Check · light touch</div>
+  <div class="cue">Answer fast, no thinking time</div>
+  <div class="sent">"How many child—?"</div>
+  <div class="es">Say the whole word, correctly, right away.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>children</b><br>Clean for 2 sessions running as of Class 4. One more clean pass today is strong evidence toward calling it resolved.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Vocab · Fill It</div>
+  <div class="think">You need to know if they ate before a blood test →</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>"Have you eaten anything today?"</b><br><button class="audio sm" data-audio="audio/c5_haveeaten.mp3" onclick="playAudio(this)">🔊</button></div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Vocab · Fill It</div>
+  <div class="think">You need to know if they're allowed food or water right now →</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>"Are you fasting?"</b><br><button class="audio sm" data-audio="audio/c5_fasting.mp3" onclick="playAudio(this)">🔊</button></div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Vocab · Fill It</div>
+  <div class="think">Before drawing blood, you check for a reaction risk →</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>"Do you have any allergies?"</b><br><button class="audio sm" data-audio="audio/c5_allergies.mp3" onclick="playAudio(this)">🔊</button></div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Vocab · Fill It</div>
+  <div class="think">The patient looks unsure and nervous →</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>"Is this your first time?"</b><br><button class="audio sm" data-audio="audio/c5_firsttime.mp3" onclick="playAudio(this)">🔊</button></div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="meetfix">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Meet Fix</div>
+  <div class="cue">Fix this out loud</div>
+  <button class="audio" data-audio="audio/c5_fix_wrong.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="sent">"Have, have you <s>eating</s> anything this morning?"</div>
+  <div class="es">have + past participle, no "-ing".</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>Have you eaten anything this morning?</b><br><button class="audio sm" data-audio="audio/c5_fix_right.mp3" onclick="playAudio(this)">🔊</button></div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="meetfix">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Work Out The Rule</div>
+  <div class="think">Which one asks about something already finished, and which one asks about right now?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>Have you eaten? / Have you fasted?</b> — a completed action before this moment.<br><br><b>Are you fasting right now?</b> — an ongoing state, happening now.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Pronunciation · the /ɪ/ in "eating"</div>
+  <div class="es">Same fossil family as "chift" for "shift" — short, relaxed /ɪ/, not a tense long vowel.</div>
+  <div class="word">eat-ing</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Pronunciation Review · linking</div>
+  <button class="audio" data-audio="audio/c5_careful.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="word">Have... you... eaten... anything... today?</div>
+  <div class="es">Careful, word-by-word — how it looks on paper.</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Pronunciation Review · linking</div>
+  <button class="audio" data-audio="audio/c5_linked.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="word">Haveyou eaten anything today?</div>
+  <div class="es">Natural speed — "have you" links into one sound. This is what you'll actually say.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Say It · 3 times</div>
+  <button class="audio" data-audio="audio/c5_linked3x.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="word">Haveyou eaten anything today?</div>
+  <div class="es">Repeat it three times before continuing.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="1">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · Retrieval 1 of 3</div>
+  <div class="think">A patient is waiting while the system loads slowly. What do you say to ask for a moment?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">Bear with me.</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the CORE round</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="2">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · Retrieval 2 of 3</div>
+  <div class="think">Intake is finished and everything checks out. How do you let the patient know they're done?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">You're all set.</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the CORE round</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="3">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · Retrieval 3 of 3</div>
+  <div class="think">You need to walk a patient to the exam room. What do you say as you start walking?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">Right this way.</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the CORE round</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/blood_draw.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">CORE · Round 1 — build</div>
+  <div class="think">A patient is booked for a fasting blood draw. Ask: have they eaten, are they fasting, any allergies, is this their first time.</div>
+  <div class="es">Coach plays a calm, cooperative patient.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">CORE · Round 2 — under pressure</div>
+  <div class="think">Next patient is already waiting. This patient is in a hurry and gives short, unclear answers — "uh, maybe, I don't remember."</div>
+  <div class="es">Get a clear yes/no on eating and fasting before moving on. Use "Say that again?" if needed — don't guess.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Real-Life Conversation</div>
+  <div class="think">Ana preps a patient for a fasting blood draw with the next patient already waiting.</div>
+  <div class="row"><button class="btn" data-audio="audio/c5_ana1.mp3" onclick="playAudio(this)">🔊 Have you eaten anything today?</button></div>
+  <div class="row"><button class="btn" data-audio="audio/c5_patient1.mp3" onclick="playAudio(this)">🔊 No, nothing since last night.</button></div>
+  <div class="row"><button class="btn" data-audio="audio/c5_ana2.mp3" onclick="playAudio(this)">🔊 Are you fasting right now — no water either?</button></div>
+  <div class="row"><button class="btn" data-audio="audio/c5_patient2.mp3" onclick="playAudio(this)">🔊 Just water, is that okay?</button></div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Real-Life Conversation · continued</div>
+  <div class="row"><button class="btn" data-audio="audio/c5_ana3.mp3" onclick="playAudio(this)">🔊 Do you have any allergies I should know about?</button></div>
+  <div class="row"><button class="btn" data-audio="audio/c5_patient3.mp3" onclick="playAudio(this)">🔊 No allergies.</button></div>
+  <div class="row"><button class="btn" data-audio="audio/c5_ana4.mp3" onclick="playAudio(this)">🔊 Is this your first time having blood drawn?</button></div>
+  <div class="row"><button class="btn" data-audio="audio/c5_patient4.mp3" onclick="playAudio(this)">🔊 No, I've done it before.</button></div>
+  <div class="row"><button class="btn" data-audio="audio/c5_ana5.mp3" onclick="playAudio(this)">🔊 Perfect, you're all set. Right this way.</button></div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Comprehension</div>
+  <div class="think">1. Why does Ana ask if the patient had only water, not just "did you eat"?<br><br>2. What does Ana say right before directing the patient to the room?</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="spiral">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Spiral · Reach Back to Class 3</div>
+  <div class="think">Use the do-support question form from Class 3 ("What is your...?") right before today's "Have you eaten?" question — stack both in one intake sequence.</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="homework">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Homework</div>
+  <div class="sent" style="text-align:left">1. Record a 60-second mock prep check — ask all four questions: eaten, fasting, allergies, first time — using "Have you eaten...?", not "Have you eating...?"</div>
+  <div class="sent" style="text-align:left">2. Say "haveyou eaten" (linked) out loud 5 times.</div>
+  <button class="btn go" data-next>Done for today</button>
+ </div></div>
+
+<div class="scr" data-t="close">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="big">Nice work today.</div>
+  <div class="es">See you at Class 6.</div>
+  <div class="credits">Teacher's Station · The Milestone Method</div>
+ </div></div>
+
+</div>
 </div>
 
 <script>
@@ -1433,6 +1693,6 @@ document.querySelectorAll('.bg[data-img]').forEach(el=>{
   const visualParent = el.closest('.visual');
   if(visualParent){ visualParent.setAttribute('data-img-src', src); }
 });
-loadScreens(4);
+loadScreens(5);
 </script>
 </body></html>
