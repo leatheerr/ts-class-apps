@@ -168,15 +168,18 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 <div id="classHeader">
   <span class="brand">TEACHER'S STATION</span>
-  <button id="classSelect" onclick="toggleMenu()">Class 13 ▾</button>
+  <button id="classSelect" onclick="toggleMenu()">Class 11 ▾</button>
 </div>
 <div id="classMenu">
   <div class="groupLabel">Main course</div>
   <div class="item" onclick="selectClass(9,'Class 9')">Class 9: right now on the floor — the live walk-through <span>✓</span></div>
   <div class="item" onclick="selectClass(10,'Class 10')">Class 10: usually vs. right now <span>✓</span></div>
-  <div class="item" onclick="selectClass(11,'Class 11')">Class 11: schedules & numbers <span>✓</span></div>
-  <div class="item" onclick="selectClass(12,'Class 12')">Class 12: Mid-Point Audit Checkpoint <span>✓</span></div>
-  <div class="item active" onclick="selectClass(13,'Class 13')">Class 13: giving & following instructions <span>✓</span></div>
+  <div class="item active" onclick="selectClass(11,'Class 11')">Class 11: schedules & numbers <span>✓</span></div>
+  <!-- Class 12 (Mid-Point Audit Checkpoint) and Class 13 (giving & following instructions) are
+       built below (data-class="12"/"13") but deliberately NOT listed here: Master Curriculum
+       Index — Milton still shows both Status = Not started (not yet taught). Per this skill's
+       own access rule, built-ahead content stays hidden from the dropdown, not grayed-out, until
+       Juan flips Status to Done in Notion. Add their <div class="item"> entries back at that point. -->
   <div class="groupLabel vow">Vowels course</div>
   <div class="item vow" onclick="selectClass('v1','Vowels 1')">Vowels 1: vowels are sounds, not letters <span>✓</span></div>
 </div>
@@ -2027,7 +2030,7 @@ function playAudio(btn){
 // Screens are scoped to the active classBlock only — nav can never leak between classes.
 let screens = [];
 let idx = 0;
-let currentClass = 13;
+let currentClass = 11;
 
 function loadScreens(classNum){
   document.querySelectorAll('.classBlock').forEach(b=>{
@@ -2066,6 +2069,6 @@ document.querySelectorAll('.bg[data-img]').forEach(el=>{
   const visualParent = el.closest('.visual');
   if(visualParent){ visualParent.setAttribute('data-img-src', src); }
 });
-loadScreens(13);
+loadScreens(11);
 </script>
 </body></html>
