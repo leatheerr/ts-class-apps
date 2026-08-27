@@ -131,6 +131,7 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 </div>
 <div id="classMenu">
   <div class="item active" onclick="selectClass(1)">Class 1: First Contact <span>✓</span></div>
+  <div class="item" onclick="selectClass(2)">Class 2: Your Work Week <span>✓</span></div>
 </div>
 
 <div id="bar"></div>
@@ -468,6 +469,254 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
  <div class="stack">
   <div class="big">Nice work today.</div>
   <div class="es">See you at Class 2.</div>
+  <div class="credits">Teacher's Station · The Milestone Method</div>
+ </div></div>
+
+</div>
+
+<div class="classBlock" data-class="2">
+
+<div class="scr" data-t="open">
+ <div class="bg" data-img="photos/schedule_calendar.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="cue">Class 2</div>
+  <div class="big">Your Work Week: Describe Your Schedule Without Saying "I Am Work"</div>
+  <div class="es" style="font-size:16px;line-height:1.5;color:rgba(244,238,246,.85)">By the end of this class, you can describe your weekly routine in full sentences, catch yourself before "I am" slips in front of a verb, and confirm your availability with a client the natural way.</div>
+  <button class="btn go" data-next>Begin</button>
+ </div></div>
+
+<div class="scr" data-t="tpr" data-items='[{"w":"Point to the door.","a":"audio/tpr_point.mp3"},{"w":"Turn on the camera.","a":"audio/tpr_camera.mp3"},{"w":"Write your name.","a":"audio/tpr_write.mp3"},{"w":"Give me a thumbs up.","a":"audio/tpr_thumbsup.mp3"}]' data-idx="0">
+ <div class="motionStage">
+  <div style="position:absolute;width:180px;height:180px;left:50%;top:36%;margin:-90px 0 0 -90px;border-radius:50%;background:rgba(255,190,0,.14);animation:floatY 2.6s ease-in-out infinite;"></div>
+  <div class="veil"></div>
+ </div>
+ <div class="stack">
+  <div class="badge">Listening Decode · Retest</div>
+  <button class="audio" data-audio="audio/tpr_point.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="word" data-tprword>Point to the door.</div>
+  <div class="dots" data-tprdots><div class="dot lit"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="row" style="max-width:280px">
+   <button class="opt mid" onclick="tprNav(this,-1)" style="flex:0 0 60px">‹</button>
+   <button class="opt mid" onclick="tprNav(this,1)" style="flex:1">Next command ›</button>
+  </div>
+  <div class="es">Same 4 as last time. Listen once. No repeats.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Critical Thinking · 1 of 3</div>
+  <div class="think">Last class, you opened your role-play with a compliment before introducing yourself — nobody taught you that. Why did you do it?</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Critical Thinking · 2 of 3</div>
+  <div class="think">What's the busiest day of your work week, and why?</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Critical Thinking · 3 of 3</div>
+  <div class="think">If a client asks "Are you free Saturday?" and you're not, what do you say instead of just "No"?</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="production" data-word="1">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Vocabulary · Your Work Week</div>
+  <button class="audio" data-audio="audio/word_schedule.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="word">schedule</div>
+  <div class="dots"><div class="dot lit"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="es">Listen, then say it out loud 3 times.</div>
+  <button class="btn go" data-next>Next word</button>
+ </div></div>
+
+<div class="scr" data-t="production" data-word="2">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Vocabulary · Your Work Week</div>
+  <button class="audio" data-audio="audio/word_routine.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="word">routine</div>
+  <div class="dots"><div class="dot"></div><div class="dot lit"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="es">Listen, then say it out loud 3 times.</div>
+  <button class="btn go" data-next>Next word</button>
+ </div></div>
+
+<div class="scr" data-t="production" data-word="3">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Vocabulary · Your Work Week</div>
+  <button class="audio" data-audio="audio/word_shift.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="word">shift</div>
+  <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot lit"></div><div class="dot"></div></div>
+  <div class="es">Listen, then say it out loud 3 times.</div>
+  <button class="btn go" data-next>Next word</button>
+ </div></div>
+
+<div class="scr" data-t="production" data-word="4">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Vocabulary · Your Work Week</div>
+  <button class="audio" data-audio="audio/word_dayoff.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="word">day off</div>
+  <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot lit"></div></div>
+  <div class="es">Listen, then say it out loud 3 times.</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Vocab Race · Days of the Week</div>
+  <div class="think">Say the days of the week out loud, fast, start to finish: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday.</div>
+  <div class="es">Now do it again — coach says a day, you say the next one, no thinking time.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="meetfix">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Meet Fix</div>
+  <div class="cue">Answer fast, no thinking time</div>
+  <div class="sent">"I am work Monday to Saturday."</div>
+  <div class="es">Cue if you freeze: drop the "am" — say the whole sentence, not just the fix.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>"I work Monday to Saturday."</b><br>Same fossil as "I free" → "I am free" last class — different sentence, same fix.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/contractor_handshake.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">CORE · Round 1 — Build It</div>
+  <div class="think">A property manager wants to book you for a job and asks about your availability. Describe your full week — workdays, day off, typical shift.</div>
+  <div class="es">Use full Present Simple sentences. No "I am" + verb.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/contractor_handshake.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">CORE · Round 2 — Pressure Round</div>
+  <div class="think">Same scene — but the property manager interrupts: "Wait, so are you free Saturday or not?" Answer directly, then keep describing your schedule.</div>
+  <div class="es">Try to land one of last class's phrases too: "Sounds good," "No problem," or "Take care."</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="1">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 1 of 3</div>
+  <div class="think">A client suggests a day and time that actually suits you. How do you confirm it?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">That works for me.</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the CORE round</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="2">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 2 of 3</div>
+  <div class="think">Someone asks for a specific day, but you need a moment before committing. What do you say?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">Let me check my schedule.</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the CORE round</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="3">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 3 of 3</div>
+  <div class="think">You need to check something before confirming a date. What do you tell the client?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">I'll let you know.</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the CORE round</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Pronunciation · 3rd-Person -s · Hear It</div>
+  <div class="row">
+   <button class="opt mid" style="gap:8px" onclick="playAudio(this)" data-audio="audio/pron_works.mp3">"works" <span style="font-size:16px">🔊</span></button>
+   <button class="opt mid" style="gap:8px" onclick="playAudio(this)" data-audio="audio/pron_start.mp3">"start" <span style="font-size:16px">🔊</span></button>
+  </div>
+  <div class="es">Which one has the extra "-s" sound at the end? That's the he/she form.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Pronunciation · Connected Speech · Hear It</div>
+  <div class="row">
+   <button class="opt mid" style="gap:8px" onclick="playAudio(this)" data-audio="audio/pron_imfree.mp3">"I'm free Saturday." <span style="font-size:16px">🔊</span></button>
+   <button class="opt mid" style="gap:8px" onclick="playAudio(this)" data-audio="audio/pron_iamfree.mp3">"I am free Saturday." <span style="font-size:16px">🔊</span></button>
+  </div>
+  <div class="es">Both are correct — but which one sounds more natural in fast, everyday speech?</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/contractor_handshake.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">Real-Life Conversation</div>
+  <div class="think">A client wants to book you this week and asks about your schedule.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Only open this if you get stuck</button>
+  <div class="keyBox">
+   <b>Client:</b> Hi Julian, are you free to take a look at my kitchen this week?<br>
+   <b>You:</b> Let me check my schedule. I work Monday to Saturday, so weekdays are tight.<br>
+   <b>Client:</b> What about your day off?<br>
+   <b>You:</b> Sunday's my day off — but I could make an exception.<br>
+   <b>Client:</b> How about Saturday morning?<br>
+   <b>You:</b> That works for me. I start early, around 8.<br>
+   <b>Client:</b> Perfect, I'll confirm the address.<br>
+   <b>You:</b> Sounds good. Take care!
+  </div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Comprehension Check · 1 of 2</div>
+  <div class="think">What's Julian's usual day off?</div>
+  <button class="btn go" data-next>Next question</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Comprehension Check · 2 of 2</div>
+  <div class="think">Why does Julian say weekdays are "tight"?</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="homework">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Homework</div>
+  <div class="sent" style="text-align:left">1. Record yourself (voice memo) describing your real weekly schedule out loud, in full sentences — no "I am" + verb.</div>
+  <div class="sent" style="text-align:left">2. Practice the 3 new phrases with a family member: they name a day/time, you respond with "That works for me," "Let me check my schedule," or "I'll let you know."</div>
+  <div class="sent" style="text-align:left">3. Notice log: catch one moment this week where "I am + verb" would slip out — text Juan the sentence you actually used instead.</div>
+  <button class="btn go" data-next>Done for today</button>
+ </div></div>
+
+<div class="scr" data-t="close">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="big">Nice work today.</div>
+  <div class="es">See you at Class 3.</div>
   <div class="credits">Teacher's Station · The Milestone Method</div>
  </div></div>
 
