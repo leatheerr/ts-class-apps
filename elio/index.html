@@ -135,6 +135,9 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 <div id="classMenu">
   <div class="item" onclick="selectClass(1)">Class 1: Job Identity <span>✓</span></div>
   <div class="item active" onclick="selectClass(2)">Class 2: Job Site Tools <span>✓</span></div>
+  <!-- Class 3 (Numbers & Voltage) is built below (data-class="3") but deliberately NOT
+       listed here yet: Master Curriculum Index — Elio still shows Status = Not Started for
+       it (not yet taught). Add its <div class="item"> entry back once Juan flips it to Done. -->
 </div>
 
 <div id="bar"></div>
@@ -742,6 +745,279 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
   <div class="es">See you at Class 3.</div>
   <div class="credits">Teacher's Station · The Milestone Method</div>
  </div></div>
+</div>
+
+<div class="classBlock" data-class="3">
+
+<div class="scr" data-t="open">
+ <div class="bg" data-img="photos/breaker_panel.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="cue">Class 3</div>
+  <div class="big">Numbers & Voltage: state voltage and safety specs with total confidence</div>
+  <div class="es" style="font-size:16px;line-height:1.5;color:rgba(244,238,246,.85)">By the end of this class, you can state voltage and safety specs with total confidence — clear numbers, no hesitation, even when someone reads them fast.</div>
+  <button class="btn go" data-next>Begin</button>
+ </div></div>
+
+<div class="scr" data-t="ritual">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Before We Start</div>
+  <div class="think">Say your two frames from Class 2 out loud, fast: "I use a___," "I check the___."</div>
+  <div class="es">You already know these cold — this is your warm-up win.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Critical Thinking · 1 of 3</div>
+  <div class="think">Finish this: "The voltage I work with most is ___."</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Critical Thinking · 2 of 3</div>
+  <div class="think">Finish this: "Before I touch a wire, I always ___."</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Critical Thinking · 3 of 3</div>
+  <div class="think">True or false, then say why in one sentence: "All houses use the same voltage."</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="production" data-word="1">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Vocabulary · Voltage · Hear It, Say It</div>
+  <button class="audio" data-audio="audio/c3_120v.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="word">120 volts</div>
+  <div class="dots"><div class="dot lit"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="es">Listen, then say it clearly yourself.</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="production" data-word="2">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Vocabulary · Voltage · Hear It, Say It</div>
+  <button class="audio" data-audio="audio/c3_240v.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="word">240 volts</div>
+  <div class="dots"><div class="dot"></div><div class="dot lit"></div><div class="dot"></div></div>
+  <div class="es">Listen, then say it clearly yourself.</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="production" data-word="3">
+ <div class="visual photo" data-visual><div class="bg" data-img="photos/breaker_panel.jpg"></div><div class="veil"></div></div>
+ <button class="modeToggle" onclick="toggleVisual(this)">🎞 Motion</button>
+ <div class="stack">
+  <div class="badge">Vocabulary · Voltage & Safety</div>
+  <div class="sent">"This box turns the power on and off for the whole house."</div>
+  <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot lit"></div></div>
+  <div class="es">Say the word out loud, then reveal</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>breaker</b></div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="production" data-word="4">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Vocabulary · Voltage & Safety</div>
+  <div class="sent">"The path the electricity travels through."</div>
+  <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="es">Say the word out loud, then reveal</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>circuit</b></div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="1">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 1 of 3</div>
+  <div class="think">Before you touch anything, you want to check the voltage first. What do you say to buy a moment?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">Let me grab my tester.</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the CORE round</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="2">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 2 of 3</div>
+  <div class="think">There's a hazard nearby a customer might not notice. What do you say to warn them?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">Watch your step.</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the CORE round</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="3">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 3 of 3</div>
+  <div class="think">You need a beat mid-explanation before you continue. What do you say?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">Give me a second.</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the CORE round</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="meetfix">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Meet Fix · Review (Class 2)</div>
+  <div class="cue">Answer fast, no thinking time</div>
+  <div class="sent">"What do you use?" / "What do you check?"</div>
+  <div class="es">Cue if you freeze: "I use a___" or "I check the___" — say the whole sentence, not just the missing word.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>I use a ladder. I check the breaker.</b><br>Same frames as Class 2 — this time under a cold ask, no warm-up first.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="frame">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="dots"><div class="dot lit"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="badge">Frame Practice</div>
+  <div class="frameCard">
+   <div class="frameSentence">"It's <span class="blank"><span class="cursor"></span></span> volts."</div>
+   <div class="frameHint">name the voltage, out loud</div>
+  </div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>It's 120 volts. / It's 240 volts.</b></div>
+  <button class="btn go" data-next>Next frame</button>
+ </div></div>
+
+<div class="scr" data-t="frame">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="dots"><div class="dot lit"></div><div class="dot lit"></div><div class="dot"></div></div>
+  <div class="badge">Frame Practice</div>
+  <div class="frameCard">
+   <div class="frameSentence">"The breaker is <span class="blank"><span class="cursor"></span></span>."</div>
+   <div class="frameHint">on or off, out loud</div>
+  </div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>The breaker is off. / The breaker is on.</b></div>
+  <button class="btn go" data-next>Next frame</button>
+ </div></div>
+
+<div class="scr" data-t="frame">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="dots"><div class="dot lit"></div><div class="dot lit"></div><div class="dot lit"></div></div>
+  <div class="badge">Frame Practice</div>
+  <div class="frameCard">
+   <div class="frameSentence">"Be careful, the wire is <span class="blank"><span class="cursor"></span></span>."</div>
+   <div class="frameHint">live or hot, out loud</div>
+  </div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>Be careful, the wire is live.</b></div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/breaker_panel.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">CORE · Round 1 — Build It</div>
+  <div class="think">A homeowner is nervous about the panel and asks you to explain the numbers and confirm it's safe. Use your 3 frames to answer.</div>
+  <div class="es">Use "It's___volts," "The breaker is___," and at least one Phrase Bank line.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/breaker_panel.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">CORE · Round 2 — Same Frames, Faster</div>
+  <div class="think">Same homeowner conversation, same frames — just less thinking time between them.</div>
+  <div class="es">Not new content, just more comfort and speed with what you already said.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Pronunciation · Number Clarity · Hear It</div>
+  <div class="row">
+   <button class="opt mid" style="gap:8px" onclick="playAudio(this)" data-audio="audio/c3_thirteen.mp3">thirTEEN <span style="font-size:16px">🔊</span></button>
+   <button class="opt mid" style="gap:8px" onclick="playAudio(this)" data-audio="audio/c3_thirty.mp3">THIRty <span style="font-size:16px">🔊</span></button>
+  </div>
+  <div class="row">
+   <button class="opt mid" style="gap:8px" onclick="playAudio(this)" data-audio="audio/c3_fourteen.mp3">fourTEEN <span style="font-size:16px">🔊</span></button>
+   <button class="opt mid" style="gap:8px" onclick="playAudio(this)" data-audio="audio/c3_forty.mp3">FORty <span style="font-size:16px">🔊</span></button>
+  </div>
+  <div class="es">A misheard number here is a real safety issue, not just a grammar point. Listen carefully to each pair.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Pronunciation · Say It Clearly</div>
+  <button class="audio" data-audio="audio/c3_240amps.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="word">240 volts · 14 amps</div>
+  <div class="es">Say both numbers clearly, stress on the right syllable, then use them inside Round 1 of the CORE.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/breaker_panel.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">Real-Life Conversation</div>
+  <div class="think">A homeowner is nervous about the panel and asks you to explain.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Only open this if you get stuck</button>
+  <div class="keyBox">
+   <b>Homeowner:</b> Is this safe? What's the voltage here?<br>
+   <b>You:</b> It's 240 volts. Let me grab my tester first.<br>
+   <b>Homeowner:</b> Okay. Is the power off right now?<br>
+   <b>You:</b> Yes, the breaker is off. Watch your step, the wire is still live near the panel.<br>
+   <b>Homeowner:</b> Got it, thank you.
+  </div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Comprehension Check</div>
+  <div class="think">What voltage does Elio tell the homeowner?</div>
+  <button class="btn go" data-next>Next question</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Comprehension Check</div>
+  <div class="think">What does Elio warn the homeowner about?</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="homework">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Homework</div>
+  <div class="sent" style="text-align:left">1. Record yourself saying the 3 new frames (voice memo): "It's___volts," "The breaker is___," "Be careful, the wire is___."</div>
+  <div class="sent" style="text-align:left">2. Notice log: catch one moment at work where you'd say a voltage number out loud in English — text Juan what actually happened.</div>
+  <button class="btn go" data-next>Done for today</button>
+ </div></div>
+
+<div class="scr" data-t="close">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="big">Nice work today.</div>
+  <div class="es">See you at Class 4.</div>
+  <div class="credits">Teacher's Station · The Milestone Method</div>
+ </div></div>
+
 </div>
 </div>
 
