@@ -128,10 +128,11 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 <div id="classHeader">
   <span class="brand">TEACHER'S STATION</span>
-  <button id="classSelect" onclick="toggleMenu()">Class 25 ▾</button>
+  <button id="classSelect" onclick="toggleMenu()">Class 26 ▾</button>
 </div>
 <div id="classMenu">
-  <div class="item active" onclick="selectClass(25)">Class 25: Giving Advice <span>✓</span></div>
+  <div class="item" onclick="selectClass(25)">Class 25: Giving Advice <span>✓</span></div>
+  <div class="item active" onclick="selectClass(26)">Class 26: The New Hire From Hell — Rules + WHY <span>✓</span></div>
 </div>
 
 <div id="bar"></div>
@@ -933,7 +934,7 @@ document.querySelectorAll('.bg[data-img]').forEach(el=>{
   const visualParent = el.closest('.visual');
   if(visualParent){ visualParent.setAttribute('data-img-src', src); }
 });
-loadScreens(25);
+loadScreens(26);
 document.querySelector('[data-navback]').disabled = true;
 </script>
 </body></html>
