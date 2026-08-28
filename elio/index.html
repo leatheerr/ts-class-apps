@@ -130,14 +130,12 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 <div id="classHeader">
   <span class="brand">TEACHER'S STATION</span>
-  <button id="classSelect" onclick="toggleMenu()">Class 2 ▾</button>
+  <button id="classSelect" onclick="toggleMenu()">Class 3 ▾</button>
 </div>
 <div id="classMenu">
   <div class="item" onclick="selectClass(1)">Class 1: Job Identity <span>✓</span></div>
-  <div class="item active" onclick="selectClass(2)">Class 2: Job Site Tools <span>✓</span></div>
-  <!-- Class 3 (Numbers & Voltage) is built below (data-class="3") but deliberately NOT
-       listed here yet: Master Curriculum Index — Elio still shows Status = Not Started for
-       it (not yet taught). Add its <div class="item"> entry back once Juan flips it to Done. -->
+  <div class="item" onclick="selectClass(2)">Class 2: Job Site Tools <span>✓</span></div>
+  <div class="item active" onclick="selectClass(3)">Class 3: Numbers & Voltage <span>✓</span></div>
 </div>
 
 <div id="bar"></div>
@@ -1152,7 +1150,7 @@ document.querySelectorAll('.bg[data-img]').forEach(el=>{
   const visualParent = el.closest('.visual');
   if(visualParent){ visualParent.setAttribute('data-img-src', src); }
 });
-loadScreens(2);
+loadScreens(3);
 document.querySelector('[data-navback]').disabled = true;
 </script>
 </body></html>
