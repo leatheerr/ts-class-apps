@@ -122,17 +122,24 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 .modeToggle{position:absolute;top:56px;right:14px;z-index:65;background:rgba(244,238,246,.12);
  border:none;color:var(--ink);font-family:'Poppins',system-ui,sans-serif;font-size:11px;font-weight:600;
  padding:7px 12px;border-radius:20px;display:flex;align-items:center;gap:5px}
+
+/* Concept motion: sequence-tense */
+.motionStage{position:absolute;inset:0;z-index:0}
+.motion-timeline{position:absolute;top:64px;left:0;right:0;display:flex;align-items:center;justify-content:center}
+.timeline-marker{animation:timelineMove 4s ease-in-out infinite}
+@keyframes timelineMove{0%{cx:30}50%{cx:170}100%{cx:30}}
 </style></head>
 <body>
 
 <div id="classHeader">
   <span class="brand">TEACHER'S STATION</span>
-  <button id="classSelect" onclick="toggleMenu()">Class 26 ▾</button>
+  <button id="classSelect" onclick="toggleMenu()">Class 27 ▾</button>
 </div>
 <div id="classMenu">
   <div class="item" onclick="selectClass(24)">Class 24: Phase 1 Final Assessment <span>✓</span></div>
   <div class="item" onclick="selectClass(25)">Class 25: Setting the Scene <span>✓</span></div>
-  <div class="item active" onclick="selectClass(26)">Class 26: Running the Investigation <span>✓</span></div>
+  <div class="item" onclick="selectClass(26)">Class 26: Running the Investigation <span>✓</span></div>
+  <div class="item active" onclick="selectClass(27)">Class 27: Calling It In <span>✓</span></div>
 </div>
 
 <div id="bar"></div>
@@ -979,6 +986,269 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 </div>
 
+<div class="classBlock" data-class="27">
+
+<div class="scr" data-t="open">
+ <div class="bg" data-img="photos/c27_phone_call.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="cue">Class 27 · Phone / No-Visual</div>
+  <div class="big">Calling It In — reporting an accident by phone</div>
+  <div class="es" style="font-size:16px;line-height:1.5;color:rgba(244,238,246,.85)">By the end of this class, you can call the safety office and report exactly what you were doing when something happened — clearly enough that they get it the first time, with no gestures to help you.</div>
+  <button class="btn go" data-next>Begin</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Warm-Up · 1 of 3</div>
+  <div class="think">Why is a phone report harder than telling someone face to face?</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Warm-Up · 2 of 3</div>
+  <div class="think">If safety asks "what were you doing when it happened?" — why do they want the before, not just the accident?</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Warm-Up · 3 of 3</div>
+  <div class="think">What's the difference between reporting an accident and admitting fault?</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="warmup">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Fast-Speech Lab · 1 of 4</div>
+  <button class="audio" data-audio="audio/c27_fs1.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="think">Listen. No video, just the voice.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">What did he say?</button>
+  <div class="keyBox">"Say again? Where'd it happen?" → <b>Say that again? Where did it happen?</b></div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="warmup">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Fast-Speech Lab · 2 of 4</div>
+  <button class="audio" data-audio="audio/c27_fs2.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="think">Listen again.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">What did he say?</button>
+  <div class="keyBox">"Was anybody with ya when it went?" → <b>Was anybody with you when it happened?</b></div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="warmup">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Fast-Speech Lab · 3 of 4</div>
+  <button class="audio" data-audio="audio/c27_fs3.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="think">One more.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">What did he say?</button>
+  <div class="keyBox">"Whadwuzee doin' at the time?" → <b>What was he doing at the time?</b></div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="warmup">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Fast-Speech Lab · 4 of 4</div>
+  <button class="audio" data-audio="audio/c27_fs4.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="think">Last one. If you miss it, ask for the repeat — that's a pass, not a fail.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">What did he say?</button>
+  <div class="keyBox">"Hold on — say that again slower." → this one's already the model. Practice saying it yourself.</div>
+  <button class="btn go" data-next>Your ear is ready. Make the call.</button>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Situation → Sentence</div>
+  <div class="think">You're carrying a panel. It slips.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the report</button>
+  <div class="keyBox"><div class="pbPhrase" style="font-size:22px">I was carrying a panel when it slipped.</div></div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Build The Chunk</div>
+  <div class="es">Tap the pieces in order, then check your sentence:</div>
+  <div class="scramble" data-answer="I was welding when it sparked.">
+   <div class="scrambleRow scrambleBank">
+    <button class="chip" onclick="scrambleTap(this)">when it sparked</button>
+    <button class="chip" onclick="scrambleTap(this)">I was welding</button>
+   </div>
+   <div class="scrambleRow scrambleBuilt"></div>
+   <div class="row">
+    <button class="btn" onclick="scrambleReset(this)">Reset</button>
+    <button class="btn go" onclick="scrambleCheck(this)">Check</button>
+   </div>
+   <div class="correct scrambleFeedback" style="display:none"></div>
+   <button class="btn go scrambleNext" data-next style="display:none">Continue</button>
+  </div>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="1">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 1 of 3</div>
+  <div class="es" style="margin-bottom:-6px">You say this when a machine stops working while you're using it.</div>
+  <div class="think">A unit was running fine, then just... stopped. How do you report that?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">It gave out on me.</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase on the call</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="2">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 2 of 3</div>
+  <div class="think">First thing safety wants to know after "what happened" — is everyone okay?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">Nobody got hurt.</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase on the call</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="3">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 3 of 3</div>
+  <div class="think">You already reported this to the right people. How do you confirm that?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">I called it in.</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase on the call</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="meetfix">
+ <div class="motionStage" aria-hidden="true">
+  <div class="motion-timeline">
+   <svg viewBox="0 0 200 60" width="220" height="66">
+    <line x1="10" y1="30" x2="190" y2="30" stroke="rgba(244,238,246,.2)" stroke-width="2"/>
+    <circle cx="30" cy="30" r="4" fill="#F4EEF6" opacity=".5"/>
+    <circle cx="100" cy="30" r="4" fill="#F4EEF6" opacity=".5"/>
+    <circle cx="170" cy="30" r="4" fill="#F4EEF6" opacity=".5"/>
+    <circle cx="30" cy="30" r="7" fill="#FFBE00" class="timeline-marker"/>
+   </svg>
+  </div>
+  <div class="veil"></div>
+ </div>
+ <div class="stack">
+  <div class="badge">Meet Fix</div>
+  <div class="think" style="color:rgba(244,238,246,.5);text-decoration:line-through;text-decoration-color:rgba(255,100,100,.75)">"I worked and boss call."</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Tap to fix</button>
+  <div class="keyBox" style="text-align:center">
+   <div class="pbPhrase">"I was working when the boss called."</div>
+   <div style="margin-top:10px;font-size:13px;color:rgba(244,238,246,.6)">The long thing takes <b style="color:var(--go)">was + -ing</b>. The sudden thing takes <b style="color:var(--go)">past simple</b>.</div>
+  </div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/c27_leak.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">The Safety Call · Round 1</div>
+  <div class="think">Call the safety office and report a real or invented incident. No video — just your voice.</div>
+  <div class="checkList">
+   <div><b>✓</b> What you were doing (Past Continuous)</div>
+   <div><b>✓</b> What happened (Past Simple, when-clause)</div>
+   <div><b>✓</b> Whether anyone was hurt</div>
+   <div><b>✓</b> What you did about it</div>
+  </div>
+  <button class="btn go" data-next>Make the call, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">The Safety Call · Round 2 — Bad Line</div>
+  <div class="think">Same report, but the line is bad — fast and mumbled. Ask for repeats in English and still finish the report.</div>
+  <div class="es">"Say that again?" · "Sorry, I didn't catch that."</div>
+  <div class="es" style="color:var(--go);font-style:normal;font-weight:600">Asking for a repeat is a win here, not a slip.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Pronunciation · Intonation Drop</div>
+  <button class="audio" data-audio="audio/c27_pron_when.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="word" style="font-size:24px">I was welding ↗ when it sparked ↘</div>
+  <div class="es">The pitch rises through the when-clause, then falls. Say it out loud.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Pronunciation · Final Consonants</div>
+  <button class="audio" data-audio="audio/c27_pron_endings.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="word">called · finished · walked</div>
+  <div class="es">On a bad phone line, these endings are the whole message. Don't let them disappear.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/c27_leak.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">Real-Life Conversation</div>
+  <div class="think">You call your supervisor to report that a unit leaked overnight.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Only open this if you get stuck</button>
+  <div class="keyBox">
+   <b>You:</b> Hey, it's Diego. I'm calling it in — the unit on the second floor leaked overnight.<br>
+   <b>Super:</b> What happened?<br>
+   <b>You:</b> I was doing my morning check when I found water under the pan. The seal gave out on me.<br>
+   <b>Super:</b> Anybody hurt?<br>
+   <b>You:</b> No — nobody got hurt. I shut it down and I already called it in to maintenance.
+  </div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Comprehension Check</div>
+  <div class="think">What was he doing when he found it?</div>
+  <button class="btn go" data-next>Next question</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Comprehension Check</div>
+  <div class="think">What did he do after?</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="homework">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Homework</div>
+  <div class="homeItem">1. Call someone (anyone) and describe an event for 60 seconds, no video.</div>
+  <div class="homeItem">2. Voice note: 3 incidents, each as "I was ___-ing when ___."</div>
+  <div class="homeItem">3. Tracker: 3 phrases + 6 words.</div>
+  <button class="btn go" data-next>Done for today</button>
+ </div></div>
+
+<div class="scr" data-t="close">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="big">Nice work today.</div>
+  <div class="es">See you at Class 28.</div>
+  <div class="credits">Teacher's Station · The Milestone Method</div>
+ </div></div>
+
+</div>
+
 <script>
 function toggleMenu(){ document.getElementById('classMenu').classList.toggle('open'); }
 
@@ -1063,6 +1333,6 @@ document.querySelectorAll('.bg[data-img]').forEach(el=>{
   const src = el.getAttribute('data-img');
   el.style.backgroundImage = "url('" + src + "')";
 });
-loadScreens(26);
+loadScreens(27);
 </script>
 </body></html>
