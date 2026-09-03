@@ -164,14 +164,15 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 <div id="classHeader">
   <span class="brand">TEACHER'S STATION</span>
-  <button id="classSelect" onclick="toggleMenu()">Class 5 ▾</button>
+  <button id="classSelect" onclick="toggleMenu()">Class 6 ▾</button>
 </div>
 <div id="classMenu">
   <div class="item" onclick="selectClass(1)">Class 1: Clinic — describe your role and daily routine <span>✓</span></div>
   <div class="item" onclick="selectClass(2)">Class 2: what you do vs. what you're doing right now <span>✓</span></div>
   <div class="item" onclick="selectClass(3)">Class 3: Patient intake — asking name and date of birth correctly <span>✓</span></div>
   <div class="item" onclick="selectClass(4)">Class 4: Reading — A Day in a Phlebotomist's Life <span>✓</span></div>
-  <div class="item active" onclick="selectClass(5)">Class 5: patient prep — eaten, fasting, allergies <span>✓</span></div>
+  <div class="item" onclick="selectClass(5)">Class 5: patient prep — eaten, fasting, allergies <span>✓</span></div>
+  <div class="item active" onclick="selectClass(6)">Class 6: explaining the procedure — shift, sit, pinch <span>✓</span></div>
 </div>
 
 <div id="bar"></div>
@@ -1557,10 +1558,315 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
  </div></div>
 
 </div>
+
+<div class="classBlock" data-class="6">
+
+<div class="scr" data-t="open">
+ <div class="bg" data-img="photos/blood_draw.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="cue">Class 6</div>
+  <div class="big">Explaining the procedure clearly: your top problem sounds — shift, sit, pinch, insurance</div>
+  <div class="es" style="font-size:16px;line-height:1.5;color:rgba(244,238,246,.85)">By the end of this class, you can walk a patient through a blood draw step by step, giving clear instructions — and your /ɪ/ vowel holds under a real minimal-pair test, not just in isolated words.</div>
+  <button class="btn go" data-next>Begin</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Critical Thinking · 1 of 3</div>
+  <div class="think">Why is it important to explain each step of a procedure out loud, even if the patient has done it before?</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Critical Thinking · 2 of 3</div>
+  <div class="think">What's one word you'd use instead of "a little pain" to sound more professional and calming?</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Critical Thinking · 3 of 3</div>
+  <div class="think">Did you get a chance to record and send the full intake script from last class?</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="meetfix">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Fossil Check</div>
+  <div class="cue">Answer fast, no thinking time</div>
+  <div class="sent">"Confirm my date of — go."</div>
+  <div class="es">Say the whole word, correctly, right away — clear "th" ending.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>birth</b><br>This has come up twice now (Class 3 and again live). One clean pass today is worth naming either way.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Vocab · Fill It</div>
+  <div class="think">You're about to insert the needle and want to warn them gently →</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>"You'll feel a little pinch."</b><br><button class="audio sm" data-audio="audio/c6_pinch.mp3" onclick="playAudio(this)">🔊</button></div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Vocab · Fill It</div>
+  <div class="think">You need the band around their arm before finding the vein →</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>"I'm going to put on the tourniquet."</b><br><button class="audio sm" data-audio="audio/c6_tourniquet.mp3" onclick="playAudio(this)">🔊</button></div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Vocab · Fill It</div>
+  <div class="think">The needle is in and you need them not to move →</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>"Please sit still."</b><br><button class="audio sm" data-audio="audio/c6_sitstill.mp3" onclick="playAudio(this)">🔊</button></div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Vocab · Fill It</div>
+  <div class="think">You're finishing up →</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>"Almost done."</b><br><button class="audio sm" data-audio="audio/c6_almostdone.mp3" onclick="playAudio(this)">🔊</button></div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="meetfix">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Meet Fix</div>
+  <div class="cue">Fix this out loud</div>
+  <button class="audio" data-audio="audio/c6_fix_wrong.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="sent">"<s>You sit still.</s>"</div>
+  <div class="es">Instructions are the bare verb, nothing in front.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>Sit still.</b><br><button class="audio sm" data-audio="audio/c6_fix_right.mp3" onclick="playAudio(this)">🔊</button></div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="meetfix">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Work Out The Rule</div>
+  <div class="think">When you tell a patient what to do, what goes at the front of the sentence?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>Base verb, no subject.</b><br>"Sit down." "Make a fist." "Hold still." "Breathe in, breathe out."</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Minimal Pairs · Hear It · 1 of 3</div>
+  <div class="es">Which one did you hear? No context.</div>
+  <button class="choice" onclick="pick(this)">shift</button>
+  <button class="choice" onclick="pick(this)">sheet</button>
+  <div class="row">
+   <button class="btn" data-audio="audio/c6_shift.mp3" onclick="playAudio(this)">▶ shift</button>
+   <button class="btn" data-audio="audio/c6_sheet.mp3" onclick="playAudio(this)">▶ sheet</button>
+  </div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Minimal Pairs · Hear It · 2 of 3</div>
+  <button class="choice" onclick="pick(this)">sit</button>
+  <button class="choice" onclick="pick(this)">seat</button>
+  <div class="row">
+   <button class="btn" data-audio="audio/c6_sit.mp3" onclick="playAudio(this)">▶ sit</button>
+   <button class="btn" data-audio="audio/c6_seat.mp3" onclick="playAudio(this)">▶ seat</button>
+  </div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Minimal Pairs · Hear It · 3 of 3</div>
+  <button class="choice" onclick="pick(this)">pinch</button>
+  <button class="choice" onclick="pick(this)">peach</button>
+  <div class="row">
+   <button class="btn" data-audio="audio/c6_pinchword.mp3" onclick="playAudio(this)">▶ pinch</button>
+   <button class="btn" data-audio="audio/c6_peach.mp3" onclick="playAudio(this)">▶ peach</button>
+  </div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Say It · the three short vowels together</div>
+  <button class="audio" data-audio="audio/c6_threeshort.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="word">shift, sit, pinch</div>
+  <div class="es">Tongue stays low and relaxed — not tense and long like "sheet, seat, peach."</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Hear It · mixed · 10 rounds</div>
+  <div class="es">Play each one, say the word out loud before moving on.</div>
+  <div class="row">
+   <button class="btn" data-audio="audio/c6_hr1.mp3" onclick="playAudio(this)">▶ 1</button>
+   <button class="btn" data-audio="audio/c6_hr2.mp3" onclick="playAudio(this)">▶ 2</button>
+   <button class="btn" data-audio="audio/c6_hr3.mp3" onclick="playAudio(this)">▶ 3</button>
+  </div>
+  <div class="row">
+   <button class="btn" data-audio="audio/c6_hr4.mp3" onclick="playAudio(this)">▶ 4</button>
+   <button class="btn" data-audio="audio/c6_hr5.mp3" onclick="playAudio(this)">▶ 5</button>
+   <button class="btn" data-audio="audio/c6_hr6.mp3" onclick="playAudio(this)">▶ 6</button>
+  </div>
+  <div class="row">
+   <button class="btn" data-audio="audio/c6_hr7.mp3" onclick="playAudio(this)">▶ 7</button>
+   <button class="btn" data-audio="audio/c6_hr8.mp3" onclick="playAudio(this)">▶ 8</button>
+   <button class="btn" data-audio="audio/c6_hr9.mp3" onclick="playAudio(this)">▶ 9</button>
+  </div>
+  <div class="row"><button class="btn" data-audio="audio/c6_hr10.mp3" onclick="playAudio(this)">▶ 10</button></div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="1">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · Retrieval 1 of 3</div>
+  <div class="think">A patient apologizes for being nervous or asking a lot of questions. What do you say to put them at ease?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">It's not a big deal.</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the CORE round</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="2">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · Retrieval 2 of 3</div>
+  <div class="think">You're explaining why you're asking about allergies even though the patient says they have none. What do you say?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">Just in case.</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the CORE round</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="3">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · Retrieval 3 of 3</div>
+  <div class="think">A patient asks if they can look away while you draw blood. You want to give them permission casually. What do you say?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">Suit yourself.</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the CORE round</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/blood_draw.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">CORE · Round 1 — build</div>
+  <div class="think">A first-time, slightly nervous patient is getting blood drawn. Narrate every step out loud as you go: tourniquet, make a fist, little pinch, sit still, almost done.</div>
+  <div class="es">Coach plays a calm patient.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">CORE · Round 2 — a wrinkle</div>
+  <div class="think">Mid-procedure, the patient suddenly says they feel dizzy.</div>
+  <div class="es">Respond with the calming language from last time ("breathe in, breathe out") and keep instructing clearly — don't freeze.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Real-Life Conversation</div>
+  <div class="think">Ana walks a first-time patient through a blood draw.</div>
+  <div class="row"><button class="btn" data-audio="audio/c6_ana1.mp3" onclick="playAudio(this)">🔊 Okay, I'm going to put on the tourniquet now. Make a fist for me, please.</button></div>
+  <div class="row"><button class="btn" data-audio="audio/c6_patient1.mp3" onclick="playAudio(this)">🔊 Like this?</button></div>
+  <div class="row"><button class="btn" data-audio="audio/c6_ana2.mp3" onclick="playAudio(this)">🔊 Perfect. You'll feel a little pinch... there we go. Please sit still for me.</button></div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Real-Life Conversation · continued</div>
+  <div class="row"><button class="btn" data-audio="audio/c6_patient2.mp3" onclick="playAudio(this)">🔊 I feel a little dizzy.</button></div>
+  <div class="row"><button class="btn" data-audio="audio/c6_ana3.mp3" onclick="playAudio(this)">🔊 That's okay, it's not a big deal — just breathe in, breathe out. Almost done.</button></div>
+  <div class="row"><button class="btn" data-audio="audio/c6_patient3.mp3" onclick="playAudio(this)">🔊 Okay, thank you.</button></div>
+  <div class="row"><button class="btn" data-audio="audio/c6_ana4.mp3" onclick="playAudio(this)">🔊 All done! You did great.</button></div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Comprehension</div>
+  <div class="think">1. What does Ana say right before inserting the needle?<br><br>2. What does Ana tell the patient to do when they feel dizzy?</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="spiral">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Spiral · Reach Back to Class 5</div>
+  <div class="think">Start today's full sequence from the beginning: ask "Have you eaten? Are you fasting?" first, then move into today's procedure instructions — one continuous intake-to-draw sequence.</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="spiral">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Spiral · Reach Back to Class 4</div>
+  <div class="think">Apply the linking technique from the reading class: say "make a fist" as one connected phrase, not word-by-word.</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="homework">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Homework</div>
+  <div class="sent" style="text-align:left">1. Record a 90-second full procedure walkthrough — intake questions (Class 5) + today's instructions, back to back, as one continuous sequence.</div>
+  <div class="sent" style="text-align:left">2. Say "shift, sit, pinch" three times each, then "sheet, seat, peach" — notice the difference.</div>
+  <div class="sent" style="text-align:left">3. If not yet done: send the intake-script recording to Juan.</div>
+  <button class="btn go" data-next>Done for today</button>
+ </div></div>
+
+<div class="scr" data-t="close">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="big">Nice work today.</div>
+  <div class="es">See you at Class 7.</div>
+  <div class="credits">Teacher's Station · The Milestone Method</div>
+ </div></div>
+
+</div>
 </div>
 
 <script>
 function toggleMenu(){ document.getElementById('classMenu').classList.toggle('open'); }
+function pick(btn){
+  btn.closest('.stack').querySelectorAll('.choice').forEach(c=>c.classList.remove('sel'));
+  btn.classList.add('sel');
+}
 
 // Word-scramble / reorder — reusable across any .scramble container, no unique IDs needed
 function scrambleTap(chipBtn){
@@ -1693,6 +1999,6 @@ document.querySelectorAll('.bg[data-img]').forEach(el=>{
   const visualParent = el.closest('.visual');
   if(visualParent){ visualParent.setAttribute('data-img-src', src); }
 });
-loadScreens(5);
+loadScreens(6);
 </script>
 </body></html>
