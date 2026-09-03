@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Teacher's Station · Danna</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{--ob:#0D0014;--pu:#440249;--go:#FFBE00;--ink:#F4EEF6}
+html{height:100%;background:#000}
+body{height:100%;margin:0;overflow:hidden;background:#000;color:var(--ink);
+ font-family:'Lora',Georgia,'Times New Roman',serif;font-size:18px;
+ display:flex;justify-content:center;align-items:stretch}
+#appRoot{position:relative;width:100%;max-width:480px;height:100%;overflow:hidden;
+ background:var(--ob);box-shadow:0 0 0 1px rgba(255,255,255,.06),0 30px 90px -20px rgba(0,0,0,.9)}
+h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
+#bar{position:absolute;top:44px;left:0;height:4px;background:rgba(255,190,0,.7);
+ width:0;transition:width .35s ease;z-index:50}
+
+/* class-index shell header */
+#classHeader{position:absolute;top:0;left:0;right:0;height:44px;background:var(--pu);
+ display:flex;align-items:center;justify-content:space-between;padding:0 14px;z-index:80;
+ font-family:'Poppins',system-ui,sans-serif;box-shadow:0 2px 8px rgba(0,0,0,.3)}
+#classHeader .brand{font-size:10px;letter-spacing:1.5px;color:rgba(244,238,246,.6);font-weight:600}
+#classSelect{background:rgba(244,238,246,.1);border:none;color:var(--ink);font-family:inherit;
+ font-size:13px;font-weight:600;padding:6px 10px;border-radius:8px;display:flex;align-items:center;gap:6px}
+#classMenu{position:absolute;top:44px;left:0;right:0;background:var(--pu);z-index:79;
+ max-height:0;overflow:hidden;transition:max-height .25s ease;box-shadow:0 8px 16px rgba(0,0,0,.4)}
+#classMenu.open{max-height:220px}
+#classMenu .item{padding:12px 16px;font-size:13px;border-top:1px solid rgba(244,238,246,.08);
+ display:flex;justify-content:space-between;align-items:center}
+#classMenu .item.active{background:rgba(255,190,0,.12);color:var(--go);font-weight:600}
+#classMenu .locked{opacity:.35;font-size:11px}
+
+.scr{position:absolute;inset:0;top:44px;display:none;flex-direction:column;align-items:center;
+ justify-content:flex-end;overflow:hidden}
+.scr.on{display:flex}
+.bg{position:absolute;inset:0;background-size:cover;background-position:center;z-index:0}
+.veil{position:absolute;inset:0;z-index:1;
+ background:linear-gradient(180deg,rgba(13,0,20,.35) 0%,rgba(13,0,20,.55) 45%,rgba(13,0,20,.94) 100%)}
+.stack{position:relative;z-index:2;width:100%;max-width:520px;padding:24px 22px 34px;
+ display:flex;flex-direction:column;align-items:center;gap:18px}
+.audio{width:112px;height:112px;border-radius:50%;border:none;background:var(--go);
+ color:#2D0130;font-size:44px;line-height:1;display:grid;place-items:center;
+ box-shadow:0 0 0 0 rgba(255,190,0,.55);animation:pulse 2.4s infinite}
+.audio:active{transform:scale(.94)}
+.audio.done{animation:none;background:rgba(255,190,0,.22);color:var(--go)}
+.audio.none{background:rgba(244,238,246,.12);color:rgba(244,238,246,.5);animation:none;font-size:30px}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,190,0,.5)}70%{box-shadow:0 0 0 26px rgba(255,190,0,0)}100%{box-shadow:0 0 0 0 rgba(255,190,0,0)}}
+.dots{display:flex;gap:14px}
+.dot{width:16px;height:16px;border-radius:50%;background:rgba(244,238,246,.2)}
+.dot.lit{background:var(--go)}
+.word{font-family:'Poppins',system-ui,sans-serif;font-size:34px;font-weight:600;
+ letter-spacing:.5px;text-align:center}
+.es{font-size:15px;color:rgba(244,238,246,.62);font-style:italic;text-align:center}
+.sent{font-size:20px;text-align:center;line-height:1.5;color:rgba(244,238,246,.92)}
+.gap{display:inline-block;min-width:88px;border-bottom:2px solid var(--go);vertical-align:baseline}
+.cue{font-size:13px;letter-spacing:2px;text-transform:uppercase;
+ color:rgba(244,238,246,.5);font-family:'Poppins',system-ui,sans-serif}
+.btn{width:100%;min-height:64px;border:none;border-radius:14px;background:var(--pu);
+ color:var(--ink);font-family:'Poppins',system-ui,sans-serif;font-size:18px;
+ font-weight:500;padding:16px}
+.btn:active{transform:scale(.985)}
+.btn[disabled]{opacity:.32}
+.btn.go{background:var(--go);color:#2D0130;font-weight:600}
+.row{display:flex;gap:12px;width:100%}
+.pics{position:relative;z-index:2;display:flex;gap:10px;width:100%;max-width:520px;padding:0 18px}
+.pic{flex:1;aspect-ratio:3/4;border-radius:14px;background-size:cover;background-position:center;border:3px solid transparent}
+.opt{width:100%;min-height:68px;border-radius:14px;border:2px solid transparent;
+ background:var(--pu);color:var(--ink);display:flex;align-items:center;gap:14px;
+ padding:0 18px;font-family:'Poppins',system-ui,sans-serif;font-size:17px}
+.opt.sel{border-color:var(--go)}
+.mid{justify-content:center}
+.credits{font-size:11px;line-height:1.6;color:rgba(244,238,246,.6);text-align:center}
+.big{font-size:26px;text-align:center;font-family:'Poppins',system-ui,sans-serif}
+.plain{position:absolute;inset:0;background:radial-gradient(120% 100% at 50% 100%,#3a0140 0%,#0D0014 70%)}
+.choice{width:100%;min-height:60px;border-radius:14px;border:2px solid rgba(244,238,246,.18);
+ background:rgba(68,2,73,.55);color:var(--ink);font-family:'Lora',serif;font-size:17px;
+ padding:14px 18px;text-align:left}
+.choice.sel{border-color:var(--go);background:rgba(255,190,0,.14)}
+.think{font-size:22px;line-height:1.5;text-align:center;color:var(--ink)}
+.reveal{width:100%;text-align:center}
+.correct{font-size:24px;font-weight:600;font-family:'Poppins',system-ui,sans-serif;
+ color:var(--go);text-align:center;margin-top:10px}
+.toggleBtn{width:100%;min-height:52px;border-radius:12px;border:1.5px dashed rgba(255,190,0,.5);
+ background:transparent;color:var(--go);font-family:'Poppins',system-ui,sans-serif;font-size:14px;font-weight:600}
+.keyBox{width:100%;background:rgba(255,255,255,.04);border-radius:12px;padding:14px 16px;
+ font-size:15px;line-height:1.7;color:rgba(244,238,246,.85);display:none;text-align:left}
+.keyBox.show{display:block}
+.keyBox b{color:var(--go)}
+.scrambleRow{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;width:100%;min-height:20px}
+.chip{background:rgba(255,255,255,.08);border:1.5px solid rgba(244,238,246,.2);border-radius:10px;
+ padding:8px 14px;font-family:'Poppins',system-ui,sans-serif;font-size:15px;color:var(--ink);min-height:44px;display:inline-flex;align-items:center}
+.scrambleBank .chip{cursor:pointer}
+.scrambleBank .chip.used{opacity:.25;pointer-events:none}
+.scrambleBuilt{border-bottom:2px solid rgba(244,238,246,.18);padding-bottom:10px;min-height:44px}
+.scrambleBuilt .chip{background:rgba(255,190,0,.14);border-color:var(--go);cursor:pointer}
+.timerTag{background:rgba(255,190,0,.16);color:var(--go);font-family:'Poppins',system-ui,sans-serif;
+ font-size:13px;font-weight:700;padding:5px 12px;border-radius:20px;letter-spacing:.5px}
+.timerRing{position:relative;width:96px;height:96px;display:flex;align-items:center;justify-content:center}
+.timerArc{transition:stroke-dashoffset 1s linear}
+.timerNum{position:absolute;font-family:'Poppins',system-ui,sans-serif;font-size:26px;font-weight:700;color:var(--ink)}
+.timerNum.warn{color:#E08A83}
+.badge{font-size:12px;letter-spacing:1px;text-transform:uppercase;color:rgba(244,238,246,.6);font-family:'Poppins',system-ui,sans-serif}
+.navBtn{position:absolute;top:56px;width:44px;height:44px;border-radius:50%;
+ background:rgba(244,238,246,.10);border:none;color:var(--ink);font-size:22px;
+ line-height:1;display:grid;place-items:center;z-index:60}
+.navBtn.left{left:14px}
+.navBtn.right{right:14px}
+.navBtn[disabled]{opacity:.2}
+.navBtn:active{transform:scale(.92)}
+
+/* visual mode toggle: photo <-> motion */
+.visual{position:absolute;inset:0;z-index:0}
+.visual .bg{position:absolute;inset:0}
+.motionGrad{position:absolute;inset:0}
+.modeToggle{position:absolute;top:56px;right:14px;z-index:65;background:rgba(244,238,246,.12);
+ border:none;color:var(--ink);font-family:'Poppins',system-ui,sans-serif;font-size:11px;font-weight:600;
+ padding:7px 12px;border-radius:20px;display:flex;align-items:center;gap:5px}
+.motionStage{position:absolute;inset:0;z-index:0}
+
+/* stall-device motion: a filler chunk landing in place of a repeated word */
+.motion-stall{position:absolute;top:74px;left:0;right:0;display:flex;flex-direction:column;
+ align-items:center;gap:12px}
+.stallRow{display:flex;gap:8px;align-items:center}
+.stallTile{font-family:'Poppins',system-ui,sans-serif;font-size:16px;font-weight:600;color:var(--ink);
+ background:rgba(244,238,246,.08);border:1.5px solid rgba(244,238,246,.16);border-radius:10px;padding:7px 13px}
+.stallTile.rep{color:#E08A83;border-color:rgba(224,138,131,.4);animation:stallBlink 3.2s ease-in-out infinite}
+.stallTile.fix{background:rgba(255,190,0,.16);border-color:var(--go);color:var(--go);
+ animation:stallDrop 3.2s ease-in-out infinite}
+@keyframes stallBlink{0%,40%{opacity:1}55%,100%{opacity:.15}}
+@keyframes stallDrop{0%,40%{transform:translateY(-34px);opacity:0}58%,92%{transform:translateY(0);opacity:1}100%{transform:translateY(-34px);opacity:0}}
+
+/* word-stress marker */
+.stress{color:var(--go)}
+
+/* Phrase Bank — proper screen shape */
+.pbPhrase{font-family:'Poppins',system-ui,sans-serif;font-size:28px;font-weight:600;text-align:center;color:var(--go)}
+.forceUse{display:flex;align-items:center;gap:10px;width:100%;padding:12px 4px;font-size:14px;color:rgba(244,238,246,.8)}
+.forceUse input[type=checkbox]{appearance:none;width:22px;height:22px;border:2px solid rgba(244,238,246,.4);
+ border-radius:6px;flex:none;position:relative;background:transparent}
+.forceUse input[type=checkbox]:checked{background:var(--go);border-color:var(--go)}
+.forceUse input[type=checkbox]:checked::after{content:"\2713";position:absolute;inset:0;display:flex;
+ align-items:center;justify-content:center;font-weight:900;color:#2D0130;font-size:14px}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div id="appRoot">
+
+<div id="classHeader">
+  <span class="brand">TEACHER'S STATION</span>
+  <button id="classSelect" onclick="toggleMenu()">Class 1 ▾</button>
+</div>
+<div id="classMenu">
+  <div class="item active" onclick="selectClass(1)">Class 1: Customer calls — open a call without freezing <span>✓</span></div>
+</div>
+
+<div id="bar"></div>
+<button class="navBtn left" data-navback disabled>&#8249;</button>
+<button class="navBtn right" data-navfwd>&#8250;</button>
+
+<div class="classBlock" data-class="1">
+
+<div class="scr" data-t="open">
+ <div class="bg" data-img="photos/open.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="cue">Class 1</div>
+  <div class="big">Customer calls: pick up the phone and open a call without freezing</div>
+  <div class="es" style="font-size:16px;line-height:1.5;color:rgba(244,238,246,.85)">By the end of this class, you can take a customer call, buy yourself time in English, and get the caller's reason without asking them to repeat.</div>
+  <button class="btn go" data-next>Begin</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Critical Thinking · 1 of 3</div>
+  <div class="think">Why do you think talking on the phone is harder than talking face-to-face?</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Critical Thinking · 2 of 3</div>
+  <div class="think">When a customer is annoyed, what do they actually want — the package, or something else?</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Critical Thinking · 3 of 3</div>
+  <div class="think">If you woke up speaking perfect English tomorrow, you said you'd get another job. What would that job need you to say on a phone that your job today doesn't?</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Say It Better · 1 of 3</div>
+  <div class="es">You already say this. There's a sharper version.</div>
+  <div class="sent">"…just in <b style="color:#E08A83">weird cases</b>."</div>
+  <button class="audio" data-audio="audio/v_exceptions.mp3" onclick="playAudio(this)">🔊</button>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the upgrade</button>
+  <div class="keyBox"><b>exceptions</b> · <b>special cases</b><br>"Most of the time they don't need to sign — just in exceptions."</div>
+  <button class="btn go" data-next>Say the full sentence, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Say It Better · 2 of 3</div>
+  <div class="es">Precise beats vague — especially on a call.</div>
+  <div class="sent">"Sometimes I get like <b style="color:#E08A83">problems</b>."</div>
+  <button class="audio" data-audio="audio/v_issues.mp3" onclick="playAudio(this)">🔊</button>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the upgrade</button>
+  <div class="keyBox"><b>I run into issues</b> · <b>something comes up</b><br>"Sometimes I run into issues on the route."</div>
+  <button class="btn go" data-next>Say the full sentence, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Say It Better · 3 of 3</div>
+  <div class="es">"Like" is doing too much work. Give it a better replacement.</div>
+  <div class="sent">"I deliver <b style="color:#E08A83">like</b> 180 packages."</div>
+  <button class="audio" data-audio="audio/v_around.mp3" onclick="playAudio(this)">🔊</button>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the upgrade</button>
+  <div class="keyBox"><b>around</b> 180 · <b>roughly</b> 180 · <b>about</b> 180<br>Keep "like" for real comparisons — use these for numbers.</div>
+  <button class="btn go" data-next>Say the full sentence, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Build The Chunk · 1 of 2</div>
+  <div class="es">Tap the pieces in order, then check your sentence:</div>
+  <div class="scramble" data-answer="Let me check on that.">
+   <div class="scrambleRow scrambleBank">
+    <button class="chip" onclick="scrambleTap(this)">on that</button>
+    <button class="chip" onclick="scrambleTap(this)">Let me</button>
+    <button class="chip" onclick="scrambleTap(this)">check</button>
+   </div>
+   <div class="scrambleRow scrambleBuilt"></div>
+   <div class="row">
+    <button class="btn" onclick="scrambleReset(this)">Reset</button>
+    <button class="btn go" onclick="scrambleCheck(this)">Check</button>
+   </div>
+   <div class="correct scrambleFeedback" style="display:none"></div>
+   <button class="btn go scrambleNext" data-next style="display:none">Continue</button>
+  </div>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Build The Chunk · 2 of 2</div>
+  <div class="es">Tap the pieces in order, then check your sentence:</div>
+  <div class="scramble" data-answer="I'll get back to you.">
+   <div class="scrambleRow scrambleBank">
+    <button class="chip" onclick="scrambleTap(this)">to you</button>
+    <button class="chip" onclick="scrambleTap(this)">get back</button>
+    <button class="chip" onclick="scrambleTap(this)">I'll</button>
+   </div>
+   <div class="scrambleRow scrambleBuilt"></div>
+   <div class="row">
+    <button class="btn" onclick="scrambleReset(this)">Reset</button>
+    <button class="btn go" onclick="scrambleCheck(this)">Check</button>
+   </div>
+   <div class="correct scrambleFeedback" style="display:none"></div>
+   <button class="btn go scrambleNext" data-next style="display:none">Continue</button>
+  </div>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Race It · 45 seconds</div>
+  <div class="es">Your coach says the situation. You fire the phrase — out loud, under two seconds. No Spanish.</div>
+  <div class="sent" style="font-size:17px">You don't know the answer → <span class="gap"></span><br>You need to end the call and find out → <span class="gap"></span><br>You're about to put them on hold → <span class="gap"></span><br>You want to warn them about a delay → <span class="gap"></span></div>
+  <div class="timerRing" data-seconds="45">
+   <svg width="96" height="96" viewBox="0 0 96 96">
+    <circle cx="48" cy="48" r="44" fill="none" stroke="rgba(244,238,246,.15)" stroke-width="6"></circle>
+    <circle class="timerArc" cx="48" cy="48" r="44" fill="none" stroke="#FFBE00" stroke-width="6"
+      stroke-linecap="round" stroke-dasharray="276.46" stroke-dashoffset="0" transform="rotate(-90 48 48)"></circle>
+   </svg>
+   <span class="timerNum">45</span>
+  </div>
+  <button class="btn go" onclick="timerStart(this)">Start 45s</button>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="1">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 1 of 3</div>
+  <div class="think">A customer asks something you don't know the answer to, and you need a second to look it up. What do you say?</div>
+  <button class="audio" data-audio="audio/p_letme.mp3" onclick="playAudio(this)">🔊</button>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">Let me check on that.</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the CORE round</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="2">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 2 of 3</div>
+  <div class="think">Someone proposes a plan — a time, a place, a solution — and you're happy with it. What do you say?</div>
+  <button class="audio" data-audio="audio/p_works.mp3" onclick="playAudio(this)">🔊</button>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">That works for me.</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the CORE round</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="3">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 3 of 3</div>
+  <div class="think">You're warning someone that something is coming — a delay, a change, a problem they'll hit. What do you say first?</div>
+  <button class="audio" data-audio="audio/p_headsup.mp3" onclick="playAudio(this)">🔊</button>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">Heads up…</div>You say this <b>before</b> the news, not after. "Heads up — the gate code changed."</div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the CORE round</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="meetfix">
+ <div class="motionStage">
+  <div class="motion-stall">
+   <div class="stallRow">
+    <div class="stallTile">…call</div><div class="stallTile rep">the the the</div><div class="stallTile">customer</div>
+   </div>
+   <div class="stallRow">
+    <div class="stallTile">…call</div><div class="stallTile fix">let me think</div><div class="stallTile">the customer</div>
+   </div>
+  </div>
+ </div>
+ <div class="plain" style="z-index:-1"></div>
+ <div class="stack">
+  <div class="badge">Meet Fix</div>
+  <div class="cue">The repeat is a stall</div>
+  <div class="es" style="font-size:16px">When you say "the the the customer," you're buying yourself a second to think. That's normal — you just don't have an English tool to buy it with yet. So you reach for the nearest word and repeat it.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="meetfix">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Meet Fix · Say it out loud</div>
+  <div class="cue">Swap the repeat for a real chunk</div>
+  <div class="sent">hold on · let me think · give me one second · so…</div>
+  <div class="es">Your coach asks six fast questions. Don't repeat a word to stall — use one of these instead, then answer.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Why this works</button>
+  <div class="keyBox">English speakers stall <b>out loud, with words</b>. Spanish stalls by repeating. Sounding natural here isn't extra vocabulary — it's swapping which filler you reach for.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Ask It Softer</div>
+  <div class="es">Same request, three levels. A customer expects the softer ones.</div>
+  <div class="sent"><span style="color:#E08A83">Can you</span> check the side gate?<br><b class="stress">Could you</b> check the side gate?<br><b class="stress">Would you mind</b> checking the side gate?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Watch the verb</button>
+  <div class="keyBox">After <b>would you mind</b>, the verb takes <b>-ing</b>: would you mind <b>checking</b>, would you mind <b>holding</b>.</div>
+  <button class="btn go" data-next>Say all three, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/core.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">CORE · Round 1 — Build It</div>
+  <div class="cue">Camera off · voice only</div>
+  <div class="think">Three calls, one after another. No video — no lips, no gestures. Just the voice, like the real thing.</div>
+  <div class="es" style="font-size:16px">1. "Is my package coming today?"<br>2. "Can you leave it with my neighbor?"<br>3. "You marked it delivered and it's not here."</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Your checklist</button>
+  <div class="keyBox">All three must land during the round:<br><b>Let me check on that.</b><br><b>That works for me.</b><br><b>Heads up…</b></div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/core.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">CORE · Round 2 — Under Pressure</div>
+  <div class="think">Same three calls. Faster. No repeats, and you'll get interrupted once.</div>
+  <div class="es">You may ask for a repeat <b>once per call</b> — after that, work with what you heard.</div>
+  <div class="timerRing" data-seconds="90">
+   <svg width="96" height="96" viewBox="0 0 96 96">
+    <circle cx="48" cy="48" r="44" fill="none" stroke="rgba(244,238,246,.15)" stroke-width="6"></circle>
+    <circle class="timerArc" cx="48" cy="48" r="44" fill="none" stroke="#FFBE00" stroke-width="6"
+      stroke-linecap="round" stroke-dasharray="276.46" stroke-dashoffset="0" transform="rotate(-90 48 48)"></circle>
+   </svg>
+   <span class="timerNum">90</span>
+  </div>
+  <button class="btn go" onclick="timerStart(this)">Start 90s</button>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Pronunciation · Linking · 1 of 3</div>
+  <button class="audio" data-audio="audio/p_thisis.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="word">This is<span class="stress">…</span></div>
+  <div class="es">Not "this — is". One word: <b>thisiz</b>. "Thisiz Danna with Amazon."</div>
+  <button class="btn go" data-next>Say it 3 times, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Pronunciation · Linking · 2 of 3</div>
+  <button class="audio" data-audio="audio/p_giveme.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="word">Give me</div>
+  <div class="es">Say it as <b>gimme</b> — "Gimme one second." Same with <b>let me</b> → <b>lemme</b>.</div>
+  <button class="btn go" data-next>Say it 3 times, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Pronunciation · Intonation · 3 of 3</div>
+  <button class="audio" data-audio="audio/p_getback.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="word">I'll get back to you <span class="stress">↘</span></div>
+  <div class="es">Let your voice fall at the end. Rising makes it sound like you're asking permission — falling makes it a promise.</div>
+  <button class="btn go" data-next>Say it 3 times, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/door.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">Real Call</div>
+  <div class="think">A customer says their package was marked delivered — but it isn't there.</div>
+  <div class="es">You run your side. Use your three phrases, ask them to check a second place, and close with a promise.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Stuck? Open the model</button>
+  <div class="keyBox"><b>You:</b> I'm sorry about that. Let me check on that for you — give me one second.<br><b>You:</b> It says it was left at the front door at 2:15. Could you check the side gate as well?<br><b>You:</b> Heads up — it may still be on the truck. I'll get back to you before the end of my route.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Check Yourself · 1 of 2</div>
+  <div class="think">You asked the customer to check two places. Why the second one?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox">Because drivers use the side gate when the front is blocked — so it's the most likely second spot. Giving a <b>reason</b> makes the request sound helpful instead of dismissive.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Check Yourself · 2 of 2</div>
+  <div class="think">You never said "I don't know" — but you didn't know. What did you say instead?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>"Let me check on that."</b><br>That's the whole trick. You don't need the answer — you need a sentence that buys you the time to find it.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="spiral">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">From Last Session</div>
+  <div class="sent"><b class="stress">It turns out…</b><br><span style="font-size:16px;color:rgba(244,238,246,.7)">Use it once when you explain what happened with the package.</span></div>
+  <div class="sent"><b class="stress">Same old, same old.</b><br><span style="font-size:16px;color:rgba(244,238,246,.7)">For when someone asks how work's going and nothing has changed.</span></div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="homework">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Homework</div>
+  <div class="sent" style="text-align:left;font-size:18px">1. Record one voice memo to yourself on WhatsApp: take an imaginary customer call, 60 seconds, out loud. Use all three phrases. Do it in the van before you start.</div>
+  <div class="sent" style="text-align:left;font-size:18px">2. Listen for one real <b>"heads up"</b> this week — a coworker, a video, anything. Write down who said it and what was coming.</div>
+  <div class="sent" style="text-align:left;font-size:18px">3. One line in your notebook: the moment this week you needed a word and didn't have it. Bring it to Class 2.</div>
+  <button class="btn go" data-next>Done for today</button>
+ </div></div>
+
+<div class="scr" data-t="close">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="big">Nice work today.</div>
+  <div class="es">You didn't freeze once on the phone. See you at Class 2.</div>
+  <div class="credits">Teacher's Station · The Milestone Method</div>
+ </div></div>
+
+</div>
+
+</div>
+<script>
+function toggleMenu(){ document.getElementById('classMenu').classList.toggle('open'); }
+
+// Word-scramble / reorder — reusable across any .scramble container, no unique IDs needed
+function scrambleTap(chipBtn){
+  const wrap = chipBtn.closest('.scramble');
+  const built = wrap.querySelector('.scrambleBuilt');
+  chipBtn.classList.add('used');
+  const piece = document.createElement('button');
+  piece.className = 'chip';
+  piece.textContent = chipBtn.textContent;
+  piece.onclick = function(){
+    chipBtn.classList.remove('used');
+    piece.remove();
+  };
+  built.appendChild(piece);
+}
+function scrambleReset(btn){
+  const wrap = btn.closest('.scramble');
+  wrap.querySelectorAll('.scrambleBank .chip').forEach(c=>c.classList.remove('used'));
+  wrap.querySelector('.scrambleBuilt').innerHTML = '';
+  wrap.querySelector('.scrambleFeedback').style.display = 'none';
+  wrap.querySelector('.scrambleNext').style.display = 'none';
+}
+function scrambleCheck(btn){
+  const wrap = btn.closest('.scramble');
+  const answer = wrap.getAttribute('data-answer');
+  const built = [...wrap.querySelectorAll('.scrambleBuilt .chip')].map(c=>c.textContent).join(' ');
+  const norm = s => s.toLowerCase().replace(/[.,]/g,'').trim();
+  const fb = wrap.querySelector('.scrambleFeedback');
+  fb.style.display = 'block';
+  if(norm(built) === norm(answer)){
+    fb.textContent = '✓ ' + answer;
+    fb.style.color = 'var(--go)';
+    wrap.querySelector('.scrambleNext').style.display = 'block';
+  } else {
+    fb.textContent = 'Not quite — reset and try again.';
+    fb.style.color = '#E08A83';
+  }
+}
+// Countdown timer — reusable, resolves its own container via closest('.stack'), no unique IDs needed
+function timerStart(startBtn){
+  const stack = startBtn.closest('.stack');
+  const ring = stack.querySelector('.timerRing');
+  const total = parseInt(ring.getAttribute('data-seconds'), 10);
+  const numEl = ring.querySelector('.timerNum');
+  const arc = ring.querySelector('.timerArc');
+  const circumference = 2 * Math.PI * 44;
+  const nextBtn = stack.querySelector('[data-next]');
+  let remaining = total;
+  startBtn.disabled = true;
+  startBtn.textContent = 'Running…';
+  const interval = setInterval(() => {
+    remaining--;
+    numEl.textContent = remaining;
+    arc.style.strokeDashoffset = circumference * (1 - remaining / total);
+    if (remaining <= 10) { numEl.classList.add('warn'); }
+    if (remaining <= 0) {
+      clearInterval(interval);
+      numEl.textContent = '0';
+      startBtn.style.display = 'none';
+      if (nextBtn) nextBtn.style.display = 'block';
+    }
+  }, 1000);
+}
+function playAudio(btn){
+  const src = btn.getAttribute('data-audio');
+  if(!src){ return; }
+  let a = btn._player;
+  if(!a){ a = new Audio(src); btn._player = a; a.addEventListener('ended', ()=>btn.classList.add('done')); }
+  a.currentTime = 0; a.play();
+}
+// Screens are scoped to the active classBlock only — a class that isn't crafted
+// has no markup here at all, so nav can never leak into it.
+let screens = [];
+let idx = 0;
+let currentClass = 1;
+
+function loadScreens(classNum){
+  document.querySelectorAll('.classBlock').forEach(b=>{
+    b.style.display = (b.getAttribute('data-class') === String(classNum)) ? '' : 'none';
+  });
+  document.querySelectorAll('.scr.on').forEach(s=>s.classList.remove('on'));
+  screens = [...document.querySelectorAll('.classBlock[data-class="'+classNum+'"] .scr')];
+  currentClass = classNum;
+  idx = 0;
+  show(0);
+}
+function selectClass(classNum){
+  document.getElementById('classMenu').classList.remove('open');
+  document.querySelectorAll('#classMenu .item').forEach(it=>it.classList.remove('active'));
+  event.target.closest('.item').classList.add('active');
+  document.getElementById('classSelect').textContent = 'Class ' + classNum + ' ▾';
+  loadScreens(classNum);
+}
+function show(i){
+  screens.forEach((s,n)=>s.classList.toggle('on', n===i));
+  document.querySelector('[data-navback]').disabled = (i===0);
+  document.getElementById('bar').style.width = ((i+1)/screens.length*100)+'%';
+  idx = i;
+}
+document.addEventListener('click', e=>{
+  if(e.target.closest('[data-next]')) show(Math.min(idx+1, screens.length-1));
+  if(e.target.closest('[data-navfwd]')) show(Math.min(idx+1, screens.length-1));
+  if(e.target.closest('[data-navback]')) show(Math.max(idx-1, 0));
+});
+document.querySelectorAll('.bg[data-img]').forEach(el=>{
+  const src = el.getAttribute('data-img');
+  el.style.backgroundImage = "url('" + src + "')";
+  const visualParent = el.closest('.visual');
+  if(visualParent){ visualParent.setAttribute('data-img-src', src); }
+});
+loadScreens(1);
+</script>
+</body>
+</html>
