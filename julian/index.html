@@ -132,6 +132,7 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 <div id="classMenu">
   <div class="item active" onclick="selectClass(1)">Class 1: First Contact <span>✓</span></div>
   <div class="item" onclick="selectClass(2)">Class 2: Your Work Week <span>✓</span></div>
+  <div class="item" onclick="selectClass(3)">Class 3: Client Intake <span>✓</span></div>
 </div>
 
 <div id="bar"></div>
@@ -717,6 +718,243 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
  <div class="stack">
   <div class="big">Nice work today.</div>
   <div class="es">See you at Class 3.</div>
+  <div class="credits">Teacher's Station · The Milestone Method</div>
+ </div></div>
+
+</div>
+
+<div class="classBlock" data-class="3">
+
+<div class="scr" data-t="open">
+ <div class="bg" data-img="photos/contractor_handshake.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="cue">Class 3</div>
+  <div class="big">Client Intake: Answer Yes/No Questions With a Complete Sentence</div>
+  <div class="es" style="font-size:16px;line-height:1.5;color:rgba(244,238,246,.85)">By the end of this class, you can answer yes/no questions with a full sentence, catch the "I am work" fossil in both its forms, and use availability, book, and already the way you already have in real conversations.</div>
+  <button class="btn go" data-next>Begin</button>
+ </div></div>
+
+<div class="scr" data-t="tpr" data-items='[{"w":"Point to the door.","a":"audio/tpr_point.mp3"},{"w":"Turn on the camera.","a":"audio/tpr_camera.mp3"},{"w":"Write your name.","a":"audio/tpr_write.mp3"},{"w":"Give me a thumbs up.","a":"audio/tpr_thumbsup.mp3"}]' data-idx="0">
+ <div class="motionStage">
+  <div style="position:absolute;width:180px;height:180px;left:50%;top:36%;margin:-90px 0 0 -90px;border-radius:50%;background:rgba(255,190,0,.14);animation:floatY 2.6s ease-in-out infinite;"></div>
+  <div class="veil"></div>
+ </div>
+ <div class="stack">
+  <div class="badge">Listening Decode · Final Check</div>
+  <button class="audio" data-audio="audio/tpr_point.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="word" data-tprword>Point to the door.</div>
+  <div class="dots" data-tprdots><div class="dot lit"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="row" style="max-width:280px">
+   <button class="opt mid" onclick="tprNav(this,-1)" style="flex:0 0 60px">‹</button>
+   <button class="opt mid" onclick="tprNav(this,1)" style="flex:1">Next command ›</button>
+  </div>
+  <div class="es">Same 4, one more time. Listen once, no repeats.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Critical Thinking · 1 of 3</div>
+  <div class="think">Last time you skipped a study day because of a late Saturday night — what's one thing that would make Sunday-you actually do it?</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Critical Thinking · 2 of 3</div>
+  <div class="think">When a client asks "Are you available Tuesday?" — is "yes" or "no" ever the whole answer?</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Critical Thinking · 3 of 3</div>
+  <div class="think">What's one English word you learned this week that you already used in real life?</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="production" data-word="1">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Vocabulary · Client Intake</div>
+  <button class="audio" data-audio="audio/word_client.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="word">client</div>
+  <div class="dots"><div class="dot lit"></div><div class="dot"></div></div>
+  <div class="es">Listen, then say it out loud 3 times.</div>
+  <button class="btn go" data-next>Next word</button>
+ </div></div>
+
+<div class="scr" data-t="production" data-word="2">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Vocabulary · Client Intake</div>
+  <button class="audio" data-audio="audio/word_confirm.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="word">confirm</div>
+  <div class="dots"><div class="dot"></div><div class="dot lit"></div></div>
+  <div class="es">Listen, then say it out loud 3 times.</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Vocab Race · From Your Last 2 Classes</div>
+  <button class="audio" data-audio="audio/word_availability.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="word">availability</div>
+  <div class="es">You already used this one live. Say it, then keep going: book, already, schedule, routine, day off — fast, no thinking time.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="meetfix">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Meet Fix · 1 of 2 — Habitual</div>
+  <div class="cue">Answer fast, no thinking time</div>
+  <div class="sent">"I am work Monday to Saturday."</div>
+  <div class="es">Cue: is this routine, or right now?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>"I work Monday to Saturday."</b><br>Routine → drop "am" entirely.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="meetfix">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Meet Fix · 2 of 2 — Right Now</div>
+  <div class="cue">Answer fast, no thinking time</div>
+  <div class="sent">"I am work right now."</div>
+  <div class="es">Cue: is this routine, or right now?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>"I am working right now."</b><br>Right now → keep "am," add "-ing." Same fossil, opposite fix from the last screen.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/contractor_handshake.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">CORE · Round 1 — Build It</div>
+  <div class="think">A new client calls to confirm details before booking. Answer only in complete sentences — no bare "yes" or "no."</div>
+  <div class="es">"Are you available Tuesday?" · "Do you work weekends?" · "Is your rate negotiable?"</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/contractor_handshake.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">CORE · Round 2 — Pressure Round</div>
+  <div class="think">Same kind of questions, faster, mixed order — including "Are you working right now?" Watch which Meet Fix you need.</div>
+  <div class="es">Land one Phrase Bank line somewhere in this round.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="1">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 1 of 3</div>
+  <div class="think">A client asks for something you can't do today. How do you say no without just saying "no"?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">I would like to, but I can't.</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the CORE round</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="2">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 2 of 3</div>
+  <div class="think">You need to check something before you can commit to a date.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">I'll let you know.</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the CORE round</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="3">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 3 of 3</div>
+  <div class="think">Before you answer yes, you want to double-check a detail.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">Let me confirm that.</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the CORE round</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Pronunciation · Rising Intonation · Hear It</div>
+  <button class="audio" data-audio="audio/pron_risingq.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="word">Are you available Tuesday?</div>
+  <div class="es">Yes/no questions rise at the end. Repeat it with the same rise.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Pronunciation · Tuesday vs. Thursday · Hear It</div>
+  <div class="row">
+   <button class="opt mid" style="gap:8px" onclick="playAudio(this)" data-audio="audio/pron_tuesday.mp3">"Tuesday" <span style="font-size:16px">🔊</span></button>
+   <button class="opt mid" style="gap:8px" onclick="playAudio(this)" data-audio="audio/pron_thursday.mp3">"Thursday" <span style="font-size:16px">🔊</span></button>
+  </div>
+  <div class="es">You worked on this one already — quick retrieval check.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/contractor_handshake.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">Real-Life Conversation</div>
+  <div class="think">A client wants to confirm your availability and book an estimate.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Only open this if you get stuck</button>
+  <div class="keyBox">
+   <b>Client:</b> Hi Julian, are you available this Tuesday?<br>
+   <b>You:</b> Let me confirm that — yes, I am available Tuesday.<br>
+   <b>Client:</b> Great. Are you working right now, by the way?<br>
+   <b>You:</b> No, I'm not working right now, I'm free until 3.<br>
+   <b>Client:</b> Can you book me in for an estimate?<br>
+   <b>You:</b> I would like to, but I can't do it today — I'll let you know a good time.<br>
+   <b>Client:</b> Sounds good, thanks Julian.<br>
+   <b>You:</b> No problem. Take care!
+  </div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Comprehension Check · 1 of 2</div>
+  <div class="think">Is Julian available Tuesday?</div>
+  <button class="btn go" data-next>Next question</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Comprehension Check · 2 of 2</div>
+  <div class="think">Why can't Julian book the estimate today?</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="homework">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Homework</div>
+  <div class="sent" style="text-align:left">1. Record yourself answering 5 yes/no questions about your work in full sentences.</div>
+  <div class="sent" style="text-align:left">2. Keep the WhatsApp habit going — answer Juan's Mon/Wed/Fri question in English, full sentences.</div>
+  <div class="sent" style="text-align:left">3. Notice log: catch one "I am work" moment this week — text Juan which fix you needed, routine or right-now.</div>
+  <button class="btn go" data-next>Done for today</button>
+ </div></div>
+
+<div class="scr" data-t="close">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="big">Nice work today.</div>
+  <div class="es">See you at Class 4.</div>
   <div class="credits">Teacher's Station · The Milestone Method</div>
  </div></div>
 
