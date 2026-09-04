@@ -128,11 +128,12 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 <div id="classHeader">
   <span class="brand">TEACHER'S STATION</span>
-  <button id="classSelect" onclick="toggleMenu()">Class 26 ▾</button>
+  <button id="classSelect" onclick="toggleMenu()">Class 27 ▾</button>
 </div>
 <div id="classMenu">
   <div class="item" onclick="selectClass(25)">Class 25: Giving Advice <span>✓</span></div>
-  <div class="item active" onclick="selectClass(26)">Class 26: The New Hire From Hell — Rules + WHY <span>✓</span></div>
+  <div class="item" onclick="selectClass(26)">Class 26: The New Hire From Hell — Rules + WHY <span>✓</span></div>
+  <div class="item active" onclick="selectClass(27)">Class 27: 🔎 CHECK — The Induction <span>✓</span></div>
 </div>
 
 <div id="bar"></div>
@@ -805,6 +806,219 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
  </div></div>
 </div>
 
+<!-- ================= CLASS 27 ================= -->
+<div class="classBlock" data-class="27">
+
+<div class="scr" data-t="open">
+ <div class="bg" data-img="photos/cosmetics_lab.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="cue">Class 27 · CHECK</div>
+  <div class="big">Brief a new hire on a real compliance problem — advise, require, and explain why, unscripted</div>
+  <div class="es" style="font-size:16px;line-height:1.5;color:rgba(244,238,246,.85)">By the end of this class, you can brief someone on a real compliance problem — tell them what they should do, what they have to do, and why — without notes and without being asked.</div>
+  <button class="btn go" data-next>Begin</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Warm-Up · 1 of 3</div>
+  <div class="think">When you tell someone a rule, is it better to explain why or just state it? What changes?</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Warm-Up · 2 of 3</div>
+  <div class="think">This week your company had a shipment held at the border because a registration wasn't renewed. If a new hire asked you "whose fault was that?" — how would you answer, in one sentence?</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Warm-Up · 3 of 3</div>
+  <div class="think">What's one rule at your job that you think is unnecessary — and how would you argue for changing it?</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="checkpoint-intro">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">🔎 Today Is A Check</div>
+  <div class="big" style="font-size:22px">This class measures — it doesn't teach.</div>
+  <div class="es">No corrections until the end. Just do your best, the way you'd really do it at work.</div>
+  <div class="frameCard">
+   <div class="frameSentence">3 parts today</div>
+   <div class="frameHint">① Ear Sprint · ② Warm-up (done) · ③ The Real Induction</div>
+  </div>
+  <button class="btn go" data-next>I'm ready</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Ear Sprint · 1 of 6</div>
+  <button class="audio" data-audio="audio/ear_hafta.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="es">Listen once. Write what you hear, then say it back.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>"You hafta submit it by Friday."</b><br>have to → "hafta"</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Ear Sprint · 2 of 6 · bonus</div>
+  <button class="audio" data-audio="audio/ear_donthafta.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="es">Listen once. This one's new — just notice it.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>"You don't hafta print it."</b><br>don't have to = it's optional, not forbidden</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Ear Sprint · 3 of 6 · bonus</div>
+  <button class="audio" data-audio="audio/ear_mustnt.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="es">Listen once. This one's new too — just notice it.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>"You mustn't sign that."</b><br>mustn't = forbidden — very different from "don't have to"</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Ear Sprint · 4 of 6</div>
+  <button class="audio" data-audio="audio/ear_hasta.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="es">Listen once. Write what you hear, then say it back.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>"She hasta verify the batch first."</b><br>he/she → hasta, not hafta</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Ear Sprint · 5 of 6</div>
+  <button class="audio" data-audio="audio/ear_calledto.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="es">Listen once. Catch the small word in the middle.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>"I called to ask about the deadline."</b><br>called_tə_ask — the "to" almost disappears</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Ear Sprint · 6 of 6</div>
+  <button class="audio" data-audio="audio/ear_inorderto.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="es">Listen once. Write what you hear, then say it back.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>"We did it in order to avoid the fine."</b><br>in order tə avoid — purpose, reduced</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="checkpoint-intro">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Part 3 of 3 · The Real Induction</div>
+  <div class="think">This week: a product's registration wasn't renewed because the platform failed to update — a trailer full of product sat held at the border.</div>
+  <div class="es">You're briefing a new hire on your team about what happens when this kind of problem comes up. Juan plays the new hire. Go — no notes, no restarts.</div>
+  <button class="btn go" data-next>Begin the briefing</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/new_hire_training.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">Moment 1 of 3 · Legal vs. Internal</div>
+  <div class="think">Explain at least one thing you have to do (the agency's rule) and one thing your team must do (your own call). The new hire will ask "says who?"</div>
+  <div class="es">Attribute each one correctly, out loud.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/factory_floor.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">Moment 2 of 3 · The Why</div>
+  <div class="think">Every rule gets a purpose: to / in order to / so that. A rule with no reason gets pushed back on — and Juan will push back.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/consultant_meeting.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">Moment 3 of 3 · The Advice Turn</div>
+  <div class="think">The new hire describes a grey-area situation: "the supplier sent the data late — should I just submit without it?"</div>
+  <div class="es">Advise using should / ought to, then state the obligation.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="1">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · review · 1 of 4</div>
+  <div class="think">A hard legal requirement — no way around it.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">It's mandatory to…</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the briefing</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="2">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · review · 2 of 4</div>
+  <div class="think">An obligation that lands on this one person.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">You're required to…</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the briefing</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="3">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · review · 3 of 4</div>
+  <div class="think">Saying no, professionally.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">We're not allowed to…</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the briefing</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="4">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · review · 4 of 4</div>
+  <div class="think">Quoting the SOP, not your own opinion.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">The rule states that…</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the briefing</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="homework">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Homework</div>
+  <div class="sent" style="text-align:left">1. Voice note (90s): record the induction again, alone, no notes. Compare it to today.</div>
+  <div class="sent" style="text-align:left">2. Ear: have someone read you 10 hafta / don't hafta / mustn't sentences. Score yourself.</div>
+  <div class="sent" style="text-align:left">3. Log any chunk that didn't come out whole today — those are the ones to over-learn.</div>
+  <button class="btn go" data-next>Done for today</button>
+ </div></div>
+
+<div class="scr" data-t="close">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="big">Nice work today.</div>
+  <div class="es">See you next class.</div>
+  <div class="credits">Teacher's Station · The Milestone Method</div>
+ </div></div>
+</div>
+
 </div>
 
 <script>
@@ -934,7 +1148,7 @@ document.querySelectorAll('.bg[data-img]').forEach(el=>{
   const visualParent = el.closest('.visual');
   if(visualParent){ visualParent.setAttribute('data-img-src', src); }
 });
-loadScreens(26);
+loadScreens(27);
 document.querySelector('[data-navback]').disabled = true;
 </script>
 </body></html>
