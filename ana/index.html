@@ -159,6 +159,13 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
  100%{transform:translateY(-46px);opacity:0}
 }
 @media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;scroll-behavior:auto!important}}
+
+/* Solo Prep — second dropdown group, visually distinct from the main course */
+#classMenu .groupLabel{padding:9px 16px 5px;font-size:9px;letter-spacing:1.6px;text-transform:uppercase;
+ color:rgba(244,238,246,.42);font-weight:600;border-top:1px solid rgba(244,238,246,.08)}
+#classMenu .groupLabel.sp{color:rgba(255,190,0,.65)}
+#classMenu .item.sp{border-top:none;padding-left:16px}
+#classMenu .item.sp::before{content:"📞";margin-right:8px}
 </style></head>
 <body>
 <div id="appRoot">
@@ -175,6 +182,13 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
   <div class="item" onclick="selectClass(5)">Class 5: patient prep — eaten, fasting, allergies <span>✓</span></div>
   <div class="item" onclick="selectClass(6)">Class 6: explaining the procedure — shift, sit, pinch <span>✓</span></div>
   <div class="item active" onclick="selectClass(7)">Class 7: Calling the regional lab — phone call</div>
+  <div class="groupLabel sp">Solo Prep</div>
+  <div class="item sp" onclick="selectClass('sp1','Solo Prep 1')">Solo Prep 1: Identity & Numbers Foundation</div>
+  <div class="item sp" onclick="selectClass('sp2','Solo Prep 2')">Solo Prep 2: The Quest STAT Call</div>
+  <div class="item sp" onclick="selectClass('sp3','Solo Prep 3')">Solo Prep 3: MedSpeed / Allina STAT</div>
+  <div class="item sp" onclick="selectClass('sp4','Solo Prep 4')">Solo Prep 4: The FedEx Pickup Call</div>
+  <div class="item sp" onclick="selectClass('sp5','Solo Prep 5')">Solo Prep 5: Under Pressure, Any Call</div>
+  <div class="item sp" onclick="selectClass('sp6','Solo Prep 6')">Solo Prep 6: Full Solo-Shift Simulation</div>
 </div>
 
 <div id="bar"></div>
@@ -2111,6 +2125,710 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
   <div class="credits">Teacher's Station · The Milestone Method</div>
  </div></div>
 </div>
+
+<div class="classBlock" data-class="sp1">
+<div class="scr" data-t="open">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="cue">Solo Prep · Class 1</div>
+  <div class="big">Identity & Numbers Foundation</div>
+  <div class="es" style="font-size:16px;line-height:1.5;color:rgba(244,238,246,.85)">By the end of this class, you can spell your name, state your employee number, and recite the Champlin address and lab codes clearly enough that a stranger on the phone gets them right the first time — and you can catch and repeat back a confirmation number without writing it down wrong.</div>
+  <button class="btn go" data-next>Begin</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Cold Warm-up</div>
+  <div class="think">What's your name? Now spell it — first name only, no help.</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Cold Warm-up</div>
+  <div class="think">Now spell your last name, Velazquez, the same way.</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Your Spelling Key</div>
+  <button class="audio" data-audio="audio/sp_name_spell.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="word">A · N · A · V · E · L · A · Z · Q · U · E · Z</div>
+  <div class="es">Listen to the full "as in" key for your name. This is the pattern you'll use every time, on every call.</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Drill It · Full Name</div>
+  <div class="es">Say "Ana Velazquez" spelled out loud, 5 times, smooth and unhurried — not rushed-sounding.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="meetfix">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Meet Fix · V vs B</div>
+  <div class="sent">"V as in... Victor" — not "B as in Bictor."</div>
+  <div class="es">V and B are easy to confuse on a bad phone line. Say "Victor" and "Bictor" side by side, notice the difference, then say the real word clean.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Numbers Under Pressure</div>
+  <button class="audio" data-audio="audio/sp_employee_num.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="word">3364125</div>
+  <div class="es">Listen, then say your employee number digit-by-digit: "three-three-six-four-one-two-five." Not as a whole number.</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Interrupt & Restart</div>
+  <div class="think">Say your employee number again. Halfway through, stop — I'll say "wait, start over" — and you restart calmly from the beginning.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">The Champlin Address</div>
+  <button class="audio" data-audio="audio/sp_address.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="word" style="font-size:24px">11269 Jefferson Hwy, Champlin, MN 55316</div>
+  <div class="es">Listen, then recite the full address clean, 3 times.</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="1">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Rapid-Fire · Lab Code</div>
+  <div class="think">"What's the lab code?"</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal</button>
+  <div class="keyBox"><div class="pbPhrase">60671, or 60672.</div></div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="2">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Rapid-Fire · Fax</div>
+  <div class="think">"Do you have a fax number for that?"</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal</button>
+  <div class="keyBox"><div class="pbPhrase">763-236-0613.</div></div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Combine It</div>
+  <div class="think">Full address + lab code + fax, back to back, as one fluent block — the shape it'll take on a real call.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">CORE · The Confirmation-Number Catch</div>
+  <button class="audio" data-audio="audio/sp_confirmation_catch.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="think">Listen once, like a dispatcher closing out a real call. Catch: the confirmation number, the dispatcher's name, and the time.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Say It Back</div>
+  <div class="think">Now say it back to confirm, out loud: "So that's confirmation A-X-4471-Q, with Melissa, 2:47pm — correct?"</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="3">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">If You Miss It</div>
+  <div class="think">You missed part of the confirmation number. What do you say — calmly, once, no guessing?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal</button>
+  <div class="keyBox"><div class="pbPhrase">Sorry, can you repeat the confirmation number?</div></div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">CORE · Full Chain, Cold</div>
+  <div class="think">One continuous breath: spell your name → employee number → address → lab code → fax → "got it, thank you." Natural pace.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="homework">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Homework</div>
+  <div class="sent" style="text-align:left">1. Voice-memo the full chain once a day: name spelled, employee number, full address block, one invented confirmation-number catch-back.</div>
+  <div class="sent" style="text-align:left">2. Send your best recording to Juan before Solo Prep 2.</div>
+  <button class="btn go" data-next>Done for today</button>
+ </div></div>
+
+<div class="scr" data-t="close">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="big">Nice work today.</div>
+  <div class="es">Foundation set. See you at Solo Prep 2 — the real Quest call.</div>
+  <div class="credits">Teacher's Station · Solo Shift Prep</div>
+ </div></div>
+</div>
+
+<div class="classBlock" data-class="sp2">
+<div class="scr" data-t="open">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="cue">Solo Prep · Class 2</div>
+  <div class="big">The Quest STAT Call</div>
+  <div class="es" style="font-size:16px;line-height:1.5;color:rgba(244,238,246,.85)">By the end of this class, you can call Quest for a STAT pickup and get through the entire script — account number, address, test codes, confirmation — without freezing or needing the script in front of you.</div>
+  <button class="btn go" data-next>Begin</button>
+ </div></div>
+
+<div class="scr" data-t="spiral">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Spiral · Solo Prep 1</div>
+  <div class="think">Cold: spell "Ana Velazquez" + say employee #3364125 + the Champlin address, back to back, no prep.</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">The Quest Line</div>
+  <button class="audio" data-audio="audio/sp_quest_number.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="word" style="font-size:26px">1-866-MYQUEST</div>
+  <div class="es">1-866-697-8378. Say it out loud twice.</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">The Opening — Isolated Drill</div>
+  <button class="audio" data-audio="audio/sp_provider_statpickup.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="word">"Provider." "STAT Pickup."</div>
+  <div class="es">This is the routing moment — say wrong or unclear and the call gets misrouted. Drill until instant and clean.</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="1">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Script · Step by Step</div>
+  <div class="think">After "Provider" and "STAT Pickup," what's next?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal</button>
+  <div class="keyBox">Use the handset (not speaker) to reduce noise. Give the Quest account number. Give the street address / suite number of the pickup location.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="2">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Script · Step by Step</div>
+  <div class="think">After the address, what does the dispatcher need to know?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal</button>
+  <div class="keyBox">Confirm routine or STAT. Give the STAT test codes + patient initials (e.g. "FFF" and "L"). Give your name.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="meetfix">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank</div>
+  <div class="sent">"This is a STAT pickup." · "The account number is..." · "The pickup address is..." · "This is routine / this is STAT." · "The test code is ___, patient initials ___."</div>
+  <div class="es">Say each phrase out loud once before the role-play.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">CORE · Round 1 — Slow, Build the Shape</div>
+  <div class="think">Juan plays the Quest dispatcher. Run the full call unaided, slow pace, no interruptions.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">CORE · Round 2 — Normal Pace + One Question</div>
+  <div class="think">Same call, normal pace. Dispatcher asks one unexpected clarifying question — stay on script but respond naturally.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">CORE · Round 3 — Fast, Real Conditions</div>
+  <div class="think">Fast pace, dispatcher sounds slightly impatient. End the call by catching and repeating back the confirmation number.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Comprehension Check</div>
+  <div class="think">Put the whole Quest call in order, from memory: Provider → ? → ? → ? → ? → ? → confirmation.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="homework">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Homework</div>
+  <div class="sent" style="text-align:left">Voice-memo the full Quest call script solo — pause where the dispatcher would speak, then continue. Send it to Juan.</div>
+  <button class="btn go" data-next>Done for today</button>
+ </div></div>
+
+<div class="scr" data-t="close">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="big">Nice work today.</div>
+  <div class="es">The most-used call on your shift. See you at Solo Prep 3.</div>
+  <div class="credits">Teacher's Station · Solo Shift Prep</div>
+ </div></div>
+</div>
+
+<div class="classBlock" data-class="sp3">
+<div class="scr" data-t="open">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="cue">Solo Prep · Class 3</div>
+  <div class="big">MedSpeed / Allina STAT</div>
+  <div class="es" style="font-size:16px;line-height:1.5;color:rgba(244,238,246,.85)">By the end of this class, you can describe the STAT bag procedure correctly out loud and make the MedSpeed call to Mercy Lab, giving the right account information without hesitating.</div>
+  <button class="btn go" data-next>Begin</button>
+ </div></div>
+
+<div class="scr" data-t="spiral">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Spiral · Solo Prep 2</div>
+  <div class="think">The full Quest STAT call, compressed to 60 seconds.</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="meetfix">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Vocabulary · Meaning Check</div>
+  <div class="sent">"Retained / unretained test — going to Allina"</div>
+  <div class="es">Explain the difference in your own words, in English, before revealing.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox">A retained sample stays; an unretained one is sent out — both language for how the sample is handled when it's going to Allina.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="meetfix">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Critical Distinction — Don't Mix These Up</div>
+  <div class="sent">Quest STAT bag <b>vs.</b> Allina STAT bag</div>
+  <div class="es">Per the update (7-27-26): you use the QUEST STAT bag, not the Allina one. This is a real compliance point, not just a language point.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="1">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Sequence Drill</div>
+  <div class="think">What do you print and stamp before packing the bag?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal</button>
+  <div class="keyBox"><div class="pbPhrase">The report + the Quest 3rd-party spec sheet.</div></div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="2">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Sequence Drill</div>
+  <div class="think">What goes into the STAT bag with the specimen(s)?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal</button>
+  <div class="keyBox"><div class="pbPhrase">The Allina packing list + the stamped Quest 3rd-party packing list. One patient per bag.</div></div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="3">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Sequence Drill</div>
+  <div class="think">Where does the bag go, and how do you track it?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal</button>
+  <div class="keyBox"><div class="pbPhrase">The appropriate-temperature Quest bin — tracked via Quanum "STAT Tracking."</div></div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">CORE · Part 1 — Describe It</div>
+  <div class="think">Explain the full bag procedure out loud, start to finish, as if training a new hire. No call yet — just clear, correct, confident explanation.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">The MedSpeed Line</div>
+  <button class="audio" data-audio="audio/sp_medspeed_number.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="word" style="font-size:24px">888-256-9686 → option 2</div>
+  <div class="es">To Mercy Lab, 4050 Coon Rapids Blvd. Account #11877891, account name AKFW. Say the number and account details out loud.</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">CORE · Part 2 — Make the Call (Round 1)</div>
+  <div class="think">Juan plays the MedSpeed/Quest rep. Run the call: menu navigation, account # and name, sample/destination details. Slow pace.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">CORE · Part 2 — Make the Call (Round 2)</div>
+  <div class="think">Same call, normal pace, one unexpected question.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">CORE · Part 2 — Make the Call (Round 3)</div>
+  <div class="think">Fast pace. Close with the confirmation catch-back.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="spiral">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Chain It</div>
+  <div class="think">Quest STAT call (compressed) → MedSpeed call (compressed) → confirmation catch. Start building the "which call is this" instinct.</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="homework">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Homework</div>
+  <div class="sent" style="text-align:left">Voice-memo yourself explaining the STAT bag procedure in one clean, unbroken minute — no notes.</div>
+  <button class="btn go" data-next>Done for today</button>
+ </div></div>
+
+<div class="scr" data-t="close">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="big">Nice work today.</div>
+  <div class="es">Watch the Quest-bag-vs-Allina-bag distinction. See you at Solo Prep 4.</div>
+  <div class="credits">Teacher's Station · Solo Shift Prep</div>
+ </div></div>
+</div>
+
+<div class="classBlock" data-class="sp4">
+<div class="scr" data-t="open">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="cue">Solo Prep · Class 4</div>
+  <div class="big">The FedEx Pickup Call (Natera)</div>
+  <div class="es" style="font-size:16px;line-height:1.5;color:rgba(244,238,246,.85)">By the end of this class, you can call FedEx, schedule a pickup for a Natera sample, and get a confirmation number — even if the operator asks something you didn't expect.</div>
+  <button class="btn go" data-next>Begin</button>
+ </div></div>
+
+<div class="scr" data-t="spiral">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Spiral · Solo Prep 2 & 3</div>
+  <div class="think">Quest call (60 sec) + MedSpeed call (60 sec), back to back.</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">The FedEx Line</div>
+  <button class="audio" data-audio="audio/sp_fedex_number.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="word" style="font-size:26px">800-463-3339</div>
+  <div class="es">Say it out loud twice.</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="1">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Step by Step</div>
+  <div class="think">Operator: "How can I help you?" — what do you say?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal</button>
+  <div class="keyBox"><div class="pbPhrase">Schedule a pickup.</div></div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="2">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Step by Step</div>
+  <div class="think">"Do any of your packages weigh more than 100 lbs?" / "Can I get your FedEx account number?" — what do you say to each?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal</button>
+  <div class="keyBox">"No." / "I don't have one." — then you get transferred.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Isolated Drill · The Transfer Restart</div>
+  <div class="sent">"Hi, my name is Ana Velazquez. I would like to schedule a pickup for..."</div>
+  <div class="es">This is the trickiest moment — a new person picks up mid-conversation. Drill this restart line alone until it's clean and doesn't sound repetitive or thrown-off.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="meetfix">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">The Full Request</div>
+  <div class="sent">"...I would like to schedule a pickup for my: one package, FedEx Express, with a black and white pre-printed label, weighing ___ lbs."</div>
+  <div class="es">Say the full request out loud once.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="3">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">The Details</div>
+  <div class="think">Callback number 763-236-0671, address 11269 Jefferson Highway, Champlin, MN 55316, package at the front desk, clinic closes at 7pm — say all of this in order.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">CORE · Round 1 — Exact Script</div>
+  <div class="think">Juan plays both operators (voice shift signals the transfer). Run the whole call, no surprises.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">CORE · Round 2 — One Unscripted Question</div>
+  <div class="think">Same call. The second operator asks one unscripted follow-up — respond sensibly, don't freeze because it's off-script.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">CORE · Round 3 — Fast + Noise</div>
+  <div class="think">Fast pace, slight overlap/interruption — realistic clinic-floor conditions. End with the confirmation number (AELA#) catch-back.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="spiral">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Random Draw</div>
+  <div class="think">All three calls, cold, in random order — first real test of "which call is this" instinct.</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="homework">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Homework</div>
+  <div class="sent" style="text-align:left">Voice-memo the FedEx call solo, including handling one invented unscripted question.</div>
+  <button class="btn go" data-next>Done for today</button>
+ </div></div>
+
+<div class="scr" data-t="close">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="big">Nice work today.</div>
+  <div class="es">All three real calls covered. See you at Solo Prep 5 — under pressure.</div>
+  <div class="credits">Teacher's Station · Solo Shift Prep</div>
+ </div></div>
+</div>
+
+<div class="classBlock" data-class="sp5">
+<div class="scr" data-t="open">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="cue">Solo Prep · Class 5</div>
+  <div class="big">Under Pressure, Any Call</div>
+  <div class="es" style="font-size:16px;line-height:1.5;color:rgba(244,238,246,.85)">By the end of this class, you can handle any of the three calls when you don't know which one is coming, under a real clock, and recover cleanly if you get confused or mishear something.</div>
+  <button class="btn go" data-next>Begin</button>
+ </div></div>
+
+<div class="scr" data-t="meetfix">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Recovery Phrase Bank</div>
+  <div class="sent">"I'm sorry, can you repeat that?" · "Can you say that one more time, slower?" · "Let me make sure I have that right — you said..." · "One moment, please." · "Can you spell that for me?"</div>
+  <div class="es">Rule for today: never go silent, never switch to Spanish, never guess a number. A recovery phrase IS the correct response, not a failure.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Cold Draw · Round 1 (untimed)</div>
+  <div class="think">Juan draws a call type at random — Quest, MedSpeed, or FedEx — without announcing which. Identify it from the first line and run it. You can ask for one repeat if truly needed.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Cold Draw · Round 2 (timed)</div>
+  <div class="timerRing" data-seconds="60">
+   <svg viewBox="0 0 100 100" width="96" height="96">
+    <circle cx="50" cy="50" r="44" fill="none" stroke="rgba(244,238,246,.18)" stroke-width="5"/>
+    <circle cx="50" cy="50" r="44" fill="none" stroke="#FFBE00" stroke-width="5" stroke-linecap="round"
+     class="timerArc" style="stroke-dasharray:276.5;stroke-dashoffset:0;transform:rotate(-90deg);transform-origin:50px 50px"/>
+   </svg>
+   <div class="timerNum">60</div>
+  </div>
+  <button class="btn go" onclick="timerStart(this)">Start 60s</button>
+  <div class="think">Another cold draw, dispatcher voice slightly rushed — the "critical value, callback under 15 minutes" pressure.</div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Cold Draw · Round 3 (interruption)</div>
+  <div class="think">Mid-call, Juan interrupts as if someone walked up ("hold on, someone's here"). Handle the interruption and get back on the call cleanly.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Cold Draw · Round 4 (mishearing)</div>
+  <div class="think">Juan deliberately mumbles a number or name. Catch it and use a recovery phrase — don't guess or freeze.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Debrief</div>
+  <div class="think">Which call gave you the most trouble today, and why? This becomes your prep note for Solo Prep 6.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="homework">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Homework</div>
+  <div class="sent" style="text-align:left">No new script — mental rehearsal. Picture the clinic phone ringing; run through "which call could this be, what's my first line" once a day.</div>
+  <button class="btn go" data-next>Done for today</button>
+ </div></div>
+
+<div class="scr" data-t="close">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="big">Nice work today.</div>
+  <div class="es">Real progress under real pressure. See you at Solo Prep 6 — the full simulation.</div>
+  <div class="credits">Teacher's Station · Solo Shift Prep</div>
+ </div></div>
+</div>
+
+<div class="classBlock" data-class="sp6">
+<div class="scr" data-t="open">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="cue">Solo Prep · Class 6</div>
+  <div class="big">🎯 Full Solo-Shift Simulation + Exit Check</div>
+  <div class="es" style="font-size:16px;line-height:1.5;color:rgba(244,238,246,.85)">By the end of this class, you've handled a full simulated solo shift — patient work interrupted by a real call, no warning, no backup — and you have real evidence of how far you've come since Solo Prep 1.</div>
+  <button class="btn go" data-next>Begin</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">The Simulation Begins</div>
+  <div class="think">"You're alone at the clinic. It's a normal morning. A doctor's office calls and says they need a STAT pickup..." — stay in character for the whole class.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Simulation · Call 1</div>
+  <div class="think">Juan runs a Quest STAT call, unscripted and cold.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Simulation · Mid-Task Interruption</div>
+  <div class="think">"You're in the middle of labeling a sample and the phone rings." — a MedSpeed/Allina call comes in unannounced.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Simulation · Call 3</div>
+  <div class="think">A FedEx pickup call for a Natera sample — or a variant.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Simulation · Recovery Moment</div>
+  <div class="think">A deliberately unclear or rushed dispatcher voice — use your recovery phrases from Solo Prep 5.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Simulation · The Identity Check</div>
+  <div class="think">Someone asks you to spell your name and give your employee number, exactly as it happens for real.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Before / After</div>
+  <div class="think">Think back to your very first cold spelling attempt in Solo Prep 1. What's different now?</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Exit Check</div>
+  <div class="think">Go through each call: which felt fully automatic? Which still needs conscious effort? Is the identity/numbers foundation rock solid under full pressure?</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="close">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="big">You did it. 📞</div>
+  <div class="es">You've handled a full simulated solo shift. This is real evidence you're ready — not just theory.</div>
+  <div class="credits">Teacher's Station · Solo Shift Prep</div>
+ </div></div>
+</div>
 </div>
 
 <script>
@@ -2227,11 +2945,11 @@ function loadScreens(classNum){
   idx = 0;
   show(0);
 }
-function selectClass(classNum){
+function selectClass(classNum, label){
   document.getElementById('classMenu').classList.remove('open');
   document.querySelectorAll('#classMenu .item').forEach(it=>it.classList.remove('active'));
   event.target.closest('.item').classList.add('active');
-  document.getElementById('classSelect').textContent = 'Class ' + classNum + ' ▾';
+  document.getElementById('classSelect').textContent = (label || ('Class ' + classNum)) + ' ▾';
   loadScreens(classNum);
 }
 function show(i){
