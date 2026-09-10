@@ -135,6 +135,7 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
   <div class="item" onclick="selectClass(2)">Class 2: Your Work Week <span>✓</span></div>
   <div class="item" onclick="selectClass(3)">Class 3: Client Intake <span>✓</span></div>
   <div class="item" onclick="selectClass(4)">Class 4: Reading 1 — Your Own Boss</div>
+  <div class="item" onclick="selectClass(5)">Class 5: What / Where / How Many</div>
 </div>
 
 <div id="bar"></div>
@@ -1186,6 +1187,286 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
  <div class="stack">
   <div class="big">Nice work today.</div>
   <div class="es">See you at Class 5.</div>
+  <div class="credits">Teacher's Station · The Milestone Method</div>
+ </div></div>
+
+</div>
+
+<div class="classBlock" data-class="5">
+
+<div class="scr" data-t="open">
+ <div class="bg" data-img="photos/phone_call.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="cue">Class 5</div>
+  <div class="big">Client Intake: Answer "What / Where / How Many" At Natural Speed</div>
+  <div class="es" style="font-size:16px;line-height:1.5;color:rgba(244,238,246,.85)">By the end of this class, you can catch a "what / where / how many / how long" question at real speed on the phone — no slowdown — and answer without saying "I don't understand the question."</div>
+  <button class="btn go" data-next>Begin</button>
+ </div></div>
+
+<div class="scr" data-t="ritual">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Open With A Win</div>
+  <div class="think">Say these fast, no thinking time: "Yes, I'm sure." / "No, I'm not sure." / "It's my own business."</div>
+  <div class="es">All three are already yours from Classes 3 and 4.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Critical Thinking · 1 of 3</div>
+  <div class="think">Finish this: "The last job I did was ___."</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Critical Thinking · 2 of 3</div>
+  <div class="think">Finish this: "The biggest problem I had on that job was ___."</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Critical Thinking · 3 of 3</div>
+  <div class="think">True or false, then say why in one sentence: "A client always tells you the whole job on the phone the first time."</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="tpr" data-items='[{"w":"What&#39;s the problem?","a":"audio/c5_wh1_slow.mp3"},{"w":"Where&#39;s the project?","a":"audio/c5_wh2_slow.mp3"},{"w":"How many rooms?","a":"audio/c5_wh3_slow.mp3"},{"w":"How long did it take?","a":"audio/c5_wh4_slow.mp3"}]' data-idx="0">
+ <div class="motionStage">
+  <div style="position:absolute;width:180px;height:180px;left:50%;top:36%;margin:-90px 0 0 -90px;border-radius:50%;background:rgba(255,190,0,.14);animation:floatY 2.6s ease-in-out infinite;"></div>
+  <div class="veil"></div>
+ </div>
+ <div class="stack">
+  <div class="badge">GUIDED · Decode The WH-Word</div>
+  <button class="audio" data-audio="audio/c5_wh1_slow.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="word" data-tprword style="font-size:22px">What's the problem?</div>
+  <div class="dots" data-tprdots><div class="dot lit"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="row" style="max-width:280px">
+   <button class="opt mid" onclick="tprNav(this,-1)" style="flex:0 0 60px">‹</button>
+   <button class="opt mid" onclick="tprNav(this,1)" style="flex:1">Next question ›</button>
+  </div>
+  <div class="es">Text visible. Just catch and repeat the WH-word — don't answer yet.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="production" data-word="1">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Vocabulary · New Today</div>
+  <button class="audio" data-audio="audio/word_problem.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="word">problem</div>
+  <div class="dots"><div class="dot lit"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="es">Listen, then say it out loud 3 times.</div>
+  <button class="btn go" data-next>Next word</button>
+ </div></div>
+
+<div class="scr" data-t="production" data-word="2">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Vocabulary · New Today</div>
+  <button class="audio" data-audio="audio/word_project.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="word">project</div>
+  <div class="dots"><div class="dot"></div><div class="dot lit"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="es">Listen, then say it out loud 3 times.</div>
+  <button class="btn go" data-next>Next word</button>
+ </div></div>
+
+<div class="scr" data-t="production" data-word="3">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Vocabulary · New Today</div>
+  <button class="audio" data-audio="audio/word_describe.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="word">describe</div>
+  <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot lit"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="es">Listen, then say it out loud 3 times.</div>
+  <button class="btn go" data-next>Next word</button>
+ </div></div>
+
+<div class="scr" data-t="production" data-word="4">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Vocabulary · New Today</div>
+  <button class="audio" data-audio="audio/word_last.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="word">last</div>
+  <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot lit"></div><div class="dot"></div></div>
+  <div class="es">Listen, then say it out loud 3 times.</div>
+  <button class="btn go" data-next>Next word</button>
+ </div></div>
+
+<div class="scr" data-t="production" data-word="5">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Vocabulary · New Today</div>
+  <button class="audio" data-audio="audio/word_recent.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="word">recent</div>
+  <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot lit"></div></div>
+  <div class="es">Describe your last / most recent project — the garage gym for Leslie and Jim — using 2 of today's 5 words.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="meetfix">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Meet Fix · Retest, Same Fossil</div>
+  <div class="cue">Answer fast, no thinking time</div>
+  <div class="sent">"So, what's the problem, exactly?"</div>
+  <div class="es">Cue if you freeze: just say the WH-word you caught — "What...?" — then attempt the answer. Never ask "I don't understand the question."</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>The problem is the garage floor — we need new flooring.</b></div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="tpr" data-items='[{"w":"What&#39;s the problem?","a":"audio/c5_wh1.mp3"},{"w":"Where&#39;s the project?","a":"audio/c5_wh2.mp3"},{"w":"How many rooms?","a":"audio/c5_wh3.mp3"},{"w":"How long did it take?","a":"audio/c5_wh4.mp3"}]' data-idx="0">
+ <div class="motionStage">
+  <div style="position:absolute;width:180px;height:180px;left:50%;top:36%;margin:-90px 0 0 -90px;border-radius:50%;background:rgba(255,190,0,.2);animation:floatY 1.6s ease-in-out infinite;"></div>
+  <div class="veil"></div>
+ </div>
+ <div class="stack">
+  <div class="badge">LESS GUIDED · WH-Question Race</div>
+  <button class="audio" data-audio="audio/c5_wh1.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="word" data-tprword>What's the problem?</div>
+  <div class="dots" data-tprdots><div class="dot lit"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="row" style="max-width:280px">
+   <button class="opt mid" onclick="tprNav(this,-1)" style="flex:0 0 60px">‹</button>
+   <button class="opt mid" onclick="tprNav(this,1)" style="flex:1">Next question ›</button>
+  </div>
+  <div class="es">Natural speed now, no text model. Checklist only: What · Where · How many · How long. Answer each one for real.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/phone_call.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">INDEPENDENT · CORE Round 1 — The Call</div>
+  <div class="think">A new client calls about a job. Voice only — no visual. The client fires all 4 WH-question types, real speed, real conditions. Catch each WH-word and answer.</div>
+  <div class="es">Use 2+ of today's vocab words and one Phrase Bank line.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/phone_call.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">INDEPENDENT · CORE Round 2 — One Interruption</div>
+  <div class="think">Same call — but mid-way, the client repeats a question in a different order, or rephrases it once. Recover without asking "what?"</div>
+  <div class="es">This is where it's measured, not where it's taught.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="1">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 1 of 3</div>
+  <div class="think">Someone thanks you for helping. What's a simple reply?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">No problem.</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the CORE round</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="2">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 2 of 3</div>
+  <div class="think">A client wants a specific day, but you need a moment before committing.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">Let me check my schedule.</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the CORE round</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="3">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 3 of 3</div>
+  <div class="think">You need to check something before you can answer the client on this call.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">I'll have to call you back.</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the CORE round</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Pronunciation · Falling Intonation on WH-Questions · Hear It</div>
+  <div class="row">
+   <button class="opt mid" style="gap:8px" onclick="playAudio(this)" data-audio="audio/c5_wh1.mp3">"What's the problem?" (falling) <span style="font-size:16px">🔊</span></button>
+   <button class="opt mid" style="gap:8px" onclick="playAudio(this)" data-audio="audio/c5_wh_rising_wrong.mp3">rising (wrong) <span style="font-size:16px">🔊</span></button>
+  </div>
+  <div class="es">WH-questions fall at the end — the opposite of yes/no questions (Class 3). Which one sounds confident?</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Pronunciation · Quick Live Catch · Hear It</div>
+  <div class="row">
+   <button class="opt mid" style="gap:8px" onclick="playAudio(this)" data-audio="audio/word_first.mp3">"first" <span style="font-size:16px">🔊</span></button>
+   <button class="opt mid" style="gap:8px" onclick="playAudio(this)" data-audio="audio/word_fierce.mp3">"fierce" <span style="font-size:16px">🔊</span></button>
+  </div>
+  <div class="es">Two different words — say "first" with the short vowel, not like "fierce." Also: "world" needs its L — say it once, clearly.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/phone_call.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">Real-Life Conversation</div>
+  <div class="think">A new client calls about a job, same as the CORE.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Only open this if you get stuck</button>
+  <div class="keyBox">
+   <b>Client:</b> Hi, is this Julian? I got your number from a friend.<br>
+   <b>You:</b> Yes, this is Julian. How can I help?<br>
+   <b>Client:</b> Great. So, what's the problem, exactly?<br>
+   <b>You:</b> The problem is the garage floor — we need new flooring.<br>
+   <b>Client:</b> Okay. And where's the project?<br>
+   <b>You:</b> It's a home gym, in the garage.<br>
+   <b>Client:</b> How many rooms are we talking about?<br>
+   <b>You:</b> Just one room, but it's pretty big.<br>
+   <b>Client:</b> Got it. How long did a similar job take you?<br>
+   <b>You:</b> The last one took about two days. I'll let you know once I see the space.<br>
+   <b>Client:</b> Sounds good, thanks Julian.
+  </div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Comprehension Check · 1 of 2</div>
+  <div class="think">What's the problem the client describes, and where is the project?</div>
+  <button class="btn go" data-next>Next question</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Comprehension Check · 2 of 2</div>
+  <div class="think">How long did Julian's last similar job take?</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="homework">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Homework</div>
+  <div class="sent" style="text-align:left">1. Record yourself retelling the Leslie/Jim garage-gym job as if a new client asked you today's 4 WH-questions — next class opens on whichever one you answer fastest.</div>
+  <div class="sent" style="text-align:left">2. Notice log: this week, catch one real moment where a client asks you a "what/where/how many/how long" question on the phone. Text Juan the exact question and what you answered.</div>
+  <div class="sent" style="text-align:left; font-size:14px; opacity:.75">Gloss: "the problem" = "el problema" · "how long did it take" = "cuánto tiempo tomó."</div>
+  <button class="btn go" data-next>Done for today</button>
+ </div></div>
+
+<div class="scr" data-t="close">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="big">Nice work today.</div>
+  <div class="es">See you at Class 6.</div>
   <div class="credits">Teacher's Station · The Milestone Method</div>
  </div></div>
 
