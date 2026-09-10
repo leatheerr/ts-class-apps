@@ -151,10 +151,11 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 <div id="classHeader">
   <span class="brand">TEACHER'S STATION</span>
-  <button id="classSelect" onclick="toggleMenu()">Class 1 ▾</button>
+  <button id="classSelect" onclick="toggleMenu()">Class 2 ▾</button>
 </div>
 <div id="classMenu">
-  <div class="item active" onclick="selectClass(1)">Class 1: Customer calls — open a call without freezing <span>✓</span></div>
+  <div class="item" onclick="selectClass(1)">Class 1: Customer calls — open a call without freezing <span>✓</span></div>
+  <div class="item active" onclick="selectClass(2)">Class 2: Gate codes & tracking numbers <span>✓</span></div>
 </div>
 
 <div id="bar"></div>
@@ -490,6 +491,212 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 </div>
 
+<div class="classBlock" data-class="2">
+
+<div class="scr" data-t="open">
+ <div class="bg" data-img="photos/open2.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="cue">Class 2</div>
+  <div class="big">Gate codes &amp; tracking numbers: say and confirm digit strings without getting them wrong</div>
+  <div class="es" style="font-size:16px;line-height:1.55">By the end of this class, a customer can give you a gate code once and you read it back correctly — and when a dispatcher reads <i>your</i> tracking number back wrong, you stop them and fix it.</div>
+  <button class="btn go" data-next>Start</button>
+ </div></div>
+
+<div class="scr" data-t="spiral">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Open With A Win</div>
+  <div class="think">Pick up a call. You're on the route, I'm the customer. Just the opening line — "This is Danna with Amazon, I'm calling about your delivery…"</div>
+  <div class="es">You already did three of these last class. This is the warm-up, not the test.</div>
+  <button class="btn go" data-next>Said it — next</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Critical Thinking · 1 of 3</div>
+  <div class="think">When a customer reads you a gate code fast and you're driving, what do you actually do right now? Walk me through it.</div>
+  <button class="btn go" data-next>Answered out loud — next</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Critical Thinking · 2 of 3</div>
+  <div class="think">Is it ruder to ask someone to repeat a number, or to guess and get it wrong? Why?</div>
+  <button class="btn go" data-next>Answered out loud — next</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Critical Thinking · 3 of 3</div>
+  <div class="think">On a phone call, what makes someone sound like they're <i>in control</i> of the call, not just surviving it?</div>
+  <button class="btn go" data-next>Answered out loud — next</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="1">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 1 of 3</div>
+  <button class="audio" data-audio="audio/p_bearwith.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="think">You're holding the phone with your shoulder, trying to grab a pen — instead of going silent or repeating a word, what do you say?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Show the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">"Bear with me for a sec."</div><br>Say this instead of "the… the… the". It buys you the same time without sounding stuck.</div>
+  <label class="forceUse"><input type="checkbox"> I used this in the CORE round</label>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="2">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 2 of 3</div>
+  <button class="audio" data-audio="audio/p_readback.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="think">You've written a code down and you want to confirm it before you act on it. What do you say?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Show the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">"Let me read that back to you."</div><br>Then say the digits grouped, with a beat between each.</div>
+  <label class="forceUse"><input type="checkbox"> I used this in the CORE round</label>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="3">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 3 of 3</div>
+  <button class="audio" data-audio="audio/p_justtobe.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="think">You're double-checking a digit string mid-call and you don't want to sound unsure. What do you say?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Show the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">"Just to be sure — that's 4-4-7, right?"</div><br>Land it on a confirm, not a question in your voice. Falling tone on the last digit.</div>
+  <label class="forceUse"><input type="checkbox"> I used this in the CORE round</label>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="stack">
+  <div class="badge">Pronunciation · Digit Grouping</div>
+  <div class="word">4 — 4 — 7</div>
+  <button class="audio" data-audio="audio/d_447.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="es">A code is not one long word. Tiny beat between each digit, falling tone on the last one — settled, not asking.</div>
+  <button class="audio none" data-audio="audio/d_0538.mp3" onclick="playAudio(this)" style="width:64px;height:64px;font-size:22px">🔊</button>
+  <div class="es">Now this one: "oh — five — three — eight." Say it back grouped.</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="stack">
+  <div class="badge">Pronunciation · 13 vs 30 · Hear It</div>
+  <div class="es">-teen = stress on the second part (thir-<b class="stress">TEEN</b>). -ty = stress on the first (<b class="stress">THIR</b>-ty), often "thur-dee". Tap each, call it out.</div>
+  <div class="row"><button class="opt mid" data-audio="audio/n_1330.mp3" onclick="playAudio(this)">13 / 30 🔊</button><button class="opt mid" data-audio="audio/n_1550.mp3" onclick="playAudio(this)">15 / 50 🔊</button></div>
+  <div class="row"><button class="opt mid" data-audio="audio/n_1440.mp3" onclick="playAudio(this)">14 / 40 🔊</button><button class="opt mid" data-audio="audio/n_1990.mp3" onclick="playAudio(this)">19 / 90 🔊</button></div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="meetfix">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Meet Fix · Read It Back</div>
+  <div class="cue">Listen once. Capture it. Read it back.</div>
+  <button class="audio" data-audio="audio/d_code1.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="think">Say: "Bear with me for a sec" → write it → read it back grouped → "So that's 6-2-9-4, right?"</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Check yourself</button>
+  <div class="keyBox">Gate code: <b>6 — 2 — 9 — 4</b>. Grouped, falling tone on the 4.</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="meetfix">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Meet Fix · The Trap</div>
+  <div class="cue">One of these two numbers is easy to hear wrong</div>
+  <button class="audio" data-audio="audio/d_code2.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="think">What's the unit number — and which one did the last driver get wrong?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Check yourself</button>
+  <div class="keyBox">Unit <b>30</b> (THIR-ty), <b>not 13</b> (thir-TEEN). If you're not sure, that's exactly when you say: "Did you say 13 or 30?"</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/core2.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">CORE · Round 1 — You Receive</div>
+  <div class="cue">Camera off · voice only</div>
+  <div class="think">Three short calls. Each has one number, said once. Capture it without "say that again", read it back, confirm with a frame. Land all 3 Phrase Bank phrases across the set.</div>
+  <button class="btn go" data-next>Ready for Round 2</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/core2.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">CORE · Round 2 — You Run The Call</div>
+  <div class="cue">You call the dispatcher · they read it back wrong</div>
+  <div class="think">You're confirming a delivery address and access code. The dispatcher reads it back wrong at least twice — swaps two digits, says "fifty" for "fifteen". Stop them and fix it: "Sorry — did you say 15 or 50? It's five-oh."</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/open2.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">Real Call — Answer Key</div>
+  <div class="think">A customer's package needs a code to get through the building's front gate. Build your side first — open this only if you stall.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Show the model</button>
+  <div class="keyBox">
+   <b>Customer:</b> Hi, do you have the gate code? The last driver couldn't get in.<br>
+   <b>You:</b> Hi, this is Danna with Amazon. Let me check… I don't see a code on the order. Can you give it to me now?<br>
+   <b>Customer:</b> Sure, it's 0-5-3-8.<br>
+   <b>You:</b> Bear with me for a sec while I write it down… Let me read that back: oh — five — three — eight. So that's 0-5-3-8, right?<br>
+   <b>Customer:</b> That's it.<br>
+   <b>You:</b> Got it. Just to be sure — front gate or parking garage?<br>
+   <b>Customer:</b> Front gate.<br>
+   <b>You:</b> Perfect. It turns out I've got about 40 stops before yours, so early afternoon. I'll leave it at the door and send a photo.
+  </div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Check Yourself · 1 of 2</div>
+  <div class="think">Why did Danna say "bear with me for a sec" — what was she doing?</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Check Yourself · 2 of 2</div>
+  <div class="think">She asked one extra question the customer didn't expect. What was it — and why does asking it make her sound more in control?</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="spiral">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">From Last Session</div>
+  <div class="think">Fit each into a sentence about your route today — don't stop to define them: <b>no wonder</b> · <b>it turns out</b> · <b>out of the ordinary</b>.</div>
+  <button class="btn go" data-next>Done</button>
+ </div></div>
+
+<div class="scr" data-t="homework">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Homework</div>
+  <div class="sent" style="text-align:left;font-size:17px">1. Voice memo to your own WhatsApp (~20s): a fake voicemail — "This is Danna with Amazon… the gate code you gave me is ___. Let me read that back: ___. Call me back at ___." Say every number <b>grouped</b>.</div>
+  <div class="sent" style="text-align:left;font-size:17px">2. While driving, say these out loud, 5 rounds each: 13/30, 15/50, 14/40, 19/90.</div>
+  <div class="sent" style="text-align:left;font-size:17px">3. Notebook the 3 phrases — for each, write the <i>English</i> situation ("I say this when…"), not the Spanish.</div>
+  <div class="sent" style="text-align:left;font-size:17px">4. Playphrase.me: search "read it back" — write down 2 real examples.</div>
+  <button class="btn go" data-next>Done for today</button>
+ </div></div>
+
+<div class="scr" data-t="close">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="big">Nice work today.</div>
+  <div class="es">Bring the voicemail recording — Class 3 opens with it. See you at Class 3.</div>
+  <div class="credits">Teacher's Station · The Milestone Method</div>
+ </div></div>
+
+</div>
+
 </div>
 <script>
 function toggleMenu(){ document.getElementById('classMenu').classList.toggle('open'); }
@@ -567,7 +774,7 @@ function playAudio(btn){
 // has no markup here at all, so nav can never leak into it.
 let screens = [];
 let idx = 0;
-let currentClass = 1;
+let currentClass = 2;
 
 function loadScreens(classNum){
   document.querySelectorAll('.classBlock').forEach(b=>{
@@ -603,7 +810,7 @@ document.querySelectorAll('.bg[data-img]').forEach(el=>{
   const visualParent = el.closest('.visual');
   if(visualParent){ visualParent.setAttribute('data-img-src', src); }
 });
-loadScreens(1);
+loadScreens(2);
 </script>
 </body>
 </html>
