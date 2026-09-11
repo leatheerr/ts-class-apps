@@ -131,12 +131,13 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 <div id="classHeader">
   <span class="brand">TEACHER'S STATION</span>
-  <button id="classSelect" onclick="toggleMenu()">Class 3 ▾</button>
+  <button id="classSelect" onclick="toggleMenu()">Class 4 ▾</button>
 </div>
 <div id="classMenu">
   <div class="item" onclick="selectClass(1)">Class 1: Job Identity <span>✓</span></div>
   <div class="item" onclick="selectClass(2)">Class 2: Job Site Tools <span>✓</span></div>
-  <div class="item active" onclick="selectClass(3)">Class 3: The Wedding <span>✓</span></div>
+  <div class="item" onclick="selectClass(3)">Class 3: The Wedding <span>✓</span></div>
+  <div class="item active" onclick="selectClass(4)">Class 4: How'd It Go? <span>✓</span></div>
 </div>
 
 <div id="bar"></div>
@@ -1033,6 +1034,310 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
  </div></div>
 
 </div>
+
+<div class="classBlock" data-class="4">
+
+<div class="scr" data-t="open">
+ <div class="bg" data-img="photos/wedding_reception.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="cue">Class 4 · Reading</div>
+  <div class="big">How'd It Go? — real-world debrief + consolidation</div>
+  <div class="es" style="font-size:16px;line-height:1.5;color:rgba(244,238,246,.85)">By the end of this class, you can tell someone about a real conversation you had in English — who you talked to, what they asked, what you said — using fixed frames, and read a short "how did it go" story and catch every past-tense verb in it.</div>
+  <button class="btn go" data-next>Begin</button>
+ </div></div>
+
+<div class="scr" data-t="ritual">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Open With A Win</div>
+  <div class="think">Finish this out loud, fast, about something real: "Since Class 3, I spoke English with ___." Then: "We talked about ___."</div>
+  <div class="es">Your real life since last class — that's what today runs on.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Critical Thinking · 1 of 3</div>
+  <div class="think">Finish this: "The hardest moment in a real English conversation is when ___."</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Critical Thinking · 2 of 3</div>
+  <div class="think">Finish this: "When I don't know a word, instead of stopping I can ___."</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Critical Thinking · 3 of 3</div>
+  <div class="think">True or false, then say why in one sentence: "If a conversation wasn't perfect, it wasn't a success."</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="reading">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Reading · How'd It Go?</div>
+  <button class="audio" data-audio="audio/c4_reading.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="es">Listen once. Then reveal the text and read it twice — the second time, just catch the past-tense verbs.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal the text</button>
+  <div class="keyBox" style="font-size:14px;line-height:1.8">
+   Last weekend I went to a party with my girlfriend. I didn't know anyone there. I was nervous.<br><br>
+   A man sat next to me. He said, "Hi, I'm Marcos." I said, "Nice to meet you. I'm Elio."<br><br>
+   He asked me, "What do you do?" I said, "I'm an electrician." Then I asked him, "How do you know the host?" We talked for ten minutes.<br><br>
+   One time I didn't know a word. I said, "How do you say…?" and he helped me.<br><br>
+   It wasn't perfect. But I had a good time.
+  </div>
+  <div class="es" style="font-size:13px">Catch these: went · didn't know · was · sat · said · asked · talked · helped · wasn't · had</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Comprehension · 1 of 2 — Reading</div>
+  <div class="think">How did Elio feel at the start of the party, and why?</div>
+  <button class="btn go" data-next>Next question</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Comprehension · 2 of 2 — Reading</div>
+  <div class="think">What did the man in the story do when Elio didn't know a word?</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Race It · Classes 1–3, Shuffled</div>
+  <div class="sent" style="text-align:left;font-size:16px">Coach fires, you answer fast — English in, English out, no Spanish:<br><br>
+  • "What do you do?" → "I'm an electrician."<br>
+  • "Hand me the ___." → name a tool / "Here you go."<br>
+  • "How do you know ___?" → "I'm here with my girlfriend."<br>
+  • "How's it going?" → "Pretty good, thanks."<br>
+  • "What do you use at work?" → "I use a ___."</div>
+  <div class="es">Any word you needed in real life and didn't have — say it now, out loud. That's your next vocab set.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Spiral Review · Mixed</div>
+  <div class="think">Say each one fast, in this mixed order — don't group them:</div>
+  <div class="sent" style="text-align:left;font-size:16px">1. "I check the ___." (Class 2)<br>2. "Nice to meet you." (Class 1)<br>3. "It was nice talking to you." (Class 3)<br>4. "I'm a(n) ___." (Class 1)<br>5. "How do you know ___?" (Class 3)</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="meetfix">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Meet Fix · Retest Inside The Debrief</div>
+  <div class="cue">Answer fast, no thinking time</div>
+  <div class="sent">"So what do you do?"</div>
+  <div class="es">Asked cold, mid-story. If you freeze: cue "I'm a(n) ___" — then say the whole sentence. If you say a word and pull it back, stop and say it again, whole sentence.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>I'm an electrician.</b><br>Same fossil as Classes 1–3 — fourth time now. A full sentence beats a single word.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="frame">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="dots"><div class="dot lit"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="badge">Frame Practice · 1 of 5 — The Debrief</div>
+  <div class="frameCard">
+   <div class="frameSentence">"I talked to <span class="blank"><span class="cursor"></span></span>."</div>
+   <div class="frameHint">your own real detail, out loud</div>
+  </div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="frame">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="dots"><div class="dot lit"></div><div class="dot lit"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="badge">Frame Practice · 2 of 5 — The Debrief</div>
+  <div class="frameCard">
+   <div class="frameSentence">"They asked me <span class="blank"><span class="cursor"></span></span>."</div>
+   <div class="frameHint">what they wanted to know, out loud</div>
+  </div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="frame">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="dots"><div class="dot lit"></div><div class="dot lit"></div><div class="dot lit"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="badge">Frame Practice · 3 of 5 — The Debrief</div>
+  <div class="frameCard">
+   <div class="frameSentence">"I said <span class="blank"><span class="cursor"></span></span>."</div>
+   <div class="frameHint">what you answered, out loud</div>
+  </div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="frame">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="dots"><div class="dot lit"></div><div class="dot lit"></div><div class="dot lit"></div><div class="dot lit"></div><div class="dot"></div></div>
+  <div class="badge">Frame Practice · 4 of 5 — The Debrief</div>
+  <div class="frameCard">
+   <div class="frameSentence">"I didn't know how to say <span class="blank"><span class="cursor"></span></span>, so I <span class="blank"><span class="cursor"></span></span>."</div>
+   <div class="frameHint">the missing word, then what you did instead — not knowing a word is normal</div>
+  </div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="frame">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="dots"><div class="dot lit"></div><div class="dot lit"></div><div class="dot lit"></div><div class="dot lit"></div><div class="dot lit"></div></div>
+  <div class="badge">Frame Practice · 5 of 5 — The Debrief</div>
+  <div class="frameCard">
+   <div class="frameSentence">"It wasn't perfect, but <span class="blank"><span class="cursor"></span></span>."</div>
+   <div class="frameHint">how it went anyway, out loud</div>
+  </div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/wedding_reception.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">CORE · Round 1 — Tell It</div>
+  <div class="think">Tell the story of your real conversation since Class 3. Use your 5 frames as a checklist — fill each one with what really happened.</div>
+  <div class="es">Land "How was it?", "It went well," and "I had a good time" somewhere in the telling.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/wedding_reception.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">CORE · Round 2 — Flip It</div>
+  <div class="think">Now you ask. Your coach went to a gathering — find out about it: "How do you know ___?", "What do you do?", "Who did you come with?", "How was it?"</div>
+  <div class="es">You're the interviewer this time. React to the answers: "That's awesome." / "Nice."</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Pronunciation · Linked Chunks · Hear It</div>
+  <div class="row">
+   <button class="opt mid" style="gap:8px" onclick="playAudio(this)" data-audio="audio/c3_niceto_linked.mp3">"Nice to meet you" (linked) <span style="font-size:16px">🔊</span></button>
+   <button class="opt mid" style="gap:8px" onclick="playAudio(this)" data-audio="audio/c3_niceto_separated.mp3">4 separate words <span style="font-size:16px">🔊</span></button>
+  </div>
+  <div class="es">Which sounds native? Say the linked one.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Pronunciation · Say It · Shuffled</div>
+  <div class="row">
+   <button class="opt mid" style="gap:8px" onclick="playAudio(this)" data-audio="audio/c3_niceto_linked.mp3">nice-tuh-meet-chu <span style="font-size:16px">🔊</span></button>
+   <button class="opt mid" style="gap:8px" onclick="playAudio(this)" data-audio="audio/c3_howsitgoing.mp3">how-zit-go-in <span style="font-size:16px">🔊</span></button>
+  </div>
+  <button class="audio" data-audio="audio/c4_nicetalking_linked.mp3" onclick="playAudio(this)" style="margin-top:4px">🔊</button>
+  <div class="word" style="font-size:21px">it-wuz-nice-tawkin-tuh-yuh</div>
+  <div class="es">Say each as one linked piece, then use one in Round 2.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/wedding_reception.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">Real-Life Conversation</div>
+  <div class="think">A friend who wasn't there asks you about the wedding / party.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Only open this if you get stuck</button>
+  <div class="keyBox">
+   <b>Friend:</b> Hey, how was the wedding?<br>
+   <b>You:</b> It was good. It went well.<br>
+   <b>Friend:</b> Did you talk to people?<br>
+   <b>You:</b> Yeah. A guy sat next to me and we talked. He asked me what I do.<br>
+   <b>Friend:</b> Nice. Was it hard?<br>
+   <b>You:</b> A little. One time I didn't know a word, so I asked him. But I had a good time.<br>
+   <b>Friend:</b> That's awesome.
+  </div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Comprehension · 1 of 2 — Conversation</div>
+  <div class="think">What does Elio say the man next to him asked about?</div>
+  <button class="btn go" data-next>Next question</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Comprehension · 2 of 2 — Conversation</div>
+  <div class="think">What did Elio do when he didn't know a word?</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="1">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 1 of 3</div>
+  <div class="think">Someone asks you about something you just did — an event, a trip, a day out. What's the question they use?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">How was it?</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the CORE round</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="2">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 2 of 3</div>
+  <div class="think">Someone asks how your weekend or your event was. Give the short, natural answer.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">It went well.</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the CORE round</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="3">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 3 of 3</div>
+  <div class="think">You want to say you enjoyed something — a party, a dinner, a day out.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">I had a good time.</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the CORE round</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="homework">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Homework</div>
+  <div class="sent" style="text-align:left">1. Voice memo — three real sentences: "Last week I ___." ×3, about things you actually did (went, saw, had…). Don't worry if the verb is wrong — next class we build past tense from these exact sentences.</div>
+  <div class="sent" style="text-align:left">2. Next time someone asks how something went, answer with "It went well" and "I had a good time." Text Juan whether they came out.</div>
+  <div class="sent" style="text-align:left; font-size:14px; opacity:.75">Gloss: "How was it?" = "¿Qué tal estuvo?" · "It went well." = "Salió bien." · "I had a good time." = "La pasé bien."</div>
+  <button class="btn go" data-next>Done for today</button>
+ </div></div>
+
+<div class="scr" data-t="close">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="big">Nice work today.</div>
+  <div class="es">See you at Class 5 — we start past tense, from your own sentences.</div>
+  <div class="credits">Teacher's Station · The Milestone Method</div>
+ </div></div>
+
+</div>
 </div>
 <script>
 function toggleMenu(){ document.getElementById('classMenu').classList.toggle('open'); }
@@ -1165,7 +1470,7 @@ document.querySelectorAll('.bg[data-img]').forEach(el=>{
   const visualParent = el.closest('.visual');
   if(visualParent){ visualParent.setAttribute('data-img-src', src); }
 });
-loadScreens(3);
+loadScreens(4);
 document.querySelector('[data-navback]').disabled = true;
 </script>
 </body></html>
