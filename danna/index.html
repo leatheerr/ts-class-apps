@@ -143,6 +143,22 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 .forceUse input[type=checkbox]:checked{background:var(--go);border-color:var(--go)}
 .forceUse input[type=checkbox]:checked::after{content:"\2713";position:absolute;inset:0;display:flex;
  align-items:center;justify-content:center;font-weight:900;color:#2D0130;font-size:14px}
+.motion-wordorder{position:absolute;top:74px;left:0;right:0;display:flex;flex-direction:column;
+ align-items:center;gap:8px}
+.wo-state{display:flex;gap:6px;flex-wrap:wrap;justify-content:center}
+.wo-chip{background:rgba(255,255,255,.08);border:1.5px solid rgba(244,238,246,.25);border-radius:8px;
+ padding:6px 11px;font-family:'Poppins',system-ui,sans-serif;font-size:14px;color:var(--ink)}
+.wo-chip.wo-bad{color:#E08A83;border-color:rgba(224,138,131,.45);animation:woFade 3.2s ease-in-out infinite}
+.wo-chip.wo-move{border-color:var(--go);color:var(--go);animation:woGlow 3.2s ease-in-out infinite}
+.wo-arrow{color:rgba(244,238,246,.4);font-size:16px;animation:woBounce 1.8s ease-in-out infinite}
+@keyframes woFade{0%,40%{opacity:1}60%,100%{opacity:.3}}
+@keyframes woGlow{0%,100%{box-shadow:0 0 0 0 rgba(255,190,0,.4)}50%{box-shadow:0 0 0 6px rgba(255,190,0,0)}}
+@keyframes woBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+.slotTable{display:flex;flex-direction:column;gap:8px;width:100%}
+.slotRow{display:flex;gap:6px;flex-wrap:wrap;justify-content:center}
+.slot{background:rgba(244,238,246,.07);border:1.5px solid rgba(244,238,246,.16);border-radius:8px;
+ padding:6px 10px;font-family:'Poppins',system-ui,sans-serif;font-size:14px;color:var(--ink)}
+.slot.go{background:rgba(255,190,0,.14);border-color:var(--go);color:var(--go);font-weight:600}
 @media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;scroll-behavior:auto!important}}
 </style>
 </head>
@@ -151,11 +167,12 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 <div id="classHeader">
   <span class="brand">TEACHER'S STATION</span>
-  <button id="classSelect" onclick="toggleMenu()">Class 2 ▾</button>
+  <button id="classSelect" onclick="toggleMenu()">Class 3 ▾</button>
 </div>
 <div id="classMenu">
   <div class="item" onclick="selectClass(1)">Class 1: Customer calls — open a call without freezing <span>✓</span></div>
-  <div class="item active" onclick="selectClass(2)">Class 2: Gate codes & tracking numbers <span>✓</span></div>
+  <div class="item" onclick="selectClass(2)">Class 2: Gate codes & tracking numbers <span>✓</span></div>
+  <div class="item active" onclick="selectClass(3)">Class 3: Eating out &mdash; order without avoiding it <span>&#10003;</span></div>
 </div>
 
 <div id="bar"></div>
@@ -697,6 +714,307 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 </div>
 
+<div class="classBlock" data-class="3">
+
+<div class="scr" data-t="open">
+ <div class="bg" data-img="photos/open3.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="cue">Class 3</div>
+  <div class="big">Eating out: order food and answer "how do you want it?" without avoiding the situation</div>
+  <div class="es" style="font-size:16px;line-height:1.55">By the end of this class, you can walk into a restaurant, order a full meal, answer "How do you want it?" without freezing, change your mind out loud — and send something back, politely.</div>
+  <button class="btn go" data-next>Start</button>
+ </div></div>
+
+<div class="scr" data-t="spiral">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Open With A Win</div>
+  <div class="think">Play me the voicemail you recorded. Then I'll give you one code out loud and you read it straight back — grouped, with a beat.</div>
+  <div class="es">You already ran three of these calls last class. This is the warm-up, not the test.</div>
+  <button class="btn go" data-next>Done — next</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Critical Thinking · 1 of 3</div>
+  <div class="think">You've lived here five years. Name one thing you still do the Mexican way <i>on purpose</i> — and one thing you've switched over completely without noticing.</div>
+  <button class="btn go" data-next>Answered out loud — next</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Critical Thinking · 2 of 3</div>
+  <div class="think">Which is ruder: asking someone to repeat themselves three times, or pretending you understood and getting it wrong? Pick one and defend it.</div>
+  <button class="btn go" data-next>Answered out loud — next</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Critical Thinking · 3 of 3</div>
+  <div class="think">You get the job with more English interaction tomorrow. What's the first situation you'd be nervous about — and be honest: is that a language problem or a people problem?</div>
+  <button class="btn go" data-next>Answered out loud — next</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="stack">
+  <div class="badge">Listening · Read It Back</div>
+  <div class="cue">Look away from the screen. Each one plays once.</div>
+  <div class="row"><button class="opt mid" data-audio="audio/c3_conf4702.mp3" onclick="playAudio(this)">Confirmation 🔊</button><button class="opt mid" data-audio="audio/c3_fifteen.mp3" onclick="playAudio(this)">The wait 🔊</button></div>
+  <div class="row"><button class="opt mid" data-audio="audio/c3_total.mp3" onclick="playAudio(this)">The total 🔊</button></div>
+  <div class="es">Read each one back grouped, with a beat — not one long word. No "say that again".</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Check yourself</button>
+  <div class="keyBox">Confirmation: <b>4 — 7 — 0 — 2</b><br>The wait: <b>fifteen</b> (thir<b class="stress">TEEN</b> family), not fifty<br>The total: <b>$34.19</b> — "thirty-four nineteen"</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="stack">
+  <div class="badge">Vocabulary · The Doneness Ladder</div>
+  <div class="es">Five words, least cooked to most cooked. Tap each, say it back.</div>
+  <div class="row"><button class="opt mid" data-audio="audio/c3_rare.mp3" onclick="playAudio(this)">rare 🔊</button><button class="opt mid" data-audio="audio/c3_medrare.mp3" onclick="playAudio(this)">medium rare 🔊</button></div>
+  <div class="row"><button class="opt mid" data-audio="audio/c3_medium.mp3" onclick="playAudio(this)">medium 🔊</button><button class="opt mid" data-audio="audio/c3_medwell.mp3" onclick="playAudio(this)">medium well 🔊</button></div>
+  <div class="row"><button class="opt mid" data-audio="audio/c3_welldone.mp3" onclick="playAudio(this)">well done 🔊</button></div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="stack">
+  <div class="badge">Meet Fix · Fire It</div>
+  <div class="cue">No thinking. Pick one and say it.</div>
+  <button class="audio" data-audio="audio/c3_howdoyou.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="think">Three times, faster each time. Same answer every time is fine — that's the point. Your default is <b>medium</b>.</div>
+  <div class="es">If you genuinely want a second to think, you already have the tool: "Give me one sec."</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="stack">
+  <div class="badge">Say It Better</div>
+  <div class="think">Kill the word "very". Say each of these a better way, out loud, before you open the key:<br><br>the food was <i>very good</i> · the soup came <i>very cold</i> · that place is <i>very expensive</i> · I'm <i>very full</i> · the service was <i>very bad</i></div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Show the upgrades</button>
+  <div class="keyBox">very good → <b>delicious · amazing · so good</b><br>very cold → <b>freezing · stone cold</b><br>very expensive → <b>pricey · a rip-off</b><br>very full → <b>stuffed</b><br>very bad → <b>awful · terrible · nasty</b></div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="stack">
+  <div class="badge">Phrasal Verbs</div>
+  <div class="think">Fire the right one at each situation — say it in a full sentence:<br><br>1. It's your day off, you don't want to cook, you don't want to leave the house.<br>2. You and your sister decide to go to a restaurant tonight.<br>3. You've got 20 minutes between stops and you're starving.<br>4. You and your boyfriend each pay your own part of the bill.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Show the phrases</button>
+  <div class="keyBox">1. <b>order in</b> — have food delivered to the house<br>2. <b>eat out</b> — go to a restaurant instead of cooking<br>3. <b>grab a bite</b> — eat something quick<br>4. <b>split the check</b> — each person pays their share</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="1">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 1 of 3</div>
+  <button class="audio" data-audio="audio/c3_imgood.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="think">Someone offers you something and you want to say no — a refill, dessert, a bag, more bread. You don't want to sound negative. What do you say?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Show the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">"I'm good, thanks."</div><br>It does not mean "I am a good person." It's the friendly American no — you say it when someone offers and you don't want it.</div>
+  <label class="forceUse"><input type="checkbox"> I used this in the CORE round</label>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="2">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 2 of 3</div>
+  <button class="audio" data-audio="audio/c3_secondthought.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="think">You already ordered the fish. You've decided you want the chicken. How do you change it out loud — calmly, without apologising?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Show the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">"Actually, on second thought…"</div><br>This is your exit from anything you already said. You are allowed to change your mind out loud.</div>
+  <label class="forceUse"><input type="checkbox"> I used this in the CORE round</label>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="3">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 3 of 3</div>
+  <button class="audio" data-audio="audio/c3_wheneveryou.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="think">You need the server's attention — water, the check, a napkin — and you don't want to feel rude. What do you say?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Show the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">"Whenever you get a chance…"</div><br>Gentle, falling tone — it's not a question. This is how you get someone's attention without feeling like you're demanding it.</div>
+  <label class="forceUse"><input type="checkbox"> I used this in the CORE round</label>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="meetfix">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Meet Fix</div>
+  <div class="cue">The question you've been avoiding</div>
+  <div class="es" style="font-size:16px">"How do you want it?" has kept you out of restaurants. Not because it's hard English — because it arrives fast and you have nothing banked to answer it with. So you avoid the whole situation instead of the one question.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="meetfix">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Meet Fix · Your Two Tools</div>
+  <div class="think"><b>1. A default.</b> One word you say every time unless you want something else — <b>medium</b>.<br><br><b>2. A stall.</b> If you want a second to think: <b>"Give me one sec."</b></div>
+  <div class="es">You already used the stall in a real call last class, without being asked. It covers this question too. You will not be asked something you don't have an answer for.</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="stack">
+  <div class="badge">The Shape</div>
+  <div class="es">Three openers. Everything you ask a server for starts with one of them.</div>
+  <div class="slotTable">
+   <div class="slotRow"><span class="slot go">I'll have</span><span class="slot">the steak</span><span class="slot">, medium.</span></div>
+   <div class="slotRow"><span class="slot go">Could I get</span><span class="slot">the dressing</span><span class="slot">on the side?</span></div>
+   <div class="slotRow"><span class="slot go">I'd like</span><span class="slot">a water</span><span class="slot">, please.</span></div>
+  </div>
+  <div class="es">Answering "Would you like…?" → <b>"I'd love to"</b> (yes) or <b>"I'm good, thanks"</b> (no).</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="motionStage" aria-hidden="true">
+  <div class="motion-wordorder">
+   <div class="wo-state"><span class="wo-chip wo-bad">I want</span><span class="wo-chip">the chicken.</span></div>
+   <div class="wo-arrow">&#8595;</div>
+   <div class="wo-state"><span class="wo-chip wo-move">Could I get</span><span class="wo-chip">the chicken?</span></div>
+  </div>
+  <div class="veil"></div>
+ </div>
+ <div class="plain" style="z-index:-1"></div>
+ <div class="stack">
+  <div class="badge">The Trap</div>
+  <div class="es" style="font-size:16px">"I want the chicken" is perfect grammar and lands as a <b>demand</b>. The politeness lives in the <b>opener</b> — not in "please". Adding "please" to "I want" doesn't rescue it.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="stack">
+  <div class="badge">Check It · Say It, Then Build It</div>
+  <div class="think">Say the fix out loud first:<br><br>1. "I want a coffee with milk."<br>2. "Give me the check."<br>3. "I want that the sauce comes separate."<br>4. Server: "Can I get you anything else?"</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Check yourself</button>
+  <div class="keyBox">1. "Could I get a coffee with milk?"<br>2. "Could we get the check, whenever you get a chance?"<br>3. "Could I get the sauce on the side?"<br>4. "I'm good, thanks."</div>
+  <div class="scramble" data-answer="Could I get the dressing on the side?">
+   <div class="es">Now build it — tap in order:</div>
+   <div class="scrambleRow scrambleBank">
+    <button class="chip" onclick="scrambleTap(this)">the dressing</button>
+    <button class="chip" onclick="scrambleTap(this)">the side?</button>
+    <button class="chip" onclick="scrambleTap(this)">Could</button>
+    <button class="chip" onclick="scrambleTap(this)">on</button>
+    <button class="chip" onclick="scrambleTap(this)">I get</button>
+   </div>
+   <div class="scrambleRow scrambleBuilt"></div>
+   <div class="row"><button class="opt mid" onclick="scrambleReset(this)">Reset</button><button class="opt mid" onclick="scrambleCheck(this)">Check</button></div>
+   <div class="scrambleFeedback" style="display:none"></div>
+   <button class="btn go scrambleNext" data-next style="display:none">Next</button>
+  </div>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/core3.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">CORE · Stage 1 — Guided</div>
+  <div class="cue">I'm your server. Straightforward dinner.</div>
+  <div class="think">Order four things: <b>a drink · a main · one modification · a doneness</b>. I'll stop you the moment something slips and you say the whole sentence again.</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/core3.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">CORE · Stage 2 — On Your Own</div>
+  <div class="cue">Busy place · the server isn't looking at you</div>
+  <div class="think">Three things have to happen:<br><br>1. Get his attention → <b>"Whenever you get a chance…"</b><br>2. Order, then change your mind halfway → <b>"Actually, on second thought…"</b><br>3. Answer the doneness question with no hesitation.</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/core3.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">CORE · Stage 3 — The Real One</div>
+  <div class="cue">Something goes wrong</div>
+  <div class="think">You ordered medium. <b>It arrives well done.</b> Send it back — politely — to a server who is perfectly nice and a little busy.<br><br>Then: he offers dessert (decline it), he asks for a number to text you, and you ask to split the check.</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="stack">
+  <div class="badge">Pronunciation · Request or Demand</div>
+  <div class="es">Same words. The tone decides whether it's a request or an order. Tap both, hear the difference, then say each one back.</div>
+  <div class="row"><button class="opt mid" data-audio="audio/c3_check_flat.mp3" onclick="playAudio(this)">Flat ↘ 🔊</button><button class="opt mid" data-audio="audio/c3_check_rise.mp3" onclick="playAudio(this)">Rising ↗ 🔊</button></div>
+  <div class="word" style="font-size:22px">"Could I get the check?"</div>
+  <button class="audio none" data-audio="audio/c3_whenever_full.mp3" onclick="playAudio(this)" style="width:64px;height:64px;font-size:22px">🔊</button>
+  <div class="es">This one is the exception — <b>"Whenever you get a chance"</b> stays gentle and <b>falling</b>. It's not a question.</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/open3.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">The Real Thing — Answer Key</div>
+  <div class="think">Your day off. You're eating out with your boyfriend and the steak comes back wrong. Build your side first — open this only after.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Show the model</button>
+  <div class="keyBox">
+   <b>Server:</b> Hey, how's everything tasting over here?<br>
+   <b>You:</b> Hi — actually, could I ask you something? I ordered this medium and I think it came out well done.<br>
+   <b>Server:</b> Oh no, I'm sorry about that. Let me take a look… yeah, you're right. I'll get that fixed right away.<br>
+   <b>You:</b> Thank you. No rush, I'm not in a hurry.<br>
+   <b>Server:</b> Can I get you anything while you wait? Another drink, maybe?<br>
+   <b>You:</b> I'm good, thanks. Actually — on second thought, could I get a water?<br>
+   <b>Server:</b> Of course. And are we saving room for dessert tonight?<br>
+   <b>You:</b> I'm good, thanks. But whenever you get a chance, could we get the check? We're splitting it.<br>
+   <b>Server:</b> Absolutely, I'll bring two.
+  </div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Check Yourself · 1 of 2</div>
+  <div class="think">The server says "I'll get that fixed right away." What is he actually going to do — bring a brand-new steak, cook this one longer, or take it off the bill? How do you know?</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Check Yourself · 2 of 2</div>
+  <div class="think">You say "I'm good, thanks" twice. Does it mean the same thing both times? What's the difference between the two moments?</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="spiral">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Fast Fire</div>
+  <div class="think">One sentence each, no stopping to define them:<br><br>Your dad cooked dinner → <b>out of the ordinary</b><br>She didn't sleep → <b>no wonder</b><br>You thought the place was closed, but → <b>it turns out</b></div>
+  <button class="btn go" data-next>Done</button>
+ </div></div>
+
+<div class="scr" data-t="homework">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Homework</div>
+  <div class="sent" style="text-align:left;font-size:17px">1. <b>Voice note, 45 seconds.</b> Order a full meal out loud — drink, main, one modification, the doneness — then decline dessert. Send it to me. <i>Class 4 opens with it.</i></div>
+  <div class="sent" style="text-align:left;font-size:17px">2. <b>Pigeonary with ChatGPT voice mode, 20 min</b> — food and restaurant words only this time. <i>Class 4's reading runs on this vocabulary.</i></div>
+  <div class="sent" style="text-align:left;font-size:17px">3. <b>By hand, autocorrect off.</b> The 3 phrases — for each, write the <i>English</i> situation ("I say this when…") plus one real sentence from your week. Not the meaning. Not Spanish. Photo to me.</div>
+  <button class="btn go" data-next>Done for today</button>
+ </div></div>
+
+<div class="scr" data-t="close">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="big">That was the one you've been avoiding.</div>
+  <div class="es">Bring the voice note — Class 4 opens with it. See you at Class 4.</div>
+  <div class="credits">Teacher's Station · The Milestone Method</div>
+ </div></div>
+
+</div>
+
 </div>
 <script>
 function toggleMenu(){ document.getElementById('classMenu').classList.toggle('open'); }
@@ -774,7 +1092,7 @@ function playAudio(btn){
 // has no markup here at all, so nav can never leak into it.
 let screens = [];
 let idx = 0;
-let currentClass = 2;
+let currentClass = 3;
 
 function loadScreens(classNum){
   document.querySelectorAll('.classBlock').forEach(b=>{
@@ -810,7 +1128,7 @@ document.querySelectorAll('.bg[data-img]').forEach(el=>{
   const visualParent = el.closest('.visual');
   if(visualParent){ visualParent.setAttribute('data-img-src', src); }
 });
-loadScreens(2);
+loadScreens(3);
 </script>
 </body>
 </html>
