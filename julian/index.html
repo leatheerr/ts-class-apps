@@ -122,20 +122,60 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 #emptyState{position:absolute;inset:0;top:44px;display:none;flex-direction:column;align-items:center;
  justify-content:center;gap:14px;padding:24px;text-align:center}
 #emptyState.on{display:flex}
+/* countdown timer ring */
+.timerRing{position:relative;width:96px;height:96px;display:flex;align-items:center;justify-content:center}
+.timerArc{transition:stroke-dashoffset 1s linear}
+.timerNum{position:absolute;font-family:'Poppins',system-ui,sans-serif;font-size:26px;font-weight:700;color:var(--ink)}
+.timerNum.warn{color:#E08A83}
+.opt[disabled]{opacity:.28}
+/* ======================= GRAMMAR BOX ======================= */
+.gPart{display:none;width:100%;flex-direction:column;align-items:center;gap:14px}
+.gPart.on{display:flex}
+.gSlots{width:100%;display:flex;flex-direction:column;gap:9px}
+.slotLbls,.slotRow{display:flex;gap:6px;width:100%}
+.slotLbl{flex:1;font-family:'Poppins',system-ui,sans-serif;font-size:9px;letter-spacing:.07em;
+ text-transform:uppercase;color:rgba(255,190,0,.72);text-align:center;font-weight:600}
+.slotChip{flex:1;display:flex;align-items:center;justify-content:center;text-align:center;
+ min-height:44px;background:transparent;border:1px dashed rgba(244,238,246,.2);
+ border-radius:10px;padding:11px 3px;font-family:'Poppins',system-ui,sans-serif;font-size:14.5px;
+ font-weight:600;color:var(--ink);transition:background .3s ease,border-color .3s ease}
+.slotChip .w{opacity:0}
+.gSlots.built .slotChip{background:rgba(255,190,0,.10);border-style:solid;border-color:rgba(255,190,0,.38)}
+.gSlots.built .slotChip .w{animation:slotIn .34s cubic-bezier(.2,.7,.3,1) both;
+ animation-delay:calc(var(--i,0) * 90ms)}
+@keyframes slotIn{from{opacity:0;transform:translateY(12px) scale(.93)}to{opacity:1;transform:none}}
+.slotNote{font-size:13px;color:rgba(244,238,246,.55);font-style:italic;text-align:center;line-height:1.45}
+@media (prefers-reduced-motion:reduce){.gSlots.built .slotChip .w{animation:none;opacity:1}}
+.useRow{display:flex;align-items:center;gap:10px;width:100%;background:rgba(255,255,255,.045);
+ border:1px solid rgba(244,238,246,.09);border-radius:12px;padding:12px 14px}
+.useKey{font-family:'Poppins',system-ui,sans-serif;font-weight:600;color:var(--go);font-size:15.5px;white-space:nowrap}
+.useArrow{color:rgba(244,238,246,.3);flex:none}
+.useVal{font-size:14.5px;color:rgba(244,238,246,.86);line-height:1.4}
+.trapItem{width:100%;display:flex;flex-direction:column;gap:9px}
+.trapWrong{width:100%;text-align:center;font-family:'Poppins',system-ui,sans-serif;font-size:18px;
+ font-weight:600;color:rgba(255,132,132,.92);text-decoration:line-through;
+ text-decoration-color:rgba(255,132,132,.8);text-decoration-thickness:2px}
+.hl{color:var(--go);border-bottom:2px solid var(--go)}
+.gcTag{font-size:13px;letter-spacing:.5px;color:rgba(244,238,246,.55);font-style:italic;text-align:center}
+.gcQ{font-family:'Poppins',system-ui,sans-serif;font-size:22px;font-weight:600;text-align:center;line-height:1.45}
+.gcQ .blank{min-width:66px;height:26px;vertical-align:-2px}
+.gcQ .cursor{height:18px}
+/* ===================== END GRAMMAR BOX ===================== */
 </style></head>
 <body>
 <div id="appRoot">
 
 <div id="classHeader">
   <span class="brand">TEACHER'S STATION</span>
-  <button id="classSelect" onclick="toggleMenu()">Class 1 ▾</button>
+  <button id="classSelect" onclick="toggleMenu()">Class 6 ▾</button>
 </div>
 <div id="classMenu">
-  <div class="item active" onclick="selectClass(1)">Class 1: First Contact <span>✓</span></div>
+  <div class="item" onclick="selectClass(1)">Class 1: First Contact <span>✓</span></div>
   <div class="item" onclick="selectClass(2)">Class 2: Your Work Week <span>✓</span></div>
   <div class="item" onclick="selectClass(3)">Class 3: Client Intake <span>✓</span></div>
   <div class="item" onclick="selectClass(4)">Class 4: Reading 1 — Your Own Boss</div>
   <div class="item" onclick="selectClass(5)">Class 5: What / Where / How Many</div>
+  <div class="item active" onclick="selectClass(6)">Class 6: On-Site Right Now</div>
 </div>
 
 <div id="bar"></div>
@@ -1472,6 +1512,371 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 </div>
 
+<div class="classBlock" data-class="6">
+
+<div class="scr" data-t="open">
+ <div class="bg" data-img="photos/c6_open.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="cue">Class 6</div>
+  <div class="big">On-Site Right Now: Describe What You're Doing At This Exact Moment</div>
+  <div class="es" style="font-size:16px;line-height:1.5;color:rgba(244,238,246,.85)">By the end of this class, you can give a client a live update from the job site — what you, your helper and the job are doing right now — with "I'm installing", not "I am install".</div>
+  <button class="btn go" data-next>Begin</button>
+ </div></div>
+
+<div class="scr" data-t="ritual">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Open With A Win</div>
+  <div class="think">Fast, falling voice at the end:<br>"What's the problem?" → <b>"The problem is the garage floor."</b><br>"How long did it take?" → <b>"The last one took about two days."</b></div>
+  <div class="es">And when a client calls while you're busy: "I'll have to call you back." All yours from Class 5.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Critical Thinking · 1 of 3</div>
+  <div class="think">Finish this: "Right now, my biggest project is ___."</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Critical Thinking · 2 of 3</div>
+  <div class="think">A client texts you at 11 a.m.: "How's it going?" Do you answer right away, or at the end of the day? Why?</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Critical Thinking · 3 of 3</div>
+  <div class="think">True or false, then say why in one sentence: "A good handyman just works — he doesn't need to tell the client what he's doing."</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="tpr" data-items='[{"w":"Sentence 1 of 4","a":"audio/c6_ing1.mp3"},{"w":"Sentence 2 of 4","a":"audio/c6_ing2.mp3"},{"w":"Sentence 3 of 4","a":"audio/c6_ing3.mp3"},{"w":"Sentence 4 of 4","a":"audio/c6_ing4.mp3"}]' data-idx="0">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Listening · Catch The -ing</div>
+  <button class="audio" data-audio="audio/c6_ing1.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="word" data-tprword style="font-size:22px">Sentence 1 of 4</div>
+  <div class="dots" data-tprdots><div class="dot lit"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="row" style="max-width:280px">
+   <button class="opt mid" onclick="tprNav(this,-1)" style="flex:0 0 60px">‹</button>
+   <button class="opt mid" onclick="tprNav(this,1)" style="flex:1">Next sentence ›</button>
+  </div>
+  <div class="es">No text. Say back only the -ing word you heard, then the whole sentence.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Check yourself</button>
+  <div class="keyBox">1. I'm <b>working</b> on the kitchen today.<br>2. My helper is <b>cutting</b> the boards.<br>3. We're <b>cleaning</b> the garage right now.<br>4. The paint is <b>drying</b>.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Vocabulary · Time Words</div>
+  <div class="es">Tap, listen, say it back. These tell the client "this is happening NOW".</div>
+  <div class="row"><button class="opt mid" data-audio="audio/c6_v_rightnow.mp3" onclick="playAudio(this)">right now 🔊</button><button class="opt mid" data-audio="audio/c6_v_currently.mp3" onclick="playAudio(this)">currently 🔊</button></div>
+  <div class="row"><button class="opt mid" data-audio="audio/c6_v_atthemoment.mp3" onclick="playAudio(this)">at the moment 🔊</button><button class="opt mid" data-audio="audio/c6_v_onsite.mp3" onclick="playAudio(this)">on-site 🔊</button></div>
+  <div class="row"><button class="opt mid" data-audio="audio/c6_v_inprogress.mp3" onclick="playAudio(this)">in progress 🔊</button><button class="opt mid" data-audio="audio/c6_v_workingon.mp3" onclick="playAudio(this)">working on 🔊</button></div>
+  <div class="es">Your coach describes a situation. You fire the word. "The job isn't finished, it's still going" → ?</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Vocabulary · Job Verbs</div>
+  <div class="es">Tap, listen, say it back. The -ing is soft at the end.</div>
+  <div class="row"><button class="opt mid" data-audio="audio/c6_installing.mp3" onclick="playAudio(this)">installing 🔊</button><button class="opt mid" data-audio="audio/c6_painting.mp3" onclick="playAudio(this)">painting 🔊</button></div>
+  <div class="row"><button class="opt mid" data-audio="audio/c6_fixing.mp3" onclick="playAudio(this)">fixing 🔊</button><button class="opt mid" data-audio="audio/c6_measuring.mp3" onclick="playAudio(this)">measuring 🔊</button></div>
+  <div class="row"><button class="opt mid" data-audio="audio/c6_cutting.mp3" onclick="playAudio(this)">cutting 🔊</button><button class="opt mid" data-audio="audio/c6_sanding.mp3" onclick="playAudio(this)">sanding 🔊</button></div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Use It · Your Real Job</div>
+  <div class="think">What are you <b>working on</b> this week?</div>
+  <div class="es">One sentence. Use "currently" or "right now".</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Example</button>
+  <div class="keyBox">"<b>Currently</b> I'm working on a bathroom for a client." · "<b>Right now</b> I'm installing a floor."</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="meetfix">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Meet Fix · Finish The Verb</div>
+  <div class="cue">Keep your "I am". Just add -ing.</div>
+  <div class="sent">"I am go for my wallet."<br>"I am fix the door."<br>"I am measure the room."</div>
+  <div class="es">Say each one the right way — the whole sentence — before you tap.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox">"I'm <b>going</b> for my wallet."<br>"I'm <b>fixing</b> the door."<br>"I'm <b>measuring</b> the room."</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="grammar" data-gstep="0">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge" data-gbadge>Guided · The Shape</div>
+
+  <div class="gPart on" data-gpart data-badge="Guided · The Shape">
+   <div class="gSlots">
+    <div class="slotLbls">
+     <div class="slotLbl">who</div><div class="slotLbl">am/is/are</div>
+     <div class="slotLbl">verb + ing</div><div class="slotLbl">rest</div>
+    </div>
+    <div class="slotRow">
+     <div class="slotChip" style="--i:0"><span class="w">I</span></div><div class="slotChip" style="--i:1"><span class="w">'m</span></div>
+     <div class="slotChip" style="--i:2"><span class="w">installing</span></div><div class="slotChip" style="--i:3"><span class="w">the floor.</span></div>
+    </div>
+    <div class="slotRow">
+     <div class="slotChip" style="--i:4"><span class="w">My helper</span></div><div class="slotChip" style="--i:5"><span class="w">'s</span></div>
+     <div class="slotChip" style="--i:6"><span class="w">cutting</span></div><div class="slotChip" style="--i:7"><span class="w">the boards.</span></div>
+    </div>
+    <div class="slotRow">
+     <div class="slotChip" style="--i:8"><span class="w">We</span></div><div class="slotChip" style="--i:9"><span class="w">'re</span></div>
+     <div class="slotChip" style="--i:10"><span class="w">cleaning</span></div><div class="slotChip" style="--i:11"><span class="w">the garage.</span></div>
+    </div>
+   </div>
+   <button class="toggleBtn" onclick="slotBuild(this)">Build the sentence</button>
+   <div class="slotNote">Always two pieces together: am/is/are <b>and</b> -ing. Like "estoy trabajando".</div>
+  </div>
+
+  <div class="gPart" data-gpart data-badge="Guided · When You Use It">
+   <div class="useRow"><span class="useKey">Right now</span><span class="useArrow">→</span>
+    <span class="useVal">it's happening while you talk. <i>"I'm painting the wall."</i></span></div>
+   <div class="useRow"><span class="useKey">This week</span><span class="useArrow">→</span>
+    <span class="useVal">a job you're in the middle of. <i>"I'm working on a kitchen this week."</i></span></div>
+  </div>
+
+  <div class="gPart" data-gpart data-badge="Guided · The Trap">
+   <div class="trapItem">
+    <div class="trapWrong">I am fix the door.</div>
+    <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Say the fixed version, then tap</button>
+    <div class="keyBox"><b>I'm fix<span class="hl">ing</span> the door.</b> — "I am" alone is only half. The verb needs its -ing.</div>
+   </div>
+   <div class="trapItem">
+    <div class="trapWrong">I install the floor right now.</div>
+    <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Say the fixed version, then tap</button>
+    <div class="keyBox"><b><span class="hl">I'm</span> install<span class="hl">ing</span> the floor right now.</b> — "right now" always means am/is/are + -ing.</div>
+   </div>
+  </div>
+
+  <div class="dots" data-gdots><div class="dot lit"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="row" style="max-width:300px">
+   <button class="opt mid" data-gprev onclick="gramNav(this,-1)" style="flex:0 0 60px" disabled>‹</button>
+   <button class="opt mid" data-gnext onclick="gramNav(this,1)" style="flex:1">Next ›</button>
+  </div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="grammarcheck" data-idx="0"
+ data-items='[
+  {"tag":"right now · paint","q":"I ___ the bathroom right now.","a":"I&#39;m painting the bathroom right now."},
+  {"tag":"your helper · sand","q":"My helper ___ the deck.","a":"My helper is sanding the deck."},
+  {"tag":"this week · install","q":"We ___ new flooring this week.","a":"We&#39;re installing new flooring this week."},
+  {"tag":"fix the error","q":"I am fix the sink.","a":"I&#39;m fixing the sink."},
+  {"tag":"fix the error","q":"The client wait outside right now.","a":"The client is waiting outside right now."},
+  {"tag":"fix the error","q":"I measure the room at the moment.","a":"I&#39;m measuring the room at the moment."}
+ ]'>
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Guided · Check It</div>
+  <div class="gcTag" data-gctag>right now · paint</div>
+  <div class="gcQ" data-gcq>&nbsp;</div>
+  <button class="toggleBtn" onclick="gcReveal(this)">Say it out loud, then check</button>
+  <div class="keyBox" data-gckey></div>
+  <div class="dots" data-gcdots></div>
+  <div class="row" style="max-width:300px">
+   <button class="opt mid" data-gcprev onclick="gcNav(this,-1)" style="flex:0 0 60px" disabled>‹</button>
+   <button class="opt mid" data-gcnext onclick="gcNav(this,1)" style="flex:1">Next ›</button>
+  </div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/c6_site2.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">LESS GUIDED · Describe The Site · 1 of 3</div>
+  <div class="think">Two sentences: who is doing what, right now?</div>
+  <div class="es">I'm / he's / they're + -ing · right now · currently · in progress</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Example</button>
+  <div class="keyBox">"He's <b>installing</b> the tiles. The wall is <b>in progress</b>."</div>
+  <button class="btn go" data-next>Next photo</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/c6_site3.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">LESS GUIDED · Describe The Site · 2 of 3</div>
+  <div class="think">Two sentences: who is doing what, right now?</div>
+  <div class="es">I'm / he's / they're + -ing · right now · currently · in progress</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Example</button>
+  <div class="keyBox">"My helper is <b>measuring</b> the wood. <b>Right now</b> we're building the frame."</div>
+  <button class="btn go" data-next>Next photo</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/c6_site1.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">LESS GUIDED · Describe The Site · 3 of 3</div>
+  <div class="think">Two sentences: who is doing what, right now?</div>
+  <div class="es">I'm / he's / they're + -ing · right now · currently · in progress</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Example</button>
+  <div class="keyBox">"We're <b>painting</b> the wall. The paint is <b>drying</b> at the moment."</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="1">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 1 of 3</div>
+  <div class="think">A client calls, but you're on a ladder and you can't talk. What do you say?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">I'll have to call you back.</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the CORE round</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="2">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 2 of 3</div>
+  <div class="think">You're driving to the client's house. They text: "Are you coming?" What do you answer?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">I'm on my way.</div>Only when you're still driving — not when you're already at the door.</div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the CORE round</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="3">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 3 of 3</div>
+  <div class="think">The client asks how the job is going, and you only need one more hour. What do you say?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">I'm almost done.</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the CORE round</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/c6_open.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">INDEPENDENT · CORE Round 1 — Live Site Update</div>
+  <div class="think">A client can't come to the house today and calls for an update. Talk for 60 seconds: what you're doing, what your helper is doing, what's in progress.</div>
+  <div class="es">No stopping. Your coach stays quiet.</div>
+  <div class="timerRing" data-seconds="60">
+   <svg width="96" height="96" viewBox="0 0 96 96">
+    <circle cx="48" cy="48" r="44" fill="none" stroke="rgba(244,238,246,.15)" stroke-width="6"></circle>
+    <circle class="timerArc" cx="48" cy="48" r="44" fill="none" stroke="#FFBE00" stroke-width="6"
+      stroke-linecap="round" stroke-dasharray="276.46" stroke-dashoffset="0" transform="rotate(-90 48 48)"></circle>
+   </svg>
+   <span class="timerNum">60</span>
+  </div>
+  <button class="btn go" onclick="timerStart(this)">Start 60s</button>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="tpr" data-items='[{"w":"Client question 1","a":"audio/c6_q1.mp3"},{"w":"Client question 2","a":"audio/c6_q2.mp3"},{"w":"Client question 3","a":"audio/c6_q3.mp3"}]' data-idx="0">
+ <div class="bg" data-img="photos/c6_open.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">INDEPENDENT · CORE Round 2 — The Client Asks</div>
+  <button class="audio" data-audio="audio/c6_q1.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="word" data-tprword style="font-size:22px">Client question 1</div>
+  <div class="dots" data-tprdots><div class="dot lit"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="row" style="max-width:280px">
+   <button class="opt mid" onclick="tprNav(this,-1)" style="flex:0 0 60px">‹</button>
+   <button class="opt mid" onclick="tprNav(this,1)" style="flex:1">Next question ›</button>
+  </div>
+  <div class="es">Real speed, no text. Answer each one. Land all 3 Phrase Bank lines across both rounds.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Pronunciation · Natural -ing</div>
+  <div class="es">The -ing is soft, at the end, not stressed. No hard G: <b>WOR</b>king, not work-<b>ING</b>.</div>
+  <div class="row"><button class="opt mid" data-audio="audio/c6_working.mp3" onclick="playAudio(this)">WORking 🔊</button><button class="opt mid" data-audio="audio/c6_painting.mp3" onclick="playAudio(this)">PAINting 🔊</button></div>
+  <div class="row"><button class="opt mid" data-audio="audio/c6_fixing.mp3" onclick="playAudio(this)">FIXing 🔊</button><button class="opt mid" data-audio="audio/c6_measuring.mp3" onclick="playAudio(this)">MEAsuring 🔊</button></div>
+  <div class="row"><button class="opt mid" data-audio="audio/c6_installing.mp3" onclick="playAudio(this)">inSTALLing 🔊</button></div>
+  <div class="es">Listen, then say each one 3 times.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Pronunciation · The PR Sound</div>
+  <div class="row"><button class="opt mid" data-audio="audio/c6_progress.mp3" onclick="playAudio(this)">progress 🔊</button><button class="opt mid" data-audio="audio/word_project.mp3" onclick="playAudio(this)">project 🔊</button></div>
+  <div class="row"><button class="opt mid" data-audio="audio/word_problem.mp3" onclick="playAudio(this)">problem 🔊</button></div>
+  <div class="es">Same rule as last class: the R never touches the roof of your mouth. Slow first, 2 times each, then "in progress" as one piece.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/c6_site2.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">Real-Life Conversation</div>
+  <div class="think">Mrs. Carter calls to check on her bathroom job. You're on-site.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Only open this if you get stuck</button>
+  <div class="keyBox">
+   <b>Client:</b> Hi Julian, it's Mrs. Carter. How's it going over there?<br>
+   <b>You:</b> Hi! It's going pretty well. Right now I'm installing the new tiles.<br>
+   <b>Client:</b> Oh, great. And your helper?<br>
+   <b>You:</b> He's painting the ceiling. The vanity is in progress too.<br>
+   <b>Client:</b> Perfect. Is the water on?<br>
+   <b>You:</b> Not at the moment — I'm fixing the pipe under the sink. Give me an hour.<br>
+   <b>Client:</b> No problem. When can I see it?<br>
+   <b>You:</b> I'm almost done with the tiles. I'll send you photos this afternoon.<br>
+   <b>Client:</b> Sounds good. Thanks, Julian!
+  </div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Comprehension Check · 1 of 2</div>
+  <div class="think">What is Julian doing right now, and what is his helper doing?</div>
+  <button class="btn go" data-next>Next question</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Comprehension Check · 2 of 2</div>
+  <div class="think">Why is the water off at the moment?</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="homework">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Homework</div>
+  <div class="sent" style="text-align:left">1. Site-update voice note (45 sec): tomorrow, on a real job — what you're doing, what your helper is doing, what's in progress. Send it to Juan. Class 7 opens on it.</div>
+  <div class="sent" style="text-align:left">2. Five moments, five sentences: what are you doing at 7 a.m., 10 a.m., 1 p.m., 4 p.m. and 8 p.m.? ("At 7 a.m. I'm driving to the job.") Say each one out loud.</div>
+  <div class="sent" style="text-align:left">3. PR drill, slow, 5 times each: problem · project · progress · price.</div>
+  <div class="sent" style="text-align:left; font-size:14px; opacity:.75">Gloss: "right now" = ahora mismo · "in progress" = en proceso · "I'm working on…" = estoy trabajando en…</div>
+  <button class="btn go" data-next>Done for today</button>
+ </div></div>
+
+<div class="scr" data-t="close">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="big">Nice work today.</div>
+  <div class="es">You kept your "I am" and finished it. See you at Class 7.</div>
+  <div class="credits">Teacher's Station · The Milestone Method</div>
+ </div></div>
+
+</div>
+
 <script>
 function toggleMenu(){ document.getElementById('classMenu').classList.toggle('open'); }
 
@@ -1620,7 +2025,59 @@ document.querySelectorAll('.bg[data-img]').forEach(el=>{
   const visualParent = el.closest('.visual');
   if(visualParent){ visualParent.setAttribute('data-img-src', src); }
 });
-loadScreens(1);
+/* Grammar Box — resolves its own container, no unique IDs */
+function slotBuild(btn){
+  var slots = btn.closest('.gPart').querySelector('.gSlots');
+  slots.classList.add('built');
+  btn.style.display = 'none';
+}
+function gramNav(btn, dir){
+  var scr   = btn.closest('.scr');
+  var parts = [].slice.call(scr.querySelectorAll('[data-gpart]'));
+  var i     = Math.min(parts.length - 1, Math.max(0, (+scr.dataset.gstep || 0) + dir));
+  scr.dataset.gstep = i;
+  parts.forEach(function(p, n){ p.classList.toggle('on', n === i); });
+  scr.querySelector('[data-gbadge]').textContent = parts[i].dataset.badge || '';
+  var dots = scr.querySelector('[data-gdots]');
+  if (dots) [].slice.call(dots.children).forEach(function(d, n){ d.classList.toggle('lit', n === i); });
+  scr.querySelector('[data-gprev]').disabled = (i === 0);
+  var next = scr.querySelector('[data-gnext]');
+  var last = (i === parts.length - 1);
+  next.disabled = last;
+  if (last) scr.querySelector('[data-next]').style.display = '';
+}
+function gcReveal(btn){
+  btn.closest('.stack').querySelector('[data-gckey]').classList.add('show');
+}
+function gcRender(scr){
+  var items = JSON.parse(scr.dataset.items || '[]');
+  var i = Math.min(items.length - 1, Math.max(0, +scr.dataset.idx || 0));
+  var it = items[i] || {};
+  scr.querySelector('[data-gctag]').textContent = it.tag || '';
+  scr.querySelector('[data-gcq]').innerHTML = String(it.q || '').replace(
+    /_{2,}/g, '<span class="blank"><span class="cursor"></span></span>');
+  var key = scr.querySelector('[data-gckey]');
+  key.innerHTML = '<b>' + (it.a || '') + '</b>';
+  key.classList.remove('show');
+  var dots = scr.querySelector('[data-gcdots]');
+  if (dots && dots.children.length !== items.length){
+    dots.innerHTML = items.map(function(){ return '<div class="dot"></div>'; }).join('');
+  }
+  if (dots) [].slice.call(dots.children).forEach(function(d, n){ d.classList.toggle('lit', n === i); });
+  scr.querySelector('[data-gcprev]').disabled = (i === 0);
+  var next = scr.querySelector('[data-gcnext]');
+  var last = (i === items.length - 1);
+  next.disabled = last;
+  next.textContent = last ? 'Done' : 'Next ›';
+  if (last) scr.querySelector('[data-next]').style.display = '';
+}
+function gcNav(btn, dir){
+  var scr = btn.closest('.scr');
+  scr.dataset.idx = Math.max(0, (+scr.dataset.idx || 0) + dir);
+  gcRender(scr);
+}
+document.querySelectorAll('.scr[data-t="grammarcheck"]').forEach(gcRender);
+loadScreens(6);
 document.querySelector('[data-navback]').disabled = true;
 </script>
 </body></html>
