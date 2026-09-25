@@ -166,6 +166,25 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 #classMenu .groupLabel.sp{color:rgba(255,190,0,.65)}
 #classMenu .item.sp{border-top:none;padding-left:16px}
 #classMenu .item.sp::before{content:"📞";margin-right:8px}
+
+/* Scripted call — two-sided script with a step tracker (Solo Prep 2, 25 Sept 2026) */
+.track{display:flex;flex-wrap:wrap;gap:5px;justify-content:center;width:100%}
+.track span{font-family:'Poppins',system-ui,sans-serif;font-size:10px;font-weight:600;letter-spacing:.3px;
+ padding:4px 8px;border-radius:10px;background:rgba(244,238,246,.08);color:rgba(244,238,246,.42)}
+.track span.done{color:rgba(255,190,0,.6)}
+.track span.now{background:var(--go);color:#2D0130}
+.stepNo{font-family:'Poppins',system-ui,sans-serif;font-size:12px;letter-spacing:1.6px;text-transform:uppercase;color:rgba(244,238,246,.55)}
+.bubble{width:100%;border-radius:14px;padding:12px 14px;text-align:left;font-size:18px;line-height:1.45}
+.bubble.them{background:rgba(244,238,246,.08)}
+.bubble.you{background:rgba(255,190,0,.12);border:1.5px solid rgba(255,190,0,.55)}
+.who{font-family:'Poppins',system-ui,sans-serif;font-size:11px;font-weight:600;letter-spacing:1.4px;
+ text-transform:uppercase;display:flex;align-items:center;gap:8px;margin-bottom:5px;color:rgba(244,238,246,.6)}
+.bubble.you .who{color:var(--go)}
+.miniAudio{width:34px;height:34px;border-radius:50%;border:none;background:var(--go);color:#2D0130;font-size:15px;flex:none}
+.keyBox.lineBox{background:none;padding:0}
+.tip{font-size:14px;line-height:1.5;color:rgba(244,238,246,.62);font-style:italic;text-align:center}
+.scriptList{width:100%;max-height:52vh;overflow-y:auto;display:flex;flex-direction:column;gap:8px;padding-right:4px}
+.scriptList .bubble{font-size:15px;padding:9px 12px}
 </style></head>
 <body>
 <div id="appRoot">
@@ -2297,7 +2316,6 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
   <div class="es" style="font-size:16px;line-height:1.5;color:rgba(244,238,246,.85)">By the end of this class, you can call Quest for a STAT pickup and get through the entire script — account number, address, test codes, confirmation — without freezing or needing the script in front of you.</div>
   <button class="btn go" data-next>Begin</button>
  </div></div>
-
 <div class="scr" data-t="spiral">
  <div class="plain"></div>
  <div class="stack">
@@ -2305,7 +2323,6 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
   <div class="think">Cold: spell "Ana Velazquez" + say employee #3364125 + the Champlin address, back to back, no prep.</div>
   <button class="btn go" data-next>Answer out loud, then continue</button>
  </div></div>
-
 <div class="scr" data-t="meetfix">
  <div class="plain"></div>
  <div class="stack">
@@ -2314,97 +2331,167 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
   <div class="es">"six" was drifting toward "sit down" — isolate it, short and clean, 5x. "two" was drifting toward Spanish "tú" — use the "ch"-bridge: a light "ch" sound easing into "two," 5x with the bridge, then 5x without. Both digits are in your employee number (3-3-<b>six</b>-4-1-<b>two</b>-5) — if you relax and drift back mid-repetition, stop and re-isolate right away.</div>
   <button class="btn go" data-next>Continue</button>
  </div></div>
-
-<div class="scr" data-t="production">
+<div class="scr" data-t="script">
  <div class="plain"></div>
  <div class="stack">
-  <div class="badge">The Quest Line</div>
+  <div class="badge">The Whole Call · 9 Steps</div>
+  <div class="tip">This is the map. On every next screen, the gold step shows where you are in the call.</div>
+  <div class="scriptList"><div class="bubble them" style="font-size:15px;padding:8px 12px"><b>0.</b> Dial</div><div class="bubble them" style="font-size:15px;padding:8px 12px"><b>1.</b> Reason</div><div class="bubble them" style="font-size:15px;padding:8px 12px"><b>2.</b> Account</div><div class="bubble them" style="font-size:15px;padding:8px 12px"><b>3.</b> Address</div><div class="bubble them" style="font-size:15px;padding:8px 12px"><b>4.</b> STAT?</div><div class="bubble them" style="font-size:15px;padding:8px 12px"><b>5.</b> Test code</div><div class="bubble them" style="font-size:15px;padding:8px 12px"><b>6.</b> Your name</div><div class="bubble them" style="font-size:15px;padding:8px 12px"><b>7.</b> Verify</div><div class="bubble them" style="font-size:15px;padding:8px 12px"><b>8.</b> Confirm #</div></div>
+  <button class="btn go" data-next>Start at step 0</button>
+ </div></div>
+<div class="scr" data-t="script">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="track"><span class="now">Dial</span><span class="">Reason</span><span class="">Account</span><span class="">Address</span><span class="">STAT?</span><span class="">Test code</span><span class="">Your name</span><span class="">Verify</span><span class="">Confirm #</span></div>
+  <div class="stepNo">Step 0 of 8 · Before you dial</div>
   <button class="audio" data-audio="audio/sp_quest_number.mp3" onclick="playAudio(this)">🔊</button>
-  <div class="word" style="font-size:26px">1-866-MYQUEST</div>
-  <div class="es">1-866-697-8378. Say it out loud twice.</div>
-  <button class="btn go" data-next>Next</button>
+  <div class="word" style="font-size:28px">1-866-MYQUEST</div>
+  <div class="es">1-866-697-8378 — it's on the wall at the clinic. Pick up the <b>handset</b>, not the speaker. Have ready: account number, test code, patient initials, a pen.</div>
+  <button class="btn go" data-next>Dial — step 1</button>
  </div></div>
-
-<div class="scr" data-t="pronunciation">
+<div class="scr" data-t="script">
  <div class="plain"></div>
  <div class="stack">
-  <div class="badge">The Opening — Isolated Drill</div>
-  <button class="audio" data-audio="audio/sp_provider_statpickup.mp3" onclick="playAudio(this)">🔊</button>
-  <div class="word">"Provider." "STAT Pickup."</div>
-  <div class="es">This is the routing moment — say wrong or unclear and the call gets misrouted. Drill until instant and clean.</div>
-  <button class="btn go" data-next>Next</button>
+  <div class="track"><span class="done">✓ Dial</span><span class="now">Reason</span><span class="">Account</span><span class="">Address</span><span class="">STAT?</span><span class="">Test code</span><span class="">Your name</span><span class="">Verify</span><span class="">Confirm #</span></div>
+  <div class="stepNo">Step 1 of 8 · Reason</div>
+  <div class="bubble them"><div class="who"><button class="miniAudio" data-audio="audio/qs_d1.mp3" onclick="playAudio(this)">🔊</button>📞 They say</div>Thank you for calling Quest Diagnostics. How can I help you?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Say your line out loud, then check</button>
+  <div class="keyBox lineBox"><div class="bubble you"><div class="who"><button class="miniAudio" data-audio="audio/qs_y1.mp3" onclick="playAudio(this)">🔊</button>🗣 You say</div>Provider. STAT pickup.</div></div>
+  <div class="tip">No greeting needed — go straight to these two words. "Provider" = who you are, "STAT pickup" = why you're calling. Watch the vowel in pro-VI-der.</div>
+  <button class="btn go" data-next>Next step</button>
  </div></div>
-
-<div class="scr" data-t="phrasebank" data-phrase="1">
+<div class="scr" data-t="script">
  <div class="plain"></div>
  <div class="stack">
-  <div class="badge">Script · Step by Step</div>
-  <div class="think">After "Provider" and "STAT Pickup," what's next?</div>
-  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal</button>
-  <div class="keyBox">Use the handset (not speaker) to reduce noise. Give the Quest account number. Give the street address / suite number of the pickup location.</div>
+  <div class="track"><span class="done">✓ Dial</span><span class="done">✓ Reason</span><span class="now">Account</span><span class="">Address</span><span class="">STAT?</span><span class="">Test code</span><span class="">Your name</span><span class="">Verify</span><span class="">Confirm #</span></div>
+  <div class="stepNo">Step 2 of 8 · Account</div>
+  <div class="bubble them"><div class="who"><button class="miniAudio" data-audio="audio/qs_d2.mp3" onclick="playAudio(this)">🔊</button>📞 They say</div>Okay. Can I have your account number, please?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Say your line out loud, then check</button>
+  <div class="keyBox lineBox"><div class="bubble you"><div class="who">🗣 You say</div>Yes, the account number is <b>___</b>.</div></div>
+  <div class="tip">Your Quest account number is posted on the board at the clinic — read it from there. Say it digit by digit.</div>
+  <button class="btn go" data-next>Next step</button>
+ </div></div>
+<div class="scr" data-t="script">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="track"><span class="done">✓ Dial</span><span class="done">✓ Reason</span><span class="done">✓ Account</span><span class="now">Address</span><span class="">STAT?</span><span class="">Test code</span><span class="">Your name</span><span class="">Verify</span><span class="">Confirm #</span></div>
+  <div class="stepNo">Step 3 of 8 · Address</div>
+  <div class="bubble them"><div class="who"><button class="miniAudio" data-audio="audio/qs_d3.mp3" onclick="playAudio(this)">🔊</button>📞 They say</div>And what's the pickup address?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Say your line out loud, then check</button>
+  <div class="keyBox lineBox"><div class="bubble you"><div class="who"><button class="miniAudio" data-audio="audio/sp_address.mp3" onclick="playAudio(this)">🔊</button>🗣 You say</div>11269 Jefferson Highway, Champlin, Minnesota, 55316.</div></div>
+  <div class="tip">Zip code is 5-5-<b>3-1</b>-6. If they ask for a suite number, give it here too. Careful with the TR/DR blend in "address."</div>
+  <button class="btn go" data-next>Next step</button>
+ </div></div>
+<div class="scr" data-t="script">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="track"><span class="done">✓ Dial</span><span class="done">✓ Reason</span><span class="done">✓ Account</span><span class="done">✓ Address</span><span class="now">STAT?</span><span class="">Test code</span><span class="">Your name</span><span class="">Verify</span><span class="">Confirm #</span></div>
+  <div class="stepNo">Step 4 of 8 · STAT?</div>
+  <div class="bubble them"><div class="who"><button class="miniAudio" data-audio="audio/qs_d4.mp3" onclick="playAudio(this)">🔊</button>📞 They say</div>Is this routine, or STAT?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Say your line out loud, then check</button>
+  <div class="keyBox lineBox"><div class="bubble you"><div class="who"><button class="miniAudio" data-audio="audio/qs_y4.mp3" onclick="playAudio(this)">🔊</button>🗣 You say</div>This is STAT.</div></div>
+  <div class="tip">For an urgent sample, always STAT. "Routine" = ru-TEEN — you'll hear it in their question.</div>
+  <button class="btn go" data-next>Next step</button>
+ </div></div>
+<div class="scr" data-t="script">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="track"><span class="done">✓ Dial</span><span class="done">✓ Reason</span><span class="done">✓ Account</span><span class="done">✓ Address</span><span class="done">✓ STAT?</span><span class="now">Test code</span><span class="">Your name</span><span class="">Verify</span><span class="">Confirm #</span></div>
+  <div class="stepNo">Step 5 of 8 · Test code</div>
+  <div class="bubble them"><div class="who"><button class="miniAudio" data-audio="audio/qs_d5.mp3" onclick="playAudio(this)">🔊</button>📞 They say</div>What's the test code, and the patient's initials?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Say your line out loud, then check</button>
+  <div class="keyBox lineBox"><div class="bubble you"><div class="who"><button class="miniAudio" data-audio="audio/qs_y5.mp3" onclick="playAudio(this)">🔊</button>🗣 You say</div>The test code is <b>6-2-4-1</b>. Patient initials: <b>J. M.</b></div></div>
+  <div class="tip">These two change every call — read them from the requisition. Practice codes use "six" and "two" on purpose.</div>
+  <button class="btn go" data-next>Next step</button>
+ </div></div>
+<div class="scr" data-t="script">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="track"><span class="done">✓ Dial</span><span class="done">✓ Reason</span><span class="done">✓ Account</span><span class="done">✓ Address</span><span class="done">✓ STAT?</span><span class="done">✓ Test code</span><span class="now">Your name</span><span class="">Verify</span><span class="">Confirm #</span></div>
+  <div class="stepNo">Step 6 of 8 · Your name</div>
+  <div class="bubble them"><div class="who"><button class="miniAudio" data-audio="audio/qs_d6.mp3" onclick="playAudio(this)">🔊</button>📞 They say</div>And who am I speaking with?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Say your line out loud, then check</button>
+  <div class="keyBox lineBox"><div class="bubble you"><div class="who"><button class="miniAudio" data-audio="audio/qs_y6.mp3" onclick="playAudio(this)">🔊</button>🗣 You say</div>My name is Ana Velazquez. A-N-A. V as in violin, E-L-A, Z as in zebra, Q-U-E, Z as in zebra. My employee number is 3-3-6-4-1-2-5.</div></div>
+  <div class="tip">Spell it without being asked twice. Employee number digit by digit — clean "six" and "two."</div>
+  <button class="btn go" data-next>Next step</button>
+ </div></div>
+<div class="scr" data-t="script">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="track"><span class="done">✓ Dial</span><span class="done">✓ Reason</span><span class="done">✓ Account</span><span class="done">✓ Address</span><span class="done">✓ STAT?</span><span class="done">✓ Test code</span><span class="done">✓ Your name</span><span class="now">Verify</span><span class="">Confirm #</span></div>
+  <div class="stepNo">Step 7 of 8 · Verify</div>
+  <div class="bubble them"><div class="who"><button class="miniAudio" data-audio="audio/qs_d7.mp3" onclick="playAudio(this)">🔊</button>📞 They say</div>Let me confirm. STAT pickup at 11269 Jefferson Highway, Champlin. Test code 6241, patient initials J.M. Is that correct?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Say your line out loud, then check</button>
+  <div class="keyBox lineBox"><div class="bubble you"><div class="who"><button class="miniAudio" data-audio="audio/qs_y7.mp3" onclick="playAudio(this)">🔊</button>🗣 You say</div>Yes, that's correct.</div></div>
+  <div class="tip">Listen to every detail they read back. If one is wrong, say: "No — the test code is ___."</div>
+  <button class="btn go" data-next>Next step</button>
+ </div></div>
+<div class="scr" data-t="script">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="track"><span class="done">✓ Dial</span><span class="done">✓ Reason</span><span class="done">✓ Account</span><span class="done">✓ Address</span><span class="done">✓ STAT?</span><span class="done">✓ Test code</span><span class="done">✓ Your name</span><span class="done">✓ Verify</span><span class="now">Confirm #</span></div>
+  <div class="stepNo">Step 8 of 8 · Confirm #</div>
+  <div class="bubble them"><div class="who"><button class="miniAudio" data-audio="audio/qs_d8.mp3" onclick="playAudio(this)">🔊</button>📞 They say</div>Your confirmation number is AX-4471-Q. My name is Melissa.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Say your line out loud, then check</button>
+  <div class="keyBox lineBox"><div class="bubble you"><div class="who"><button class="miniAudio" data-audio="audio/qs_y8.mp3" onclick="playAudio(this)">🔊</button>🗣 You say</div>Let me repeat: A-X-4-4-7-1-Q. Thank you, Melissa.</div></div>
+  <div class="tip">Write down: confirmation #, date, time, dispatcher's name. Missed it? "Just to be sure, can you repeat, please?"</div>
+  <button class="btn go" data-next>Finish the call</button>
+ </div></div>
+<div class="scr" data-t="script">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">The Full Script · Read It Top to Bottom</div>
+  <div class="tip">Read both sides out loud once. Then cover the gold lines and try again.</div>
+  <div class="scriptList"><div class="bubble you"><div class="who">📱 You</div>Dial 1-866-MYQUEST · handset, not speaker</div><div class="bubble them"><div class="who">📞 They</div>Thank you for calling Quest Diagnostics. How can I help you?</div><div class="bubble you"><div class="who">🗣 You</div>Provider. STAT pickup.</div><div class="bubble them"><div class="who">📞 They</div>Okay. Can I have your account number, please?</div><div class="bubble you"><div class="who">🗣 You</div>Yes, the account number is <b>___</b>.</div><div class="bubble them"><div class="who">📞 They</div>And what's the pickup address?</div><div class="bubble you"><div class="who">🗣 You</div>11269 Jefferson Highway, Champlin, Minnesota, 55316.</div><div class="bubble them"><div class="who">📞 They</div>Is this routine, or STAT?</div><div class="bubble you"><div class="who">🗣 You</div>This is STAT.</div><div class="bubble them"><div class="who">📞 They</div>What's the test code, and the patient's initials?</div><div class="bubble you"><div class="who">🗣 You</div>The test code is <b>6-2-4-1</b>. Patient initials: <b>J. M.</b></div><div class="bubble them"><div class="who">📞 They</div>And who am I speaking with?</div><div class="bubble you"><div class="who">🗣 You</div>My name is Ana Velazquez. A-N-A. V as in violin, E-L-A, Z as in zebra, Q-U-E, Z as in zebra. My employee number is 3-3-6-4-1-2-5.</div><div class="bubble them"><div class="who">📞 They</div>Let me confirm. STAT pickup at 11269 Jefferson Highway, Champlin. Test code 6241, patient initials J.M. Is that correct?</div><div class="bubble you"><div class="who">🗣 You</div>Yes, that's correct.</div><div class="bubble them"><div class="who">📞 They</div>Your confirmation number is AX-4471-Q. My name is Melissa.</div><div class="bubble you"><div class="who">🗣 You</div>Let me repeat: A-X-4-4-7-1-Q. Thank you, Melissa.</div></div>
   <button class="btn go" data-next>Continue</button>
  </div></div>
-
-<div class="scr" data-t="phrasebank" data-phrase="2">
+<div class="scr" data-t="phrasebank">
  <div class="plain"></div>
  <div class="stack">
-  <div class="badge">Script · Step by Step</div>
-  <div class="think">After the address, what does the dispatcher need to know?</div>
-  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal</button>
-  <div class="keyBox">Confirm routine or STAT. Give the STAT test codes + patient initials (e.g. "FFF" and "L"). Give your name.</div>
+  <div class="badge">Your Safety Line · Any Step</div>
+  <button class="audio" data-audio="audio/qs_repeat.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="pbPhrase">"Just to be sure, can you repeat, please?"</div>
+  <div class="es">Didn't catch something at any step? Use this. Never guess a number, never go silent.</div>
   <button class="btn go" data-next>Continue</button>
  </div></div>
-
-<div class="scr" data-t="meetfix">
- <div class="plain"></div>
- <div class="stack">
-  <div class="badge">Phrase Bank</div>
-  <div class="sent">"This is a STAT pickup." · "The account number is..." · "The pickup address is..." · "This is routine / this is STAT." · "The test code is ___, patient initials ___."</div>
-  <div class="es">Say each phrase out loud once before the role-play.</div>
-  <button class="btn go" data-next>Continue</button>
- </div></div>
-
 <div class="scr" data-t="core">
  <div class="plain"></div>
  <div class="stack">
-  <div class="badge">CORE · Round 1 — Slow, Build the Shape</div>
-  <div class="think">Juan plays the Quest dispatcher. Run the full call unaided, slow pace, no interruptions. Use test code "6-2-4-1" — today's call is where "six" and "two" get tested for real, not just in isolation.</div>
+  <div class="badge">CORE · Round 1 — Slow, With the Map</div>
+  <div class="think">Juan plays the dispatcher. Run the full call at a slow pace. You can look at the step map, but not at your lines. Use test code "6-2-4-1."</div>
   <button class="btn go" data-next>Continue</button>
  </div></div>
-
 <div class="scr" data-t="core">
  <div class="plain"></div>
  <div class="stack">
-  <div class="badge">CORE · Round 2 — Normal Pace + One Question</div>
-  <div class="think">Same call, normal pace. Dispatcher asks one unexpected clarifying question — stay on script but respond naturally.</div>
+  <div class="badge">CORE · Round 2 — Normal Pace + One Surprise</div>
+  <div class="think">Same call, no map. The dispatcher asks one step out of order, or asks you to repeat something. Answer what they ask, then keep going.</div>
   <button class="btn go" data-next>Continue</button>
  </div></div>
-
 <div class="scr" data-t="core">
  <div class="plain"></div>
  <div class="stack">
   <div class="badge">CORE · Round 3 — Fast, Real Conditions</div>
-  <div class="think">Fast pace, dispatcher sounds slightly impatient. End the call by catching and repeating back the confirmation number.</div>
+  <div class="think">Fast pace, slightly impatient dispatcher. End by repeating back the confirmation number and the dispatcher's name.</div>
   <button class="btn go" data-next>Continue</button>
  </div></div>
-
 <div class="scr" data-t="recognition">
  <div class="plain"></div>
  <div class="stack">
   <div class="badge">Comprehension Check</div>
-  <div class="think">Put the whole Quest call in order, from memory: Provider → ? → ? → ? → ? → ? → confirmation.</div>
+  <div class="think">From memory: say the 9 steps in order. Dial → Reason → … → Confirmation number.</div>
   <button class="btn go" data-next>Continue</button>
  </div></div>
-
 <div class="scr" data-t="homework">
  <div class="plain"></div>
  <div class="stack">
   <div class="badge">Homework</div>
-  <div class="sent" style="text-align:left">1. Voice-memo the full Quest call script solo — pause where the dispatcher would speak, then continue. Send it to Juan.</div>
-  <div class="sent" style="text-align:left">2. In the car: play the Quest number and the confirmation-number audio from this app, and repeat each one out loud. Say your employee number too, focusing on "six" and "two."</div>
+  <div class="sent" style="text-align:left">1. This weekend, go through steps 0–8 in this app: say your line first, then check it. Do it twice.</div>
+  <div class="sent" style="text-align:left">2. In the car: play the "They say" audio and answer out loud.</div>
+  <div class="sent" style="text-align:left">3. Send Juan the Quest account number and the full call sheet.</div>
+  <div class="sent" style="text-align:left">4. Ask a coworker to call you when a STAT sample arrives. Try to make the call yourself.</div>
   <button class="btn go" data-next>Done for today</button>
  </div></div>
-
 <div class="scr" data-t="close">
  <div class="plain"></div>
  <div class="stack">
