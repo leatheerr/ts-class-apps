@@ -119,6 +119,85 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 .ladderBar.b1{animation-delay:0s}.ladderBar.b2{animation-delay:.45s}.ladderBar.b3{animation-delay:.9s}
 @keyframes ladderGrow{0%{transform:scaleX(0);opacity:0}14%{transform:scaleX(1);opacity:1}72%{transform:scaleX(1);opacity:1}88%{opacity:0}100%{transform:scaleX(0);opacity:0}}
 @media (prefers-reduced-motion: reduce){.ladderBar{animation:none;transform:scaleX(1);opacity:.8}}
+/* ===== Grammar Box (from ts-class-app references/grammar_screen.html) ===== */
+.opt[disabled]{opacity:.28}
+.blank{display:inline-flex;align-items:center;justify-content:center;min-width:52px;height:22px;
+ border-bottom:2px dashed var(--go);position:relative;margin:0 2px;vertical-align:-4px}
+.cursor{width:1.5px;height:15px;background:var(--go);display:inline-block;animation:blink 1.1s steps(1) infinite}
+@keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}
+.gPart{display:none;width:100%;flex-direction:column;align-items:center;gap:14px}
+.gPart.on{display:flex}
+.gSlots{width:100%;display:flex;flex-direction:column;gap:9px}
+.slotLbls,.slotRow{display:flex;gap:6px;width:100%}
+.slotLbl{flex:1;font-family:'Poppins',system-ui,sans-serif;font-size:9px;letter-spacing:.07em;
+ text-transform:uppercase;color:rgba(255,190,0,.72);text-align:center;font-weight:600}
+.slotChip{flex:1;display:flex;align-items:center;justify-content:center;text-align:center;
+ min-height:44px;background:transparent;border:1px dashed rgba(244,238,246,.2);
+ border-radius:10px;padding:11px 3px;font-family:'Poppins',system-ui,sans-serif;font-size:14.5px;
+ font-weight:600;color:var(--ink);transition:background .3s ease,border-color .3s ease}
+.slotChip .w{opacity:0}
+.gSlots.built .slotChip{background:rgba(255,190,0,.10);border-style:solid;border-color:rgba(255,190,0,.38)}
+.gSlots.built .slotChip .w{animation:slotIn .34s cubic-bezier(.2,.7,.3,1) both;animation-delay:calc(var(--i,0) * 90ms)}
+@keyframes slotIn{from{opacity:0;transform:translateY(12px) scale(.93)}to{opacity:1;transform:none}}
+.slotNote{font-size:13px;color:rgba(244,238,246,.55);font-style:italic;text-align:center;line-height:1.45}
+@media (prefers-reduced-motion:reduce){.gSlots.built .slotChip .w{animation:none;opacity:1}}
+.useRow{display:flex;align-items:center;gap:10px;width:100%;background:rgba(255,255,255,.045);
+ border:1px solid rgba(244,238,246,.09);border-radius:12px;padding:12px 14px}
+.useKey{font-family:'Poppins',system-ui,sans-serif;font-weight:600;color:var(--go);font-size:15.5px;white-space:nowrap}
+.useArrow{color:rgba(244,238,246,.3);flex:none}
+.useVal{font-size:14.5px;color:rgba(244,238,246,.86);line-height:1.4}
+.trapItem{width:100%;display:flex;flex-direction:column;gap:9px}
+.trapWrong{width:100%;text-align:center;font-family:'Poppins',system-ui,sans-serif;font-size:18px;
+ font-weight:600;color:rgba(255,132,132,.92);text-decoration:line-through;
+ text-decoration-color:rgba(255,132,132,.8);text-decoration-thickness:2px}
+.hl{color:var(--go);border-bottom:2px solid var(--go)}
+.gcTag{font-size:13px;letter-spacing:.5px;color:rgba(244,238,246,.55);font-style:italic;text-align:center}
+.gcQ{font-family:'Poppins',system-ui,sans-serif;font-size:22px;font-weight:600;text-align:center;line-height:1.45}
+.gcQ .blank{min-width:66px;height:26px;vertical-align:-2px}
+.gcQ .cursor{height:18px}
+/* ===== concept motion: two-timelines (past simple vs present perfect) ===== */
+.tlWrap{width:100%;max-width:330px}
+.tlWrap svg{width:100%;height:auto;display:block}
+.tlLbl{font-family:'Poppins',system-ui,sans-serif;font-size:11px;fill:rgba(244,238,246,.55);letter-spacing:1px}
+.tlGold{font-family:'Poppins',system-ui,sans-serif;font-size:12px;font-weight:600;fill:#FFBE00}
+.tlRed{font-family:'Poppins',system-ui,sans-serif;font-size:11px;fill:#E8837B}
+.tlRun .psDot{animation:psDrop 6s ease-out infinite}
+.tlRun .psDash{animation:psDash 6s infinite}
+.tlRun .psSolid{animation:psB 6s infinite}
+.tlRun .psDate{animation:psA 6s infinite}
+.tlRun .psDone{animation:psC 6s infinite}
+.tlRun .psGap{animation:psD 6s infinite}
+@keyframes psDrop{0%{transform:translateY(-60px);opacity:0}14%{transform:translateY(0);opacity:1}90%{transform:translateY(0);opacity:1}100%{transform:translateY(0);opacity:0}}
+@keyframes psDash{0%{opacity:0}6%,24%{opacity:.7}32%,100%{opacity:0}}
+@keyframes psA{0%,14%{opacity:0}22%,90%{opacity:1}100%{opacity:0}}
+@keyframes psB{0%,24%{opacity:0}32%,90%{opacity:1}100%{opacity:0}}
+@keyframes psC{0%,36%{opacity:0}44%,90%{opacity:1}100%{opacity:0}}
+@keyframes psD{0%,50%{opacity:0}58%,90%{opacity:1}100%{opacity:0}}
+.tlRun .ppArc{animation:ppDraw 7s ease-in-out infinite}
+.tlRun .ppLbl{animation:ppL 7s infinite}
+.tlRun .ppDot{animation:ppHop 7s ease-in-out infinite}
+.tlRun .ppRing{transform-box:fill-box;transform-origin:center;animation:ppGlow 7s ease-out infinite}
+.tlRun .ppNow{animation:ppT 7s infinite}
+.tlRun .ppWhen{animation:ppL 7s infinite}
+@keyframes ppDraw{0%{stroke-dashoffset:100;opacity:1}40%,90%{stroke-dashoffset:0;opacity:1}100%{stroke-dashoffset:0;opacity:0}}
+@keyframes ppL{0%,10%{opacity:0}20%,90%{opacity:1}100%{opacity:0}}
+@keyframes ppHop{0%{transform:translateX(0)}20%{transform:translateX(70px)}40%{transform:translateX(-45px)}60%{transform:translateX(30px)}80%{transform:translateX(-12px)}100%{transform:translateX(0)}}
+@keyframes ppGlow{0%,38%{transform:scale(.4);opacity:0}46%{transform:scale(1);opacity:1}62%,100%{transform:scale(2.2);opacity:0}}
+@keyframes ppT{0%,44%{opacity:0}52%,90%{opacity:1}100%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.tlRun *{animation:none!important;opacity:1!important;transform:none!important;stroke-dashoffset:0!important}.psDash{display:none}}
+.cmpCard{width:100%;background:rgba(255,255,255,.05);border:1px solid rgba(244,238,246,.14);border-radius:14px;padding:12px 14px;display:flex;flex-direction:column;gap:5px}
+.cmpHd{font-family:'Poppins',system-ui,sans-serif;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--go);font-weight:600}
+.cmpMk{font-size:14px;color:rgba(244,238,246,.7);font-style:italic}
+.cmpEx{font-family:'Poppins',system-ui,sans-serif;font-size:16px;font-weight:600;color:var(--ink)}
+.replayBtn{background:transparent;border:none;color:rgba(244,238,246,.55);font-family:'Poppins',system-ui,sans-serif;font-size:12px;letter-spacing:1px}
+/* ear pick (which did you hear?) */
+.hwFb{min-height:24px;font-family:'Poppins',system-ui,sans-serif;font-size:16px;text-align:center}
+.hwScore{font-size:13px;color:rgba(244,238,246,.55);font-family:'Poppins',system-ui,sans-serif;letter-spacing:1px}
+.opt.right{border-color:var(--go)}
+.opt.wrong{border-color:#E8837B}
+.opt.right[disabled],.opt.wrong[disabled]{opacity:1}
+.cardList{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;width:100%}
+.cardList span{background:rgba(255,255,255,.07);border:1px solid rgba(244,238,246,.2);border-radius:10px;padding:8px 11px;font-family:'Poppins',system-ui,sans-serif;font-size:14px}
 #emptyState{position:absolute;inset:0;top:44px;display:none;flex-direction:column;align-items:center;
  justify-content:center;gap:14px;padding:24px;text-align:center}
 #emptyState.on{display:flex}
@@ -128,12 +207,13 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 <div id="classHeader">
   <span class="brand">TEACHER'S STATION</span>
-  <button id="classSelect" onclick="toggleMenu()">Class 27 ▾</button>
+  <button id="classSelect" onclick="toggleMenu()">Class 28 ▾</button>
 </div>
 <div id="classMenu">
   <div class="item" onclick="selectClass(25)">Class 25: Giving Advice <span>✓</span></div>
   <div class="item" onclick="selectClass(26)">Class 26: The New Hire From Hell — Rules + WHY <span>✓</span></div>
-  <div class="item active" onclick="selectClass(27)">Class 27: 🔎 CHECK — The Induction <span>✓</span></div>
+  <div class="item" onclick="selectClass(27)">Class 27: 🔎 CHECK — The Induction <span>✓</span></div>
+  <div class="item active" onclick="selectClass(28)">Class 28: "Have You Ever…?" — The Interview Flip <span></span></div>
 </div>
 
 <div id="bar"></div>
@@ -1019,6 +1099,487 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
  </div></div>
 </div>
 
+<!-- ================= CLASS 28 ================= -->
+<div class="classBlock" data-class="28">
+
+<div class="scr" data-t="open">
+ <div class="bg" data-img="photos/job_interview.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="cue">Class 28</div>
+  <div class="big">"Have You Ever…?" — The Interview Flip</div>
+  <div class="es" style="font-size:16px;line-height:1.5;color:rgba(244,238,246,.85)">By the end of this class, you can say what you have done in your career and your life — without saying when — and ask other people the same.</div>
+  <button class="btn go" data-next>Begin</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Ear Sprint · 1 of 4</div>
+  <button class="audio" data-audio="audio/ear28_neverjapan.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="es">Listen once. Write what you hear, then say it back with the same rhythm.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>"I've never been to Japan."</b><br>I've = I have — it's almost just a "v" sound</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Ear Sprint · 2 of 4</div>
+  <button class="audio" data-audio="audio/ear28_since2019.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="es">Listen once. Catch the tiny sound after "she".</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>"She's worked here since 2019."</b><br>she's = she <b>has</b> here — not "she is"</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Ear Sprint · 3 of 4</div>
+  <button class="audio" data-audio="audio/ear28_everauditor.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="es">Listen once. Write what you hear, then say it back.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>"Have you ever met an auditor?"</b><br>have you → "haveya"</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Ear Sprint · 4 of 4</div>
+  <button class="audio" data-audio="audio/ear28_managed.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="es">Listen once. Write what you hear, then say it back.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>"We've managed three registrations this year."</b><br>we've = we have</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="hearwhich" data-idx="0" data-score="0"
+ data-items='[
+  {"a":"audio/hw28_worked.mp3","o":["I work","I&#39;ve worked"],"c":1,"s":"I&#39;ve worked with DIGEMID."},
+  {"a":"audio/hw28_submit.mp3","o":["We submit","We&#39;ve submitted"],"c":0,"s":"We submit the dossier."},
+  {"a":"audio/hw28_led.mp3","o":["She leads","She&#39;s led"],"c":1,"s":"She&#39;s led the team."},
+  {"a":"audio/hw28_work.mp3","o":["I work","I&#39;ve worked"],"c":0,"s":"I work with DIGEMID."},
+  {"a":"audio/hw28_submitted.mp3","o":["We submit","We&#39;ve submitted"],"c":1,"s":"We&#39;ve submitted the dossier."},
+  {"a":"audio/hw28_leads.mp3","o":["She leads","She&#39;s led"],"c":0,"s":"She leads the team."}
+ ]'>
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Ear Sprint · Which Did You Hear?</div>
+  <button class="audio" onclick="hwPlay(this)">🔊</button>
+  <div class="es">Play it, then choose. The difference is one tiny sound.</div>
+  <div class="row">
+   <button class="opt mid" data-hwopt onclick="hwPick(this,0)"></button>
+   <button class="opt mid" data-hwopt onclick="hwPick(this,1)"></button>
+  </div>
+  <div class="hwFb" data-hwfb></div>
+  <div class="dots" data-hwdots></div>
+  <div class="hwScore" data-hwscore></div>
+  <button class="btn" data-hwnext onclick="hwNext(this)" style="display:none">Next sound ›</button>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Warm-Up · 1 of 3</div>
+  <div class="think">In a job interview, what impresses you more: how many years someone has worked, or what they've actually achieved? Why?</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Warm-Up · 2 of 3</div>
+  <div class="think">Is it better to talk about what you have done, or what you can do? Defend one.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Warm-Up · 3 of 3</div>
+  <div class="think">A dream that has finally come true, or one that is coming true — which one is yours right now? What did you do to get there?</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="timeline" data-gstep="0">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge" data-gbadge>Two Timelines · Past Simple</div>
+
+  <div class="gPart on" data-gpart data-badge="Two Timelines · Past Simple">
+   <div class="tlWrap"><svg class="tlRun" viewBox="0 0 300 150" aria-hidden="true">
+    <line x1="16" y1="100" x2="278" y2="100" stroke="rgba(244,238,246,.3)" stroke-width="2"/>
+    <polygon points="278,95 288,100 278,105" fill="rgba(244,238,246,.3)"/>
+    <text x="16" y="128" class="tlLbl">PAST</text>
+    <line x1="250" y1="80" x2="250" y2="112" stroke="#FFBE00" stroke-width="2"/>
+    <text x="250" y="128" text-anchor="middle" class="tlLbl">NOW</text>
+    <rect class="psDash" x="70" y="72" width="90" height="56" rx="8" fill="none" stroke="rgba(244,238,246,.6)" stroke-dasharray="4 4"/>
+    <rect class="psSolid" x="70" y="72" width="90" height="56" rx="8" fill="rgba(255,190,0,.08)" stroke="#FFBE00" stroke-width="1.5"/>
+    <text class="tlGold psDate" x="115" y="62" text-anchor="middle">in 2021</text>
+    <g class="psDot"><circle cx="115" cy="100" r="7" fill="#FFBE00"/></g>
+    <text class="tlLbl psDone" x="115" y="145" text-anchor="middle">finished ✓</text>
+    <line class="psGap" x1="166" y1="100" x2="244" y2="100" stroke="#E8837B" stroke-width="2" stroke-dasharray="3 5"/>
+    <text class="tlRed psGap" x="205" y="88" text-anchor="middle">closed — not now</text>
+   </svg></div>
+   <div class="frameCard">
+    <div class="frameSentence">"I audited a plant <b style="color:var(--go)">in 2021</b>."</div>
+    <div class="frameHint">You say WHEN — and that time is over.</div>
+   </div>
+   <button class="replayBtn" onclick="tlReplay(this)">↻ REPLAY</button>
+  </div>
+
+  <div class="gPart" data-gpart data-badge="Two Timelines · Present Perfect">
+   <div class="tlWrap"><svg class="tlRun" viewBox="0 0 300 150" aria-hidden="true">
+    <line x1="16" y1="100" x2="278" y2="100" stroke="rgba(244,238,246,.3)" stroke-width="2"/>
+    <polygon points="278,95 288,100 278,105" fill="rgba(244,238,246,.3)"/>
+    <text x="16" y="128" class="tlLbl">PAST</text>
+    <line x1="250" y1="80" x2="250" y2="112" stroke="#FFBE00" stroke-width="2"/>
+    <text x="250" y="128" text-anchor="middle" class="tlLbl">NOW</text>
+    <path class="ppArc" d="M24 100 Q137 0 250 100" pathLength="100" fill="none" stroke="#FFBE00" stroke-width="2" stroke-dasharray="100" stroke-dashoffset="0"/>
+    <text class="tlGold ppLbl" x="137" y="38" text-anchor="middle">your life, up to now</text>
+    <g class="ppDot"><text x="110" y="86" text-anchor="middle" class="tlGold">?</text><circle cx="110" cy="100" r="7" fill="#F4EEF6"/></g>
+    <circle class="ppRing" cx="250" cy="100" r="10" fill="none" stroke="#FFBE00" stroke-width="2"/>
+    <text class="tlLbl ppWhen" x="104" y="145" text-anchor="middle">when? not important</text>
+    <text class="tlGold ppNow" x="296" y="145" text-anchor="end">✓ still yours now</text>
+   </svg></div>
+   <div class="frameCard">
+    <div class="frameSentence">"I<b style="color:var(--go)">'ve audited</b> a plant."</div>
+    <div class="frameHint">Sometime before now. WHEN isn't important — the experience is.</div>
+   </div>
+   <button class="replayBtn" onclick="tlReplay(this)">↻ REPLAY</button>
+  </div>
+
+  <div class="gPart" data-gpart data-badge="Two Timelines · Side by Side">
+   <div class="cmpCard">
+    <div class="cmpHd">Past simple · a finished time</div>
+    <div class="cmpMk">yesterday · last year · in 2021 · two days ago</div>
+    <div class="cmpEx">I audited a plant in 2021.</div>
+   </div>
+   <div class="cmpCard">
+    <div class="cmpHd">Present perfect · no finished time</div>
+    <div class="cmpMk">ever · never · before · (no time word)</div>
+    <div class="cmpEx">I've audited a plant.</div>
+   </div>
+   <div class="frameCard">
+    <div class="frameHint">In a real interview you use both:</div>
+    <div class="frameSentence">"Have you <b style="color:var(--go)">ever</b> audited a plant?"<br>"Yes, I <b style="color:var(--go)">have</b>. I audited one <b style="color:var(--go)">in 2021</b>."</div>
+   </div>
+  </div>
+
+  <div class="dots" data-gdots><div class="dot lit"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="row" style="max-width:300px">
+   <button class="opt mid" data-gprev onclick="gramNav(this,-1)" style="flex:0 0 60px" disabled>‹</button>
+   <button class="opt mid" data-gnext onclick="gramNav(this,1)" style="flex:1">Next ›</button>
+  </div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="grammar" data-gstep="0">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge" data-gbadge>Guided · The Shape</div>
+
+  <div class="gPart on" data-gpart data-badge="Guided · The Shape">
+   <div class="gSlots">
+    <div class="slotLbls">
+     <div class="slotLbl">who</div><div class="slotLbl">have / has</div>
+     <div class="slotLbl">participle</div><div class="slotLbl">rest</div>
+    </div>
+    <div class="slotRow">
+     <div class="slotChip" style="--i:0"><span class="w">I</span></div><div class="slotChip" style="--i:1"><span class="w">'ve</span></div>
+     <div class="slotChip" style="--i:2"><span class="w">managed</span></div><div class="slotChip" style="--i:3"><span class="w">3 dossiers.</span></div>
+    </div>
+    <div class="slotRow">
+     <div class="slotChip" style="--i:4"><span class="w">She</span></div><div class="slotChip" style="--i:5"><span class="w">'s</span></div>
+     <div class="slotChip" style="--i:6"><span class="w">worked</span></div><div class="slotChip" style="--i:7"><span class="w">with DIGEMID.</span></div>
+    </div>
+    <div class="slotLbls" style="margin-top:6px">
+     <div class="slotLbl">have</div><div class="slotLbl">who</div>
+     <div class="slotLbl">ever</div><div class="slotLbl">participle</div>
+    </div>
+    <div class="slotRow">
+     <div class="slotChip" style="--i:8"><span class="w">Have</span></div><div class="slotChip" style="--i:9"><span class="w">you</span></div>
+     <div class="slotChip" style="--i:10"><span class="w">ever</span></div><div class="slotChip" style="--i:11"><span class="w">audited…?</span></div>
+    </div>
+   </div>
+   <button class="toggleBtn" onclick="slotBuild(this)">Build the sentences</button>
+   <div class="slotNote">Always two pieces: have / has + the past participle.</div>
+  </div>
+
+  <div class="gPart" data-gpart data-badge="Guided · When You Use It">
+   <div class="useRow"><span class="useKey">ever</span><span class="useArrow">→</span>
+    <span class="useVal">in your whole life — in questions. <i>"Have you ever led a recall?"</i></span></div>
+   <div class="useRow"><span class="useKey">never</span><span class="useArrow">→</span>
+    <span class="useVal">zero times. <i>"I've never had a registration cancelled."</i></span></div>
+   <div class="useRow"><span class="useKey">before</span><span class="useArrow">→</span>
+    <span class="useVal">you have experience. <i>"I've done this before."</i></span></div>
+  </div>
+
+  <div class="gPart" data-gpart data-badge="Guided · The Trap">
+   <div class="trapItem">
+    <div class="trapWrong">I manage projects before.</div>
+    <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Say the fixed version, then tap</button>
+    <div class="keyBox"><b>I <span class="hl">have managed</span> projects before.</b> — two pieces: have + participle.</div>
+   </div>
+   <div class="trapItem">
+    <div class="trapWrong">She have worked here.</div>
+    <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Say the fixed version, then tap</button>
+    <div class="keyBox"><b>She <span class="hl">has</span> worked here.</b> — he / she / it → <b>has</b>.</div>
+   </div>
+  </div>
+
+  <div class="dots" data-gdots><div class="dot lit"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="row" style="max-width:300px">
+   <button class="opt mid" data-gprev onclick="gramNav(this,-1)" style="flex:0 0 60px" disabled>‹</button>
+   <button class="opt mid" data-gnext onclick="gramNav(this,1)" style="flex:1">Next ›</button>
+  </div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="grammarcheck" data-idx="0"
+ data-items='[
+  {"tag":"your experience","q":"I ___ (work) with DIGEMID before.","a":"I have worked with DIGEMID before."},
+  {"tag":"she did it","q":"She ___ (submit) the dossier.","a":"She has submitted the dossier."},
+  {"tag":"fix the error","q":"He have never audit a plant.","a":"He has never audited a plant."},
+  {"tag":"ask me","q":"___ you ever ___ (be) to Korea?","a":"Have you ever been to Korea?"},
+  {"tag":"fix the error","q":"They has approved it.","a":"They have approved it."}
+ ]'>
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Guided · Check It</div>
+  <div class="gcTag" data-gctag></div>
+  <div class="gcQ" data-gcq>&nbsp;</div>
+  <button class="toggleBtn" onclick="gcReveal(this)">Say it out loud, then check</button>
+  <div class="keyBox" data-gckey></div>
+  <div class="dots" data-gcdots></div>
+  <div class="row" style="max-width:300px">
+   <button class="opt mid" data-gcprev onclick="gcNav(this,-1)" style="flex:0 0 60px" disabled>‹</button>
+   <button class="opt mid" data-gcnext onclick="gcNav(this,1)" style="flex:1">Next ›</button>
+  </div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="meetfix">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Meet Fix</div>
+  <div class="cue">Fix it fast, out loud</div>
+  <div class="sent">"I manage projects before."</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>"I have managed projects before."</b><br>Now fire the frame fast: <b>"I've ___ before."</b> — six times, six different verbs.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="grammarcheck" data-idx="0"
+ data-items='[
+  {"tag":"do","q":"I&#39;ve ___ it before.","a":"done — I&#39;ve done it before."},
+  {"tag":"see","q":"I&#39;ve ___ that report.","a":"seen — I&#39;ve seen that report."},
+  {"tag":"take","q":"She&#39;s ___ the samples.","a":"taken — She&#39;s taken the samples."},
+  {"tag":"write","q":"We&#39;ve ___ the SOP.","a":"written — We&#39;ve written the SOP."},
+  {"tag":"make","q":"I&#39;ve ___ a mistake.","a":"made — I&#39;ve made a mistake."},
+  {"tag":"go","q":"He&#39;s ___ to the plant.","a":"gone — He&#39;s gone to the plant."}
+ ]'>
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Participle Race</div>
+  <div class="gcTag" data-gctag></div>
+  <div class="gcQ" data-gcq>&nbsp;</div>
+  <button class="toggleBtn" onclick="gcReveal(this)">Say it fast, then check</button>
+  <div class="keyBox" data-gckey></div>
+  <div class="dots" data-gcdots></div>
+  <div class="row" style="max-width:300px">
+   <button class="opt mid" data-gcprev onclick="gcNav(this,-1)" style="flex:0 0 60px" disabled>‹</button>
+   <button class="opt mid" data-gcnext onclick="gcNav(this,1)" style="flex:1">Next ›</button>
+  </div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="production" data-word="1">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Vocabulary · Your Career · 1 of 5</div>
+  <button class="audio" data-audio="audio/def28_audited.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="sent">"Officially checked a company's documents or processes against the rules."</div>
+  <div class="dots"><div class="dot lit"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="es">Say the word out loud, then reveal</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>audited</b> — "I've audited a plant."<br><button class="audio" style="width:70px;height:70px;font-size:26px;margin-top:8px" data-audio="audio/word28_audited.mp3" onclick="playAudio(this)">🔊</button></div>
+  <button class="btn go" data-next>Next word</button>
+ </div></div>
+
+<div class="scr" data-t="production" data-word="2">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Vocabulary · Your Career · 2 of 5</div>
+  <button class="audio" data-audio="audio/def28_spearheaded.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="sent">"Led a new project from the front, as the person who started it."</div>
+  <div class="dots"><div class="dot"></div><div class="dot lit"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="es">Say the word out loud, then reveal</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>spearheaded</b> — "I've spearheaded two projects."<br><button class="audio" style="width:70px;height:70px;font-size:26px;margin-top:8px" data-audio="audio/word28_spearheaded.mp3" onclick="playAudio(this)">🔊</button></div>
+  <button class="btn go" data-next>Next word</button>
+ </div></div>
+
+<div class="scr" data-t="production" data-word="3">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Vocabulary · Your Career · 3 of 5</div>
+  <button class="audio" data-audio="audio/def28_coordinated.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="sent">"Organized different people or teams so they work together."</div>
+  <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot lit"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="es">Say the word out loud, then reveal</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>coordinated</b> — "I've coordinated the whole team."<br><button class="audio" style="width:70px;height:70px;font-size:26px;margin-top:8px" data-audio="audio/word28_coordinated.mp3" onclick="playAudio(this)">🔊</button></div>
+  <button class="btn go" data-next>Next word</button>
+ </div></div>
+
+<div class="scr" data-t="production" data-word="4">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Vocabulary · Your Career · 4 of 5</div>
+  <button class="audio" data-audio="audio/def28_oversaw.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="sent">"Watched and controlled a piece of work, as the person responsible for it."</div>
+  <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot lit"></div><div class="dot"></div></div>
+  <div class="es">Say the word out loud, then reveal</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>oversee → oversaw → overseen</b><br>"I oversaw it last year." · "I've <b>overseen</b> three launches."<br><button class="audio" style="width:70px;height:70px;font-size:26px;margin-top:8px" data-audio="audio/word28_oversaw.mp3" onclick="playAudio(this)">🔊</button></div>
+  <button class="btn go" data-next>Next word</button>
+ </div></div>
+
+<div class="scr" data-t="production" data-word="5">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Vocabulary · Your Career · 5 of 5</div>
+  <button class="audio" data-audio="audio/def28_launched.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="sent">"Started selling a new product, or started a big project."</div>
+  <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot lit"></div></div>
+  <div class="es">Say the word out loud, then reveal</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>launched</b> — "We've launched a new product."<br><button class="audio" style="width:70px;height:70px;font-size:26px;margin-top:8px" data-audio="audio/word28_launched.mp3" onclick="playAudio(this)">🔊</button></div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Pronunciation · The Short Forms</div>
+  <button class="audio" data-audio="audio/pr28_contractions.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="word">I've · you've · we've · she's</div>
+  <div class="es">Listen, then say all four sentences. Make the 've and 's short — never "I have" slow and heavy.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Show the sentences</button>
+  <div class="keyBox">I've done it before. · You've seen it. · We've launched it. · She's audited it.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="1">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 1 of 3</div>
+  <div class="think">You want to sound credible about your experience — without bragging.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">I've got a fair bit of experience in…</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the CORE round</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="2">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 2 of 3</div>
+  <div class="think">Someone asks you a hard question. You need a moment — and you don't want silence.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">Good question — let me think.</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the CORE round</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="3">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 3 of 3</div>
+  <div class="think">In the middle of a sentence, you suddenly remember something else.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">Come to think of it,…</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the CORE round</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/job_interview.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">CORE · The Candidate · You're The Interviewer</div>
+  <div class="think">A candidate wants a Senior Regulatory Affairs job. Ask six "Have you ever…?" questions.</div>
+  <div class="cardList"><span>audited a plant</span><span>led a recall</span><span>dealt with a surprise inspection</span><span>had a dossier rejected</span><span>worked with INVIMA</span><span>trained a new colleague</span></div>
+  <div class="es">React to each answer — "Really? When was that?"</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/job_interview.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">CORE · The Candidate · Now It's You</div>
+  <div class="think">Now YOU are the candidate. Answer six questions about your real career.</div>
+  <label class="forceUse"><input type="checkbox">have / has + participle</label>
+  <label class="forceUse"><input type="checkbox">ever · never · before</label>
+  <label class="forceUse"><input type="checkbox">all 3 phrases from the Phrase Bank</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/boardroom.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">Final Challenge · Why Should We Promote You?</div>
+  <div class="think">60 seconds. Three things you have achieved in your career.</div>
+  <div class="es">No notes. Present perfect for what you've done — past simple only if you say when.</div>
+  <div class="timerRing" data-seconds="60">
+   <svg width="104" height="104" viewBox="0 0 104 104">
+    <circle cx="52" cy="52" r="44" fill="none" stroke="rgba(244,238,246,.15)" stroke-width="6"/>
+    <circle class="timerArc" cx="52" cy="52" r="44" fill="none" stroke="#FFBE00" stroke-width="6"
+            stroke-linecap="round" stroke-dasharray="276.46" stroke-dashoffset="0"/>
+   </svg>
+   <div class="timerNum">60</div>
+  </div>
+  <button class="btn" onclick="timerStart(this)">Start 60s</button>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Only open this if you get stuck</button>
+  <div class="keyBox">"Good question — let me think. <b>I've got a fair bit of experience in</b> audits. <b>I've led</b> two recalls and <b>I've submitted</b> more than thirty dossiers. <b>Come to think of it</b>, <b>I've never had</b> a registration cancelled."</div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/conference_chat.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">Real-Life Conversation · At A Conference</div>
+  <div class="think">Someone at a conference asks about your background. Tell them what you've done.</div>
+  <div class="es">Then answer: ① What have you done that shows real experience? ② Which phrase buys you a moment to think?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Only open this if you get stuck</button>
+  <div class="keyBox"><i>"So, what's your background?"</i><br>"Good question — let me think. I've worked in regulatory affairs for years. <b>I've coordinated</b> registrations with DIGEMID and <b>I've audited</b> two plants. <b>Have you ever</b> worked with a Latin American authority?"</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="homework">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Homework</div>
+  <div class="sent" style="text-align:left">1. Voice note (60s): "Three things I've done that I'm proud of." Next class opens with it — bring it.</div>
+  <div class="sent" style="text-align:left">2. Claude voice practice (5 min): "Interview me with 'Have you ever…?' questions, then I interview you." Write down every correction.</div>
+  <div class="sent" style="text-align:left">3. From the movie scene you watched: pick 3 past-tense verbs and write their participles (saw → seen).</div>
+  <div class="sent" style="text-align:left">4. Log the 3 phrases.</div>
+  <div class="es">have / has + participio para lo que has hecho, sin decir cuándo. He / she / it = has.</div>
+  <button class="btn go" data-next>Done for today</button>
+ </div></div>
+
+<div class="scr" data-t="close">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="big">Nice work today.</div>
+  <div class="es">See you next class.</div>
+  <div class="credits">Teacher's Station · The Milestone Method</div>
+ </div></div>
+</div>
+
 </div>
 
 <script>
@@ -1148,7 +1709,108 @@ document.querySelectorAll('.bg[data-img]').forEach(el=>{
   const visualParent = el.closest('.visual');
   if(visualParent){ visualParent.setAttribute('data-img-src', src); }
 });
-loadScreens(27);
+/* ===== Grammar Box ===== */
+function slotBuild(btn){
+  var slots = btn.closest('.gPart').querySelector('.gSlots');
+  slots.classList.add('built');
+  btn.style.display = 'none';
+}
+function gramNav(btn, dir){
+  var scr   = btn.closest('.scr');
+  var parts = [].slice.call(scr.querySelectorAll('[data-gpart]'));
+  var i     = Math.min(parts.length - 1, Math.max(0, (+scr.dataset.gstep || 0) + dir));
+  scr.dataset.gstep = i;
+  parts.forEach(function(p, n){ p.classList.toggle('on', n === i); });
+  scr.querySelector('[data-gbadge]').textContent = parts[i].dataset.badge || '';
+  var dots = scr.querySelector('[data-gdots]');
+  if (dots) [].slice.call(dots.children).forEach(function(d, n){ d.classList.toggle('lit', n === i); });
+  scr.querySelector('[data-gprev]').disabled = (i === 0);
+  var next = scr.querySelector('[data-gnext]');
+  var last = (i === parts.length - 1);
+  next.disabled = last;
+  if (last) scr.querySelector('[data-next]').style.display = '';
+}
+function gcReveal(btn){
+  btn.closest('.stack').querySelector('[data-gckey]').classList.add('show');
+}
+function gcRender(scr){
+  var items = JSON.parse(scr.dataset.items || '[]');
+  var i = Math.min(items.length - 1, Math.max(0, +scr.dataset.idx || 0));
+  var it = items[i] || {};
+  scr.querySelector('[data-gctag]').textContent = it.tag || '';
+  scr.querySelector('[data-gcq]').innerHTML = String(it.q || '').replace(
+    /_{2,}/g, '<span class="blank"><span class="cursor"></span></span>');
+  var key = scr.querySelector('[data-gckey]');
+  key.innerHTML = '<b>' + (it.a || '') + '</b>';
+  key.classList.remove('show');
+  var dots = scr.querySelector('[data-gcdots]');
+  if (dots && dots.children.length !== items.length){
+    dots.innerHTML = items.map(function(){ return '<div class="dot"></div>'; }).join('');
+  }
+  if (dots) [].slice.call(dots.children).forEach(function(d, n){ d.classList.toggle('lit', n === i); });
+  scr.querySelector('[data-gcprev]').disabled = (i === 0);
+  var next = scr.querySelector('[data-gcnext]');
+  var last = (i === items.length - 1);
+  next.disabled = last;
+  next.textContent = last ? 'Done' : 'Next ›';
+  if (last) scr.querySelector('[data-next]').style.display = '';
+}
+function gcNav(btn, dir){
+  var scr = btn.closest('.scr');
+  scr.dataset.idx = Math.max(0, (+scr.dataset.idx || 0) + dir);
+  gcRender(scr);
+}
+document.querySelectorAll('.scr[data-t="grammarcheck"]').forEach(gcRender);
+/* ===== two-timelines replay ===== */
+function tlReplay(btn){
+  var svg = btn.closest('.gPart').querySelector('svg');
+  svg.classList.remove('tlRun'); void svg.getBoundingClientRect(); svg.classList.add('tlRun');
+}
+/* ===== ear pick: which did you hear? ===== */
+function hwItems(scr){ return JSON.parse(scr.dataset.items || '[]'); }
+function hwRender(scr){
+  var items = hwItems(scr), i = +scr.dataset.idx || 0, it = items[i];
+  var opts = scr.querySelectorAll('[data-hwopt]');
+  opts.forEach(function(o, k){ o.textContent = it.o[k]; o.disabled = false; o.classList.remove('right','wrong'); });
+  scr.dataset.picked = '';
+  scr.querySelector('[data-hwfb]').textContent = '';
+  var dots = scr.querySelector('[data-hwdots]');
+  if (dots.children.length !== items.length) dots.innerHTML = items.map(function(){ return '<div class="dot"></div>'; }).join('');
+  [].slice.call(dots.children).forEach(function(d, n){ d.classList.toggle('lit', n === i); });
+  scr.querySelector('[data-hwscore]').textContent = 'Score ' + (+scr.dataset.score || 0) + ' / ' + items.length;
+  scr.querySelector('[data-hwnext]').style.display = 'none';
+  var a = scr.querySelector('.audio'); a.classList.remove('done');
+}
+function hwPlay(btn){
+  var scr = btn.closest('.scr'), it = hwItems(scr)[+scr.dataset.idx || 0];
+  if (btn._p) btn._p.pause();
+  btn._p = new Audio(it.a); btn._p.play();
+}
+function hwPick(btn, k){
+  var scr = btn.closest('.scr');
+  if (scr.dataset.picked) return;
+  scr.dataset.picked = '1';
+  var items = hwItems(scr), i = +scr.dataset.idx || 0, it = items[i];
+  var opts = scr.querySelectorAll('[data-hwopt]');
+  var ok = (k === it.c);
+  if (ok) scr.dataset.score = (+scr.dataset.score || 0) + 1;
+  opts[it.c].classList.add('right');
+  if (!ok) opts[k].classList.add('wrong');
+  opts.forEach(function(o){ o.disabled = true; });
+  var fb = scr.querySelector('[data-hwfb]');
+  fb.textContent = (ok ? '✓ ' : '✗ It was: ') + it.s;
+  fb.style.color = ok ? 'var(--go)' : '#E8837B';
+  scr.querySelector('[data-hwscore]').textContent = 'Score ' + scr.dataset.score + ' / ' + items.length;
+  if (i === items.length - 1) scr.querySelector('[data-next]').style.display = '';
+  else scr.querySelector('[data-hwnext]').style.display = '';
+}
+function hwNext(btn){
+  var scr = btn.closest('.scr');
+  scr.dataset.idx = (+scr.dataset.idx || 0) + 1;
+  hwRender(scr);
+}
+document.querySelectorAll('.scr[data-t="hearwhich"]').forEach(hwRender);
+loadScreens(28);
 document.querySelector('[data-navback]').disabled = true;
 </script>
 </body></html>
