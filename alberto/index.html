@@ -207,13 +207,14 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 <div id="classHeader">
   <span class="brand">TEACHER'S STATION</span>
-  <button id="classSelect" onclick="toggleMenu()">Class 28 ▾</button>
+  <button id="classSelect" onclick="toggleMenu()">Class 29 ▾</button>
 </div>
 <div id="classMenu">
   <div class="item" onclick="selectClass(25)">Class 25: Giving Advice <span>✓</span></div>
   <div class="item" onclick="selectClass(26)">Class 26: The New Hire From Hell — Rules + WHY <span>✓</span></div>
   <div class="item" onclick="selectClass(27)">Class 27: 🔎 CHECK — The Induction <span>✓</span></div>
-  <div class="item active" onclick="selectClass(28)">Class 28: Pitching Yourself for a Senior RA Role <span></span></div>
+  <div class="item" onclick="selectClass(28)">Class 28: Pitching Yourself for a Senior RA Role <span>✓</span></div>
+  <div class="item active" onclick="selectClass(29)">Class 29: How Long Has It Been? <span></span></div>
 </div>
 
 <div id="bar"></div>
@@ -1580,6 +1581,377 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
  </div></div>
 </div>
 
+<!-- ================= CLASS 29 ================= -->
+<div class="classBlock" data-class="29">
+
+<div class="scr" data-t="open">
+ <div class="bg" data-img="photos/boardroom.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="cue">Class 29</div>
+  <div class="big">Describing the evolution of cosmetic laws: use Present Perfect with since and for to express duration</div>
+  <div class="es" style="font-size:16px;line-height:1.5;color:rgba(244,238,246,.85)">By the end of this class, you can say how long something has lasted — a job, a rule, a habit — using for and since, and you can hear the 've / 's when someone else says it.</div>
+  <button class="btn go" data-next>Begin</button>
+ </div></div>
+
+<div class="scr" data-t="meetfix">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Open With A Win</div>
+  <div class="cue">From your homework</div>
+  <div class="sent">"Three things I've done that I'm proud of."</div>
+  <div class="es">Play your voice note. Listen once. What's one thing you'd say better now?</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="grammarcheck" data-idx="0"
+ data-items='[
+  {"tag":"see","q":"seen","a":"seen — I&#39;ve seen it."},
+  {"tag":"eat","q":"eaten","a":"eaten — I&#39;ve eaten there."},
+  {"tag":"take","q":"taken","a":"taken — She&#39;s taken the samples."},
+  {"tag":"drink","q":"drunk","a":"drunk — We&#39;ve drunk the coffee."},
+  {"tag":"read","q":"read","a":"read — I&#39;ve read the report."},
+  {"tag":"write","q":"written","a":"written — We&#39;ve written the SOP."},
+  {"tag":"do","q":"done","a":"done — I&#39;ve done it before."},
+  {"tag":"go","q":"gone","a":"gone — He&#39;s gone to the plant."}
+ ]'>
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Participle Quick-Fire</div>
+  <div class="gcTag" data-gctag></div>
+  <div class="gcQ" data-gcq>&nbsp;</div>
+  <button class="toggleBtn" onclick="gcReveal(this)">Say it fast, then check</button>
+  <div class="keyBox" data-gckey></div>
+  <div class="dots" data-gcdots></div>
+  <div class="row" style="max-width:300px">
+   <button class="opt mid" data-gcprev onclick="gcNav(this,-1)" style="flex:0 0 60px" disabled>‹</button>
+   <button class="opt mid" data-gcnext onclick="gcNav(this,1)" style="flex:1">Next ›</button>
+  </div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Ear Ladder · Rung 1 of 3</div>
+  <button class="audio" data-audio="audio/el1_workworked.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="word">I have worked → I've worked</div>
+  <div class="es">Listen to both. Then say only the short one, twice.</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Ear Ladder · Rung 1 of 3</div>
+  <button class="audio" data-audio="audio/el1_sheworked.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="word">She has worked → She's worked</div>
+  <div class="es">Listen to both. Then say only the short one, twice.</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Ear Ladder · Rung 1 of 3</div>
+  <button class="audio" data-audio="audio/el1_weused.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="word">We have used → We've used</div>
+  <div class="es">Listen to both. Then say only the short one, twice.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="hearwhich" data-idx="0" data-score="0"
+ data-items='[
+  {"a":"audio/hw28_work.mp3","o":["I work","I&#39;ve worked"],"c":0,"s":"I work with DIGEMID."},
+  {"a":"audio/hw28_worked.mp3","o":["I work","I&#39;ve worked"],"c":1,"s":"I&#39;ve worked with DIGEMID."},
+  {"a":"audio/hw29_swork.mp3","o":["She works","She&#39;s worked"],"c":0,"s":"She works here."},
+  {"a":"audio/hw29_sworked.mp3","o":["She works","She&#39;s worked"],"c":1,"s":"She&#39;s worked here."},
+  {"a":"audio/hw29_use.mp3","o":["We use","We&#39;ve used"],"c":0,"s":"We use this system."},
+  {"a":"audio/hw29_used.mp3","o":["We use","We&#39;ve used"],"c":1,"s":"We&#39;ve used this system."}
+ ]'>
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Ear Ladder · Rung 2 — Which Did You Hear?</div>
+  <button class="audio" onclick="hwPlay(this)">🔊</button>
+  <div class="es">Play it, then choose. Score /6 — the target is 7/10 across both rounds today.</div>
+  <div class="row">
+   <button class="opt mid" data-hwopt onclick="hwPick(this,0)"></button>
+   <button class="opt mid" data-hwopt onclick="hwPick(this,1)"></button>
+  </div>
+  <div class="hwFb" data-hwfb></div>
+  <div class="dots" data-hwdots></div>
+  <div class="hwScore" data-hwscore></div>
+  <button class="btn" data-hwnext onclick="hwNext(this)" style="display:none">Next sound ›</button>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Ear Ladder · Rung 3 — Reverse It</div>
+  <div class="think">Now you say one: either "I have worked" or "I've worked." Juan guesses which one he heard.</div>
+  <div class="es">If he guesses wrong, say it again with a clear "v" sound — lips touch your teeth for 've.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Warm-Up · 1 of 3</div>
+  <div class="think">Is it better to stay in one company for many years, or to change every few years? What does each say about a person?</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Warm-Up · 2 of 3</div>
+  <div class="think">When you tell someone how long you've worked somewhere, what does the number say about you — and what can it hide?</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Warm-Up · 3 of 3</div>
+  <div class="think">You understand Roxette without subtitles now. How long have you listened to that music — and why do you think you understand it now, not before?</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="grammar" data-gstep="0">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge" data-gbadge>Guided · The Shape</div>
+
+  <div class="gPart on" data-gpart data-badge="Guided · The Shape">
+   <div class="gSlots">
+    <div class="slotLbls">
+     <div class="slotLbl">who</div><div class="slotLbl">have / has</div>
+     <div class="slotLbl">participle</div><div class="slotLbl">time</div>
+    </div>
+    <div class="slotRow">
+     <div class="slotChip" style="--i:0"><span class="w">I</span></div><div class="slotChip" style="--i:1"><span class="w">'ve</span></div>
+     <div class="slotChip" style="--i:2"><span class="w">worked</span></div><div class="slotChip" style="--i:3"><span class="w">for 6 years.</span></div>
+    </div>
+    <div class="slotRow">
+     <div class="slotChip" style="--i:4"><span class="w">She</span></div><div class="slotChip" style="--i:5"><span class="w">'s</span></div>
+     <div class="slotChip" style="--i:6"><span class="w">led the team</span></div><div class="slotChip" style="--i:7"><span class="w">since 2021.</span></div>
+    </div>
+    <div class="slotLbls" style="margin-top:6px">
+     <div class="slotLbl">how long</div><div class="slotLbl">have</div>
+     <div class="slotLbl">who</div><div class="slotLbl">participle</div>
+    </div>
+    <div class="slotRow">
+     <div class="slotChip" style="--i:8"><span class="w">How long</span></div><div class="slotChip" style="--i:9"><span class="w">have</span></div>
+     <div class="slotChip" style="--i:10"><span class="w">you</span></div><div class="slotChip" style="--i:11"><span class="w">worked here?</span></div>
+    </div>
+   </div>
+   <button class="toggleBtn" onclick="slotBuild(this)">Build the sentences</button>
+   <div class="slotNote">Same have/has + participle as Class 28. Today one new piece arrives at the end: for or since.</div>
+  </div>
+
+  <div class="gPart" data-gpart data-badge="Guided · When You Use It">
+   <div class="useRow"><span class="useKey">for</span><span class="useArrow">→</span>
+    <span class="useVal">a length. <i>"for six years", "for a long time"</i></span></div>
+   <div class="useRow"><span class="useKey">since</span><span class="useArrow">→</span>
+    <span class="useVal">a starting point. <i>"since 2019", "since the new law"</i></span></div>
+  </div>
+
+  <div class="gPart" data-gpart data-badge="Guided · The Trap">
+   <div class="trapItem">
+    <div class="trapWrong">I work here since 5 years.</div>
+    <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Say the fixed version, then tap</button>
+    <div class="keyBox"><b>I <span class="hl">have worked</span> here <span class="hl">for</span> 5 years.</b> — "5 years" is a length, so it needs <b>for</b>, never <i>since</i>.</div>
+   </div>
+   <div class="trapItem">
+    <div class="trapWrong">She have lived here since ten years.</div>
+    <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Say the fixed version, then tap</button>
+    <div class="keyBox"><b>She <span class="hl">has</span> lived here <span class="hl">for</span> ten years.</b> — two fixes: has (not have), for (not since).</div>
+   </div>
+  </div>
+
+  <div class="dots" data-gdots><div class="dot lit"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="row" style="max-width:300px">
+   <button class="opt mid" data-gprev onclick="gramNav(this,-1)" style="flex:0 0 60px" disabled>‹</button>
+   <button class="opt mid" data-gnext onclick="gramNav(this,1)" style="flex:1">Next ›</button>
+  </div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="grammarcheck" data-idx="0"
+ data-items='[
+  {"tag":"a starting point","q":"I ___ (work) here ___ 2020.","a":"have worked, since — I have worked here since 2020."},
+  {"tag":"a length","q":"We ___ (use) this system ___ three years.","a":"have used, for — We have used this system for three years."},
+  {"tag":"fix the error","q":"I work here since five years.","a":"I have worked here for five years."},
+  {"tag":"fix the error","q":"She have lived in Lima since ten years.","a":"She has lived in Lima for ten years."},
+  {"tag":"ask me","q":"How long ___ you ___ (study) English?","a":"have you studied — How long have you studied English?"}
+ ]'>
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Guided · Check It</div>
+  <div class="gcTag" data-gctag></div>
+  <div class="gcQ" data-gcq>&nbsp;</div>
+  <button class="toggleBtn" onclick="gcReveal(this)">Say it out loud, then check</button>
+  <div class="keyBox" data-gckey></div>
+  <div class="dots" data-gcdots></div>
+  <div class="row" style="max-width:300px">
+   <button class="opt mid" data-gcprev onclick="gcNav(this,-1)" style="flex:0 0 60px" disabled>‹</button>
+   <button class="opt mid" data-gcnext onclick="gcNav(this,1)" style="flex:1">Next ›</button>
+  </div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="meetfix">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Meet Fix</div>
+  <div class="cue">Fix it fast, out loud</div>
+  <div class="sent">"I work here since 5 years."</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>"I have worked here for 5 years."</b><br>A number of years is a length — it always takes <b>for</b>.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="grammarcheck" data-idx="0"
+ data-items='[
+  {"tag":"2018","q":"I&#39;ve worked here ___ 2018.","a":"since — I&#39;ve worked here since 2018."},
+  {"tag":"six years","q":"I&#39;ve worked here ___ six years.","a":"for — I&#39;ve worked here for six years."},
+  {"tag":"March","q":"We haven&#39;t had a rejection ___ March.","a":"since — We haven&#39;t had a rejection since March."},
+  {"tag":"a long time","q":"I&#39;ve known her ___ a long time.","a":"for — I&#39;ve known her for a long time."},
+  {"tag":"the new law","q":"The rules have changed ___ the new law.","a":"since — The rules have changed since the new law."},
+  {"tag":"a decade","q":"We&#39;ve done this ___ a decade.","a":"for — We&#39;ve done this for a decade."},
+  {"tag":"Q3","q":"We&#39;ve used it ___ Q3.","a":"since — We&#39;ve used it since Q3."}
+ ]'>
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">For-or-Since Race</div>
+  <div class="gcTag" data-gctag></div>
+  <div class="gcQ" data-gcq>&nbsp;</div>
+  <button class="toggleBtn" onclick="gcReveal(this)">Say for or since, then check</button>
+  <div class="keyBox" data-gckey></div>
+  <div class="dots" data-gcdots></div>
+  <div class="row" style="max-width:300px">
+   <button class="opt mid" data-gcprev onclick="gcNav(this,-1)" style="flex:0 0 60px" disabled>‹</button>
+   <button class="opt mid" data-gcnext onclick="gcNav(this,1)" style="flex:1">Next ›</button>
+  </div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Gap Dictogloss</div>
+  <button class="audio" data-audio="audio/dg29_full.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="es">Listen once. Then try to say the whole thing back, filling the small words by ear.</div>
+  <div class="sent" style="text-align:left">We___ used the new system ___ four months. Marta ___ led registrations ___ 2021. ___ the new law, the rules ___ changed twice. We ___ had a rejection ___ March.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal the full text</button>
+  <div class="keyBox">"We've used the new system for four months. Marta has led registrations since 2021. Since the new law, the rules have changed twice. We haven't had a rejection since March."</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="1">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 1 of 3</div>
+  <div class="think">You're reconnecting with someone, or noticing how much time has passed.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">It's been a while since…</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the CORE round</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="2">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 2 of 3</div>
+  <div class="think">One event changed things, and you want to say what followed.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">Ever since then,…</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the CORE round</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="3">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 3 of 3</div>
+  <div class="think">You're surprised how long something has lasted.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">Time flies.</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the CORE round</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/consultant_meeting.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">CORE · Timeline Detective</div>
+  <div class="think">Ask Juan "How long has Marta…?" and "Since when has she…?" — then report back in 4 sentences with has.</div>
+  <div class="cardList"><span>joined 2018</span><span>leads registrations since 2021</span><span>no rejection since March</span><span>uses the new system for four months</span></div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">CORE · Your Life In Years</div>
+  <div class="think">Answer six "How long have you…?" questions about your own life — where you live, your relationships, your work, your hobbies. Then ask Juan two back.</div>
+  <label class="forceUse"><input type="checkbox">for / since chosen correctly</label>
+  <label class="forceUse"><input type="checkbox">full sentences, not just numbers</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/factory_floor.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">Final Challenge · Then And Now At Work</div>
+  <div class="think">60 seconds. Describe how something at work has changed.</div>
+  <div class="es">Use one of: since the new law · for the last decade · since the reform · for Q3.</div>
+  <div class="timerRing" data-seconds="60">
+   <svg width="104" height="104" viewBox="0 0 104 104">
+    <circle cx="52" cy="52" r="44" fill="none" stroke="rgba(244,238,246,.15)" stroke-width="6"/>
+    <circle class="timerArc" cx="52" cy="52" r="44" fill="none" stroke="#FFBE00" stroke-width="6"
+            stroke-linecap="round" stroke-dasharray="276.46" stroke-dashoffset="0"/>
+   </svg>
+   <div class="timerNum">60</div>
+  </div>
+  <button class="btn" onclick="timerStart(this)">Start 60s</button>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Only open this if you get stuck</button>
+  <div class="keyBox">"It's been a while since the last reform, and honestly, time flies. We've used the new system for four months. Ever since then, we haven't had a rejection. The rules have changed twice since the new law."</div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/boardroom.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">Real-Life Conversation · A New Colleague</div>
+  <div class="think">A new colleague asks how long you've worked in the industry and how things have changed. Tell them.</div>
+  <div class="es">Then answer: ① Since when has Marta led registrations? ② Which word goes with a length, and which with a starting point?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Only open this if you get stuck</button>
+  <div class="keyBox"><i>"How long have you worked in this industry?"</i><br>"It's been a while since I started — time flies. We've used the new system for four months, and ever since then, we haven't had a rejection."</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="homework">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Homework</div>
+  <div class="sent" style="text-align:left">1. Voice note (60s): your own timeline — "I've worked at… for… / I've lived in… since…" — five sentences. Say I've, or I have if it won't come out.</div>
+  <div class="sent" style="text-align:left">2. Ear: use the "Which Did You Hear?" screen until you get 6/6 twice in a row.</div>
+  <div class="sent" style="text-align:left">3. Song hunt: find one line with have/has + participle in a song you like (Roxette or any). Bring it next class.</div>
+  <div class="sent" style="text-align:left">4. Log the 3 phrases.</div>
+  <div class="es">for = duración (tres años) · since = desde cuándo (2019). Si I've no te sale, di I have completo: también es correcto.</div>
+  <button class="btn go" data-next>Done for today</button>
+ </div></div>
+
+<div class="scr" data-t="close">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="big">Nice work today.</div>
+  <div class="es">See you next class.</div>
+  <div class="credits">Teacher's Station · The Milestone Method</div>
+ </div></div>
+</div>
+
 </div>
 
 <script>
@@ -1810,7 +2182,7 @@ function hwNext(btn){
   hwRender(scr);
 }
 document.querySelectorAll('.scr[data-t="hearwhich"]').forEach(hwRender);
-loadScreens(28);
+loadScreens(29);
 document.querySelector('[data-navback]').disabled = true;
 </script>
 </body></html>
