@@ -175,6 +175,10 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 @keyframes vdFlow{0%{opacity:0;transform:translateX(-8px)}40%{opacity:1}100%{opacity:0;transform:translateX(10px)}}
 @keyframes vdBuzz{from{height:4px}to{height:18px}}
 .slotTable.tight .slot{font-size:13px;padding:5px 8px}
+.scr[data-t="reading"]{justify-content:safe center;overflow-y:auto;padding-top:60px}
+.scr[data-t="reading"] .stack{padding-top:12px}
+.rd{width:100%;font-family:'Lora',serif;font-size:17px;line-height:1.9;color:rgba(244,238,246,.92);text-align:left}
+.sl{color:var(--go);font-weight:700;font-style:normal;padding:0 1px}
 @media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;scroll-behavior:auto!important}}
 </style>
 </head>
@@ -183,13 +187,14 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 <div id="classHeader">
   <span class="brand">TEACHER'S STATION</span>
-  <button id="classSelect" onclick="toggleMenu()">Class 3.5 ▾</button>
+  <button id="classSelect" onclick="toggleMenu()">Class 4 ▾</button>
 </div>
 <div id="classMenu">
   <div class="item" onclick="selectClass(1)">Class 1: Customer calls — open a call without freezing <span>✓</span></div>
   <div class="item" onclick="selectClass(2)">Class 2: Gate codes & tracking numbers <span>✓</span></div>
   <div class="item" onclick="selectClass(3)">Class 3: Eating out &mdash; order without avoiding it <span>&#10003;</span></div>
-  <div class="item active" onclick="selectClass(3.5)">Class 3.5: Tricky words &mdash; tough, though, through <span>&#10003;</span></div>
+  <div class="item" onclick="selectClass(3.5)">Class 3.5: Tricky words &mdash; tough, though, through <span>&#10003;</span></div>
+  <div class="item active" onclick="selectClass(4)">Class 4: Reading 1 &mdash; A day on the route <span>&#10003;</span></div>
 </div>
 
 <div id="bar"></div>
@@ -1249,6 +1254,323 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 </div>
 
+<div class="classBlock" data-class="4">
+
+<div class="scr" data-t="open">
+ <div class="bg" data-img="photos/open4.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="cue">Class 4 · Reading</div>
+  <div class="big">Reading 1 — 'A day on the route': consolidate calls, numbers and ordering</div>
+  <div class="es" style="font-size:16px;line-height:1.55">By the end of this class, you can read and follow a short story about a day on your route, use six route words and three new phrases, and defend your opinion out loud when someone pushes back.</div>
+  <button class="btn go" data-next>Start</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Critical Thinking · 1 of 3</div>
+  <div class="think">"Same old, same old" — if you could change <i>one</i> thing about your route, what would it be? And what would that change cost you?</div>
+  <button class="btn go" data-next>Answered out loud — next</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Critical Thinking · 2 of 3</div>
+  <div class="think">Is it better to run late and be thorough, or be on time and rush? Does your answer change if the customer is watching you?</div>
+  <button class="btn go" data-next>Answered out loud — next</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Critical Thinking · 3 of 3</div>
+  <div class="think">Imagine the job with more English. A customer tells you a story about their day and expects you to answer like you've known them for years. What would you want to be able to say — and what's stopping you today?</div>
+  <button class="btn go" data-next>Answered out loud — next</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="stack">
+  <div class="badge">Listening · Read It Back</div>
+  <div class="cue">Look away from the screen. Each one plays once.</div>
+  <div class="row"><button class="opt mid" data-audio="audio/c4_d3816.mp3" onclick="playAudio(this)">Code 1 🔊</button><button class="opt mid" data-audio="audio/c4_d5029.mp3" onclick="playAudio(this)">Code 2 🔊</button></div>
+  <div class="row"><button class="opt mid" data-audio="audio/c4_d6174.mp3" onclick="playAudio(this)">Code 3 🔊</button></div>
+  <div class="es">Say each one back grouped, with a beat — not one long word. No "say that again."</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Check yourself</button>
+  <div class="keyBox">Code 1: <b>3 — 8 — 1 — 6</b><br>Code 2: <b>5 — 0 — 2 — 9</b> ("five, oh, two, nine")<br>Code 3: <b>6 — 1 — 7 — 4</b></div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="stack">
+  <div class="badge">Fire It · No Thinking</div>
+  <button class="audio" data-audio="audio/c3_howdoyou.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="think">Three times, faster each time. Your default word is ready — say it the moment you hear the question.</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="reading">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">The Reading · A Day On The Route</div>
+  <div class="think" style="font-size:20px">Three short parts. Listen first — the text stays closed until you've heard it. Then tell me what happened, in your own words.</div>
+  <button class="btn go" data-next>Start reading</button>
+ </div></div>
+
+<div class="scr" data-t="reading">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Part 1 of 3 · Morning</div>
+  <button class="audio" data-audio="audio/c4_p1.mp3" onclick="playAudio(this)" style="width:84px;height:84px;font-size:34px">🔊</button>
+  <div class="think" style="font-size:19px">Listen once. Who is it, where is she, and what's the problem?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Now show the text</button>
+  <div class="keyBox" style="font-family:'Lora',serif;font-size:16px;line-height:1.75">Camila's alarm goes off at 4 a.m. By 4:45 she's at the station, loading wave 2 into her van. Her dispatcher, Marcus, walks over. <i>"Heads up — it's supposed to pour this afternoon."</i> Camila laughs. It's the same old, same old: rain, oversize boxes, and a route that never ends. She's already <b>running late</b>, so she skips her coffee, checks her list and <b>heads out</b>.</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="reading">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Part 2 of 3 · Midday</div>
+  <button class="audio" data-audio="audio/c4_p2.mp3" onclick="playAudio(this)" style="width:84px;height:84px;font-size:34px">🔊</button>
+  <div class="think" style="font-size:19px">Listen once. What is the gate code — and how does she check it?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Now show the text</button>
+  <div class="keyBox" style="font-family:'Lora',serif;font-size:16px;line-height:1.75">Around noon she pulls up to an apartment complex. The gate is locked. She calls the customer. <i>"This is Camila with Amazon. I'm calling about your package — could you give me the gate code?"</i> <i>"Sure. It's four, seven, oh, two."</i> <i>"Let me read that back: 4-7-0-2."</i> It works. She <b>drops</b> the package <b>off</b>, takes a picture, and moves on. Then her phone rings. A customer down the road asks, <i>"Can you <b>swing by</b> later and <b>pick</b> my return <b>up</b>?"</i> Camila hesitates. <i>"Bear with me — I'm still behind. I'll try."</i></div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="reading">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Part 3 of 3 · Afternoon</div>
+  <button class="audio" data-audio="audio/c4_p3.mp3" onclick="playAudio(this)" style="width:84px;height:84px;font-size:34px">🔊</button>
+  <div class="think" style="font-size:19px">Listen once. What almost happens with the burger — and what does she do?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Now show the text</button>
+  <div class="keyBox" style="font-family:'Lora',serif;font-size:16px;line-height:1.75">By three she's starving, so she grabs a bite at a small place near the highway. <i>"How do you want your burger?"</i> the server asks. <i>"Medium, please."</i> It arrives well done. Camila almost says <i>"it's fine."</i> Then she stops. <i>"Actually, on second thought — could I get it cooked a little less? Whenever you get a chance."</i> The server smiles. <i>"No worries — I'll fix it right away."</i> No wonder people love this place. It turns out the manager is one of her delivery customers. Come to think of it, his voice sounds familiar. At six she <b>wraps up</b> the route. Marcus asks how it went. <i>"Same old, same old,"</i> she says — and this time, that's a good thing.</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="reading">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Read It Aloud · In Groups</div>
+  <div class="es">Read Part 3 out loud. Take a breath at each <span class="sl">/</span> — never word by word.</div>
+  <div class="rd">By three <span class="sl">/</span> she's starving, <span class="sl">/</span> so she grabs a bite <span class="sl">/</span> at a small place <span class="sl">/</span> near the highway. <span class="sl">//</span> "How do you want your burger?" <span class="sl">/</span> the server asks. <span class="sl">//</span> "Medium, please." <span class="sl">//</span> It arrives well done. <span class="sl">//</span> Camila almost says, <span class="sl">/</span> "it's fine." <span class="sl">//</span> Then she stops. <span class="sl">//</span> "Actually, on second thought — <span class="sl">/</span> could I get it cooked a little less? <span class="sl">/</span> Whenever you get a chance." <span class="sl">//</span> The server smiles. <span class="sl">//</span> "No worries — <span class="sl">/</span> I'll fix it right away." <span class="sl">//</span> No wonder <span class="sl">/</span> people love this place. <span class="sl">//</span> It turns out <span class="sl">/</span> the manager is one of her delivery customers. <span class="sl">//</span> Come to think of it, <span class="sl">/</span> his voice sounds familiar. <span class="sl">//</span> At six <span class="sl">/</span> she wraps up the route. <span class="sl">//</span> Marcus asks how it went. <span class="sl">//</span> "Same old, same old," <span class="sl">/</span> she says — <span class="sl">/</span> and this time, <span class="sl">/</span> that's a good thing.</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="reading">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Read It Aloud · Again</div>
+  <div class="es">Now Part 1 — same rule. One breath per group.</div>
+  <div class="rd">Camila's alarm goes off <span class="sl">/</span> at four a.m. <span class="sl">//</span> By four forty-five <span class="sl">/</span> she's at the station, <span class="sl">/</span> loading wave two <span class="sl">/</span> into her van. <span class="sl">//</span> Her dispatcher, Marcus, <span class="sl">/</span> walks over. <span class="sl">//</span> "Heads up — <span class="sl">/</span> it's supposed to pour <span class="sl">/</span> this afternoon." <span class="sl">//</span> Camila laughs. <span class="sl">//</span> It's the same old, same old: <span class="sl">/</span> rain, <span class="sl">/</span> oversize boxes, <span class="sl">/</span> and a route that never ends. <span class="sl">//</span> She's already running late, <span class="sl">/</span> so she skips her coffee, <span class="sl">/</span> checks her list <span class="sl">/</span> and heads out.</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Check Yourself · 1 of 2</div>
+  <div class="think">What is the gate code, and how does Camila make sure she has it right?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Check yourself</button>
+  <div class="keyBox"><b>4-7-0-2.</b> She reads it back to the customer — "Let me read that back."</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Check Yourself · 2 of 2</div>
+  <div class="think">Camila almost says "it's fine." Why — and what does she do instead?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Check yourself</button>
+  <div class="keyBox">She doesn't want to make a fuss — the same reason many people avoid restaurants. Instead she <b>speaks up politely</b>: "Actually, on second thought… could I get it cooked a little less? Whenever you get a chance."</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Vocabulary · Six Route Words</div>
+  <div class="es">Find each one in the story. Tap it, say it back, then say the situation in your own words.</div>
+  <div class="row"><button class="opt mid" data-audio="audio/c4_runlate.mp3" onclick="playAudio(this)">run late 🔊</button><button class="opt mid" data-audio="audio/c4_pickitup.mp3" onclick="playAudio(this)">pick up 🔊</button></div>
+  <div class="row"><button class="opt mid" data-audio="audio/c4_dropthemoff.mp3" onclick="playAudio(this)">drop off 🔊</button><button class="opt mid" data-audio="audio/c4_swingby.mp3" onclick="playAudio(this)">swing by 🔊</button></div>
+  <div class="row"><button class="opt mid" data-audio="audio/c4_wrapup.mp3" onclick="playAudio(this)">wrap up 🔊</button><button class="opt mid" data-audio="audio/c4_headout.mp3" onclick="playAudio(this)">head out 🔊</button></div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="stack">
+  <div class="badge">Fire It · Full Sentences</div>
+  <div class="think">Say the right one for each situation, in a full sentence:<br><br>1. It's 3:40 and your last stop was at 3:30.<br>2. The customer wants his return collected.<br>3. Your shift ends and everything is delivered.<br>4. Your friend lives on your route and you want to say hi.<br>5. It's 4:45 and the boxes are loaded.<br>6. He's not home — leave it at the door.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Show the phrases</button>
+  <div class="keyBox">1. <b>I'm running late.</b><br>2. <b>I'll pick it up.</b><br>3. <b>I'm wrapping up.</b><br>4. <b>I'll swing by.</b><br>5. <b>Let me head out.</b><br>6. <b>I'll drop it off.</b></div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="motionStage" aria-hidden="true">
+  <div class="motion-wordorder">
+   <div class="wo-state"><span class="wo-chip wo-bad">pick up</span><span class="wo-chip wo-bad">it</span></div>
+   <div class="wo-arrow">&#8595;</div>
+   <div class="wo-state"><span class="wo-chip wo-move">pick</span><span class="wo-chip">it</span><span class="wo-chip wo-move">up</span></div>
+  </div>
+  <div class="veil"></div>
+ </div>
+ <div class="plain" style="z-index:-1"></div>
+ <div class="stack">
+  <div class="badge">The Trap · It / Them Goes In The Middle</div>
+  <div class="es" style="font-size:16px">With <b>it, them, him, her</b>, the word opens in the middle: <b>pick it up</b>, <b>drop them off</b> — not "pick up it." With a noun you can choose: <i>pick up the return</i> or <i>pick the return up</i>.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="stack">
+  <div class="badge">Check It · Say It, Then Build It</div>
+  <div class="think">Say the fix out loud first:<br><br>1. "I'll pick up it at four."<br>2. "Please drop off them at the door."</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Check yourself</button>
+  <div class="keyBox">1. "I'll pick <b>it</b> up at four."<br>2. "Please drop <b>them</b> off at the door."</div>
+  <div class="scramble" data-answer="I'll pick it up at four">
+   <div class="es">Now build it — tap in order:</div>
+   <div class="scrambleRow scrambleBank">
+    <button class="chip" onclick="scrambleTap(this)">it</button>
+    <button class="chip" onclick="scrambleTap(this)">up</button>
+    <button class="chip" onclick="scrambleTap(this)">I'll pick</button>
+    <button class="chip" onclick="scrambleTap(this)">at four</button>
+   </div>
+   <div class="scrambleRow scrambleBuilt"></div>
+   <div class="row"><button class="opt mid" onclick="scrambleReset(this)">Reset</button><button class="opt mid" onclick="scrambleCheck(this)">Check</button></div>
+   <div class="scrambleFeedback" style="display:none"></div>
+   <button class="btn go scrambleNext" data-next style="display:none">Next</button>
+  </div>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="1">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 1 of 3</div>
+  <button class="audio" data-audio="audio/c4_fair.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="think">Someone makes a point you can't argue with. You accept it — without agreeing with everything. What do you say?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Show the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">"Fair enough."</div><br>You give them the point and keep your own opinion. Say it, then add "but…" if you still disagree.</div>
+  <label class="forceUse"><input type="checkbox"> I used this in the CORE round</label>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="2">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 2 of 3</div>
+  <button class="audio" data-audio="audio/c4_noworries.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="think">Someone says sorry — or thanks — for something small. You want to make it light. What do you say?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Show the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">"No worries."</div><br>Falling tone, easy and relaxed. It's for small things — not for "My package never came."</div>
+  <label class="forceUse"><input type="checkbox"> I used this in the CORE round</label>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="3">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 3 of 3</div>
+  <button class="audio" data-audio="audio/c4_cometothink.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="think">In the middle of talking, a new thought or a memory just landed. How do you bring it in?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Show the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">"Come to think of it…"</div><br>You say it when the idea arrives <i>while</i> you're talking. It sounds thoughtful, not confused.</div>
+  <label class="forceUse"><input type="checkbox"> I used this in the CORE round</label>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="stack">
+  <div class="badge">Pronunciation · Connect It</div>
+  <div class="es">Native speakers don't say two words — they say one. Tap, listen, say it twice, connected.</div>
+  <div class="row"><button class="opt mid" data-audio="audio/c4_pickitup.mp3" onclick="playAudio(this)">pick it up 🔊</button><button class="opt mid" data-audio="audio/c4_dropthemoff.mp3" onclick="playAudio(this)">drop them off 🔊</button></div>
+  <div class="row"><button class="opt mid" data-audio="audio/c4_headout.mp3" onclick="playAudio(this)">head out 🔊</button><button class="opt mid" data-audio="audio/c4_noworries.mp3" onclick="playAudio(this)">no worries ↘ 🔊</button></div>
+  <div class="word" style="font-size:20px">"pickitup" · "dropthemoff" · "headout"</div>
+  <div class="es">"No worries" stays easy and falling — never a question.</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/core4.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">CORE · Stage 1 — Guided</div>
+  <div class="cue">Defend it · Camila's three calls</div>
+  <div class="think">Camila made three calls today:<br><br><b>1.</b> skipped her coffee to make up time<br><b>2.</b> called the customer instead of leaving the package outside the gate<br><b>3.</b> sent the burger back<br><br>Agree or disagree — and give <i>one reason</i>.</div>
+  <div class="es">Start with: "I'd have ——— because ———."</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/core4.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">CORE · Stage 2 — On Your Own</div>
+  <div class="cue">Now I'll take the other side</div>
+  <div class="think">I'll push back on each one. Answer me — and where I'm right, say <b>"Fair enough."</b> Use at least three of these:<br><br><b>run late · pick up · drop off · swing by · wrap up · head out</b></div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/core4.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">CORE · Stage 3 — The Real One</div>
+  <div class="cue">Marcus pushes back</div>
+  <button class="audio" data-audio="audio/c4_marcus1.mp3" onclick="playAudio(this)" style="width:84px;height:84px;font-size:34px">🔊</button>
+  <div class="think">You're the driver. Your dispatcher says you're already behind and the return isn't on your route. Nothing on screen — you know these words. Answer him, take his point, and get the return.</div>
+  <div class="es">He'll send you a gate code at the end. Read it back.</div>
+  <button class="audio none" data-audio="audio/c4_marcus_gate.mp3" onclick="playAudio(this)" style="width:64px;height:64px;font-size:22px">🔊</button>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/open4.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">The Real Thing — Answer Key</div>
+  <div class="think">Build your own side first — open this only after.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Show the model</button>
+  <div class="keyBox">
+   <b>Marcus:</b> That return isn't on your route. Skip it — you're already behind.<br>
+   <b>You:</b> I know I'm running late, but it's really close. Could I swing by around four and pick it up? It'll take five minutes.<br>
+   <b>Marcus:</b> It's not worth the extra stop.<br>
+   <b>You:</b> Fair enough. Come to think of it, that customer sent one before — I don't want to lose the rating. Let me head out and I'll call you if I can't make it.<br>
+   <b>Marcus:</b> Sorry to push you like this.<br>
+   <b>You:</b> No worries.<br>
+   <b>Marcus:</b> Next stop's gate code is 3-8-1-6.<br>
+   <b>You:</b> 3-8-1-6. Got it.
+  </div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="spiral">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Fast Fire · Shuffled</div>
+  <div class="think" style="font-size:19px">One sentence each. They're mixed up on purpose — no order to lean on:<br><br>You didn't sleep, so… <br>Someone asks how work was.<br>You need a second to think.<br>She never misses an address.<br>You want the check.<br>Someone offers dessert and you don't want it.<br>The code was said too fast.<br>You ordered, then changed your mind.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Check yourself</button>
+  <div class="keyBox"><b>no wonder</b> · <b>same old, same old</b> · <b>bear with me / let me check on that</b> · <b>thorough</b> · <b>whenever you get a chance</b> · <b>I'm good, thanks</b> · <b>read it back to me / just to be sure</b> · <b>actually, on second thought</b></div>
+  <button class="btn go" data-next>Done</button>
+ </div></div>
+
+<div class="scr" data-t="homework">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Homework</div>
+  <div class="sent" style="text-align:left;font-size:17px">1. <b>Voice note, 60 seconds — "walk me through your route today."</b> Use at least three of the six route words and one new phrase. Present tense is fine. Send it to me. <i>Class 5 turns this same story into "yesterday."</i></div>
+  <div class="sent" style="text-align:left;font-size:17px">2. <b>By hand, autocorrect off.</b> For <i>Fair enough · No worries · Come to think of it</i> — write the English situation ("I say this when…") plus one real sentence from your week. Not the meaning. Not Spanish. Photo to me. <i>They come back in Class 5's warm-up.</i></div>
+  <button class="btn go" data-next>Done for today</button>
+ </div></div>
+
+<div class="scr" data-t="close">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="big">You just followed a whole day on the route.</div>
+  <div class="es">Send the voice note and the photo. See you at Class 5.</div>
+  <div class="credits">Teacher's Station · The Milestone Method</div>
+ </div></div>
+
+</div>
+
 </div>
 <script>
 function toggleMenu(){ document.getElementById('classMenu').classList.toggle('open'); }
@@ -1362,7 +1684,7 @@ document.querySelectorAll('.bg[data-img]').forEach(el=>{
   const visualParent = el.closest('.visual');
   if(visualParent){ visualParent.setAttribute('data-img-src', src); }
 });
-loadScreens(3.5);
+loadScreens(4);
 </script>
 </body>
 </html>
