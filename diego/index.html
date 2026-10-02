@@ -7,19 +7,22 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 :root{--ob:#0D0014;--pu:#440249;--go:#FFBE00;--ink:#F4EEF6}
-html,body{height:100%;overflow:hidden;background:var(--ob);color:var(--ink);
- font-family:'Lora',Georgia,'Times New Roman',serif;font-size:18px}
+html{height:100%;background:#000}
+body{height:100%;margin:0;overflow:hidden;background:#000;color:var(--ink);
+ font-family:'Lora',Georgia,'Times New Roman',serif;font-size:18px;display:flex;justify-content:center;align-items:stretch}
+#appRoot{position:relative;width:100%;max-width:480px;height:100%;overflow:hidden;
+ background:var(--ob);box-shadow:0 0 0 1px rgba(255,255,255,.06),0 30px 90px -20px rgba(0,0,0,.9)}
 h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
-#bar{position:fixed;top:44px;left:0;height:4px;background:rgba(255,190,0,.7);
+#bar{position:absolute;top:44px;left:0;height:4px;background:rgba(255,190,0,.7);
  width:0;transition:width .35s ease;z-index:50}
 
-#classHeader{position:fixed;top:0;left:0;right:0;height:44px;background:var(--pu);
+#classHeader{position:absolute;top:0;left:0;right:0;height:44px;background:var(--pu);
  display:flex;align-items:center;justify-content:space-between;padding:0 14px;z-index:80;
  font-family:'Poppins',system-ui,sans-serif;box-shadow:0 2px 8px rgba(0,0,0,.3)}
 #classHeader .brand{font-size:10px;letter-spacing:1.5px;color:rgba(244,238,246,.6);font-weight:600}
 #classSelect{background:rgba(244,238,246,.1);border:none;color:var(--ink);font-family:inherit;
  font-size:13px;font-weight:600;padding:6px 10px;border-radius:8px;display:flex;align-items:center;gap:6px}
-#classMenu{position:fixed;top:44px;left:0;right:0;background:var(--pu);z-index:79;
+#classMenu{position:absolute;top:44px;left:0;right:0;background:var(--pu);z-index:79;
  max-height:0;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;
  transition:max-height .25s ease;box-shadow:0 8px 16px rgba(0,0,0,.4)}
 #classMenu.open{max-height:min(60vh,320px)}
@@ -28,7 +31,7 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 #classMenu .item.active{background:rgba(255,190,0,.12);color:var(--go);font-weight:600}
 #classMenu .locked{opacity:.35;font-size:11px}
 
-.scr{position:fixed;inset:0;top:44px;display:none;flex-direction:column;align-items:center;
+.scr{position:absolute;inset:0;top:44px;display:none;flex-direction:column;align-items:center;
  justify-content:center;overflow:hidden}
 .scr.on{display:flex}
 .bg{position:absolute;inset:0;background-size:cover;background-position:center;z-index:0}
@@ -69,7 +72,7 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 .keyBox.show{display:block}
 .keyBox b{color:var(--go)}
 .badge{font-size:12px;letter-spacing:1px;text-transform:uppercase;color:rgba(244,238,246,.6);font-family:'Poppins',system-ui,sans-serif}
-.navBtn{position:fixed;top:56px;width:44px;height:44px;border-radius:50%;
+.navBtn{position:absolute;top:56px;width:44px;height:44px;border-radius:50%;
  background:rgba(244,238,246,.10);border:none;color:var(--ink);font-size:22px;
  line-height:1;display:grid;place-items:center;z-index:60}
 .navBtn.left{left:14px}
@@ -135,18 +138,74 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 .timerArc{transition:stroke-dashoffset 1s linear}
 .timerNum{position:absolute;font-family:'Poppins',system-ui,sans-serif;font-size:24px;font-weight:700;color:var(--ink)}
 .timerNum.warn{color:#E08A83}
+
+/* Stepper buttons + blanks (used by the Grammar Box) */
+.opt{width:100%;min-height:68px;border-radius:14px;border:2px solid transparent;
+ background:var(--pu);color:var(--ink);display:flex;align-items:center;gap:14px;
+ padding:0 18px;font-family:'Poppins',system-ui,sans-serif;font-size:17px}
+.opt[disabled]{opacity:.28}
+.mid{justify-content:center}
+.blank{display:inline-flex;align-items:center;justify-content:center;min-width:52px;height:22px;
+ border-bottom:2px dashed var(--go);position:relative;margin:0 2px;vertical-align:-4px}
+.cursor{width:1.5px;height:15px;background:var(--go);display:inline-block;animation:blink 1.1s steps(1) infinite}
+@keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}
+
+/* Grammar Box — data-t="grammar" (shape · when · trap) + data-t="grammarcheck" */
+.gPart{display:none;width:100%;flex-direction:column;align-items:center;gap:14px}
+.gPart.on{display:flex}
+.gSlots{width:100%;display:flex;flex-direction:column;gap:9px}
+.slotLbls,.slotRow{display:flex;gap:6px;width:100%}
+.slotLbl{flex:1;font-family:'Poppins',system-ui,sans-serif;font-size:9px;letter-spacing:.07em;
+ text-transform:uppercase;color:rgba(255,190,0,.72);text-align:center;font-weight:600}
+.slotChip{flex:1;display:flex;align-items:center;justify-content:center;text-align:center;
+ min-height:44px;background:transparent;border:1px dashed rgba(244,238,246,.2);
+ border-radius:10px;padding:11px 3px;font-family:'Poppins',system-ui,sans-serif;font-size:14.5px;
+ font-weight:600;color:var(--ink);transition:background .3s ease,border-color .3s ease}
+.slotChip .w{opacity:0}
+.gSlots.built .slotChip{background:rgba(255,190,0,.10);border-style:solid;border-color:rgba(255,190,0,.38)}
+.gSlots.built .slotChip .w{animation:slotIn .34s cubic-bezier(.2,.7,.3,1) both;
+ animation-delay:calc(var(--i,0) * 90ms)}
+@keyframes slotIn{from{opacity:0;transform:translateY(12px) scale(.93)}to{opacity:1;transform:none}}
+.slotNote{font-size:13px;color:rgba(244,238,246,.55);font-style:italic;text-align:center;line-height:1.45}
+@media (prefers-reduced-motion:reduce){.gSlots.built .slotChip .w{animation:none;opacity:1}}
+.useRow{display:flex;align-items:center;gap:10px;width:100%;background:rgba(255,255,255,.045);
+ border:1px solid rgba(244,238,246,.09);border-radius:12px;padding:12px 14px}
+.useKey{font-family:'Poppins',system-ui,sans-serif;font-weight:600;color:var(--go);font-size:15.5px;white-space:nowrap}
+.useArrow{color:rgba(244,238,246,.3);flex:none}
+.useVal{font-size:14.5px;color:rgba(244,238,246,.86);line-height:1.4}
+.trapItem{width:100%;display:flex;flex-direction:column;gap:9px}
+.trapWrong{width:100%;text-align:center;font-family:'Poppins',system-ui,sans-serif;font-size:18px;
+ font-weight:600;color:rgba(255,132,132,.92);text-decoration:line-through;
+ text-decoration-color:rgba(255,132,132,.8);text-decoration-thickness:2px}
+.hl{color:var(--go);border-bottom:2px solid var(--go)}
+.gcTag{font-size:13px;letter-spacing:.5px;color:rgba(244,238,246,.55);font-style:italic;text-align:center}
+.gcQ{font-family:'Poppins',system-ui,sans-serif;font-size:22px;font-weight:600;text-align:center;line-height:1.45}
+.gcQ .blank{min-width:66px;height:26px;vertical-align:-2px}
+.gcQ .cursor{height:18px}
+
+/* Chunk list — a sentence per row with its own small play button */
+.chunkRow{display:flex;align-items:center;gap:12px;width:100%;background:rgba(255,255,255,.045);
+ border:1px solid rgba(244,238,246,.09);border-radius:12px;padding:10px 12px;text-align:left}
+.chunkRow .audio{width:44px;height:44px;flex:none;font-size:18px;animation:none;box-shadow:none}
+.chunkKey{font-family:'Poppins',system-ui,sans-serif;font-weight:600;color:var(--go);font-size:15px}
+.chunkEx{font-size:14px;color:rgba(244,238,246,.82);line-height:1.4}
+/* long screens (dialogue, chunk lists) scroll instead of clipping */
+.scr.tall{justify-content:safe center;overflow-y:auto}
+.scr.tall .stack{padding-top:64px}
 </style></head>
 <body>
+<div id="appRoot">
 
 <div id="classHeader">
   <span class="brand">TEACHER'S STATION</span>
-  <button id="classSelect" onclick="toggleMenu()">Class 27 ▾</button>
+  <button id="classSelect" onclick="toggleMenu()">Class 28 ▾</button>
 </div>
 <div id="classMenu">
   <div class="item" onclick="selectClass(24)">Class 24: Phase 1 Final Assessment <span>✓</span></div>
   <div class="item" onclick="selectClass(25)">Class 25: Setting the Scene <span>✓</span></div>
   <div class="item" onclick="selectClass(26)">Class 26: Running the Investigation <span>✓</span></div>
-  <div class="item active" onclick="selectClass(27)">Class 27: Calling It In <span>✓</span></div>
+  <div class="item" onclick="selectClass(27)">Class 27: Calling It In <span>✓</span></div>
+  <div class="item active" onclick="selectClass(28)">Class 28: Resume Builder 1 <span></span></div>
 </div>
 
 <div id="bar"></div>
@@ -1256,6 +1315,255 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 </div>
 
+<div class="classBlock" data-class="28">
+
+<div class="scr" data-t="open">
+ <div class="bg" data-img="photos/c28_interview.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="cue">Class 28 · Present Perfect</div>
+  <div class="big">The Resume Builder 1 — talking about unfinished time</div>
+  <div class="es" style="font-size:16px;line-height:1.5;color:rgba(244,238,246,.85)">By the end of this class, you can talk about experience that's still true today — how long you've been doing your job and what you've achieved — with <i>I've worked, I've gained, I've never…</i></div>
+  <button class="btn go" data-next>Begin</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Warm-Up · 1 of 3</div>
+  <div class="think">How long have you been doing HVAC work? How long have you been living in the US? How long have you been with your company? Answer all three — no past simple.</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Warm-Up · 2 of 3</div>
+  <div class="think">"I worked in HVAC for 3 years" vs "I've worked in HVAC for 3 years." One tells the person you're still doing it. Which one — and why does that matter in a job interview?</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Warm-Up · 3 of 3</div>
+  <div class="think">An interviewer asks: "What have you achieved in your career so far?" Think of 3 real things. How would you say them?</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr tall" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Key Phrases · 1 of 2</div>
+  <div class="es">Tap to hear each one, then say it out loud.</div>
+  <div class="chunkRow"><button class="audio" data-audio="audio/c28_v1.mp3" onclick="playAudio(this)">🔊</button><div><div class="chunkKey">I've worked</div><div class="chunkEx">I've worked in HVAC for about four years.</div></div></div>
+  <div class="chunkRow"><button class="audio" data-audio="audio/c28_v2.mp3" onclick="playAudio(this)">🔊</button><div><div class="chunkKey">I've gained</div><div class="chunkEx">I've gained a lot of experience with commercial installs.</div></div></div>
+  <div class="chunkRow"><button class="audio" data-audio="audio/c28_v3.mp3" onclick="playAudio(this)">🔊</button><div><div class="chunkKey">I've built</div><div class="chunkEx">I've built strong skills in duct fabrication.</div></div></div>
+  <div class="chunkRow"><button class="audio" data-audio="audio/c28_v4.mp3" onclick="playAudio(this)">🔊</button><div><div class="chunkKey">I've earned</div><div class="chunkEx">I've earned the trust of every foreman I've worked under.</div></div></div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr tall" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Key Phrases · 2 of 2</div>
+  <div class="es">Tap to hear each one, then say it out loud.</div>
+  <div class="chunkRow"><button class="audio" data-audio="audio/c28_v5.mp3" onclick="playAudio(this)">🔊</button><div><div class="chunkKey">I've been doing</div><div class="chunkEx">I've been doing sheet metal work since 2021.</div></div></div>
+  <div class="chunkRow"><button class="audio" data-audio="audio/c28_v6.mp3" onclick="playAudio(this)">🔊</button><div><div class="chunkKey">He's managed</div><div class="chunkEx">He's managed crews of up to 10 people.</div></div></div>
+  <div class="chunkRow"><button class="audio" data-audio="audio/c28_v7.mp3" onclick="playAudio(this)">🔊</button><div><div class="chunkKey">We've completed</div><div class="chunkEx">We've completed over 20 commercial projects together.</div></div></div>
+  <div class="chunkRow"><button class="audio" data-audio="audio/c28_v8.mp3" onclick="playAudio(this)">🔊</button><div><div class="chunkKey">I haven't had</div><div class="chunkEx">I haven't had any major incidents on any job site.</div></div></div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr tall" data-t="grammar" data-gstep="0">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge" data-gbadge>Guided · The Shape</div>
+  <div class="gPart on" data-gpart data-badge="Guided · The Shape">
+   <div class="gSlots">
+    <div class="slotLbls">
+     <div class="slotLbl">who</div><div class="slotLbl">have / has</div>
+     <div class="slotLbl">past participle</div><div class="slotLbl">the rest</div>
+    </div>
+    <div class="slotRow">
+     <div class="slotChip" style="--i:0"><span class="w">I</span></div><div class="slotChip" style="--i:1"><span class="w">'ve</span></div>
+     <div class="slotChip" style="--i:2"><span class="w">worked</span></div><div class="slotChip" style="--i:3"><span class="w">here for a year</span></div>
+    </div>
+    <div class="slotRow">
+     <div class="slotChip" style="--i:4"><span class="w">He</span></div><div class="slotChip" style="--i:5"><span class="w">'s</span></div>
+     <div class="slotChip" style="--i:6"><span class="w">managed</span></div><div class="slotChip" style="--i:7"><span class="w">crews of 10</span></div>
+    </div>
+    <div class="slotRow">
+     <div class="slotChip" style="--i:8"><span class="w">We</span></div><div class="slotChip" style="--i:9"><span class="w">haven't</span></div>
+     <div class="slotChip" style="--i:10"><span class="w">had</span></div><div class="slotChip" style="--i:11"><span class="w">any incidents</span></div>
+    </div>
+   </div>
+   <button class="toggleBtn" onclick="slotBuild(this)">Build the sentence</button>
+   <div class="slotNote"><b>have</b> for I / you / we / they · <b>has</b> for he / she. In speech it's always short: I've, he's, we've.</div>
+  </div>
+  <div class="gPart" data-gpart data-badge="Guided · When You Use It">
+   <div class="useRow"><span class="useKey">Still true</span><span class="useArrow">→</span>
+    <span class="useVal">present perfect. <i>"I've worked here for a year."</i> — you still work here.</span></div>
+   <div class="useRow"><span class="useKey">Finished</span><span class="useArrow">→</span>
+    <span class="useVal">past simple. <i>"I worked at that company for two years."</i> — you left.</span></div>
+   <div class="useRow"><span class="useKey">Never, up to now</span><span class="useArrow">→</span>
+    <span class="useVal">present perfect. <i>"I haven't had any major incidents."</i></span></div>
+  </div>
+  <div class="gPart" data-gpart data-badge="Guided · The Trap">
+   <div class="es">You still work in HVAC today.</div>
+   <div class="trapItem">
+    <div class="trapWrong">I worked in HVAC for four years.</div>
+    <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Say the fixed version, then tap</button>
+    <div class="keyBox"><b>I<span class="hl">'ve</span> worked in HVAC for four years.</b> — <i>I worked</i> sounds like you stopped. You didn't, so it's <i>I've worked</i>.</div>
+   </div>
+  </div>
+  <div class="dots" data-gdots><div class="dot lit"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="row" style="max-width:300px">
+   <button class="opt mid" data-gprev onclick="gramNav(this,-1)" style="flex:0 0 60px" disabled>‹</button>
+   <button class="opt mid" data-gnext onclick="gramNav(this,1)" style="flex:1">Next ›</button>
+  </div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="grammarcheck" data-idx="0"
+ data-items='[
+  {"tag":"you started in 2021 and you still do it","q":"I ___ HVAC since 2021.","a":"I&#39;ve been doing HVAC since 2021."},
+  {"tag":"you worked there 2020–2022, then you left","q":"I ___ at Company X for two years.","a":"I worked at Company X for two years."},
+  {"tag":"never had an accident — ever","q":"I ___ any major incidents.","a":"I haven&#39;t had any major incidents."},
+  {"tag":"fix the error — you still work here","q":"I worked here for one year.","a":"I&#39;ve worked here for a year."},
+  {"tag":"past participle of build","q":"I&#39;ve ___ strong skills in fabrication.","a":"I&#39;ve built strong skills in fabrication."},
+  {"tag":"past participle of lead","q":"I&#39;ve ___ small crews of 2 or 3 guys.","a":"I&#39;ve led small crews of 2 or 3 guys."}
+ ]'>
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Guided · Check It</div>
+  <div class="gcTag" data-gctag>&nbsp;</div>
+  <div class="gcQ" data-gcq>&nbsp;</div>
+  <button class="toggleBtn" onclick="gcReveal(this)">Say it out loud, then check</button>
+  <div class="keyBox" data-gckey></div>
+  <div class="dots" data-gcdots></div>
+  <div class="row" style="max-width:300px">
+   <button class="opt mid" data-gcprev onclick="gcNav(this,-1)" style="flex:0 0 60px" disabled>‹</button>
+   <button class="opt mid" data-gcnext onclick="gcNav(this,1)" style="flex:1">Next ›</button>
+  </div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr tall" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Pronunciation · Contractions</div>
+  <div class="es">In real speech it's always short — "I have worked" sounds robotic. Listen, then say each one.</div>
+  <div class="chunkRow"><button class="audio" data-audio="audio/c28_pron1.mp3" onclick="playAudio(this)">🔊</button><div><div class="chunkKey">I've /aɪv/</div><div class="chunkEx">I've worked in HVAC for 4 years.</div></div></div>
+  <div class="chunkRow"><button class="audio" data-audio="audio/c28_pron2.mp3" onclick="playAudio(this)">🔊</button><div><div class="chunkKey">He's /hiːz/</div><div class="chunkEx">He's managed crews of up to 10 people.</div></div></div>
+  <div class="chunkRow"><button class="audio" data-audio="audio/c28_pron3.mp3" onclick="playAudio(this)">🔊</button><div><div class="chunkKey">We've /wiːv/</div><div class="chunkEx">We've completed over 20 commercial projects.</div></div></div>
+  <div class="chunkRow"><button class="audio" data-audio="audio/c28_pron4.mp3" onclick="playAudio(this)">🔊</button><div><div class="chunkKey">haven't</div><div class="chunkEx">I haven't had any major incidents.</div></div></div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="1">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 1 of 3</div>
+  <div class="think">The foreman asks how you got from apprentice to journeyman. What do you say?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">I worked my way up.</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the interview</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="2">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 2 of 3</div>
+  <div class="think">You want to say you've never had safety problems — in one professional phrase.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">I have a clean safety track record.</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the interview</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="3">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 3 of 3</div>
+  <div class="think">You don't wait to be told what to do — you start things yourself. How do you describe that?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">I've always been a go-getter.</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the interview</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Earn or Gain?</div>
+  <div class="think">You ___ trust.<br>You ___ experience.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Say both, then check</button>
+  <div class="keyBox"><b>You earn trust. You gain experience.</b><br>"I've earned the trust of every foreman." · "I've gained experience in commercial projects."</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr tall" data-t="core">
+ <div class="bg" data-img="photos/c28_interview.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">Real-Life Conversation</div>
+  <div class="think">A new foreman, Bill, asks about your experience. Answer him — present perfect for what's still true, past simple for what's finished.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Only open this if you get stuck</button>
+  <div class="keyBox">
+   <b>Bill:</b> So tell me about yourself. What have you done in the trade so far?<br>
+   <b>You:</b> I've been doing HVAC work for about four years now. I started as an apprentice and I've worked my way up to journeyman.<br>
+   <b>Bill:</b> What kind of work have you done?<br>
+   <b>You:</b> Mostly commercial — duct fabrication, trunk installation, rooftop units. I've completed a lot of large commercial projects, including a 20,000 square foot office build-out last year.<br>
+   <b>Bill:</b> Have you ever supervised a crew?<br>
+   <b>You:</b> Not officially, but I've led smaller groups — 2 to 3 guys. I've trained two apprentices over the past two years.<br>
+   <b>Bill:</b> How long have you been with your current company?<br>
+   <b>You:</b> I've been there for about 18 months. I haven't left yet, but I'm looking for more growth.<br>
+   <b>Bill:</b> Have you had any safety incidents?<br>
+   <b>You:</b> No. I haven't had any major incidents. I've always followed the safety protocols.<br>
+   <b>Bill:</b> What's your biggest strength?<br>
+   <b>You:</b> Staying calm when things go wrong. I've learned that the job rarely goes perfectly — but if you stay focused, you always find a way through.
+  </div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Comprehension Check</div>
+  <div class="think">Find the present perfect sentences in your answers. Why present perfect and not past simple — what does each one tell Bill?</div>
+  <button class="btn go" data-next>Next question</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Comprehension Check</div>
+  <div class="think">The last answer: "I've learned that the job rarely goes perfectly." What does that show Bill about you, beyond your technical skills?</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="homework">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Homework · Your Professional Profile</div>
+  <div class="homeItem">1. Record a 90-second job-interview self-introduction. Present perfect for what's still true, past simple only for what's finished.</div>
+  <div class="homeItem">2. Include: "I've been doing ___ for ___," "I've worked on ___," two of <i>gained / built / earned / developed</i>, and one "I've never ___."</div>
+  <div class="homeItem">3. Use contractions (I've, he's, we've) and at least one linker (and, so, because). No Spanish.</div>
+  <button class="btn go" data-next>Done for today</button>
+ </div></div>
+
+<div class="scr" data-t="close">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="big">Nice work today.</div>
+  <div class="es">See you at Class 29.</div>
+  <div class="credits">Teacher's Station · The Milestone Method</div>
+ </div></div>
+
+</div>
+
+</div><!-- /appRoot -->
+
 <script>
 function toggleMenu(){ document.getElementById('classMenu').classList.toggle('open'); }
 
@@ -1331,6 +1639,58 @@ function timerStart(startBtn){
   }, 1000);
 }
 
+// Grammar Box — every handler resolves its own container, no unique IDs needed
+function slotBuild(btn){
+  btn.closest('.gPart').querySelector('.gSlots').classList.add('built');
+  btn.style.display = 'none';
+}
+function gramNav(btn, dir){
+  var scr   = btn.closest('.scr');
+  var parts = [].slice.call(scr.querySelectorAll('[data-gpart]'));
+  var i     = Math.min(parts.length - 1, Math.max(0, (+scr.dataset.gstep || 0) + dir));
+  scr.dataset.gstep = i;
+  parts.forEach(function(p, n){ p.classList.toggle('on', n === i); });
+  scr.querySelector('[data-gbadge]').textContent = parts[i].dataset.badge || '';
+  var dots = scr.querySelector('[data-gdots]');
+  if (dots) [].slice.call(dots.children).forEach(function(d, n){ d.classList.toggle('lit', n === i); });
+  scr.querySelector('[data-gprev]').disabled = (i === 0);
+  var next = scr.querySelector('[data-gnext]');
+  var last = (i === parts.length - 1);
+  next.disabled = last;
+  if (last) scr.querySelector('[data-next]').style.display = '';
+}
+function gcReveal(btn){
+  btn.closest('.stack').querySelector('[data-gckey]').classList.add('show');
+}
+function gcRender(scr){
+  var items = JSON.parse(scr.dataset.items || '[]');
+  var i = Math.min(items.length - 1, Math.max(0, +scr.dataset.idx || 0));
+  var it = items[i] || {};
+  scr.querySelector('[data-gctag]').textContent = it.tag || '';
+  scr.querySelector('[data-gcq]').innerHTML = String(it.q || '').replace(
+    /_{2,}/g, '<span class="blank"><span class="cursor"></span></span>');
+  var key = scr.querySelector('[data-gckey]');
+  key.innerHTML = '<b>' + (it.a || '') + '</b>';
+  key.classList.remove('show');
+  var dots = scr.querySelector('[data-gcdots]');
+  if (dots && dots.children.length !== items.length){
+    dots.innerHTML = items.map(function(){ return '<div class="dot"></div>'; }).join('');
+  }
+  if (dots) [].slice.call(dots.children).forEach(function(d, n){ d.classList.toggle('lit', n === i); });
+  scr.querySelector('[data-gcprev]').disabled = (i === 0);
+  var next = scr.querySelector('[data-gcnext]');
+  var last = (i === items.length - 1);
+  next.disabled = last;
+  next.textContent = last ? 'Done' : 'Next ›';
+  if (last) scr.querySelector('[data-next]').style.display = '';
+}
+function gcNav(btn, dir){
+  var scr = btn.closest('.scr');
+  scr.dataset.idx = Math.max(0, (+scr.dataset.idx || 0) + dir);
+  gcRender(scr);
+}
+document.querySelectorAll('.scr[data-t="grammarcheck"]').forEach(gcRender);
+
 let screens = [];
 let idx = 0;
 let currentClass = 24;
@@ -1367,6 +1727,6 @@ document.querySelectorAll('.bg[data-img]').forEach(el=>{
   const src = el.getAttribute('data-img');
   el.style.backgroundImage = "url('" + src + "')";
 });
-loadScreens(27);
+loadScreens(28);
 </script>
 </body></html>
