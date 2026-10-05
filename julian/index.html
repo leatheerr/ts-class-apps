@@ -167,7 +167,7 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 <div id="classHeader">
   <span class="brand">TEACHER'S STATION</span>
-  <button id="classSelect" onclick="toggleMenu()">Class 6 ▾</button>
+  <button id="classSelect" onclick="toggleMenu()">Class 7 ▾</button>
 </div>
 <div id="classMenu">
   <div class="item" onclick="selectClass(1)">Class 1: First Contact <span>✓</span></div>
@@ -175,7 +175,8 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
   <div class="item" onclick="selectClass(3)">Class 3: Client Intake <span>✓</span></div>
   <div class="item" onclick="selectClass(4)">Class 4: Reading 1 — Your Own Boss</div>
   <div class="item" onclick="selectClass(5)">Class 5: What / Where / How Many</div>
-  <div class="item active" onclick="selectClass(6)">Class 6: On-Site Right Now</div>
+  <div class="item" onclick="selectClass(6)">Class 6: On-Site Right Now</div>
+  <div class="item active" onclick="selectClass(7)">Class 7: 🔎 Check — Routine vs. Right Now</div>
 </div>
 
 <div id="bar"></div>
@@ -1001,7 +1002,6 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
   <div class="credits">Teacher's Station · The Milestone Method</div>
  </div></div>
 
-</div>
 </div>
 
 <div class="classBlock" data-class="4">
@@ -1877,6 +1877,352 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 </div>
 
+<div class="classBlock" data-class="7">
+
+<div class="scr" data-t="open">
+ <div class="bg" data-img="photos/phone_call.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="cue">Class 7 · The Check</div>
+  <div class="big">🔎 CHECK: routine vs. right now — don't mix your every-day work with today's job</div>
+  <div class="es" style="font-size:16px;line-height:1.5;color:rgba(244,238,246,.85)">By the end of this class, you can switch between your every-day work and today's job without mixing them — "I work Monday to Saturday" / "I'm working on a bathroom right now" — fast, and say "I'm a handyman" with the "a."</div>
+  <button class="btn go" data-next>Begin</button>
+ </div></div>
+
+<div class="scr" data-t="ritual">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Open With A Win</div>
+  <div class="think">Someone asks: "What do you do?" Answer fast — then say these: "I'm almost done." · "I'm on my way."</div>
+  <div class="es">You answered this one for real, in English, with no preparation. It's already yours.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Critical Thinking · 1 of 3</div>
+  <div class="think">Finish this: "Every day I ___, but right now I ___."</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Critical Thinking · 2 of 3</div>
+  <div class="think">A client asks "What do you do?" Another asks "What are you doing?" Same question? Why not?</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Critical Thinking · 3 of 3</div>
+  <div class="think">True or false, then say why in one sentence: "'Every day' and 'right now' use the same verb form."</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="tpr" data-items='[{"w":"Sentence 1 of 6","a":"audio/c7_dec1.mp3"},{"w":"Sentence 2 of 6","a":"audio/c7_dec2.mp3"},{"w":"Sentence 3 of 6","a":"audio/c7_dec3.mp3"},{"w":"Sentence 4 of 6","a":"audio/c7_dec4.mp3"},{"w":"Sentence 5 of 6","a":"audio/c7_dec5.mp3"},{"w":"Sentence 6 of 6","a":"audio/c7_dec6.mp3"}]' data-idx="0">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Guided · Catch The Cue Word</div>
+  <button class="audio" data-audio="audio/c7_dec1.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="word" data-tprword style="font-size:22px">Sentence 1 of 6</div>
+  <div class="dots" data-tprdots><div class="dot lit"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="row" style="max-width:280px">
+   <button class="opt mid" onclick="tprNav(this,-1)" style="flex:0 0 60px">‹</button>
+   <button class="opt mid" onclick="tprNav(this,1)" style="flex:1">Next sentence ›</button>
+  </div>
+  <div class="es">No text. Say back only the cue word and "routine" or "now" — then the whole sentence.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Check yourself</button>
+  <div class="keyBox">1. I <b>usually</b> start at seven. → routine<br>2. We're cleaning the garage <b>right now</b>. → now<br>3. My helper works <b>Monday to Saturday</b>. → routine<br>4. I'm waiting for the client <b>at the moment</b>. → now<br>5. He paints <b>every day</b>. → routine<br>6. She's drying the floor <b>currently</b>. → now<br>The <b>-ing</b> (and the little 'm / 's / 're) means <b>now</b>.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="production" data-word="1">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Vocabulary · New Routine Word</div>
+  <button class="audio" data-audio="audio/word_usually.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="word">usually</div>
+  <div class="es">Listen, then say it out loud 3 times. "Usually, how long does a bathroom take you?"</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Race It · Cue Word In, Whole Sentence Out</div>
+  <div class="think">Your coach says one cue word. You finish a whole true sentence about your own work.</div>
+  <div class="es">"Usually—" · "Right now—" · "Every day—" · "At the moment—"</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Example</button>
+  <div class="keyBox"><b>Usually</b>, I start at seven. · <b>Right now</b>, I'm measuring the room. · <b>Every day</b>, I work with my helper. · <b>At the moment</b>, I'm installing a door.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="meetfix">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Meet Fix · Don't Drop The "a"</div>
+  <div class="cue">Keep your "I am". Just add the "a".</div>
+  <div class="sent">"I am handyman."<br>"I am painter."<br>"My helper is carpenter."</div>
+  <div class="es">Say each one the right way — the whole sentence — before you tap.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox">"I'm <b>a</b> handyman."<br>"I'm <b>a</b> painter."<br>"My helper is <b>a</b> carpenter."</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="grammar" data-gstep="0">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge" data-gbadge>Guided · The Shape</div>
+
+  <div class="gPart on" data-gpart data-badge="Guided · The Shape">
+   <div class="gSlots">
+    <div class="slotLbls">
+     <div class="slotLbl">cue word</div><div class="slotLbl">who</div>
+     <div class="slotLbl">verb</div><div class="slotLbl">rest</div>
+    </div>
+    <div class="slotRow">
+     <div class="slotChip" style="--i:0"><span class="w">every day</span></div><div class="slotChip" style="--i:1"><span class="w">I</span></div>
+     <div class="slotChip" style="--i:2"><span class="w">start</span></div><div class="slotChip" style="--i:3"><span class="w">at 7.</span></div>
+    </div>
+    <div class="slotRow">
+     <div class="slotChip" style="--i:4"><span class="w">right now</span></div><div class="slotChip" style="--i:5"><span class="w">I'm</span></div>
+     <div class="slotChip" style="--i:6"><span class="w">measuring</span></div><div class="slotChip" style="--i:7"><span class="w">the room.</span></div>
+    </div>
+    <div class="slotRow">
+     <div class="slotChip" style="--i:8"><span class="w">usually</span></div><div class="slotChip" style="--i:9"><span class="w">my helper</span></div>
+     <div class="slotChip" style="--i:10"><span class="w">works</span></div><div class="slotChip" style="--i:11"><span class="w">Mon–Sat.</span></div>
+    </div>
+   </div>
+   <button class="toggleBtn" onclick="slotBuild(this)">Build the sentences</button>
+   <div class="slotNote">The cue word decides. Routine → plain verb. Now → am/is/are + -ing.</div>
+  </div>
+
+  <div class="gPart" data-gpart data-badge="Guided · When You Use It">
+   <div class="useRow"><span class="useKey">Routine</span><span class="useArrow">→</span>
+    <span class="useVal">every day, usually → plain verb. <i>"My helper works Monday to Saturday."</i></span></div>
+   <div class="useRow"><span class="useKey">Now</span><span class="useArrow">→</span>
+    <span class="useVal">right now, at the moment → am/is/are + -ing. <i>"We're cleaning the garage right now."</i></span></div>
+  </div>
+
+  <div class="gPart" data-gpart data-badge="Guided · The Trap">
+   <div class="trapItem">
+    <div class="trapWrong">I am work right now.</div>
+    <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Say the fixed version, then tap</button>
+    <div class="keyBox"><b><span class="hl">I'm</span> work<span class="hl">ing</span> right now.</b> — "I am" alone is only half. The verb needs its -ing.</div>
+   </div>
+   <div class="trapItem">
+    <div class="trapWrong">I work right now.</div>
+    <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Say the fixed version, then tap</button>
+    <div class="keyBox"><b><span class="hl">I'm</span> work<span class="hl">ing</span> right now.</b> — "right now" always means am/is/are + -ing. And questions split the same way: "What do you do?" (routine) vs. "What are you doing?" (now).</div>
+   </div>
+  </div>
+
+  <div class="dots" data-gdots><div class="dot lit"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="row" style="max-width:300px">
+   <button class="opt mid" data-gprev onclick="gramNav(this,-1)" style="flex:0 0 60px" disabled>‹</button>
+   <button class="opt mid" data-gnext onclick="gramNav(this,1)" style="flex:1">Next ›</button>
+  </div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="grammarcheck" data-idx="0"
+ data-items='[
+  {"tag":"every day · start","q":"Every day I ___ at 7.","a":"Every day I start at 7."},
+  {"tag":"right now · measure","q":"Right now I ___ the room.","a":"Right now I&#39;m measuring the room."},
+  {"tag":"your helper · work","q":"My helper ___ Monday to Saturday.","a":"My helper works Monday to Saturday."},
+  {"tag":"fix the error","q":"I am work right now.","a":"I&#39;m working right now."},
+  {"tag":"fix it — or say OK","q":"I&#39;m cleaning the garage every day.","a":"I clean the garage every day."},
+  {"tag":"fix the error","q":"I am handyman.","a":"I&#39;m a handyman."}
+ ]'>
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Guided · Check It</div>
+  <div class="gcTag" data-gctag>every day · start</div>
+  <div class="gcQ" data-gcq>&nbsp;</div>
+  <button class="toggleBtn" onclick="gcReveal(this)">Say it out loud, then check</button>
+  <div class="keyBox" data-gckey></div>
+  <div class="dots" data-gcdots></div>
+  <div class="row" style="max-width:300px">
+   <button class="opt mid" data-gcprev onclick="gcNav(this,-1)" style="flex:0 0 60px" disabled>‹</button>
+   <button class="opt mid" data-gcnext onclick="gcNav(this,1)" style="flex:1">Next ›</button>
+  </div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="1">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 1 of 3</div>
+  <div class="think">A client asks how the job is going and you're nearly finished. What do you say?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">I'm almost done.</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the Check</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="2">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 2 of 3</div>
+  <div class="think">A client calls while you're busy and you can't talk. What do you say?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">I'll have to call you back.</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the Check</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="3">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 3 of 3</div>
+  <div class="think">A client asks "Is the water on?" and it isn't, right now. What do you say?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">Not at the moment.</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the Check</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Pronunciation · The Stress Moves · Hear It</div>
+  <div class="row">
+   <button class="opt mid" style="gap:8px" onclick="playAudio(this)" data-audio="audio/c7_iwork.mp3">"I WORK every day." <span style="font-size:16px">🔊</span></button>
+   <button class="opt mid" style="gap:8px" onclick="playAudio(this)" data-audio="audio/c7_imworking.mp3">"I'm WORKing right now." <span style="font-size:16px">🔊</span></button>
+  </div>
+  <div class="es">Which one is routine? Which one is now? Say: I WORK / I'm WORKing · I PAINT / I'm PAINTing · I FIX / I'm FIXing. The -ing is soft and quick.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Pronunciation · Two Different Words · Hear It</div>
+  <div class="row">
+   <button class="opt mid" style="gap:8px" onclick="playAudio(this)" data-audio="audio/c7_carpenter.mp3">"carpenter" <span style="font-size:16px">🔊</span></button>
+   <button class="opt mid" style="gap:8px" onclick="playAudio(this)" data-audio="audio/c7_carpet.mp3">"carpet" <span style="font-size:16px">🔊</span></button>
+  </div>
+  <div class="es">A carpenter builds. A carpet is on the floor. Say "carpenter" with three clear syllables.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="checkpoint">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">The Check · Starts Now</div>
+  <div style="display:flex;gap:5px;width:100%"><div style="flex:1;height:4px;border-radius:2px;background:var(--go)"></div><div style="flex:1;height:4px;border-radius:2px;background:rgba(244,238,246,.2)"></div><div style="flex:1;height:4px;border-radius:2px;background:rgba(244,238,246,.2)"></div></div>
+  <div class="big">Switch fast. Right tense. Under 3 seconds.</div>
+  <div class="frameCard" style="align-items:flex-start">
+   <div style="font-size:14px;color:var(--go);font-weight:600">● Part 1 · The Switch Race</div>
+   <div style="font-size:14px;opacity:.65">○ Part 2 · Two Lives of a Handyman</div>
+   <div style="font-size:14px;opacity:.65">○ Part 3 · Your Result</div>
+  </div>
+  <div class="es">Your coach changes the cue word every few seconds. Listen for it. The cue word decides the verb.</div>
+  <button class="btn go" data-next>Start Part 1</button>
+ </div></div>
+
+<div class="scr" data-t="tpr" data-items='[{"w":"Cue 1 of 6","a":"audio/c7_cue1.mp3"},{"w":"Cue 2 of 6","a":"audio/c7_cue2.mp3"},{"w":"Cue 3 of 6","a":"audio/c7_cue3.mp3"},{"w":"Cue 4 of 6","a":"audio/c7_cue4.mp3"},{"w":"Cue 5 of 6","a":"audio/c7_cue5.mp3"},{"w":"Cue 6 of 6","a":"audio/c7_cue6.mp3"}]' data-idx="0">
+ <div class="motionStage">
+  <div style="position:absolute;width:180px;height:180px;left:50%;top:36%;margin:-90px 0 0 -90px;border-radius:50%;background:rgba(255,190,0,.2);animation:floatY 1.6s ease-in-out infinite;"></div>
+  <div class="veil"></div>
+ </div>
+ <div class="stack">
+  <div class="badge">Check · Part 1 of 3 — The Switch Race</div>
+  <button class="audio" data-audio="audio/c7_cue1.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="word" data-tprword style="font-size:22px">Cue 1 of 6</div>
+  <div class="dots" data-tprdots><div class="dot lit"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="row" style="max-width:280px">
+   <button class="opt mid" onclick="tprNav(this,-1)" style="flex:0 0 60px">‹</button>
+   <button class="opt mid" onclick="tprNav(this,1)" style="flex:1">Next cue ›</button>
+  </div>
+  <div class="es">Listen to the cue. Say a whole sentence about your work. Checklist: every day · usually → plain verb. right now · at the moment · currently → I'm / he's / they're + -ing.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/phone_call.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">Check · Part 2 of 3 — Two Lives of a Handyman</div>
+  <div class="think">A Realtor friend calls about the apartment bathroom remodel. She asks about you — and about today — back to back. You won't know which one is coming.</div>
+  <div class="es">Nothing on screen. Answer fast: right tense, under 3 seconds. Land "I'm a handyman," and "I'm almost done" or "Not at the moment."</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="verdict">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Check · Part 3 of 3 — Your Result</div>
+  <div style="display:flex;gap:5px;width:100%"><div style="flex:1;height:4px;border-radius:2px;background:var(--go)"></div><div style="flex:1;height:4px;border-radius:2px;background:var(--go)"></div><div style="flex:1;height:4px;border-radius:2px;background:var(--go)"></div></div>
+  <div class="es">Your coach ticks these live.</div>
+  <label class="forceUse"><input type="checkbox" data-vkey="1">Right tense on 8 of 10 prompts</label>
+  <label class="forceUse"><input type="checkbox" data-vkey="2">No more than 2 answers slower than 3 seconds</label>
+  <label class="forceUse"><input type="checkbox" data-vkey="3">"I am + base verb" once or fewer</label>
+  <label class="forceUse"><input type="checkbox" data-vkey="4">"I'm a handyman" with the "a"</label>
+  <button class="toggleBtn" onclick="verdictShow(this)">Show my result</button>
+  <div class="keyBox" data-vout></div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/phone_call.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">Real-Life Conversation</div>
+  <div class="think">A Realtor friend calls about the apartment bathroom remodel.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Only open this if you get stuck</button>
+  <div class="keyBox">
+   <b>Realtor:</b> Hi Julian! A friend told me you do bathrooms. What do you do, exactly?<br>
+   <b>You:</b> I'm a handyman. I usually work Monday to Saturday.<br>
+   <b>Realtor:</b> Great. Are you working on something right now?<br>
+   <b>You:</b> Yes, I'm installing a door at the moment. I'm almost done.<br>
+   <b>Realtor:</b> Nice. Do you work on Sundays?<br>
+   <b>You:</b> Not usually, but it depends on the job.<br>
+   <b>Realtor:</b> Perfect. Can you see the apartment this week?<br>
+   <b>You:</b> Yes. I'll have to call you back with a day.<br>
+   <b>Realtor:</b> No problem. Talk soon!
+  </div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Comprehension Check · 1 of 2</div>
+  <div class="think">What does Julian usually do Monday to Saturday?</div>
+  <button class="btn go" data-next>Next question</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Comprehension Check · 2 of 2</div>
+  <div class="think">What is Julian doing at the moment?</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="homework">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Homework</div>
+  <div class="sent" style="text-align:left">1. Two-part voice note (60 seconds). Part 1: three sentences about every day ("Every day I… / I usually… / My helper…"). Part 2: three sentences about right now ("Right now I'm… / At the moment…"). Send it to Juan — next class opens by playing it back.</div>
+  <div class="sent" style="text-align:left">2. Catch log: once this week, notice a missing "a" ("I'm ___ painter") or an "I am + base verb" in your own English. Text Juan the sentence you said and the one you meant.</div>
+  <div class="sent" style="text-align:left; font-size:14px; opacity:.75">Gloss: usually = normalmente · every day = todos los días · at the moment = en este momento.</div>
+  <button class="btn go" data-next>Done for today</button>
+ </div></div>
+
+<div class="scr" data-t="close">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="big">Nice work today.</div>
+  <div class="es">See you at Class 8.</div>
+  <div class="credits">Teacher's Station · The Milestone Method</div>
+ </div></div>
+
+</div>
+
+</div>
+
 <script>
 function toggleMenu(){ document.getElementById('classMenu').classList.toggle('open'); }
 
@@ -2076,8 +2422,17 @@ function gcNav(btn, dir){
   scr.dataset.idx = Math.max(0, (+scr.dataset.idx || 0) + dir);
   gcRender(scr);
 }
+function verdictShow(btn){
+  var scr = btn.closest('.scr');
+  var on = function(k){ var i = scr.querySelector('[data-vkey="'+k+'"]'); return !!(i && i.checked); };
+  var out = scr.querySelector('[data-vout]');
+  out.innerHTML = (on(1) && on(2))
+    ? '<b>Check passed.</b> You kept "every day" and "right now" separate — and fast.'
+    : '<b>Not yet — and that's what a check is for.</b> We run it again next class, with your voice note as the warm-up.';
+  out.classList.add('show');
+}
 document.querySelectorAll('.scr[data-t="grammarcheck"]').forEach(gcRender);
-loadScreens(6);
+loadScreens(7);
 document.querySelector('[data-navback]').disabled = true;
 </script>
 </body></html>
