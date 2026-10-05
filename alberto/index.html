@@ -207,14 +207,15 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 <div id="classHeader">
   <span class="brand">TEACHER'S STATION</span>
-  <button id="classSelect" onclick="toggleMenu()">Class 29 ▾</button>
+  <button id="classSelect" onclick="toggleMenu()">Class 30 ▾</button>
 </div>
 <div id="classMenu">
   <div class="item" onclick="selectClass(25)">Class 25: Giving Advice <span>✓</span></div>
   <div class="item" onclick="selectClass(26)">Class 26: The New Hire From Hell — Rules + WHY <span>✓</span></div>
   <div class="item" onclick="selectClass(27)">Class 27: 🔎 CHECK — The Induction <span>✓</span></div>
   <div class="item" onclick="selectClass(28)">Class 28: Pitching Yourself for a Senior RA Role <span>✓</span></div>
-  <div class="item active" onclick="selectClass(29)">Class 29: How Long Has It Been? <span></span></div>
+  <div class="item" onclick="selectClass(29)">Class 29: How Long Has It Been? <span>✓</span></div>
+  <div class="item active" onclick="selectClass(30)">Class 30: Giving a Detailed Progress Report on a Clinical Trial <span></span></div>
 </div>
 
 <div id="bar"></div>
@@ -1952,6 +1953,392 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
  </div></div>
 </div>
 
+<!-- ================= CLASS 30 ================= -->
+<div class="classBlock" data-class="30">
+
+<div class="scr" data-t="open">
+ <div class="bg" data-img="photos/consultant_meeting.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="cue">Class 30</div>
+  <div class="big">Giving a detailed progress report on a clinical trial: choose the right tense based on time markers</div>
+  <div class="es" style="font-size:16px;line-height:1.5;color:rgba(244,238,246,.85)">By the end of this class, you can choose between "I finished" and "I've finished" by the time marker, and give a status update that uses both correctly.</div>
+  <button class="btn go" data-next>Begin</button>
+ </div></div>
+
+<div class="scr" data-t="meetfix">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Open With A Win</div>
+  <div class="cue">From your homework</div>
+  <div class="sent">Your 5 sentences with for and since.</div>
+  <div class="es">Play your voice note. Which sentence would you fix now? Then say one new one with I've.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="hearwhich" data-idx="0" data-score="0"
+ data-items='[
+  {"a":"audio/hw30_fin.mp3","o":["I finished","I&#39;ve finished"],"c":0,"s":"I finished the dossier."},
+  {"a":"audio/hw30_happ.mp3","o":["They approved","They&#39;ve approved"],"c":1,"s":"They&#39;ve approved it."},
+  {"a":"audio/hw30_wrk.mp3","o":["She worked","She&#39;s worked"],"c":0,"s":"She worked here."},
+  {"a":"audio/hw30_hsent.mp3","o":["We sent","We&#39;ve sent"],"c":1,"s":"We&#39;ve sent the report."},
+  {"a":"audio/hw30_hfin.mp3","o":["I finished","I&#39;ve finished"],"c":1,"s":"I&#39;ve finished the dossier."},
+  {"a":"audio/hw30_app.mp3","o":["They approved","They&#39;ve approved"],"c":0,"s":"They approved it."},
+  {"a":"audio/hw29_sworked.mp3","o":["She worked","She&#39;s worked"],"c":1,"s":"She&#39;s worked here."},
+  {"a":"audio/hw30_sent.mp3","o":["We sent","We&#39;ve sent"],"c":0,"s":"We sent the report."},
+  {"a":"audio/hw30_left.mp3","o":["He left","He&#39;s left"],"c":0,"s":"He left the lab."},
+  {"a":"audio/hw30_hleft.mp3","o":["He left","He&#39;s left"],"c":1,"s":"He&#39;s left the lab."}
+ ]'>
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Ear Sprint · Which Did You Hear?</div>
+  <button class="audio" onclick="hwPlay(this)">🔊</button>
+  <div class="es">Play it, then choose. Score out of 10 — your target is 7. Everything after this depends on it.</div>
+  <div class="row">
+   <button class="opt mid" data-hwopt onclick="hwPick(this,0)"></button>
+   <button class="opt mid" data-hwopt onclick="hwPick(this,1)"></button>
+  </div>
+  <div class="hwFb" data-hwfb></div>
+  <div class="dots" data-hwdots></div>
+  <div class="hwScore" data-hwscore></div>
+  <button class="btn" data-hwnext onclick="hwNext(this)" style="display:none">Next sound ›</button>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Warm-Up · 1 of 3</div>
+  <div class="think">Think about the movie scene you watched: which past-tense verbs did you find? For each one — is the time finished, or still open?</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Warm-Up · 2 of 3</div>
+  <div class="think">When you give your boss a status update, do you say when something happened, or that it's done? Why does that change the tense?</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Warm-Up · 3 of 3</div>
+  <div class="think">Something you've already done this week that you're glad about. One sentence.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="timeline" data-gstep="0">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge" data-gbadge>Finished Or Not · Past Simple</div>
+
+  <div class="gPart on" data-gpart data-badge="Finished Or Not · Past Simple">
+   <div class="tlWrap"><svg class="tlRun" viewBox="0 0 300 150" aria-hidden="true">
+    <line x1="16" y1="100" x2="278" y2="100" stroke="rgba(244,238,246,.3)" stroke-width="2"/>
+    <polygon points="278,95 288,100 278,105" fill="rgba(244,238,246,.3)"/>
+    <text x="16" y="128" class="tlLbl">PAST</text>
+    <line x1="250" y1="80" x2="250" y2="112" stroke="#FFBE00" stroke-width="2"/>
+    <text x="250" y="128" text-anchor="middle" class="tlLbl">NOW</text>
+    <rect class="psDash" x="70" y="72" width="90" height="56" rx="8" fill="none" stroke="rgba(244,238,246,.6)" stroke-dasharray="4 4"/>
+    <rect class="psSolid" x="70" y="72" width="90" height="56" rx="8" fill="rgba(255,190,0,.08)" stroke="#FFBE00" stroke-width="1.5"/>
+    <text class="tlGold psDate" x="115" y="62" text-anchor="middle">yesterday</text>
+    <g class="psDot"><circle cx="115" cy="100" r="7" fill="#FFBE00"/></g>
+    <text class="tlLbl psDone" x="115" y="145" text-anchor="middle">finished ✓</text>
+    <line class="psGap" x1="166" y1="100" x2="244" y2="100" stroke="#E8837B" stroke-width="2" stroke-dasharray="3 5"/>
+    <text class="tlRed psGap" x="205" y="88" text-anchor="middle">closed — not now</text>
+   </svg></div>
+   <div class="frameCard">
+    <div class="frameSentence">"I submitted it <b style="color:var(--go)">yesterday</b>."</div>
+    <div class="frameHint">A finished time word — yesterday, last week, in 2022 — means past simple.</div>
+   </div>
+   <button class="replayBtn" onclick="tlReplay(this)">↻ REPLAY</button>
+  </div>
+
+  <div class="gPart" data-gpart data-badge="Finished Or Not · Present Perfect">
+   <div class="tlWrap"><svg class="tlRun" viewBox="0 0 300 150" aria-hidden="true">
+    <line x1="16" y1="100" x2="278" y2="100" stroke="rgba(244,238,246,.3)" stroke-width="2"/>
+    <polygon points="278,95 288,100 278,105" fill="rgba(244,238,246,.3)"/>
+    <text x="16" y="128" class="tlLbl">PAST</text>
+    <line x1="250" y1="80" x2="250" y2="112" stroke="#FFBE00" stroke-width="2"/>
+    <text x="250" y="128" text-anchor="middle" class="tlLbl">NOW</text>
+    <path class="ppArc" d="M24 100 Q137 0 250 100" pathLength="100" fill="none" stroke="#FFBE00" stroke-width="2" stroke-dasharray="100" stroke-dashoffset="0"/>
+    <text class="tlGold ppLbl" x="137" y="38" text-anchor="middle">the status, up to now</text>
+    <g class="ppDot"><text x="110" y="86" text-anchor="middle" class="tlGold">?</text><circle cx="110" cy="100" r="7" fill="#F4EEF6"/></g>
+    <circle class="ppRing" cx="250" cy="100" r="10" fill="none" stroke="#FFBE00" stroke-width="2"/>
+    <text class="tlLbl ppWhen" x="104" y="145" text-anchor="middle">when? not named</text>
+    <text class="tlGold ppNow" x="296" y="145" text-anchor="end">✓ true now</text>
+   </svg></div>
+   <div class="frameCard">
+    <div class="frameSentence">"I<b style="color:var(--go)">'ve already</b> submitted it."</div>
+    <div class="frameHint">Already, yet, just, so far, ever — no finished date — means present perfect.</div>
+   </div>
+   <button class="replayBtn" onclick="tlReplay(this)">↻ REPLAY</button>
+  </div>
+
+  <div class="gPart" data-gpart data-badge="Finished Or Not · Side by Side">
+   <div class="cmpCard">
+    <div class="cmpHd">Past simple · a finished time</div>
+    <div class="cmpMk">yesterday · last week · in 2022 · three days ago</div>
+    <div class="cmpEx">I submitted it yesterday.</div>
+   </div>
+   <div class="cmpCard">
+    <div class="cmpHd">Present perfect · no finished time</div>
+    <div class="cmpMk">already · yet · just · so far · ever · this week</div>
+    <div class="cmpEx">I've already submitted it.</div>
+   </div>
+   <div class="frameCard">
+    <div class="frameHint">One question decides it:</div>
+    <div class="frameSentence">"Can I put a <b style="color:var(--go)">finished date</b> on it?"<br>Yes → past simple. No → present perfect.</div>
+   </div>
+  </div>
+
+  <div class="dots" data-gdots><div class="dot lit"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="row" style="max-width:300px">
+   <button class="opt mid" data-gprev onclick="gramNav(this,-1)" style="flex:0 0 60px" disabled>‹</button>
+   <button class="opt mid" data-gnext onclick="gramNav(this,1)" style="flex:1">Next ›</button>
+  </div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="grammar" data-gstep="0">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge" data-gbadge>Guided · The Shape</div>
+
+  <div class="gPart on" data-gpart data-badge="Guided · The Shape">
+   <div class="gSlots">
+    <div class="slotLbls">
+     <div class="slotLbl">time marker</div><div class="slotLbl">tense</div><div class="slotLbl">sentence</div>
+    </div>
+    <div class="slotRow">
+     <div class="slotChip" style="--i:0"><span class="w">yesterday</span></div><div class="slotChip" style="--i:1"><span class="w">past simple</span></div>
+     <div class="slotChip" style="--i:2"><span class="w">I submitted it.</span></div>
+    </div>
+    <div class="slotRow">
+     <div class="slotChip" style="--i:3"><span class="w">in 2021</span></div><div class="slotChip" style="--i:4"><span class="w">past simple</span></div>
+     <div class="slotChip" style="--i:5"><span class="w">The law changed.</span></div>
+    </div>
+    <div class="slotRow">
+     <div class="slotChip" style="--i:6"><span class="w">already</span></div><div class="slotChip" style="--i:7"><span class="w">present perfect</span></div>
+     <div class="slotChip" style="--i:8"><span class="w">I've submitted it.</span></div>
+    </div>
+   </div>
+   <button class="toggleBtn" onclick="slotBuild(this)">Build the sentences</button>
+   <div class="slotNote">The time word comes first. It tells you which tense to use.</div>
+  </div>
+
+  <div class="gPart" data-gpart data-badge="Guided · When You Use It">
+   <div class="useRow"><span class="useKey">finished</span><span class="useArrow">→</span>
+    <span class="useVal">yesterday, last week, in 2022, three days ago → <i>past simple</i></span></div>
+   <div class="useRow"><span class="useKey">not finished</span><span class="useArrow">→</span>
+    <span class="useVal">already, yet, just, so far, ever, this week → <i>present perfect</i></span></div>
+  </div>
+
+  <div class="gPart" data-gpart data-badge="Guided · The Trap">
+   <div class="trapItem">
+    <div class="trapWrong">I have submitted it yesterday.</div>
+    <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Say the fixed version, then tap</button>
+    <div class="keyBox"><b>I <span class="hl">submitted</span> it yesterday.</b> — a finished time word blocks <i>have</i>.</div>
+   </div>
+   <div class="trapItem">
+    <div class="trapWrong">I finish it already.</div>
+    <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Say the fixed version, then tap</button>
+    <div class="keyBox"><b>I've already <span class="hl">finished</span> it.</b> — already, yet and just go with have + participle.</div>
+   </div>
+  </div>
+
+  <div class="dots" data-gdots><div class="dot lit"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="row" style="max-width:300px">
+   <button class="opt mid" data-gprev onclick="gramNav(this,-1)" style="flex:0 0 60px" disabled>‹</button>
+   <button class="opt mid" data-gnext onclick="gramNav(this,1)" style="flex:1">Next ›</button>
+  </div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="grammarcheck" data-idx="0"
+ data-items='[
+  {"tag":"a finished time","q":"I ___ (send) the report yesterday.","a":"sent — I sent the report yesterday."},
+  {"tag":"not yet","q":"We ___ (not receive) the certificate yet.","a":"haven&#39;t received — We haven&#39;t received the certificate yet."},
+  {"tag":"fix the error","q":"She has approved it last Friday.","a":"She approved it last Friday."},
+  {"tag":"fix the error","q":"I finish it already.","a":"I&#39;ve already finished it."},
+  {"tag":"a finished time","q":"In 2021 the law ___ (change).","a":"changed — In 2021 the law changed."}
+ ]'>
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Guided · Check It</div>
+  <div class="gcTag" data-gctag></div>
+  <div class="gcQ" data-gcq>&nbsp;</div>
+  <button class="toggleBtn" onclick="gcReveal(this)">Say it out loud, then check</button>
+  <div class="keyBox" data-gckey></div>
+  <div class="dots" data-gcdots></div>
+  <div class="row" style="max-width:300px">
+   <button class="opt mid" data-gcprev onclick="gcNav(this,-1)" style="flex:0 0 60px" disabled>‹</button>
+   <button class="opt mid" data-gcnext onclick="gcNav(this,1)" style="flex:1">Next ›</button>
+  </div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="meetfix">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Meet Fix</div>
+  <div class="cue">Choose by the marker, not by feel</div>
+  <div class="sent">"I finished it" or "I have finished it"?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox"><b>Look for the time word.</b><br>"I finished it <b>yesterday</b>." · "I've <b>already</b> finished it."<br>A finished date → past simple. No date → have + participle.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="grammarcheck" data-idx="0"
+ data-items='[
+  {"tag":"last month","q":"submit → ___","a":"We submitted it last month."},
+  {"tag":"yet","q":"submit → ___","a":"We haven&#39;t submitted it yet."},
+  {"tag":"in 2020","q":"submit → ___","a":"We submitted it in 2020."},
+  {"tag":"so far","q":"submit → ___","a":"We&#39;ve submitted two dossiers so far."},
+  {"tag":"already","q":"submit → ___","a":"We&#39;ve already submitted it."},
+  {"tag":"three days ago","q":"submit → ___","a":"We submitted it three days ago."}
+ ]'>
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Marker Race</div>
+  <div class="gcTag" data-gctag></div>
+  <div class="gcQ" data-gcq>&nbsp;</div>
+  <button class="toggleBtn" onclick="gcReveal(this)">Say the full sentence, then check</button>
+  <div class="keyBox" data-gckey></div>
+  <div class="dots" data-gcdots></div>
+  <div class="row" style="max-width:300px">
+   <button class="opt mid" data-gcprev onclick="gcNav(this,-1)" style="flex:0 0 60px" disabled>‹</button>
+   <button class="opt mid" data-gcnext onclick="gcNav(this,1)" style="flex:1">Next ›</button>
+  </div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="1">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 1 of 3</div>
+  <div class="think">You just found out something surprising.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">As it turns out,…</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the CORE round</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="2">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 2 of 3</div>
+  <div class="think">A long explanation is getting too long. You want to cut it down.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">Long story short,…</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the CORE round</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="3">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 3 of 3</div>
+  <div class="think">You want to give the other side some credit.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">To be fair,…</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the CORE round</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="grammarcheck" data-idx="0"
+ data-items='[
+  {"tag":"finished or not? then say it","q":"The sample ___ (arrive) yesterday.","a":"arrived — finished time."},
+  {"tag":"finished or not? then say it","q":"We ___ (finish) the stability test already.","a":"have finished — already, no finished date."},
+  {"tag":"finished or not? then say it","q":"The agency ___ (not reply) yet.","a":"hasn&#39;t replied — yet, no finished date."},
+  {"tag":"finished or not? then say it","q":"In March we ___ (submit) the dossier.","a":"submitted — finished time."},
+  {"tag":"finished or not? then say it","q":"They ___ (approve) it last week.","a":"approved — finished time."},
+  {"tag":"finished or not? then say it","q":"We ___ (just / receive) the certificate.","a":"have just received — just, no finished date."},
+  {"tag":"finished or not? then say it","q":"Marta ___ (lead) three audits so far.","a":"has led — so far, no finished date."},
+  {"tag":"finished or not? then say it","q":"The law ___ (change) in 2021.","a":"changed — finished time."}
+ ]'>
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">CORE · Referee</div>
+  <div class="gcTag" data-gctag></div>
+  <div class="gcQ" data-gcq>&nbsp;</div>
+  <button class="toggleBtn" onclick="gcReveal(this)">Rule it, say the sentence, then check</button>
+  <div class="keyBox" data-gckey></div>
+  <div class="dots" data-gcdots></div>
+  <div class="row" style="max-width:300px">
+   <button class="opt mid" data-gcprev onclick="gcNav(this,-1)" style="flex:0 0 60px" disabled>‹</button>
+   <button class="opt mid" data-gcnext onclick="gcNav(this,1)" style="flex:1">Next ›</button>
+  </div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/cosmetics_lab.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">CORE · Fix The Boss's Email</div>
+  <div class="think">Your boss sent a progress email on a new product registration. It has five tense errors. Find them and fix them out loud.</div>
+  <button class="audio" data-audio="audio/em30_email.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="es">Listen first. Then say each fixed sentence, whole.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Show the email</button>
+  <div class="keyBox">"Hi Alberto — the dossier <b>has gone</b> to DIGEMID last Monday. They <b>didn't reply</b> yet. I <b>have spoken</b> to the supplier yesterday. We <b>already sent</b> the stability data. So far, nothing <b>went</b> wrong."</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Only open this when you've tried all five</button>
+  <div class="keyBox">has gone → <b>went</b> · didn't reply → <b>haven't replied</b> · have spoken → <b>spoke</b> · already sent → <b>have already sent</b> · went → <b>has gone</b></div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/boardroom.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">Final Challenge · The 60-Second Status Update</div>
+  <div class="think">Update your boss on a real registration or project: what's done, what's still open, and when it happened.</div>
+  <label class="forceUse"><input type="checkbox">3+ present perfect and 3+ past simple</label>
+  <label class="forceUse"><input type="checkbox">the marker matches the tense every time</label>
+  <div class="timerRing" data-seconds="60">
+   <svg width="104" height="104" viewBox="0 0 104 104">
+    <circle cx="52" cy="52" r="44" fill="none" stroke="rgba(244,238,246,.15)" stroke-width="6"/>
+    <circle class="timerArc" cx="52" cy="52" r="44" fill="none" stroke="#FFBE00" stroke-width="6"
+            stroke-linecap="round" stroke-dasharray="276.46" stroke-dashoffset="0"/>
+   </svg>
+   <div class="timerNum">60</div>
+  </div>
+  <button class="btn" onclick="timerStart(this)">Start 60s</button>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Only open this if you get stuck</button>
+  <div class="keyBox">"<b>Long story short</b>, we've submitted the dossier and the agency hasn't replied yet. We sent the stability data last Monday. <b>As it turns out</b>, one certificate was missing, so we've already requested it. <b>To be fair</b>, the supplier answered the same day."</div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/consultant_meeting.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">Real-Life Conversation · In The Corridor</div>
+  <div class="think">Your manager stops you in the corridor and asks where the registration stands. Tell them.</div>
+  <div class="es">Then answer: ① What has already been done, and what has not? ② Which time word tells you the sample arrival was finished?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Only open this if you get stuck</button>
+  <div class="keyBox"><i>"Where does the registration stand?"</i><br>"We've submitted the dossier, but the agency hasn't replied yet. We sent the stability data last Monday, and we've already requested the missing certificate."</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="homework">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Homework</div>
+  <div class="sent" style="text-align:left">1. Voice note (90s): your career story in the order it happened — mix "In 2018 I joined…" with "I've worked on… since…".</div>
+  <div class="sent" style="text-align:left">2. Ear: ten "I finished / I've finished" sentences read to you (or by an AI voice). Score yourself.</div>
+  <div class="sent" style="text-align:left">3. Log the 3 phrases.</div>
+  <div class="es">fecha terminada → pasado simple · sin fecha / ya / todavía → have + participio.</div>
+  <button class="btn go" data-next>Done for today</button>
+ </div></div>
+
+<div class="scr" data-t="close">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="big">Nice work today.</div>
+  <div class="es">See you next class.</div>
+  <div class="credits">Teacher's Station · The Milestone Method</div>
+ </div></div>
+</div>
+
 </div>
 
 <script>
@@ -2182,7 +2569,7 @@ function hwNext(btn){
   hwRender(scr);
 }
 document.querySelectorAll('.scr[data-t="hearwhich"]').forEach(hwRender);
-loadScreens(29);
+loadScreens(30);
 document.querySelector('[data-navback]').disabled = true;
 </script>
 </body></html>
