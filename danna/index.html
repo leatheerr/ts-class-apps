@@ -179,6 +179,51 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 .scr[data-t="reading"] .stack{padding-top:12px}
 .rd{width:100%;font-family:'Lora',serif;font-size:17px;line-height:1.9;color:rgba(244,238,246,.92);text-align:left}
 .sl{color:var(--go);font-weight:700;font-style:normal;padding:0 1px}
+/* ======================= NEW CSS — GRAMMAR BOX ======================= */
+/* Part stepper (shape → when → trap), one part visible at a time */
+.gPart{display:none;width:100%;flex-direction:column;align-items:center;gap:14px}
+.gPart.on{display:flex}
+
+/* Part 1 — the shape: slots the sentence drops into */
+.gSlots{width:100%;display:flex;flex-direction:column;gap:9px}
+.slotLbls,.slotRow{display:flex;gap:6px;width:100%}
+.slotLbl{flex:1;font-family:'Poppins',system-ui,sans-serif;font-size:9px;letter-spacing:.07em;
+ text-transform:uppercase;color:rgba(255,190,0,.72);text-align:center;font-weight:600}
+/* empty slot first — the student sees the shape before any word exists */
+.slotChip{flex:1;display:flex;align-items:center;justify-content:center;text-align:center;
+ min-height:44px;background:transparent;border:1px dashed rgba(244,238,246,.2);
+ border-radius:10px;padding:11px 3px;font-family:'Poppins',system-ui,sans-serif;font-size:14.5px;
+ font-weight:600;color:var(--ink);transition:background .3s ease,border-color .3s ease}
+.slotChip .w{opacity:0}
+.gSlots.built .slotChip{background:rgba(255,190,0,.10);border-style:solid;border-color:rgba(255,190,0,.38)}
+.gSlots.built .slotChip .w{animation:slotIn .34s cubic-bezier(.2,.7,.3,1) both;
+ animation-delay:calc(var(--i,0) * 90ms)}
+@keyframes slotIn{from{opacity:0;transform:translateY(12px) scale(.93)}to{opacity:1;transform:none}}
+.slotNote{font-size:13px;color:rgba(244,238,246,.55);font-style:italic;text-align:center;line-height:1.45}
+@media (prefers-reduced-motion:reduce){.gSlots.built .slotChip .w{animation:none;opacity:1}}
+
+/* Part 2 — when you use it: one situation per row, never a rule */
+.useRow{display:flex;align-items:center;gap:10px;width:100%;background:rgba(255,255,255,.045);
+ border:1px solid rgba(244,238,246,.09);border-radius:12px;padding:12px 14px}
+.useKey{font-family:'Poppins',system-ui,sans-serif;font-weight:600;color:var(--go);font-size:15.5px;white-space:nowrap}
+.useArrow{color:rgba(244,238,246,.3);flex:none}
+.useVal{font-size:14.5px;color:rgba(244,238,246,.86);line-height:1.4}
+
+/* Part 3 — the trap: their own fossil, wrong first, fixed on tap */
+.trapItem{width:100%;display:flex;flex-direction:column;gap:9px}
+.trapWrong{width:100%;text-align:center;font-family:'Poppins',system-ui,sans-serif;font-size:18px;
+ font-weight:600;color:rgba(255,132,132,.92);text-decoration:line-through;
+ text-decoration-color:rgba(255,132,132,.8);text-decoration-thickness:2px}
+.hl{color:var(--go);border-bottom:2px solid var(--go)}
+
+/* Part 4 — the check items (data-t="grammarcheck") */
+.gcTag{font-size:13px;letter-spacing:.5px;color:rgba(244,238,246,.55);font-style:italic;text-align:center}
+.gcQ{font-family:'Poppins',system-ui,sans-serif;font-size:22px;font-weight:600;text-align:center;line-height:1.45}
+.gcQ .blank{min-width:66px;height:26px;vertical-align:-2px}
+.gcQ .cursor{height:18px}
+/* ===================== END NEW CSS — GRAMMAR BOX ===================== */
+
+
 @media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;scroll-behavior:auto!important}}
 </style>
 </head>
@@ -187,14 +232,15 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 <div id="classHeader">
   <span class="brand">TEACHER'S STATION</span>
-  <button id="classSelect" onclick="toggleMenu()">Class 4 ▾</button>
+  <button id="classSelect" onclick="toggleMenu()">Class 5 ▾</button>
 </div>
 <div id="classMenu">
   <div class="item" onclick="selectClass(1)">Class 1: Customer calls — open a call without freezing <span>✓</span></div>
   <div class="item" onclick="selectClass(2)">Class 2: Gate codes & tracking numbers <span>✓</span></div>
   <div class="item" onclick="selectClass(3)">Class 3: Eating out &mdash; order without avoiding it <span>&#10003;</span></div>
   <div class="item" onclick="selectClass(3.5)">Class 3.5: Tricky words &mdash; tough, though, through <span>&#10003;</span></div>
-  <div class="item active" onclick="selectClass(4)">Class 4: Reading 1 &mdash; A day on the route <span>&#10003;</span></div>
+  <div class="item" onclick="selectClass(4)">Class 4: Reading 1 &mdash; A day on the route <span>&#10003;</span></div>
+  <div class="item active" onclick="selectClass(5)">Class 5: Reporting your shift &mdash; tell it in the past <span>&#10003;</span></div>
 </div>
 
 <div id="bar"></div>
@@ -1571,6 +1617,396 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 </div>
 
+<div class="classBlock" data-class="5">
+
+<div class="scr" data-t="open">
+ <div class="bg" data-img="photos/open5.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="cue">Class 5 · Danna</div>
+  <div class="big">Reporting your shift: tell your dispatcher what you did today</div>
+  <div class="es" style="font-size:16px;line-height:1.55">By the end of this class, you can tell someone who wasn't there what you did today &mdash; in the past, with the <b>-ed</b> on every verb.</div>
+  <button class="btn go" data-next>Start</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Critical Thinking · 1 of 3</div>
+  <div class="think">You said route difficulty depends on the algorithm and the dispatchers. If you could change <i>one thing</i> about how routes are made, what would it be &mdash; and why?</div>
+  <button class="btn go" data-next>Answered out loud — next</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Critical Thinking · 2 of 3</div>
+  <div class="think">Think of one moment at work this week that was <b>out of the ordinary</b>. What happened?</div>
+  <button class="btn go" data-next>Answered out loud — next</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Critical Thinking · 3 of 3</div>
+  <div class="think">You told me you want to work at a call center one day. What would make you feel proud of your English <b>six months from now</b>?</div>
+  <button class="btn go" data-next>Answered out loud — next</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="stack">
+  <div class="badge">Quick Re-check · Gate Codes</div>
+  <div class="cue">Look away from the screen. Each one plays once.</div>
+  <div class="row"><button class="opt mid" data-audio="audio/c5_d5206.mp3" onclick="playAudio(this)">Code 1 🔊</button><button class="opt mid" data-audio="audio/c5_d3814.mp3" onclick="playAudio(this)">Code 2 🔊</button></div>
+  <div class="row"><button class="opt mid" data-audio="audio/c5_d7091.mp3" onclick="playAudio(this)">Code 3 🔊</button></div>
+  <div class="es">Say each one back grouped, with a beat &mdash; not one long word. No "say that again."</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Check yourself</button>
+  <div class="keyBox">Code 1: <b>5 — 2 — 0 — 6</b> ("five, two, oh, six")<br>Code 2: <b>3 — 8 — 1 — 4</b><br>Code 3: <b>7 — 0 — 9 — 1</b> ("seven, oh, nine, one")</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="stack">
+  <div class="badge">Quick Re-check · How Do You Want It?</div>
+  <div class="think">Answer with a real word, the first time &mdash; no "whatever".<br><br>1. It's your birthday dinner at a steakhouse. The server asks: <i>"How do you want it?"</i><br><br>2. Burger place. Same question.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Show the words</button>
+  <div class="keyBox"><b>rare · medium rare · medium · medium well · well done</b><br>"I'll have it <b>well done</b>, please." / "Could I get it <b>medium</b>?"</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Vocabulary · Shift Report Words</div>
+  <div class="es">Tap, listen, say it twice. Then use each one in a sentence about <i>yesterday</i>.</div>
+  <div class="row"><button class="opt mid" data-audio="audio/c5_delivered.mp3" onclick="playAudio(this)">delivered 🔊</button><button class="opt mid" data-audio="audio/c5_scanned.mp3" onclick="playAudio(this)">scanned 🔊</button></div>
+  <div class="row"><button class="opt mid" data-audio="audio/c5_loaded.mp3" onclick="playAudio(this)">loaded 🔊</button><button class="opt mid" data-audio="audio/c5_returned.mp3" onclick="playAudio(this)">returned 🔊</button></div>
+  <div class="row"><button class="opt mid" data-audio="audio/c5_rescheduled.mp3" onclick="playAudio(this)">rescheduled 🔊</button></div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="stack">
+  <div class="badge">Race It · English In, English Out</div>
+  <div class="think" style="font-size:19px">Say the verb or phrase for each situation, as fast as you can:<br><br>1. The customer wasn't home, so you took the box back to the van.<br>2. Your dispatcher moved a delivery to tomorrow.<br>3. You finished the whole route.<br>4. You're behind schedule.<br>5. You leave the box at the door.<br>6. You stop at a customer's place for one minute.<br>7. You go to the station to get the boxes.<br>8. You start leaving the station.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Check yourself</button>
+  <div class="keyBox">1. <b>returned</b><br>2. <b>rescheduled</b><br>3. <b>wrapped up / finished the route</b><br>4. <b>run late</b><br>5. <b>drop off</b><br>6. <b>swing by</b><br>7. <b>pick up</b><br>8. <b>head out</b></div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Vocabulary · Two New Ones</div>
+  <div class="es">A <b>collocation</b> and a <b>phrasal verb</b> &mdash; tap, listen, say it with a real sentence.</div>
+  <div class="row"><button class="opt mid" data-audio="audio/c5_finishroute.mp3" onclick="playAudio(this)">finish a route 🔊</button><button class="opt mid" data-audio="audio/c5_knockout.mp3" onclick="playAudio(this)">knock out 🔊</button></div>
+  <div class="sent" style="font-size:17px">"I <b>finished my route</b> at two."<br>"I <b>knocked out</b> 160 packages." <span style="color:rgba(244,238,246,.6)">(= finished them fast)</span></div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="1">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 1 of 3</div>
+  <button class="audio" data-audio="audio/c5_endedup.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="think">You planned one thing, but it changed &mdash; and you finished in a different place than you meant to. What do you say?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Show the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">"I ended up + -ing"</div><br><i>"I ended up leaving it at the door."</i> The plan changed &mdash; this is how it finished.</div>
+  <label class="forceUse"><input type="checkbox"> I used this in the CORE round</label>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="2">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 2 of 3</div>
+  <button class="audio" data-audio="audio/c5_longstory.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="think">Your story is getting long, and the other person is waiting for the result. What do you say to jump to the end?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Show the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">"Long story short, …"</div><br>You say it <i>before</i> the result: "Long story short, I ended up redoing half of wave two."</div>
+  <label class="forceUse"><input type="checkbox"> I used this in the CORE round</label>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="3">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 3 of 3</div>
+  <button class="audio" data-audio="audio/c5_headache.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="think">A task was stressful and annoying &mdash; a locked gate, a wrong address, nowhere to park. How do you describe it?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Show the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">"It was a headache."</div><br>It's for something <i>annoying</i>, not something dangerous or sad.</div>
+  <label class="forceUse"><input type="checkbox"> I used this in the CORE round</label>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Catch It · Does It Fit?</div>
+  <div class="think">Does the phrase belong there? If not, say why.<br><br>1. "I won $100 yesterday. <b>It was a headache!</b>"<br>2. "<b>Long story short</b>, my route was easy."<br>3. "The gate was locked, so <b>I ended up</b> calling the customer."</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Check yourself</button>
+  <div class="keyBox">1. <b>No</b> &mdash; winning money isn't annoying.<br>2. <b>No</b> &mdash; "long story short" comes before a <i>long</i> story. An easy route has no story.<br>3. <b>Yes</b> &mdash; the plan changed, and this is how it finished.</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="meetfix">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Fix It · Yesterday or Today?</div>
+  <div class="trapWrong" style="font-size:20px;line-height:1.4">"I deliver like 180 packages."</div>
+  <div class="think">This is about <b>yesterday</b>. Listen to your own sentence &mdash; did it happen yesterday or today? Say it again, fixed.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Check yourself</button>
+  <div class="keyBox">"I deliver<b>ed</b> like 180 packages."</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="grammar" data-gstep="0">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge" data-gbadge>Guided · The Shape</div>
+
+  <div class="gPart on" data-gpart data-badge="Guided · The Shape">
+   <div class="gSlots">
+    <div class="slotLbls">
+     <div class="slotLbl">time word</div><div class="slotLbl">who</div>
+     <div class="slotLbl">verb + -ed</div><div class="slotLbl">the rest</div>
+    </div>
+    <div class="slotRow">
+     <div class="slotChip" style="--i:0"><span class="w">Yesterday</span></div><div class="slotChip" style="--i:1"><span class="w">I</span></div>
+     <div class="slotChip" style="--i:2"><span class="w">delivered</span></div><div class="slotChip" style="--i:3"><span class="w">180 packages.</span></div>
+    </div>
+    <div class="slotRow">
+     <div class="slotChip" style="--i:4"><span class="w">This morning</span></div><div class="slotChip" style="--i:5"><span class="w">I</span></div>
+     <div class="slotChip" style="--i:6"><span class="w">scanned</span></div><div class="slotChip" style="--i:7"><span class="w">every label.</span></div>
+    </div>
+    <div class="slotRow">
+     <div class="slotChip" style="--i:8"><span class="w">Last week</span></div><div class="slotChip" style="--i:9"><span class="w">a customer</span></div>
+     <div class="slotChip" style="--i:10"><span class="w">rescheduled</span></div><div class="slotChip" style="--i:11"><span class="w">his delivery.</span></div>
+    </div>
+   </div>
+   <button class="toggleBtn" onclick="slotBuild(this)">Build the sentences</button>
+   <div class="slotNote">Same four slots every time. Only the words change.</div>
+  </div>
+
+  <div class="gPart" data-gpart data-badge="Guided · When You Use It">
+   <div class="useRow"><span class="useKey">finished</span><span class="useArrow">→</span>
+    <span class="useVal">the thing is <b>done</b>, and you say <b>when</b>: <i>yesterday · this morning · an hour ago · last week</i></span></div>
+   <div class="useRow"><span class="useKey">the story</span><span class="useArrow">→</span>
+    <span class="useVal">shift reports and stories &mdash; what you did, in order.</span></div>
+   <div class="useRow"><span class="useKey">same verb</span><span class="useArrow">→</span>
+    <span class="useVal">for <b>I / he / they</b>. Only the sound at the end changes.</span></div>
+  </div>
+
+  <div class="gPart" data-gpart data-badge="Guided · The Trap">
+   <div class="trapItem">
+    <div class="trapWrong">Yesterday I deliver 180 packages.</div>
+    <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Say the fixed version, then tap</button>
+    <div class="keyBox"><b>Yesterday I deliver<span class="hl">ed</span> 180 packages.</b> The time word isn't enough &mdash; the <i>verb itself</i> has to say "finished."</div>
+   </div>
+   <div class="trapItem">
+    <div class="trapWrong">This morning I scan every label.</div>
+    <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Say the fixed version, then tap</button>
+    <div class="keyBox"><b>This morning I scann<span class="hl">ed</span> every label.</b> <i>Worked</i> sounds like "workt" &mdash; a tiny sound, but it's the whole message.</div>
+   </div>
+  </div>
+
+  <div class="dots" data-gdots><div class="dot lit"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="row" style="max-width:300px">
+   <button class="opt mid" data-gprev onclick="gramNav(this,-1)" style="flex:0 0 60px" disabled>&#8249;</button>
+   <button class="opt mid" data-gnext onclick="gramNav(this,1)" style="flex:1">Next &#8250;</button>
+  </div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="grammarcheck" data-idx="0"
+ data-items='[
+  {"tag":"yesterday","q":"Yesterday I (start) ___ at 4:45 AM.","a":"Yesterday I started at 4:45 AM."},
+  {"tag":"this morning","q":"This morning I (scan) ___ every label.","a":"This morning I scanned every label."},
+  {"tag":"last week","q":"A customer (reschedule) ___ his delivery for Friday.","a":"A customer rescheduled his delivery for Friday."},
+  {"tag":"today","q":"I (finish) ___ my route at two.","a":"I finished my route at two."},
+  {"tag":"fix the error","q":"Last night I watch a movie with subtitles.","a":"Last night I watched a movie with subtitles."},
+  {"tag":"fix the error","q":"The dispatcher call me twice this morning.","a":"The dispatcher called me twice this morning."}
+ ]'>
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Guided · Check It</div>
+  <div class="gcTag" data-gctag>yesterday</div>
+  <div class="gcQ" data-gcq>&nbsp;</div>
+  <button class="toggleBtn" onclick="gcReveal(this)">Say it out loud, then check</button>
+  <div class="keyBox" data-gckey></div>
+  <div class="dots" data-gcdots></div>
+  <div class="row" style="max-width:300px">
+   <button class="opt mid" data-gcprev onclick="gcNav(this,-1)" style="flex:0 0 60px" disabled>&#8249;</button>
+   <button class="opt mid" data-gcnext onclick="gcNav(this,1)" style="flex:1">Next &#8250;</button>
+  </div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="stack">
+  <div class="badge">Pronunciation · The Three -ed Sounds</div>
+  <div class="es">The ending is small &mdash; but it tells your dispatcher the thing is <b>finished</b>. Tap, listen, say it twice.</div>
+  <div class="cue">/t/ &nbsp;after a hard sound</div>
+  <div class="row"><button class="opt mid" data-audio="audio/c5_ed_worked.mp3" onclick="playAudio(this)">worked 🔊</button><button class="opt mid" data-audio="audio/c5_ed_finished.mp3" onclick="playAudio(this)">finished 🔊</button></div>
+  <div class="cue">/d/ &nbsp;after a voiced sound</div>
+  <div class="row"><button class="opt mid" data-audio="audio/c5_ed_delivered.mp3" onclick="playAudio(this)">delivered 🔊</button><button class="opt mid" data-audio="audio/c5_ed_called.mp3" onclick="playAudio(this)">called 🔊</button></div>
+  <div class="cue">/ɪd/ &nbsp;after t or d</div>
+  <div class="row"><button class="opt mid" data-audio="audio/c5_ed_loaded.mp3" onclick="playAudio(this)">loaded 🔊</button><button class="opt mid" data-audio="audio/c5_ed_started.mp3" onclick="playAudio(this)">started 🔊</button></div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="stack">
+  <div class="badge">Pronunciation · Connect It</div>
+  <div class="es">Like "grabsa bite" in Class 4 &mdash; the <b>-ed</b> links to the next word. Tap, listen, say it twice, connected.</div>
+  <div class="row"><button class="opt mid" data-audio="audio/c5_cs_finished.mp3" onclick="playAudio(this)">I finished a route 🔊</button></div>
+  <div class="row"><button class="opt mid" data-audio="audio/c5_cs_loaded.mp3" onclick="playAudio(this)">I loaded it 🔊</button></div>
+  <div class="word" style="font-size:20px">"finishta route" · "loadedit"</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="stack">
+  <div class="badge">Hear It · Did It Already Happen?</div>
+  <div class="cue">Each one plays once. Answer: <b>happened</b> or <b>habit</b>.</div>
+  <div class="row"><button class="opt mid" data-audio="audio/c5_h1.mp3" onclick="playAudio(this)">1 🔊</button><button class="opt mid" data-audio="audio/c5_h2.mp3" onclick="playAudio(this)">2 🔊</button><button class="opt mid" data-audio="audio/c5_h3.mp3" onclick="playAudio(this)">3 🔊</button><button class="opt mid" data-audio="audio/c5_h4.mp3" onclick="playAudio(this)">4 🔊</button></div>
+  <div class="row"><button class="opt mid" data-audio="audio/c5_h5.mp3" onclick="playAudio(this)">5 🔊</button><button class="opt mid" data-audio="audio/c5_h6.mp3" onclick="playAudio(this)">6 🔊</button><button class="opt mid" data-audio="audio/c5_h7.mp3" onclick="playAudio(this)">7 🔊</button><button class="opt mid" data-audio="audio/c5_h8.mp3" onclick="playAudio(this)">8 🔊</button></div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Check yourself</button>
+  <div class="keyBox">1 <b>happened</b> (picked up) · 2 <b>habit</b> (pick up)<br>3 <b>happened</b> (loaded) · 4 <b>habit</b> (load)<br>5 <b>happened</b> (called) · 6 <b>habit</b> (calls)<br>7 <b>happened</b> (finished) · 8 <b>habit</b> (finish)</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/core5.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">CORE · Stage 1 — Guided</div>
+  <div class="cue">Build your day, five sentences</div>
+  <div class="think">Think of your real day yesterday: <b>4:45 start → loading → first stop → one problem → finish</b>. Say five sentences about it, in the past.</div>
+  <div class="es">Word bank: <b>started · loaded · headed out · scanned · called · waited · delivered · returned · finished</b></div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Hear a model day — only after you try</button>
+  <div class="keyBox">
+   <button class="audio" data-audio="audio/c5_model.mp3" onclick="playAudio(this)" style="width:64px;height:64px;font-size:24px;margin:0 auto 10px">🔊</button>
+   <i>Carlos's day:</i> Yesterday I <b>started</b> at 4:45 and <b>loaded</b> wave two. I <b>headed out</b> at six. At the first complex the gate was locked, so I <b>called</b> the customer and <b>waited</b> ten minutes. It turns out the code was 5206, and the app had the wrong one. I <b>ended up</b> finishing the route at three instead of one. <b>Long story short</b>, it was a headache, but I <b>knocked out</b> 160 packages.
+  </div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/core5.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">CORE · Take 1 — On Your Own</div>
+  <div class="cue">Recorded &middot; no help</div>
+  <div class="think">Tell your day, 90 seconds, no stopping. Use the checklist &mdash; nothing else.</div>
+  <div class="es" style="font-size:14px"><b>6+ verbs with -ed</b> · <b>3 Phrase Bank phrases</b> · <b>3 chunks</b> (drop off · swing by · run late · wrap up · head out · pick up) · <b>one gate code</b> · <b>it turns out</b></div>
+  <div class="timerRing" data-seconds="90">
+   <svg width="96" height="96" viewBox="0 0 96 96">
+    <circle cx="48" cy="48" r="44" fill="none" stroke="rgba(244,238,246,.15)" stroke-width="6"></circle>
+    <circle class="timerArc" cx="48" cy="48" r="44" fill="none" stroke="#FFBE00" stroke-width="6"
+      stroke-linecap="round" stroke-dasharray="276.46" stroke-dashoffset="0" transform="rotate(-90 48 48)"></circle>
+   </svg>
+   <span class="timerNum">90</span>
+  </div>
+  <button class="btn go" onclick="timerStart(this)">Start 90s</button>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">CORE · Play It Back</div>
+  <div class="think">Listen to your recording. Mark <b>your own</b> -ed drops &mdash; before anyone tells you.</div>
+  <div class="es">Watch the quiet endings: <b>worked · finished · picked · knocked</b>. How many did you catch?</div>
+  <button class="btn go" data-next>Done — next</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/open5.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">CORE · Take 2 — New Listener</div>
+  <div class="cue">Marcus wasn't on your route</div>
+  <button class="audio" data-audio="audio/c5_marcus1.mp3" onclick="playAudio(this)" style="width:84px;height:84px;font-size:34px">🔊</button>
+  <div class="think">Same story, new listener, <b>shorter clock</b>. All three Phrase Bank phrases this time: <b>I ended up…</b> · <b>Long story short…</b> · <b>It was a headache.</b></div>
+  <div class="timerRing" data-seconds="60">
+   <svg width="96" height="96" viewBox="0 0 96 96">
+    <circle cx="48" cy="48" r="44" fill="none" stroke="rgba(244,238,246,.15)" stroke-width="6"></circle>
+    <circle class="timerArc" cx="48" cy="48" r="44" fill="none" stroke="#FFBE00" stroke-width="6"
+      stroke-linecap="round" stroke-dasharray="276.46" stroke-dashoffset="0" transform="rotate(-90 48 48)"></circle>
+   </svg>
+   <span class="timerNum">60</span>
+  </div>
+  <button class="btn go" onclick="timerStart(this)">Start 60s</button>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/core5.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">The Real Thing — Answer Key</div>
+  <div class="think">Marcus checks you out at the end of your shift. Build your own side first &mdash; open this only after.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Show the model</button>
+  <div class="keyBox">
+   <b>Marcus:</b> Hey Danna, how'd the route go today?<br>
+   <b>You:</b> Long story short, it was a headache. I started at 4:45 and loaded wave two, but the gate at the first complex was locked.<br>
+   <b>Marcus:</b> Oh no. What did you do?<br>
+   <b>You:</b> I called the customer and waited ten minutes. It turns out the code in the app was wrong.<br>
+   <b>Marcus:</b> So you ran late?<br>
+   <b>You:</b> Yeah, I ended up finishing at three, but I knocked out all 160 packages. Heads up, one customer rescheduled for Friday, so I returned that box to the station.<br>
+   <b>Marcus:</b> That's ten hours. No wonder you sound tired.<br>
+   <b>You:</b> Same old, same old!
+  </div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Check Yourself · 1 of 2</div>
+  <div class="think">In the model, why did Danna run late?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Check yourself</button>
+  <div class="keyBox">The gate was locked and the code in the app was wrong, so she <b>called</b> the customer and <b>waited</b> ten minutes.</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Check Yourself · 2 of 2</div>
+  <div class="think">What happened to the customer who rescheduled?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Check yourself</button>
+  <div class="keyBox">He <b>rescheduled</b> for Friday, so she <b>returned</b> the box to the station.</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="spiral">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Fast Fire · Shuffled</div>
+  <div class="think" style="font-size:19px">One sentence each. They're mixed up on purpose &mdash; no order to lean on:<br><br>Something happened that you didn't expect.<br>Nothing is new &mdash; it's the usual.<br>Something isn't surprising at all.<br>Something happens every single day.<br>You're warning a coworker about something.<br>You're behind schedule.<br>You leave a box at the door.<br>You stop by a customer's place for a minute.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Check yourself</button>
+  <div class="keyBox"><b>it turns out</b> · <b>same old, same old</b> · <b>no wonder</b> · <b>on a daily basis</b> · <b>heads up</b> · <b>run late</b> · <b>drop off</b> · <b>swing by</b></div>
+  <button class="btn go" data-next>Done</button>
+ </div></div>
+
+<div class="scr" data-t="homework">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Homework</div>
+  <div class="sent" style="text-align:left;font-size:17px">1. <b>Voice note, 45 seconds</b> to your own WhatsApp: tell me <i>yesterday's route</i> in the past. Use <b>ended up</b> and <b>long story short</b>.</div>
+  <div class="sent" style="text-align:left;font-size:17px">2. <b>By hand, autocorrect off.</b> Write the 3 Phrase Bank phrases once each.</div>
+  <div class="es" style="font-size:15px">Next class opens with: <i>"Tell me one thing that went wrong yesterday."</i> This voice note is your first draft.</div>
+  <button class="btn go" data-next>Done for today</button>
+ </div></div>
+
+<div class="scr" data-t="close">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="big">You just told your whole day &mdash; in the past.</div>
+  <div class="es">Send the voice note. See you at Class 6.</div>
+  <div class="credits">Teacher's Station · The Milestone Method</div>
+ </div></div>
+
+</div>
+
 </div>
 <script>
 function toggleMenu(){ document.getElementById('classMenu').classList.toggle('open'); }
@@ -1637,6 +2073,67 @@ function timerStart(startBtn){
     }
   }, 1000);
 }
+/* part 1 — drop the words into their slots, one at a time */
+function slotBuild(btn){
+  var slots = btn.closest('.gPart').querySelector('.gSlots');
+  slots.classList.add('built');
+  btn.style.display = 'none';
+}
+
+/* stepper across the parts of one grammar screen */
+function gramNav(btn, dir){
+  var scr   = btn.closest('.scr');
+  var parts = [].slice.call(scr.querySelectorAll('[data-gpart]'));
+  var i     = Math.min(parts.length - 1, Math.max(0, (+scr.dataset.gstep || 0) + dir));
+  scr.dataset.gstep = i;
+  parts.forEach(function(p, n){ p.classList.toggle('on', n === i); });
+  scr.querySelector('[data-gbadge]').textContent = parts[i].dataset.badge || '';
+  var dots = scr.querySelector('[data-gdots]');
+  if (dots) [].slice.call(dots.children).forEach(function(d, n){ d.classList.toggle('lit', n === i); });
+  scr.querySelector('[data-gprev]').disabled = (i === 0);
+  var next = scr.querySelector('[data-gnext]');
+  var last = (i === parts.length - 1);
+  next.disabled = last;
+  if (last) scr.querySelector('[data-next]').style.display = '';
+}
+
+/* reveal one check item's answer */
+function gcReveal(btn){
+  btn.closest('.stack').querySelector('[data-gckey]').classList.add('show');
+}
+
+/* render + move through the check items */
+function gcRender(scr){
+  var items = JSON.parse(scr.dataset.items || '[]');
+  var i = Math.min(items.length - 1, Math.max(0, +scr.dataset.idx || 0));
+  var it = items[i] || {};
+  scr.querySelector('[data-gctag]').textContent = it.tag || '';
+  scr.querySelector('[data-gcq]').innerHTML = String(it.q || '').replace(
+    /_{2,}/g, '<span class="blank"><span class="cursor"></span></span>');
+  var key = scr.querySelector('[data-gckey]');
+  key.innerHTML = '<b>' + (it.a || '') + '</b>';
+  key.classList.remove('show');
+  var dots = scr.querySelector('[data-gcdots]');
+  if (dots && dots.children.length !== items.length){
+    dots.innerHTML = items.map(function(){ return '<div class="dot"></div>'; }).join('');
+  }
+  if (dots) [].slice.call(dots.children).forEach(function(d, n){ d.classList.toggle('lit', n === i); });
+  scr.querySelector('[data-gcprev]').disabled = (i === 0);
+  var next = scr.querySelector('[data-gcnext]');
+  var last = (i === items.length - 1);
+  next.disabled = last;
+  next.textContent = last ? 'Done' : 'Next ›';
+  if (last) scr.querySelector('[data-next]').style.display = '';
+}
+function gcNav(btn, dir){
+  var scr = btn.closest('.scr');
+  scr.dataset.idx = Math.max(0, (+scr.dataset.idx || 0) + dir);
+  gcRender(scr);
+}
+/* call once on load for every grammarcheck screen in the file */
+
+
+
 function playAudio(btn){
   const src = btn.getAttribute('data-audio');
   if(!src){ return; }
@@ -1684,7 +2181,8 @@ document.querySelectorAll('.bg[data-img]').forEach(el=>{
   const visualParent = el.closest('.visual');
   if(visualParent){ visualParent.setAttribute('data-img-src', src); }
 });
-loadScreens(4);
+document.querySelectorAll('.scr[data-t="grammarcheck"]').forEach(gcRender);
+loadScreens(5);
 </script>
 </body>
 </html>
