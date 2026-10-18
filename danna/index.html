@@ -232,7 +232,7 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 <div id="classHeader">
   <span class="brand">TEACHER'S STATION</span>
-  <button id="classSelect" onclick="toggleMenu()">Class 5 ▾</button>
+  <button id="classSelect" onclick="toggleMenu()">Class 6 ▾</button>
 </div>
 <div id="classMenu">
   <div class="item" onclick="selectClass(1)">Class 1: Customer calls — open a call without freezing <span>✓</span></div>
@@ -240,7 +240,8 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
   <div class="item" onclick="selectClass(3)">Class 3: Eating out &mdash; order without avoiding it <span>&#10003;</span></div>
   <div class="item" onclick="selectClass(3.5)">Class 3.5: Tricky words &mdash; tough, though, through <span>&#10003;</span></div>
   <div class="item" onclick="selectClass(4)">Class 4: Reading 1 &mdash; A day on the route <span>&#10003;</span></div>
-  <div class="item active" onclick="selectClass(5)">Class 5: Reporting your shift &mdash; tell it in the past <span>&#10003;</span></div>
+  <div class="item" onclick="selectClass(5)">Class 5: Reporting your shift &mdash; tell it in the past <span>&#10003;</span></div>
+  <div class="item active" onclick="selectClass(6)">Class 6: When it went wrong &mdash; report a problem in the past</div>
 </div>
 
 <div id="bar"></div>
@@ -2007,6 +2008,399 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 </div>
 
+<div class="classBlock" data-class="6" data-mech="wheel,flip,boss,timer">
+
+<div class="scr" data-t="open">
+ <div class="bg" data-img="photos/open6.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="cue">Class 6 · Danna</div>
+  <div class="big">When it went wrong: report a delivery problem in the past</div>
+  <div class="es" style="font-size:16px;line-height:1.55">By the end of this class, you can explain a delivery problem that already happened &mdash; what went wrong, what you <b>didn't</b> do &mdash; and ask the right questions to find out what happened, like a call-centre agent.</div>
+  <button class="btn go" data-next>Start</button>
+ </div></div>
+
+<div class="scr" data-t="wheel">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Spin &amp; Speak · Warm-up</div>
+  <div class="wheelWrap" data-items='[{"k":"⚖️","p":"Think of a time something went wrong on your route. Was it your fault, the customer’s, or the system’s? How do you decide?"},{"k":"🎧","p":"Call-centre agents hear angry people all day. What is harder: staying calm, or understanding what really happened? Why?"},{"k":"⏪","p":"If you could go back to one day at Amazon and do it differently, which day, and what would you change?"},{"k":"🤔","p":"Tell me about something at work that didn’t add up. What happened?"}]'>
+   <div class="wheelPointer"></div>
+   <svg class="wheelSvg" viewBox="-100 -100 200 200"></svg>
+   <div class="wheelHub"></div>
+  </div>
+  <div class="wheelCard"><div class="think" data-wprompt></div><div class="es">Answer out loud &mdash; at least 3 sentences, in the past.</div></div>
+  <button class="btn go" onclick="wheelSpin(this)">Spin</button>
+  <button class="btn" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="stack">
+  <div class="badge">Call-Centre Test · Numbers</div>
+  <div class="cue">Call centres test this in interviews. Each one plays once.</div>
+  <div class="row"><button class="opt mid" data-audio="audio/c6_d8306.mp3" onclick="playAudio(this)">Order # 🔊</button><button class="opt mid" data-audio="audio/c6_d4170.mp3" onclick="playAudio(this)">Callback 🔊</button></div>
+  <div class="row"><button class="opt mid" data-audio="audio/c6_d1215.mp3" onclick="playAudio(this)">Apartment 🔊</button></div>
+  <div class="es">Read each one back grouped, with a beat. No "say that again."</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Check yourself</button>
+  <div class="keyBox">Order: <b>8 — 3 — 0 — 6</b> ("eighty-three, oh-six")<br>Callback: <b>4 — 1 — 7 — 0</b><br>Apartment: <b>1 — 2 — 1 — 5</b> ("twelve, fifteen")</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Vocabulary · Irregular Past</div>
+  <div class="es">These don't take <b>-ed</b> &mdash; they change. Tap, listen, say the sentence twice.</div>
+  <div class="row"><button class="opt mid" data-audio="audio/c6_drove.mp3" onclick="playAudio(this)">drive → drove 🔊</button><button class="opt mid" data-audio="audio/c6_left.mp3" onclick="playAudio(this)">leave → left 🔊</button></div>
+  <div class="row"><button class="opt mid" data-audio="audio/c6_found.mp3" onclick="playAudio(this)">find → found 🔊</button><button class="opt mid" data-audio="audio/c6_took.mp3" onclick="playAudio(this)">take → took 🔊</button></div>
+  <div class="row"><button class="opt mid" data-audio="audio/c6_got.mp3" onclick="playAudio(this)">get → got 🔊</button><button class="opt mid" data-audio="audio/c6_forgot.mp3" onclick="playAudio(this)">forget → forgot 🔊</button></div>
+  <div class="row"><button class="opt mid" data-audio="audio/c6_lost.mp3" onclick="playAudio(this)">lose → lost 🔊</button><button class="opt mid" data-audio="audio/c6_broke.mp3" onclick="playAudio(this)">break → broke 🔊</button></div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="stack">
+  <div class="badge">Race It · English In, English Out</div>
+  <div class="think" style="font-size:19px">Say a full sentence about <b>yesterday</b>, as fast as you can:<br><br>1. drive &rarr; your route<br>2. leave &rarr; the box<br>3. find &rarr; the address<br>4. take &rarr; a picture<br>5. get &rarr; damaged<br>6. forget &rarr; the code<br>7. go · come · see · say · tell &mdash; one sentence each, fast</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Check yourself</button>
+  <div class="keyBox">1. I <b>drove</b> 90 miles.<br>2. I <b>left</b> it with a neighbor.<br>3. I <b>found</b> it. / I <b>couldn't find</b> it.<br>4. I <b>took</b> a picture.<br>5. It <b>got</b> damaged.<br>6. I <b>forgot</b> the code.<br>7. <b>went · came · saw · said · told</b></div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Vocabulary · When It Goes Wrong</div>
+  <div class="es">Four chunks for every problem report. Tap, listen, say each one twice.</div>
+  <div class="row"><button class="opt mid" data-audio="audio/c6_nothome.mp3" onclick="playAudio(this)">The customer wasn't home 🔊</button></div>
+  <div class="row"><button class="opt mid" data-audio="audio/c6_wrongaddr.mp3" onclick="playAudio(this)">The address was wrong 🔊</button></div>
+  <div class="row"><button class="opt mid" data-audio="audio/c6_damaged.mp3" onclick="playAudio(this)">It got damaged 🔊</button><button class="opt mid" data-audio="audio/c6_couldntfind.mp3" onclick="playAudio(this)">I couldn't find it 🔊</button></div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Vocabulary · Three New Ones</div>
+  <div class="es">A <b>phrasal verb</b>, a <b>collocation</b>, and one from last class &mdash; tap, listen, use each in a real sentence.</div>
+  <div class="row"><button class="opt mid" data-audio="audio/c6_messup.mp3" onclick="playAudio(this)">mess up 🔊</button><button class="opt mid" data-audio="audio/c6_claim.mp3" onclick="playAudio(this)">file a claim 🔊</button></div>
+  <div class="row"><button class="opt mid" data-audio="audio/c6_addup.mp3" onclick="playAudio(this)">it doesn't add up 🔊</button></div>
+  <div class="sent" style="font-size:17px">"I <b>messed up</b> the address." / "The app <b>messed it up</b>." <span style="color:rgba(244,238,246,.6)">(pronoun in the middle, like <i>pick it up</i>)</span><br>"I'm <b>filing a claim</b> for the broken box."</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="1">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 1 of 3</div>
+  <button class="audio" data-audio="audio/c6_mybad.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="think">A small mistake was <b>yours</b>, and you want to own it fast and casually &mdash; with a coworker, not an angry customer. What do you say?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Show the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">"My bad."</div><br>Short, friendly, and you take the blame. For coworkers and friends &mdash; too casual for a customer.</div>
+  <label class="forceUse"><input type="checkbox"> I used this in the CORE round</label>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="2">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 2 of 3</div>
+  <button class="audio" data-audio="audio/c6_slipped.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="think">You <b>forgot</b> to do something, and you want it to sound human &mdash; not careless. What do you say?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Show the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">"It slipped my mind."</div><br><i>"I was supposed to call her, but it slipped my mind."</i> The thing slid out of your head &mdash; not on purpose.</div>
+  <label class="forceUse"><input type="checkbox"> I used this in the CORE round</label>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="3">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 3 of 3</div>
+  <button class="audio" data-audio="audio/c6_tobefair.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="think">Someone is about to get blamed, and you want to give <b>the other side</b> of the story first. How do you start?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Show the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">"To be fair, …"</div><br><i>"To be fair, the app didn't show the number."</i> You're being fair to someone &mdash; even yourself.</div>
+  <label class="forceUse"><input type="checkbox"> I used this in the CORE round</label>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="flip">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Mystery Cards · Fire The Phrase</div>
+  <div class="flipCount"></div>
+  <div class="flipGrid" data-items='[{"k":"?","p":"You forgot to call the customer before you left. Tell your coworker what happened."},{"k":"?","p":"Your coworker blames the new driver, but the app had the wrong gate code. Defend him."},{"k":"?","p":"You scanned the wrong box and your dispatcher points it out. Own it, casually."},{"k":"?","p":"An angry customer says the box is lost. Which phrase do you <b>not</b> use here, and what do you say instead?"}]'></div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Catch It · Does It Fit?</div>
+  <div class="think">Does the phrase belong there? If not, say why.<br><br>1. To an angry customer: "Your laptop is lost? <b>My bad!</b>"<br>2. "<b>To be fair</b>, it was all my fault."<br>3. "I was supposed to bring the scanner back, but <b>it slipped my mind</b>."</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Check yourself</button>
+  <div class="keyBox">1. <b>No</b> &mdash; too casual for a customer. Try: "I'm really sorry about that."<br>2. <b>No</b> &mdash; "to be fair" gives the <i>other</i> side, not more blame.<br>3. <b>Yes</b> &mdash; you forgot, and it sounds human.</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="meetfix">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Fix It · Now or Before?</div>
+  <div class="trapWrong" style="font-size:20px;line-height:1.4">"Once time I drive to the state to state."</div>
+  <div class="think">Did it happen now, or before? And how many times? Say it again &mdash; there are <b>two</b> fixes.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Check yourself</button>
+  <div class="keyBox">"<b>One time</b> I <b>drove</b> from state to state."</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="grammar" data-gstep="0">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge" data-gbadge>Guided · The Shape</div>
+
+  <div class="gPart on" data-gpart data-badge="Guided · The Shape">
+   <div class="gSlots">
+    <div class="slotLbls">
+     <div class="slotLbl">who / ?</div><div class="slotLbl">did · didn't</div>
+     <div class="slotLbl">verb</div><div class="slotLbl">the rest</div>
+    </div>
+    <div class="slotRow">
+     <div class="slotChip" style="--i:0"><span class="w">I</span></div><div class="slotChip" style="--i:1"><span class="w">—</span></div>
+     <div class="slotChip" style="--i:2"><span class="w">left</span></div><div class="slotChip" style="--i:3"><span class="w">it at the door.</span></div>
+    </div>
+    <div class="slotRow">
+     <div class="slotChip" style="--i:4"><span class="w">The customer</span></div><div class="slotChip" style="--i:5"><span class="w">didn't</span></div>
+     <div class="slotChip" style="--i:6"><span class="w">answer</span></div><div class="slotChip" style="--i:7"><span class="w">the phone.</span></div>
+    </div>
+    <div class="slotRow">
+     <div class="slotChip" style="--i:8"><span class="w">Where</span></div><div class="slotChip" style="--i:9"><span class="w">did you</span></div>
+     <div class="slotChip" style="--i:10"><span class="w">leave</span></div><div class="slotChip" style="--i:11"><span class="w">it?</span></div>
+    </div>
+   </div>
+   <button class="toggleBtn" onclick="slotBuild(this)">Build the sentences</button>
+   <div class="slotNote">When <b>did</b> is there, the verb goes back to its base form.</div>
+  </div>
+
+  <div class="gPart" data-gpart data-badge="Guided · When You Use It">
+   <div class="useRow"><span class="useKey">✅ it happened</span><span class="useArrow">→</span>
+    <span class="useVal">the <b>past</b> verb: <i>left · drove · got · found</i>. Irregulars you learn as pieces.</span></div>
+   <div class="useRow"><span class="useKey">❌ it didn't</span><span class="useArrow">→</span>
+    <span class="useVal"><b>didn't</b> + base verb: <i>I didn't find it.</i></span></div>
+   <div class="useRow"><span class="useKey">❓ you ask</span><span class="useArrow">→</span>
+    <span class="useVal"><b>What / Where / When / Why did</b> + you + base verb: <i>When did it arrive?</i></span></div>
+  </div>
+
+  <div class="gPart" data-gpart data-badge="Guided · The Trap">
+   <div class="trapItem">
+    <div class="trapWrong">I didn't left it at the door.</div>
+    <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Say the fixed version, then tap</button>
+    <div class="keyBox"><b>I didn't <span class="hl">leave</span> it at the door.</b> One past per sentence &mdash; <i>didn't</i> already carries it.</div>
+   </div>
+   <div class="trapItem">
+    <div class="trapWrong">Where did you left the package?</div>
+    <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Say the fixed version, then tap</button>
+    <div class="keyBox"><b>Where did you <span class="hl">leave</span> the package?</b> <i>Did</i> is the past. The verb stays simple.</div>
+   </div>
+  </div>
+
+  <div class="dots" data-gdots><div class="dot lit"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="row" style="max-width:300px">
+   <button class="opt mid" data-gprev onclick="gramNav(this,-1)" style="flex:0 0 60px" disabled>&#8249;</button>
+   <button class="opt mid" data-gnext onclick="gramNav(this,1)" style="flex:1">Next &#8250;</button>
+  </div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="grammarcheck" data-idx="0"
+ data-items='[
+  {"tag":"yesterday","q":"Yesterday I (drive) ___ 90 miles.","a":"Yesterday I drove 90 miles."},
+  {"tag":"it didn’t happen","q":"The customer (not / be) ___ home.","a":"The customer wasn’t home."},
+  {"tag":"it didn’t happen","q":"I (not / find) ___ the gate code.","a":"I didn’t find the gate code."},
+  {"tag":"you ask","q":"___ you (take) ___ a picture of the box?","a":"Did you take a picture of the box?"},
+  {"tag":"fix the error","q":"Where did you left the package?","a":"Where did you leave the package?"},
+  {"tag":"fix the error","q":"I didn’t knew the address was wrong.","a":"I didn’t know the address was wrong."}
+ ]'>
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Guided · Check It</div>
+  <div class="gcTag" data-gctag>yesterday</div>
+  <div class="gcQ" data-gcq>&nbsp;</div>
+  <button class="toggleBtn" onclick="gcReveal(this)">Say it out loud, then check</button>
+  <div class="keyBox" data-gckey></div>
+  <div class="dots" data-gcdots></div>
+  <div class="row" style="max-width:300px">
+   <button class="opt mid" data-gcprev onclick="gcNav(this,-1)" style="flex:0 0 60px" disabled>&#8249;</button>
+   <button class="opt mid" data-gcnext onclick="gcNav(this,1)" style="flex:1">Next &#8250;</button>
+  </div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="stack">
+  <div class="badge">Pronunciation · Nobody Says It Slowly</div>
+  <div class="es">In fast English, <b>did you</b> melts together. Tap, listen, say it twice &mdash; connected.</div>
+  <div class="row"><button class="opt mid" data-audio="audio/c6_didyou.mp3" onclick="playAudio(this)">Did you leave it? 🔊</button></div>
+  <div class="row"><button class="opt mid" data-audio="audio/c6_whatdid.mp3" onclick="playAudio(this)">What did you see? 🔊</button></div>
+  <div class="row"><button class="opt mid" data-audio="audio/c6_didnt.mp3" onclick="playAudio(this)">I didn't find it. 🔊</button></div>
+  <div class="word" style="font-size:20px">"dijou leave it?" · "whadijou see?" · "I di'n find it."</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="stack">
+  <div class="badge">Hear It · Done, or Still Open?</div>
+  <div class="cue">Each one plays once. Answer: <b>done</b> or <b>still open</b>.</div>
+  <div class="row"><button class="opt mid" data-audio="audio/c6_h1.mp3" onclick="playAudio(this)">1 🔊</button><button class="opt mid" data-audio="audio/c6_h2.mp3" onclick="playAudio(this)">2 🔊</button><button class="opt mid" data-audio="audio/c6_h3.mp3" onclick="playAudio(this)">3 🔊</button></div>
+  <div class="row"><button class="opt mid" data-audio="audio/c6_h4.mp3" onclick="playAudio(this)">4 🔊</button><button class="opt mid" data-audio="audio/c6_h5.mp3" onclick="playAudio(this)">5 🔊</button><button class="opt mid" data-audio="audio/c6_h6.mp3" onclick="playAudio(this)">6 🔊</button></div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Check yourself</button>
+  <div class="keyBox">1 <b>done</b> (we found it) · 2 <b>still open</b> (still looking)<br>3 <b>done</b> (left it with a neighbor) · 4 <b>still open</b> (I'll call)<br>5 <b>done</b> (went through yesterday) · 6 <b>still open</b> (filing a claim)</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/open6.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">CORE · Round 1 — The Audit</div>
+  <div class="cue">The supervisor calls you in</div>
+  <button class="audio" data-audio="audio/c6_super.mp3" onclick="playAudio(this)" style="width:84px;height:84px;font-size:34px">🔊</button>
+  <div class="think">Package <b>#8306</b> never arrived, but the app says <i>delivered</i>. Answer every question in the past. Something <b>doesn't add up</b> &mdash; explain it.</div>
+  <div class="es">Word bank: <b>left · took · drove · didn't call · couldn't find · the address was wrong · messed up</b></div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/core6.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">CORE · Round 2 — Switch Seats</div>
+  <div class="cue">Now YOU are the call-centre agent</div>
+  <button class="audio" data-audio="audio/c6_cust1.mp3" onclick="playAudio(this)" style="width:84px;height:84px;font-size:34px">🔊</button>
+  <div class="think">The customer's package arrived <b>damaged</b>. You run the call: open politely, ask <b>3 questions with did</b>, read back the order number, close with a next step.</div>
+  <div class="es" style="font-size:14px">Checklist: <b>6+ irregular verbs</b> · <b>2+ didn't</b> · <b>3+ did-questions</b> · <b>my bad · it slipped my mind · to be fair</b> · <b>mess up</b> · <b>one order number</b></div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">CORE · Play It Back</div>
+  <div class="think">Listen to your recording. Mark <b>your own</b> past-tense mistakes &mdash; before anyone tells you.</div>
+  <div class="es">Watch for the double past: <b>didn't went</b> · <b>did you left</b>. How many did you catch?</div>
+  <button class="btn go" data-next>Done — next</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/core6.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">CORE · Round 3 — On Your Own</div>
+  <div class="cue">New customer &middot; no help</div>
+  <button class="audio" data-audio="audio/c6_cust2.mp3" onclick="playAudio(this)" style="width:84px;height:84px;font-size:34px">🔊</button>
+  <div class="think">A <b>wrong-address</b> complaint. 90 seconds. Find out what happened and tell them the next step.</div>
+  <div class="timerRing" data-seconds="90">
+   <svg width="96" height="96" viewBox="0 0 96 96">
+    <circle cx="48" cy="48" r="44" fill="none" stroke="rgba(244,238,246,.15)" stroke-width="6"></circle>
+    <circle class="timerArc" cx="48" cy="48" r="44" fill="none" stroke="#FFBE00" stroke-width="6"
+      stroke-linecap="round" stroke-dasharray="276.46" stroke-dashoffset="0" transform="rotate(-90 48 48)"></circle>
+   </svg>
+   <span class="timerNum">90</span>
+  </div>
+  <button class="btn go" onclick="timerStart(this)">Start 90s</button>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/core6.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">The Agent Call — Answer Key</div>
+  <div class="think">Open this only after you've done your own call.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Show the model</button>
+  <div class="keyBox" style="text-align:left">
+   <b>You:</b> Thanks for calling, this is Danna. How can I help?<br>
+   <b>Customer:</b> My package came in pieces. This is ridiculous.<br>
+   <b>You:</b> I'm sorry about that. Can I get your order number? &hellip; So that's eight-three, oh-six?<br>
+   <b>Customer:</b> Yes.<br>
+   <b>You:</b> Thank you. When <b>did</b> it arrive? And <b>did</b> you take a picture of the box?<br>
+   <b>Customer:</b> Yesterday afternoon. Yes, I took two.<br>
+   <b>You:</b> Great. <b>Did</b> the driver leave it at the door, or <b>did</b> someone sign for it?<br>
+   <b>Customer:</b> He left it at the door. It rained all day.<br>
+   <b>You:</b> To be fair, the rain didn't help. It looks like something got messed up at the station. I'm filing a claim now, and I'll get back to you within 24 hours.
+  </div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/open6.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">The Real Thing — Answer Key</div>
+  <div class="think">End of shift. Marcus asks why the supervisor called you in. Tell him first &mdash; open this only after.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Show the model</button>
+  <div class="keyBox" style="text-align:left">
+   <b>Marcus:</b> Hey, why did the supervisor call you in?<br>
+   <b>You:</b> Long story short, a customer said her package never arrived. The app said delivered.<br>
+   <b>Marcus:</b> Did you leave it at the wrong house?<br>
+   <b>You:</b> No! I left it at the door and took a picture. It turns out the customer gave the wrong address &mdash; she moved last month.<br>
+   <b>Marcus:</b> No wonder it didn't add up.<br>
+   <b>You:</b> Right? But to be fair, I didn't call her before I left. My bad &mdash; it slipped my mind.<br>
+   <b>Marcus:</b> Happens to everyone. Same old, same old.
+  </div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Check Yourself · 1 of 2</div>
+  <div class="think">In the model, why didn't the customer get her package?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Check yourself</button>
+  <div class="keyBox">She <b>gave</b> the wrong address &mdash; she <b>moved</b> last month.</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Check Yourself · 2 of 2</div>
+  <div class="think">What did Danna admit she <b>didn't</b> do?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Check yourself</button>
+  <div class="keyBox">She <b>didn't call</b> the customer before she <b>left</b>.</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="boss">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="bossWrap" data-lives="3" data-items='["Say it in the past, no stopping: yesterday I (drive) 90 miles, (leave) the box with a neighbor, and (forget) the gate code.","Fix it out loud: “Where did you left the package?”","Fix it out loud: “I didn’t knew the address was wrong.”","Be the agent: ask me 3 questions with did about a lost package.","Own a small mistake to a coworker. Use my bad or it slipped my mind.","Someone is getting blamed. Give the other side, starting with To be fair, …"]'>
+   <div class="bossTop"><span class="bossName">⚔ Boss Round</span><span class="bossLives"></span></div>
+   <div class="bossBar"><i></i></div>
+   <div class="bossCard"><div class="think" data-bprompt></div></div>
+   <div class="row"><button class="btn" onclick="bossHit(this,false)">Not yet</button><button class="btn go" onclick="bossHit(this,true)">Nailed it</button></div>
+   <button class="btn bossRetry" style="display:none" onclick="bossRetry(this)">Run it again</button>
+   <div class="bossMsg"></div>
+  </div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="homework">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Homework</div>
+  <div class="sent" style="text-align:left;font-size:17px">1. <b>Voice note, 60 seconds</b> to your own WhatsApp. Be the call-centre agent: ask an imaginary customer <b>3 questions with "did"</b> about a lost package, then explain what happened, in the past.</div>
+  <div class="sent" style="text-align:left;font-size:17px">2. Use <b>my bad</b> or <b>it slipped my mind</b> once.</div>
+  <div class="es" style="font-size:15px">One 20-minute focus block, notifications off. Next class opens with <i>"What did you do this weekend?"</i> &mdash; your did-questions become the questions you ask me back.</div>
+  <button class="btn go" data-next>Done for today</button>
+ </div></div>
+
+<div class="scr" data-t="close">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="big">You just ran the call from the agent's seat.</div>
+  <div class="es">Send the voice note. See you at Class 7.</div>
+  <div class="credits">Teacher's Station · The Milestone Method</div>
+ </div></div>
+
+</div>
+
+
 </div>
 <script>
 function toggleMenu(){ document.getElementById('classMenu').classList.toggle('open'); }
@@ -2182,7 +2576,328 @@ document.querySelectorAll('.bg[data-img]').forEach(el=>{
   if(visualParent){ visualParent.setAttribute('data-img-src', src); }
 });
 document.querySelectorAll('.scr[data-t="grammarcheck"]').forEach(gcRender);
-loadScreens(5);
+loadScreens(6);
 </script>
+<!-- DELIGHT:SHELL:START — motion layer v1 (ts-class-app). Additive: wraps show(), touches no class content. Safe to retrofit into any live student file. -->
+<style id="delight-shell">
+/* 1 · screen enter: staggered rise, direction-aware */
+@keyframes dIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes dInBack{from{opacity:0;transform:translateY(-16px)}to{opacity:1;transform:none}}
+.scr.on>.stack>:is(.badge,.cue,.think,.word,.sent,.big,.es,.btn,.opt,.row,.frameCard,.pbPhrase,.toggleBtn,.dots,.credits,.forceUse,.choices,.scramble,.expLine,.trackRow,.dJourney){
+ animation:dIn .44s cubic-bezier(.2,.7,.3,1) backwards}
+#appRoot[data-dir="back"] .scr.on>.stack>:is(.badge,.cue,.think,.word,.sent,.big,.es,.btn,.opt,.row,.frameCard,.pbPhrase,.toggleBtn,.dots,.credits,.forceUse,.choices,.scramble,.expLine,.trackRow,.dJourney){animation-name:dInBack}
+.scr.on>.stack>:nth-child(2){animation-delay:.06s}
+.scr.on>.stack>:nth-child(3){animation-delay:.12s}
+.scr.on>.stack>:nth-child(4){animation-delay:.18s}
+.scr.on>.stack>:nth-child(5){animation-delay:.24s}
+.scr.on>.stack>:nth-child(6){animation-delay:.30s}
+.scr.on>.stack>:nth-child(n+7){animation-delay:.36s}
+/* 2 · photo screens breathe (slow Ken Burns settle) */
+@keyframes dKb{from{transform:scale(1.09)}to{transform:scale(1)}}
+.scr.on .bg{animation:dKb 14s cubic-bezier(.2,.6,.3,1) backwards}
+/* 3 · text-only screens get an ambient gold glow drifting behind — never behind the text block itself */
+.plain{overflow:hidden}
+.plain::after{content:"";position:absolute;width:300px;height:300px;left:50%;top:6%;margin-left:-150px;border-radius:50%;
+ background:radial-gradient(circle,rgba(255,190,0,.13),rgba(255,190,0,0) 66%);animation:dOrb 12s ease-in-out infinite alternate}
+@keyframes dOrb{from{transform:translate(-46px,0) scale(.9)}to{transform:translate(46px,34px) scale(1.18)}}
+/* 4 · reveals pop instead of blinking in */
+@keyframes dPop{from{opacity:0;transform:scale(.95) translateY(6px)}to{opacity:1;transform:none}}
+.keyBox.show,.show:not(.expLine){animation:dPop .34s cubic-bezier(.2,.8,.3,1.15)}
+.choice.sel{animation:dPop .25s ease}
+/* 5 · progress bar gets a glowing tip */
+#bar::after{content:"";position:absolute;right:-4px;top:-3px;width:10px;height:10px;border-radius:50%;
+ background:var(--go);box-shadow:0 0 12px 3px rgba(255,190,0,.65)}
+/* 6 · right / wrong feedback */
+@keyframes dShake{0%,100%{transform:none}20%{transform:translateX(-8px)}40%{transform:translateX(7px)}60%{transform:translateX(-5px)}80%{transform:translateX(3px)}}
+@keyframes dGlow{0%{box-shadow:0 0 0 0 rgba(255,190,0,.0)}35%{box-shadow:0 0 0 6px rgba(255,190,0,.35)}100%{box-shadow:0 0 0 0 rgba(255,190,0,0)}}
+.dShake{animation:dShake .42s ease}
+.dWin{animation:dGlow .8s ease;border-radius:12px}
+/* 7 · confetti + class-complete journey (close screen) */
+.dConf{position:absolute;width:8px;height:12px;border-radius:2px;pointer-events:none;z-index:90;top:0;left:0}
+.dJourney{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;max-width:320px}
+.dJourney .jc{min-width:34px;height:34px;padding:0 8px;border-radius:17px;display:grid;place-items:center;
+ font:600 12px 'Poppins',system-ui,sans-serif;background:rgba(244,238,246,.08);color:rgba(244,238,246,.45)}
+.dJourney .jc.done{background:rgba(255,190,0,.18);color:var(--go)}
+.dJourney .jc.now{background:var(--go);color:#2D0130;animation:dStamp .6s cubic-bezier(.2,.8,.3,1.3) .3s backwards}
+@keyframes dStamp{from{transform:scale(2.2) rotate(-12deg);opacity:0}to{transform:none;opacity:1}}
+.dJourneyNote{font:600 12px 'Poppins',system-ui,sans-serif;letter-spacing:1px;text-transform:uppercase;color:rgba(244,238,246,.55)}
+@media (prefers-reduced-motion:reduce){
+ .scr.on>.stack>*,.scr.on .bg,.plain::after,.keyBox.show,.show,.choice.sel,.dShake,.dWin,.dJourney .jc.now{animation:none!important}}
+</style>
+<script id="delight-shell-js">
+(function(){
+  const root = document.getElementById('appRoot') || document.body;
+  const reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const KEY = 'ts-journey:' + location.pathname;
+  function getDone(){ try { return JSON.parse(localStorage.getItem(KEY)) || []; } catch(e){ return []; } }
+  function setDone(a){ try { localStorage.setItem(KEY, JSON.stringify(a)); } catch(e){} }
+
+  // Confetti burst from an element (or the frame centre). Brand colours only.
+  window.dBurst = function(anchor, n){
+    if (reduce) return;
+    const r = root.getBoundingClientRect();
+    const a = (anchor || root).getBoundingClientRect();
+    const cx = a.left + a.width/2 - r.left, cy = a.top + a.height/2 - r.top;
+    const cols = ['#FFBE00','#FFD966','#F4EEF6','#B54BC2','#FFBE00'];
+    for (let k = 0; k < (n || 46); k++){
+      const el = document.createElement('i');
+      el.className = 'dConf';
+      el.style.background = cols[k % cols.length];
+      root.appendChild(el);
+      const ang = Math.random()*Math.PI*2, sp = 90 + Math.random()*170;
+      const dx = Math.cos(ang)*sp, dy = Math.sin(ang)*sp - 120, rot = (Math.random()*2-1)*540;
+      el.animate([
+        {transform:`translate(${cx}px,${cy}px) rotate(0)`, opacity:1},
+        {transform:`translate(${cx+dx*.7}px,${cy+dy*.7}px) rotate(${rot*.6}deg)`, opacity:1, offset:.45},
+        {transform:`translate(${cx+dx}px,${cy+dy+260}px) rotate(${rot}deg)`, opacity:0}
+      ], {duration: 1100 + Math.random()*700, easing:'cubic-bezier(.25,.6,.45,1)'}).onfinish = () => el.remove();
+    }
+  };
+  window.dFeedback = function(el, ok){
+    if (!el) return;
+    const c = ok ? 'dWin' : 'dShake';
+    el.classList.remove('dWin','dShake'); void el.offsetWidth; el.classList.add(c);
+    if (ok) dBurst(el, 22);
+  };
+
+  const menuDone = new Set();   // classes the menu already marks ✓ (taught) count as done
+  function classList(){
+    return [...document.querySelectorAll('#classMenu .item')].map(it => {
+      const m = (it.getAttribute('onclick') || '').match(/selectClass\(\s*['"]?([^'")]+)/);
+      if (m && /✓/.test(it.textContent)) menuDone.add(m[1]);
+      return m ? m[1] : null;
+    }).filter(Boolean);
+  }
+  function onClose(scr){
+    const n = String(typeof currentClass !== 'undefined' ? currentClass : '');
+    const done = getDone();
+    if (n && !done.includes(n)) { done.push(n); setDone(done); }
+    const stack = scr.querySelector('.stack');
+    stack.querySelectorAll('.dJourney,.dJourneyNote').forEach(e => e.remove());
+    const all = classList();
+    menuDone.forEach(c => { if (!done.includes(c)) done.push(c); });
+    if (all.length){
+      const note = document.createElement('div');
+      note.className = 'dJourneyNote';
+      note.textContent = 'Your journey · ' + all.filter(c => done.includes(c)).length + ' of ' + all.length + ' classes';
+      const row = document.createElement('div');
+      row.className = 'dJourney';
+      all.forEach(c => {
+        const s = document.createElement('span');
+        s.className = 'jc' + (done.includes(c) ? ' done' : '') + (c === n ? ' now' : '');
+        s.textContent = (c === n || done.includes(c)) ? '✓ ' + c.toUpperCase() : c.toUpperCase();
+        row.appendChild(s);
+      });
+      const credits = stack.querySelector('.credits');
+      stack.insertBefore(note, credits); stack.insertBefore(row, credits);
+    }
+    setTimeout(() => dBurst(stack.querySelector('.big') || stack, 60), 250);
+  }
+
+  const _show = window.show;
+  if (typeof _show === 'function'){
+    window.show = function(i){
+      root.dataset.dir = (typeof idx !== 'undefined' && i < idx) ? 'back' : 'fwd';
+      _show(i);
+      const s = (typeof screens !== 'undefined') ? screens[i] : null;
+      if (s && s.dataset.t === 'close') onClose(s);
+    };
+  }
+  // Right/wrong feedback on the existing scramble pattern, without editing it.
+  if (typeof window.scrambleCheck === 'function'){
+    const _sc = window.scrambleCheck;
+    window.scrambleCheck = function(btn){
+      _sc(btn);
+      const wrap = btn.closest('.scramble');
+      const ok = wrap.querySelector('.scrambleNext') && wrap.querySelector('.scrambleNext').style.display === 'block';
+      dFeedback(wrap.querySelector('.scrambleBuilt'), ok);
+    };
+  }
+})();
+</script>
+<!-- DELIGHT:SHELL:END -->
+
+<!-- DELIGHT:MECH:START — game mechanics v1 (ts-class-app): wheel · flip · boss. Every mechanic ends in the student SPEAKING. Data-driven, no unique IDs, each resolves its own .scr. -->
+<style id="delight-mech">
+/* ── Spin & Speak (data-t="wheel") ── */
+.wheelWrap{position:relative;width:230px;height:230px;flex:none}
+.wheelSvg{width:100%;height:100%;display:block;transition:transform 3.4s cubic-bezier(.12,.72,.14,1);
+ filter:drop-shadow(0 10px 28px rgba(0,0,0,.55))}
+.wheelSvg path{stroke:#FFBE00;stroke-width:1.2;transition:opacity .4s}
+.wheelSvg path.used{opacity:.28}
+.wheelSvg text{font:600 15px 'Poppins',system-ui,sans-serif;fill:#F4EEF6;text-anchor:middle;dominant-baseline:central;pointer-events:none}
+.wheelHub{position:absolute;left:50%;top:50%;width:40px;height:40px;margin:-20px 0 0 -20px;border-radius:50%;
+ background:var(--go);box-shadow:0 0 0 4px #2D0130,0 0 18px rgba(255,190,0,.6)}
+.wheelPointer{position:absolute;left:50%;top:-10px;margin-left:-12px;width:0;height:0;z-index:2;
+ border-left:12px solid transparent;border-right:12px solid transparent;border-top:22px solid var(--go);
+ filter:drop-shadow(0 2px 4px rgba(0,0,0,.5))}
+.wheelWrap.spinning .wheelPointer{animation:dTick .12s linear infinite}
+@keyframes dTick{50%{transform:rotate(-14deg)}}
+.wheelCard{width:100%;min-height:96px;background:rgba(255,255,255,.05);border:1px solid rgba(255,190,0,.35);border-radius:16px;
+ padding:16px;display:none;flex-direction:column;gap:6px;align-items:center}
+.wheelCard.show{display:flex}
+.wheelCard .think{font-size:20px}
+/* ── Mystery Cards (data-t="flip") ── */
+.flipGrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;width:100%}
+.flipCard{height:150px;perspective:900px;border:none;background:none;padding:0;font:inherit;color:inherit;text-align:center}
+.flipInner{position:relative;width:100%;height:100%;transition:transform .6s cubic-bezier(.3,.7,.2,1.1);transform-style:preserve-3d}
+.flipCard.open .flipInner{transform:rotateY(180deg)}
+.flipFace{position:absolute;inset:0;border-radius:16px;backface-visibility:hidden;-webkit-backface-visibility:hidden;
+ display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:12px}
+.flipFront{background:linear-gradient(145deg,#5A0866,#2D0130);border:1.5px solid rgba(255,190,0,.45)}
+.flipFront b{font:700 40px 'Poppins',system-ui,sans-serif;color:var(--go)}
+.flipFront small{font:600 11px 'Poppins',system-ui,sans-serif;letter-spacing:1.5px;color:rgba(244,238,246,.55)}
+.flipBack{transform:rotateY(180deg);background:rgba(255,255,255,.07);border:1.5px solid rgba(244,238,246,.2);
+ font-size:15px;line-height:1.4}
+.flipCard.done .flipBack{border-color:var(--go);background:rgba(255,190,0,.1)}
+.flipSaid{border:none;border-radius:20px;background:var(--go);color:#2D0130;font:600 12px 'Poppins',system-ui,sans-serif;padding:7px 12px;min-height:32px}
+.flipCard.done .flipSaid{background:transparent;color:var(--go)}
+.flipCount{font:600 12px 'Poppins',system-ui,sans-serif;letter-spacing:1.5px;text-transform:uppercase;color:rgba(244,238,246,.55)}
+/* ── Boss Round (data-t="boss") ── */
+.bossWrap{width:100%;display:flex;flex-direction:column;gap:14px;align-items:center}
+.bossTop{width:100%;display:flex;justify-content:space-between;align-items:center;font:700 13px 'Poppins',system-ui,sans-serif;letter-spacing:1.5px;text-transform:uppercase}
+.bossTop .bossName{color:var(--go)}
+.bossLives{font-size:18px;letter-spacing:4px;color:#E05A6A}
+.bossLives .lost{color:rgba(244,238,246,.18)}
+.bossBar{width:100%;height:14px;border-radius:7px;background:rgba(244,238,246,.1);overflow:hidden;box-shadow:inset 0 0 0 1px rgba(255,190,0,.3)}
+.bossBar i{display:block;height:100%;width:100%;background:linear-gradient(90deg,#FFBE00,#FF8A3D);transition:width .55s cubic-bezier(.3,.7,.2,1)}
+.bossCard{width:100%;min-height:120px;border-radius:16px;padding:18px;background:rgba(255,255,255,.05);
+ border:1px solid rgba(244,238,246,.16);display:flex;align-items:center;justify-content:center}
+.bossCard.hit{animation:dHit .5s ease}
+@keyframes dHit{0%{transform:none}25%{transform:scale(1.04);border-color:var(--go);background:rgba(255,190,0,.16)}100%{transform:none}}
+.bossMsg{min-height:22px;font:600 14px 'Poppins',system-ui,sans-serif;color:var(--go);text-align:center}
+.bossWrap.won .bossCard{border-color:var(--go)}
+@media (prefers-reduced-motion:reduce){.wheelSvg{transition:none}.flipInner{transition:none}.bossCard.hit,.wheelWrap.spinning .wheelPointer{animation:none}}
+</style>
+<script id="delight-mech-js">
+(function(){
+  const fb = (el, ok) => (window.dFeedback ? dFeedback(el, ok) : null);
+  const burst = (el, n) => (window.dBurst ? dBurst(el, n) : null);
+  const items = el => { try { return JSON.parse(el.getAttribute('data-items')) || []; } catch(e){ return []; } };
+
+  /* Spin & Speak — the wheel lands on a prompt the student answers OUT LOUD. */
+  function buildWheel(wrap){
+    const list = items(wrap), n = list.length, seg = 360 / n, r = 96;
+    const pt = a => [Math.sin(a*Math.PI/180)*r, -Math.cos(a*Math.PI/180)*r];
+    const fills = ['#440249','#6B0876','#2D0130','#5A0866'];
+    let svg = '';
+    list.forEach((it, i) => {
+      const a0 = i*seg, a1 = (i+1)*seg, p0 = pt(a0), p1 = pt(a1), mid = (a0+a1)/2;
+      const lx = Math.sin(mid*Math.PI/180)*r*.64, ly = -Math.cos(mid*Math.PI/180)*r*.64;
+      svg += `<path data-i="${i}" fill="${fills[i % fills.length]}" d="M0,0 L${p0[0].toFixed(2)},${p0[1].toFixed(2)} A${r},${r} 0 ${seg>180?1:0} 1 ${p1[0].toFixed(2)},${p1[1].toFixed(2)} Z"/>`;
+      svg += `<text x="${lx.toFixed(1)}" y="${ly.toFixed(1)}">${it.k || (i+1)}</text>`;
+    });
+    wrap.querySelector('.wheelSvg').innerHTML = `<circle r="${r+3}" fill="#FFBE00"/>` + svg;
+    wrap._rot = 0; wrap._used = [];
+  }
+  window.wheelSpin = function(btn){
+    const scr = btn.closest('.scr'), wrap = scr.querySelector('.wheelWrap'), list = items(wrap);
+    if (wrap.classList.contains('spinning')) return;
+    const left = list.map((_, i) => i).filter(i => !wrap._used.includes(i));
+    if (!left.length) return;
+    const pick = left[Math.floor(Math.random()*left.length)], seg = 360 / list.length;
+    const centre = pick*seg + seg/2 + (Math.random()*2-1)*seg*.28;
+    const base = wrap._rot + 360*5;
+    wrap._rot = base + (((-centre - base) % 360) + 360) % 360;
+    const card = scr.querySelector('.wheelCard');
+    card.classList.remove('show');
+    btn.disabled = true; wrap.classList.add('spinning');
+    const svg = wrap.querySelector('.wheelSvg');
+    svg.style.transform = `rotate(${wrap._rot}deg)`;
+    const land = () => {
+      wrap.classList.remove('spinning');
+      wrap._used.push(pick);
+      svg.querySelector(`path[data-i="${pick}"]`).classList.add('used');
+      card.querySelector('[data-wprompt]').textContent = list[pick].p;
+      card.classList.add('show');
+      fb(card, true);
+      const done = wrap._used.length >= list.length;
+      btn.disabled = false;
+      btn.textContent = done ? 'All done' : 'Spin again';
+      if (done){ btn.style.display = 'none'; const nx = scr.querySelector('[data-next]'); if (nx) nx.style.display = 'block'; }
+    };
+    const reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) land(); else setTimeout(land, 3450);
+  };
+
+  /* Mystery Cards — flip a face-down card, respond out loud, mark it said. */
+  function buildFlip(grid){
+    grid.innerHTML = items(grid).map((it, i) =>
+      `<div class="flipCard" role="button" tabindex="0" onclick="flipOpen(this)"><div class="flipInner">
+        <div class="flipFace flipFront"><b>${it.k || '?'}</b><small>CARD ${i+1}</small></div>
+        <div class="flipFace flipBack"><div>${it.p}</div><button class="flipSaid" onclick="event.stopPropagation();flipSaid(this)">I said it ✓</button></div>
+      </div></div>`).join('');
+    flipCount(grid);
+  }
+  function flipCount(grid){
+    const all = grid.querySelectorAll('.flipCard').length, done = grid.querySelectorAll('.flipCard.done').length;
+    const c = grid.closest('.stack').querySelector('.flipCount');
+    if (c) c.textContent = done + ' of ' + all + ' said out loud';
+    return done === all;
+  }
+  window.flipOpen = function(card){ card.classList.add('open'); };
+  window.flipSaid = function(btn){
+    const card = btn.closest('.flipCard'), grid = card.closest('.flipGrid');
+    if (card.classList.contains('done')) return;
+    card.classList.add('done'); btn.textContent = '✓ Said';
+    burst(card, 14);
+    if (flipCount(grid)){ const nx = grid.closest('.scr').querySelector('[data-next]'); if (nx) nx.style.display = 'block'; }
+  };
+
+  /* Boss Round — each prompt nailed drains the boss bar; "not yet" costs a life and the prompt comes back. */
+  function bossInit(wrap){
+    const list = items(wrap);
+    wrap._q = list.map((_, i) => i); wrap._cleared = 0;
+    wrap._lives = parseInt(wrap.getAttribute('data-lives') || '3', 10);
+    wrap.classList.remove('won');
+    wrap.querySelectorAll('.row').forEach(r => r.style.display = '');
+    const retry = wrap.querySelector('.bossRetry'); if (retry) retry.style.display = 'none';
+    wrap.querySelector('.bossMsg').textContent = '';
+    bossRender(wrap);
+  }
+  function bossRender(wrap){
+    const list = items(wrap), total = list.length, max = parseInt(wrap.getAttribute('data-lives') || '3', 10);
+    wrap.querySelector('.bossBar i').style.width = ((total - wrap._cleared) / total * 100) + '%';
+    wrap.querySelector('.bossLives').innerHTML = Array.from({length:max}, (_, k) => k < wrap._lives ? '♥' : '<span class="lost">♥</span>').join('');
+    const p = wrap.querySelector('[data-bprompt]');
+    if (wrap._q.length) p.textContent = list[wrap._q[0]];
+  }
+  window.bossHit = function(btn, ok){
+    const wrap = btn.closest('.bossWrap'), card = wrap.querySelector('.bossCard'), msg = wrap.querySelector('.bossMsg');
+    if (ok){
+      wrap._q.shift(); wrap._cleared++;
+      card.classList.remove('hit'); void card.offsetWidth; card.classList.add('hit');
+      msg.textContent = ['Direct hit!','Clean!','Boom.','That landed.'][wrap._cleared % 4];
+    } else {
+      wrap._q.push(wrap._q.shift()); wrap._lives--;
+      fb(card, false);
+      msg.textContent = 'It comes back later — you\'ll get it.';
+    }
+    if (!wrap._q.length){
+      bossRender(wrap); wrap.classList.add('won');
+      wrap.querySelector('[data-bprompt]').textContent = 'Challenge cleared!';
+      msg.textContent = '';
+      wrap.querySelectorAll('.row').forEach(r => r.style.display = 'none');
+      burst(card, 70);
+      const nx = wrap.closest('.scr').querySelector('[data-next]'); if (nx) nx.style.display = 'block';
+      return;
+    }
+    if (wrap._lives <= 0){
+      bossRender(wrap);
+      wrap.querySelector('[data-bprompt]').textContent = 'Out of lives — take a breath and run it again.';
+      wrap.querySelectorAll('.row').forEach(r => r.style.display = 'none');
+      const retry = wrap.querySelector('.bossRetry'); if (retry) retry.style.display = 'block';
+      return;
+    }
+    bossRender(wrap);
+  };
+  window.bossRetry = function(btn){ bossInit(btn.closest('.bossWrap')); };
+
+  document.querySelectorAll('.wheelWrap[data-items]').forEach(buildWheel);
+  document.querySelectorAll('.flipGrid[data-items]').forEach(buildFlip);
+  document.querySelectorAll('.bossWrap[data-items]').forEach(bossInit);
+})();
+</script>
+<!-- DELIGHT:MECH:END -->
 </body>
 </html>
