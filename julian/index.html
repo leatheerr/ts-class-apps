@@ -336,7 +336,7 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
   <span class="brand">TEACHER'S STATION</span>
 
-  <button id="classSelect" onclick="toggleMenu()">Class 8 ▾</button>
+  <button id="classSelect" onclick="toggleMenu()">Class 9 ▾</button>
 
 </div>
 
@@ -355,7 +355,8 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
   <div class="item" onclick="selectClass(6)">Class 6: On-Site Right Now</div>
 
   <div class="item" onclick="selectClass(7)">Class 7: 🔎 Check — Routine vs. Right Now</div>
-  <div class="item active" onclick="selectClass(8)">Class 8: 📖 Reading 2 — Why English Opens Doors</div>
+  <div class="item" onclick="selectClass(8)">Class 8: 📖 Reading 2 — Why English Opens Doors</div>
+  <div class="item active" onclick="selectClass(9)">Class 9: a / an / the — Talking About The Job</div>
 
 </div>
 
@@ -4738,6 +4739,349 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 </div>
 
+
+<div class="classBlock" data-class="9" data-mech="grammar,flip,timer">
+<style>
+.classBlock[data-class="9"] .scr{justify-content:safe center;overflow-y:auto;-webkit-overflow-scrolling:touch}
+.classBlock[data-class="9"] .scr .stack{padding-top:58px;padding-bottom:28px;gap:14px}
+</style>
+
+<div class="scr" data-t="open">
+ <div class="bg" data-img="photos/c9_tile.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="cue">Class 9</div>
+  <div class="big">Talking about the job: “a/an/the” for client, estimate, project</div>
+  <div class="es" style="font-size:16px;line-height:1.5;color:rgba(244,238,246,.85)">By the end of this class, you can explain a job and an estimate with the little words in place — a ladder, an estimate, the client — and a new helper can follow you without asking “which one?”</div>
+  <button class="btn go" data-next>Begin</button>
+ </div></div>
+
+<div class="scr" data-t="ritual">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Open With A Win</div>
+  <div class="think">Say one sentence from your retell voice note — the best one. Then: “What do you do?” → “I’m a handyman.”</div>
+  <div class="es">Listen to the little word in “I’m a handyman.” Today is all about those little words.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Critical Thinking · 1 of 3</div>
+  <div class="think">Finish this: “The first thing a new helper needs to know is ___.”</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Critical Thinking · 2 of 3</div>
+  <div class="think">A client asks for an estimate. What do you check first? Why?</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Critical Thinking · 3 of 3</div>
+  <div class="think">True or false, then say why in one sentence: “The price in an estimate always includes the materials.”</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Vocabulary · Say Them As One Word</div>
+  <div class="es">Tap, listen, say it back. The little word and the noun go together.</div>
+  <div class="row"><button class="opt mid" data-audio="audio/word_estimate.mp3" onclick="playAudio(this)">estimate 🔊</button><button class="opt mid" data-audio="audio/word_contract.mp3" onclick="playAudio(this)">contract 🔊</button></div>
+  <div class="row"><button class="opt mid" data-audio="audio/c9_aclient.mp3" onclick="playAudio(this)">a client 🔊</button><button class="opt mid" data-audio="audio/c9_anestimate.mp3" onclick="playAudio(this)">an estimate 🔊</button></div>
+  <div class="row"><button class="opt mid" data-audio="audio/c9_acontract.mp3" onclick="playAudio(this)">a contract 🔊</button><button class="opt mid" data-audio="audio/c9_anapartment.mp3" onclick="playAudio(this)">an apartment 🔊</button></div>
+  <div class="row"><button class="opt mid" data-audio="audio/c9_theproject.mp3" onclick="playAudio(this)">the project 🔊</button><button class="opt mid" data-audio="audio/c9_thematerials.mp3" onclick="playAudio(this)">the materials 🔊</button></div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Race It · Noun In, Chunk Out</div>
+  <div class="think">Your coach says only the noun — “estimate!” “client!” “apartment!” You fire it back with its little word.</div>
+  <div class="es">Fast. English in, English out.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Example</button>
+  <div class="keyBox">estimate → <b>an</b> estimate · client → <b>a</b> client · apartment → <b>an</b> apartment · contract → <b>a</b> contract</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Guided · Catch The Little Words</div>
+  <button class="audio" data-audio="audio/c9_dicto.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="think">Listen twice. Write only the words you catch. Then say the whole text out loud.</div>
+  <div class="es">Normal speed. No stopping. Then compare.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Compare with the text</button>
+  <div class="keyBox"><b>A</b> client calls me. She wants <b>an</b> estimate for <b>a</b> bathroom. I go to <b>the</b> house and I check <b>the</b> bathroom. <b>The</b> estimate is 600 dollars, and it includes <b>the</b> materials.<br><br>How many little words did you catch?</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="meetfix">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Meet Fix · Don’t Drop The Little Word</div>
+  <div class="cue">Say the whole sentence the right way</div>
+  <div class="sent">“500 or 600 include material.”<br>“I check bathroom.”<br>“She wants estimate.”</div>
+  <div class="es">Say each one fixed, out loud, before you tap.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+  <div class="keyBox">“It’s 500 or 600, and that includes <b>the</b> material.”<br>“I check <b>the</b> bathroom.”<br>“She wants <b>an</b> estimate.”</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="grammar" data-gstep="0">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge" data-gbadge>Guided · The Shape</div>
+
+  <div class="gPart on" data-gpart data-badge="Guided · The Shape">
+   <div class="gSlots">
+    <div class="slotLbls">
+     <div class="slotLbl">1st time · new · a / an</div><div class="slotLbl">2nd time · we know which · the</div>
+    </div>
+    <div class="slotRow">
+     <div class="slotChip" style="--i:0"><span class="w">I see a crack.</span></div><div class="slotChip" style="--i:1"><span class="w">The crack is big.</span></div>
+    </div>
+    <div class="slotRow">
+     <div class="slotChip" style="--i:2"><span class="w">She wants an estimate.</span></div><div class="slotChip" style="--i:3"><span class="w">The estimate is $600.</span></div>
+    </div>
+    <div class="slotRow">
+     <div class="slotChip" style="--i:4"><span class="w">I have a new client.</span></div><div class="slotChip" style="--i:5"><span class="w">The client wants a floor.</span></div>
+    </div>
+   </div>
+   <button class="toggleBtn" onclick="slotBuild(this)">Build the sentences</button>
+   <div class="slotNote">First time it's new → a / an. After that you both know which one → the. (a / an = un / una · the = el / la)</div>
+  </div>
+
+  <div class="gPart" data-gpart data-badge="Guided · When You Use It">
+   <div class="useRow"><span class="useKey">a</span><span class="useArrow">→</span>
+    <span class="useVal">one thing, new, the first time. <i>"a ladder, a client"</i></span></div>
+   <div class="useRow"><span class="useKey">an</span><span class="useArrow">→</span>
+    <span class="useVal">the same, before a vowel sound. <i>"an estimate, an apartment"</i></span></div>
+   <div class="useRow"><span class="useKey">the</span><span class="useArrow">→</span>
+    <span class="useVal">you both know which one. <i>"the client, the estimate"</i></span></div>
+   <div class="useRow"><span class="useKey">nothing</span><span class="useArrow">→</span>
+    <span class="useVal">many, in general. <i>"clients, materials, tiles"</i></span></div>
+  </div>
+
+  <div class="gPart" data-gpart data-badge="Guided · The Trap">
+   <div class="trapItem">
+    <div class="trapWrong">500 or 600 include material.</div>
+    <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Say the fixed version, then tap</button>
+    <div class="keyBox"><b>It's 500 or 600, and that includes <span class="hl">the</span> material.</b> — you don't hear the little word, so you don't say it. Now you know it's there.</div>
+   </div>
+   <div class="trapItem">
+    <div class="trapWrong">Bring the ladder. (nobody knows which ladder yet)</div>
+    <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Say the fixed version, then tap</button>
+    <div class="keyBox"><b>We need <span class="hl">a</span> ladder. <span class="hl">The</span> ladder is in the truck.</b> — new first, then "the".</div>
+   </div>
+  </div>
+
+  <div class="dots" data-gdots><div class="dot lit"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="row" style="max-width:300px">
+   <button class="opt mid" data-gprev onclick="gramNav(this,-1)" style="flex:0 0 60px" disabled>‹</button>
+   <button class="opt mid" data-gnext onclick="gramNav(this,1)" style="flex:1">Next ›</button>
+  </div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="grammarcheck" data-idx="0"
+ data-items='[
+  {"tag":"new · ladder","q":"I need ___ ladder.","a":"I need a ladder."},
+  {"tag":"new · vowel sound","q":"She wants ___ estimate.","a":"She wants an estimate."},
+  {"tag":"we know which one","q":"I have a client. ___ client wants a new floor.","a":"I have a client. The client wants a new floor."},
+  {"tag":"many · and we know which","q":"We need ___ tiles for ___ bathroom.","a":"We need tiles for the bathroom. (nothing before tiles)"},
+  {"tag":"fix the error","q":"500 or 600 include material.","a":"It&#39;s 500 or 600, and that includes the material."},
+  {"tag":"fix the error","q":"I am handyman.","a":"I&#39;m a handyman."}
+ ]'>
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Guided · Check It</div>
+  <div class="gcTag" data-gctag>new · ladder</div>
+  <div class="gcQ" data-gcq>&nbsp;</div>
+  <button class="toggleBtn" onclick="gcReveal(this)">Say it out loud, then check</button>
+  <div class="keyBox" data-gckey></div>
+  <div class="dots" data-gcdots></div>
+  <div class="row" style="max-width:300px">
+   <button class="opt mid" data-gcprev onclick="gcNav(this,-1)" style="flex:0 0 60px" disabled>‹</button>
+   <button class="opt mid" data-gcnext onclick="gcNav(this,1)" style="flex:1">Next ›</button>
+  </div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="flip">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Less Guided · “Which One?” · Mystery Cards</div>
+  <div class="flipCount"></div>
+  <div class="flipGrid" data-items='[{"k":"🪜","p":"Two sentences: <b>a / an</b> first, then <b>the</b> — <b>ladder</b>."},{"k":"🧾","p":"Two sentences: <b>a / an</b> first, then <b>the</b> — <b>estimate</b>."},{"k":"🔩","p":"Two sentences: <b>a / an</b> first, then <b>the</b> — <b>drill</b>."},{"k":"✍️","p":"Two sentences: <b>a / an</b> first, then <b>the</b> — <b>contract</b>."},{"k":"🧱","p":"Many: <b>tiles</b> (no little word), then <b>the tiles</b>."},{"k":"🏢","p":"Two sentences: <b>a / an</b> first, then <b>the</b> — <b>apartment</b>."}]'></div>
+  <div class="es">Example: “We need a drill. The drill is in the truck.”</div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/c9_tile.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">Independent · Round 1 — Teach The New Helper</div>
+  <div class="think">The apartment bathroom job. A new helper starts tomorrow and knows nothing. Explain what you need and what you do first.</div>
+  <div class="es">Your coach is the helper. He follows exactly what you say — and asks “Which one?” if a little word is wrong. Start with “Let me show you.”</div>
+  <div class="timerRing" data-seconds="90">
+   <svg width="96" height="96" viewBox="0 0 96 96">
+    <circle cx="48" cy="48" r="44" fill="none" stroke="rgba(244,238,246,.15)" stroke-width="6"></circle>
+    <circle class="timerArc" cx="48" cy="48" r="44" fill="none" stroke="#FFBE00" stroke-width="6"
+      stroke-linecap="round" stroke-dasharray="276.46" stroke-dashoffset="0" transform="rotate(-90 48 48)"></circle>
+   </svg>
+   <span class="timerNum">90</span>
+  </div>
+  <button class="btn go" onclick="timerStart(this)">Start 90s</button>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/c9_tile.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">Independent · Round 2 — Explain The Estimate</div>
+  <div class="think">Now your coach is the client. Explain the estimate: the price, what it includes, and the contract.</div>
+  <div class="es">Same little words, new person. Land all three: “Let me show you.” · “It depends on the job.” · “Just in case.”</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Pronunciation · sh vs ch · Hear It</div>
+  <div class="es">“ch” starts with a little stop (t + sh). “sh” is one long, soft air.</div>
+  <div class="row"><button class="opt mid" onclick="playAudio(this)" data-audio="audio/c9_share.mp3">share 🔊</button><button class="opt mid" onclick="playAudio(this)" data-audio="audio/c9_chair.mp3">chair 🔊</button></div>
+  <div class="row"><button class="opt mid" onclick="playAudio(this)" data-audio="audio/c9_sheep.mp3">sheep 🔊</button><button class="opt mid" onclick="playAudio(this)" data-audio="audio/c9_cheap.mp3">cheap 🔊</button></div>
+  <div class="row"><button class="opt mid" onclick="playAudio(this)" data-audio="audio/c9_wash.mp3">wash 🔊</button><button class="opt mid" onclick="playAudio(this)" data-audio="audio/c9_watch.mp3">watch 🔊</button></div>
+  <div class="row"><button class="opt mid" onclick="playAudio(this)" data-audio="audio/c9_shoes.mp3">shoes 🔊</button><button class="opt mid" onclick="playAudio(this)" data-audio="audio/c9_choose.mp3">choose 🔊</button></div>
+  <div class="row"><button class="opt mid" onclick="playAudio(this)" data-audio="audio/c9_shame.mp3">shame 🔊</button><button class="opt mid" onclick="playAudio(this)" data-audio="audio/c9_chain.mp3">chain 🔊</button></div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="tpr" data-items='[{"w":"Word 1 of 5","a":"audio/c9_chair.mp3"},{"w":"Word 2 of 5","a":"audio/c9_sheep.mp3"},{"w":"Word 3 of 5","a":"audio/c9_watch.mp3"},{"w":"Word 4 of 5","a":"audio/c9_shoes.mp3"},{"w":"Word 5 of 5","a":"audio/c9_chain.mp3"}]' data-idx="0">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Pronunciation · sh or ch? · By Ear Only</div>
+  <button class="audio" data-audio="audio/c9_chair.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="word" data-tprword style="font-size:22px">Word 1 of 5</div>
+  <div class="dots" data-tprdots><div class="dot lit"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="row" style="max-width:280px">
+   <button class="opt mid" onclick="tprNav(this,-1)" style="flex:0 0 60px">‹</button>
+   <button class="opt mid" onclick="tprNav(this,1)" style="flex:1">Next word ›</button>
+  </div>
+  <div class="es">Say “sh” or “ch” — then say the word.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Check yourself</button>
+  <div class="keyBox">1. <b>ch</b>air · 2. <b>sh</b>eep · 3. wat<b>ch</b> · 4. <b>sh</b>oes · 5. <b>ch</b>ain</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Pronunciation · Tongue Twister</div>
+  <button class="audio" data-audio="audio/c9_twister.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="sent">“A kitten eating a chicken in the kitchen.”</div>
+  <div class="es">Once slow, once fast. Listen for every “ch” — and the little word “a”.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="1">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 1 of 3</div>
+  <div class="think">You bring an extra box of tiles, in case you need it. What do you say?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">Just in case.</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the Independent round</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="2">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 2 of 3</div>
+  <div class="think">A client asks “How long is the project?” and the answer changes with every job. What do you say?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">It depends on the job.</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the Independent round</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="3">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 3 of 3</div>
+  <div class="think">You are about to explain how to do something. How do you start?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">Let me show you.</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the Independent round</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/c9_tile.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">Real-Life Conversation</div>
+  <div class="think">The client calls about the apartment bathroom estimate.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Only open this if you get stuck</button>
+  <div class="keyBox">
+   <b>Client:</b> Hi Julian, I have a question about the estimate.<br>
+   <b>You:</b> Sure. Let me show you. The estimate is for a new floor and a new sink.<br>
+   <b>Client:</b> Does the price include the materials?<br>
+   <b>You:</b> Yes, it does. The price is 600 dollars, and that includes the materials.<br>
+   <b>Client:</b> And how long is the project?<br>
+   <b>You:</b> It depends on the floor — usually three days.<br>
+   <b>Client:</b> OK. Do I need to sign a contract?<br>
+   <b>You:</b> Yes, it’s a short contract. I’ll bring an extra copy, just in case.<br>
+   <b>Client:</b> Sounds good. Thanks!
+  </div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Comprehension Check · 1 of 2</div>
+  <div class="think">What does the price include?</div>
+  <button class="btn go" data-next>Next question</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Comprehension Check · 2 of 2</div>
+  <div class="think">How long is the project, usually?</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="homework">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Homework</div>
+  <div class="sent" style="text-align:left;font-size:17px">1. “Teach a helper” voice note (60 seconds): on a real job this week, explain what you need and what you do first — a / an when it’s new, the after. Send it to Juan. Next class opens by playing it, because the next topic is in / on / at — and your note will be full of them.</div>
+  <div class="sent" style="text-align:left;font-size:17px">2. sh / ch, 3 minutes a day: share/chair · sheep/cheap · wash/watch · shoes/choose · shame/chain.</div>
+  <div class="sent" style="text-align:left;font-size:17px">3. Find 5 sentences with a / an / the in a show or in Reading 2, and write them down.</div>
+  <div class="sent" style="text-align:left; font-size:14px; opacity:.75">Gloss: a / an = un / una · the = el / la · estimate = presupuesto · contract = contrato.</div>
+  <button class="btn go" data-next>Done for today</button>
+ </div></div>
+
+<div class="scr" data-t="close">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="big">Nice work today.</div>
+  <div class="es">See you at Class 10.</div>
+  <div class="credits">Teacher's Station · The Milestone Method</div>
+ </div></div>
+
+</div>
+
 </div>
 
 
@@ -5160,7 +5504,7 @@ function verdictShow(btn){
 
 document.querySelectorAll('.scr[data-t="grammarcheck"]').forEach(gcRender);
 
-loadScreens(8);
+loadScreens(9);
 
 document.querySelector('[data-navback]').disabled = true;
 
