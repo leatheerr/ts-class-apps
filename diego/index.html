@@ -198,14 +198,15 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 <div id="classHeader">
   <span class="brand">TEACHER'S STATION</span>
-  <button id="classSelect" onclick="toggleMenu()">Class 28 ▾</button>
+  <button id="classSelect" onclick="toggleMenu()">Class 29 ▾</button>
 </div>
 <div id="classMenu">
   <div class="item" onclick="selectClass(24)">Class 24: Phase 1 Final Assessment <span>✓</span></div>
   <div class="item" onclick="selectClass(25)">Class 25: Setting the Scene <span>✓</span></div>
   <div class="item" onclick="selectClass(26)">Class 26: Running the Investigation <span>✓</span></div>
   <div class="item" onclick="selectClass(27)">Class 27: Calling It In <span>✓</span></div>
-  <div class="item active" onclick="selectClass(28)">Class 28: Resume Builder 1 <span></span></div>
+  <div class="item" onclick="selectClass(28)">Class 28: Resume Builder 1 <span></span></div>
+  <div class="item active" onclick="selectClass(29)">Class 29: Resume Builder 2 <span></span></div>
 </div>
 
 <div id="bar"></div>
@@ -1562,6 +1563,401 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 </div>
 
+<div class="classBlock" data-class="29">
+
+<div class="scr" data-t="open">
+ <div class="bg" data-img="photos/c29_crew.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="cue">Class 29 · For vs Since</div>
+  <div class="big">The Resume Builder 2 — how long, and since when</div>
+  <div class="es" style="font-size:16px;line-height:1.5;color:rgba(244,238,246,.85)">By the end of this class, you can say how long you — and the people on your crew — have been doing something, choosing <b>for</b> (how long) or <b>since</b> (from when) without stopping to think.</div>
+  <button class="btn go" data-next>Begin</button>
+ </div></div>
+
+<div class="scr" data-t="warmup">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Fast-Speech Lab · 1 of 3</div>
+  <button class="audio" data-audio="audio/c29_fast1.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="think">Listen. Fast, real speech — the way a foreman asks it.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">What did he say?</button>
+  <div class="keyBox">"How long've you been here?" → <b>How long have you been here?</b></div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="warmup">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Fast-Speech Lab · 2 of 3</div>
+  <button class="audio" data-audio="audio/c29_fast2.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="think">Listen. How many words do you actually hear?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">What did he say?</button>
+  <div class="keyBox">"Heezbin on the crew since March." → <b>He has been on the crew since March.</b></div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="warmup">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Fast-Speech Lab · 3 of 3</div>
+  <button class="audio" data-audio="audio/c29_fast3.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="think">Listen. Where's the "have"?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">What did he say?</button>
+  <div class="keyBox">"We've been at it for hours." → <b>We have been working on it for hours.</b></div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Warm-Up · 1 of 3</div>
+  <div class="think">Who on your crew has been in the trade the longest? Why do people still listen to him?</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Warm-Up · 2 of 3</div>
+  <div class="think">"I've been in HVAC <b>for</b> four years" vs "I've been in HVAC <b>since</b> 2022." Same fact. When would you choose each one?</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Warm-Up · 3 of 3</div>
+  <div class="think">A new superintendent has five minutes to learn your crew. What does he really need to know first?</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr tall" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Time Markers · FOR (how long)</div>
+  <div class="es">Tap to hear each one, then say it out loud.</div>
+  <div class="chunkRow"><button class="audio" data-audio="audio/c29_v1.mp3" onclick="playAudio(this)">🔊</button><div><div class="chunkKey">for a decade</div><div class="chunkEx">Monkey's been a foreman for a decade.</div></div></div>
+  <div class="chunkRow"><button class="audio" data-audio="audio/c29_v2.mp3" onclick="playAudio(this)">🔊</button><div><div class="chunkKey">for years</div><div class="chunkEx">I've known Sammy for years.</div></div></div>
+  <div class="chunkRow"><button class="audio" data-audio="audio/c29_v3.mp3" onclick="playAudio(this)">🔊</button><div><div class="chunkKey">for about 18 months</div><div class="chunkEx">I've been with this company for about 18 months.</div></div></div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr tall" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Time Markers · SINCE (from when)</div>
+  <div class="es">Tap to hear each one, then say it out loud.</div>
+  <div class="chunkRow"><button class="audio" data-audio="audio/c29_v4.mp3" onclick="playAudio(this)">🔊</button><div><div class="chunkKey">since I started</div><div class="chunkEx">I've been doing fabrication since I started.</div></div></div>
+  <div class="chunkRow"><button class="audio" data-audio="audio/c29_v5.mp3" onclick="playAudio(this)">🔊</button><div><div class="chunkKey">since last year</div><div class="chunkEx">Bruce has been superintendent since last year.</div></div></div>
+  <div class="chunkRow"><button class="audio" data-audio="audio/c29_v6.mp3" onclick="playAudio(this)">🔊</button><div><div class="chunkKey">ever since</div><div class="chunkEx">He's been in the trade ever since he was nineteen.</div></div></div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Race It · 1 of 2</div>
+  <div class="think" style="font-size:34px">"2022"</div>
+  <div class="es">Make a full sentence about you — fast.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Say it, then check</button>
+  <div class="keyBox"><b>I've lived in Charleston since 2022.</b><br>A year is a starting point → <b>since</b>.</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Race It · 2 of 2</div>
+  <div class="think" style="font-size:34px">"a long time"</div>
+  <div class="es">Make a full sentence about someone on your crew — fast.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Say it, then check</button>
+  <div class="keyBox"><b>I've known Sammy for a long time.</b><br>A length of time → <b>for</b>.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="1">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 1 of 3</div>
+  <div class="think">You run into a guy you haven't seen in a really long time. What do you say first?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">It's been a minute.</div><div style="margin-top:8px;font-size:13px;color:rgba(244,238,246,.6)">= it's been a long time</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the briefing</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="2">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 2 of 3</div>
+  <div class="think">Something happened at one point, and it's been true from that moment until today. How do you connect it?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">Ever since then…</div><div style="margin-top:8px;font-size:13px;color:rgba(244,238,246,.6)">+ present perfect: "Ever since then I've been doing commercial work."</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the briefing</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="3">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 3 of 3</div>
+  <div class="think">You want to talk about how things were done years ago, when Sammy was starting out.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">Back in the day…</div><div style="margin-top:8px;font-size:13px;color:rgba(244,238,246,.6)">+ past simple: "Back in the day he did everything by hand."</div></div>
+  <label class="forceUse"><input type="checkbox">I used this phrase in the briefing</label>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr tall" data-t="grammar" data-gstep="0">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge" data-gbadge>Guided · The Shape</div>
+  <div class="gPart on" data-gpart data-badge="Guided · The Shape">
+   <div class="gSlots">
+    <div class="slotLbls">
+     <div class="slotLbl">who</div><div class="slotLbl">have / has</div>
+     <div class="slotLbl">verb + the rest</div><div class="slotLbl">for / since + time</div>
+    </div>
+    <div class="slotRow">
+     <div class="slotChip" style="--i:0"><span class="w">I</span></div><div class="slotChip" style="--i:1"><span class="w">'ve</span></div>
+     <div class="slotChip" style="--i:2"><span class="w">been in HVAC</span></div><div class="slotChip" style="--i:3"><span class="w">for four years</span></div>
+    </div>
+    <div class="slotRow">
+     <div class="slotChip" style="--i:4"><span class="w">Sammy</span></div><div class="slotChip" style="--i:5"><span class="w">'s</span></div>
+     <div class="slotChip" style="--i:6"><span class="w">worked in the trade</span></div><div class="slotChip" style="--i:7"><span class="w">since he was young</span></div>
+    </div>
+   </div>
+   <button class="toggleBtn" onclick="slotBuild(this)">Build the sentence</button>
+   <div class="slotNote"><b>has</b> for he / she / one person (Sammy's, Bruce's, Monkey's) · <b>have</b> for I / you / we / they.</div>
+  </div>
+  <div class="gPart" data-gpart data-badge="Guided · When You Use It">
+   <div class="useRow"><span class="useKey">for</span><span class="useArrow">→</span>
+    <span class="useVal">a <b>length</b> of time. <i>for four years · for a decade · for about 18 months</i></span></div>
+   <div class="useRow"><span class="useKey">since</span><span class="useArrow">→</span>
+    <span class="useVal">a <b>starting point</b>. <i>since 2022 · since last year · since I started</i></span></div>
+   <div class="useRow"><span class="useKey">Quick test</span><span class="useArrow">→</span>
+    <span class="useVal">Can you put "from" in front of it? <i>from 2022</i> ✓ → since. <i>from 3 years</i> ✗ → for.</span></div>
+  </div>
+  <div class="gPart" data-gpart data-badge="Guided · The Trap">
+   <div class="trapItem">
+    <div class="trapWrong">I've worked here since 3 years.</div>
+    <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Say the fixed version, then tap</button>
+    <div class="keyBox"><b>I've worked here <span class="hl">for</span> 3 years.</b> — 3 years is a length, not a starting point.</div>
+   </div>
+   <div class="trapItem">
+    <div class="trapWrong">Sammy have been here for 25 years.</div>
+    <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Say the fixed version, then tap</button>
+    <div class="keyBox"><b>Sammy <span class="hl">has</span> been here for 25 years.</b> / <b>Sammy's been…</b> — same rule as <i>does</i>: one person → has.</div>
+   </div>
+  </div>
+  <div class="dots" data-gdots><div class="dot lit"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="row" style="max-width:300px">
+   <button class="opt mid" data-gprev onclick="gramNav(this,-1)" style="flex:0 0 60px" disabled>‹</button>
+   <button class="opt mid" data-gnext onclick="gramNav(this,1)" style="flex:1">Next ›</button>
+  </div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="grammarcheck" data-idx="0"
+ data-items='[
+  {"tag":"for or since?","q":"I&#39;ve been with this company ___ about 18 months.","a":"I&#39;ve been with this company for about 18 months."},
+  {"tag":"for or since?","q":"Bruce has been superintendent ___ last year.","a":"Bruce has been superintendent since last year."},
+  {"tag":"for or since?","q":"I&#39;ve lived in South Carolina ___ 2022.","a":"I&#39;ve lived in South Carolina since 2022."},
+  {"tag":"fix the errors — there are two","q":"Monkey have worked here since 20 years.","a":"Monkey has worked here for 20 years."},
+  {"tag":"fix the error","q":"I&#39;ve been doing fabrication for I started.","a":"I&#39;ve been doing fabrication since I started."}
+ ]'>
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Guided · Check It</div>
+  <div class="gcTag" data-gctag>&nbsp;</div>
+  <div class="gcQ" data-gcq>&nbsp;</div>
+  <button class="toggleBtn" onclick="gcReveal(this)">Say it out loud, then check</button>
+  <div class="keyBox" data-gckey></div>
+  <div class="dots" data-gcdots></div>
+  <div class="row" style="max-width:300px">
+   <button class="opt mid" data-gcprev onclick="gcNav(this,-1)" style="flex:0 0 60px" disabled>‹</button>
+   <button class="opt mid" data-gcnext onclick="gcNav(this,1)" style="flex:1">Next ›</button>
+  </div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="meetfix">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Meet Fix</div>
+  <div class="think" style="color:rgba(244,238,246,.5);text-decoration:line-through;text-decoration-color:rgba(255,100,100,.75)">"since 3 years" · "he have been"</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Tap to fix</button>
+  <div class="keyBox show" style="text-align:center">
+   <div class="pbPhrase">"for 3 years" · "he has been / he's been"</div>
+   <div style="margin-top:10px;font-size:13px;color:rgba(244,238,246,.6)">length → <b style="color:var(--go)">for</b> · starting point → <b style="color:var(--go)">since</b> · he / she → <b style="color:var(--go)">has</b></div>
+  </div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Build The Chunk</div>
+  <div class="es">Tap the pieces in order, then check your sentence:</div>
+  <div class="scramble" data-answer="Sammy's been in the trade for 25 years.">
+   <div class="scrambleRow scrambleBank">
+    <button class="chip" onclick="scrambleTap(this)">for 25 years</button>
+    <button class="chip" onclick="scrambleTap(this)">in the trade</button>
+    <button class="chip" onclick="scrambleTap(this)">Sammy's</button>
+    <button class="chip" onclick="scrambleTap(this)">been</button>
+   </div>
+   <div class="scrambleRow scrambleBuilt"></div>
+   <div class="row">
+    <button class="btn" onclick="scrambleReset(this)">Reset</button>
+    <button class="btn go" onclick="scrambleCheck(this)">Check</button>
+   </div>
+   <div class="correct scrambleFeedback" style="display:none"></div>
+   <button class="btn go scrambleNext" data-next style="display:none">Continue</button>
+  </div>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Build The Timeline · 1 of 3</div>
+  <div class="think">You started HVAC in 2022.</div>
+  <div class="es">Say it both ways — once with <b>for</b>, once with <b>since</b>.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Say both, then check</button>
+  <div class="keyBox"><b>I've been in HVAC for about four years.</b><br><b>I've been in HVAC since 2022.</b></div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Build The Timeline · 2 of 3</div>
+  <div class="think">Sammy started in the trade 25 years ago.</div>
+  <div class="es">Both ways — and remember: Sammy → <b>has</b>.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Say both, then check</button>
+  <div class="keyBox"><b>Sammy's been in the trade for 25 years.</b><br><b>Sammy's been in the trade since he was young.</b></div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Build The Timeline · 3 of 3</div>
+  <div class="think">Bruce became superintendent last year.</div>
+  <div class="es">Your turn — both versions, no help.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Say both, then check</button>
+  <div class="keyBox"><b>Bruce has been superintendent for about a year.</b><br><b>Bruce has been superintendent since last year.</b></div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/c29_crew.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">CORE · The Crew Briefing</div>
+  <div class="think">A new superintendent starts Monday. Brief him on yourself, Bruce, Monkey and Sammy — 90 seconds, no stopping.</div>
+  <div class="checkList">
+   <div><b>✓</b> for vs since — right every time</div>
+   <div><b>✓</b> has / he's for every crew member</div>
+   <div><b>✓</b> At least 2 of the 3 phrases</div>
+   <div><b>✓</b> Contractions at speed: I've, he's, Sammy's</div>
+  </div>
+  <div class="timerRing" data-seconds="90">
+   <svg width="96" height="96" viewBox="0 0 96 96" style="transform:rotate(-90deg)">
+    <circle cx="48" cy="48" r="44" fill="none" stroke="rgba(244,238,246,.12)" stroke-width="6"/>
+    <circle class="timerArc" cx="48" cy="48" r="44" fill="none" stroke="#FFBE00" stroke-width="6" stroke-linecap="round" stroke-dasharray="276.46" stroke-dashoffset="0"/>
+   </svg>
+   <div class="timerNum">1:30</div>
+  </div>
+  <button class="btn" onclick="timerStart(this)">Start 90s</button>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">CORE · Round 2 — Questions</div>
+  <div class="es">The new super has questions. Answer each one fully.</div>
+  <div class="homeItem">1. "How long has Monkey been a foreman?"</div>
+  <div class="homeItem">2. "Since when have you been doing fabrication?"</div>
+  <div class="homeItem">3. "Has Sammy always been with this company?"</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr tall" data-t="core">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">CORE · Round 3 — Retake</div>
+  <div class="think">Do the briefing again — cleaner and faster. Then compare with the model.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Only open this after your retake</button>
+  <div class="keyBox">"Real quick on the crew. I've been in HVAC for about four years, and I've been doing fabrication since I started here. Bruce has been our superintendent since last year — he's always on site before anyone. Monkey's been in the trade for about twenty years, ever since he was nineteen. And Sammy — he's been doing this for over twenty-five years. Back in the day he did everything by hand. If you need to know how something was built, ask Sammy."</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr tall" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Pronunciation · Hiss vs Buzz</div>
+  <div class="es"><b>since</b> starts with a hiss /s/. <b>has</b> ends with a buzz /z/. Listen, then say each one.</div>
+  <div class="chunkRow"><button class="audio" data-audio="audio/c29_pron2.mp3" onclick="playAudio(this)">🔊</button><div><div class="chunkKey">since /sɪns/</div><div class="chunkEx">Since. Since last year. Since I started.</div></div></div>
+  <div class="chunkRow"><button class="audio" data-audio="audio/c29_pron3.mp3" onclick="playAudio(this)">🔊</button><div><div class="chunkKey">he's been → "heezbin"</div><div class="chunkEx">He's been on the crew for years.</div></div></div>
+  <div class="chunkRow"><button class="audio" data-audio="audio/c29_pron4.mp3" onclick="playAudio(this)">🔊</button><div><div class="chunkKey">I've been /aɪvbɪn/</div><div class="chunkEx">I've been in HVAC for about four years.</div></div></div>
+  <div class="chunkRow"><button class="audio" data-audio="audio/c29_pron1.mp3" onclick="playAudio(this)">🔊</button><div><div class="chunkKey">Put it together</div><div class="chunkEx">He's been here since March.</div></div></div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr tall" data-t="core">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Real-Life Conversation</div>
+  <div class="think">Dinner with your girlfriend's dad. He wants to know how long — for everything. Answer him first, then open the model.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Only open this if you get stuck</button>
+  <div class="keyBox">
+   <b>Dad:</b> So how long have you been in the States?<br>
+   <b>You:</b> I've been here since 2022 — almost four years now.<br>
+   <b>Dad:</b> And you two? How long have you known each other?<br>
+   <b>You:</b> We've known each other for about two years. It's been a good two years.<br>
+   <b>Dad:</b> And work — same company the whole time?<br>
+   <b>You:</b> No, I've been with this company for about a year and a half. Ever since then I've been doing commercial work.
+  </div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Comprehension Check</div>
+  <div class="think">Which answers use <b>for</b> and which use <b>since</b>? Why each one?</div>
+  <button class="btn go" data-next>Next question</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Comprehension Check</div>
+  <div class="think">Why does he say "I've been here" and not "I was here"?</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="homework">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Homework · The Crew Briefing</div>
+  <div class="homeItem">1. Record the crew briefing again as a 90-second voice note — add one more coworker. Send it to Juan.</div>
+  <div class="homeItem">2. Write 5 sentences about your career: 3 with <b>for</b>, 2 with <b>since</b>.</div>
+  <div class="homeItem">3. Add the 3 phrases and the 6 time markers to your tracker.</div>
+  <div class="es" style="font-size:14px">Why: next class is "Have you ever…?" — you'll need this timeline to answer.</div>
+  <button class="btn go" data-next>Done for today</button>
+ </div></div>
+
+<div class="scr" data-t="close">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="big">Nice work today.</div>
+  <div class="es">See you at Class 30.</div>
+  <div class="credits">Teacher's Station · The Milestone Method</div>
+ </div></div>
+
+</div>
+
 </div><!-- /appRoot -->
 
 <script>
@@ -1727,6 +2123,6 @@ document.querySelectorAll('.bg[data-img]').forEach(el=>{
   const src = el.getAttribute('data-img');
   el.style.backgroundImage = "url('" + src + "')";
 });
-loadScreens(28);
+loadScreens(29);
 </script>
 </body></html>
