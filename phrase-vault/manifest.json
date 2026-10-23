@@ -1,0 +1,331 @@
+{
+ "diego-01": {
+  "student": "Diego",
+  "n": 1,
+  "phrase": "Every other day",
+  "es": "un día sí, un día no",
+  "example": "I go to the gym every other day: Monday, Wednesday, Friday."
+ },
+ "diego-02": {
+  "student": "Diego",
+  "n": 2,
+  "phrase": "Pretty",
+  "es": "bastante",
+  "example": "The movie was pretty good, but not amazing."
+ },
+ "diego-03": {
+  "student": "Diego",
+  "n": 3,
+  "phrase": "But",
+  "es": "excepto",
+  "example": "Everyone came to the party but Carlos."
+ },
+ "diego-04": {
+  "student": "Diego",
+  "n": 4,
+  "phrase": "Change your mind",
+  "es": "cambiar de opinión",
+  "example": "I wanted pizza, but I changed my mind — let’s get sushi."
+ },
+ "diego-05": {
+  "student": "Diego",
+  "n": 5,
+  "phrase": "It turns out…",
+  "es": "resulta que…",
+  "example": "It turns out my new coworker grew up in my neighborhood!"
+ },
+ "diego-06": {
+  "student": "Diego",
+  "n": 6,
+  "phrase": "Make up your mind",
+  "es": "decídete",
+  "example": "Make up your mind — are we staying or leaving?"
+ },
+ "diego-07": {
+  "student": "Diego",
+  "n": 7,
+  "phrase": "Suit yourself",
+  "es": "como quieras",
+  "example": "You don’t want dessert? Suit yourself — more for me."
+ },
+ "diego-08": {
+  "student": "Diego",
+  "n": 8,
+  "phrase": "It’s not a big deal",
+  "es": "no es para tanto",
+  "example": "You were five minutes late? It’s not a big deal."
+ },
+ "diego-09": {
+  "student": "Diego",
+  "n": 9,
+  "phrase": "Figure out",
+  "es": "descifrar / resolver",
+  "example": "I finally figured out how to fix my laptop."
+ },
+ "diego-10": {
+  "student": "Diego",
+  "n": 10,
+  "phrase": "Just in case",
+  "es": "por si acaso",
+  "example": "Take an umbrella, just in case."
+ },
+ "diego-11": {
+  "student": "Diego",
+  "n": 11,
+  "phrase": "Clear my mind",
+  "es": "despejar la mente",
+  "example": "I go for a walk after work to clear my mind."
+ },
+ "diego-12": {
+  "student": "Diego",
+  "n": 12,
+  "phrase": "What are you up to?",
+  "es": "¿en qué andas?",
+  "example": "Hey! What are you up to this weekend?"
+ },
+ "diego-13": {
+  "student": "Diego",
+  "n": 13,
+  "phrase": "To do (someone) a solid",
+  "es": "hacer un favor",
+  "example": "Can you do me a solid and cover my shift tomorrow?"
+ },
+ "diego-14": {
+  "student": "Diego",
+  "n": 14,
+  "phrase": "I didn’t get a wink last night",
+  "es": "no pegué el ojo",
+  "example": "My neighbor’s party was so loud I didn’t get a wink last night."
+ },
+ "diego-15": {
+  "student": "Diego",
+  "n": 15,
+  "phrase": "Hook up",
+  "es": "conectar / (slang) ligar",
+  "example": "Can you hook up the speakers to the TV?"
+ },
+ "alberto-01": {
+  "student": "Alberto",
+  "n": 1,
+  "phrase": "Pretty",
+  "es": "bastante",
+  "example": "The new office is pretty nice."
+ },
+ "alberto-02": {
+  "student": "Alberto",
+  "n": 2,
+  "phrase": "Every other day",
+  "es": "un día sí, un día no",
+  "example": "I call my parents every other day."
+ },
+ "alberto-03": {
+  "student": "Alberto",
+  "n": 3,
+  "phrase": "But",
+  "es": "excepto",
+  "example": "I eat everything but mushrooms."
+ },
+ "alberto-04": {
+  "student": "Alberto",
+  "n": 4,
+  "phrase": "Get along",
+  "es": "llevarse bien",
+  "example": "I get along really well with my sister."
+ },
+ "alberto-05": {
+  "student": "Alberto",
+  "n": 5,
+  "phrase": "To feel like",
+  "es": "tener ganas de",
+  "example": "I don’t feel like cooking tonight. Let’s order food."
+ },
+ "alberto-06": {
+  "student": "Alberto",
+  "n": 6,
+  "phrase": "Figure out",
+  "es": "descifrar / resolver",
+  "example": "We need to figure out why the system keeps crashing."
+ },
+ "alberto-07": {
+  "student": "Alberto",
+  "n": 7,
+  "phrase": "At all",
+  "es": "para nada / en absoluto",
+  "example": "I didn’t like that restaurant at all."
+ },
+ "alberto-08": {
+  "student": "Alberto",
+  "n": 8,
+  "phrase": "On top of that",
+  "es": "encima / además de eso",
+  "example": "It was raining, and on top of that, I lost my keys."
+ },
+ "alberto-09": {
+  "student": "Alberto",
+  "n": 9,
+  "phrase": "Tell apart",
+  "es": "distinguir",
+  "example": "The twins look so similar that I can’t tell them apart."
+ },
+ "alberto-10": {
+  "student": "Alberto",
+  "n": 10,
+  "phrase": "Get by / Manage",
+  "es": "arreglárselas / gestionar",
+  "example": "My Italian isn’t great, but I can get by on vacation."
+ },
+ "alberto-11": {
+  "student": "Alberto",
+  "n": 11,
+  "phrase": "Come true",
+  "es": "hacerse realidad",
+  "example": "Working abroad was a dream that finally came true."
+ },
+ "alberto-12": {
+  "student": "Alberto",
+  "n": 12,
+  "phrase": "All along",
+  "es": "desde el principio",
+  "example": "You had the keys all along?!"
+ },
+ "alberto-13": {
+  "student": "Alberto",
+  "n": 13,
+  "phrase": "It’s not a big deal",
+  "es": "no es para tanto",
+  "example": "I forgot your birthday? I’m sorry! — Relax, it’s not a big deal."
+ },
+ "alberto-14": {
+  "student": "Alberto",
+  "n": 14,
+  "phrase": "Catch up",
+  "es": "ponerse al día",
+  "example": "Let’s grab a coffee and catch up this Friday!"
+ },
+ "alberto-15": {
+  "student": "Alberto",
+  "n": 15,
+  "phrase": "To put up with",
+  "es": "aguantar / soportar",
+  "example": "I can’t put up with all this noise anymore!"
+ },
+ "danna-01": {
+  "student": "Danna",
+  "n": 1,
+  "phrase": "No wonder",
+  "es": "con razón",
+  "example": "You worked twelve hours today? No wonder you’re tired."
+ },
+ "danna-02": {
+  "student": "Danna",
+  "n": 2,
+  "phrase": "It turns out",
+  "es": "resulta que",
+  "example": "It turns out the restaurant was closed on Mondays."
+ },
+ "danna-03": {
+  "student": "Danna",
+  "n": 3,
+  "phrase": "On a daily basis",
+  "es": "a diario",
+  "example": "I use English at work on a daily basis."
+ },
+ "danna-04": {
+  "student": "Danna",
+  "n": 4,
+  "phrase": "It doesn’t add up",
+  "es": "no cuadra",
+  "example": "He says he was home all night, but his car wasn’t there. It doesn’t add up."
+ },
+ "danna-05": {
+  "student": "Danna",
+  "n": 5,
+  "phrase": "Lowkey",
+  "es": "medio / en secreto",
+  "example": "I’m lowkey obsessed with this song."
+ },
+ "julian-01": {
+  "student": "Julian",
+  "n": 1,
+  "phrase": "Besides",
+  "es": "además",
+  "example": "I don’t want to go out. Besides, it’s raining."
+ },
+ "julian-02": {
+  "student": "Julian",
+  "n": 2,
+  "phrase": "Sometimes",
+  "es": "a veces",
+  "example": "I sometimes drink coffee in the morning."
+ },
+ "julian-03": {
+  "student": "Julian",
+  "n": 3,
+  "phrase": "Pretty",
+  "es": "bastante",
+  "example": "The weather is pretty nice today."
+ },
+ "julian-04": {
+  "student": "Julian",
+  "n": 4,
+  "phrase": "Just in case",
+  "es": "por si acaso",
+  "example": "Take a jacket, just in case."
+ },
+ "julian-05": {
+  "student": "Julian",
+  "n": 5,
+  "phrase": "I’m not kidding",
+  "es": "no estoy bromeando",
+  "example": "I saw a famous singer at the supermarket. I’m not kidding!"
+ },
+ "julian-06": {
+  "student": "Julian",
+  "n": 6,
+  "phrase": "I feel like",
+  "es": "tengo ganas de / siento que",
+  "example": "I feel like pizza tonight."
+ },
+ "ana-01": {
+  "student": "Ana",
+  "n": 1,
+  "phrase": "It’s not a big deal",
+  "es": "no es para tanto",
+  "example": "You broke a glass? It’s not a big deal."
+ },
+ "ana-02": {
+  "student": "Ana",
+  "n": 2,
+  "phrase": "Just in case",
+  "es": "por si acaso",
+  "example": "I always save two copies of my files, just in case."
+ },
+ "ana-03": {
+  "student": "Ana",
+  "n": 3,
+  "phrase": "Suit yourself",
+  "es": "como quieras",
+  "example": "You want to walk in the rain? Suit yourself!"
+ },
+ "ana-04": {
+  "student": "Ana",
+  "n": 4,
+  "phrase": "If my memory serves me right",
+  "es": "si mal no recuerdo",
+  "example": "If my memory serves me right, the meeting is at three."
+ },
+ "ana-05": {
+  "student": "Ana",
+  "n": 5,
+  "phrase": "Cut corners",
+  "es": "hacer las cosas a medias",
+  "example": "Good restaurants never cut corners with ingredients."
+ },
+ "ana-06": {
+  "student": "Ana",
+  "n": 6,
+  "phrase": "On a daily basis",
+  "es": "a diario",
+  "example": "I check my emails on a daily basis."
+ }
+}
