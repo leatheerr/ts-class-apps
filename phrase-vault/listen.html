@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Phrase Vault · Listen</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,800;1,9..144,400;1,9..144,600&family=Montserrat:wght@500;600;700;800&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+  :root { --plum:#440249; --plum-2:#5e0a65; --deep:#2a0130; --gold:#FFBE00; --soft:#ffe08a; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { min-height: 100dvh; font-family: Montserrat, sans-serif; color: #fff;
+    background: radial-gradient(120% 70% at 90% 0%, var(--plum-2), var(--plum) 45%, var(--deep));
+    display: flex; flex-direction: column; align-items: center; padding: 28px 18px 32px; }
+  .top { width: 100%; max-width: 440px; display: flex; justify-content: space-between; font-size: 11px; letter-spacing: .2em; text-transform: uppercase; font-weight: 700; color: var(--gold); }
+  .card { width: 100%; max-width: 440px; margin-top: 28px; border-radius: 24px; padding: 26px 22px 24px;
+    background: radial-gradient(90% 60% at 100% 0%, rgba(255,190,0,.18), transparent 60%), rgba(255,255,255,.05);
+    border: 1.5px solid rgba(255,190,0,.5); }
+  .no { font-family: Fraunces, serif; font-weight: 800; color: var(--gold); font-size: 15px; }
+  h1 { font-family: Fraunces, serif; font-weight: 600; font-size: clamp(30px, 9vw, 42px); line-height: 1.05; color: var(--gold); margin: 10px 0 12px; }
+  .es { display: inline-flex; gap: 8px; align-items: center; background: rgba(255,255,255,.1); border-radius: 8px; padding: 5px 10px 5px 5px; font-weight: 600; font-size: 14px; }
+  .es b { background: var(--gold); color: var(--deep); font-size: 10px; letter-spacing: .12em; border-radius: 5px; padding: 3px 6px; }
+  .ex { margin-top: 18px; font-family: Fraunces, serif; font-style: italic; font-size: 19px; line-height: 1.4; background: rgba(0,0,0,.22); border-radius: 14px; padding: 14px 16px; }
+  .play { margin: 28px auto 0; display: grid; place-items: center; width: 108px; height: 108px; border-radius: 50%; border: 0; cursor: pointer;
+    background: radial-gradient(circle at 35% 30%, #ffe28a, var(--gold) 55%, #c98f00); box-shadow: 0 10px 30px -6px rgba(255,190,0,.55); transition: transform .15s; }
+  .play:active { transform: scale(.95); }
+  .play svg { width: 40px; height: 40px; fill: var(--deep); }
+  .row { display: flex; gap: 10px; justify-content: center; margin-top: 22px; }
+  .pill { font: 700 12px Montserrat, sans-serif; letter-spacing: .1em; text-transform: uppercase; color: #fff; background: rgba(255,255,255,.08);
+    border: 1.5px solid rgba(255,255,255,.25); border-radius: 99px; padding: 10px 16px; cursor: pointer; }
+  .pill[aria-pressed="true"] { background: var(--gold); border-color: var(--gold); color: var(--deep); }
+  .how { max-width: 440px; margin-top: 26px; text-align: center; font-family: Caveat, cursive; font-size: 22px; color: var(--soft); }
+  .missing { margin-top: 60px; text-align: center; color: rgba(255,255,255,.8); }
+</style>
+</head>
+<body>
+  <div class="top"><span>Teacher’s Station</span><span id="who">Phrase Vault</span></div>
+  <main id="app"></main>
+  <p class="how">Listen · pause · say it with him. Repeat until it flows.</p>
+<script>
+const key = new URLSearchParams(location.search).get("a") || "";
+const app = document.getElementById("app");
+const esc = s => s.replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+fetch("manifest.json").then(r => r.json()).then(m => {
+  const it = m[key];
+  if (!it) { app.innerHTML = '<p class="missing">This phrase isn’t in the vault yet.</p>'; return; }
+  document.title = it.phrase + " · Phrase Vault";
+  document.getElementById("who").textContent = it.student + "’s Phrase Vault";
+  app.innerHTML = `<section class="card">
+    <span class="no">Nº ${String(it.n).padStart(2,"0")}</span>
+    <h1>${esc(it.phrase)}</h1>
+    <span class="es"><b>ES</b>${esc(it.es)}</span>
+    <p class="ex">“${esc(it.example)}”</p>
+    <button class="play" id="play" aria-label="Play"><svg viewBox="0 0 24 24"><path id="ic" d="M8 5v14l11-7z"/></svg></button>
+    <div class="row">
+      <button class="pill" id="slow" aria-pressed="false">Slow 0.75×</button>
+      <button class="pill" id="loop" aria-pressed="false">Repeat</button>
+    </div></section>`;
+  const audio = new Audio("audio/" + key + ".mp3");
+  const ic = document.getElementById("ic");
+  const setIcon = p => ic.setAttribute("d", p ? "M7 5h4v14H7zM13 5h4v14h-4z" : "M8 5v14l11-7z");
+  document.getElementById("play").onclick = () => audio.paused ? audio.play() : audio.pause();
+  audio.onplay = () => setIcon(true); audio.onpause = audio.onended = () => setIcon(false);
+  const toggle = (el, fn) => el.onclick = () => { const on = el.getAttribute("aria-pressed") !== "true"; el.setAttribute("aria-pressed", on); fn(on); };
+  toggle(document.getElementById("slow"), on => { audio.playbackRate = on ? .75 : 1; });
+  toggle(document.getElementById("loop"), on => { audio.loop = on; });
+}).catch(() => { app.innerHTML = '<p class="missing">Couldn’t load the phrase. Check your connection.</p>'; });
+</script>
+</body>
+</html>
