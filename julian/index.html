@@ -5830,6 +5830,23 @@ document.querySelector('[data-navback]').disabled = true;
   document.querySelectorAll('.flipGrid[data-items]').forEach(buildFlip);
   document.querySelectorAll('.bossWrap[data-items]').forEach(bossInit);
 })();
+
+// Keyboard page-turning: arrow keys press the same nav buttons as a tap (so class boundaries still hold)
+document.addEventListener('keydown', e=>{
+  if(e.altKey || e.ctrlKey || e.metaKey) return;
+  if(e.target.closest && e.target.closest('input:not([type=checkbox]):not([type=radio]),textarea,select,[contenteditable]')) return;
+  const fwd = (e.key==='ArrowRight' || e.key==='PageDown');
+  const back = (e.key==='ArrowLeft' || e.key==='PageUp');
+  if(!fwd && !back) return;
+  e.preventDefault();
+  const b = document.querySelector(fwd ? '[data-navfwd]' : '[data-navback]');
+  if(b && !b.disabled) b.click();
+});
+// Every screen opens scrolled to the top
+new MutationObserver(ms=>ms.forEach(m=>{
+  const t = m.target;
+  if(t.classList.contains('scr') && t.classList.contains('on') && !(m.oldValue||'').split(' ').includes('on')) t.scrollTop = 0;
+})).observe(document.body, {subtree:true, attributes:true, attributeOldValue:true, attributeFilter:['class']});
 </script>
 <!-- DELIGHT:MECH:END -->
 
