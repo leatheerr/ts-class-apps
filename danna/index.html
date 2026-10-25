@@ -232,7 +232,7 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 <div id="classHeader">
   <span class="brand">TEACHER'S STATION</span>
-  <button id="classSelect" onclick="toggleMenu()">Class 6 ▾</button>
+  <button id="classSelect" onclick="toggleMenu()">Class 7 ▾</button>
 </div>
 <div id="classMenu">
   <div class="item" onclick="selectClass(1)">Class 1: Customer calls — open a call without freezing <span>✓</span></div>
@@ -241,7 +241,8 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
   <div class="item" onclick="selectClass(3.5)">Class 3.5: Tricky words &mdash; tough, though, through <span>&#10003;</span></div>
   <div class="item" onclick="selectClass(4)">Class 4: Reading 1 &mdash; A day on the route <span>&#10003;</span></div>
   <div class="item" onclick="selectClass(5)">Class 5: Reporting your shift &mdash; tell it in the past <span>&#10003;</span></div>
-  <div class="item active" onclick="selectClass(6)">Class 6: When it went wrong &mdash; report a problem in the past</div>
+  <div class="item" onclick="selectClass(6)">Class 6: When it went wrong &mdash; report a problem in the past</div>
+  <div class="item active" onclick="selectClass(7)">Class 7: Weekend stories &mdash; tell what happened</div>
 </div>
 
 <div id="bar"></div>
@@ -2401,6 +2402,463 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 </div>
 
 
+<div class="classBlock" data-class="7" data-mech="explain,scramble,boss,timer">
+
+<div class="scr" data-t="open">
+ <div class="bg" data-img="photos/open7.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="cue">Class 7 · Danna</div>
+  <div class="big">Weekend stories: tell a friend what happened using 'it turns out'</div>
+  <div class="es" style="font-size:16px;line-height:1.55">By the end of this class, you can tell a friend a weekend story <b>in order</b>, with a surprise in the middle, and keep it in the past from start to finish.</div>
+  <button class="btn go" data-next>Start</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Critical Thinking · 1 of 3</div>
+  <div class="think">Some people say a weekend is only good if you <b>did</b> something. Others say it's good if you did <b>nothing</b>. Which one are you, and why?</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Critical Thinking · 2 of 3</div>
+  <div class="think">Why do people remember the weekends where something went <b>wrong</b> better than the perfect ones?</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Critical Thinking · 3 of 3</div>
+  <div class="think">Think of the last time you <b>avoided</b> a conversation in English on a day off. What happened, and what would you say now?</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="stack">
+  <div class="badge">Numbers · Read It Back</div>
+  <div class="cue">Your friend sends you the party details. Each one plays once.</div>
+  <div class="row"><button class="opt mid" data-audio="audio/c7_d2417.mp3" onclick="playAudio(this)">House # 🔊</button><button class="opt mid" data-audio="audio/c7_d0938.mp3" onclick="playAudio(this)">Gate code 🔊</button></div>
+  <div class="row"><button class="opt mid" data-audio="audio/c7_d1506.mp3" onclick="playAudio(this)">Reservation 🔊</button></div>
+  <div class="es">Read each one back, grouped, with a beat. No "say that again."</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Check yourself</button>
+  <div class="keyBox">House: <b>2 — 4 — 1 — 7</b> ("twenty-four, seventeen")<br>Gate: <b>0 — 9 — 3 — 8</b> ("oh-nine, thirty-eight")<br>Reservation: <b>1 — 5 — 0 — 6</b> ("fifteen, oh-six")</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="stack">
+  <div class="badge">Race It · Your Weekend</div>
+  <div class="think" style="font-size:19px">A full sentence about <b>last weekend</b>, as fast as you can:<br><br>1. go &rarr; a party<br>2. see &rarr; a movie<br>3. eat &rarr; tacos<br>4. meet · buy · sleep · drink &mdash; one each<br>5. get · come · leave · lose &mdash; one each</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Check yourself</button>
+  <div class="keyBox">1. I <b>went</b> to a party.<br>2. I <b>saw</b> a movie.<br>3. I <b>ate</b> tacos.<br>4. <b>met · bought · slept · drank</b><br>5. <b>got · came · left · lost</b></div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Your Turn · Ask Me</div>
+  <div class="think">Now <b>you</b> ask. Three questions with <b>did</b> about my weekend.</div>
+  <div class="es">What ___ you do? · Where ___ you go? · ___ you have fun?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Check yourself</button>
+  <div class="keyBox">What <b>did</b> you <b>do</b>? · Where <b>did</b> you <b>go</b>? · <b>Did</b> you <b>have</b> fun?<br><span style="color:rgba(244,238,246,.7)">After <i>did</i>, the verb stays simple.</span></div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="explain">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Explainer · Story Connectors</div>
+  <div class="es">Tap each connector. Watch what it does to the story, then say the sentence out loud.</div>
+  <div class="exTimeline" data-title="Story timeline" data-left="Saturday" data-right="Sunday" data-items='[
+   {"chip":"then","arc":true,"ev":[{"t":"had dinner","x":15},{"t":"went dancing","x":60}],"sent":"We had dinner. <b>Then</b> we went dancing.","say":"Two things from your weekend, joined with then.","a":"audio/c7_then.mp3"},
+   {"chip":"after that","arc":true,"ev":[{"t":"went dancing","x":15},{"t":"my cousin showed up","x":70}],"sent":"<b>After that</b>, my cousin showed up.","say":"What happened after that? Keep it in the past.","a":"audio/c7_after.mp3"},
+   {"chip":"out of nowhere","ev":[{"t":"sunny beach","x":12},{"t":"having a blast","x":40},{"t":"it started pouring!","x":72,"surprise":true}],"sent":"We were having a blast. <b>Out of nowhere</b>, it started pouring.","say":"Tell me a surprise, starting with out of nowhere.","a":"audio/c7_nowhere.mp3"},
+   {"chip":"so anyway","ev":[{"t":"the party","x":15},{"t":"(side story about Carlos)","x":48},{"t":"back: we left","x":82}],"sent":"Carlos is my cousin’s friend. <b>So anyway</b>, we left.","say":"Start a side comment, then come back with so anyway.","a":"audio/c7_anyway.mp3"},
+   {"chip":"long story short","ev":[{"t":"lost the keys","x":12},{"t":"…","x":45},{"t":"a kid found them","x":85}],"sent":"<b>Long story short</b>, a little kid found the keys.","say":"Skip to the ending of a long story.","a":"audio/c7_lss.mp3"}
+  ]'></div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Build The Chunk · 1 of 2</div>
+  <div class="es">Tap the pieces in order, then check your sentence:</div>
+  <div class="scramble" data-answer="Out of nowhere, it started raining.">
+   <div class="scrambleRow scrambleBank">
+    <button class="chip" onclick="scrambleTap(this)">raining.</button>
+    <button class="chip" onclick="scrambleTap(this)">it</button>
+    <button class="chip" onclick="scrambleTap(this)">Out of nowhere,</button>
+    <button class="chip" onclick="scrambleTap(this)">started</button>
+   </div>
+   <div class="scrambleRow scrambleBuilt"></div>
+   <div class="row">
+    <button class="btn" onclick="scrambleReset(this)">Reset</button>
+    <button class="btn go" onclick="scrambleCheck(this)">Check</button>
+   </div>
+   <div class="correct scrambleFeedback" style="display:none"></div>
+   <button class="btn go scrambleNext" data-next style="display:none">Continue</button>
+  </div>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Build The Chunk · 2 of 2</div>
+  <div class="es">Tap the pieces in order, then check your sentence:</div>
+  <div class="scramble" data-answer="So anyway, we left early.">
+   <div class="scrambleRow scrambleBank">
+    <button class="chip" onclick="scrambleTap(this)">early.</button>
+    <button class="chip" onclick="scrambleTap(this)">So anyway,</button>
+    <button class="chip" onclick="scrambleTap(this)">left</button>
+    <button class="chip" onclick="scrambleTap(this)">we</button>
+   </div>
+   <div class="scrambleRow scrambleBuilt"></div>
+   <div class="row">
+    <button class="btn" onclick="scrambleReset(this)">Reset</button>
+    <button class="btn go" onclick="scrambleCheck(this)">Check</button>
+   </div>
+   <div class="correct scrambleFeedback" style="display:none"></div>
+   <button class="btn go scrambleNext" data-next style="display:none">Continue</button>
+  </div>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Vocabulary · Two New Ones</div>
+  <div class="es">A <b>phrasal verb</b> and a <b>collocation</b>. Tap, listen, then use each in your own sentence.</div>
+  <div class="row"><button class="opt mid" data-audio="audio/c7_showup.mp3" onclick="playAudio(this)">show up 🔊</button><button class="opt mid" data-audio="audio/c7_blast.mp3" onclick="playAudio(this)">have a blast 🔊</button></div>
+  <div class="sent" style="font-size:17px">"My cousin <b>showed up</b> at midnight." <span style="color:rgba(244,238,246,.6)">(arrived, often late or with no warning)</span><br>"We <b>had a blast</b> at the beach." <span style="color:rgba(244,238,246,.6)">(a really good time)</span></div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="explain">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Explainer · How Much?</div>
+  <div class="es">Same sentence, four volumes. Tap each one and watch the meter. Then say it with your own weekend.</div>
+  <div class="exMeter" data-title="Intensity meter" data-left="a little · quiet" data-right="a lot · loud" data-items='[
+   {"w":"lowkey","v":22,"tag":"a little · you don’t say it loudly","sent":"I <b>lowkey</b> wanted to go home.","say":"Something you lowkey wanted last weekend.","a":"audio/c7_lowkey.mp3"},
+   {"w":"kind of","v":42,"tag":"a little more","sent":"I <b>kind of</b> wanted to go home.","say":"Same idea with kind of."},
+   {"w":"really","v":70,"tag":"clearly · a lot","sent":"I <b>really</b> wanted to go home.","say":"Something you really wanted."},
+   {"w":"highkey","v":92,"tag":"a lot · and everybody knows it","sent":"I was <b>highkey</b> tired.","say":"Something you were highkey, on Saturday or Sunday.","a":"audio/c7_highkey.mp3"}
+  ]'></div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Fill It · Say It First</div>
+  <div class="think" style="font-size:19px">1. My friend ——— an hour late.<br>2. The party was boring, so I ——— wanted to leave.<br>3. We ——— at the beach. Best day ever.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Check yourself</button>
+  <div class="keyBox">1. <b>showed up</b> · 2. <b>lowkey</b> · 3. <b>had a blast</b></div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="1">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 1 of 3</div>
+  <button class="audio" data-audio="audio/c7_believe.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="think">You're about to start a story and you want your friend to <b>pay attention</b>. How do you open?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Show the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">"You won't believe what happened."</div><br>It tells the listener: something surprising is coming.</div>
+  <label class="forceUse"><input type="checkbox"> I used this in the CORE round</label>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="2">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 2 of 3</div>
+  <button class="audio" data-audio="audio/c7_waslike.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="think">You're telling a friend what someone <b>said or felt</b>, casually, without "he said." How do you say it?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Show the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">"I was like… / she was like…"</div><br><i>"She knocked at 2 a.m., and I was like, 'Who is it?'"</i> It doesn't mean "similar." It means "I said" or "I felt."</div>
+  <label class="forceUse"><input type="checkbox"> I used this in the CORE round</label>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="3">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 3 of 3</div>
+  <button class="audio" data-audio="audio/c7_wild.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="think">Your friend tells you something <b>crazy, funny or unbelievable</b>. How do you react?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Show the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">"That's wild."</div><br>For surprising stories. Not for sad ones.</div>
+  <label class="forceUse"><input type="checkbox"> I used this in the CORE round</label>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="explain">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Explainer · Where Can You Say It?</div>
+  <div class="es">Tap each phrase. The meter shows who you can say it to. Then say it in a real situation.</div>
+  <div class="exMeter" data-title="Register meter" data-left="friends" data-right="customers" data-items='[
+   {"w":"That’s wild.","v":8,"tag":"friends only","sent":"Your car didn’t start at 2 a.m.? <b>That’s wild.</b>","say":"React to a crazy story I tell you."},
+   {"w":"I was like…","v":14,"tag":"friends only","sent":"He showed up at midnight, and <b>I was like</b>, seriously?","say":"Tell me what you said when something surprised you."},
+   {"w":"You won’t believe what happened.","v":30,"tag":"friends · coworkers","sent":"<b>You won’t believe what happened</b> on my route today.","say":"Open a story for a coworker."},
+   {"w":"To be fair, …","v":58,"tag":"anyone · from Class 6","sent":"<b>To be fair</b>, the app didn’t show the number.","say":"Give the other side of a story."},
+   {"w":"I’m sorry about that.","v":90,"tag":"customers","sent":"Your package was late? <b>I’m sorry about that.</b>","say":"Say it to an upset customer."}
+  ]'></div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Catch It · Does It Fit?</div>
+  <div class="think">Does the phrase belong there? If not, say why.<br><br>1. "My grandma was in the hospital all weekend." "<b>That's wild!</b>"<br>2. To a customer: "Your package was late and <b>I was like</b>, ugh."<br>3. To a friend: "<b>You won't believe what happened</b> at the beach."</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Check yourself</button>
+  <div class="keyBox">1. <b>No</b>. It's sad, not wild. Try: "Oh no, I'm so sorry. Is she okay?"<br>2. <b>No</b>. Too casual for a customer.<br>3. <b>Yes</b>. Perfect story opener.</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="grammar" data-gstep="0">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge" data-gbadge>Guided · The Shape</div>
+
+  <div class="gPart on" data-gpart data-badge="Guided · The Shape">
+   <div class="gSlots">
+    <div class="slotLbls">
+     <div class="slotLbl">connector</div><div class="slotLbl">event (past)</div>
+     <div class="slotLbl">,</div><div class="slotLbl">next / result</div>
+    </div>
+    <div class="slotRow">
+     <div class="slotChip" style="--i:0"><span class="w">First,</span></div><div class="slotChip" style="--i:1"><span class="w">we went to a bar</span></div>
+     <div class="slotChip" style="--i:2"><span class="w">,</span></div><div class="slotChip" style="--i:3"><span class="w">then we got food.</span></div>
+    </div>
+    <div class="slotRow">
+     <div class="slotChip" style="--i:4"><span class="w">After that,</span></div><div class="slotChip" style="--i:5"><span class="w">my friend showed up</span></div>
+     <div class="slotChip" style="--i:6"><span class="w">—</span></div><div class="slotChip" style="--i:7"><span class="w">—</span></div>
+    </div>
+    <div class="slotRow">
+     <div class="slotChip" style="--i:8"><span class="w">By the time</span></div><div class="slotChip" style="--i:9"><span class="w">I got home</span></div>
+     <div class="slotChip" style="--i:10"><span class="w">,</span></div><div class="slotChip" style="--i:11"><span class="w">it was 3 a.m.</span></div>
+    </div>
+   </div>
+   <button class="toggleBtn" onclick="slotBuild(this)">Build the sentences</button>
+   <div class="slotNote">Once the story starts in the past, every verb stays in the past.</div>
+  </div>
+
+  <div class="gPart" data-gpart data-badge="Guided · When You Use It">
+   <div class="useRow"><span class="useKey">➡️ then · after that</span><span class="useArrow">→</span>
+    <span class="useVal">the <b>next</b> event, in order.</span></div>
+   <div class="useRow"><span class="useKey">📍 by the time</span><span class="useArrow">→</span>
+    <span class="useVal">the moment you <b>arrived or finished</b>, and how things <b>were</b> at that moment: <i>it was closed · they were gone</i>.</span></div>
+  </div>
+
+  <div class="gPart" data-gpart data-badge="Guided · The Trap">
+   <div class="trapItem">
+    <div class="trapWrong">Then my friend arrive and he say "let's go."</div>
+    <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Say the fixed version, then tap</button>
+    <div class="keyBox"><b>Then my friend <span class="hl">arrived</span> and he <span class="hl">said</span> "let's go."</b> The story doesn't slide into now.</div>
+   </div>
+   <div class="trapItem">
+    <div class="trapWrong">Once time I lost my keys at a party.</div>
+    <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Say the fixed version, then tap</button>
+    <div class="keyBox"><b><span class="hl">One time</span> I lost my keys at a party.</b> From Class 6.</div>
+   </div>
+  </div>
+
+  <div class="dots" data-gdots><div class="dot lit"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="row" style="max-width:300px">
+   <button class="opt mid" data-gprev onclick="gramNav(this,-1)" style="flex:0 0 60px" disabled>&#8249;</button>
+   <button class="opt mid" data-gnext onclick="gramNav(this,1)" style="flex:1">Next &#8250;</button>
+  </div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="explain">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Explainer · Watch The Story Move</div>
+  <div class="es">Tap each one. Watch the timeline, then say the sentence out loud.</div>
+  <div class="exTimeline" data-title="Grammar timeline" data-left="7 p.m." data-right="3 a.m." data-items='[
+   {"chip":"in order","arc":true,"ev":[{"t":"went to a bar","x":10},{"t":"got food","x":45},{"t":"went home","x":82}],"sent":"First we went to a bar, <b>then</b> we got food, <b>after that</b> we went home.","say":"Three things from your Saturday, in order."},
+   {"chip":"by the time","ev":[{"t":"store closed","x":30}],"pin":{"x":78,"t":"I got there"},"span":{"from":30,"to":100,"t":"it was closed"},"sent":"<b>By the time</b> I got there, the store <b>was</b> closed.","say":"By the time you got somewhere, how was it?","a":"audio/c7_bythetime1.mp3"},
+   {"chip":"by the time (2)","ev":[{"t":"left the beach","x":14},{"t":"car trouble","x":45}],"pin":{"x":86,"t":"we got home"},"span":{"from":86,"to":100,"t":"3 a.m."},"sent":"<b>By the time</b> we got home, it <b>was</b> 3 a.m.","say":"By the time you got home last Saturday, what time was it?","a":"audio/c7_bythetime2.mp3"},
+   {"chip":"the trap","ev":[{"t":"went to the bar","x":12},{"bad":"arrive","fix":"arrived","t":"my friend","x":50},{"bad":"say","fix":"said","t":"he","x":84}],"sent":"Then my friend <b>arrived</b> and he <b>said</b> let’s go.","say":"Tell it again. Every verb stays in the past."}
+  ]'></div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="grammarcheck" data-idx="0"
+ data-items='[
+  {"tag":"the next event","q":"We had dinner. ___, we went dancing.","a":"We had dinner. Then / After that, we went dancing."},
+  {"tag":"the moment you arrived","q":"___ I got to the party, everybody was gone.","a":"By the time I got to the party, everybody was gone."},
+  {"tag":"the surprise","q":"Out of nowhere, my ex (show up) ___.","a":"Out of nowhere, my ex showed up."},
+  {"tag":"fix the error","q":"Then she call me and say she was sick.","a":"Then she called me and said she was sick."},
+  {"tag":"fix the error","q":"By the time I arrive, the store was closed.","a":"By the time I arrived, the store was closed."},
+  {"tag":"fix the error","q":"Once time I lost my keys at a party.","a":"One time I lost my keys at a party."}
+ ]'>
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Guided · Check It</div>
+  <div class="gcTag" data-gctag>the next event</div>
+  <div class="gcQ" data-gcq>&nbsp;</div>
+  <button class="toggleBtn" onclick="gcReveal(this)">Say it out loud, then check</button>
+  <div class="keyBox" data-gckey></div>
+  <div class="dots" data-gcdots></div>
+  <div class="row" style="max-width:300px">
+   <button class="opt mid" data-gcprev onclick="gcNav(this,-1)" style="flex:0 0 60px" disabled>&#8249;</button>
+   <button class="opt mid" data-gcnext onclick="gcNav(this,1)" style="flex:1">Next &#8250;</button>
+  </div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/open7.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">Listen · Catch The Turning Point</div>
+  <div class="cue">My weekend story. It plays once.</div>
+  <button class="audio" data-audio="audio/c7_story.mp3" onclick="playAudio(this)" style="width:84px;height:84px;font-size:34px">🔊</button>
+  <div class="think">1. When did the story <b>change</b>? Say it in one sentence.<br>2. React with a phrase from today.<br>3. Ask me <b>2 questions with did</b>.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Check yourself</button>
+  <div class="keyBox" style="text-align:left"><b>The turning point:</b> out of nowhere it started pouring, and it turned out he left the keys on the sand.<br><b>Questions you could ask:</b> Where did you find them? Did you give the kid something? What did your friends say?</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="stack">
+  <div class="badge">Pronunciation · Stress The Surprise</div>
+  <div class="es">In a story, the surprise gets the <b>strongest</b> stress, with a tiny pause before it. Tap, listen, copy it twice.</div>
+  <div class="row"><button class="opt mid" data-audio="audio/c7_s1.mp3" onclick="playAudio(this)">Out of nowhere… 🔊</button></div>
+  <div class="row"><button class="opt mid" data-audio="audio/c7_s2.mp3" onclick="playAudio(this)">It turns out… 🔊</button></div>
+  <div class="row"><button class="opt mid" data-audio="audio/c7_s3.mp3" onclick="playAudio(this)">You won't believe… 🔊</button></div>
+  <div class="word" style="font-size:19px">"Out of nowhere… it started <b>POUR</b>ing." · "It turns out… I left the <b>KEYS</b>." · "You <b>WON'T</b> believe what happened."</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/core7.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">CORE · Round 1 — Build Your Story</div>
+  <div class="cue">A real weekend. A party, a trip, a family visit, or a day that went wrong.</div>
+  <div class="think">Tell me the story. I'm your friend: I'll react and ask questions.</div>
+  <div class="es" style="font-size:14px">Checklist: <b>You won't believe what happened</b> to open · <b>3+ connectors</b> · <b>by the time</b> once · <b>I was like</b> once · <b>show up</b> or <b>have a blast</b> · <b>every verb in the past</b> · <b>one number</b> (a time, a price, an address)</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/core7.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">CORE · Round 2 — Record It</div>
+  <div class="cue">Same story, no table. Checklist only.</div>
+  <div class="think">I'll interrupt you <b>once</b> with a side question. Answer it, then come back with <b>so anyway</b>.</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">CORE · Play It Back</div>
+  <div class="think">Listen to your recording. Mark <b>your own</b> slips into the present before anyone tells you.</div>
+  <div class="es">Watch the moment after <b>then</b> and <b>out of nowhere</b>. That's where the past usually slips. How many did you catch?</div>
+  <button class="btn go" data-next>Done — next</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/core7.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">CORE · Round 3 — The Voice Note</div>
+  <div class="cue">Camera off &middot; no checklist</div>
+  <div class="think">Tell the story again, like a voice note to your friend. Shorter, faster. 90 seconds.</div>
+  <div class="timerRing" data-seconds="90">
+   <svg width="96" height="96" viewBox="0 0 96 96">
+    <circle cx="48" cy="48" r="44" fill="none" stroke="rgba(244,238,246,.15)" stroke-width="6"></circle>
+    <circle class="timerArc" cx="48" cy="48" r="44" fill="none" stroke="#FFBE00" stroke-width="6"
+      stroke-linecap="round" stroke-dasharray="276.46" stroke-dashoffset="0" transform="rotate(-90 48 48)"></circle>
+   </svg>
+   <span class="timerNum">90</span>
+  </div>
+  <button class="btn go" onclick="timerStart(this)">Start 90s</button>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/open7.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">The Real Thing — Answer Key</div>
+  <div class="think">Monday morning at the station. Jess asks about your weekend. Tell her first. Open this only after.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Show the model</button>
+  <div class="keyBox" style="text-align:left">
+   <b>Jess:</b> Hey! How was your weekend?<br>
+   <b>You:</b> You won't believe what happened. My cousins showed up on Saturday with no warning.<br>
+   <b>Jess:</b> No way. What did you do?<br>
+   <b>You:</b> I was like, okay… let's go out. So we went to a taco place downtown, then we went to the beach. We had a blast.<br>
+   <b>Jess:</b> That sounds fun.<br>
+   <b>You:</b> It was, until out of nowhere my car didn't start. It turns out I left the lights on. So anyway, a guy helped us, and by the time we got home it was two a.m. I was lowkey dead on Sunday.<br>
+   <b>Jess:</b> That's wild. Same old, same old for me. I slept all weekend.
+  </div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Check Yourself · 1 of 2</div>
+  <div class="think">In the model, why didn't Danna's car start?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Check yourself</button>
+  <div class="keyBox">She <b>left</b> the lights on.</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Check Yourself · 2 of 2</div>
+  <div class="think">What time was it when they got home?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Check yourself</button>
+  <div class="keyBox"><b>Two a.m.</b> "By the time we got home, it was two a.m."</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="boss">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="bossWrap" data-lives="3" data-items='["Open a story with You won’t believe what happened, and tell me the first two things, in the past.","A surprise: start with Out of nowhere, …","Finish it: By the time I got home, …","Fix it out loud: “Then she call me and say she was sick.”","React to my story: “My cousin showed up at 3 a.m. with a dog.”","Skip to the end of a long story with Long story short, …"]'>
+   <div class="bossTop"><span class="bossName">⚔ Boss Round</span><span class="bossLives"></span></div>
+   <div class="bossBar"><i></i></div>
+   <div class="bossCard"><div class="think" data-bprompt></div></div>
+   <div class="row"><button class="btn" onclick="bossHit(this,false)">Not yet</button><button class="btn go" onclick="bossHit(this,true)">Nailed it</button></div>
+   <button class="btn bossRetry" style="display:none" onclick="bossRetry(this)">Run it again</button>
+   <div class="bossMsg"></div>
+  </div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="homework">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Homework</div>
+  <div class="sent" style="text-align:left;font-size:17px">1. <b>While you drive</b>, tell your weekend story out loud, in English, once.</div>
+  <div class="sent" style="text-align:left;font-size:17px">2. Then record the <b>90-second version</b> as a voice note to your own WhatsApp. Use <b>You won't believe what happened</b>, <b>3 connectors</b> and <b>by the time</b>.</div>
+  <div class="es" style="font-size:15px">Why: Class 8 is your first check. You'll retell a story and the past has to hold on its own. This voice note is your practice run.</div>
+  <button class="btn go" data-next>Done for today</button>
+ </div></div>
+
+<div class="scr" data-t="close">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="big">You told a whole story, and kept it in the past.</div>
+  <div class="es">Send the voice note. See you at Class 8.</div>
+  <div class="credits">Teacher's Station · The Milestone Method</div>
+ </div></div>
+
+</div>
+
+
 </div>
 <script>
 function toggleMenu(){ document.getElementById('classMenu').classList.toggle('open'); }
@@ -2576,7 +3034,7 @@ document.querySelectorAll('.bg[data-img]').forEach(el=>{
   if(visualParent){ visualParent.setAttribute('data-img-src', src); }
 });
 document.querySelectorAll('.scr[data-t="grammarcheck"]').forEach(gcRender);
-loadScreens(6);
+loadScreens(7);
 </script>
 <!-- DELIGHT:SHELL:START — motion layer v1 (ts-class-app). Additive: wraps show(), touches no class content. Safe to retrofit into any live student file. -->
 <style id="delight-shell">
@@ -2916,5 +3374,188 @@ new MutationObserver(ms=>ms.forEach(m=>{
 })).observe(document.body, {subtree:true, attributes:true, attributeOldValue:true, attributeFilter:['class']});
 </script>
 <!-- DELIGHT:MECH:END -->
+
+<!-- DELIGHT:EXPLAIN:START — explainer dashboards v1 (ts-class-app): timeline · meter. Interactive, animated explanations for vocab + grammar. Every item ends in a "Say it" prompt the student answers OUT LOUD. Data-driven, no unique IDs. -->
+<style id="delight-explain">
+.scr[data-t="explain"]{justify-content:safe center;overflow-y:auto}
+.scr[data-t="explain"] .stack{padding-top:76px;padding-bottom:28px}
+.scr[data-t="explain"]{background:radial-gradient(120% 100% at 50% 100%,#3A0140 0%,#0D0014 70%) #0D0014}
+.scr[data-t="explain"] .plain{background:none}
+.exPanel{width:100%;border-radius:18px;padding:14px 14px 16px;background:linear-gradient(160deg,rgba(90,8,102,.55),rgba(13,0,20,.75));
+ border:1px solid rgba(255,190,0,.28);box-shadow:0 18px 50px -18px rgba(0,0,0,.8);display:flex;flex-direction:column;gap:12px}
+.exHead{display:flex;justify-content:space-between;align-items:center;font:600 11px 'Poppins',system-ui,sans-serif;letter-spacing:1.6px;text-transform:uppercase;color:rgba(244,238,246,.55)}
+.exHead .live{display:flex;align-items:center;gap:6px;color:var(--go)}
+.exHead .live::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--go);box-shadow:0 0 8px var(--go);animation:exBlink 1.6s ease-in-out infinite}
+@keyframes exBlink{50%{opacity:.25}}
+.exChips{display:flex;flex-wrap:wrap;gap:7px;justify-content:center}
+.exChip{border:1px solid rgba(244,238,246,.22);background:rgba(244,238,246,.06);color:#F4EEF6;border-radius:18px;
+ font:600 13px 'Poppins',system-ui,sans-serif;padding:8px 12px;min-height:36px;cursor:pointer;transition:background .25s,border-color .25s,color .25s}
+.exChip.seen::after{content:" ✓";color:var(--go)}
+.exChip.on{background:var(--go);border-color:var(--go);color:#2D0130}
+.exChip.on::after{color:#2D0130}
+/* timeline */
+.exStage{position:relative;height:172px;margin:0 6px}
+.exLine{position:absolute;left:0;right:0;top:75px;height:2px;background:linear-gradient(90deg,rgba(244,238,246,.12),rgba(244,238,246,.4))}
+.exEnd{position:absolute;top:156px;font:600 10px 'Poppins',system-ui,sans-serif;letter-spacing:1.4px;text-transform:uppercase;color:rgba(244,238,246,.4)}
+.exEnd.l{left:0}.exEnd.r{right:0}
+.exTravel{position:absolute;top:69px;width:14px;height:14px;margin-left:-7px;border-radius:50%;background:var(--go);
+ box-shadow:0 0 14px 4px rgba(255,190,0,.55);left:0;opacity:0}
+.exNode{position:absolute;top:75px;width:0;height:0}
+.exNode i{position:absolute;left:-8px;top:-8px;width:16px;height:16px;border-radius:50%;background:#F4EEF6;box-shadow:0 0 0 4px rgba(244,238,246,.12)}
+.exNode span{position:absolute;left:50%;width:108px;margin-left:-54px;text-align:center;font:500 12.5px/1.25 'Poppins',system-ui,sans-serif;color:#F4EEF6}
+.exNode.up span{bottom:16px}.exNode.dn span{top:16px}
+.exNode.pop{animation:exPop .45s cubic-bezier(.2,.8,.3,1.3) backwards}
+@keyframes exPop{from{opacity:0;transform:scale(.3)}to{opacity:1;transform:none}}
+.exNode.surprise i{background:var(--go);animation:exPulse 1.2s ease-in-out infinite}
+.exNode.surprise span{color:var(--go);font-weight:700}
+@keyframes exPulse{50%{box-shadow:0 0 0 10px rgba(255,190,0,.18)}}
+.exNode.bad span s{color:#E05A6A}
+.exNode.bad i{background:#E05A6A}
+.exNode.bad.fixed i{background:var(--go)}
+.exNode .fix{display:none;color:var(--go);font-weight:700}
+.exNode.bad.fixed .fix{display:inline}
+.exArc{position:absolute;top:60px;height:15px;border:2px solid rgba(255,190,0,.55);border-bottom:none;border-radius:40px 40px 0 0;transform-origin:left;
+ animation:exGrow .5s ease backwards}
+@keyframes exGrow{from{transform:scaleX(0)}to{transform:none}}
+.exSpan{position:absolute;top:128px;height:22px;border-radius:11px;background:linear-gradient(90deg,rgba(255,190,0,.18),rgba(255,190,0,.45));
+ border:1px solid rgba(255,190,0,.6);font:600 11.5px 'Poppins',system-ui,sans-serif;color:var(--go);display:flex;align-items:center;justify-content:center;
+ white-space:nowrap;overflow:hidden;transform-origin:left;animation:exGrow .7s cubic-bezier(.3,.7,.2,1) backwards}
+.exPin{position:absolute;top:22px;width:0}
+.exPin b{position:absolute;left:-1px;top:20px;width:2px;height:40px;background:var(--go)}
+.exPin span{position:absolute;left:50%;width:120px;margin-left:-60px;top:0;text-align:center;font:700 12px 'Poppins',system-ui,sans-serif;color:var(--go)}
+.exPin.pop{animation:exDrop .55s cubic-bezier(.2,.8,.3,1.3) backwards}
+@keyframes exDrop{from{opacity:0;transform:translateY(-26px)}to{opacity:1;transform:none}}
+/* meter */
+.exGauge{position:relative;width:260px;height:156px;margin:0 auto}
+.exGauge svg{margin:0 auto}
+.exGauge svg{width:240px;height:130px;display:block}
+.exNeedle{transform-origin:120px 120px;transition:transform 1s cubic-bezier(.25,1.4,.4,1)}
+.exGLbl{position:absolute;bottom:0;white-space:nowrap;font:600 10.5px 'Poppins',system-ui,sans-serif;letter-spacing:1.2px;text-transform:uppercase;color:rgba(244,238,246,.5);max-width:90px}
+.exGLbl.l{left:0;text-align:left}.exGLbl.r{right:0;text-align:right}
+.exRead{text-align:center;font:700 20px 'Poppins',system-ui,sans-serif;color:var(--go);min-height:26px}
+.exRead.pop{animation:dPop .4s cubic-bezier(.2,.8,.3,1.15)}
+.exTag{text-align:center;font:600 11px 'Poppins',system-ui,sans-serif;letter-spacing:1.4px;text-transform:uppercase;color:rgba(244,238,246,.55);margin-top:-6px}
+/* shared readout */
+.exSent{font:400 17px/1.45 'Lora',Georgia,serif;text-align:center;color:#F4EEF6;min-height:24px}
+.exSent b{color:var(--go)}
+.exSay{display:flex;gap:8px;align-items:flex-start;width:100%;border-radius:12px;padding:10px 12px;background:rgba(255,190,0,.08);border:1px dashed rgba(255,190,0,.45);
+ font:500 14px/1.4 'Poppins',system-ui,sans-serif;color:#F4EEF6}
+.exSay::before{content:"🎙";font-size:16px}
+.exSay:empty{display:none}
+.exAudio{align-self:center;border:none;border-radius:20px;background:rgba(244,238,246,.1);color:#F4EEF6;font:600 13px 'Poppins',system-ui,sans-serif;padding:7px 14px;min-height:34px}
+.exAudio[hidden]{display:none}
+.exCount{text-align:center;font:600 11px 'Poppins',system-ui,sans-serif;letter-spacing:1.4px;text-transform:uppercase;color:rgba(244,238,246,.5)}
+@media (max-width:400px){.exNode span{width:88px;margin-left:-44px;font-size:11.5px}}
+@media (prefers-reduced-motion:reduce){.exNode.pop,.exPin.pop,.exArc,.exSpan,.exRead.pop,.exNode.surprise i,.exHead .live::before{animation:none!important}.exNeedle,.exTravel{transition:none!important}}
+</style>
+<script id="delight-explain-js">
+(function(){
+  const reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const items = el => { try { return JSON.parse(el.getAttribute('data-items')) || []; } catch(e){ return []; } };
+  const D = reduce ? 0 : 1;
+
+  /* Timeline dashboard — each item: {chip, ev:[{t,x,surprise?,bad?,fix?}], arc?:true, pin?:{x,t}, span?:{from,to,t}, sent, say, a?} */
+  function tlDraw(wrap, it){
+    const st = wrap.querySelector('.exStage');
+    st.querySelectorAll('.exNode,.exPin,.exSpan,.exArc').forEach(e => e.remove());
+    const ev = it.ev || [], step = .5 * D;
+    ev.forEach((e, k) => {
+      const n = document.createElement('div');
+      n.className = 'exNode pop ' + (k % 2 ? 'dn' : 'up') + (e.surprise ? ' surprise' : '') + (e.bad ? ' bad' : '');
+      n.style.left = e.x + '%'; n.style.animationDelay = (k*step) + 's';
+      n.innerHTML = '<i></i><span>' + e.t + (e.bad ? ' <s>' + e.bad + '</s> <b class="fix">→ ' + (e.fix || '') + '</b>' : '') + '</span>';
+      st.appendChild(n);
+      if (e.bad) setTimeout(() => n.classList.add('fixed'), (k*step + 1.4*D) * 1000);
+      if (it.arc && k > 0){
+        const a = document.createElement('div'), x0 = ev[k-1].x;
+        a.className = 'exArc'; a.style.left = x0 + '%'; a.style.width = (e.x - x0) + '%'; a.style.animationDelay = (k*step - .2*D) + 's';
+        st.appendChild(a);
+      }
+    });
+    let t = ev.length * step;
+    if (it.pin){
+      const p = document.createElement('div');
+      p.className = 'exPin pop'; p.style.left = it.pin.x + '%'; p.style.animationDelay = t + 's';
+      p.innerHTML = '<span>' + it.pin.t + '</span><b></b>'; st.appendChild(p); t += step;
+    }
+    if (it.span){
+      const s = document.createElement('div');
+      s.className = 'exSpan'; s.style.left = it.span.from + '%'; s.style.width = (it.span.to - it.span.from) + '%';
+      s.style.animationDelay = t + 's'; s.textContent = it.span.t; st.appendChild(s);
+    }
+    const dot = st.querySelector('.exTravel'), last = ev.length ? ev[ev.length-1].x : 0;
+    dot.style.transition = 'none'; dot.style.left = (ev.length ? ev[0].x : 0) + '%'; dot.style.opacity = ev.length ? 1 : 0;
+    void dot.offsetWidth;
+    dot.style.transition = 'left ' + Math.max(.01, (ev.length-1)*step) + 's linear';
+    dot.style.left = (it.pin ? Math.max(last, it.pin.x) : last) + '%';
+  }
+
+  /* Meter dashboard — each item: {chip?, w, v:0–100, tag?, sent, say, a?}. data-left / data-right label the ends. */
+  function mDraw(wrap, it){
+    const ang = -90 + Math.max(0, Math.min(100, it.v)) * 1.8;
+    wrap.querySelector('.exNeedle').style.transform = 'rotate(' + ang + 'deg)';
+    const r = wrap.querySelector('.exRead');
+    r.textContent = it.w || ''; r.classList.remove('pop'); void r.offsetWidth; r.classList.add('pop');
+    wrap.querySelector('.exTag').textContent = it.tag || '';
+  }
+  let gid = 0;
+  function gaugeSvg(){
+    const g = 'exG' + (++gid);
+    const arc = (a0, a1) => { const p = a => [120 + 100*Math.cos(a*Math.PI/180), 120 + 100*Math.sin(a*Math.PI/180)];
+      const s = p(a0), e = p(a1); return 'M' + s[0].toFixed(1) + ',' + s[1].toFixed(1) + ' A100,100 0 0 1 ' + e[0].toFixed(1) + ',' + e[1].toFixed(1); };
+    let ticks = '';
+    for (let k = 0; k <= 10; k++){ const a = (180 + k*18) * Math.PI/180;
+      ticks += '<line x1="' + (120+86*Math.cos(a)).toFixed(1) + '" y1="' + (120+86*Math.sin(a)).toFixed(1) + '" x2="' + (120+78*Math.cos(a)).toFixed(1) + '" y2="' + (120+78*Math.sin(a)).toFixed(1) + '" stroke="rgba(244,238,246,.3)" stroke-width="2"/>'; }
+    return '<svg viewBox="0 0 240 130"><defs><linearGradient id="' + g + '" x1="0" x2="1"><stop offset="0" stop-color="#6B0876"/><stop offset="1" stop-color="#FFBE00"/></linearGradient></defs>' +
+      '<path d="' + arc(180, 360) + '" fill="none" stroke="rgba(244,238,246,.08)" stroke-width="16" stroke-linecap="round"/>' +
+      '<path d="' + arc(180, 360) + '" fill="none" stroke="url(#' + g + ')" stroke-width="10" stroke-linecap="round"/>' + ticks +
+      '<g class="exNeedle" style="transform:rotate(-90deg)"><line x1="120" y1="120" x2="120" y2="34" stroke="#F4EEF6" stroke-width="3.5" stroke-linecap="round"/></g>' +
+      '<circle cx="120" cy="120" r="9" fill="#FFBE00"/></svg>';
+  }
+
+  function build(wrap){
+    const kind = wrap.classList.contains('exTimeline') ? 'tl' : 'meter', list = items(wrap);
+    wrap._seen = new Set(); wrap._kind = kind;
+    const head = '<div class="exHead"><span>' + (wrap.getAttribute('data-title') || 'Explainer') + '</span><span class="live">Live</span></div>';
+    const chips = '<div class="exChips">' + list.map((it, i) => '<button class="exChip" data-exi="' + i + '" onclick="exPick(this)">' + (it.chip || it.w) + '</button>').join('') + '</div>';
+    const body = kind === 'tl'
+      ? '<div class="exStage"><div class="exLine"></div><div class="exEnd l">' + (wrap.getAttribute('data-left') || 'Saturday') + '</div><div class="exEnd r">' + (wrap.getAttribute('data-right') || 'Sunday') + '</div><div class="exTravel"></div></div>'
+      : '<div class="exGauge">' + gaugeSvg() + '<div class="exGLbl l">' + (wrap.getAttribute('data-left') || '') + '</div><div class="exGLbl r">' + (wrap.getAttribute('data-right') || '') + '</div></div><div class="exRead"></div><div class="exTag"></div>';
+    wrap.innerHTML = head + chips + body + '<div class="exSent"></div><button class="exAudio" hidden onclick="playAudio(this)">🔊 Listen</button><div class="exSay"></div><div class="exCount"></div>';
+    exCount(wrap);
+  }
+  function exCount(wrap){
+    const n = items(wrap).length, s = wrap._seen.size;
+    wrap.querySelector('.exCount').textContent = s + ' of ' + n + ' explored · say each one out loud';
+    return s >= n;
+  }
+  window.exPick = function(chip){
+    const wrap = chip.closest('.exTimeline,.exMeter'), i = +chip.dataset.exi, it = items(wrap)[i];
+    wrap.querySelectorAll('.exChip').forEach(c => c.classList.toggle('on', c === chip));
+    chip.classList.add('seen'); wrap._seen.add(i);
+    if (wrap._kind === 'tl') tlDraw(wrap, it); else mDraw(wrap, it);
+    wrap.querySelector('.exSent').innerHTML = it.sent || '';
+    wrap.querySelector('.exSay').textContent = it.say || '';
+    const au = wrap.querySelector('.exAudio');
+    if (it.a){ au.hidden = false; au.setAttribute('data-audio', it.a); au._player = null; } else au.hidden = true;
+    if (exCount(wrap)){ const nx = wrap.closest('.scr').querySelector('[data-next]'); if (nx) nx.style.display = 'block'; }
+  };
+
+  const all = [...document.querySelectorAll('.exTimeline[data-items],.exMeter[data-items]')];
+  all.forEach(build);
+  // Replay the first item every time the screen is entered, so the animation is seen, not missed.
+  new MutationObserver(ms => ms.forEach(m => {
+    const s = m.target;
+    if (!s.classList.contains('scr')) return;
+    if (!s.classList.contains('on') || s._exOn) { if (!s.classList.contains('on')) s._exOn = false; return; }
+    s._exOn = true;
+    s.querySelectorAll('.exTimeline,.exMeter').forEach(w => {
+      const cur = w.querySelector('.exChip.on') || w.querySelector('.exChip');
+      if (cur) setTimeout(() => exPick(cur), 380);
+    });
+  })).observe(document.body, {subtree:true, attributes:true, attributeFilter:['class']});
+})();
+</script>
+<!-- DELIGHT:EXPLAIN:END -->
 </body>
 </html>
