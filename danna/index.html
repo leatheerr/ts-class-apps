@@ -4122,9 +4122,17 @@ new MutationObserver(ms=>ms.forEach(m=>{
 .fcNav .opt[disabled]{opacity:.3}
 .fcNav .dots{gap:8px}
 .fcNav .dot{width:11px;height:11px}
-html.dFit .sceneImg{height:150px}
-html.dFit .fcCard{height:270px}
-html.dFit .picRow img{height:88px}
+.sceneCol{display:contents}
+html.dFit .scr .stack:has(>.sceneCol){display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);column-gap:28px;row-gap:14px;max-width:860px;align-items:center;justify-items:stretch}
+html.dFit .stack:has(>.sceneCol)>.badge{grid-column:1/-1;text-align:center}
+html.dFit .stack:has(>.sceneCol)>.sceneImg{grid-column:1;width:100%;height:auto;max-height:400px;object-fit:cover}
+html.dFit .stack:has(>.sceneCol)>.sceneCol{grid-column:2;display:flex;flex-direction:column;align-items:center;gap:14px;min-width:0}
+html.dFit .fcCard{height:290px;max-width:450px}
+html.dFit .fcFace img{object-fit:contain;background:var(--ob)}
+html.dFit .fcNav{max-width:450px}
+html.dFit .picRow{max-width:640px}
+html.dFit .picRow img{height:auto;aspect-ratio:3/2}
+html.dFit .picRow.two{max-width:440px}
 @media (prefers-reduced-motion:reduce){.fcInner{transition:none}}
 </style>
 <script>
@@ -4170,6 +4178,12 @@ html.dFit .picRow img{height:88px}
     deck.querySelector('[data-fcnext]').addEventListener('click', () => go(1));
     render(deck);
   }
+  document.querySelectorAll('.stack>.sceneImg').forEach(im => {
+    const k = im.parentElement, w = document.createElement('div');
+    w.className = 'sceneCol';
+    [...k.children].forEach(c => { if(c !== im && !c.classList.contains('badge')) w.appendChild(c); });
+    k.appendChild(w);
+  });
   document.querySelectorAll('[data-flash]').forEach(build);
 })();
 </script>
