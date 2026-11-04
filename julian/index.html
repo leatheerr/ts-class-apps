@@ -336,7 +336,7 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
   <span class="brand">TEACHER'S STATION</span>
 
-  <button id="classSelect" onclick="toggleMenu()">Class 9 ▾</button>
+  <button id="classSelect" onclick="toggleMenu()">Class 10 ▾</button>
 
 </div>
 
@@ -356,7 +356,8 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
   <div class="item" onclick="selectClass(7)">Class 7: 🔎 Check — Routine vs. Right Now</div>
   <div class="item" onclick="selectClass(8)">Class 8: 📖 Reading 2 — Why English Opens Doors</div>
-  <div class="item active" onclick="selectClass(9)">Class 9: a / an / the — Talking About The Job</div>
+  <div class="item" onclick="selectClass(9)">Class 9: a / an / the — Talking About The Job</div>
+  <div class="item active" onclick="selectClass(10)">Class 10: at / on / in — Where And When</div>
 
 </div>
 
@@ -5083,6 +5084,330 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 </div>
 
+<div class="classBlock" data-class="10" data-mech="flash,explain,wheel,tpr,timer">
+<style>
+.classBlock[data-class="10"] .scr{justify-content:safe center;overflow-y:auto;-webkit-overflow-scrolling:touch}
+.classBlock[data-class="10"] .scr .stack{padding-top:58px;padding-bottom:28px;gap:14px}
+html.dFit .classBlock[data-class="10"] .scr .stack{padding-top:14px;padding-bottom:16px;gap:10px}
+.classBlock[data-class="10"] .slotRow.three,.classBlock[data-class="10"] .slotLbls.three{grid-template-columns:repeat(3,1fr)}
+.jobCard{width:100%;display:grid;grid-template-columns:auto 1fr;gap:6px 14px;background:rgba(255,255,255,.05);border:1px solid rgba(255,190,0,.25);border-radius:12px;padding:12px 14px;font-size:15px;line-height:1.35;text-align:left;color:var(--ink)}
+.jobCard b{color:var(--go);font-family:'Poppins',system-ui,sans-serif;font-size:13px;font-weight:600}
+</style>
+
+<div class="scr" data-t="open">
+ <div class="bg" data-img="photos/c10_open.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="cue">Class 10</div>
+  <div class="big">Talking about the job: stop using "for" for everything</div>
+  <div class="es" style="font-size:16px;line-height:1.5;color:rgba(244,238,246,.85)">By the end of this class, you can tell a client where the job is and when it happens, with at, on and in: in the kitchen, on Monday, at 8. You can also hear "could you" and "call you" by ear.</div>
+  <button class="btn go" data-next>Begin</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Warm-up · 3 Questions</div>
+  <div class="think" style="font-size:19px">1. You have American clients now. What do they ask you first? Which question is the hardest for you?</div>
+  <div class="think" style="font-size:19px">2. A client wants the kitchen ready in 3 days, but you need 5. What do you say?</div>
+  <div class="think" style="font-size:19px">3. Which is worse for your business: a late job or a bad job? Why?</div>
+  <div class="es">Just talk. It doesn't have to be perfect.</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Listen · The Client's Voicemail</div>
+  <img class="sceneImg" src="photos/c10_leak.jpg" alt="A kitchen faucet dripping water">
+  <button class="audio" data-audio="audio/c10_voicemail.mp3" onclick="playAudio(this)" aria-label="Play the voicemail">🔊</button>
+  <div class="think" style="font-size:19px">Listen two times. Where is the problem? When does she want you there?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Now show the text</button>
+  <div class="keyBox" style="text-align:left;line-height:1.6">Hi Julian, this is Karen. There's a leak <b>in</b> the kitchen, <b>on</b> the wall behind the sink. Could you come <b>on</b> Thursday <b>at</b> nine? I'm <b>at</b> work <b>in</b> the afternoon. Please call me <b>at</b> five. Thanks!<br><br>In Spanish, all of these are <b>en</b>. Why does English have three words?</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="flash">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Flashcards · New Words</div>
+  <div class="howTo">Look at the photo and <b>say the word out loud</b>. Then tap the card to check. Use ‹ › for the next card.</div>
+  <div data-flash data-items='[
+   {"img":"photos/c10_deadline.jpg","q":"This is the last day to finish the job. What is it?","w":"deadline","m":"The last day to finish the job.","s":"The deadline is December 15.","a":"audio/c10_deadline.mp3"},
+   {"img":"photos/c10_timeline.jpg","q":"This is the plan: what happens on which day. What is it?","w":"timeline","m":"The plan for the job, day by day.","s":"Here’s the timeline: demolition first, then the floor.","a":"audio/c10_timeline.mp3"},
+   {"img":"photos/c10_remodel.jpg","q":"You change a kitchen and make it new. What is this job?","w":"remodel","m":"You change a room and make it new.","s":"It’s a kitchen remodel.","a":"audio/c10_remodel.mp3"},
+   {"img":"photos/c10_since.jpg","q":"You arrived in the US some years ago, and you’re still here. How do you say it?","w":"I’ve been here since …","m":"Say this one as one piece, with the year you arrived.","s":"I’ve been here since 2023.","a":"audio/c10_since.mp3"}
+  ]'></div>
+  <button class="btn go" data-next style="display:none">Next</button>
+ </div></div>
+
+<div class="scr" data-t="explain">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">See It · The Job From Start To End</div>
+  <div class="es">Tap each word and watch the job. Then answer the question out loud.</div>
+  <div class="exTimeline" data-title="Kitchen job" data-left="Start" data-right="End" data-items='[
+   {"chip":"timeline","arc":true,"ev":[{"t":"demolition","x":12},{"t":"new floor","x":50},{"t":"finished","x":86}],"sent":"Here’s the <b>timeline</b>: demolition first, then the floor.","say":"Tell me the timeline of your next job.","a":"audio/c10_timeline.mp3"},
+   {"chip":"deadline","ev":[{"t":"work","x":15},{"t":"more work","x":48},{"t":"last day!","x":86,"surprise":true}],"sent":"The <b>deadline</b> is December 15.","say":"What is the deadline for your big project?","a":"audio/c10_deadline.mp3"},
+   {"chip":"remodel","arc":true,"ev":[{"t":"old kitchen","x":12},{"t":"demolition","x":50},{"t":"new kitchen","x":86}],"sent":"It’s a kitchen <b>remodel</b>.","say":"Tell me about a remodel you did.","a":"audio/c10_remodel.mp3"}
+  ]'></div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="flash">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · Which Phrase?</div>
+  <div class="howTo">Read the situation and <b>say the phrase</b>. Then tap the card to check. You'll use all three in today's phone call.</div>
+  <div data-flash data-items='[
+   {"img":"photos/c10_works.jpg","q":"The client says: “Monday at 8?” You say yes. What do you say?","w":"That works for me.","m":"The client offers a time, and you agree.","s":"Monday at 8? That works for me.","a":"audio/c10_thatworks.mp3"},
+   {"img":"photos/c10_depends.jpg","q":"The client says: “How long does it take?” You don’t know yet. What do you say?","w":"It depends on the job.","m":"You can’t give an exact answer yet.","s":"How long? It depends on the job.","a":"audio/c10_depends.mp3"},
+   {"img":"photos/c10_incase.jpg","q":"You bring extra materials, because something might break. How do you finish the sentence?","w":"Just in case.","m":"You do something extra because a problem might happen.","s":"Bring extra tiles, just in case.","a":"audio/c10_justincase.mp3"}
+  ]'></div>
+  <button class="btn go" data-next style="display:none">Next</button>
+ </div></div>
+
+<div class="scr" data-t="tpr" data-idx="0" data-items='[{"w":"Sentence 1","a":"audio/c10_cc1.mp3"},{"w":"Sentence 2","a":"audio/c10_cc2.mp3"},{"w":"Sentence 3","a":"audio/c10_cc3.mp3"},{"w":"Sentence 4","a":"audio/c10_cc4.mp3"},{"w":"Sentence 5","a":"audio/c10_cc5.mp3"},{"w":"Sentence 6","a":"audio/c10_cc6.mp3"}]'>
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Hear It · Could You Or Call You?</div>
+  <div class="howTo">Tap the sound and listen, with no text. Say <b>"could"</b> or <b>"call"</b>. Then go to the next sentence.</div>
+  <button class="audio" data-audio="audio/c10_cc1.mp3" onclick="playAudio(this)" aria-label="Play the sentence">🔊</button>
+  <div class="word" data-tprword>Sentence 1</div>
+  <div class="dots" data-tprdots><div class="dot lit"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="row" style="max-width:300px">
+   <button class="opt mid" onclick="tprNav(this,-1)" style="flex:0 0 60px" aria-label="Previous sentence">‹</button>
+   <button class="opt mid" onclick="tprNav(this,1)" style="flex:1">Next sentence ›</button>
+  </div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Check yourself</button>
+  <div class="keyBox">1. could · 2. call · 3. could · 4. call · 5. could · 6. call</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Say It · Could You / Call You</div>
+  <div class="row"><button class="opt mid" data-audio="audio/c10_couldyou.mp3" onclick="playAudio(this)">could you 🔊</button><button class="opt mid" data-audio="audio/c10_callyou.mp3" onclick="playAudio(this)">call you 🔊</button></div>
+  <div class="sent" style="font-size:16px;text-align:left"><b>Could you</b> sounds like "cu-jou": short, with no L.<br><b>Call you</b> has a long "caw-l".</div>
+  <div class="es">Listen and say each one two times. Then say the full sentence:</div>
+  <div class="row"><button class="opt mid" data-audio="audio/c10_cc1.mp3" onclick="playAudio(this)">Could you send me a picture? 🔊</button></div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="grammarcheck" data-idx="0"
+ data-items='[
+  {"tag":"fix it · cue: if","q":"You call me for anyways the question.","a":"Call me if you have any questions."},
+  {"tag":"fix it · word order","q":"I see for this work the demolition.","a":"I see demolition for this job."},
+  {"tag":"fix it · no of","q":"Finishing of the project.","a":"Finishing the project."},
+  {"tag":"fix it · no for","q":"For three years ago.","a":"Three years ago."}
+ ]'>
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Fix It · The "For" Habit</div>
+  <div class="gcTag" data-gctag>fix it</div>
+  <div class="gcQ" data-gcq>&nbsp;</div>
+  <button class="toggleBtn" onclick="gcReveal(this)">Say the whole sentence, then check</button>
+  <div class="keyBox" data-gckey></div>
+  <div class="dots" data-gcdots></div>
+  <div class="row" style="max-width:300px">
+   <button class="opt mid" data-gcprev onclick="gcNav(this,-1)" style="flex:0 0 60px" disabled>‹</button>
+   <button class="opt mid" data-gcnext onclick="gcNav(this,1)" style="flex:1">Next ›</button>
+  </div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="grammar" data-gstep="0">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge" data-gbadge>Guided · The Shape</div>
+  <div class="gPart on" data-gpart data-badge="Guided · The Shape">
+   <div class="gSlots">
+    <div class="slotLbls three">
+     <div class="slotLbl">at · one point</div><div class="slotLbl">on · surface or day</div><div class="slotLbl">in · inside or big time</div>
+    </div>
+    <div class="slotRow three">
+     <div class="slotChip" style="--i:0"><span class="w">at the house</span></div><div class="slotChip" style="--i:1"><span class="w">on the wall</span></div><div class="slotChip" style="--i:2"><span class="w">in the kitchen</span></div>
+    </div>
+    <div class="slotRow three">
+     <div class="slotChip" style="--i:3"><span class="w">at Home Depot</span></div><div class="slotChip" style="--i:4"><span class="w">on the floor</span></div><div class="slotChip" style="--i:5"><span class="w">in the truck</span></div>
+    </div>
+    <div class="slotRow three">
+     <div class="slotChip" style="--i:6"><span class="w">at 8</span></div><div class="slotChip" style="--i:7"><span class="w">on Monday</span></div><div class="slotChip" style="--i:8"><span class="w">in the morning</span></div>
+    </div>
+   </div>
+   <button class="toggleBtn" onclick="slotBuild(this)">Build the table</button>
+   <div class="slotNote">En español todo es "en". En inglés hay tres palabras.</div>
+  </div>
+  <div class="gPart" data-gpart data-badge="Guided · When You Use It">
+   <div class="useRow"><span class="useKey">at</span><span class="useArrow">→</span>
+    <span class="useVal">one exact point, or the clock. <i>"at the house, at 8"</i></span></div>
+   <div class="useRow"><span class="useKey">on</span><span class="useArrow">→</span>
+    <span class="useVal">a surface, or a day. <i>"on the wall, on Monday"</i></span></div>
+   <div class="useRow"><span class="useKey">in</span><span class="useArrow">→</span>
+    <span class="useVal">inside, part of the day, or a month. <i>"in the kitchen, in December"</i></span></div>
+   <div class="useRow"><span class="useKey">for</span><span class="useArrow">→</span>
+    <span class="useVal">how long, or for who. <i>"for three days, for the client"</i></span></div>
+  </div>
+  <div class="gPart" data-gpart data-badge="Guided · The Trap">
+   <div class="trapItem">
+    <div class="trapWrong">I work for Saturday.</div>
+    <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Say the fixed version, then tap</button>
+    <div class="keyBox"><b>I work <span class="hl">on</span> Saturday.</b> Saturday is a day, so use on.</div>
+   </div>
+   <div class="trapItem">
+    <div class="trapWrong">I buy materials in Home Depot.</div>
+    <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Say the fixed version, then tap</button>
+    <div class="keyBox"><b>I buy materials <span class="hl">at</span> Home Depot.</b> The store is one point on your route, so use at.</div>
+   </div>
+  </div>
+  <div class="dots" data-gdots><div class="dot lit"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="row" style="max-width:300px">
+   <button class="opt mid" data-gprev onclick="gramNav(this,-1)" style="flex:0 0 60px" disabled>‹</button>
+   <button class="opt mid" data-gnext onclick="gramNav(this,1)" style="flex:1">Next ›</button>
+  </div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="explain">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">See It · Small To Big</div>
+  <div class="es">Tap each one. The meter shows how big the place or the time is. Then answer the question out loud.</div>
+  <div class="exMeter" data-title="at · on · in" data-left="small · one point" data-right="big · inside" data-items='[
+   {"w":"at 8","v":12,"tag":"one point on the clock","sent":"We start <b>at</b> 8.","say":"What time do you start tomorrow?","a":"audio/c10_at8.mp3"},
+   {"w":"on Monday","v":50,"tag":"one whole day","sent":"We start <b>on</b> Monday.","say":"What day do you start your next job?","a":"audio/c10_onmon.mp3"},
+   {"w":"in December","v":90,"tag":"a big period of time","sent":"We finish <b>in</b> December.","say":"What month do you finish your big project?","a":"audio/c10_indec.mp3"},
+   {"w":"at the house","v":12,"tag":"one point on your route","sent":"I’m <b>at</b> the house.","say":"Where are you at 7 in the morning?","a":"audio/c10_athouse.mp3"},
+   {"w":"on the wall","v":50,"tag":"on a surface","sent":"The crack is <b>on</b> the wall.","say":"Name two things that go on a wall.","a":"audio/c10_onwall.mp3"},
+   {"w":"in the kitchen","v":90,"tag":"inside a space","sent":"The leak is <b>in</b> the kitchen.","say":"Where is the problem on your job right now?","a":"audio/c10_inkitchen.mp3"}
+  ]'></div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="grammarcheck" data-idx="0"
+ data-items='[
+  {"tag":"a day","q":"We start ___ Monday.","a":"We start on Monday."},
+  {"tag":"the clock · part of the day","q":"I&#39;m there ___ 8 ___ the morning.","a":"I&#39;m there at 8 in the morning."},
+  {"tag":"inside a room","q":"The leak is ___ the kitchen.","a":"The leak is in the kitchen."},
+  {"tag":"a surface","q":"The crack is ___ the wall.","a":"The crack is on the wall."},
+  {"tag":"fix the error","q":"I buy materials in Home Depot.","a":"I buy materials at Home Depot."},
+  {"tag":"fix the error","q":"I work for Saturday.","a":"I work on Saturday."}
+ ]'>
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Guided · Check It</div>
+  <div class="gcTag" data-gctag>a day</div>
+  <div class="gcQ" data-gcq>&nbsp;</div>
+  <button class="toggleBtn" onclick="gcReveal(this)">Say it out loud, then check</button>
+  <div class="keyBox" data-gckey></div>
+  <div class="dots" data-gcdots></div>
+  <div class="row" style="max-width:300px">
+   <button class="opt mid" data-gcprev onclick="gcNav(this,-1)" style="flex:0 0 60px" disabled>‹</button>
+   <button class="opt mid" data-gcnext onclick="gcNav(this,1)" style="flex:1">Next ›</button>
+  </div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="wheel">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Less Guided · Where And When</div>
+  <div class="wheelWrap" data-items='[{"k":"🪜","p":"Where is the ladder?"},{"k":"🧰","p":"Where are the tools?"},{"k":"🧱","p":"Where is the crack?"},{"k":"⏰","p":"When do you start?"},{"k":"📅","p":"When is the deadline?"},{"k":"🛒","p":"When do you buy materials?"},{"k":"⚽","p":"When does Atlético Nacional play? Where?"}]'>
+   <div class="wheelPointer"></div>
+   <svg class="wheelSvg" viewBox="-100 -100 200 200"></svg>
+   <div class="wheelHub"></div>
+  </div>
+  <div class="wheelCard"><div class="think" data-wprompt></div><div class="es">Answer fast, in a full sentence. Use at, on or in.</div></div>
+  <button class="btn go" onclick="wheelSpin(this)">Spin</button>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phone Call · Round 1 · With The Card</div>
+  <div class="howTo">I'm the client on the phone. I have the wrong information. Correct me in a full sentence: <b>"No, we start on Monday at 8."</b></div>
+  <div class="jobCard">
+   <b>Where</b><span>at the client's house, in the kitchen</span>
+   <b>Start</b><span>on Monday at 8 in the morning</span>
+   <b>Demolition</b><span>on Monday and Tuesday</span>
+   <b>New tiles</b><span>on the floor, on Thursday</span>
+   <b>Materials</b><span>at Home Depot, on Friday morning</span>
+   <b>Deadline</b><span>on December 15</span>
+  </div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/c10_call.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">Phone Call · Round 2 · No Card</div>
+  <div class="think" style="font-size:20px">Same call, with no card. The client has a new problem. Listen for "could you" and "call you". Fix the plan.</div>
+  <div class="es" style="font-size:15px"><b>Try to use:</b> at · on · in · deadline · timeline · That works for me · It depends on the job · Just in case</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/c10_call.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">Phone Call · Round 3 · On Your Own</div>
+  <div class="think" style="font-size:20px">A client has a leak. Leave them a 60-second voice message: where the problem is, when you start, and the deadline.</div>
+  <div class="es">Use a real job. I'm quiet until you finish.</div>
+  <div class="timerRing" data-seconds="60">
+   <svg width="96" height="96" viewBox="0 0 96 96">
+    <circle cx="48" cy="48" r="44" fill="none" stroke="rgba(244,238,246,.15)" stroke-width="6"></circle>
+    <circle class="timerArc" cx="48" cy="48" r="44" fill="none" stroke="#FFBE00" stroke-width="6"
+      stroke-linecap="round" stroke-dasharray="276.46" stroke-dashoffset="0" transform="rotate(-90 48 48)"></circle>
+   </svg>
+   <span class="timerNum">60</span>
+  </div>
+  <button class="btn go" onclick="timerStart(this)">Start 60s</button>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Listen To Yourself</div>
+  <div class="howTo"><b>What to do</b><ol><li>Listen to your message.</li><li>Find your own mistakes with the little words before I say anything.</li><li>Say each sentence again, the right way.</li></ol></div>
+  <button class="btn go" data-next>Done, next</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Real Life · Karen Calls You</div>
+  <img class="sceneImg" src="photos/c10_leak.jpg" alt="A kitchen faucet dripping water">
+  <div class="think" style="font-size:18px">Karen calls about the leak. Tell her in your own words: where the leak is · the day and time · what you bring.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Need help? Show an example</button>
+  <div class="keyBox" style="text-align:left;font-size:15px;line-height:1.6"><b>Karen:</b> Hi Julian. Could you come on Thursday?<br><b>You:</b> Yes. I'm there at nine in the morning.<br><b>Karen:</b> That works for me. The leak is in the kitchen, on the wall behind the sink.<br><b>You:</b> OK. Could you send me a picture?<br><b>Karen:</b> Sure. And when can you finish?<br><b>You:</b> It depends on the wall. I'm bringing extra materials, just in case.<br><b>Karen:</b> Sounds good. Call me at five if there's a problem.<br><b>You:</b> No problem. See you on Thursday.</div>
+  <div class="think" style="font-size:17px">1. Where is the leak?<br>2. What time does Julian come?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Check yourself</button>
+  <div class="keyBox" style="text-align:left">1. In the kitchen, on the wall behind the sink.<br>2. At nine in the morning.</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="homework">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Homework · One Task, 30 Seconds</div>
+  <img class="sceneImg" src="photos/c10_truck.jpg" alt="A pickup truck on the road">
+  <div class="sent" style="text-align:left;font-size:17px">After work, in your truck, record a <b>30-second voice note</b> about your next job. Say <b>where it is</b>, <b>when you start</b>, and <b>the deadline</b>. Don't prepare it. It doesn't have to be perfect.</div>
+  <div class="es" style="font-size:15px">Why: Class 11 starts from this recording. We add the price and the size, and it becomes a real quote.</div>
+  <div class="es" style="font-size:14px">ES: Después del trabajo, en tu camioneta, graba 30 segundos sobre tu próximo trabajo: dónde es, cuándo empiezas y cuál es la fecha límite.</div>
+  <button class="btn go" data-next>Done for today</button>
+ </div></div>
+
+<div class="scr" data-t="close">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="big">You told a client where and when.</div>
+  <div class="es">Send the voice note. See you at Class 11.</div>
+  <div class="credits">Teacher's Station · The Milestone Method</div>
+ </div></div>
+
+</div>
+
 </div>
 
 
@@ -5505,7 +5830,7 @@ function verdictShow(btn){
 
 document.querySelectorAll('.scr[data-t="grammarcheck"]').forEach(gcRender);
 
-loadScreens(9);
+loadScreens(10);
 
 document.querySelector('[data-navback]').disabled = true;
 
@@ -5849,7 +6174,282 @@ new MutationObserver(ms=>ms.forEach(m=>{
 })).observe(document.body, {subtree:true, attributes:true, attributeOldValue:true, attributeFilter:['class']});
 </script>
 <!-- DELIGHT:MECH:END -->
+<!-- DELIGHT:EXPLAIN:START — explainer dashboards v1 (ts-class-app): timeline · meter. Interactive, animated explanations for vocab + grammar. Every item ends in a "Say it" prompt the student answers OUT LOUD. Data-driven, no unique IDs. -->
+<style id="delight-explain">
+.scr[data-t="explain"]{justify-content:safe center;overflow-y:auto}
+.scr[data-t="explain"] .stack{padding-top:76px;padding-bottom:28px}
+.scr[data-t="explain"]{background:radial-gradient(120% 100% at 50% 100%,#3A0140 0%,#0D0014 70%) #0D0014}
+.scr[data-t="explain"] .plain{background:none}
+.exPanel{width:100%;border-radius:18px;padding:14px 14px 16px;background:linear-gradient(160deg,rgba(90,8,102,.55),rgba(13,0,20,.75));
+ border:1px solid rgba(255,190,0,.28);box-shadow:0 18px 50px -18px rgba(0,0,0,.8);display:flex;flex-direction:column;gap:12px}
+.exHead{display:flex;justify-content:space-between;align-items:center;font:600 11px 'Poppins',system-ui,sans-serif;letter-spacing:1.6px;text-transform:uppercase;color:rgba(244,238,246,.55)}
+.exHead .live{display:flex;align-items:center;gap:6px;color:var(--go)}
+.exHead .live::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--go);box-shadow:0 0 8px var(--go);animation:exBlink 1.6s ease-in-out infinite}
+@keyframes exBlink{50%{opacity:.25}}
+.exChips{display:flex;flex-wrap:wrap;gap:7px;justify-content:center}
+.exChip{border:1px solid rgba(244,238,246,.22);background:rgba(244,238,246,.06);color:#F4EEF6;border-radius:18px;
+ font:600 13px 'Poppins',system-ui,sans-serif;padding:8px 12px;min-height:36px;cursor:pointer;transition:background .25s,border-color .25s,color .25s}
+.exChip.seen::after{content:" ✓";color:var(--go)}
+.exChip.on{background:var(--go);border-color:var(--go);color:#2D0130}
+.exChip.on::after{color:#2D0130}
+/* timeline */
+.exStage{position:relative;height:172px;margin:0 6px}
+.exLine{position:absolute;left:0;right:0;top:75px;height:2px;background:linear-gradient(90deg,rgba(244,238,246,.12),rgba(244,238,246,.4))}
+.exEnd{position:absolute;top:156px;font:600 10px 'Poppins',system-ui,sans-serif;letter-spacing:1.4px;text-transform:uppercase;color:rgba(244,238,246,.4)}
+.exEnd.l{left:0}.exEnd.r{right:0}
+.exTravel{position:absolute;top:69px;width:14px;height:14px;margin-left:-7px;border-radius:50%;background:var(--go);
+ box-shadow:0 0 14px 4px rgba(255,190,0,.55);left:0;opacity:0}
+.exNode{position:absolute;top:75px;width:0;height:0}
+.exNode i{position:absolute;left:-8px;top:-8px;width:16px;height:16px;border-radius:50%;background:#F4EEF6;box-shadow:0 0 0 4px rgba(244,238,246,.12)}
+.exNode span{position:absolute;left:50%;width:108px;margin-left:-54px;text-align:center;font:500 12.5px/1.25 'Poppins',system-ui,sans-serif;color:#F4EEF6}
+.exNode.up span{bottom:16px}.exNode.dn span{top:16px}
+.exNode.pop{animation:exPop .45s cubic-bezier(.2,.8,.3,1.3) backwards}
+@keyframes exPop{from{opacity:0;transform:scale(.3)}to{opacity:1;transform:none}}
+.exNode.surprise i{background:var(--go);animation:exPulse 1.2s ease-in-out infinite}
+.exNode.surprise span{color:var(--go);font-weight:700}
+@keyframes exPulse{50%{box-shadow:0 0 0 10px rgba(255,190,0,.18)}}
+.exNode.bad span s{color:#E05A6A}
+.exNode.bad i{background:#E05A6A}
+.exNode.bad.fixed i{background:var(--go)}
+.exNode .fix{display:none;color:var(--go);font-weight:700}
+.exNode.bad.fixed .fix{display:inline}
+.exArc{position:absolute;top:60px;height:15px;border:2px solid rgba(255,190,0,.55);border-bottom:none;border-radius:40px 40px 0 0;transform-origin:left;
+ animation:exGrow .5s ease backwards}
+@keyframes exGrow{from{transform:scaleX(0)}to{transform:none}}
+.exSpan{position:absolute;top:128px;height:22px;border-radius:11px;background:linear-gradient(90deg,rgba(255,190,0,.18),rgba(255,190,0,.45));
+ border:1px solid rgba(255,190,0,.6);font:600 11.5px 'Poppins',system-ui,sans-serif;color:var(--go);display:flex;align-items:center;justify-content:center;
+ white-space:nowrap;overflow:hidden;transform-origin:left;animation:exGrow .7s cubic-bezier(.3,.7,.2,1) backwards}
+.exPin{position:absolute;top:22px;width:0}
+.exPin b{position:absolute;left:-1px;top:20px;width:2px;height:40px;background:var(--go)}
+.exPin span{position:absolute;left:50%;width:120px;margin-left:-60px;top:0;text-align:center;font:700 12px 'Poppins',system-ui,sans-serif;color:var(--go)}
+.exPin.pop{animation:exDrop .55s cubic-bezier(.2,.8,.3,1.3) backwards}
+@keyframes exDrop{from{opacity:0;transform:translateY(-26px)}to{opacity:1;transform:none}}
+/* meter */
+.exGauge{position:relative;width:260px;height:156px;margin:0 auto}
+.exGauge svg{margin:0 auto}
+.exGauge svg{width:240px;height:130px;display:block}
+.exNeedle{transform-origin:120px 120px;transition:transform 1s cubic-bezier(.25,1.4,.4,1)}
+.exGLbl{position:absolute;bottom:0;white-space:nowrap;font:600 10.5px 'Poppins',system-ui,sans-serif;letter-spacing:1.2px;text-transform:uppercase;color:rgba(244,238,246,.5);max-width:90px}
+.exGLbl.l{left:0;text-align:left}.exGLbl.r{right:0;text-align:right}
+.exRead{text-align:center;font:700 20px 'Poppins',system-ui,sans-serif;color:var(--go);min-height:26px}
+.exRead.pop{animation:dPop .4s cubic-bezier(.2,.8,.3,1.15)}
+.exTag{text-align:center;font:600 11px 'Poppins',system-ui,sans-serif;letter-spacing:1.4px;text-transform:uppercase;color:rgba(244,238,246,.55);margin-top:-6px}
+/* shared readout */
+.exSent{font:400 17px/1.45 'Lora',Georgia,serif;text-align:center;color:#F4EEF6;min-height:24px}
+.exSent b{color:var(--go)}
+.exSay{display:flex;gap:8px;align-items:flex-start;width:100%;border-radius:12px;padding:10px 12px;background:rgba(255,190,0,.08);border:1px dashed rgba(255,190,0,.45);
+ font:500 14px/1.4 'Poppins',system-ui,sans-serif;color:#F4EEF6}
+.exSay::before{content:"🎙";font-size:16px}
+.exSay:empty{display:none}
+.exAudio{align-self:center;border:none;border-radius:20px;background:rgba(244,238,246,.1);color:#F4EEF6;font:600 13px 'Poppins',system-ui,sans-serif;padding:7px 14px;min-height:34px}
+.exAudio[hidden]{display:none}
+.exCount{text-align:center;font:600 11px 'Poppins',system-ui,sans-serif;letter-spacing:1.4px;text-transform:uppercase;color:rgba(244,238,246,.5)}
+@media (max-width:400px){.exNode span{width:88px;margin-left:-44px;font-size:11.5px}}
+@media (prefers-reduced-motion:reduce){.exNode.pop,.exPin.pop,.exArc,.exSpan,.exRead.pop,.exNode.surprise i,.exHead .live::before{animation:none!important}.exNeedle,.exTravel{transition:none!important}}
+</style>
+<script id="delight-explain-js">
+(function(){
+  const reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const items = el => { try { return JSON.parse(el.getAttribute('data-items')) || []; } catch(e){ return []; } };
+  const D = reduce ? 0 : 1;
 
+  /* Timeline dashboard — each item: {chip, ev:[{t,x,surprise?,bad?,fix?}], arc?:true, pin?:{x,t}, span?:{from,to,t}, sent, say, a?} */
+  function tlDraw(wrap, it){
+    const st = wrap.querySelector('.exStage');
+    st.querySelectorAll('.exNode,.exPin,.exSpan,.exArc').forEach(e => e.remove());
+    const ev = it.ev || [], step = .5 * D;
+    ev.forEach((e, k) => {
+      const n = document.createElement('div');
+      n.className = 'exNode pop ' + (k % 2 ? 'dn' : 'up') + (e.surprise ? ' surprise' : '') + (e.bad ? ' bad' : '');
+      n.style.left = e.x + '%'; n.style.animationDelay = (k*step) + 's';
+      n.innerHTML = '<i></i><span>' + e.t + (e.bad ? ' <s>' + e.bad + '</s> <b class="fix">→ ' + (e.fix || '') + '</b>' : '') + '</span>';
+      st.appendChild(n);
+      if (e.bad) setTimeout(() => n.classList.add('fixed'), (k*step + 1.4*D) * 1000);
+      if (it.arc && k > 0){
+        const a = document.createElement('div'), x0 = ev[k-1].x;
+        a.className = 'exArc'; a.style.left = x0 + '%'; a.style.width = (e.x - x0) + '%'; a.style.animationDelay = (k*step - .2*D) + 's';
+        st.appendChild(a);
+      }
+    });
+    let t = ev.length * step;
+    if (it.pin){
+      const p = document.createElement('div');
+      p.className = 'exPin pop'; p.style.left = it.pin.x + '%'; p.style.animationDelay = t + 's';
+      p.innerHTML = '<span>' + it.pin.t + '</span><b></b>'; st.appendChild(p); t += step;
+    }
+    if (it.span){
+      const s = document.createElement('div');
+      s.className = 'exSpan'; s.style.left = it.span.from + '%'; s.style.width = (it.span.to - it.span.from) + '%';
+      s.style.animationDelay = t + 's'; s.textContent = it.span.t; st.appendChild(s);
+    }
+    const dot = st.querySelector('.exTravel'), last = ev.length ? ev[ev.length-1].x : 0;
+    dot.style.transition = 'none'; dot.style.left = (ev.length ? ev[0].x : 0) + '%'; dot.style.opacity = ev.length ? 1 : 0;
+    void dot.offsetWidth;
+    dot.style.transition = 'left ' + Math.max(.01, (ev.length-1)*step) + 's linear';
+    dot.style.left = (it.pin ? Math.max(last, it.pin.x) : last) + '%';
+  }
+
+  /* Meter dashboard — each item: {chip?, w, v:0–100, tag?, sent, say, a?}. data-left / data-right label the ends. */
+  function mDraw(wrap, it){
+    const ang = -90 + Math.max(0, Math.min(100, it.v)) * 1.8;
+    wrap.querySelector('.exNeedle').style.transform = 'rotate(' + ang + 'deg)';
+    const r = wrap.querySelector('.exRead');
+    r.textContent = it.w || ''; r.classList.remove('pop'); void r.offsetWidth; r.classList.add('pop');
+    wrap.querySelector('.exTag').textContent = it.tag || '';
+  }
+  let gid = 0;
+  function gaugeSvg(){
+    const g = 'exG' + (++gid);
+    const arc = (a0, a1) => { const p = a => [120 + 100*Math.cos(a*Math.PI/180), 120 + 100*Math.sin(a*Math.PI/180)];
+      const s = p(a0), e = p(a1); return 'M' + s[0].toFixed(1) + ',' + s[1].toFixed(1) + ' A100,100 0 0 1 ' + e[0].toFixed(1) + ',' + e[1].toFixed(1); };
+    let ticks = '';
+    for (let k = 0; k <= 10; k++){ const a = (180 + k*18) * Math.PI/180;
+      ticks += '<line x1="' + (120+86*Math.cos(a)).toFixed(1) + '" y1="' + (120+86*Math.sin(a)).toFixed(1) + '" x2="' + (120+78*Math.cos(a)).toFixed(1) + '" y2="' + (120+78*Math.sin(a)).toFixed(1) + '" stroke="rgba(244,238,246,.3)" stroke-width="2"/>'; }
+    return '<svg viewBox="0 0 240 130"><defs><linearGradient id="' + g + '" x1="0" x2="1"><stop offset="0" stop-color="#6B0876"/><stop offset="1" stop-color="#FFBE00"/></linearGradient></defs>' +
+      '<path d="' + arc(180, 360) + '" fill="none" stroke="rgba(244,238,246,.08)" stroke-width="16" stroke-linecap="round"/>' +
+      '<path d="' + arc(180, 360) + '" fill="none" stroke="url(#' + g + ')" stroke-width="10" stroke-linecap="round"/>' + ticks +
+      '<g class="exNeedle" style="transform:rotate(-90deg)"><line x1="120" y1="120" x2="120" y2="34" stroke="#F4EEF6" stroke-width="3.5" stroke-linecap="round"/></g>' +
+      '<circle cx="120" cy="120" r="9" fill="#FFBE00"/></svg>';
+  }
+
+  function build(wrap){
+    const kind = wrap.classList.contains('exTimeline') ? 'tl' : 'meter', list = items(wrap);
+    wrap._seen = new Set(); wrap._kind = kind;
+    const head = '<div class="exHead"><span>' + (wrap.getAttribute('data-title') || 'Explainer') + '</span><span class="live">Live</span></div>';
+    const chips = '<div class="exChips">' + list.map((it, i) => '<button class="exChip" data-exi="' + i + '" onclick="exPick(this)">' + (it.chip || it.w) + '</button>').join('') + '</div>';
+    const body = kind === 'tl'
+      ? '<div class="exStage"><div class="exLine"></div><div class="exEnd l">' + (wrap.getAttribute('data-left') || 'Saturday') + '</div><div class="exEnd r">' + (wrap.getAttribute('data-right') || 'Sunday') + '</div><div class="exTravel"></div></div>'
+      : '<div class="exGauge">' + gaugeSvg() + '<div class="exGLbl l">' + (wrap.getAttribute('data-left') || '') + '</div><div class="exGLbl r">' + (wrap.getAttribute('data-right') || '') + '</div></div><div class="exRead"></div><div class="exTag"></div>';
+    wrap.innerHTML = head + chips + body + '<div class="exSent"></div><button class="exAudio" hidden onclick="playAudio(this)">🔊 Listen</button><div class="exSay"></div><div class="exCount"></div>';
+    exCount(wrap);
+  }
+  function exCount(wrap){
+    const n = items(wrap).length, s = wrap._seen.size;
+    wrap.querySelector('.exCount').textContent = s + ' of ' + n + ' explored · say each one out loud';
+    return s >= n;
+  }
+  window.exPick = function(chip){
+    const wrap = chip.closest('.exTimeline,.exMeter'), i = +chip.dataset.exi, it = items(wrap)[i];
+    wrap.querySelectorAll('.exChip').forEach(c => c.classList.toggle('on', c === chip));
+    chip.classList.add('seen'); wrap._seen.add(i);
+    if (wrap._kind === 'tl') tlDraw(wrap, it); else mDraw(wrap, it);
+    wrap.querySelector('.exSent').innerHTML = it.sent || '';
+    wrap.querySelector('.exSay').textContent = it.say || '';
+    const au = wrap.querySelector('.exAudio');
+    if (it.a){ au.hidden = false; au.setAttribute('data-audio', it.a); au._player = null; } else au.hidden = true;
+    if (exCount(wrap)){ const nx = wrap.closest('.scr').querySelector('[data-next]'); if (nx) nx.style.display = 'block'; }
+  };
+
+  const all = [...document.querySelectorAll('.exTimeline[data-items],.exMeter[data-items]')];
+  all.forEach(build);
+  // Replay the first item every time the screen is entered, so the animation is seen, not missed.
+  new MutationObserver(ms => ms.forEach(m => {
+    const s = m.target;
+    if (!s.classList.contains('scr')) return;
+    if (!s.classList.contains('on') || s._exOn) { if (!s.classList.contains('on')) s._exOn = false; return; }
+    s._exOn = true;
+    s.querySelectorAll('.exTimeline,.exMeter').forEach(w => {
+      const cur = w.querySelector('.exChip.on') || w.querySelector('.exChip');
+      if (cur) setTimeout(() => exPick(cur), 380);
+    });
+  })).observe(document.body, {subtree:true, attributes:true, attributeFilter:['class']});
+})();
+</script>
+<!-- DELIGHT:EXPLAIN:END -->
+
+<!-- DELIGHT:FLASH:START — photo flashcards v1 (ts-class-app). See the photo, say the word OUT LOUD, tap to flip and check. data-t="flash", data-driven, no unique IDs. Also carries .sceneImg and .picRow for photos inside any screen. -->
+<style>
+.sceneImg{width:100%;height:170px;object-fit:cover;border-radius:14px;display:block;background:rgba(255,255,255,.05)}
+.picRow{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;width:100%}
+.picRow.two{grid-template-columns:repeat(2,1fr)}
+.picRow figure{margin:0;display:flex;flex-direction:column;gap:6px}
+.picRow img{width:100%;height:96px;object-fit:cover;border-radius:10px;display:block;background:rgba(255,255,255,.05)}
+.picRow figcaption{font-size:14px;line-height:1.35;color:var(--ink);text-align:left}
+.fcDeck{width:100%;display:flex;flex-direction:column;align-items:center;gap:12px}
+.fcCard{position:relative;width:100%;height:290px;perspective:1200px;cursor:pointer}
+.fcInner{position:absolute;inset:0;transform-style:preserve-3d;transition:transform .45s cubic-bezier(.2,.8,.3,1)}
+.fcCard.flipped .fcInner{transform:rotateY(180deg)}
+.fcFace{position:absolute;inset:0;border-radius:16px;overflow:hidden;backface-visibility:hidden;-webkit-backface-visibility:hidden;box-shadow:0 0 0 1px rgba(255,190,0,.25)}
+.fcFace img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.fcClue{position:absolute;left:0;right:0;bottom:0;padding:26px 14px 12px;background:linear-gradient(transparent,rgba(13,0,20,.92));font-size:16px;line-height:1.35;text-align:center;color:var(--ink)}
+.fcBack{transform:rotateY(180deg);background:var(--ob)}
+.fcBack img{opacity:.22}
+.fcBackIn{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:16px;text-align:center}
+.fcWord{font-family:'Poppins',system-ui,sans-serif;font-weight:700;font-size:27px;line-height:1.2;color:var(--go)}
+.fcMean{font-size:16px;line-height:1.35;color:var(--ink)}
+.fcSent{font-family:'Lora',serif;font-style:italic;font-size:18px;line-height:1.4;color:var(--ink)}
+.fcHear{min-height:44px;padding:8px 18px;border-radius:999px;border:1px solid rgba(255,190,0,.5);background:rgba(13,0,20,.6);color:var(--ink);font:inherit;font-size:15px;cursor:pointer}
+.fcNav{display:flex;align-items:center;justify-content:center;gap:12px;width:100%}
+.fcNav .opt{flex:0 0 56px;min-height:44px}
+.fcNav .opt[disabled]{opacity:.3}
+.fcNav .dots{gap:8px}
+.fcNav .dot{width:11px;height:11px}
+.sceneCol{display:contents}
+html.dFit .scr .stack:has(>.sceneCol){display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);column-gap:28px;row-gap:14px;max-width:860px;align-items:center;justify-items:stretch}
+html.dFit .stack:has(>.sceneCol)>.badge{grid-column:1/-1;text-align:center}
+html.dFit .stack:has(>.sceneCol)>.sceneImg{grid-column:1;width:100%;height:auto;max-height:400px;object-fit:cover}
+html.dFit .stack:has(>.sceneCol)>.sceneCol{grid-column:2;display:flex;flex-direction:column;align-items:center;gap:14px;min-width:0}
+html.dFit .fcCard{height:290px;max-width:450px}
+html.dFit .fcFace img{object-fit:contain;background:var(--ob)}
+html.dFit .fcNav{max-width:450px}
+html.dFit .picRow{max-width:640px}
+html.dFit .picRow img{height:auto;aspect-ratio:3/2}
+html.dFit .picRow.two{max-width:440px}
+@media (prefers-reduced-motion:reduce){.fcInner{transition:none}}
+</style>
+<script>
+(function(){
+  function render(deck){
+    const items = JSON.parse(deck.getAttribute('data-items'));
+    const i = +deck.dataset.idx || 0, it = items[i];
+    const card = deck.querySelector('.fcCard');
+    card.classList.remove('flipped');
+    card.querySelectorAll('img').forEach(im => { im.src = it.img; });
+    card.querySelector('.fcClue').textContent = it.q;
+    card.querySelector('.fcWord').textContent = it.w;
+    card.querySelector('.fcMean').textContent = it.m || '';
+    card.querySelector('.fcSent').textContent = it.s || '';
+    const h = card.querySelector('.fcHear');
+    h.setAttribute('data-audio', it.a || ''); h.style.display = it.a ? '' : 'none'; h._player = null;
+    deck.querySelectorAll('.dot').forEach((d, n) => d.classList.toggle('lit', n === i));
+    deck.querySelector('[data-fcprev]').disabled = i === 0;
+    deck.querySelector('[data-fcnext]').disabled = i === items.length - 1;
+  }
+  function build(deck){
+    const items = JSON.parse(deck.getAttribute('data-items'));
+    deck._seen = new Set();
+    deck.classList.add('fcDeck');
+    deck.innerHTML = '<div class="fcCard" role="button" tabindex="0" aria-label="Flip card"><div class="fcInner">'
+      + '<div class="fcFace fcFront"><img alt=""><div class="fcClue"></div></div>'
+      + '<div class="fcFace fcBack"><img alt=""><div class="fcBackIn"><div class="fcWord"></div><div class="fcMean"></div><div class="fcSent"></div>'
+      + '<button class="fcHear" type="button" onclick="event.stopPropagation();playAudio(this)">🔊 Listen</button></div></div>'
+      + '</div></div>'
+      + '<div class="fcNav"><button class="opt mid" type="button" data-fcprev>‹</button><div class="dots">'
+      + items.map(() => '<div class="dot"></div>').join('')
+      + '</div><button class="opt mid" type="button" data-fcnext>›</button></div>';
+    const card = deck.querySelector('.fcCard');
+    const flip = () => {
+      card.classList.toggle('flipped');
+      deck._seen.add(+deck.dataset.idx || 0);
+      if(deck._seen.size === items.length){ const nx = deck.closest('.scr').querySelector('[data-next]'); if(nx) nx.style.display = 'block'; }
+    };
+    card.addEventListener('click', flip);
+    card.addEventListener('keydown', e => { if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); flip(); } });
+    const go = d => { deck.dataset.idx = Math.max(0, Math.min(items.length - 1, (+deck.dataset.idx || 0) + d)); render(deck); };
+    deck.querySelector('[data-fcprev]').addEventListener('click', () => go(-1));
+    deck.querySelector('[data-fcnext]').addEventListener('click', () => go(1));
+    render(deck);
+  }
+  document.querySelectorAll('.stack>.sceneImg').forEach(im => {
+    const k = im.parentElement, w = document.createElement('div');
+    w.className = 'sceneCol';
+    [...k.children].forEach(c => { if(c !== im && !c.classList.contains('badge')) w.appendChild(c); });
+    k.appendChild(w);
+  });
+  document.querySelectorAll('[data-flash]').forEach(build);
+})();
+</script>
+<!-- DELIGHT:FLASH:END -->
 <!-- DELIGHT:FIT:START — desktop fit v1 (ts-class-app). Landscape computer windows only: the app fills the window at any browser zoom, and each screen shrinks to fit before it scrolls. Phones and portrait windows are untouched. -->
 <style>
 html.dFit,html.dFit body{background:var(--ob)}
