@@ -225,6 +225,12 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 
 @media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;scroll-behavior:auto!important}}
+.howTo{width:100%;background:rgba(255,190,0,.08);border-left:3px solid var(--go);border-radius:10px;padding:12px 14px;text-align:left;font-size:15px;line-height:1.5;color:var(--ink)}
+.howTo>b{display:block;font-family:'Poppins',system-ui,sans-serif;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--go);margin-bottom:6px}
+.howTo ol{margin:0;padding-left:20px}
+.howTo li{margin:3px 0}
+.classBlock[data-class="8"] .scr{justify-content:safe center;overflow-y:auto;padding-top:60px}
+.classBlock[data-class="8"] .scr:has(>.bg){overflow:hidden}
 </style>
 </head>
 <body>
@@ -232,7 +238,7 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 <div id="classHeader">
   <span class="brand">TEACHER'S STATION</span>
-  <button id="classSelect" onclick="toggleMenu()">Class 7 ▾</button>
+  <button id="classSelect" onclick="toggleMenu()">Class 8 ▾</button>
 </div>
 <div id="classMenu">
   <div class="item" onclick="selectClass(1)">Class 1: Customer calls — open a call without freezing <span>✓</span></div>
@@ -242,7 +248,8 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
   <div class="item" onclick="selectClass(4)">Class 4: Reading 1 &mdash; A day on the route <span>&#10003;</span></div>
   <div class="item" onclick="selectClass(5)">Class 5: Reporting your shift &mdash; tell it in the past <span>&#10003;</span></div>
   <div class="item" onclick="selectClass(6)">Class 6: When it went wrong &mdash; report a problem in the past</div>
-  <div class="item active" onclick="selectClass(7)">Class 7: Weekend stories &mdash; tell what happened</div>
+  <div class="item" onclick="selectClass(7)">Class 7: Weekend stories &mdash; tell what happened</div>
+  <div class="item active" onclick="selectClass(8)">Class 8: Reading 2 &mdash; Camila's worst Tuesday</div>
 </div>
 
 <div id="bar"></div>
@@ -2881,6 +2888,455 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 </div>
 
+<div class="classBlock" data-class="8" data-mech="wheel,tpr,flip,explain,timer">
+
+<div class="scr" data-t="open">
+ <div class="bg" data-img="photos/open8.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="cue">Class 8 · Reading</div>
+  <div class="big">Reading 2: Camila's worst Tuesday, and your past tense check</div>
+  <div class="es" style="font-size:16px;line-height:1.55">By the end of this class, you can read a route story, tell a supervisor what happened, and tell your own story, and <b>the past tense holds with no help from me</b>.</div>
+  <button class="btn go" data-next>Start</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Warm-up · 1 of 3 · Your Mission</div>
+  <div class="think">Did you ask a coworker <b>"How was your weekend?"</b> Tell me in 2 sentences what they said. Was it easier or harder than you expected? Why?</div>
+  <div class="es" style="font-size:15px">Didn't do it? No problem. Just tell me what stopped you.</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Warm-up · 2 of 3</div>
+  <div class="think">Last week you called three people before someone helped with the van. When something goes wrong at work, is it better to try alone first, or ask for help right away?</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Warm-up · 3 of 3</div>
+  <div class="think">You want a call-centre job. Which matters more there: <b>perfect English</b>, or <b>staying calm</b> when someone is angry? Tell me about one time you stayed calm.</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Keep The Story Going</div>
+  <div class="howTo"><b>What to do</b><ol><li>I start a story.</li><li>You add <b>3 more sentences</b>.</li><li>Every verb stays in the past.</li></ol></div>
+  <div class="think" style="font-size:19px">"Yesterday I got to the station and, out of nowhere…"<br><br>"Last week my friend showed up at my house, and then…"</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="stack">
+  <div class="badge">Numbers · Read It Back</div>
+  <div class="howTo"><b>What to do</b><ol><li>Tap a button. Listen <b>one time</b>.</li><li>Say the number back in two groups, with a small pause.</li></ol></div>
+  <div class="row"><button class="opt mid" data-audio="audio/c8_d7294.mp3" onclick="playAudio(this)">Order # 🔊</button><button class="opt mid" data-audio="audio/c8_d0615.mp3" onclick="playAudio(this)">Callback code 🔊</button></div>
+  <div class="row"><button class="opt mid" data-audio="audio/c8_d3380.mp3" onclick="playAudio(this)">Apartment 🔊</button></div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Check yourself</button>
+  <div class="keyBox">Order: <b>72 — 94</b> ("seven two, nine four")<br>Callback: <b>06 — 15</b> ("oh six, one five")<br>Apartment: <b>33 — 80</b> ("three three, eight oh")</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Starting Lines · Pick Yours</div>
+  <div class="es">These help you start talking fast. Tap, listen, and say each one. <b>The first two are new.</b></div>
+  <div class="row"><button class="opt mid" data-audio="audio/c8_op_here.mp3" onclick="playAudio(this)">So here's what happened. 🔊</button></div>
+  <div class="row"><button class="opt mid" data-audio="audio/c8_op_remember.mp3" onclick="playAudio(this)">From what I remember, … 🔊</button></div>
+  <div class="row"><button class="opt mid" data-audio="audio/c7_believe.mp3" onclick="playAudio(this)">You won't believe what happened. 🔊</button></div>
+  <div class="row"><button class="opt mid" data-audio="audio/c7_op_basically.mp3" onclick="playAudio(this)">So basically, … 🔊</button></div>
+  <div class="row"><button class="opt mid" data-audio="audio/c8_op_ifyou.mp3" onclick="playAudio(this)">If you ask me, … 🔊</button><button class="opt mid" data-audio="audio/c8_op_nowthat.mp3" onclick="playAudio(this)">Now that you ask me, … 🔊</button></div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="wheel">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">3-Second Start · Spin</div>
+  <div class="howTo">Spin, read the topic, and <b>start talking in 3 seconds</b>. Only speed counts. Mistakes are okay.</div>
+  <div class="wheelWrap" data-items='[{"k":"📱","p":"The last time an app failed on you."},{"k":"😮","p":"A customer who surprised you."},{"k":"💸","p":"Something you bought and regretted."},{"k":"📦","p":"Your first day at Amazon."},{"k":"🤝","p":"A time someone helped you at work."}]'>
+   <div class="wheelPointer"></div>
+   <svg class="wheelSvg" viewBox="-100 -100 200 200"></svg>
+   <div class="wheelHub"></div>
+  </div>
+  <div class="wheelCard"><div class="think" data-wprompt></div><div class="es">Start talking in 3 seconds.</div></div>
+  <button class="btn go" onclick="wheelSpin(this)">Spin</button>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="reading">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">The Reading · Camila's Worst Tuesday</div>
+  <div class="howTo"><b>How it works</b><ol><li>The story has 3 parts.</li><li><b>Listen first.</b> The text stays closed.</li><li>After each part, tell me in one sentence <b>what went wrong</b>. Use the past.</li><li>Then open the text and read it.</li></ol></div>
+  <button class="btn go" data-next>Start the story</button>
+ </div></div>
+
+<div class="scr" data-t="reading">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Part 1 of 3 · The Morning</div>
+  <button class="audio" data-audio="audio/c8_p1.mp3" onclick="playAudio(this)" style="width:84px;height:84px;font-size:34px">🔊</button>
+  <div class="think" style="font-size:19px">Listen once. In one sentence: what went wrong?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Now show the text</button>
+  <div class="keyBox" style="font-family:'Lora',serif;font-size:16px;line-height:1.75;text-align:left">Last Tuesday, Camila loaded her van at 4:45 and headed out on time. For once, everything went well. She delivered forty packages before ten and didn't run late once. Then, out of nowhere, it started pouring. <b>To make matters worse</b>, her work phone froze and she couldn't open the app. She called Marcus, her dispatcher, from her own phone, but he didn't pick up. She sat in the van for ten minutes and <b>lowkey</b> wanted to go home.</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="reading">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Part 2 of 3 · The Wrong Label</div>
+  <button class="audio" data-audio="audio/c8_p2.mp3" onclick="playAudio(this)" style="width:84px;height:84px;font-size:34px">🔊</button>
+  <div class="think" style="font-size:19px">Listen once. In one sentence: what went wrong?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Now show the text</button>
+  <div class="keyBox" style="font-family:'Lora',serif;font-size:16px;line-height:1.75;text-align:left">Around noon, she found a house for a big box, but the place looked <b>sketchy</b> and nobody answered the door. <b>Better safe than sorry</b>, she thought. She <b>took a picture</b>, <b>left a note</b> on the door, and put the box back in the van. An hour later, an angry customer called. "The app says you delivered my package, but I didn't get anything!" <b>It didn't add up.</b> Camila said, "I'm so sorry. Let me check on that." She looked in the back of the van and found his box. <b>No wonder</b> he was angry. <b>It turns out</b> she <b>cut corners</b> at the last stop and <b>made a mistake</b>: she scanned the wrong label.</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="reading">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Part 3 of 3 · The Long Way Home</div>
+  <button class="audio" data-audio="audio/c8_p3.mp3" onclick="playAudio(this)" style="width:84px;height:84px;font-size:34px">🔊</button>
+  <div class="think" style="font-size:19px">Listen once. In one sentence: what went wrong?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Now show the text</button>
+  <div class="keyBox" style="font-family:'Lora',serif;font-size:16px;line-height:1.75;text-align:left">So she drove back across town and dropped the box off. She was driving to her next stop when the van <b>broke down</b> on the highway. She just <b>couldn't catch a break</b>. She pulled over and called Marcus again, and this time he picked up. "<b>My bad</b>," she told him. "I scanned the wrong label, and <b>it slipped my mind</b> to tell you. <b>Come to think of it</b>, I didn't check the labels this morning either." Forty minutes later, a coworker showed up with a new van. By the time Camila finished the route, it was nine at night. Long story short, she ended up working three extra hours. "How was it?" Marcus asked the next morning. "<b>To be fair</b>," she said, "nobody got hurt. Same old, same old."</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="reading">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Read It Aloud · In Groups</div>
+  <div class="howTo"><b>What to do</b><ol><li>Read out loud. Each <b>/</b> is a small pause.</li><li>Read the words between the lines together, not one by one.</li></ol></div>
+  <div class="sent" style="font-family:'Lora',serif;font-size:16px;line-height:1.85;text-align:left">So she drove back / across town / and dropped the box off. / She was driving / to her next stop / when the van broke down / on the highway. / She just couldn't / catch a break. / She pulled over / and called Marcus again, / and this time / he picked up.</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Did You Get It? · The Story</div>
+  <div class="howTo"><b>What to do</b><ol><li>Close the text in your head. Answer in full sentences.</li><li>Then <b>I'm Camila</b>. You ask me 3 questions about that day.</li></ol></div>
+  <div class="think" style="font-size:18px">1. What mistake did Camila make, and how did she find out?<br>2. What did she do at the sketchy house instead of leaving the box?</div>
+  <div class="es">Your questions: Why <b>didn't</b> you …? · <b>Did</b> Marcus …? · What <b>did</b> you …?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Check yourself</button>
+  <div class="keyBox" style="text-align:left">1. She scanned the wrong label at the last stop. An angry customer called, and she found his box in the back of the van.<br>2. She took a picture, left a note on the door, and put the box back in the van.</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">New Words · From The Story</div>
+  <div class="es">Tap, listen and repeat. Can you find all five in the story?</div>
+  <div class="row"><button class="opt mid" data-audio="audio/c8_mistake.mp3" onclick="playAudio(this)">make a mistake 🔊</button><button class="opt mid" data-audio="audio/c8_picture.mp3" onclick="playAudio(this)">take a picture 🔊</button></div>
+  <div class="row"><button class="opt mid" data-audio="audio/c8_note.mp3" onclick="playAudio(this)">leave a note 🔊</button><button class="opt mid" data-audio="audio/c8_breakdown.mp3" onclick="playAudio(this)">break down 🔊</button></div>
+  <div class="row"><button class="opt mid" data-audio="audio/c8_sketchy.mp3" onclick="playAudio(this)">sketchy 🔊</button></div>
+  <div class="sent" style="font-size:16px;text-align:left"><b>leave a note:</b> you write a message because nobody is there.<br><b>break down:</b> a car or machine stops working.<br><b>sketchy:</b> a place or person looks unsafe.</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Fix It · Say It The Right Way</div>
+  <div class="es">These sound right in Spanish, but not in English. Say each sentence the right way, out loud.</div>
+  <div class="trapWrong" style="font-size:17px">I did a mistake.</div>
+  <div class="trapWrong" style="font-size:17px">I made a picture of the box.</div>
+  <div class="trapWrong" style="font-size:17px">I put a note.</div>
+  <div class="trapWrong" style="font-size:17px">The van broke.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Check yourself</button>
+  <div class="keyBox">I <b>made</b> a mistake.<br>I <b>took</b> a picture of the box.<br>I <b>left</b> a note.<br>The van <b>broke down</b>.</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Fire It · Fast Answers</div>
+  <div class="es">Read the situation. Answer with <b>one full sentence in the past</b>.</div>
+  <div class="think" style="font-size:18px">1. Yesterday: nobody home, so you wrote a message.<br>2. Last week: the engine stopped on the highway.<br>3. That street last night: no lights, strange guys.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Check yourself</button>
+  <div class="keyBox">1. I <b>left a note</b>.<br>2. My van <b>broke down</b>.<br>3. It <b>looked sketchy</b>.</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="1">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 1 of 3</div>
+  <button class="audio" data-audio="audio/c8_worse.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="think">Your story is already bad, and now you want to add <b>the next bad thing</b>. What do you say?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Show the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">"To make matters worse, …"</div><br>It means: and then it got even worse.</div>
+  <label class="forceUse"><input type="checkbox"> I used this in Rounds 1 or 2</label>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="2">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 2 of 3</div>
+  <button class="audio" data-audio="audio/c8_break.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="think">All day, it's one problem after another. You have <b>no luck at all</b>. What do you say?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Show the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">"I couldn't catch a break."</div><br>The "break" here is a moment of good luck. It's not a rest.</div>
+  <label class="forceUse"><input type="checkbox"> I used this in Rounds 1 or 2</label>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="phrasebank" data-phrase="3">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · 3 of 3</div>
+  <button class="audio" data-audio="audio/c8_safe.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="think">You chose the <b>careful option</b>, even though it took more time. What do you say?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Show the phrase</button>
+  <div class="keyBox"><div class="pbPhrase">"Better safe than sorry."</div><br>It's better to be careful now than to have a problem later.</div>
+  <label class="forceUse"><input type="checkbox"> I used this in Rounds 1 or 2</label>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="explain">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">See It · When Do You Use Them?</div>
+  <div class="es">Tap each phrase and watch Camila's day. Then answer the question out loud.</div>
+  <div class="exTimeline" data-title="Camila's Tuesday" data-left="Morning" data-right="Night" data-items='[
+   {"chip":"to make matters worse","arc":true,"ev":[{"t":"it started pouring","x":15},{"t":"her phone froze!","x":72,"surprise":true}],"sent":"It started pouring. <b>To make matters worse</b>, her phone froze.","say":"Tell me one bad thing from work, then add the next bad thing.","a":"audio/c8_worse.mp3"},
+   {"chip":"couldn’t catch a break","arc":true,"ev":[{"t":"wrong label","x":12},{"t":"drove back","x":42},{"t":"van broke down!","x":78,"surprise":true}],"sent":"Wrong label, a long drive, and then the van. She <b>couldn’t catch a break</b>.","say":"Tell me about a day when you couldn’t catch a break.","a":"audio/c8_break.mp3"},
+   {"chip":"better safe than sorry","arc":true,"ev":[{"t":"place looked sketchy","x":18},{"t":"picture + note","x":72}],"sent":"The place looked sketchy, so she took a picture. <b>Better safe than sorry.</b>","say":"When did you choose the careful option? Tell me in the past.","a":"audio/c8_safe.mp3"}
+  ]'></div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="flip">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Which Phrase? · Flip A Card</div>
+  <div class="howTo">Flip a card and read it. Say the right phrase from today, then tap <b>"I said it"</b>.</div>
+  <div class="flipCount"></div>
+  <div class="flipGrid" data-items='[{"k":"?","p":"You took a picture you probably didn’t need."},{"k":"?","p":"Flat tire, then rain, then a dog."},{"k":"?","p":"The app failed, and then your phone died too."},{"k":"?","p":"You checked the address twice, just in case."},{"k":"?","p":"Your whole week went badly, one thing after another."},{"k":"?","p":"The gate code didn’t work, and then it started to rain."}]'></div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Check the phrases</button>
+  <div class="keyBox" style="text-align:left">1. better safe than sorry · 2. I couldn't catch a break · 3. to make matters worse · 4. better safe than sorry · 5. I couldn't catch a break · 6. to make matters worse</div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Wrong Moment · Why Doesn't It Work?</div>
+  <div class="es">The phrase is correct, but the situation is wrong. Tell me <b>why</b>.</div>
+  <div class="trapWrong" style="font-size:17px">"I ran a red light. Better safe than sorry!"</div>
+  <div class="trapWrong" style="font-size:17px">"I got a raise. To make matters worse, I got a day off."</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Check yourself</button>
+  <div class="keyBox" style="text-align:left">1. Running a red light isn't careful. It's dangerous.<br>2. A raise and a day off are good news. This phrase only adds bad news.</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">From Your Tracker · In The Story</div>
+  <div class="es">You already saved these four phrases, and Camila used them on Tuesday. Tap, listen and repeat.</div>
+  <div class="row"><button class="opt mid" data-audio="audio/c8_addup.mp3" onclick="playAudio(this)">It didn't add up. 🔊</button><button class="opt mid" data-audio="audio/c8_nowonder.mp3" onclick="playAudio(this)">No wonder … 🔊</button></div>
+  <div class="row"><button class="opt mid" data-audio="audio/c8_corners.mp3" onclick="playAudio(this)">cut corners 🔊</button><button class="opt mid" data-audio="audio/c8_think.mp3" onclick="playAudio(this)">Come to think of it, … 🔊</button></div>
+  <div class="sent" style="font-size:16px;text-align:left"><b>It didn't add up:</b> the facts didn't match.<br><b>No wonder:</b> now I understand why.<br><b>Cut corners:</b> you did the job too fast and skipped a step.<br><b>Come to think of it:</b> a new memory just came to you.</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="wheel">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Review · Spin And Use It</div>
+  <div class="howTo">Spin and read the situation. Remember the phrase, then say <b>one full sentence in the past</b>.</div>
+  <div class="wheelWrap" data-items='[{"k":"🧩","p":"The customer says no package. The app says delivered. The facts don’t match."},{"k":"💡","p":"Your coworker worked 14 hours. Now you understand why he looked so tired."},{"k":"⚡","p":"You rushed your route and skipped a step."},{"k":"🧠","p":"You’re telling a story, and a new memory suddenly comes to you."},{"k":"🙋","p":"You forgot to call your coworker. Say it was your fault, in two phrases."},{"k":"🤝","p":"Your dispatcher had a good point. Later he said sorry for calling late. Answer both."},{"k":"⚖️","p":"The app got the address wrong, but give the other side of the story too."},{"k":"🎤","p":"Start a story, say what you said, then react to a crazy story."}]'>
+   <div class="wheelPointer"></div>
+   <svg class="wheelSvg" viewBox="-100 -100 200 200"></svg>
+   <div class="wheelHub"></div>
+  </div>
+  <div class="wheelCard"><div class="think" data-wprompt></div><div class="es">Say one full sentence in the past.</div></div>
+  <button class="btn go" onclick="wheelSpin(this)">Spin</button>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Check the phrases</button>
+  <div class="keyBox" style="text-align:left">🧩 it didn't add up · 💡 no wonder · ⚡ cut corners · 🧠 come to think of it · 🙋 my bad, it slipped my mind · 🤝 fair enough, no worries · ⚖️ to be fair, mess up · 🎤 you won't believe what happened, I was like, that's wild</div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="spiral">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Fast Fire · Extra Round</div>
+  <div class="es">One full sentence in the past for each. They're mixed up on purpose.</div>
+  <div class="think" style="font-size:18px">You stopped at your aunt's house for 5 minutes.<br>The man with the suitcase.<br>You finished the last stop.<br>She didn't notice anything around her.<br>The police stopped you.<br>The kids and the girl in the back.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Check yourself</button>
+  <div class="keyBox"><b>swing by</b> · <b>run away from</b> · <b>wrap up</b> · <b>in her own world</b> · <b>pull over</b> · <b>laugh at</b></div>
+  <button class="btn go" data-next>Done</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Listening · Catch The Mistakes</div>
+  <button class="audio" data-audio="audio/c8_marcus.mp3" onclick="playAudio(this)" style="width:84px;height:84px;font-size:34px">🔊</button>
+  <div class="howTo"><b>What to do</b><ol><li>Marcus tells Camila's story. He makes <b>8 mistakes</b> with past verbs.</li><li>When you hear one, say <b>"Stop!"</b></li><li>Say the sentence the right way.</li></ol></div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Check yourself</button>
+  <div class="keyBox">1. loaded · 2. started · 3. couldn't · 4. called · 5. didn't pick · 6. said · 7. scanned · 8. broke</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="explain">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">See It · 3 Past Tense Traps</div>
+  <div class="es">Tap each trap and watch the wrong word change. Then answer the question out loud.</div>
+  <div class="exTimeline" data-title="Past tense traps" data-left="start" data-right="end" data-items='[
+   {"chip":"after then","ev":[{"t":"I got there","x":18},{"bad":"ask","fix":"asked","t":"then I","x":72}],"sent":"I got there. <b>Then I asked</b> for the code.","say":"Tell me two things you did today. Join them with then.","a":"audio/c8_then.mp3"},
+   {"chip":"after didn’t","ev":[{"bad":"left","fix":"leave","t":"I didn’t","x":45}],"sent":"I <b>didn’t leave</b> the box. Use <b>didn’t</b> + the simple verb.","say":"Tell me two things you didn’t do yesterday.","a":"audio/c8_didnt.mp3"},
+   {"chip":"special verbs","ev":[{"bad":"leaved","fix":"left","t":"I","x":25},{"bad":"taked","fix":"took","t":"I","x":72}],"sent":"I <b>left</b> a note and I <b>took</b> a picture. These verbs don’t use -ed.","say":"Use the past of go, see and get in one short story.","a":"audio/c8_irreg.mp3"}
+  ]'></div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="stack">
+  <div class="badge">Pronunciation · 3 Sounds Of -ed</div>
+  <div class="es">Tap, listen and repeat each group. <b>-ed is not always a new syllable.</b></div>
+  <div class="row"><button class="opt mid" data-audio="audio/c8_ed_t.mp3" onclick="playAudio(this)">/t/ checked · picked · asked · dropped 🔊</button></div>
+  <div class="row"><button class="opt mid" data-audio="audio/c8_ed_d.mp3" onclick="playAudio(this)">/d/ called · scanned · pulled · delivered 🔊</button></div>
+  <div class="row"><button class="opt mid" data-audio="audio/c8_ed_id.mp3" onclick="playAudio(this)">/ɪd/ loaded · started · ended · headed 🔊</button></div>
+  <div class="sent" style="font-size:16px;text-align:left"><b>/t/ and /d/:</b> just a small sound at the end. Never say "check-ed".<br><b>/ɪd/:</b> an extra syllable, only after <b>t</b> or <b>d</b>.</div>
+  <div class="es" style="font-size:15px">Join the ending to the next word:</div>
+  <div class="row"><button class="opt mid" data-audio="audio/c8_link1.mp3" onclick="playAudio(this)">picked up 🔊</button><button class="opt mid" data-audio="audio/c8_link2.mp3" onclick="playAudio(this)">ended up 🔊</button><button class="opt mid" data-audio="audio/c8_link3.mp3" onclick="playAudio(this)">called him 🔊</button></div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="tpr" data-items='[{"w":"Sentence 1","a":"audio/c8_h1.mp3"},{"w":"Sentence 2","a":"audio/c8_h2.mp3"},{"w":"Sentence 3","a":"audio/c8_h3.mp3"},{"w":"Sentence 4","a":"audio/c8_h4.mp3"},{"w":"Sentence 5","a":"audio/c8_h5.mp3"},{"w":"Sentence 6","a":"audio/c8_h6.mp3"}]' data-idx="0">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Hear It · Yesterday Or Every Day?</div>
+  <div class="howTo"><b>What to do</b><ol><li>Tap 🔊 and listen.</li><li>Hear the -ed? Say <b>"yesterday"</b>. No -ed? Say <b>"every day"</b>.</li></ol></div>
+  <button class="audio" data-audio="audio/c8_h1.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="word" data-tprword>Sentence 1</div>
+  <div class="dots" data-tprdots><div class="dot lit"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="row" style="max-width:280px">
+   <button class="opt mid" onclick="tprNav(this,-1)" style="flex:0 0 60px">‹</button>
+   <button class="opt mid" onclick="tprNav(this,1)" style="flex:1">Next sentence ›</button>
+  </div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Check yourself</button>
+  <div class="keyBox">1. yesterday · 2. every day · 3. yesterday · 4. every day · 5. yesterday · 6. every day</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Practice · Round 1 · With Help</div>
+  <div class="howTo"><b>What to do</b><ol><li>Tell Camila's story with this list.</li><li>The verbs are in the simple form. <b>Change each one to the past.</b></li><li>If I stop you, say the whole sentence again.</li></ol></div>
+  <div class="sent" style="font-size:15px;text-align:left"><b>Morning:</b> load · head out · deliver · start pouring · freeze · call · not pick up<br><b>Noon:</b> find · look sketchy · take · leave · put back · call · find · cut corners · make a mistake · scan<br><b>Afternoon:</b> drive back · drop off · break down · pull over · call · tell · show up · finish · end up</div>
+  <div class="es" style="font-size:14px"><b>Try to use:</b> a starting line · 3 connectors (then, after that, out of nowhere, so anyway, by the time) · to make matters worse · couldn't catch a break · better safe than sorry · 2 of: make a mistake, take a picture, leave a note · <b>Extra:</b> no wonder, it didn't add up</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/core8.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">Practice · Round 2 · Less Help</div>
+  <div class="howTo"><b>What to do</b><ol><li>Tell the same story, with no verb list this time.</li><li>I'm Marcus. I'll stop you <b>one time</b> with a question.</li><li>Answer me, then go back to the story with <b>"So anyway, …"</b></li></ol></div>
+  <div class="es" style="font-size:14px"><b>Try to use:</b> a starting line · 3 connectors · to make matters worse · couldn't catch a break · better safe than sorry · make a mistake, take a picture or leave a note</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/open8.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">The Check · Part 1 · Tell Your Supervisor</div>
+  <div class="think">"Brief me. What happened with Camila on Tuesday?"</div>
+  <div class="howTo"><b>How it works</b><ol><li>"Brief me" means: tell me the important facts.</li><li>I'm your supervisor, and I know nothing about this.</li><li><b>I stay quiet and listen.</b> Keep talking until the time ends.</li></ol></div>
+  <div class="timerRing" data-seconds="120">
+   <svg width="96" height="96" viewBox="0 0 96 96">
+    <circle cx="48" cy="48" r="44" fill="none" stroke="rgba(244,238,246,.15)" stroke-width="6"></circle>
+    <circle class="timerArc" cx="48" cy="48" r="44" fill="none" stroke="#FFBE00" stroke-width="6"
+      stroke-linecap="round" stroke-dasharray="276.46" stroke-dashoffset="0" transform="rotate(-90 48 48)"></circle>
+   </svg>
+   <span class="timerNum">120</span>
+  </div>
+  <button class="btn go" onclick="timerStart(this)">Start 2 minutes</button>
+  <button class="btn go" data-next style="display:none">Next</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">The Check · Listen To Yourself</div>
+  <div class="howTo"><b>What to do</b><ol><li>Listen to your recording.</li><li>Find your own mistakes before I say anything.</li><li>Tell me each one, and say the sentence the right way.</li></ol></div>
+  <div class="es">Listen carefully after <b>then</b> and <b>out of nowhere</b>. Mistakes often happen there. Also listen for the <b>-ed</b>.</div>
+  <button class="btn go" data-next>Done, next</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/core8.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">The Check · Part 2 · Your Own Story</div>
+  <div class="think">Now it's <b>your</b> story. I'll give you a topic.</div>
+  <div class="howTo"><b>How it works</b><ol><li>No time to prepare. Start in <b>3 seconds</b> with a starting line.</li><li>Tell it in the past, from start to finish.</li><li><b>I stay quiet and listen.</b> When the time ends, we'll fix any mistakes together.</li></ol></div>
+  <div class="timerRing" data-seconds="120">
+   <svg width="96" height="96" viewBox="0 0 96 96">
+    <circle cx="48" cy="48" r="44" fill="none" stroke="rgba(244,238,246,.15)" stroke-width="6"></circle>
+    <circle class="timerArc" cx="48" cy="48" r="44" fill="none" stroke="#FFBE00" stroke-width="6"
+      stroke-linecap="round" stroke-dasharray="276.46" stroke-dashoffset="0" transform="rotate(-90 48 48)"></circle>
+   </svg>
+   <span class="timerNum">120</span>
+  </div>
+  <button class="btn go" onclick="timerStart(this)">Start 2 minutes</button>
+  <button class="btn go" data-next style="display:none">Next</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Real Life · Marcus Calls You</div>
+  <div class="howTo"><b>What to do</b><ol><li>It's the next morning. Marcus says the app shows <b>stop 14 wasn't delivered</b>.</li><li>Explain what happened, in your own words, using these points.</li></ol></div>
+  <div class="sent" style="font-size:16px;text-align:left">nobody home · called twice · sketchy place · picture + note · box back in the van · rescheduled</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Need help? Show an example</button>
+  <div class="keyBox" style="text-align:left;font-size:15px;line-height:1.6"><b>Marcus:</b> Hey Danna, quick question. The app says stop 14 didn't get delivered. What happened?<br><b>You:</b> So here's what happened. I got there around two, and nobody answered the door.<br><b>Marcus:</b> Did you call the customer?<br><b>You:</b> Yeah, I called twice, but she didn't pick up. The place looked kind of sketchy, so I took a picture and left a note. Better safe than sorry.<br><b>Marcus:</b> Fair enough. Did you leave the box?<br><b>You:</b> No, I put it back in the van and rescheduled it for today. To make matters worse, my phone died around three. My bad, it slipped my mind to tell you.<br><b>Marcus:</b> No worries. Anything else?<br><b>You:</b> No, that's pretty much the size of it.</div>
+  <div class="think" style="font-size:17px">1. Why didn't you leave the box?<br>2. What did you do with it instead?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Check yourself</button>
+  <div class="keyBox" style="text-align:left">1. Nobody answered, and the place looked sketchy.<br>2. I put it back in the van and rescheduled it for today.</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="homework">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Homework</div>
+  <div class="sent" style="text-align:left;font-size:17px">1. 🎙️ <b>While you drive home</b> after one shift, say out loud what happened that day, in the past.</div>
+  <div class="sent" style="text-align:left;font-size:17px">2. Then record a <b>60-second</b> voice note to your own WhatsApp. Start with a starting line. Say <b>who you work for, where you were, and who you talked to</b>. Don't prepare it. It doesn't have to be perfect.</div>
+  <div class="sent" style="text-align:left;font-size:17px">3. 🌍 <b>Mission #2:</b> order something in English at a counter or drive-thru. <span style="color:rgba(244,238,246,.7)">(Didn't do Mission #1 yet? Do that one this week.)</span> Tell me about it in 2 sentences at the start of Class 9.</div>
+  <div class="es" style="font-size:15px">Why: Class 9 starts from your recording. We'll listen together and fix it from there.</div>
+  <div class="es" style="font-size:14px">ES: Mientras manejas a casa, cuenta en voz alta qué pasó en tu turno, en pasado. Luego grábalo en 60 segundos: para quién trabajas, dónde estuviste y con quién hablaste. Misión: pide algo en inglés en un mostrador o drive-thru.</div>
+  <button class="btn go" data-next>Done for today</button>
+ </div></div>
+
+<div class="scr" data-t="close">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="big">You read a whole story, told it, and then told your own.</div>
+  <div class="es">Send the voice note. See you at Class 9.</div>
+  <div class="credits">Teacher's Station · The Milestone Method</div>
+ </div></div>
+
+</div>
+
 
 </div>
 <script>
@@ -3057,7 +3513,21 @@ document.querySelectorAll('.bg[data-img]').forEach(el=>{
   if(visualParent){ visualParent.setAttribute('data-img-src', src); }
 });
 document.querySelectorAll('.scr[data-t="grammarcheck"]').forEach(gcRender);
-loadScreens(7);
+function tprNav(btn, delta){
+  const scr = btn.closest('.scr');
+  const items = JSON.parse(scr.getAttribute('data-items'));
+  let i = parseInt(scr.getAttribute('data-idx')||'0',10);
+  i = Math.max(0, Math.min(items.length-1, i+delta));
+  scr.setAttribute('data-idx', i);
+  const it = items[i];
+  scr.querySelector('[data-tprword]').textContent = it.w;
+  const audioBtn = scr.querySelector('.audio');
+  audioBtn.setAttribute('data-audio', it.a);
+  audioBtn.classList.remove('done');
+  audioBtn._player = null;
+  scr.querySelectorAll('[data-tprdots] .dot').forEach((d,n)=>d.classList.toggle('lit', n===i));
+}
+loadScreens(8);
 </script>
 <!-- DELIGHT:SHELL:START — motion layer v1 (ts-class-app). Additive: wraps show(), touches no class content. Safe to retrofit into any live student file. -->
 <style id="delight-shell">
