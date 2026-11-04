@@ -2888,7 +2888,7 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 </div>
 
-<div class="classBlock" data-class="8" data-mech="wheel,tpr,flip,explain,timer">
+<div class="classBlock" data-class="8" data-mech="flash,wheel,tpr,flip,explain,timer">
 
 <div class="scr" data-t="open">
  <div class="bg" data-img="photos/open8.jpg"></div><div class="veil"></div>
@@ -2903,6 +2903,7 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
  <div class="plain"></div>
  <div class="stack">
   <div class="badge">Warm-up · 1 of 3 · Your Mission</div>
+  <img class="sceneImg" src="photos/c8_coworkers.jpg" alt="Two coworkers talking">
   <div class="think">Did you ask a coworker <b>"How was your weekend?"</b> Tell me in 2 sentences what they said. Was it easier or harder than you expected? Why?</div>
   <div class="es" style="font-size:15px">Didn't do it? No problem. Just tell me what stopped you.</div>
   <button class="btn go" data-next>Answer out loud, then continue</button>
@@ -2920,6 +2921,7 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
  <div class="plain"></div>
  <div class="stack">
   <div class="badge">Warm-up · 3 of 3</div>
+  <img class="sceneImg" src="photos/c8_agent.jpg" alt="A call-centre agent with a headset">
   <div class="think">You want a call-centre job. Which matters more there: <b>perfect English</b>, or <b>staying calm</b> when someone is angry? Tell me about one time you stayed calm.</div>
   <button class="btn go" data-next>Answer out loud, then continue</button>
  </div></div>
@@ -2984,6 +2986,7 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
  <div class="plain"></div>
  <div class="stack">
   <div class="badge">Part 1 of 3 · The Morning</div>
+  <img class="sceneImg" src="photos/c8_p1.jpg" alt="A white van on a wet street">
   <button class="audio" data-audio="audio/c8_p1.mp3" onclick="playAudio(this)" style="width:84px;height:84px;font-size:34px">🔊</button>
   <div class="think" style="font-size:19px">Listen once. In one sentence: what went wrong?</div>
   <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Now show the text</button>
@@ -2995,6 +2998,7 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
  <div class="plain"></div>
  <div class="stack">
   <div class="badge">Part 2 of 3 · The Wrong Label</div>
+  <img class="sceneImg" src="photos/c8_p2.jpg" alt="A front door with a note on it">
   <button class="audio" data-audio="audio/c8_p2.mp3" onclick="playAudio(this)" style="width:84px;height:84px;font-size:34px">🔊</button>
   <div class="think" style="font-size:19px">Listen once. In one sentence: what went wrong?</div>
   <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Now show the text</button>
@@ -3006,6 +3010,7 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
  <div class="plain"></div>
  <div class="stack">
   <div class="badge">Part 3 of 3 · The Long Way Home</div>
+  <img class="sceneImg" src="photos/c8_p3.jpg" alt="A tow truck on the road">
   <button class="audio" data-audio="audio/c8_p3.mp3" onclick="playAudio(this)" style="width:84px;height:84px;font-size:34px">🔊</button>
   <div class="think" style="font-size:19px">Listen once. In one sentence: what went wrong?</div>
   <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Now show the text</button>
@@ -3034,16 +3039,13 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
   <button class="btn go" data-next>Next</button>
  </div></div>
 
-<div class="scr" data-t="recognition">
+<div class="scr" data-t="flash">
  <div class="plain"></div>
  <div class="stack">
-  <div class="badge">New Words · From The Story</div>
-  <div class="es">Tap, listen and repeat. Can you find all five in the story?</div>
-  <div class="row"><button class="opt mid" data-audio="audio/c8_mistake.mp3" onclick="playAudio(this)">make a mistake 🔊</button><button class="opt mid" data-audio="audio/c8_picture.mp3" onclick="playAudio(this)">take a picture 🔊</button></div>
-  <div class="row"><button class="opt mid" data-audio="audio/c8_note.mp3" onclick="playAudio(this)">leave a note 🔊</button><button class="opt mid" data-audio="audio/c8_breakdown.mp3" onclick="playAudio(this)">break down 🔊</button></div>
-  <div class="row"><button class="opt mid" data-audio="audio/c8_sketchy.mp3" onclick="playAudio(this)">sketchy 🔊</button></div>
-  <div class="sent" style="font-size:16px;text-align:left"><b>leave a note:</b> you write a message because nobody is there.<br><b>break down:</b> a car or machine stops working.<br><b>sketchy:</b> a place or person looks unsafe.</div>
-  <button class="btn go" data-next>Next</button>
+  <div class="badge">Flashcards · New Words From The Story</div>
+  <div class="howTo">Look at the photo and <b>say the word out loud</b>. Then tap the card to check. Use ‹ › for the next card.</div>
+  <div data-flash data-items='[{"img": "photos/c8_fc_mistake.jpg", "q": "Oh no! You did something wrong. What did you do?", "w": "make a mistake", "m": "Something you did was wrong.", "s": "I made a mistake.", "a": "audio/c8_mistake.mp3"}, {"img": "photos/c8_fc_picture.jpg", "q": "You use your phone to show proof of delivery. What do you do?", "w": "take a picture", "m": "Use a camera or phone. We don’t say “make a picture”.", "s": "I took a picture.", "a": "audio/c8_picture.mp3"}, {"img": "photos/c8_fc_note.jpg", "q": "Nobody is home, so you write a message. What do you do?", "w": "leave a note", "m": "You write a message because nobody is there.", "s": "I left a note.", "a": "audio/c8_note.mp3"}, {"img": "photos/c8_fc_breakdown.jpg", "q": "The engine stopped working on the road. What happened?", "w": "break down", "m": "A car or machine stops working.", "s": "The van broke down.", "a": "audio/c8_breakdown.mp3"}, {"img": "photos/c8_fc_sketchy.jpg", "q": "This place doesn’t look safe. How does it look?", "w": "sketchy", "m": "A place or person looks unsafe.", "s": "The place looked sketchy.", "a": "audio/c8_sketchy.mp3"}]'></div>
+  <button class="btn go" data-next style="display:none">Next</button>
  </div></div>
 
 <div class="scr" data-t="production">
@@ -3065,7 +3067,7 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
  <div class="stack">
   <div class="badge">Fire It · Fast Answers</div>
   <div class="es">Read the situation. Answer with <b>one full sentence in the past</b>.</div>
-  <div class="think" style="font-size:18px">1. Yesterday: nobody home, so you wrote a message.<br>2. Last week: the engine stopped on the highway.<br>3. That street last night: no lights, strange guys.</div>
+  <div class="picRow"><figure><img src="photos/c8_fc_note.jpg" alt="A note on a door"><figcaption>1. Yesterday: nobody home, so you wrote a message.</figcaption></figure><figure><img src="photos/c8_fc_breakdown.jpg" alt="A truck with its hood open"><figcaption>2. Last week: the engine stopped on the highway.</figcaption></figure><figure><img src="photos/c8_fc_sketchy.jpg" alt="An old, unsafe-looking house"><figcaption>3. Last night: no lights, strange guys.</figcaption></figure></div>
   <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Check yourself</button>
   <div class="keyBox">1. I <b>left a note</b>.<br>2. My van <b>broke down</b>.<br>3. It <b>looked sketchy</b>.</div>
   <button class="btn go" data-next>Next</button>
@@ -3075,6 +3077,7 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
  <div class="plain"></div>
  <div class="stack">
   <div class="badge">Phrase Bank · 1 of 3</div>
+  <img class="sceneImg" src="photos/c8_pb_worse.jpg" alt="A driver in a car, with rain on the window">
   <button class="audio" data-audio="audio/c8_worse.mp3" onclick="playAudio(this)">🔊</button>
   <div class="think">Your story is already bad, and now you want to add <b>the next bad thing</b>. What do you say?</div>
   <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Show the phrase</button>
@@ -3087,6 +3090,7 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
  <div class="plain"></div>
  <div class="stack">
   <div class="badge">Phrase Bank · 2 of 3</div>
+  <img class="sceneImg" src="photos/c8_pb_break.jpg" alt="A flat tire">
   <button class="audio" data-audio="audio/c8_break.mp3" onclick="playAudio(this)">🔊</button>
   <div class="think">All day, it's one problem after another. You have <b>no luck at all</b>. What do you say?</div>
   <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Show the phrase</button>
@@ -3099,6 +3103,7 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
  <div class="plain"></div>
  <div class="stack">
   <div class="badge">Phrase Bank · 3 of 3</div>
+  <img class="sceneImg" src="photos/c8_pb_safe.jpg" alt="A driver fastening a seat belt">
   <button class="audio" data-audio="audio/c8_safe.mp3" onclick="playAudio(this)">🔊</button>
   <div class="think">You chose the <b>careful option</b>, even though it took more time. What do you say?</div>
   <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Show the phrase</button>
@@ -3144,15 +3149,13 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
   <button class="btn go" data-next>Next</button>
  </div></div>
 
-<div class="scr" data-t="recognition">
+<div class="scr" data-t="flash">
  <div class="plain"></div>
  <div class="stack">
-  <div class="badge">From Your Tracker · In The Story</div>
-  <div class="es">You already saved these four phrases, and Camila used them on Tuesday. Tap, listen and repeat.</div>
-  <div class="row"><button class="opt mid" data-audio="audio/c8_addup.mp3" onclick="playAudio(this)">It didn't add up. 🔊</button><button class="opt mid" data-audio="audio/c8_nowonder.mp3" onclick="playAudio(this)">No wonder … 🔊</button></div>
-  <div class="row"><button class="opt mid" data-audio="audio/c8_corners.mp3" onclick="playAudio(this)">cut corners 🔊</button><button class="opt mid" data-audio="audio/c8_think.mp3" onclick="playAudio(this)">Come to think of it, … 🔊</button></div>
-  <div class="sent" style="font-size:16px;text-align:left"><b>It didn't add up:</b> the facts didn't match.<br><b>No wonder:</b> now I understand why.<br><b>Cut corners:</b> you did the job too fast and skipped a step.<br><b>Come to think of it:</b> a new memory just came to you.</div>
-  <button class="btn go" data-next>Next</button>
+  <div class="badge">Flashcards · From Your Tracker</div>
+  <div class="howTo">You saved these four, and Camila used them on Tuesday. <b>Say the phrase</b>, then tap the card to check.</div>
+  <div data-flash data-items='[{"img": "photos/c8_fc_addup.jpg", "q": "The numbers don’t match. What do you say?", "w": "It didn’t add up.", "m": "The facts didn’t match.", "s": "The app said delivered. It didn’t add up.", "a": "audio/c8_addup.mp3"}, {"img": "photos/c8_fc_nowonder.jpg", "q": "He worked 14 hours. Now you understand why he’s asleep. What do you say?", "w": "No wonder …", "m": "Now I understand why.", "s": "No wonder he was angry.", "a": "audio/c8_nowonder.mp3"}, {"img": "photos/c8_fc_corners.jpg", "q": "He did the job too fast and skipped a step. What did he do?", "w": "cut corners", "m": "Do a job too fast and skip steps.", "s": "I cut corners and scanned the wrong label.", "a": "audio/c8_corners.mp3"}, {"img": "photos/c8_fc_think.jpg", "q": "A new memory just came to you. How do you start?", "w": "Come to think of it, …", "m": "A new memory just came to you.", "s": "Come to think of it, I didn’t check the labels.", "a": "audio/c8_think.mp3"}]'></div>
+  <button class="btn go" data-next style="display:none">Next</button>
  </div></div>
 
 <div class="scr" data-t="wheel">
@@ -3305,6 +3308,7 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
  <div class="plain"></div>
  <div class="stack">
   <div class="badge">Real Life · Marcus Calls You</div>
+  <img class="sceneImg" src="photos/c8_call.jpg" alt="A delivery driver in a white van">
   <div class="howTo"><b>What to do</b><ol><li>It's the next morning. Marcus says the app shows <b>stop 14 wasn't delivered</b>.</li><li>Explain what happened, in your own words, using these points.</li></ol></div>
   <div class="sent" style="font-size:16px;text-align:left">nobody home · called twice · sketchy place · picture + note · box back in the van · rescheduled</div>
   <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Need help? Show an example</button>
@@ -3319,6 +3323,7 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
  <div class="plain"></div>
  <div class="stack">
   <div class="badge">Homework</div>
+  <div class="picRow two"><figure><img src="photos/c8_drive.jpg" alt="A woman driving"><figcaption>Tell your day while you drive.</figcaption></figure><figure><img src="photos/c8_drivethru.jpg" alt="A drive-thru window"><figcaption>Mission #2: order in English.</figcaption></figure></div>
   <div class="sent" style="text-align:left;font-size:17px">1. 🎙️ <b>While you drive home</b> after one shift, say out loud what happened that day, in the past.</div>
   <div class="sent" style="text-align:left;font-size:17px">2. Then record a <b>60-second</b> voice note to your own WhatsApp. Start with a starting line. Say <b>who you work for, where you were, and who you talked to</b>. Don't prepare it. It doesn't have to be perfect.</div>
   <div class="sent" style="text-align:left;font-size:17px">3. 🌍 <b>Mission #2:</b> order something in English at a counter or drive-thru. <span style="color:rgba(244,238,246,.7)">(Didn't do Mission #1 yet? Do that one this week.)</span> Tell me about it in 2 sentences at the start of Class 9.</div>
@@ -4050,6 +4055,85 @@ new MutationObserver(ms=>ms.forEach(m=>{
 })();
 </script>
 <!-- DELIGHT:EXPLAIN:END -->
+<!-- DELIGHT:FLASH:START — photo flashcards v1 (ts-class-app). See the photo, say the word OUT LOUD, tap to flip and check. data-t="flash", data-driven, no unique IDs. Also carries .sceneImg and .picRow for photos inside any screen. -->
+<style>
+.sceneImg{width:100%;height:170px;object-fit:cover;border-radius:14px;display:block;background:rgba(255,255,255,.05)}
+.picRow{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;width:100%}
+.picRow.two{grid-template-columns:repeat(2,1fr)}
+.picRow figure{margin:0;display:flex;flex-direction:column;gap:6px}
+.picRow img{width:100%;height:96px;object-fit:cover;border-radius:10px;display:block;background:rgba(255,255,255,.05)}
+.picRow figcaption{font-size:14px;line-height:1.35;color:var(--ink);text-align:left}
+.fcDeck{width:100%;display:flex;flex-direction:column;align-items:center;gap:12px}
+.fcCard{position:relative;width:100%;height:290px;perspective:1200px;cursor:pointer}
+.fcInner{position:absolute;inset:0;transform-style:preserve-3d;transition:transform .45s cubic-bezier(.2,.8,.3,1)}
+.fcCard.flipped .fcInner{transform:rotateY(180deg)}
+.fcFace{position:absolute;inset:0;border-radius:16px;overflow:hidden;backface-visibility:hidden;-webkit-backface-visibility:hidden;box-shadow:0 0 0 1px rgba(255,190,0,.25)}
+.fcFace img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.fcClue{position:absolute;left:0;right:0;bottom:0;padding:26px 14px 12px;background:linear-gradient(transparent,rgba(13,0,20,.92));font-size:16px;line-height:1.35;text-align:center;color:var(--ink)}
+.fcBack{transform:rotateY(180deg);background:var(--ob)}
+.fcBack img{opacity:.22}
+.fcBackIn{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:16px;text-align:center}
+.fcWord{font-family:'Poppins',system-ui,sans-serif;font-weight:700;font-size:27px;line-height:1.2;color:var(--go)}
+.fcMean{font-size:16px;line-height:1.35;color:var(--ink)}
+.fcSent{font-family:'Lora',serif;font-style:italic;font-size:18px;line-height:1.4;color:var(--ink)}
+.fcHear{min-height:44px;padding:8px 18px;border-radius:999px;border:1px solid rgba(255,190,0,.5);background:rgba(13,0,20,.6);color:var(--ink);font:inherit;font-size:15px;cursor:pointer}
+.fcNav{display:flex;align-items:center;justify-content:center;gap:12px;width:100%}
+.fcNav .opt{flex:0 0 56px;min-height:44px}
+.fcNav .opt[disabled]{opacity:.3}
+.fcNav .dots{gap:8px}
+.fcNav .dot{width:11px;height:11px}
+html.dFit .sceneImg{height:150px}
+html.dFit .fcCard{height:270px}
+html.dFit .picRow img{height:88px}
+@media (prefers-reduced-motion:reduce){.fcInner{transition:none}}
+</style>
+<script>
+(function(){
+  function render(deck){
+    const items = JSON.parse(deck.getAttribute('data-items'));
+    const i = +deck.dataset.idx || 0, it = items[i];
+    const card = deck.querySelector('.fcCard');
+    card.classList.remove('flipped');
+    card.querySelectorAll('img').forEach(im => { im.src = it.img; });
+    card.querySelector('.fcClue').textContent = it.q;
+    card.querySelector('.fcWord').textContent = it.w;
+    card.querySelector('.fcMean').textContent = it.m || '';
+    card.querySelector('.fcSent').textContent = it.s || '';
+    const h = card.querySelector('.fcHear');
+    h.setAttribute('data-audio', it.a || ''); h.style.display = it.a ? '' : 'none'; h._player = null;
+    deck.querySelectorAll('.dot').forEach((d, n) => d.classList.toggle('lit', n === i));
+    deck.querySelector('[data-fcprev]').disabled = i === 0;
+    deck.querySelector('[data-fcnext]').disabled = i === items.length - 1;
+  }
+  function build(deck){
+    const items = JSON.parse(deck.getAttribute('data-items'));
+    deck._seen = new Set();
+    deck.classList.add('fcDeck');
+    deck.innerHTML = '<div class="fcCard" role="button" tabindex="0" aria-label="Flip card"><div class="fcInner">'
+      + '<div class="fcFace fcFront"><img alt=""><div class="fcClue"></div></div>'
+      + '<div class="fcFace fcBack"><img alt=""><div class="fcBackIn"><div class="fcWord"></div><div class="fcMean"></div><div class="fcSent"></div>'
+      + '<button class="fcHear" type="button" onclick="event.stopPropagation();playAudio(this)">🔊 Listen</button></div></div>'
+      + '</div></div>'
+      + '<div class="fcNav"><button class="opt mid" type="button" data-fcprev>‹</button><div class="dots">'
+      + items.map(() => '<div class="dot"></div>').join('')
+      + '</div><button class="opt mid" type="button" data-fcnext>›</button></div>';
+    const card = deck.querySelector('.fcCard');
+    const flip = () => {
+      card.classList.toggle('flipped');
+      deck._seen.add(+deck.dataset.idx || 0);
+      if(deck._seen.size === items.length){ const nx = deck.closest('.scr').querySelector('[data-next]'); if(nx) nx.style.display = 'block'; }
+    };
+    card.addEventListener('click', flip);
+    card.addEventListener('keydown', e => { if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); flip(); } });
+    const go = d => { deck.dataset.idx = Math.max(0, Math.min(items.length - 1, (+deck.dataset.idx || 0) + d)); render(deck); };
+    deck.querySelector('[data-fcprev]').addEventListener('click', () => go(-1));
+    deck.querySelector('[data-fcnext]').addEventListener('click', () => go(1));
+    render(deck);
+  }
+  document.querySelectorAll('[data-flash]').forEach(build);
+})();
+</script>
+<!-- DELIGHT:FLASH:END -->
 <!-- DELIGHT:FIT:START — desktop fit v1 (ts-class-app). Landscape computer windows only: the app fills the window at any browser zoom, and each screen shrinks to fit before it scrolls. Phones and portrait windows are untouched. -->
 <style>
 html.dFit,html.dFit body{background:var(--ob)}
