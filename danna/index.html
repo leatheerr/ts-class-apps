@@ -4268,8 +4268,9 @@ img.dImgFail{font-size:0;background:rgba(244,238,246,.08)}
   function swapIcons(root){
     root.querySelectorAll('button,.fcHear').forEach(b => {
       if(!b.textContent.includes('🔊')) return;
-      [...b.childNodes].forEach(n => {
-        if(n.nodeType !== 3 || !n.textContent.includes('🔊')) return;
+      const tw = document.createTreeWalker(b, NodeFilter.SHOW_TEXT), nodes = [];
+      while(tw.nextNode()) if(tw.currentNode.textContent.includes('🔊')) nodes.push(tw.currentNode);
+      nodes.forEach(n => {
         const parts = n.textContent.split('🔊'), f = document.createDocumentFragment();
         parts.forEach((p, i) => {
           if(i){ const s = document.createElement('span'); s.innerHTML = ICON; f.appendChild(s.firstChild); }
