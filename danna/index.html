@@ -4255,6 +4255,8 @@ html.dFit .navBtn.right{right:18px!important}
 .scr:has(.sceneImg) .audio .dIcon{width:30px;height:30px}
 .sceneImg{height:140px}
 html.dFit .sceneImg{height:130px}
+.sceneImg,.picRow img,.fcFace img{font-size:12px;line-height:1.3;color:rgba(244,238,246,.6)}
+img.dImgFail{font-size:0;background:rgba(244,238,246,.08)}
 .chapDots{display:flex;gap:10px;justify-content:center}
 .chapDots i{width:44px;height:6px;border-radius:3px;background:rgba(244,238,246,.2);display:block}
 .chapDots i.on{background:var(--go)}
@@ -4278,6 +4280,15 @@ html.dFit .sceneImg{height:130px}
       if(!b.textContent.trim()) b.setAttribute('aria-label', 'Play audio');
     });
   }
+  document.addEventListener('error', e => {
+    const im = e.target;
+    if(!im || im.tagName !== 'IMG') return;
+    const n = +(im.dataset.retry || 0);
+    if(n < 3){
+      im.dataset.retry = n + 1;
+      setTimeout(() => { im.src = im.getAttribute('src').split('?')[0] + '?r=' + Date.now(); }, 800 * (n + 1));
+    } else im.classList.add('dImgFail');
+  }, true);
   const app = document.getElementById('appRoot') || document.body;
   swapIcons(app);
   new MutationObserver(ms => { if(ms.some(m => m.addedNodes.length)) swapIcons(app); }).observe(app, {childList:true, subtree:true});
