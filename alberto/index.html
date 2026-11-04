@@ -3451,5 +3451,56 @@ new MutationObserver(ms=>ms.forEach(m=>{
 </script>
 <!-- DELIGHT:EXPLAIN:END -->
 
+<!-- DELIGHT:FIT:START — desktop fit v1 (ts-class-app). Landscape computer windows only: the app fills the window at any browser zoom, and each screen shrinks to fit before it scrolls. Phones and portrait windows are untouched. -->
+<style>
+html.dFit,html.dFit body{background:var(--ob)}
+html.dFit .scr{padding-top:0!important;padding-bottom:0!important;justify-content:safe center!important;overflow-y:auto}
+html.dFit .stack{max-width:680px;padding:14px 22px 16px}
+html.dFit .veil{background:linear-gradient(rgba(13,0,20,.66),rgba(13,0,20,.78))!important}
+html.dFit .navBtn{top:50%!important;bottom:auto!important;margin-top:-24px;z-index:70}
+html.dFit .navBtn.left{left:18px!important}
+html.dFit .navBtn.right{right:18px!important}
+</style>
+<script>
+(function(){
+  const root = document.getElementById('appRoot') || document.body;
+  const W = 900, H = 600, MIN = .72;
+  function fitScreen(){
+    if(!document.documentElement.classList.contains('dFit')) return;
+    const s = document.querySelector('.scr.on'); if(!s) return;
+    const st = s.querySelector(':scope > .stack'); if(!st) return;
+    st.style.zoom = '';
+    const need = st.getBoundingClientRect().height, have = s.getBoundingClientRect().height;
+    if(need > have + 1) st.style.zoom = Math.max(MIN, have / need).toFixed(3);
+    s.style.overflowY = st.getBoundingClientRect().height > have + 1 ? 'auto' : 'hidden';
+    s.scrollTop = 0;
+  }
+  function layout(){
+    const iw = innerWidth, ih = innerHeight, on = iw >= 700 && iw / ih >= 1.1;
+    document.documentElement.classList.toggle('dFit', on);
+    const props = ['zoom','width','height','max-width','max-height','aspect-ratio','border-radius','box-shadow'];
+    if(!on){
+      props.forEach(p => root.style.removeProperty(p));
+      document.querySelectorAll('.scr > .stack').forEach(st => { st.style.zoom = ''; st.parentElement.style.overflowY = ''; });
+      return;
+    }
+    const k = Math.min(3, Math.max(.7, Math.min(iw / W, ih / H)));
+    const set = (p, v) => root.style.setProperty(p, v, 'important');
+    set('zoom', k.toFixed(3)); set('width', (iw / k).toFixed(1) + 'px'); set('height', (ih / k).toFixed(1) + 'px');
+    set('max-width', 'none'); set('max-height', 'none'); set('aspect-ratio', 'auto');
+    set('border-radius', '0'); set('box-shadow', 'none');
+    fitScreen();
+  }
+  const _show = window.show;
+  if(typeof _show === 'function') window.show = function(i){ _show(i); fitScreen(); };
+  const _load = window.loadScreens;
+  if(typeof _load === 'function') window.loadScreens = function(n){ _load(n); fitScreen(); };
+  document.addEventListener('click', () => { setTimeout(fitScreen, 60); setTimeout(fitScreen, 450); });
+  addEventListener('resize', layout);
+  layout();
+  if(document.fonts && document.fonts.ready) document.fonts.ready.then(fitScreen);
+})();
+</script>
+<!-- DELIGHT:FIT:END -->
 </body></html>
 
