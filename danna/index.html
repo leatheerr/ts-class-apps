@@ -2974,6 +2974,16 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
   <button class="btn go" data-next style="display:none">Continue</button>
  </div></div>
 
+<div class="scr" data-t="chapter">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Part 1 of 4</div>
+  <div class="big">The Reading</div>
+  <div class="es">Listen to Camila's story, read it, and talk about it.</div>
+  <div class="chapDots"><i class="on"></i><i></i><i></i><i></i></div>
+  <button class="btn go" data-next>Start</button>
+ </div></div>
+
 <div class="scr" data-t="reading">
  <div class="plain"></div>
  <div class="stack">
@@ -3037,6 +3047,16 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
   <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Check yourself</button>
   <div class="keyBox" style="text-align:left">1. She scanned the wrong label at the last stop. An angry customer called, and she found his box in the back of the van.<br>2. She took a picture, left a note on the door, and put the box back in the van.</div>
   <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="chapter">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Part 2 of 4</div>
+  <div class="big">Words &amp; Phrases</div>
+  <div class="es">New words and phrases from the story.</div>
+  <div class="chapDots"><i class="on"></i><i class="on"></i><i></i><i></i></div>
+  <button class="btn go" data-next>Start</button>
  </div></div>
 
 <div class="scr" data-t="flash">
@@ -3186,6 +3206,16 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
   <button class="btn go" data-next>Done</button>
  </div></div>
 
+<div class="scr" data-t="chapter">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Part 3 of 4</div>
+  <div class="big">Listen Closely</div>
+  <div class="es">Catch the mistakes, then hear the -ed endings.</div>
+  <div class="chapDots"><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div>
+  <button class="btn go" data-next>Start</button>
+ </div></div>
+
 <div class="scr" data-t="core">
  <div class="plain"></div>
  <div class="stack">
@@ -3238,6 +3268,16 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
   <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Check yourself</button>
   <div class="keyBox">1. yesterday · 2. every day · 3. yesterday · 4. every day · 5. yesterday · 6. every day</div>
   <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="chapter">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Part 4 of 4</div>
+  <div class="big">Tell The Story</div>
+  <div class="es">Practice with help first. Then tell it on your own.</div>
+  <div class="chapDots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div>
+  <button class="btn go" data-next>Start</button>
  </div></div>
 
 <div class="scr" data-t="core">
@@ -4185,5 +4225,81 @@ html.dFit .navBtn.right{right:18px!important}
 })();
 </script>
 <!-- DELIGHT:FIT:END -->
+<!-- DELIGHT:POLISH:START — design pass v1 (ts-class-app, 4 Nov 2026, UI/UX Pro Max audit). Additive: focus outlines, screen-reader labels, tap targets, readable small text, screen counter, line icons, one card style, chapter screens. Brand tokens unchanged. Remove this block to undo it. -->
+<style>
+:focus{outline:none}
+:focus-visible{outline:3px solid var(--go);outline-offset:2px;border-radius:6px}
+.btn.go:focus-visible{outline-offset:3px;box-shadow:0 0 0 2px var(--ob)}
+.badge{font-size:13px;color:rgba(244,238,246,.82)}
+#classHeader .brand{font-size:11px;color:rgba(244,238,246,.78)}
+.exEnd,.exCount,.flipCount,.flipSaid,.credits,.dJourneyNote{font-size:13px;color:rgba(244,238,246,.82)}
+.exEnd{font-size:12px}
+.exChip{min-height:44px;font-size:14px}
+.exAudio{min-height:44px}
+.flipSaid{min-height:44px;padding-left:14px;padding-right:14px}
+.forceUse{min-height:44px}
+.forceUse input[type=checkbox]{width:24px;height:24px;flex:none}
+#classSelect{position:relative}
+#classSelect::after{content:"";position:absolute;inset:-6px}
+.btn{min-height:56px;font-size:17px}
+.toggleBtn{min-height:48px;border:1.5px solid rgba(255,190,0,.55);background:transparent;font-weight:600}
+.keyBox,.howTo,.wheelCard{border-radius:14px}
+.keyBox,.wheelCard{border:1px solid rgba(244,238,246,.12)}
+.howTo{border-top:1px solid rgba(255,190,0,.18);border-right:1px solid rgba(255,190,0,.18);border-bottom:1px solid rgba(255,190,0,.18)}
+#dProg{font-family:'Poppins',system-ui,sans-serif;font-size:13px;font-weight:600;color:var(--ink);white-space:nowrap}
+.dIcon{width:1.05em;height:1.05em;display:inline-block;vertical-align:-.15em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.audio .dIcon{width:44px;height:44px;color:#2D0130}
+.audio.done .dIcon{color:var(--go)}
+.scr[data-t="chapter"] .big{font-size:32px;color:var(--go)}
+.scr:has(.sceneImg) .audio{width:72px!important;height:72px!important;flex:none}
+.scr:has(.sceneImg) .audio .dIcon{width:30px;height:30px}
+.sceneImg{height:140px}
+html.dFit .sceneImg{height:130px}
+.chapDots{display:flex;gap:10px;justify-content:center}
+.chapDots i{width:44px;height:6px;border-radius:3px;background:rgba(244,238,246,.2);display:block}
+.chapDots i.on{background:var(--go)}
+@media (max-width:400px){#classHeader .brand{letter-spacing:.8px;font-size:10px}}
+</style>
+<script>
+(function(){
+  const ICON = '<svg class="dIcon" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg>';
+  function swapIcons(root){
+    root.querySelectorAll('button,.fcHear').forEach(b => {
+      if(!b.textContent.includes('🔊')) return;
+      [...b.childNodes].forEach(n => {
+        if(n.nodeType !== 3 || !n.textContent.includes('🔊')) return;
+        const parts = n.textContent.split('🔊'), f = document.createDocumentFragment();
+        parts.forEach((p, i) => {
+          if(i){ const s = document.createElement('span'); s.innerHTML = ICON; f.appendChild(s.firstChild); }
+          if(p) f.appendChild(document.createTextNode(p));
+        });
+        n.replaceWith(f);
+      });
+      if(!b.textContent.trim()) b.setAttribute('aria-label', 'Play audio');
+    });
+  }
+  const app = document.getElementById('appRoot') || document.body;
+  swapIcons(app);
+  new MutationObserver(ms => { if(ms.some(m => m.addedNodes.length)) swapIcons(app); }).observe(app, {childList:true, subtree:true});
+
+  const back = document.querySelector('[data-navback]'), fwd = document.querySelector('[data-navfwd]'), sel = document.getElementById('classSelect');
+  if(back) back.setAttribute('aria-label', 'Previous screen');
+  if(fwd) fwd.setAttribute('aria-label', 'Next screen');
+  if(sel) sel.setAttribute('aria-label', 'Choose a class');
+
+  const head = document.getElementById('classHeader'), prog = document.createElement('span');
+  prog.id = 'dProg'; prog.setAttribute('aria-live', 'polite');
+  if(head && sel) head.insertBefore(prog, sel);
+  function count(){
+    if(typeof screens === 'undefined' || !screens.length){ prog.textContent = ''; return; }
+    const i = screens.findIndex(s => s.classList.contains('on'));
+    prog.textContent = 'Screen ' + (i + 1) + ' of ' + screens.length;
+  }
+  const _show = window.show;
+  if(typeof _show === 'function') window.show = function(i){ _show(i); count(); };
+  count();
+})();
+</script>
+<!-- DELIGHT:POLISH:END -->
 </body>
 </html>
