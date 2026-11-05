@@ -1571,7 +1571,7 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 </div>
 
-<div class="classBlock" data-class="29" data-mech="wheel,flash,concept,explain,scramble,timer,boss">
+<div class="classBlock" data-class="29" data-mech="wheel,flash,concept,match,flip,explain,scramble,timer,boss">
 
 <div class="scr" data-t="open">
  <div class="bg" data-img="photos/c29_crew.jpg"></div><div class="veil"></div>
@@ -1651,40 +1651,23 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
   <button class="btn go" data-next style="display:none">Continue</button>
  </div></div>
 
-<div class="scr" data-t="phrasebank" data-phrase="1">
+<div class="scr tall" data-t="match">
  <div class="plain"></div>
  <div class="stack">
-  <div class="badge">Phrase Bank · 1 of 3</div>
-  <img class="sceneImg" src="photos/c29_minute.jpg" alt="Two old friends hugging when they meet again">
-  <div class="think">You run into a guy you haven't seen in a really long time. What do you say first?</div>
-  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
-  <div class="keyBox"><div class="pbPhrase">It's been a minute.</div><div style="margin-top:8px;font-size:13px;color:rgba(244,238,246,.6)">= it's been a long time</div></div>
-  <label class="forceUse"><input type="checkbox">I used this phrase in the briefing</label>
-  <button class="btn go" data-next>Continue</button>
+  <div class="badge">Phrase Bank · Match-Up</div>
+  <div class="es">Tap a phrase, then tap what it means.</div>
+  <div class="matchWrap" data-items='[{"p": "It’s been a minute.", "m": "It’s been a long time since I saw you.", "img": "photos/c29_minute.jpg", "ex": "“It’s been a minute! How’ve you been?”", "a": "audio/c29_pb1.mp3", "tag": "say it when you meet someone"}, {"p": "Ever since then…", "m": "From that moment until today.", "img": "photos/c29_ever.jpg", "ex": "“Ever since then, I’ve been doing commercial work.”", "a": "audio/c29_pb2.mp3", "tag": "+ I’ve been / I’ve done"}, {"p": "Back in the day…", "m": "A long time ago, when things were different.", "img": "photos/c29_backday.jpg", "ex": "“Back in the day, Sammy did everything by hand.”", "a": "audio/c29_pb3.mp3", "tag": "+ did / was (finished past)"}]'></div>
+  <button class="btn go" data-next style="display:none">Continue</button>
  </div></div>
 
-<div class="scr" data-t="phrasebank" data-phrase="2">
+<div class="scr" data-t="flip">
  <div class="plain"></div>
  <div class="stack">
-  <div class="badge">Phrase Bank · 2 of 3</div>
-  <img class="sceneImg" src="photos/c29_ever.jpg" alt="An HVAC technician working on a rooftop unit">
-  <div class="think">Something happened at one point, and it's been true from that moment until today. How do you connect it?</div>
-  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
-  <div class="keyBox"><div class="pbPhrase">Ever since then…</div><div style="margin-top:8px;font-size:13px;color:rgba(244,238,246,.6)">+ present perfect: "Ever since then I've been doing commercial work."</div></div>
-  <label class="forceUse"><input type="checkbox">I used this phrase in the briefing</label>
-  <button class="btn go" data-next>Continue</button>
- </div></div>
-
-<div class="scr" data-t="phrasebank" data-phrase="3">
- <div class="plain"></div>
- <div class="stack">
-  <div class="badge">Phrase Bank · 3 of 3</div>
-  <img class="sceneImg" src="photos/c29_backday.jpg" alt="Old hand tools on a wooden bench">
-  <div class="think">You want to talk about how things were done years ago, when Sammy was starting out.</div>
-  <button class="toggleBtn" onclick="this.nextElementSibling.classList.add('show')">Reveal the phrase</button>
-  <div class="keyBox"><div class="pbPhrase">Back in the day…</div><div style="margin-top:8px;font-size:13px;color:rgba(244,238,246,.6)">+ past simple: "Back in the day he did everything by hand."</div></div>
-  <label class="forceUse"><input type="checkbox">I used this phrase in the briefing</label>
-  <button class="btn go" data-next>Continue</button>
+  <div class="badge">Phrase Bank · Use Them</div>
+  <div class="es">Flip a card and answer out loud with the right phrase.</div>
+  <div class="flipCount"></div>
+  <div class="flipGrid" data-items='[{"k": "?", "p": "Bruce is back after <b>two weeks</b> on vacation. Greet him."}, {"k": "?", "p": "The new guy asks how jobs were done <b>20 years ago</b>. Tell him about Sammy."}, {"k": "?", "p": "You got your first <b>commercial</b> job in 2024. What have you done from then until now?"}, {"k": "?", "p": "You run into a guy from your first job at the store. What do you say first?"}]'></div>
+  <button class="btn go" data-next style="display:none">Continue</button>
  </div></div>
 
 <div class="scr tall" data-t="grammar" data-gstep="0">
@@ -2820,6 +2803,97 @@ html.dFit .fsStage{max-width:520px} html.dFit .fsTabs,html.dFit .fsQuiz{max-widt
 })();
 </script>
 <!-- MOTION:for-since:END -->
+
+<!-- DELIGHT:MATCH:START — Phrase Match-Up v1 (ts-class-app, 5 Nov 2026). Tap a phrase, then its meaning card (photo + plain meaning). A right match locks in gold, plays the example out loud and shows it; a wrong one shakes. When every pair is matched, the student says each example OUT LOUD and [data-next] appears. data-t="match", data-driven, no unique IDs. Items: [{"p","m","img"?,"ex","a"?,"tag"?}] -->
+<style>
+.matchWrap{width:100%;max-width:440px;display:flex;flex-direction:column;gap:12px}
+.mPhrases{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.mPhrase{min-height:46px;padding:8px 16px;border-radius:23px;border:2px solid rgba(255,190,0,.55);background:rgba(255,190,0,.06);
+ color:var(--ink);font-family:'Poppins',system-ui,sans-serif;font-size:16px;font-weight:600;cursor:pointer;transition:all .2s}
+.mPhrase.sel{background:var(--go);color:#2D0130;border-color:var(--go);transform:translateY(-2px);box-shadow:0 6px 18px rgba(255,190,0,.35)}
+.mPhrase.done{opacity:.35;pointer-events:none;border-style:dashed}
+.mCards{display:flex;flex-direction:column;gap:10px}
+.mCard{display:flex;align-items:stretch;gap:12px;width:100%;text-align:left;padding:0;border-radius:16px;overflow:hidden;cursor:pointer;
+ border:2px solid rgba(244,238,246,.14);background:rgba(244,238,246,.05);color:var(--ink);transition:border-color .2s,background .2s}
+.mCard img{width:96px;min-height:84px;object-fit:cover;flex:none}
+.mCard .mTxt{padding:10px 12px 10px 0;display:flex;flex-direction:column;justify-content:center;gap:4px;min-width:0}
+.mCard .mMean{font-size:16px;line-height:1.3}
+.mCard .mHit{display:none;font-family:'Poppins',system-ui,sans-serif;font-weight:700;color:var(--go);font-size:16px}
+.mCard .mEx{display:none;font-size:15px;color:rgba(244,238,246,.9);font-style:italic}
+.mCard .mTag{display:none;align-self:flex-start;font-family:'Poppins',system-ui,sans-serif;font-size:12px;font-weight:600;color:#2D0130;background:#D9A6FF;border-radius:8px;padding:2px 8px}
+.mCard.ok{border-color:var(--go);background:rgba(255,190,0,.10);cursor:default}
+.mCard.ok .mHit,.mCard.ok .mEx{display:block}
+.mCard.ok .mTag{display:inline-block}
+.mCard.ok .mMean{font-size:13px;color:rgba(244,238,246,.7)}
+.mCard.armed{border-color:rgba(255,190,0,.45)}
+.mCard.bad{animation:mShake .4s}
+@keyframes mShake{0%,100%{transform:translateX(0)}25%{transform:translateX(-7px)}75%{transform:translateX(7px)}}
+.mDone{display:none;text-align:center;font-size:16px;color:var(--go)}
+.matchWrap.complete .mDone{display:block}
+html.dFit .matchWrap{max-width:640px}
+html.dFit .mCards{display:grid;grid-template-columns:repeat(3,1fr)}
+html.dFit .mCard{flex-direction:column}
+html.dFit .mCard img{width:100%;height:120px;min-height:0}
+html.dFit .mCard .mTxt{padding:10px 12px 12px}
+@media (prefers-reduced-motion:reduce){.mCard.bad{animation:none}.mPhrase{transition:none}}
+</style>
+<script>
+(function(){
+  function build(w){
+    let items; try { items = JSON.parse(w.getAttribute('data-items')); } catch(e){ return; }
+    w.innerHTML = '';
+    const ph = document.createElement('div'); ph.className = 'mPhrases';
+    items.forEach((it, i) => {
+      const b = document.createElement('button'); b.type = 'button'; b.className = 'mPhrase'; b.dataset.i = i; b.textContent = it.p; ph.appendChild(b);
+    });
+    const cards = document.createElement('div'); cards.className = 'mCards';
+    // order the meanings so none sits under its own phrase (rotate by one)
+    const order = items.map((_, i) => (i + 1) % items.length);
+    order.forEach(i => {
+      const it = items[i];
+      const c = document.createElement('button'); c.type = 'button'; c.className = 'mCard'; c.dataset.i = i;
+      c.innerHTML = (it.img ? '<img src="' + it.img + '" alt="">' : '') +
+        '<span class="mTxt"><span class="mHit">' + it.p + '</span><span class="mMean">' + it.m + '</span>' +
+        '<span class="mEx">' + (it.ex || '') + '</span>' + (it.tag ? '<span class="mTag">' + it.tag + '</span>' : '') + '</span>';
+      cards.appendChild(c);
+    });
+    const done = document.createElement('div'); done.className = 'mDone';
+    done.innerHTML = '✓ All matched. Now <b>say each example out loud</b>.';
+    w.append(ph, cards, done);
+    w._items = items; w._sel = null; w._left = items.length;
+  }
+  function pick(w, kind, el){
+    if (kind === 'p'){
+      w.querySelectorAll('.mPhrase').forEach(b => b.classList.toggle('sel', b === el));
+      w.querySelectorAll('.mCard:not(.ok)').forEach(c => c.classList.add('armed'));
+      w._sel = +el.dataset.i; return;
+    }
+    if (w._sel === null){ el.classList.remove('bad'); void el.offsetWidth; el.classList.add('bad'); return; }
+    const i = +el.dataset.i;
+    if (i === w._sel){
+      el.classList.add('ok'); el.classList.remove('armed');
+      const p = w.querySelector('.mPhrase[data-i="' + i + '"]'); p.classList.remove('sel'); p.classList.add('done');
+      w.querySelectorAll('.mCard').forEach(c => c.classList.remove('armed'));
+      if (window.dFeedback) dFeedback(el, true);
+      const a = w._items[i].a; if (a){ try { new Audio(a).play(); } catch(e){} }
+      w._sel = null; w._left--;
+      if (w._left === 0){
+        w.classList.add('complete');
+        const n = w.closest('.stack').querySelector('[data-next]'); if (n) n.style.display = 'block';
+      }
+    } else {
+      if (window.dFeedback) dFeedback(el, false);
+      el.classList.remove('bad'); void el.offsetWidth; el.classList.add('bad');
+    }
+  }
+  document.addEventListener('click', e => {
+    const p = e.target.closest('.matchWrap .mPhrase'); if (p) return pick(p.closest('.matchWrap'), 'p', p);
+    const c = e.target.closest('.matchWrap .mCard'); if (c && !c.classList.contains('ok')) return pick(c.closest('.matchWrap'), 'c', c);
+  });
+  document.querySelectorAll('.matchWrap[data-items]').forEach(build);
+})();
+</script>
+<!-- DELIGHT:MATCH:END -->
 
 <!-- DELIGHT:FIT:START — desktop fit v1 (ts-class-app). Landscape computer windows only: the app fills the window at any browser zoom, and each screen shrinks to fit before it scrolls. Phones and portrait windows are untouched. -->
 <style>
