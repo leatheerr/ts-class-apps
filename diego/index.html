@@ -1571,7 +1571,7 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 </div>
 
-<div class="classBlock" data-class="29" data-mech="wheel,flash,explain,scramble,timer,boss">
+<div class="classBlock" data-class="29" data-mech="wheel,flash,concept,explain,scramble,timer,boss">
 
 <div class="scr" data-t="open">
  <div class="bg" data-img="photos/c29_crew.jpg"></div><div class="veil"></div>
@@ -1618,12 +1618,36 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
   <button class="btn go" data-next style="display:none">Next</button>
  </div></div>
 
-<div class="scr" data-t="explain">
+<div class="scr" data-t="concept" data-fs>
  <div class="plain"></div>
  <div class="stack">
-  <div class="badge">Explainer · FOR vs SINCE</div>
-  <div class="es"><b>for</b> = the whole bar (how long) · <b>since</b> = the pin (where it started). Tap each chip, watch, then say the sentence.</div>
-  <div class="exTimeline" data-title="Your crew's timeline" data-left="the past" data-right="now" data-items='[{"chip": "for four years", "ev": [{"t": "started HVAC", "x": 20}, {"t": "still doing it", "x": 92}], "span": {"from": 20, "to": 92, "t": "4 years"}, "sent": "I&#39;ve been in HVAC <b>for</b> four years.", "say": "How long have you been in HVAC? Use for."}, {"chip": "since 2022", "ev": [{"t": "still in HVAC", "x": 92}], "pin": {"x": 20, "t": "2022"}, "sent": "I&#39;ve been in HVAC <b>since</b> 2022.", "say": "Same fact — now say it with since."}, {"chip": "for 25 years", "ev": [{"t": "Sammy starts", "x": 6}, {"t": "now", "x": 92}], "span": {"from": 6, "to": 92, "t": "25 years"}, "sent": "Sammy&#39;s been in the trade <b>for</b> 25 years.", "say": "Tell me about Sammy with for."}, {"chip": "since last year", "ev": [{"t": "Bruce is still super", "x": 92}], "pin": {"x": 60, "t": "last year"}, "sent": "Bruce has been superintendent <b>since</b> last year.", "say": "Tell me about Bruce with since."}]'></div>
+  <div class="badge">FOR vs SINCE</div>
+  <div class="fsTabs">
+   <button class="fsTab for" data-mode="for" type="button"><span class="fsIco">⏱</span>FOR<small>how long?</small></button>
+   <button class="fsTab since" data-mode="since" type="button"><span class="fsIco">📍</span>SINCE<small>from when?</small></button>
+  </div>
+  <div class="fsStage">
+   <div class="fsTrack">
+    <div class="fsLine"></div>
+    <div class="fsBar"><b class="fsCount"></b></div>
+    <div class="fsArrow"></div>
+    <div class="fsPin"><span>2022</span></div>
+    <div class="fsWorker" aria-hidden="true">👷</div>
+   </div>
+   <div class="fsYears"><span>2022</span><span>2023</span><span>2024</span><span>2025</span><span class="now">NOW</span></div>
+  </div>
+  <div class="fsBig" data-fsbig>&nbsp;</div>
+  <div class="fsSent" data-fssent>&nbsp;</div>
+  <div class="fsQuiz">
+   <div class="fsAsk">FOR or SINCE? <b>Say it</b>, then tap.</div>
+   <div class="fsChips">
+    <button class="fsChip" type="button" data-k="for">3 years</button>
+    <button class="fsChip" type="button" data-k="since">March</button>
+    <button class="fsChip" type="button" data-k="since">last year</button>
+    <button class="fsChip" type="button" data-k="for">a decade</button>
+    <button class="fsChip" type="button" data-k="since">I started</button>
+   </div>
+  </div>
   <button class="btn go" data-next style="display:none">Continue</button>
  </div></div>
 
@@ -2682,6 +2706,121 @@ html.dFit .picRow.two{max-width:440px}
 })();
 </script>
 <!-- DELIGHT:FLASH:END -->
+<!-- MOTION:for-since:START — concept motion (ts-class-app motion_library "duration-vs-start-point"). FOR = a bar that fills while years count up; SINCE = a pin drops on the start year, then an arrow runs to NOW. Auto-plays FOR then SINCE when the screen opens; tabs replay; chip quiz ends in the student saying it. -->
+<style>
+.scr[data-fs] .stack{gap:14px}
+.fsTabs{display:flex;gap:10px;width:100%;max-width:420px}
+.fsTab{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;padding:10px 8px;border-radius:16px;
+ border:2px solid rgba(244,238,246,.14);background:rgba(244,238,246,.05);color:var(--ink);cursor:pointer;
+ font-family:'Poppins',system-ui,sans-serif;font-size:20px;font-weight:700;letter-spacing:.5px;transition:all .25s}
+.fsTab small{font-size:13px;font-weight:500;letter-spacing:0;opacity:.8}
+.fsIco{font-size:22px;line-height:1}
+.fsTab.for.on{border-color:var(--go);background:rgba(255,190,0,.16);color:var(--go)}
+.fsTab.since.on{border-color:#D9A6FF;background:rgba(217,166,255,.16);color:#E9CCFF}
+.fsStage{width:100%;max-width:420px;padding:44px 6px 0}
+.fsTrack{position:relative;height:46px}
+.fsLine{position:absolute;left:10%;right:10%;top:50%;height:4px;margin-top:-2px;border-radius:2px;background:rgba(244,238,246,.18)}
+.fsBar{position:absolute;left:10%;top:50%;height:30px;margin-top:-15px;width:0;border-radius:15px;
+ background:linear-gradient(90deg,#FFBE00,#FF9F1C);box-shadow:0 0 18px rgba(255,190,0,.45);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.fsCount{font-family:'Poppins',system-ui,sans-serif;font-size:15px;color:#2D0130;white-space:nowrap}
+.fsArrow{position:absolute;left:10%;top:50%;width:0;height:0;border-top:4px dashed #D9A6FF;margin-top:-2px}
+.fsArrow::after{content:"";position:absolute;right:-4px;top:-10px;border:8px solid transparent;border-left:12px solid #D9A6FF;display:none}
+.fsArrow.end::after{display:block}
+.fsPin{position:absolute;left:10%;bottom:50%;transform:translate(-50%,-140%);opacity:0;display:flex;flex-direction:column;align-items:center}
+.fsPin span{background:#D9A6FF;color:#2D0130;font-family:'Poppins',system-ui,sans-serif;font-weight:700;font-size:14px;padding:3px 10px;border-radius:10px}
+.fsPin::after{content:"";width:3px;height:30px;background:#D9A6FF;border-radius:2px}
+.fsPin.drop{animation:fsDrop .6s cubic-bezier(.3,1.6,.5,1) forwards}
+@keyframes fsDrop{0%{opacity:0;transform:translate(-50%,-260%)}100%{opacity:1;transform:translate(-50%,-2px)}}
+.fsWorker{position:absolute;left:10%;top:50%;transform:translate(-50%,-50%);font-size:24px;transition:left 2.4s linear;filter:drop-shadow(0 2px 4px rgba(0,0,0,.5))}
+.fsYears{display:grid;grid-template-columns:repeat(5,1fr);text-align:center;margin-top:8px;font-family:'Poppins',system-ui,sans-serif;font-size:13px;color:rgba(244,238,246,.75)}
+.fsYears .now{color:var(--go);font-weight:700}
+.fsBig{font-family:'Poppins',system-ui,sans-serif;font-size:34px;font-weight:700;line-height:1.1;min-height:38px}
+.fsBig.for{color:var(--go)} .fsBig.since{color:#E9CCFF}
+.fsBig.pop{animation:fsPop .45s ease-out}
+@keyframes fsPop{0%{transform:scale(.7);opacity:0}100%{transform:scale(1);opacity:1}}
+.fsSent{font-size:18px;min-height:24px;color:rgba(244,238,246,.92)}
+.fsSent b.for{color:var(--go)} .fsSent b.since{color:#E9CCFF}
+.fsQuiz{width:100%;max-width:420px;border-top:1px solid rgba(244,238,246,.12);padding-top:12px;opacity:.35;pointer-events:none;transition:opacity .4s}
+.fsQuiz.ready{opacity:1;pointer-events:auto}
+.fsAsk{font-size:15px;color:rgba(244,238,246,.85);margin-bottom:10px}
+.fsChips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.fsChip{min-height:44px;padding:8px 14px;border-radius:22px;border:1.5px dashed rgba(244,238,246,.35);background:transparent;color:var(--ink);
+ font-family:'Poppins',system-ui,sans-serif;font-size:15px;cursor:pointer;transition:all .25s}
+.fsChip.for{border:1.5px solid var(--go);background:rgba(255,190,0,.16);color:var(--go)}
+.fsChip.since{border:1.5px solid #D9A6FF;background:rgba(217,166,255,.16);color:#E9CCFF}
+html.dFit .fsStage{max-width:520px} html.dFit .fsTabs,html.dFit .fsQuiz{max-width:520px}
+@media (prefers-reduced-motion:reduce){.fsBar,.fsArrow,.fsWorker{transition:none!important}.fsPin.drop,.fsBig.pop{animation:none;opacity:1}}
+</style>
+<script>
+(function(){
+  const NOW = '90%';
+  function reset(scr){
+    const q = s => scr.querySelector(s);
+    clearTimeout(scr._fsT1); clearTimeout(scr._fsT2); clearInterval(scr._fsI);
+    q('.fsBar').style.transition = 'none'; q('.fsBar').style.width = '0';
+    q('.fsArrow').style.transition = 'none'; q('.fsArrow').style.width = '0'; q('.fsArrow').classList.remove('end');
+    q('.fsPin').classList.remove('drop'); q('.fsCount').textContent = '';
+    q('.fsWorker').style.transition = 'none'; q('.fsWorker').style.left = '10%';
+    void q('.fsBar').offsetWidth;
+  }
+  function say(scr, mode, big, sent){
+    const b = scr.querySelector('[data-fsbig]');
+    b.className = 'fsBig ' + mode; void b.offsetWidth; b.classList.add('pop'); b.innerHTML = big;
+    scr.querySelector('[data-fssent]').innerHTML = sent;
+  }
+  function play(scr, mode){
+    reset(scr);
+    scr.querySelectorAll('.fsTab').forEach(t => t.classList.toggle('on', t.dataset.mode === mode));
+    scr._fsSeen = scr._fsSeen || {}; scr._fsSeen[mode] = true;
+    const q = s => scr.querySelector(s);
+    q('.fsWorker').style.transition = ''; q('.fsWorker').style.left = NOW;
+    if (mode === 'for'){
+      say(scr, 'for', '⏱ for <u>4 years</u>', 'I’ve been in HVAC <b class="for">for</b> four years.');
+      q('.fsBar').style.transition = 'width 2.4s linear'; q('.fsBar').style.width = '80%';
+      let n = 0;
+      scr._fsI = setInterval(() => { n++; q('.fsCount').textContent = n + (n === 1 ? ' year' : ' years'); if (n >= 4) clearInterval(scr._fsI); }, 600);
+    } else {
+      say(scr, 'since', '📍 since <u>2022</u>', 'I’ve been in HVAC <b class="since">since</b> 2022.');
+      q('.fsPin').classList.add('drop');
+      scr._fsT1 = setTimeout(() => {
+        q('.fsArrow').style.transition = 'width 1.8s ease-in-out'; q('.fsArrow').style.width = '80%';
+        scr._fsT2 = setTimeout(() => q('.fsArrow').classList.add('end'), 1800);
+      }, 600);
+    }
+    check(scr);
+  }
+  function check(scr){
+    const seen = scr._fsSeen || {};
+    if (seen.for && seen.since) scr.querySelector('.fsQuiz').classList.add('ready');
+    const left = scr.querySelectorAll('.fsChip:not(.for):not(.since)').length;
+    if (seen.for && seen.since && left === 0){ const n = scr.querySelector('[data-next]'); if (n) n.style.display = 'block'; }
+  }
+  document.addEventListener('click', e => {
+    const tab = e.target.closest('.fsTab');
+    if (tab){ const scr = tab.closest('.scr'); clearTimeout(scr._fsAuto); play(scr, tab.dataset.mode); return; }
+    const chip = e.target.closest('.fsChip');
+    if (chip && !chip.classList.contains('for') && !chip.classList.contains('since')){
+      const k = chip.dataset.k;
+      chip.classList.add(k);
+      chip.textContent = (k === 'for' ? '⏱ for ' : '📍 since ') + chip.textContent;
+      if (window.dFeedback) dFeedback(chip, true);
+      check(chip.closest('.scr'));
+    }
+  });
+  // When the screen opens: play FOR, then SINCE, once
+  new MutationObserver(ms => ms.forEach(m => {
+    const t = m.target;
+    if (!t.matches || !t.matches('.scr[data-fs]')) return;
+    const wasOn = (m.oldValue || '').split(' ').includes('on');
+    if (t.classList.contains('on') && !wasOn){
+      clearTimeout(t._fsAuto);
+      t._fsAuto = setTimeout(() => { play(t, 'for'); t._fsAuto = setTimeout(() => play(t, 'since'), 3600); }, 450);
+    } else if (!t.classList.contains('on') && wasOn){ clearTimeout(t._fsAuto); reset(t); }
+  })).observe(document.body, {subtree:true, attributes:true, attributeOldValue:true, attributeFilter:['class']});
+})();
+</script>
+<!-- MOTION:for-since:END -->
+
 <!-- DELIGHT:FIT:START — desktop fit v1 (ts-class-app). Landscape computer windows only: the app fills the window at any browser zoom, and each screen shrinks to fit before it scrolls. Phones and portrait windows are untouched. -->
 <style>
 html.dFit,html.dFit body{background:var(--ob)}
