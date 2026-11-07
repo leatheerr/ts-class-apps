@@ -1923,7 +1923,7 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
  <div class="stack">
   <div class="badge">Ear · The Hidden Phrase</div>
   <div class="es">Five real people. They all say the <b>same phrase</b>. Play each clip, say what you heard, then type the missing words.</div>
-  <div class="hfWrap" data-phrase="Have you ever…? ↗" data-note="Everyone's voice goes UP on “ever”. And it sounds like “havya ever”." data-items='[{"v": "6xl8PD9gbF8", "s": 19, "e": 23, "pre": "", "a": "Have you ever lived", "post": "in another country?"}, {"v": "mGFZSMacCAQ", "s": 158, "e": 160, "pre": "", "a": "Have you ever been", "post": "to Rome?"}, {"v": "mGFZSMacCAQ", "s": 232, "e": 235, "pre": "", "a": "Have you ever cheated", "post": "on a test?"}, {"v": "mGFZSMacCAQ", "s": 434, "e": 437, "pre": "", "a": "Have you ever used", "post": "Morse code in your life?"}, {"v": "6xl8PD9gbF8", "s": 100, "e": 103, "pre": "", "a": "Have you ever felt", "post": "homesickness?"}]'></div>
+  <div class="hfWrap" data-phrase="Have you ever…? ↗" data-note="Everyone's voice goes UP on “ever”. And it sounds like “havya ever”." data-items='[{"f": "video/c30_hp1.mp4", "v": "6xl8PD9gbF8", "s": 19, "e": 23, "pre": "", "a": "Have you ever lived", "post": "in another country?"}, {"f": "video/c30_hp2.mp4", "v": "mGFZSMacCAQ", "s": 158, "e": 160, "pre": "", "a": "Have you ever been", "post": "to Rome?"}, {"f": "video/c30_hp3.mp4", "v": "mGFZSMacCAQ", "s": 232, "e": 235, "pre": "", "a": "Have you ever cheated", "post": "on a test?"}, {"f": "video/c30_hp4.mp4", "v": "mGFZSMacCAQ", "s": 434, "e": 437, "pre": "", "a": "Have you ever used", "post": "Morse code in your life?"}, {"f": "video/c30_hp5.mp4", "v": "6xl8PD9gbF8", "s": 100, "e": 103, "pre": "", "a": "Have you ever felt", "post": "homesickness?"}]'></div>
   <button class="btn go" data-next style="display:none">Continue</button>
  </div></div>
 
@@ -3156,12 +3156,14 @@ html.dFit .mCard .mTxt{padding:10px 12px 12px}
 <!-- DELIGHT:MATCH:END -->
 
 <!-- DELIGHT:HEAR:START — Hidden Phrase / Hear & Fill v1 (ts-class-app, 7 Nov 2026; bank activity "The hidden phrase (Playphraseme)"). Real YouTube clips cut to one sentence (start/end seconds). The student plays a clip, SAYS what they heard, then types the hidden words into the blank; Check gives gold / shake, a first-letter hint after 2 misses, and "Show me" after 3. When every clip is solved, the hidden phrase is revealed and [data-next] appears. data-t="hear", data-driven, no unique IDs.
-     Items: [{"v": youtube id, "s": start sec, "e": end sec, "pre": text before the blank, "a": the hidden words, "post": text after}] · wrapper data-phrase = the phrase revealed at the end, data-note = one line under it.
+     Items: [{"f": "video/<file>.mp4" (PREFERRED — self-hosted cut, see below), "v": youtube id, "s": start sec, "e": end sec, "pre": text before the blank, "a": the hidden words, "post": text after}]
+     Use "f": YouTube embeds of monetized videos play unskippable ads (Juan, 7 Nov 2026), and the masks then hide the Skip button. Cut each sentence with yt-dlp --download-sections + ffmpeg to a ~3 s 360p mp4 (~100 KB) under <student>/video/. "v"/"s"/"e" is only a fallback. · wrapper data-phrase = the phrase revealed at the end, data-note = one line under it.
      Verify every clip's words with Whisper before shipping — YouTube auto-captions are often wrong. -->
 <style>
 .hfWrap{width:100%;max-width:440px;display:flex;flex-direction:column;gap:12px}
 .hfPlayer{position:relative;width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:#000;border:1px solid rgba(244,238,246,.14)}
-.hfPlayer iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.hfPlayer iframe,.hfPlayer video{position:absolute;inset:0;width:100%;height:100%;border:0;object-fit:contain;background:#000}
+.hfCover.again{background:rgba(13,0,20,.55)}
 /* masks: the video title (top) and any captions (bottom) would give the answer away */
 .hfMask{position:absolute;left:0;right:0;pointer-events:none;background:#0D0014;z-index:2;display:flex;align-items:center;justify-content:center;
  font-family:'Poppins',system-ui,sans-serif;font-size:12px;letter-spacing:.5px;color:rgba(244,238,246,.7)}
@@ -3217,6 +3219,16 @@ html.dFit .hfWrap{max-width:560px}
   }
   function play(w){
     const it = w._items[w._i];
+    if (it.f){
+      // self-hosted clip (preferred): no ads, no title, no captions, cut exactly to the sentence
+      const box = w.querySelector('.hfPlayer');
+      box.innerHTML = '<video src="' + it.f + '" playsinline preload="auto"></video>' +
+        '<button class="hfCover again" type="button" style="display:none"><b>↻</b><span>Play again</span></button>';
+      const v = box.querySelector('video');
+      v.addEventListener('ended', () => { box.querySelector('.hfCover').style.display = 'flex'; });
+      v.play().catch(() => { box.querySelector('.hfCover').style.display = 'flex'; });
+      return;
+    }
     w.querySelector('.hfPlayer').innerHTML = '<iframe src="' + src(it, true) + '" title="Clip ' + (w._i + 1) + '" allow="autoplay; encrypted-media" referrerpolicy="strict-origin-when-cross-origin"></iframe>' +
       '<div class="hfMask t">🎧 Listen — no reading!</div><div class="hfMask b"></div>';
   }
