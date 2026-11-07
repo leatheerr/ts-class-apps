@@ -206,7 +206,7 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 <div id="classHeader">
   <span class="brand">TEACHER'S STATION</span>
-  <button id="classSelect" onclick="toggleMenu()">Class 29 ▾</button>
+  <button id="classSelect" onclick="toggleMenu()">Class 30 ▾</button>
 </div>
 <div id="classMenu">
   <div class="item" onclick="selectClass(24)">Class 24: Phase 1 Final Assessment <span>✓</span></div>
@@ -214,7 +214,8 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
   <div class="item" onclick="selectClass(26)">Class 26: Running the Investigation <span>✓</span></div>
   <div class="item" onclick="selectClass(27)">Class 27: Calling It In <span>✓</span></div>
   <div class="item" onclick="selectClass(28)">Class 28: Resume Builder 1 <span></span></div>
-  <div class="item active" onclick="selectClass(29)">Class 29: Resume Builder 2 <span></span></div>
+  <div class="item" onclick="selectClass(29)">Class 29: Resume Builder 2 <span></span></div>
+  <div class="item active" onclick="selectClass(30)">Class 30: Have You Ever…? <span></span></div>
 </div>
 
 <div id="bar"></div>
@@ -1906,6 +1907,265 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 </div>
 
+<div class="classBlock" data-class="30" data-mech="hear,wheel,flash,explain,match,flip,timer,boss">
+
+<div class="scr" data-t="open">
+ <div class="bg" data-img="photos/c30_open.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="cue">Class 30 · Have You Ever…?</div>
+  <div class="big">Life experiences — the crazy, the tasty, the unforgettable</div>
+  <div class="es" style="font-size:16px;line-height:1.5;color:rgba(244,238,246,.85)">By the end of this class, you can ask and answer <b>Have you ever…?</b> about real life — travel, food, movies — and switch to the past to tell the details.</div>
+  <button class="btn go" data-next>Begin</button>
+ </div></div>
+
+<div class="scr tall" data-t="hear">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Ear · The Hidden Phrase</div>
+  <div class="es">Five real people. They all say the <b>same phrase</b>. Play each clip, say what you heard, then type the missing words.</div>
+  <div class="hfWrap" data-phrase="Have you ever…? ↗" data-note="Everyone's voice goes UP on “ever”. And it sounds like “havya ever”." data-items='[{"v": "6xl8PD9gbF8", "s": 19, "e": 23, "pre": "", "a": "Have you ever lived", "post": "in another country?"}, {"v": "mGFZSMacCAQ", "s": 158, "e": 160, "pre": "", "a": "Have you ever been", "post": "to Rome?"}, {"v": "mGFZSMacCAQ", "s": 232, "e": 235, "pre": "", "a": "Have you ever cheated", "post": "on a test?"}, {"v": "mGFZSMacCAQ", "s": 434, "e": 437, "pre": "", "a": "Have you ever used", "post": "Morse code in your life?"}, {"v": "6xl8PD9gbF8", "s": 100, "e": 103, "pre": "", "a": "Have you ever felt", "post": "homesickness?"}]'></div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="wheel">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Warm-Up · Spin &amp; Speak</div>
+  <div class="wheelWrap" data-items='[{"k": "🌴", "p": "What’s something almost everyone in Charleston has done that you’ve never done? Why not?"}, {"k": "💯", "p": "Is it better to try 100 things once, or to do one thing really well? Which kind of person are you?"}, {"k": "🎯", "p": "What’s one experience you haven’t had yet that you really want — and what’s stopping you?"}, {"k": "🇺🇸", "p": "How long have you been in the US? Say it with for, then with since."}, {"k": "🤗", "p": "You meet a friend you haven’t seen for a year. What do you say first?"}]'>
+   <div class="wheelPointer"></div>
+   <svg class="wheelSvg" viewBox="-100 -100 200 200"></svg>
+   <div class="wheelHub"></div>
+  </div>
+  <div class="wheelCard"><div class="think" data-wprompt></div><div class="es">Answer out loud — at least 3 sentences.</div></div>
+  <button class="btn go" onclick="wheelSpin(this)">Spin</button>
+  <button class="btn" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="flash">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Flashcards · Experience Verbs</div>
+  <div class="howTo">Look at the photo and <b>say the full question out loud</b> — “Have you ever …?” Then tap the card to check the verb. Use ‹ › for the next card.</div>
+  <div data-flash data-items='[{"img": "photos/c30_been.jpg", "q": "go → went → ??? · …to New York?", "w": "been", "m": "go · went · been", "s": "Have you ever been to New York?", "a": "audio/c30_v1.mp3"}, {"img": "photos/c30_seen.jpg", "q": "see → saw → ??? · …a ghost?", "w": "seen", "m": "see · saw · seen", "s": "Have you ever seen a ghost?", "a": "audio/c30_v2.mp3"}, {"img": "photos/c30_eaten.jpg", "q": "eat → ate → ??? · …alligator?", "w": "eaten", "m": "eat · ate · eaten", "s": "Have you ever eaten alligator?", "a": "audio/c30_v3.mp3"}, {"img": "photos/c30_tried.jpg", "q": "try → tried → ??? · …surfing?", "w": "tried", "m": "try · tried · tried", "s": "Have you ever tried surfing?", "a": "audio/c30_v4.mp3"}, {"img": "photos/c30_met.jpg", "q": "meet → met → ??? · …someone famous?", "w": "met", "m": "meet · met · met", "s": "Have you ever met someone famous?", "a": "audio/c30_v5.mp3"}, {"img": "photos/c30_ridden.jpg", "q": "ride → rode → ??? · …a horse?", "w": "ridden", "m": "ride · rode · ridden", "s": "Have you ever ridden a horse?", "a": "audio/c30_v6.mp3"}, {"img": "photos/c30_flown.jpg", "q": "fly → flew → ??? · …first class?", "w": "flown", "m": "fly · flew · flown", "s": "Have you ever flown first class?", "a": "audio/c30_v7.mp3"}, {"img": "photos/c30_lost.jpg", "q": "lose → lost → ??? · …your phone on a trip?", "w": "lost", "m": "lose · lost · lost", "s": "Have you ever lost your phone on a trip?", "a": "audio/c30_v8.mp3"}]'></div>
+  <button class="btn go" data-next style="display:none">Next</button>
+ </div></div>
+
+<div class="scr tall" data-t="grammar" data-gstep="0">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge" data-gbadge>Guided · The Shape</div>
+  <div class="gPart on" data-gpart data-badge="Guided · The Shape">
+   <div class="gSlots">
+    <div class="slotLbls">
+     <div class="slotLbl">have / has</div><div class="slotLbl">who</div>
+     <div class="slotLbl">ever + verb</div><div class="slotLbl">the rest</div>
+    </div>
+    <div class="slotRow">
+     <div class="slotChip" style="--i:0"><span class="w">Have</span></div><div class="slotChip" style="--i:1"><span class="w">you</span></div>
+     <div class="slotChip" style="--i:2"><span class="w">ever been</span></div><div class="slotChip" style="--i:3"><span class="w">to Miami?</span></div>
+    </div>
+    <div class="slotRow">
+     <div class="slotChip" style="--i:4"><span class="w">Has</span></div><div class="slotChip" style="--i:5"><span class="w">your girlfriend</span></div>
+     <div class="slotChip" style="--i:6"><span class="w">ever tried</span></div><div class="slotChip" style="--i:7"><span class="w">your cooking?</span></div>
+    </div>
+   </div>
+   <button class="toggleBtn" onclick="slotBuild(this)">Build the question</button>
+   <div class="slotNote">Answers: <b>Yes, I have.</b> · <b>No, I've never been there.</b> · <b>I've been there twice.</b></div>
+  </div>
+  <div class="gPart" data-gpart data-badge="Guided · When You Use It">
+   <div class="useRow"><span class="useKey">In your life</span><span class="useArrow">→</span>
+    <span class="useVal">no time said → present perfect. <i>Have you ever been to Miami?</i></span></div>
+   <div class="useRow"><span class="useKey">The details</span><span class="useArrow">→</span>
+    <span class="useVal">when / where / how → past. <i>When did you go? — I went last summer.</i></span></div>
+   <div class="useRow"><span class="useKey">been / gone</span><span class="useArrow">→</span>
+    <span class="useVal"><i>She's <b>been</b> to Miami</i> = she came back · <i>She's <b>gone</b> to Miami</i> = she's there now.</span></div>
+  </div>
+  <div class="gPart" data-gpart data-badge="Guided · The Trap">
+   <div class="trapItem">
+    <div class="trapWrong">Did you ever went to Miami?</div>
+    <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Say the fixed version, then tap</button>
+    <div class="keyBox"><b><span class="hl">Have</span> you ever <span class="hl">been</span> to Miami?</b> — have + the 3rd form. Never did + went.</div>
+   </div>
+   <div class="trapItem">
+    <div class="trapWrong">Have she ever been to Miami?</div>
+    <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Say the fixed version, then tap</button>
+    <div class="keyBox"><b><span class="hl">Has</span> she ever been to Miami?</b> — he / she → has. Same rule as does.</div>
+   </div>
+  </div>
+  <div class="dots" data-gdots><div class="dot lit"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="row" style="max-width:300px">
+   <button class="opt mid" data-gprev onclick="gramNav(this,-1)" style="flex:0 0 60px" disabled>‹</button>
+   <button class="opt mid" data-gnext onclick="gramNav(this,1)" style="flex:1">Next ›</button>
+  </div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="explain">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Explainer · Ever vs The Details</div>
+  <div class="es">Tap each chip and watch the line. Then say the sentence.</div>
+  <div class="exTimeline" data-title="Your life" data-left="born" data-right="now" data-items='[{"chip": "Have you ever…?", "ev": [{"t": "anytime in your life", "x": 50}], "span": {"from": 6, "to": 92, "t": "no date — your whole life"}, "sent": "Have you <b>ever</b> been to Miami?", "say": "Ask me about a place I might have been."}, {"chip": "When did you…?", "ev": [{"t": "now", "x": 92}], "pin": {"x": 62, "t": "last summer"}, "sent": "When <b>did</b> you go? — I <b>went</b> last summer.", "say": "Tell me when you went somewhere special — and who you went with."}, {"chip": "The trap", "ev": [{"t": "Miami", "x": 62, "bad": "I&#39;ve been last year", "fix": "I went last year"}], "sent": "I <b>went</b> to Miami last year.", "say": "Say one thing you did last year — past, not have."}]'></div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="grammarcheck" data-idx="0"
+ data-items='[{"tag": "fill it — eat", "q": "___ you ever ___ sushi?", "a": "Have you ever eaten sushi?"}, {"tag": "correct or wrong?", "q": "Did you ever went to a Panthers game?", "a": "Wrong → Have you ever been to a Panthers game?"}, {"tag": "correct or wrong?", "q": "Have you seen the game last night?", "a": "Wrong → Did you see the game last night? (last night = past)"}, {"tag": "correct or wrong?", "q": "Have your girlfriend ever cooked for your family?", "a": "Wrong → Has your girlfriend ever cooked for your family?"}, {"tag": "correct or wrong?", "q": "I&#39;ve been to Myrtle Beach twice.", "a": "Correct ✓"}, {"tag": "correct or wrong?", "q": "I&#39;ve met him in 2023.", "a": "Wrong → I met him in 2023. (a year = past)"}, {"tag": "she&#39;s in Florida right now", "q": "She&#39;s ___ to Florida. (been / gone)", "a": "She&#39;s gone to Florida."}]'>
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Time Detective · Check It</div>
+  <div class="gcTag" data-gctag>&nbsp;</div>
+  <div class="gcQ" data-gcq>&nbsp;</div>
+  <button class="toggleBtn" onclick="gcReveal(this)">Say it out loud, then check</button>
+  <div class="keyBox" data-gckey></div>
+  <div class="dots" data-gcdots></div>
+  <div class="row" style="max-width:300px">
+   <button class="opt mid" data-gcprev onclick="gcNav(this,-1)" style="flex:0 0 60px" disabled>‹</button>
+   <button class="opt mid" data-gcnext onclick="gcNav(this,1)" style="flex:1">Next ›</button>
+  </div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="meetfix">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Meet Fix</div>
+  <div class="think" style="color:rgba(244,238,246,.5);text-decoration:line-through;text-decoration-color:rgba(255,100,100,.75)">"Did you ever went?" · "Have she ever…?"</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Tap to fix</button>
+  <div class="keyBox show" style="text-align:center">
+   <div class="pbPhrase">"Have you ever been?" · "Has she ever…?"</div>
+   <div style="margin-top:10px;font-size:13px;color:rgba(244,238,246,.6)">experience → <b style="color:var(--go)">have + 3rd form</b> · he/she → <b style="color:var(--go)">has</b> · a time word → <b style="color:var(--go)">past</b></div>
+  </div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr tall" data-t="match">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · Match-Up</div>
+  <div class="es">Tap a phrase, then tap what it means.</div>
+  <div class="matchWrap" data-items='[{"p": "It blew my mind.", "m": "It amazed me — I couldn’t believe it.", "img": "photos/c30_mind.jpg", "ex": "“The ending of that movie? It blew my mind.”", "a": "audio/c30_pb1.mp3", "tag": "a movie, a place, a meal, a moment"}, {"p": "It didn’t live up to the hype.", "m": "Everybody said it was great — it wasn’t.", "img": "photos/c30_hype.jpg", "ex": "“Everybody loved that restaurant, but it didn’t live up to the hype.”", "a": "audio/c30_pb2.mp3", "tag": "for something overrated"}, {"p": "It had me hooked.", "m": "I couldn’t stop watching / doing it.", "img": "photos/c30_hooked.jpg", "ex": "“I started that series on Friday, and it had me hooked all weekend.”", "a": "audio/c30_pb3.mp3", "tag": "a series, a game, a hobby"}]'></div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="flip">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Movies &amp; Series · Mini-Debate</div>
+  <div class="es">Flip a card. Start with “Have you ever…?” and land one of the phrases.</div>
+  <div class="flipCount"></div>
+  <div class="flipGrid" data-items='[{"k": "?", "p": "Have you ever watched a whole series in <b>one weekend</b>? Does binge-watching ruin it?"}, {"k": "?", "p": "Have you ever seen a movie that <b>didn’t live up to the hype</b>? Which one?"}, {"k": "?", "p": "“The book is <b>always</b> better than the movie.” True or false? Have you ever read the book first?"}, {"k": "?", "p": "What’s the last thing that <b>blew your mind</b> — a movie, a place, a meal?"}]'></div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr tall" data-t="core">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">CORE · Two Truths and a Lie — You're the Detective</div>
+  <div class="think">Juan tells you three experiences. One is a lie. You have 3 minutes of questions to find it.</div>
+  <div class="checkList">
+   <div><b>✓</b> Have you ever…? — have + 3rd form</div>
+   <div><b>✓</b> When did you…? Where were you? What was it like?</div>
+   <div><b>✓</b> Land 2 of the 3 phrases</div>
+  </div>
+  <div class="timerRing" data-seconds="180">
+   <svg width="96" height="96" viewBox="0 0 96 96" style="transform:rotate(-90deg)">
+    <circle cx="48" cy="48" r="44" fill="none" stroke="rgba(244,238,246,.12)" stroke-width="6"/>
+    <circle class="timerArc" cx="48" cy="48" r="44" fill="none" stroke="#FFBE00" stroke-width="6" stroke-linecap="round" stroke-dasharray="276.46" stroke-dashoffset="0"/>
+   </svg>
+   <div class="timerNum">3:00</div>
+  </div>
+  <button class="btn" onclick="timerStart(this)">Start 3 min</button>
+  <button class="btn go" data-next style="display:none">Name the lie, then continue</button>
+ </div></div>
+
+<div class="scr tall" data-t="core">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">CORE · Round 2 — Your Turn to Lie</div>
+  <div class="think">Say three “I've…” sentences about YOU — one is fake. Juan interrogates. Keep the lie alive with past details.</div>
+  <div class="homeItem">“I've … once / twice / never …”</div>
+  <div class="homeItem">“When did you…?” → “I went / I saw / I ate …”</div>
+  <div class="homeItem">Round 3: two truths and a lie about your <b>girlfriend</b> — “She's… / She's never…”</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Only open this if you get stuck</button>
+  <div class="keyBox">“I've eaten alligator. I've met a famous boxer. I've never ridden a horse.” — “When did you eat it?” — “I ate it at a seafood place in Charleston last year. Honestly? It didn't live up to the hype.”</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="boss">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Final Check · Boss Round</div>
+  <div class="bossWrap" data-lives="3" data-items='["Ask Juan 3 “Have you ever…?” questions about food — fast.", "Fix it out loud: “Did you ever went to New York?”", "Ask about your girlfriend: “___ she ever …?”", "Tell me something you&#39;ve done twice — then WHEN you did it the first time.", "Use “It didn’t live up to the hype” about a place you&#39;ve been."]'>
+   <div class="bossTop"><span class="bossName">⚔ Boss Round</span><span class="bossLives"></span></div>
+   <div class="bossBar"><i></i></div>
+   <div class="bossCard"><div class="think" data-bprompt></div></div>
+   <div class="row"><button class="btn" onclick="bossHit(this,false)">Not yet</button><button class="btn go" onclick="bossHit(this,true)">Nailed it</button></div>
+   <button class="btn bossRetry" style="display:none" onclick="bossRetry(this)">Run it again</button>
+   <div class="bossMsg"></div>
+  </div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr tall" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Pronunciation · The Rise on “Ever”</div>
+  <div class="es">“Have you” shrinks to <b>“havya”</b>. <b>EVer</b> goes up ↗. Short answers go down ↘ — confident.</div>
+  <div class="chunkRow"><button class="audio" data-audio="audio/c30_pron1.mp3" onclick="playAudio(this)">🔊</button><div><div class="chunkKey">havya EVer ↗</div><div class="chunkEx">Have you ever been to Miami?</div></div></div>
+  <div class="chunkRow"><button class="audio" data-audio="audio/c30_pron2.mp3" onclick="playAudio(this)">🔊</button><div><div class="chunkKey">has she EVer ↗</div><div class="chunkEx">Has your girlfriend ever tried your cooking?</div></div></div>
+  <div class="chunkRow"><button class="audio" data-audio="audio/c30_pron3.mp3" onclick="playAudio(this)">🔊</button><div><div class="chunkKey">Yes, I have. ↘</div><div class="chunkEx">Flat and sure — no question in your voice.</div></div></div>
+  <div class="chunkRow"><button class="audio" data-audio="audio/c30_pron4.mp3" onclick="playAudio(this)">🔊</button><div><div class="chunkKey">No, I haven't. ↘</div><div class="chunkEx">No, I haven't. I've never been there.</div></div></div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr tall" data-t="core">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Real-Life Conversation · Friendsgiving</div>
+  <img class="sceneImg" src="photos/c30_friendsgiving.jpg" alt="Friends around a Thanksgiving dinner table">
+  <div class="think">Dinner with your girlfriend's friends. They want to know about your Thanksgivings. Answer them first — then open the model.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Only open this if you get stuck</button>
+  <div class="keyBox">
+   <b>Friend:</b> So, have you ever had a real Thanksgiving dinner?<br>
+   <b>You:</b> Honestly, no — I've never had the full thing. Last year I worked that day.<br>
+   <b>Friend:</b> No way! Have you ever tried sweet potato casserole?<br>
+   <b>You:</b> Once. Her mom made it. It blew my mind — with the marshmallows on top?<br>
+   <b>Friend:</b> Ha! And have you ever watched the Macy's parade?<br>
+   <b>You:</b> I saw it on TV a couple of years ago. It didn't live up to the hype, to be honest.
+  </div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Comprehension Check</div>
+  <div class="think" style="font-size:20px">1. Which sentences use <b>have / 've</b> and which use the past — why does it switch?<br><br>2. Why “I've never had” but “Last year I worked”?</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="homework">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Homework · Real Experiences</div>
+  <div class="homeItem">1. 🎙️ Two Truths and a Lie — a 60-second voice note: three “I've…” experiences, one fake. Juan guesses next class.</div>
+  <div class="homeItem">2. ✍️ Ask your girlfriend 5 “Have you ever…?” questions for real. Write her answers: “She's… / She's never…” + one detail in the past.</div>
+  <div class="homeItem">3. 🗂️ Tracker: the 3 phrases + the 8 verbs (been, seen, eaten, tried, met, ridden, flown, lost).</div>
+  <div class="es" style="font-size:14px">Why: Class 31 is present perfect vs past — her answers are exactly the sentences you'll fix there.</div>
+  <button class="btn go" data-next>Done for today</button>
+ </div></div>
+
+<div class="scr" data-t="close">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="big">Nice work today.</div>
+  <div class="es">See you at Class 31.</div>
+  <div class="credits">Teacher's Station · The Milestone Method</div>
+ </div></div>
+
+</div>
+
 </div><!-- /appRoot -->
 
 <script>
@@ -2071,7 +2331,7 @@ document.querySelectorAll('.bg[data-img]').forEach(el=>{
   const src = el.getAttribute('data-img');
   el.style.backgroundImage = "url('" + src + "')";
 });
-loadScreens(29);
+loadScreens(30);
 
 // Keyboard page-turning: arrow keys press the same nav buttons as a tap (so class boundaries still hold)
 document.addEventListener('keydown', e=>{
@@ -2894,6 +3154,125 @@ html.dFit .mCard .mTxt{padding:10px 12px 12px}
 })();
 </script>
 <!-- DELIGHT:MATCH:END -->
+
+<!-- DELIGHT:HEAR:START — Hidden Phrase / Hear & Fill v1 (ts-class-app, 7 Nov 2026; bank activity "The hidden phrase (Playphraseme)"). Real YouTube clips cut to one sentence (start/end seconds). The student plays a clip, SAYS what they heard, then types the hidden words into the blank; Check gives gold / shake, a first-letter hint after 2 misses, and "Show me" after 3. When every clip is solved, the hidden phrase is revealed and [data-next] appears. data-t="hear", data-driven, no unique IDs.
+     Items: [{"v": youtube id, "s": start sec, "e": end sec, "pre": text before the blank, "a": the hidden words, "post": text after}] · wrapper data-phrase = the phrase revealed at the end, data-note = one line under it.
+     Verify every clip's words with Whisper before shipping — YouTube auto-captions are often wrong. -->
+<style>
+.hfWrap{width:100%;max-width:440px;display:flex;flex-direction:column;gap:12px}
+.hfPlayer{position:relative;width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:#000;border:1px solid rgba(244,238,246,.14)}
+.hfPlayer iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+/* masks: the video title (top) and any captions (bottom) would give the answer away */
+.hfMask{position:absolute;left:0;right:0;pointer-events:none;background:#0D0014;z-index:2;display:flex;align-items:center;justify-content:center;
+ font-family:'Poppins',system-ui,sans-serif;font-size:12px;letter-spacing:.5px;color:rgba(244,238,246,.7)}
+.hfMask.t{top:0;height:24%;border-bottom:1px solid rgba(255,190,0,.25)}
+.hfMask.b{bottom:0;height:30%;border-top:1px solid rgba(255,190,0,.25)}
+.hfPlayer .hfCover{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:6px;
+ background:radial-gradient(circle at 50% 40%,rgba(255,190,0,.18),rgba(13,0,20,.92) 70%);cursor:pointer;color:var(--ink);border:0;width:100%;font-family:'Poppins',system-ui,sans-serif}
+.hfCover b{width:64px;height:64px;border-radius:50%;background:var(--go);color:#2D0130;display:grid;place-items:center;font-size:26px;box-shadow:0 0 24px rgba(255,190,0,.45)}
+.hfCover span{font-size:14px;opacity:.85}
+.hfRow{display:flex;gap:8px;justify-content:center}
+.hfBtn{min-height:44px;padding:8px 14px;border-radius:12px;border:1.5px solid rgba(255,190,0,.55);background:transparent;color:var(--go);font-family:'Poppins',system-ui,sans-serif;font-size:14px;font-weight:600;cursor:pointer}
+.hfSent{font-size:19px;line-height:1.7;text-align:center}
+.hfSent input{font:inherit;font-weight:700;color:var(--go);background:rgba(255,190,0,.08);border:0;border-bottom:2px dashed rgba(255,190,0,.7);
+ border-radius:6px 6px 0 0;padding:2px 6px;width:11em;max-width:100%;text-align:center;outline:none}
+.hfSent input:focus{background:rgba(255,190,0,.16)}
+.hfSent input.ok{border-bottom-style:solid;background:rgba(255,190,0,.2)}
+.hfSent input.bad{animation:hfShake .4s}
+@keyframes hfShake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.hfMsg{min-height:22px;text-align:center;font-size:15px;color:rgba(244,238,246,.85)}
+.hfNav{display:flex;align-items:center;justify-content:center;gap:12px}
+.hfNav .dots{display:flex;gap:6px}
+.hfNav .dot{width:10px;height:10px;border-radius:50%;background:rgba(244,238,246,.25)}
+.hfNav .dot.on{background:var(--go)} .hfNav .dot.done{background:rgba(255,190,0,.55)}
+.hfReveal{display:none;text-align:center;padding:14px;border-radius:16px;border:2px solid var(--go);background:rgba(255,190,0,.1)}
+.hfReveal .hfP{font-family:'Poppins',system-ui,sans-serif;font-size:28px;font-weight:700;color:var(--go)}
+.hfReveal .hfN{font-size:15px;margin-top:6px;color:rgba(244,238,246,.9)}
+.hfWrap.complete .hfReveal{display:block}
+html.dFit .hfWrap{max-width:560px}
+@media (prefers-reduced-motion:reduce){.hfSent input.bad{animation:none}}
+</style>
+<script>
+(function(){
+  const norm = s => (s || '').toLowerCase().replace(/[’']/g, "'").replace(/[^a-z' ]/g, ' ').replace(/\s+/g, ' ').trim();
+  function src(it, auto){
+    return 'https://www.youtube-nocookie.com/embed/' + it.v + '?start=' + it.s + '&end=' + it.e +
+      '&rel=0&modestbranding=1&playsinline=1&controls=0&disablekb=1&cc_load_policy=0&iv_load_policy=3' + (auto ? '&autoplay=1' : '');
+  }
+  function render(w){
+    const it = w._items[w._i];
+    const box = w.querySelector('.hfPlayer');
+    box.innerHTML = '<button class="hfCover" type="button"><b>▶</b><span>Clip ' + (w._i + 1) + ' of ' + w._items.length + ' · listen</span></button>';
+    const st = w._state[w._i];
+    w.querySelector('.hfSent').innerHTML = (it.pre ? it.pre + ' ' : '') +
+      '<input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="What did they say?" placeholder="? ? ?">' +
+      (it.post ? ' ' + it.post : '');
+    const inp = w.querySelector('.hfSent input');
+    if (st.solved){ inp.value = it.a; inp.classList.add('ok'); inp.disabled = true; }
+    w.querySelector('.hfMsg').textContent = st.solved ? '✓ ' + (it.pre ? it.pre + ' ' : '') + it.a + (it.post ? ' ' + it.post : '') : 'Say it out loud first — then type what you heard.';
+    w.querySelectorAll('.hfNav .dot').forEach((d, n) => { d.classList.toggle('on', n === w._i); d.classList.toggle('done', w._state[n].solved); });
+    w.querySelector('[data-hfprev]').disabled = w._i === 0;
+    w.querySelector('[data-hfnext]').disabled = w._i === w._items.length - 1;
+    w.querySelector('[data-hfshow]').style.display = (!st.solved && st.miss >= 3) ? '' : 'none';
+  }
+  function play(w){
+    const it = w._items[w._i];
+    w.querySelector('.hfPlayer').innerHTML = '<iframe src="' + src(it, true) + '" title="Clip ' + (w._i + 1) + '" allow="autoplay; encrypted-media" referrerpolicy="strict-origin-when-cross-origin"></iframe>' +
+      '<div class="hfMask t">🎧 Listen — no reading!</div><div class="hfMask b"></div>';
+  }
+  function solve(w, shown){
+    const it = w._items[w._i], st = w._state[w._i], inp = w.querySelector('.hfSent input');
+    st.solved = true; inp.value = it.a; inp.classList.add('ok'); inp.disabled = true;
+    if (window.dFeedback && !shown) dFeedback(inp, true);
+    w.querySelector('.hfMsg').textContent = '✓ ' + (it.pre ? it.pre + ' ' : '') + it.a + (it.post ? ' ' + it.post : '') + (shown ? '  — now say it!' : '');
+    render(w);
+    if (w._state.every(x => x.solved)){
+      w.classList.add('complete');
+      const n = w.closest('.stack').querySelector('[data-next]'); if (n) n.style.display = 'block';
+    }
+  }
+  function check(w){
+    const it = w._items[w._i], st = w._state[w._i], inp = w.querySelector('.hfSent input');
+    if (st.solved) return;
+    if (norm(inp.value) === norm(it.a)) return solve(w, false);
+    st.miss++;
+    inp.classList.remove('bad'); void inp.offsetWidth; inp.classList.add('bad');
+    if (window.dFeedback) dFeedback(inp, false);
+    const words = it.a.split(' ');
+    w.querySelector('.hfMsg').textContent = st.miss >= 2
+      ? 'Hint: ' + words.map(x => x[0] + '…').join(' ') + '  (' + words.length + ' words) — play it again.'
+      : 'Not quite — play it again and listen for every word.';
+    w.querySelector('[data-hfshow]').style.display = st.miss >= 3 ? '' : 'none';
+  }
+  function build(w){
+    try { w._items = JSON.parse(w.getAttribute('data-items')); } catch(e){ return; }
+    w._i = 0; w._state = w._items.map(() => ({solved: false, miss: 0}));
+    w.innerHTML =
+      '<div class="hfPlayer"></div>' +
+      '<div class="hfSent"></div>' +
+      '<div class="hfRow"><button class="hfBtn" type="button" data-hfplay>↻ Play again</button><button class="hfBtn" type="button" data-hfcheck>Check</button><button class="hfBtn" type="button" data-hfshow style="display:none">Show me</button></div>' +
+      '<div class="hfMsg"></div>' +
+      '<div class="hfNav"><button class="hfBtn" type="button" data-hfprev aria-label="Previous clip">‹</button><div class="dots">' +
+        w._items.map(() => '<i class="dot"></i>').join('') + '</div><button class="hfBtn" type="button" data-hfnext aria-label="Next clip">›</button></div>' +
+      '<div class="hfReveal"><div class="hfP">' + (w.getAttribute('data-phrase') || '') + '</div><div class="hfN">' + (w.getAttribute('data-note') || '') + '</div></div>';
+    render(w);
+  }
+  document.addEventListener('click', e => {
+    const w = e.target.closest('.hfWrap'); if (!w) return;
+    if (e.target.closest('.hfCover') || e.target.closest('[data-hfplay]')) return play(w);
+    if (e.target.closest('[data-hfcheck]')) return check(w);
+    if (e.target.closest('[data-hfshow]')) return solve(w, true);
+    if (e.target.closest('[data-hfprev]') && w._i > 0){ w._i--; return render(w); }
+    if (e.target.closest('[data-hfnext]') && w._i < w._items.length - 1){ w._i++; return render(w); }
+  });
+  document.addEventListener('keydown', e => {
+    const inp = e.target.closest && e.target.closest('.hfSent input');
+    if (inp && e.key === 'Enter'){ e.preventDefault(); check(inp.closest('.hfWrap')); }
+  });
+  document.querySelectorAll('.hfWrap[data-items]').forEach(build);
+})();
+</script>
+<!-- DELIGHT:HEAR:END -->
 
 <!-- DELIGHT:FIT:START — desktop fit v1 (ts-class-app). Landscape computer windows only: the app fills the window at any browser zoom, and each screen shrinks to fit before it scrolls. Phones and portrait windows are untouched. -->
 <style>
