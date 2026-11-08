@@ -238,7 +238,7 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 <div id="classHeader">
   <span class="brand">TEACHER'S STATION</span>
-  <button id="classSelect" onclick="toggleMenu()">Class 8 ▾</button>
+  <button id="classSelect" onclick="toggleMenu()">Class 9 ▾</button>
 </div>
 <div id="classMenu">
   <div class="item" onclick="selectClass(1)">Class 1: Customer calls — open a call without freezing <span>✓</span></div>
@@ -249,7 +249,8 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
   <div class="item" onclick="selectClass(5)">Class 5: Reporting your shift &mdash; tell it in the past <span>&#10003;</span></div>
   <div class="item" onclick="selectClass(6)">Class 6: When it went wrong &mdash; report a problem in the past</div>
   <div class="item" onclick="selectClass(7)">Class 7: Weekend stories &mdash; tell what happened</div>
-  <div class="item active" onclick="selectClass(8)">Class 8: Reading 2 &mdash; Camila's worst Tuesday</div>
+  <div class="item" onclick="selectClass(8)">Class 8: Reading 2 &mdash; Camila's worst Tuesday</div>
+  <div class="item active" onclick="selectClass(9)">Class 9: Who you work for &mdash; for, at, in, on</div>
 </div>
 
 <div id="bar"></div>
@@ -3191,6 +3192,288 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 </div>
 
+<div class="classBlock" data-class="9" data-mech="match,hear,flash,flip,wheel,timer">
+
+<div class="scr" data-t="open">
+ <div class="bg" data-img="photos/open9.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="cue">Class 9 · Danna</div>
+  <div class="big">Who you work for: say where you work and who you report to, correctly</div>
+  <div class="es" style="font-size:16px;line-height:1.55">By the end of this class, you can say <b>who you work for, where you work and who you report to</b>, correctly, in a job interview and in small talk.</div>
+  <button class="btn go" data-next>Start</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Warm-up · Your Mission</div>
+  <img class="sceneImg" src="photos/c8_coworkers.jpg" alt="Two coworkers talking">
+  <div class="think">Did you ask a coworker <b>"How was your weekend?"</b> Tell me in 2 sentences what they said. Was it easier or harder than you expected?</div>
+  <div class="es" style="font-size:15px">Didn't do it? No problem. Just tell me what stopped you.</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Warm-up · Two Questions</div>
+  <div class="howTo">Start each answer in <b>3 seconds</b> with: <i>So here's the thing… · If you ask me… · From what I remember…</i></div>
+  <div class="think" style="font-size:19px">1. What makes a conversation feel <b>safe</b> for you? What would make work feel like that?<br><br>2. Is it better to work for a <b>big</b> company or a <b>small</b> one? Give me one reason from your own life.</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Your Voice Note · Catch It</div>
+  <div class="howTo"><b>What to do</b><ol><li>We play the voice note you recorded after Class 8.</li><li>Listen for the little words after <b>work</b>: <i>for, at, in, on</i>.</li><li>Catch your own mistakes before I say anything.</li></ol></div>
+  <div class="es">No voice note? Tell me about your job in 3 sentences instead.</div>
+  <div class="trapWrong" style="font-size:20px">"I work on Amazon."</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Say the right version, then check</button>
+  <div class="keyBox"><b>I work for Amazon.</b> <span style="color:rgba(244,238,246,.7)">(or the name of the company that pays you)</span></div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="grammar" data-gstep="0">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge" data-gbadge>Guided · The Shape</div>
+
+  <div class="gPart on" data-gpart data-badge="Guided · The Shape">
+   <div class="gSlots">
+    <div class="slotLbls">
+     <div class="slotLbl">I work</div><div class="slotLbl">little word</div><div class="slotLbl">what comes next</div>
+    </div>
+    <div class="slotRow">
+     <div class="slotChip" style="--i:0"><span class="w">I work</span></div><div class="slotChip" style="--i:1"><span class="w">for</span></div><div class="slotChip" style="--i:2"><span class="w">a delivery company.</span></div>
+    </div>
+    <div class="slotRow">
+     <div class="slotChip" style="--i:3"><span class="w">I work</span></div><div class="slotChip" style="--i:4"><span class="w">at</span></div><div class="slotChip" style="--i:5"><span class="w">the station.</span></div>
+    </div>
+    <div class="slotRow">
+     <div class="slotChip" style="--i:6"><span class="w">I work</span></div><div class="slotChip" style="--i:7"><span class="w">in</span></div><div class="slotChip" style="--i:8"><span class="w">the van.</span></div>
+    </div>
+    <div class="slotRow">
+     <div class="slotChip" style="--i:9"><span class="w">I work</span></div><div class="slotChip" style="--i:10"><span class="w">on</span></div><div class="slotChip" style="--i:11"><span class="w">the night shift.</span></div>
+    </div>
+   </div>
+   <button class="toggleBtn" onclick="slotBuild(this)">Build the sentences</button>
+   <div class="slotNote">Same start every time. The little word tells you what kind of thing comes next.</div>
+  </div>
+
+  <div class="gPart" data-gpart data-badge="Guided · When You Use It">
+   <div class="useRow"><span class="useKey">for</span><span class="useArrow">→</span><span class="useVal">the <b>company that pays you</b>: <i>I work for Amazon.</i></span></div>
+   <div class="useRow"><span class="useKey">at</span><span class="useArrow">→</span><span class="useVal">a <b>building or a point</b> on the map: <i>at the station · at the warehouse</i></span></div>
+   <div class="useRow"><span class="useKey">in</span><span class="useArrow">→</span><span class="useVal"><b>inside</b> something, or a <b>city</b>: <i>in the van · in Charleston</i></span></div>
+   <div class="useRow"><span class="useKey">on</span><span class="useArrow">→</span><span class="useVal">a <b>route, road or shift</b>: <i>on the road · on the night shift</i></span></div>
+   <div class="useRow"><span class="useKey">report to</span><span class="useArrow">→</span><span class="useVal">+ the <b>person</b> you answer to: <i>I report to the dispatcher.</i></span></div>
+  </div>
+
+  <div class="gPart" data-gpart data-badge="Guided · The Trap">
+   <div class="trapItem">
+    <div class="trapWrong">I work on Amazon.</div>
+    <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Say the fixed version, then tap</button>
+    <div class="keyBox"><b>I work <span class="hl">for</span> Amazon.</b> In Spanish, <i>trabajo en</i> works for everything. In English, the company always takes <b>for</b>.</div>
+   </div>
+   <div class="trapItem">
+    <div class="trapWrong">I report with the dispatcher.</div>
+    <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Say the fixed version, then tap</button>
+    <div class="keyBox"><b>I report <span class="hl">to</span> the dispatcher.</b> The person you answer to always takes <b>to</b>.</div>
+   </div>
+  </div>
+
+  <div class="dots" data-gdots><div class="dot lit"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="row" style="max-width:300px">
+   <button class="opt mid" data-gprev onclick="gramNav(this,-1)" style="flex:0 0 60px" disabled>&#8249;</button>
+   <button class="opt mid" data-gnext onclick="gramNav(this,1)" style="flex:1">Next &#8250;</button>
+  </div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="grammarcheck" data-idx="0"
+ data-items='[
+  {"tag":"the company","q":"I work ___ a delivery company.","a":"I work for a delivery company."},
+  {"tag":"the building","q":"We start ___ the station at 6.","a":"We start at the station at 6."},
+  {"tag":"inside","q":"I spend 10 hours ___ the van.","a":"I spend 10 hours in the van."},
+  {"tag":"the shift","q":"I&apos;m ___ the morning shift this week.","a":"I&apos;m on the morning shift this week."},
+  {"tag":"fix the error","q":"I report with the dispatcher.","a":"I report to the dispatcher."},
+  {"tag":"fix the error","q":"My boyfriend works on a restaurant in Charleston.","a":"My boyfriend works at a restaurant in Charleston."}
+ ]'>
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Guided · Check It</div>
+  <div class="gcTag" data-gctag>the company</div>
+  <div class="gcQ" data-gcq>&nbsp;</div>
+  <button class="toggleBtn" onclick="gcReveal(this)">Say it out loud, then check</button>
+  <div class="keyBox" data-gckey></div>
+  <div class="dots" data-gcdots></div>
+  <div class="row" style="max-width:300px">
+   <button class="opt mid" data-gcprev onclick="gcNav(this,-1)" style="flex:0 0 60px" disabled>&#8249;</button>
+   <button class="opt mid" data-gcnext onclick="gcNav(this,1)" style="flex:1">Next &#8250;</button>
+  </div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="flash">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Flashcards · Words For Your Job</div>
+  <div class="howTo">Look at the photo and <b>say the full phrase out loud</b>. Then tap the card to check. Use ‹ › for the next card.</div>
+  <div data-flash data-items='[{"img": "photos/c9_station.jpg", "q": "Where do you start your day?", "w": "based at", "m": "Your company&#39;s base: the building where you start and finish.", "s": "We&#39;re based at the station in North Charleston.", "a": "audio/c9_based.mp3"}, {"img": "photos/c9_dispatcher.jpg", "q": "Who&#39;s your boss? Who do you answer to?", "w": "report to", "m": "The person you answer to at work.", "s": "I report to the dispatcher.", "a": "audio/c9_reportto.mp3"}, {"img": "photos/c9_floor.jpg", "q": "These people work with the packages. Where are they?", "w": "on the floor", "m": "Where the real work happens in a warehouse.", "s": "I work on the floor.", "a": "audio/c9_floor.mp3"}, {"img": "photos/c9_warehouse.jpg", "q": "Where are all these shelves?", "w": "in the warehouse", "m": "Inside the big building where packages are stored.", "s": "I work in the warehouse.", "a": "audio/c9_warehouse.mp3"}, {"img": "photos/c9_shift.jpg", "q": "How many hours is your work day?", "w": "work a shift", "m": "Work your set hours, for example 10 hours.", "s": "I work a ten-hour shift.", "a": "audio/c9_shift.mp3"}, {"img": "photos/open9.jpg", "q": "Who pays you? Say it with the company&#39;s name.", "w": "work for", "m": "The company that pays you.", "s": "I work for a delivery company.", "a": "audio/c9_workfor.mp3"}]'></div>
+  <button class="btn go" data-next style="display:none">Next</button>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Fire It · Fast Answers</div>
+  <div class="es">I ask fast. You answer with <b>one full sentence</b>.</div>
+  <div class="think" style="font-size:19px">1. "Who's your boss?"<br>2. "Where's your station?"<br>3. "How long are your days?"<br>4. "Do you work inside?"</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Check yourself</button>
+  <div class="keyBox" style="text-align:left">1. I <b>report to</b> the dispatcher.<br>2. We're <b>based at</b> the station in North Charleston.<br>3. I <b>work a</b> ten-hour <b>shift</b>.<br>4. No, I'm <b>on the road</b> / <b>in the van</b> all day.</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr tall" data-t="match">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · Match-Up</div>
+  <div class="es">Three new phrases. Tap a phrase, then tap what it means.</div>
+  <div class="matchWrap" data-items='[{"p": "I’m on my feet all day.", "m": "My job is physical: I walk and stand all day.", "img": "photos/c9_feet.jpg", "ex": "“I drive and walk 200 stops. I’m on my feet all day.”", "a": "audio/c9_feet.mp3", "tag": "for a physical job"}, {"p": "I got the hang of it.", "m": "It was hard at first, then I learned how to do it.", "img": "photos/c9_hang.jpg", "ex": "“The app was confusing in week 1, but I got the hang of it.”", "a": "audio/c9_hang.mp3", "tag": "+ past: got"}, {"p": "I’m a people person.", "m": "I’m good with people and I like talking to them.", "img": "photos/c9_people.jpg", "ex": "“I want a call-centre job because I’m a people person.”", "a": "audio/c9_people.mp3", "tag": "great in an interview"}]'></div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="flip">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · Use Them</div>
+  <div class="howTo">Flip a card. Answer the interview question <b>out loud</b> with one of the 3 phrases, then tap <b>"I said it"</b>.</div>
+  <div class="flipCount"></div>
+  <div class="flipGrid" data-items='[{"k":"💼","p":"“Is your job hard on your body?”"},{"k":"💼","p":"“Was the delivery app easy at first?”"},{"k":"💼","p":"“Why do you want a call-centre job?”"},{"k":"💼","p":"“How did you learn your route?”"}]'></div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Check the phrases</button>
+  <div class="keyBox" style="text-align:left">1. I'm on my feet all day. · 2. No, but I got the hang of it. · 3. I'm a people person. · 4. It was hard at first, but I got the hang of it.</div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr tall" data-t="hear">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Ear · The Little Words</div>
+  <div class="es">Real people talk about their jobs. Play each clip, <b>say what you heard</b>, then type the missing words.</div>
+  <div class="hfWrap" data-phrase="I work for · at · in · on" data-note="The little word is quick and quiet: “I work fər…”, “ət the…”. Listen for it, not for the big words." data-items='[{"f": "video/c9_hp1.mp4", "v": "BNq17ed4Bc8", "s": 57, "e": 59, "pre": "I", "a": "work for", "post": "Royal Mail."}, {"f": "video/c9_hp3.mp4", "v": "BNq17ed4Bc8", "s": 108, "e": 110, "pre": "So I", "a": "work at", "post": "a catering company."}, {"f": "video/c9_hp2.mp4", "v": "rSrobMb7RvU", "s": 89, "e": 91, "pre": "I", "a": "work for", "post": "the government."}, {"f": "video/c9_hp4.mp4", "v": "0x1WRY4fvz4", "s": 68, "e": 71, "pre": "I", "a": "work in", "post": "a cafe."}, {"f": "video/c9_hp5.mp4", "v": "0x1WRY4fvz4", "s": 2, "e": 5, "pre": "I", "a": "work on", "post": "the local newspaper."}]'></div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="stack">
+  <div class="badge">Pronunciation · Quick And Quiet</div>
+  <div class="es">In real speech, <b>for, at, to</b> are tiny: "fər", "ət", "tə". The stress goes on the <b>next</b> word. Tap, listen, copy it twice.</div>
+  <div class="row"><button class="opt mid" data-audio="audio/c9_sh1.mp3" onclick="playAudio(this)">I work fər <b>A</b>mazon. 🔊</button></div>
+  <div class="row"><button class="opt mid" data-audio="audio/c9_sh2.mp3" onclick="playAudio(this)">I'm ət the <b>sta</b>tion by six. 🔊</button></div>
+  <div class="row"><button class="opt mid" data-audio="audio/c9_sh3.mp3" onclick="playAudio(this)">I report tə the <b>dis</b>patcher. 🔊</button></div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="wheel">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Review · Spin And Tell It</div>
+  <div class="howTo">Spin and say <b>one full sentence in the past</b> with the phrase it reminds you of.</div>
+  <div class="wheelWrap" data-items='[{"k":"🧳","p":"A man with a suitcase, and the police were behind him."},{"k":"🎧","p":"A girl didn’t notice anything around her."},{"k":"🚓","p":"The police stopped you on the highway."},{"k":"😂","p":"The kids in the back thought something was funny."},{"k":"🛒","p":"You stopped at the store for 5 minutes on your way home."},{"k":"🏁","p":"You finished your last stop at 7 p.m."}]'>
+   <div class="wheelPointer"></div>
+   <svg class="wheelSvg" viewBox="-100 -100 200 200"></svg>
+   <div class="wheelHub"></div>
+  </div>
+  <div class="wheelCard"><div class="think" data-wprompt></div><div class="es">One full sentence, in the past.</div></div>
+  <button class="btn go" onclick="wheelSpin(this)">Spin</button>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Check the phrases</button>
+  <div class="keyBox" style="text-align:left">🧳 run away from · 🎧 in her own world · 🚓 pull over · 😂 laugh at · 🛒 swing by · 🏁 wrap up</div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/core9.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">Job Interview · Round 1 · With Help</div>
+  <div class="howTo">I'm the hiring manager at a call centre in Charleston. Answer my 3 questions. <b>Use the card.</b></div>
+  <div class="sent" style="font-size:16px;text-align:left"><b>1. "Tell me about your current job."</b> I work for… I'm based at… I report to…<br><b>2. "What's a normal day like?"</b> I work a … shift. I'm on my feet / on the road…<br><b>3. "Tell me about a hard day."</b> One time… To make matters worse…</div>
+  <div class="es" style="font-size:14px"><b>Try to use:</b> for · at / in · on · report to · work a shift · 2 of: on my feet all day, got the hang of it, a people person</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/core9.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">Job Interview · Round 2 · You Ask</div>
+  <div class="howTo">Now <b>you</b> interview <b>me</b> about the call-centre job. Ask 3 questions, with no card.</div>
+  <div class="es">Your questions should find out: <b>who you'd report to</b> · <b>where they're based</b> · <b>what shifts people work</b>.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Need help? Show examples</button>
+  <div class="keyBox" style="text-align:left">Who would I <b>report to</b>? · Where are you <b>based</b>? · What <b>shifts</b> do people <b>work</b>?</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/open9.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">Job Interview · Round 3 · On Your Own</div>
+  <div class="think">"So, tell me about yourself and your current job."</div>
+  <div class="howTo"><b>How it works</b><ol><li>This is a new interviewer. Nothing on screen helps you now.</li><li>Talk for 90 seconds. <b>I stay quiet and listen.</b></li><li>When the time ends, we fix any mistakes together.</li></ol></div>
+  <div class="timerRing" data-seconds="90">
+   <svg width="96" height="96" viewBox="0 0 96 96">
+    <circle cx="48" cy="48" r="44" fill="none" stroke="rgba(244,238,246,.15)" stroke-width="6"></circle>
+    <circle class="timerArc" cx="48" cy="48" r="44" fill="none" stroke="#FFBE00" stroke-width="6"
+      stroke-linecap="round" stroke-dasharray="276.46" stroke-dashoffset="0" transform="rotate(-90 48 48)"></circle>
+   </svg>
+   <span class="timerNum">90</span>
+  </div>
+  <button class="btn go" onclick="timerStart(this)">Start 90 seconds</button>
+  <button class="btn go" data-next style="display:none">Next</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Listen To Yourself</div>
+  <div class="howTo"><b>What to do</b><ol><li>Listen to your recording.</li><li>Find your own mistakes with <b>for, at, in, on, to</b> before I say anything.</li><li>Say each sentence the right way.</li></ol></div>
+  <button class="btn go" data-next>Done, next</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Real Life · At A Barbecue</div>
+  <img class="sceneImg" src="photos/c9_bbq.jpg" alt="Friends at a backyard barbecue">
+  <div class="howTo">Your boyfriend's American friend asks: <b>"So, what do you do?"</b> Answer in your own words. Use: works for · based at · on the road all day · report to · a people person · a call-centre job.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Need help? Show an example</button>
+  <div class="keyBox" style="text-align:left;font-size:15px;line-height:1.6"><b>Friend:</b> So, what do you do?<br><b>You:</b> I'm a delivery driver. I work for a delivery company. We deliver for Amazon.<br><b>Friend:</b> Oh nice. Are you at the big warehouse?<br><b>You:</b> No, we're based at a smaller station in North Charleston. I'm on the road all day, so I'm on my feet a lot.<br><b>Friend:</b> Sounds tiring. Who's your boss?<br><b>You:</b> I report to the dispatcher. At first the app was hard, but I got the hang of it.<br><b>Friend:</b> Do you like it?<br><b>You:</b> It's okay, but I'm a people person. I want to work at a call centre next.</div>
+  <div class="think" style="font-size:17px">1. Where is the station?<br>2. What does she want to do next?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Check yourself</button>
+  <div class="keyBox" style="text-align:left">1. At a smaller station in North Charleston.<br>2. Work at a call centre.</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="homework">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Homework</div>
+  <div class="picRow two"><figure><img src="photos/c9_porch.jpg" alt="Packages at a front door"><figcaption>Where did you leave them?</figcaption></figure><figure><img src="photos/c8_drivethru.jpg" alt="A drive-thru window"><figcaption>Mission #2: order in English.</figcaption></figure></div>
+  <div class="sent" style="text-align:left;font-size:17px">1. 🎙️ After one shift, record a <b>60-second voice note</b>: who you work for, where you're based, and <b>exactly where you left 3 packages</b> (<i>at the front door · by the gate · on the porch</i>). Use one phrase from today.</div>
+  <div class="sent" style="text-align:left;font-size:17px">2. 🌍 <b>Mission #2</b> (if you did Mission #1): order something in English at a counter or drive-thru. Tell me about it in 2 sentences at the start of Class 10.</div>
+  <div class="es" style="font-size:15px">Why: Class 10 is about saying exactly where you left a package. We start from your recording.</div>
+  <div class="es" style="font-size:14px">ES: Después de un turno, graba 60 segundos: para quién trabajas, dónde está tu estación y dónde dejaste 3 paquetes hoy. Misión: pide algo en inglés en un mostrador o drive-thru.</div>
+  <button class="btn go" data-next>Done for today</button>
+ </div></div>
+
+<div class="scr" data-t="close">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="big">You told a hiring manager who you work for, and asked the questions too.</div>
+  <div class="es">Send the voice note. See you at Class 10.</div>
+  <div class="credits">Teacher's Station · The Milestone Method</div>
+ </div></div>
+
+</div>
+
 
 </div>
 <script>
@@ -3381,7 +3664,7 @@ function tprNav(btn, delta){
   audioBtn._player = null;
   scr.querySelectorAll('[data-tprdots] .dot').forEach((d,n)=>d.classList.toggle('lit', n===i));
 }
-loadScreens(8);
+loadScreens(9);
 </script>
 <!-- DELIGHT:SHELL:START — motion layer v1 (ts-class-app). Additive: wraps show(), touches no class content. Safe to retrofit into any live student file. -->
 <style id="delight-shell">
@@ -3997,6 +4280,226 @@ html.dFit .picRow.two{max-width:440px}
 })();
 </script>
 <!-- DELIGHT:FLASH:END -->
+<!-- DELIGHT:MATCH:START — Phrase Match-Up v1 (ts-class-app, 5 Nov 2026). Tap a phrase, then its meaning card (photo + plain meaning). A right match locks in gold, plays the example out loud and shows it; a wrong one shakes. When every pair is matched, the student says each example OUT LOUD and [data-next] appears. data-t="match", data-driven, no unique IDs. Items: [{"p","m","img"?,"ex","a"?,"tag"?}] -->
+<style>
+.matchWrap{width:100%;max-width:440px;display:flex;flex-direction:column;gap:12px}
+.mPhrases{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.mPhrase{min-height:46px;padding:8px 16px;border-radius:23px;border:2px solid rgba(255,190,0,.55);background:rgba(255,190,0,.06);
+ color:var(--ink);font-family:'Poppins',system-ui,sans-serif;font-size:16px;font-weight:600;cursor:pointer;transition:all .2s}
+.mPhrase.sel{background:var(--go);color:#2D0130;border-color:var(--go);transform:translateY(-2px);box-shadow:0 6px 18px rgba(255,190,0,.35)}
+.mPhrase.done{opacity:.35;pointer-events:none;border-style:dashed}
+.mCards{display:flex;flex-direction:column;gap:10px}
+.mCard{display:flex;align-items:stretch;gap:12px;width:100%;text-align:left;padding:0;border-radius:16px;overflow:hidden;cursor:pointer;
+ border:2px solid rgba(244,238,246,.14);background:rgba(244,238,246,.05);color:var(--ink);transition:border-color .2s,background .2s}
+.mCard img{width:96px;min-height:84px;object-fit:cover;flex:none}
+.mCard .mTxt{padding:10px 12px 10px 0;display:flex;flex-direction:column;justify-content:center;gap:4px;min-width:0}
+.mCard .mMean{font-size:16px;line-height:1.3}
+.mCard .mHit{display:none;font-family:'Poppins',system-ui,sans-serif;font-weight:700;color:var(--go);font-size:16px}
+.mCard .mEx{display:none;font-size:15px;color:rgba(244,238,246,.9);font-style:italic}
+.mCard .mTag{display:none;align-self:flex-start;font-family:'Poppins',system-ui,sans-serif;font-size:12px;font-weight:600;color:#2D0130;background:#D9A6FF;border-radius:8px;padding:2px 8px}
+.mCard.ok{border-color:var(--go);background:rgba(255,190,0,.10);cursor:default}
+.mCard.ok .mHit,.mCard.ok .mEx{display:block}
+.mCard.ok .mTag{display:inline-block}
+.mCard.ok .mMean{font-size:13px;color:rgba(244,238,246,.7)}
+.mCard.armed{border-color:rgba(255,190,0,.45)}
+.mCard.bad{animation:mShake .4s}
+@keyframes mShake{0%,100%{transform:translateX(0)}25%{transform:translateX(-7px)}75%{transform:translateX(7px)}}
+.mDone{display:none;text-align:center;font-size:16px;color:var(--go)}
+.matchWrap.complete .mDone{display:block}
+html.dFit .matchWrap{max-width:640px}
+html.dFit .mCards{display:grid;grid-template-columns:repeat(3,1fr)}
+html.dFit .mCard{flex-direction:column}
+html.dFit .mCard img{width:100%;height:120px;min-height:0}
+html.dFit .mCard .mTxt{padding:10px 12px 12px}
+@media (prefers-reduced-motion:reduce){.mCard.bad{animation:none}.mPhrase{transition:none}}
+</style>
+<script>
+(function(){
+  function build(w){
+    let items; try { items = JSON.parse(w.getAttribute('data-items')); } catch(e){ return; }
+    w.innerHTML = '';
+    const ph = document.createElement('div'); ph.className = 'mPhrases';
+    items.forEach((it, i) => {
+      const b = document.createElement('button'); b.type = 'button'; b.className = 'mPhrase'; b.dataset.i = i; b.textContent = it.p; ph.appendChild(b);
+    });
+    const cards = document.createElement('div'); cards.className = 'mCards';
+    // order the meanings so none sits under its own phrase (rotate by one)
+    const order = items.map((_, i) => (i + 1) % items.length);
+    order.forEach(i => {
+      const it = items[i];
+      const c = document.createElement('button'); c.type = 'button'; c.className = 'mCard'; c.dataset.i = i;
+      c.innerHTML = (it.img ? '<img src="' + it.img + '" alt="">' : '') +
+        '<span class="mTxt"><span class="mHit">' + it.p + '</span><span class="mMean">' + it.m + '</span>' +
+        '<span class="mEx">' + (it.ex || '') + '</span>' + (it.tag ? '<span class="mTag">' + it.tag + '</span>' : '') + '</span>';
+      cards.appendChild(c);
+    });
+    const done = document.createElement('div'); done.className = 'mDone';
+    done.innerHTML = '✓ All matched. Now <b>say each example out loud</b>.';
+    w.append(ph, cards, done);
+    w._items = items; w._sel = null; w._left = items.length;
+  }
+  function pick(w, kind, el){
+    if (kind === 'p'){
+      w.querySelectorAll('.mPhrase').forEach(b => b.classList.toggle('sel', b === el));
+      w.querySelectorAll('.mCard:not(.ok)').forEach(c => c.classList.add('armed'));
+      w._sel = +el.dataset.i; return;
+    }
+    if (w._sel === null){ el.classList.remove('bad'); void el.offsetWidth; el.classList.add('bad'); return; }
+    const i = +el.dataset.i;
+    if (i === w._sel){
+      el.classList.add('ok'); el.classList.remove('armed');
+      const p = w.querySelector('.mPhrase[data-i="' + i + '"]'); p.classList.remove('sel'); p.classList.add('done');
+      w.querySelectorAll('.mCard').forEach(c => c.classList.remove('armed'));
+      if (window.dFeedback) dFeedback(el, true);
+      const a = w._items[i].a; if (a){ try { new Audio(a).play(); } catch(e){} }
+      w._sel = null; w._left--;
+      if (w._left === 0){
+        w.classList.add('complete');
+        const n = w.closest('.stack').querySelector('[data-next]'); if (n) n.style.display = 'block';
+      }
+    } else {
+      if (window.dFeedback) dFeedback(el, false);
+      el.classList.remove('bad'); void el.offsetWidth; el.classList.add('bad');
+    }
+  }
+  document.addEventListener('click', e => {
+    const p = e.target.closest('.matchWrap .mPhrase'); if (p) return pick(p.closest('.matchWrap'), 'p', p);
+    const c = e.target.closest('.matchWrap .mCard'); if (c && !c.classList.contains('ok')) return pick(c.closest('.matchWrap'), 'c', c);
+  });
+  document.querySelectorAll('.matchWrap[data-items]').forEach(build);
+})();
+</script>
+<!-- DELIGHT:MATCH:END -->
+<!-- DELIGHT:HEAR:START — Hidden Phrase / Hear & Fill v1 (ts-class-app, 7 Nov 2026; bank activity "The hidden phrase (Playphraseme)"). Real YouTube clips cut to one sentence (start/end seconds). The student plays a clip, SAYS what they heard, then types the hidden words into the blank; Check gives gold / shake, a first-letter hint after 2 misses, and "Show me" after 3. When every clip is solved, the hidden phrase is revealed and [data-next] appears. data-t="hear", data-driven, no unique IDs.
+     Items: [{"f": "video/<file>.mp4" (PREFERRED — self-hosted cut, see below), "v": youtube id, "s": start sec, "e": end sec, "pre": text before the blank, "a": the hidden words, "post": text after}]
+     Use "f": YouTube embeds of monetized videos play unskippable ads (Juan, 7 Nov 2026), and the masks then hide the Skip button. Cut each sentence with yt-dlp --download-sections + ffmpeg to a ~3 s 360p mp4 (~100 KB) under <student>/video/. "v"/"s"/"e" is only a fallback. · wrapper data-phrase = the phrase revealed at the end, data-note = one line under it.
+     Verify every clip's words with Whisper before shipping — YouTube auto-captions are often wrong. -->
+<style>
+.hfWrap{width:100%;max-width:440px;display:flex;flex-direction:column;gap:12px}
+.hfPlayer{position:relative;width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:#000;border:1px solid rgba(244,238,246,.14)}
+.hfPlayer iframe,.hfPlayer video{position:absolute;inset:0;width:100%;height:100%;border:0;object-fit:contain;background:#000}
+.hfCover.again{background:rgba(13,0,20,.55)}
+/* masks: the video title (top) and any captions (bottom) would give the answer away */
+.hfMask{position:absolute;left:0;right:0;pointer-events:none;background:#0D0014;z-index:2;display:flex;align-items:center;justify-content:center;
+ font-family:'Poppins',system-ui,sans-serif;font-size:12px;letter-spacing:.5px;color:rgba(244,238,246,.7)}
+.hfMask.t{top:0;height:24%;border-bottom:1px solid rgba(255,190,0,.25)}
+.hfMask.b{bottom:0;height:30%;border-top:1px solid rgba(255,190,0,.25)}
+.hfPlayer .hfCover{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:6px;
+ background:radial-gradient(circle at 50% 40%,rgba(255,190,0,.18),rgba(13,0,20,.92) 70%);cursor:pointer;color:var(--ink);border:0;width:100%;font-family:'Poppins',system-ui,sans-serif}
+.hfCover b{width:64px;height:64px;border-radius:50%;background:var(--go);color:#2D0130;display:grid;place-items:center;font-size:26px;box-shadow:0 0 24px rgba(255,190,0,.45)}
+.hfCover span{font-size:14px;opacity:.85}
+.hfRow{display:flex;gap:8px;justify-content:center}
+.hfBtn{min-height:44px;padding:8px 14px;border-radius:12px;border:1.5px solid rgba(255,190,0,.55);background:transparent;color:var(--go);font-family:'Poppins',system-ui,sans-serif;font-size:14px;font-weight:600;cursor:pointer}
+.hfSent{font-size:19px;line-height:1.7;text-align:center}
+.hfSent input{font:inherit;font-weight:700;color:var(--go);background:rgba(255,190,0,.08);border:0;border-bottom:2px dashed rgba(255,190,0,.7);
+ border-radius:6px 6px 0 0;padding:2px 6px;width:11em;max-width:100%;text-align:center;outline:none}
+.hfSent input:focus{background:rgba(255,190,0,.16)}
+.hfSent input.ok{border-bottom-style:solid;background:rgba(255,190,0,.2)}
+.hfSent input.bad{animation:hfShake .4s}
+@keyframes hfShake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.hfMsg{min-height:22px;text-align:center;font-size:15px;color:rgba(244,238,246,.85)}
+.hfNav{display:flex;align-items:center;justify-content:center;gap:12px}
+.hfNav .dots{display:flex;gap:6px}
+.hfNav .dot{width:10px;height:10px;border-radius:50%;background:rgba(244,238,246,.25)}
+.hfNav .dot.on{background:var(--go)} .hfNav .dot.done{background:rgba(255,190,0,.55)}
+.hfReveal{display:none;text-align:center;padding:14px;border-radius:16px;border:2px solid var(--go);background:rgba(255,190,0,.1)}
+.hfReveal .hfP{font-family:'Poppins',system-ui,sans-serif;font-size:28px;font-weight:700;color:var(--go)}
+.hfReveal .hfN{font-size:15px;margin-top:6px;color:rgba(244,238,246,.9)}
+.hfWrap.complete .hfReveal{display:block}
+html.dFit .hfWrap{max-width:560px}
+@media (prefers-reduced-motion:reduce){.hfSent input.bad{animation:none}}
+</style>
+<script>
+(function(){
+  const norm = s => (s || '').toLowerCase().replace(/[’']/g, "'").replace(/[^a-z' ]/g, ' ').replace(/\s+/g, ' ').trim();
+  function src(it, auto){
+    return 'https://www.youtube-nocookie.com/embed/' + it.v + '?start=' + it.s + '&end=' + it.e +
+      '&rel=0&modestbranding=1&playsinline=1&controls=0&disablekb=1&cc_load_policy=0&iv_load_policy=3' + (auto ? '&autoplay=1' : '');
+  }
+  function render(w){
+    const it = w._items[w._i];
+    const box = w.querySelector('.hfPlayer');
+    box.innerHTML = '<button class="hfCover" type="button"><b>▶</b><span>Clip ' + (w._i + 1) + ' of ' + w._items.length + ' · listen</span></button>';
+    const st = w._state[w._i];
+    w.querySelector('.hfSent').innerHTML = (it.pre ? it.pre + ' ' : '') +
+      '<input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="What did they say?" placeholder="? ? ?">' +
+      (it.post ? ' ' + it.post : '');
+    const inp = w.querySelector('.hfSent input');
+    if (st.solved){ inp.value = it.a; inp.classList.add('ok'); inp.disabled = true; }
+    w.querySelector('.hfMsg').textContent = st.solved ? '✓ ' + (it.pre ? it.pre + ' ' : '') + it.a + (it.post ? ' ' + it.post : '') : 'Say it out loud first — then type what you heard.';
+    w.querySelectorAll('.hfNav .dot').forEach((d, n) => { d.classList.toggle('on', n === w._i); d.classList.toggle('done', w._state[n].solved); });
+    w.querySelector('[data-hfprev]').disabled = w._i === 0;
+    w.querySelector('[data-hfnext]').disabled = w._i === w._items.length - 1;
+    w.querySelector('[data-hfshow]').style.display = (!st.solved && st.miss >= 3) ? '' : 'none';
+  }
+  function play(w){
+    const it = w._items[w._i];
+    if (it.f){
+      // self-hosted clip (preferred): no ads, no title, no captions, cut exactly to the sentence
+      const box = w.querySelector('.hfPlayer');
+      box.innerHTML = '<video src="' + it.f + '" playsinline preload="auto"></video>' +
+        '<button class="hfCover again" type="button" style="display:none"><b>↻</b><span>Play again</span></button>';
+      const v = box.querySelector('video');
+      v.addEventListener('ended', () => { box.querySelector('.hfCover').style.display = 'flex'; });
+      v.play().catch(() => { box.querySelector('.hfCover').style.display = 'flex'; });
+      return;
+    }
+    w.querySelector('.hfPlayer').innerHTML = '<iframe src="' + src(it, true) + '" title="Clip ' + (w._i + 1) + '" allow="autoplay; encrypted-media" referrerpolicy="strict-origin-when-cross-origin"></iframe>' +
+      '<div class="hfMask t">🎧 Listen — no reading!</div><div class="hfMask b"></div>';
+  }
+  function solve(w, shown){
+    const it = w._items[w._i], st = w._state[w._i], inp = w.querySelector('.hfSent input');
+    st.solved = true; inp.value = it.a; inp.classList.add('ok'); inp.disabled = true;
+    if (window.dFeedback && !shown) dFeedback(inp, true);
+    w.querySelector('.hfMsg').textContent = '✓ ' + (it.pre ? it.pre + ' ' : '') + it.a + (it.post ? ' ' + it.post : '') + (shown ? '  — now say it!' : '');
+    render(w);
+    if (w._state.every(x => x.solved)){
+      w.classList.add('complete');
+      const n = w.closest('.stack').querySelector('[data-next]'); if (n) n.style.display = 'block';
+    }
+  }
+  function check(w){
+    const it = w._items[w._i], st = w._state[w._i], inp = w.querySelector('.hfSent input');
+    if (st.solved) return;
+    if (norm(inp.value) === norm(it.a)) return solve(w, false);
+    st.miss++;
+    inp.classList.remove('bad'); void inp.offsetWidth; inp.classList.add('bad');
+    if (window.dFeedback) dFeedback(inp, false);
+    const words = it.a.split(' ');
+    w.querySelector('.hfMsg').textContent = st.miss >= 2
+      ? 'Hint: ' + words.map(x => x[0] + '…').join(' ') + '  (' + words.length + ' words) — play it again.'
+      : 'Not quite — play it again and listen for every word.';
+    w.querySelector('[data-hfshow]').style.display = st.miss >= 3 ? '' : 'none';
+  }
+  function build(w){
+    try { w._items = JSON.parse(w.getAttribute('data-items')); } catch(e){ return; }
+    w._i = 0; w._state = w._items.map(() => ({solved: false, miss: 0}));
+    w.innerHTML =
+      '<div class="hfPlayer"></div>' +
+      '<div class="hfSent"></div>' +
+      '<div class="hfRow"><button class="hfBtn" type="button" data-hfplay>↻ Play again</button><button class="hfBtn" type="button" data-hfcheck>Check</button><button class="hfBtn" type="button" data-hfshow style="display:none">Show me</button></div>' +
+      '<div class="hfMsg"></div>' +
+      '<div class="hfNav"><button class="hfBtn" type="button" data-hfprev aria-label="Previous clip">‹</button><div class="dots">' +
+        w._items.map(() => '<i class="dot"></i>').join('') + '</div><button class="hfBtn" type="button" data-hfnext aria-label="Next clip">›</button></div>' +
+      '<div class="hfReveal"><div class="hfP">' + (w.getAttribute('data-phrase') || '') + '</div><div class="hfN">' + (w.getAttribute('data-note') || '') + '</div></div>';
+    render(w);
+  }
+  document.addEventListener('click', e => {
+    const w = e.target.closest('.hfWrap'); if (!w) return;
+    if (e.target.closest('.hfCover') || e.target.closest('[data-hfplay]')) return play(w);
+    if (e.target.closest('[data-hfcheck]')) return check(w);
+    if (e.target.closest('[data-hfshow]')) return solve(w, true);
+    if (e.target.closest('[data-hfprev]') && w._i > 0){ w._i--; return render(w); }
+    if (e.target.closest('[data-hfnext]') && w._i < w._items.length - 1){ w._i++; return render(w); }
+  });
+  document.addEventListener('keydown', e => {
+    const inp = e.target.closest && e.target.closest('.hfSent input');
+    if (inp && e.key === 'Enter'){ e.preventDefault(); check(inp.closest('.hfWrap')); }
+  });
+  document.querySelectorAll('.hfWrap[data-items]').forEach(build);
+})();
+</script>
+<!-- DELIGHT:HEAR:END -->
 <!-- DELIGHT:FIT:START — desktop fit v1 (ts-class-app). Landscape computer windows only: the app fills the window at any browser zoom, and each screen shrinks to fit before it scrolls. Phones and portrait windows are untouched. -->
 <style>
 html.dFit,html.dFit body{background:var(--ob)}
