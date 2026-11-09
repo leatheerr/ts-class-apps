@@ -207,7 +207,7 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 <div id="classHeader">
   <span class="brand">TEACHER'S STATION</span>
-  <button id="classSelect" onclick="toggleMenu()">Class 31 ▾</button>
+  <button id="classSelect" onclick="toggleMenu()">Class 32 ▾</button>
 </div>
 <div id="classMenu">
   <div class="item" onclick="selectClass(25)">Class 25: Giving Advice <span>✓</span></div>
@@ -216,7 +216,8 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
   <div class="item" onclick="selectClass(28)">Class 28: Pitching Yourself for a Senior RA Role <span>✓</span></div>
   <div class="item" onclick="selectClass(29)">Class 29: How Long Has It Been? <span>✓</span></div>
   <div class="item" onclick="selectClass(30)">Class 30: Everyday-Life Mission — The Weekend Catch-up <span></span></div>
-  <div class="item active" onclick="selectClass(31)">Class 31: What You Were Doing When the Auditor Walked In <span></span></div>
+  <div class="item" onclick="selectClass(31)">Class 31: What You Were Doing When the Auditor Walked In <span>✓</span></div>
+  <div class="item active" onclick="selectClass(32)">Class 32: Two Things at Once — the Lab During a Recall <span></span></div>
 </div>
 
 <div id="bar"></div>
@@ -2696,6 +2697,336 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
  </div></div>
 </div>
 
+<!-- ================= CLASS 32 ================= -->
+<div class="classBlock" data-class="32" data-mech="concept,flash,explain,match,timer,flip">
+
+<div class="scr" data-t="open">
+ <div class="bg" data-img="photos/factory_floor.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="cue">Class 32</div>
+  <div class="big">Two things at once: describe what the whole lab was doing during a recall</div>
+  <div class="es" style="font-size:16px;line-height:1.5;color:rgba(244,238,246,.85)">By the end of this class, you can describe what several people were doing at the same time during a crisis, so the picture is clear without naming every step.</div>
+  <button class="btn go" data-next>Begin</button>
+ </div></div>
+
+<div class="scr" data-t="meetfix">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Open With A Win · Class 31 Recap</div>
+  <div class="sent">Play 20 seconds of your voice note: three interruptions from your week.</div>
+  <div class="frameCard"><div class="frameSentence">"I was <b style="color:var(--go)">___-ing</b> when <b style="color:var(--go)">___</b>."</div><div class="frameHint">one more, about this morning</div></div>
+  <div class="frameCard"><div class="frameSentence">"What were you doing when <b style="color:var(--go)">___</b>?"</div><div class="frameHint">ask Juan</div></div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="hearwhich" data-idx="0" data-score="0"
+ data-items='[
+  {"a":"audio/ww32_1.mp3","o":["while","when"],"c":0,"s":"While I was checking the lot, he was calling the supplier."},
+  {"a":"audio/ww32_2.mp3","o":["while","when"],"c":1,"s":"When the alert came in, everyone was already working."},
+  {"a":"audio/ww32_3.mp3","o":["while","when"],"c":0,"s":"While they were pulling batches, we were tracing the codes."},
+  {"a":"audio/ww32_4.mp3","o":["while","when"],"c":1,"s":"I was signing the form when the system crashed."},
+  {"a":"audio/ww32_5.mp3","o":["while","when"],"c":0,"s":"While Marta was fielding calls, I was writing the report."},
+  {"a":"audio/ww32_6.mp3","o":["while","when"],"c":1,"s":"We were testing the samples when the agency called."},
+  {"a":"audio/ww32_7.mp3","o":["while","when"],"c":0,"s":"While we were working, the phones were ringing all day."},
+  {"a":"audio/ww32_8.mp3","o":["while","when"],"c":1,"s":"When I arrived, they were shutting the line down."}
+ ]'>
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Ear Sprint · While Or When?</div>
+  <button class="audio" onclick="hwPlay(this)">🔊</button>
+  <div class="es">Play it and choose, then say it back. While = at the same time. When = it interrupted. Target: 6 of 8.</div>
+  <div class="row">
+   <button class="opt mid" data-hwopt onclick="hwPick(this,0)"></button>
+   <button class="opt mid" data-hwopt onclick="hwPick(this,1)"></button>
+  </div>
+  <div class="hwFb" data-hwfb></div>
+  <div class="dots" data-hwdots></div>
+  <div class="hwScore" data-hwscore></div>
+  <button class="btn" data-hwnext onclick="hwNext(this)" style="display:none">Next sound ›</button>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Warm-Up · Critical Thinking</div>
+  <div class="frameCard"><div class="frameSentence">① In a crisis, is it more useful to describe what happened, or what everyone was doing? Why?</div></div>
+  <div class="frameCard"><div class="frameSentence">② When you tell your manager about a busy day, what makes it sound organised instead of chaotic?</div></div>
+  <div class="frameCard"><div class="frameSentence">③ The busiest hour you've ever had at work, in one sentence.</div></div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="grammar" data-gstep="0">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge" data-gbadge>Guided · The Shape</div>
+
+  <div class="gPart on" data-gpart data-badge="Guided · The Shape">
+   <div class="gSlots">
+    <div class="slotLbls">
+     <div class="slotLbl">while</div><div class="slotLbl">action 1 · was + -ing</div><div class="slotLbl">action 2 · was + -ing</div>
+    </div>
+    <div class="slotRow">
+     <div class="slotChip" style="--i:0"><span class="w">While</span></div><div class="slotChip" style="--i:1"><span class="w">I was tracing the lots,</span></div>
+     <div class="slotChip" style="--i:2"><span class="w">Marta was fielding calls.</span></div>
+    </div>
+    <div class="slotRow">
+     <div class="slotChip" style="--i:3"><span class="w">While</span></div><div class="slotChip" style="--i:4"><span class="w">they were pulling batches,</span></div>
+     <div class="slotChip" style="--i:5"><span class="w">we were tracing codes.</span></div>
+    </div>
+   </div>
+   <button class="toggleBtn" onclick="slotBuild(this)">Build the sentences</button>
+   <div class="slotNote">Two long actions, side by side. Both halves take was / were + -ing.</div>
+  </div>
+
+  <div class="gPart" data-gpart data-badge="Guided · When You Use It">
+   <div class="useRow"><span class="useKey">while</span><span class="useArrow">→</span>
+    <span class="useVal">two long actions at the same time. <i>Both</i> in -ing.</span></div>
+   <div class="useRow"><span class="useKey">when</span><span class="useArrow">→</span>
+    <span class="useVal">one long action + one sudden event. <i>"…when the system crashed."</i></span></div>
+  </div>
+
+  <div class="gPart" data-gpart data-badge="Guided · The Trap">
+   <div class="trapItem">
+    <div class="trapWrong">While I was reviewing, he tested.</div>
+    <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Say the fixed version, then tap</button>
+    <div class="keyBox"><b>While I was reviewing, he <span class="hl">was testing</span>.</b> — with while, both halves are continuous.</div>
+   </div>
+   <div class="trapItem">
+    <div class="trapWrong">While I review, he test.</div>
+    <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Say the fixed version, then tap</button>
+    <div class="keyBox"><b>While I <span class="hl">was reviewing</span>, he <span class="hl">was testing</span>.</b></div>
+   </div>
+  </div>
+
+  <div class="dots" data-gdots><div class="dot lit"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="row" style="max-width:300px">
+   <button class="opt mid" data-gprev onclick="gramNav(this,-1)" style="flex:0 0 60px" disabled>‹</button>
+   <button class="opt mid" data-gnext onclick="gramNav(this,1)" style="flex:1">Next ›</button>
+  </div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="concept" data-wh
+ data-when-a="I was reviewing the file…" data-when-b="the auditor walked in"
+ data-when-sent="I was reviewing the file <b class='when'>when</b> the auditor walked in."
+ data-while-a="I was tracing the lots…" data-while-b="Marta was fielding calls…"
+ data-while-sent="<b class='while'>While</b> I was tracing the lots, Marta was fielding calls.">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">WHILE vs WHEN</div>
+  <div class="whTabs">
+   <button class="whTab when" data-mode="when" type="button">⚡ WHEN<small>it interrupts</small></button>
+   <button class="whTab while" data-mode="while" type="button">⏸ WHILE<small>at the same time</small></button>
+  </div>
+  <div class="whStage">
+   <div class="whBolt"><span></span><b>⚡</b></div>
+   <div class="whLane a"><div class="whLbl"></div><div class="whTrack"><div class="whBar"></div></div></div>
+   <div class="whLane b"><div class="whLbl"></div><div class="whTrack"><div class="whBar"></div><span class="whSame">same time ✓</span></div></div>
+  </div>
+  <div class="whBig" data-whbig>&nbsp;</div>
+  <div class="whSent" data-whsent>&nbsp;</div>
+  <div class="whQuiz">
+   <div class="whAsk">When or while? <b>Say the whole sentence</b>, then tap. "I was writing the report…"</div>
+   <div class="whChips">
+    <button class="whChip" type="button" data-k="when">…the system crashed.</button>
+    <button class="whChip" type="button" data-k="while">…Marta was signing the forms.</button>
+    <button class="whChip" type="button" data-k="when">…the alarm went off.</button>
+    <button class="whChip" type="button" data-k="while">…they were pulling batches.</button>
+    <button class="whChip" type="button" data-k="when">…DIGEMID called.</button>
+   </div>
+  </div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="grammarcheck" data-idx="0"
+ data-items='[
+  {"tag":"both halves","q":"While I ___ (trace) the lots, Marta ___ (call) the supplier.","a":"was tracing, was calling — While I was tracing the lots, Marta was calling the supplier."},
+  {"tag":"fix the error","q":"While I was checking, he signed.","a":"While I was checking, he was signing."},
+  {"tag":"fix the error","q":"While we work, the phones ring.","a":"While we were working, the phones were ringing."},
+  {"tag":"when or while?","q":"I was writing the report ___ the system crashed.","a":"when — the crash interrupted."},
+  {"tag":"ask Juan","q":"What ___ you ___ (do) while I was in the meeting?","a":"What were you doing while I was in the meeting?"}
+ ]'>
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Guided · Check It</div>
+  <div class="gcTag" data-gctag></div>
+  <div class="gcQ" data-gcq>&nbsp;</div>
+  <button class="toggleBtn" onclick="gcReveal(this)">Say it out loud, then check</button>
+  <div class="keyBox" data-gckey></div>
+  <div class="dots" data-gcdots></div>
+  <div class="row" style="max-width:300px">
+   <button class="opt mid" data-gcprev onclick="gcNav(this,-1)" style="flex:0 0 60px" disabled>‹</button>
+   <button class="opt mid" data-gcnext onclick="gcNav(this,1)" style="flex:1">Next ›</button>
+  </div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="grammarcheck" data-idx="0"
+ data-items='[
+  {"tag":"You · reviewing. Marta · calling the supplier.","q":"While ___, ___.","a":"While I was reviewing, Marta was calling the supplier."},
+  {"tag":"Two analysts · pulling batches. You · tracing lots.","q":"While ___, ___.","a":"While two analysts were pulling batches, I was tracing the lots."},
+  {"tag":"Your manager · drafting the notification. The team · confirming numbers.","q":"While ___, ___.","a":"While my manager was drafting the notification, the team was confirming the numbers."},
+  {"tag":"You · fielding calls. The lab · running tests.","q":"While ___, ___.","a":"While I was fielding calls, the lab was running tests."},
+  {"tag":"Everyone · working around the clock. The agency · waiting.","q":"While ___, ___.","a":"While everyone was working around the clock, the agency was waiting."}
+ ]'>
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Two At Once</div>
+  <div class="gcTag" data-gctag></div>
+  <div class="gcQ" data-gcq>&nbsp;</div>
+  <button class="toggleBtn" onclick="gcReveal(this)">Say one while sentence, then check</button>
+  <div class="keyBox" data-gckey></div>
+  <div class="dots" data-gcdots></div>
+  <div class="row" style="max-width:300px">
+   <button class="opt mid" data-gcprev onclick="gcNav(this,-1)" style="flex:0 0 60px" disabled>‹</button>
+   <button class="opt mid" data-gcnext onclick="gcNav(this,1)" style="flex:1">Next ›</button>
+  </div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr tall" data-t="flash">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Vocabulary · Recall Chaos</div>
+  <div class="es">Look at the photo and say the words. Then tap to flip and check.</div>
+  <div data-flash data-items='[
+   {"img":"photos/c32_pulling.jpg","q":"Taking the affected boxes off the shelves","w":"pulling batches","m":"removing a group of products from storage","s":"Two analysts were pulling batches from the warehouse.","a":"audio/fc32_pulling.mp3"},
+   {"img":"photos/c32_tracing.jpg","q":"Following each product code back to where it came from","w":"tracing lots","m":"following a production lot through the records","s":"I was tracing the affected lots.","a":"audio/fc32_tracing.mp3"},
+   {"img":"photos/c32_fielding.jpg","q":"Answering one call after another","w":"fielding calls","m":"answering many calls and dealing with them","s":"Marta was fielding calls from the distributor.","a":"audio/fc32_fielding.mp3"},
+   {"img":"photos/c32_clock.jpg","q":"Day and night, without stopping","w":"working around the clock","m":"working day and night","s":"We were working around the clock for two days.","a":"audio/fc32_clock.mp3"}
+  ]'></div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="explain">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Explainer · How Busy Was The Lab?</div>
+  <div class="es">Tap each one. Watch the needle, then say a sentence about your own team.</div>
+  <div class="exMeter" data-title="Chaos-meter" data-left="calm" data-right="total chaos" data-items='[
+   {"w":"fielding calls","v":35,"tag":"busy","sent":"Marta <b>was fielding calls</b> all morning.","say":"Who in your office fields the most calls?"},
+   {"w":"pulling batches","v":58,"tag":"a problem","sent":"The analysts <b>were pulling batches</b> from the warehouse.","say":"When did your company last pull a batch?"},
+   {"w":"tracing lots","v":74,"tag":"serious","sent":"I <b>was tracing the lots</b> while the lab was testing.","say":"Say one while sentence with tracing lots."},
+   {"w":"working around the clock","v":95,"tag":"total crisis","sent":"We <b>were working around the clock</b> for two days.","say":"Have you ever worked around the clock? When?"}
+  ]'></div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr tall" data-t="match">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · Match-Up</div>
+  <div class="es">Tap a phrase, then its meaning. Then say each example out loud.</div>
+  <div class="matchWrap" data-items='[
+   {"p":"all hands on deck","m":"everyone has to help, right now","img":"photos/c32_allhands.jpg","ex":"When the recall started, it was all hands on deck.","a":"audio/mx32_allhands.mp3","tag":"it was …"},
+   {"p":"everyone was scrambling","m":"everyone was rushing to fix things","img":"photos/c32_scramble.jpg","ex":"Everyone was scrambling while the agency waited.","a":"audio/mx32_scramble.mp3","tag":"was + -ing"},
+   {"p":"running on fumes","m":"very tired, with almost no energy left","img":"photos/c32_fumes.jpg","ex":"After two days, we were running on fumes.","a":"audio/mx32_fumes.mp3","tag":"were + -ing"}
+  ]'></div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/factory_floor.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">CORE ① · The Recall Hour</div>
+  <div class="think">60 seconds. One real busy hour at work: a recall, an inspection, a deadline crunch.</div>
+  <div class="es">Six while sentences · at least three people · no notes. Then go again and beat it.</div>
+  <div class="timerRing" data-seconds="60">
+   <svg width="104" height="104" viewBox="0 0 104 104">
+    <circle cx="52" cy="52" r="44" fill="none" stroke="rgba(244,238,246,.15)" stroke-width="6"/>
+    <circle class="timerArc" cx="52" cy="52" r="44" fill="none" stroke="#FFBE00" stroke-width="6"
+            stroke-linecap="round" stroke-dasharray="276.46" stroke-dashoffset="0"/>
+   </svg>
+   <div class="timerNum">60</div>
+  </div>
+  <button class="btn" onclick="timerStart(this)">Start 60s</button>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Only open this if you get stuck</button>
+  <div class="keyBox">"It was <b>all hands on deck</b>. <b>While</b> I was tracing the affected lots, Marta was fielding calls, and two analysts were pulling batches. My manager was drafting the notification <b>while</b> we were confirming the numbers. <b>Everyone was scrambling</b>. After two days we were <b>running on fumes</b>."</div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="flip">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">CORE ② · Paint The Scene</div>
+  <div class="es">Flip a card and paint the scene in 30–45 seconds: two while sentences and one phrase.</div>
+  <div class="flipCount"></div>
+  <div class="flipGrid" data-items='[
+   {"k":"🚩","p":"The day <b>two products were flagged</b> at once. What was everyone doing?"},
+   {"k":"💻","p":"The afternoon the <b>system went down</b> mid-submission."},
+   {"k":"🕵️","p":"The morning <b>DIGEMID arrived</b> without warning."},
+   {"k":"📦","p":"<b>Recall week</b>, hour by hour: you, your manager, the lab."}
+  ]'></div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="stack">
+  <img class="sceneImg" src="photos/conference_chat.jpg" alt="">
+  <div class="badge">Real-Life Conversation · The Recall Week</div>
+  <div class="think">A colleague from another department asks what the recall week was really like.</div>
+  <div class="es">Then answer: ① What two things were happening at the same time? ② Who dealt with the agency?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Only open this if you get stuck</button>
+  <div class="keyBox"><i>"I heard last week was rough."</i><br>"It was all hands on deck. <b>While</b> I was tracing the lots, the lab was pulling samples."<br><i>"Was anyone handling the agency?"</i><br>"My manager was. She was drafting the notification <b>while</b> we were confirming the numbers."</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Pronunciation · The Comma Is A Breath</div>
+  <button class="audio" data-audio="audio/pr32_pause.mp3" onclick="playAudio(this)">🔊</button>
+  <div class="word" style="font-size:22px;line-height:1.4">While I was tracing the lots, / Marta was fielding calls.</div>
+  <div class="es">Listen, then copy the pause in the middle. Without it, the two halves blur into one.</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="grammarcheck" data-idx="0"
+ data-items='[
+  {"tag":"while","q":"While I ___ (check) the lot, he ___ (call) the supplier.","a":"was checking, was calling"},
+  {"tag":"when","q":"I ___ (sign) the form when the system ___ (crash).","a":"was signing, crashed"},
+  {"tag":"was or were?","q":"Nothing ___ out of compliance.","a":"Nothing was out of compliance. (nothing = singular)"},
+  {"tag":"finished time or not?","q":"She ___ (review) it yesterday. · She ___ (already / review) it.","a":"She reviewed it yesterday. · She has already reviewed it."},
+  {"tag":"fix the error","q":"I was review the batch record.","a":"I was reviewing the batch record."},
+  {"tag":"fix the words","q":"A balloon impacted my head.","a":"A ball hit me on the head."}
+ ]'>
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Spiral Shuffle · Final Check</div>
+  <div class="gcTag" data-gctag></div>
+  <div class="gcQ" data-gcq>&nbsp;</div>
+  <button class="toggleBtn" onclick="gcReveal(this)">Say it out loud, then check</button>
+  <div class="keyBox" data-gckey></div>
+  <div class="dots" data-gcdots></div>
+  <div class="row" style="max-width:300px">
+   <button class="opt mid" data-gcprev onclick="gcNav(this,-1)" style="flex:0 0 60px" disabled>‹</button>
+   <button class="opt mid" data-gcnext onclick="gcNav(this,1)" style="flex:1">Next ›</button>
+  </div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="homework">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Homework</div>
+  <div class="sent" style="text-align:left">1. 🎙️ Voice note (60s): a busy hour at work, four while sentences, at least two people. Next class starts with it.</div>
+  <div class="sent" style="text-align:left">2. 🎧 The "While Or When?" screen in this class until you get 8 of 8.</div>
+  <div class="sent" style="text-align:left">3. 📅 30-day challenge: today's answer includes one while sentence.</div>
+  <div class="sent" style="text-align:left">4. 📝 Log the 3 phrases and the 4 words.</div>
+  <div class="es">while = mientras (las dos acciones en -ing) · when = cuando (una interrumpe)</div>
+  <button class="btn go" data-next>Done for today</button>
+ </div></div>
+
+<div class="scr" data-t="close">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="big">Nice work today.</div>
+  <div class="es">See you next class.</div>
+  <div class="credits">Teacher's Station · The Milestone Method · Photos: Pexels &amp; Unsplash</div>
+ </div></div>
+</div>
+
 </div>
 
 <script>
@@ -2926,7 +3257,7 @@ function hwNext(btn){
   hwRender(scr);
 }
 document.querySelectorAll('.scr[data-t="hearwhich"]').forEach(hwRender);
-loadScreens(31);
+loadScreens(32);
 document.querySelector('[data-navback]').disabled = true;
 </script>
 <!-- DELIGHT:SHELL:START — motion layer v1 (ts-class-app). Additive: wraps show(), touches no class content. Safe to retrofit into any live student file. -->
@@ -3450,6 +3781,308 @@ new MutationObserver(ms=>ms.forEach(m=>{
 })();
 </script>
 <!-- DELIGHT:EXPLAIN:END -->
+
+<!-- DELIGHT:FLASH:START — photo flashcards v1 (ts-class-app). See the photo, say the word OUT LOUD, tap to flip and check. data-t="flash", data-driven, no unique IDs. Also carries .sceneImg and .picRow for photos inside any screen. -->
+<style>
+.sceneImg{width:100%;height:170px;object-fit:cover;border-radius:14px;display:block;background:rgba(255,255,255,.05)}
+.picRow{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;width:100%}
+.picRow.two{grid-template-columns:repeat(2,1fr)}
+.picRow figure{margin:0;display:flex;flex-direction:column;gap:6px}
+.picRow img{width:100%;height:96px;object-fit:cover;border-radius:10px;display:block;background:rgba(255,255,255,.05)}
+.picRow figcaption{font-size:14px;line-height:1.35;color:var(--ink);text-align:left}
+.fcDeck{width:100%;display:flex;flex-direction:column;align-items:center;gap:12px}
+.fcCard{position:relative;width:100%;height:290px;perspective:1200px;cursor:pointer}
+.fcInner{position:absolute;inset:0;transform-style:preserve-3d;transition:transform .45s cubic-bezier(.2,.8,.3,1)}
+.fcCard.flipped .fcInner{transform:rotateY(180deg)}
+.fcFace{position:absolute;inset:0;border-radius:16px;overflow:hidden;backface-visibility:hidden;-webkit-backface-visibility:hidden;box-shadow:0 0 0 1px rgba(255,190,0,.25)}
+.fcFace img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.fcClue{position:absolute;left:0;right:0;bottom:0;padding:26px 14px 12px;background:linear-gradient(transparent,rgba(13,0,20,.92));font-size:16px;line-height:1.35;text-align:center;color:var(--ink)}
+.fcBack{transform:rotateY(180deg);background:var(--ob)}
+.fcBack img{opacity:.22}
+.fcBackIn{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:16px;text-align:center}
+.fcWord{font-family:'Poppins',system-ui,sans-serif;font-weight:700;font-size:27px;line-height:1.2;color:var(--go)}
+.fcMean{font-size:16px;line-height:1.35;color:var(--ink)}
+.fcSent{font-family:'Lora',serif;font-style:italic;font-size:18px;line-height:1.4;color:var(--ink)}
+.fcHear{min-height:44px;padding:8px 18px;border-radius:999px;border:1px solid rgba(255,190,0,.5);background:rgba(13,0,20,.6);color:var(--ink);font:inherit;font-size:15px;cursor:pointer}
+.fcNav{display:flex;align-items:center;justify-content:center;gap:12px;width:100%}
+.fcNav .opt{flex:0 0 56px;min-height:44px}
+.fcNav .opt[disabled]{opacity:.3}
+.fcNav .dots{gap:8px}
+.fcNav .dot{width:11px;height:11px}
+.sceneCol{display:contents}
+html.dFit .scr .stack:has(>.sceneCol){display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);column-gap:28px;row-gap:14px;max-width:860px;align-items:center;justify-items:stretch}
+html.dFit .stack:has(>.sceneCol)>.badge{grid-column:1/-1;text-align:center}
+html.dFit .stack:has(>.sceneCol)>.sceneImg{grid-column:1;width:100%;height:auto;max-height:400px;object-fit:cover}
+html.dFit .stack:has(>.sceneCol)>.sceneCol{grid-column:2;display:flex;flex-direction:column;align-items:center;gap:14px;min-width:0}
+html.dFit .fcCard{height:290px;max-width:450px}
+html.dFit .fcFace img{object-fit:contain;background:var(--ob)}
+html.dFit .fcNav{max-width:450px}
+html.dFit .picRow{max-width:640px}
+html.dFit .picRow img{height:auto;aspect-ratio:3/2}
+html.dFit .picRow.two{max-width:440px}
+@media (prefers-reduced-motion:reduce){.fcInner{transition:none}}
+</style>
+<script>
+(function(){
+  function render(deck){
+    const items = JSON.parse(deck.getAttribute('data-items'));
+    const i = +deck.dataset.idx || 0, it = items[i];
+    const card = deck.querySelector('.fcCard');
+    card.classList.remove('flipped');
+    card.querySelectorAll('img').forEach(im => { im.src = it.img; });
+    card.querySelector('.fcClue').textContent = it.q;
+    card.querySelector('.fcWord').textContent = it.w;
+    card.querySelector('.fcMean').textContent = it.m || '';
+    card.querySelector('.fcSent').textContent = it.s || '';
+    const h = card.querySelector('.fcHear');
+    h.setAttribute('data-audio', it.a || ''); h.style.display = it.a ? '' : 'none'; h._player = null;
+    deck.querySelectorAll('.dot').forEach((d, n) => d.classList.toggle('lit', n === i));
+    deck.querySelector('[data-fcprev]').disabled = i === 0;
+    deck.querySelector('[data-fcnext]').disabled = i === items.length - 1;
+  }
+  function build(deck){
+    const items = JSON.parse(deck.getAttribute('data-items'));
+    deck._seen = new Set();
+    deck.classList.add('fcDeck');
+    deck.innerHTML = '<div class="fcCard" role="button" tabindex="0" aria-label="Flip card"><div class="fcInner">'
+      + '<div class="fcFace fcFront"><img alt=""><div class="fcClue"></div></div>'
+      + '<div class="fcFace fcBack"><img alt=""><div class="fcBackIn"><div class="fcWord"></div><div class="fcMean"></div><div class="fcSent"></div>'
+      + '<button class="fcHear" type="button" onclick="event.stopPropagation();playAudio(this)">🔊 Listen</button></div></div>'
+      + '</div></div>'
+      + '<div class="fcNav"><button class="opt mid" type="button" data-fcprev>‹</button><div class="dots">'
+      + items.map(() => '<div class="dot"></div>').join('')
+      + '</div><button class="opt mid" type="button" data-fcnext>›</button></div>';
+    const card = deck.querySelector('.fcCard');
+    const flip = () => {
+      card.classList.toggle('flipped');
+      deck._seen.add(+deck.dataset.idx || 0);
+      if(deck._seen.size === items.length){ const nx = deck.closest('.scr').querySelector('[data-next]'); if(nx) nx.style.display = 'block'; }
+    };
+    card.addEventListener('click', flip);
+    card.addEventListener('keydown', e => { if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); flip(); } });
+    const go = d => { deck.dataset.idx = Math.max(0, Math.min(items.length - 1, (+deck.dataset.idx || 0) + d)); render(deck); };
+    deck.querySelector('[data-fcprev]').addEventListener('click', () => go(-1));
+    deck.querySelector('[data-fcnext]').addEventListener('click', () => go(1));
+    render(deck);
+  }
+  document.querySelectorAll('.stack>.sceneImg').forEach(im => {
+    const k = im.parentElement, w = document.createElement('div');
+    w.className = 'sceneCol';
+    [...k.children].forEach(c => { if(c !== im && !c.classList.contains('badge')) w.appendChild(c); });
+    k.appendChild(w);
+  });
+  document.querySelectorAll('[data-flash]').forEach(build);
+})();
+</script>
+<!-- DELIGHT:FLASH:END -->
+
+<!-- DELIGHT:MATCH:START — Phrase Match-Up v1 (ts-class-app, 5 Nov 2026). Tap a phrase, then its meaning card (photo + plain meaning). A right match locks in gold, plays the example out loud and shows it; a wrong one shakes. When every pair is matched, the student says each example OUT LOUD and [data-next] appears. data-t="match", data-driven, no unique IDs. Items: [{"p","m","img"?,"ex","a"?,"tag"?}] -->
+<style>
+.matchWrap{width:100%;max-width:440px;display:flex;flex-direction:column;gap:12px}
+.mPhrases{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.mPhrase{min-height:46px;padding:8px 16px;border-radius:23px;border:2px solid rgba(255,190,0,.55);background:rgba(255,190,0,.06);
+ color:var(--ink);font-family:'Poppins',system-ui,sans-serif;font-size:16px;font-weight:600;cursor:pointer;transition:all .2s}
+.mPhrase.sel{background:var(--go);color:#2D0130;border-color:var(--go);transform:translateY(-2px);box-shadow:0 6px 18px rgba(255,190,0,.35)}
+.mPhrase.done{opacity:.35;pointer-events:none;border-style:dashed}
+.mCards{display:flex;flex-direction:column;gap:10px}
+.mCard{display:flex;align-items:stretch;gap:12px;width:100%;text-align:left;padding:0;border-radius:16px;overflow:hidden;cursor:pointer;
+ border:2px solid rgba(244,238,246,.14);background:rgba(244,238,246,.05);color:var(--ink);transition:border-color .2s,background .2s}
+.mCard img{width:96px;min-height:84px;object-fit:cover;flex:none}
+.mCard .mTxt{padding:10px 12px 10px 0;display:flex;flex-direction:column;justify-content:center;gap:4px;min-width:0}
+.mCard .mMean{font-size:16px;line-height:1.3}
+.mCard .mHit{display:none;font-family:'Poppins',system-ui,sans-serif;font-weight:700;color:var(--go);font-size:16px}
+.mCard .mEx{display:none;font-size:15px;color:rgba(244,238,246,.9);font-style:italic}
+.mCard .mTag{display:none;align-self:flex-start;font-family:'Poppins',system-ui,sans-serif;font-size:12px;font-weight:600;color:#2D0130;background:#D9A6FF;border-radius:8px;padding:2px 8px}
+.mCard.ok{border-color:var(--go);background:rgba(255,190,0,.10);cursor:default}
+.mCard.ok .mHit,.mCard.ok .mEx{display:block}
+.mCard.ok .mTag{display:inline-block}
+.mCard.ok .mMean{font-size:13px;color:rgba(244,238,246,.7)}
+.mCard.armed{border-color:rgba(255,190,0,.45)}
+.mCard.bad{animation:mShake .4s}
+@keyframes mShake{0%,100%{transform:translateX(0)}25%{transform:translateX(-7px)}75%{transform:translateX(7px)}}
+.mDone{display:none;text-align:center;font-size:16px;color:var(--go)}
+.matchWrap.complete .mDone{display:block}
+html.dFit .matchWrap{max-width:640px}
+html.dFit .mCards{display:grid;grid-template-columns:repeat(3,1fr)}
+html.dFit .mCard{flex-direction:column}
+html.dFit .mCard img{width:100%;height:120px;min-height:0}
+html.dFit .mCard .mTxt{padding:10px 12px 12px}
+@media (prefers-reduced-motion:reduce){.mCard.bad{animation:none}.mPhrase{transition:none}}
+</style>
+<script>
+(function(){
+  function build(w){
+    let items; try { items = JSON.parse(w.getAttribute('data-items')); } catch(e){ return; }
+    w.innerHTML = '';
+    const ph = document.createElement('div'); ph.className = 'mPhrases';
+    items.forEach((it, i) => {
+      const b = document.createElement('button'); b.type = 'button'; b.className = 'mPhrase'; b.dataset.i = i; b.textContent = it.p; ph.appendChild(b);
+    });
+    const cards = document.createElement('div'); cards.className = 'mCards';
+    // order the meanings so none sits under its own phrase (rotate by one)
+    const order = items.map((_, i) => (i + 1) % items.length);
+    order.forEach(i => {
+      const it = items[i];
+      const c = document.createElement('button'); c.type = 'button'; c.className = 'mCard'; c.dataset.i = i;
+      c.innerHTML = (it.img ? '<img src="' + it.img + '" alt="">' : '') +
+        '<span class="mTxt"><span class="mHit">' + it.p + '</span><span class="mMean">' + it.m + '</span>' +
+        '<span class="mEx">' + (it.ex || '') + '</span>' + (it.tag ? '<span class="mTag">' + it.tag + '</span>' : '') + '</span>';
+      cards.appendChild(c);
+    });
+    const done = document.createElement('div'); done.className = 'mDone';
+    done.innerHTML = '✓ All matched. Now <b>say each example out loud</b>.';
+    w.append(ph, cards, done);
+    w._items = items; w._sel = null; w._left = items.length;
+  }
+  function pick(w, kind, el){
+    if (kind === 'p'){
+      w.querySelectorAll('.mPhrase').forEach(b => b.classList.toggle('sel', b === el));
+      w.querySelectorAll('.mCard:not(.ok)').forEach(c => c.classList.add('armed'));
+      w._sel = +el.dataset.i; return;
+    }
+    if (w._sel === null){ el.classList.remove('bad'); void el.offsetWidth; el.classList.add('bad'); return; }
+    const i = +el.dataset.i;
+    if (i === w._sel){
+      el.classList.add('ok'); el.classList.remove('armed');
+      const p = w.querySelector('.mPhrase[data-i="' + i + '"]'); p.classList.remove('sel'); p.classList.add('done');
+      w.querySelectorAll('.mCard').forEach(c => c.classList.remove('armed'));
+      if (window.dFeedback) dFeedback(el, true);
+      const a = w._items[i].a; if (a){ try { new Audio(a).play(); } catch(e){} }
+      w._sel = null; w._left--;
+      if (w._left === 0){
+        w.classList.add('complete');
+        const n = w.closest('.stack').querySelector('[data-next]'); if (n) n.style.display = 'block';
+      }
+    } else {
+      if (window.dFeedback) dFeedback(el, false);
+      el.classList.remove('bad'); void el.offsetWidth; el.classList.add('bad');
+    }
+  }
+  document.addEventListener('click', e => {
+    const p = e.target.closest('.matchWrap .mPhrase'); if (p) return pick(p.closest('.matchWrap'), 'p', p);
+    const c = e.target.closest('.matchWrap .mCard'); if (c && !c.classList.contains('ok')) return pick(c.closest('.matchWrap'), 'c', c);
+  });
+  document.querySelectorAll('.matchWrap[data-items]').forEach(build);
+})();
+</script>
+<!-- DELIGHT:MATCH:END -->
+
+<!-- MOTION:while-when:START — concept motion (ts-class-app motion_library "while-vs-when"). WHEN = one long bar runs, then a ⚡ drops and cuts it (the interruption). WHILE = two bars run side by side at the same speed (two actions in progress). Auto-plays WHEN then WHILE when the screen opens; tabs replay; chip quiz ends in the student saying it. Screen: data-t="concept" data-wh. -->
+<style>
+.scr[data-wh]{justify-content:safe center;overflow-y:auto}
+.scr[data-wh] .stack{gap:12px;padding-top:72px;padding-bottom:28px}
+.whTabs{display:flex;gap:10px;width:100%;max-width:420px}
+.whTab{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;padding:10px 8px;border-radius:16px;
+ border:2px solid rgba(244,238,246,.14);background:rgba(244,238,246,.05);color:var(--ink);cursor:pointer;
+ font-family:'Poppins',system-ui,sans-serif;font-size:20px;font-weight:700;letter-spacing:.5px;transition:all .25s}
+.whTab small{font-size:13px;font-weight:500;letter-spacing:0;opacity:.8}
+.whTab.when.on{border-color:#D9A6FF;background:rgba(217,166,255,.16);color:#E9CCFF}
+.whTab.while.on{border-color:var(--go);background:rgba(255,190,0,.16);color:var(--go)}
+.whStage{position:relative;width:100%;max-width:420px;padding:30px 4px 6px;display:flex;flex-direction:column;gap:18px}
+.whLane{display:flex;flex-direction:column;gap:6px;transition:opacity .35s}
+.whLane.dim{opacity:.12}
+.whLbl{font-family:'Poppins',system-ui,sans-serif;font-size:14px;color:rgba(244,238,246,.9);text-align:left;min-height:20px}
+.whTrack{position:relative;height:26px;border-radius:13px;background:rgba(244,238,246,.08)}
+.whBar{position:absolute;left:0;top:0;bottom:0;width:0;border-radius:13px}
+.whLane.a .whBar{background:linear-gradient(90deg,#B98BE0,#D9A6FF)}
+.scr[data-wh].mWhile .whBar{background:linear-gradient(90deg,#FFBE00,#FF9F1C);box-shadow:0 0 16px rgba(255,190,0,.4)}
+.whBar.cut{border-radius:13px 3px 3px 13px;box-shadow:6px 0 0 -2px #FFBE00}
+.whBolt{position:absolute;top:-6px;left:60%;transform:translate(-50%,-30px);opacity:0;display:flex;flex-direction:column;align-items:center;pointer-events:none}
+.whBolt b{font-size:30px;line-height:1;filter:drop-shadow(0 0 8px rgba(255,190,0,.8))}
+.whBolt span{background:var(--go);color:#2D0130;font-family:'Poppins',system-ui,sans-serif;font-weight:700;font-size:12.5px;padding:3px 9px;border-radius:10px;white-space:nowrap;margin-bottom:2px}
+.whBolt.drop{animation:whDrop .45s cubic-bezier(.3,1.6,.5,1) forwards}
+@keyframes whDrop{0%{opacity:0;transform:translate(-50%,-60px)}100%{opacity:1;transform:translate(-50%,-2px)}}
+.whTrack.shake{animation:whShake .35s}
+@keyframes whShake{0%,100%{transform:none}30%{transform:translateX(-4px)}60%{transform:translateX(4px)}}
+.whSame{position:absolute;right:2px;top:31px;font-family:'Poppins',system-ui,sans-serif;font-size:12px;font-weight:700;color:var(--go);opacity:0;transition:opacity .4s}
+.whSame.on{opacity:1}
+.whBig{font-family:'Poppins',system-ui,sans-serif;font-size:22px;font-weight:700;line-height:1.2;min-height:28px;margin-top:8px}
+.whBig.when{color:#E9CCFF} .whBig.while{color:var(--go)}
+.whBig.pop{animation:whPop .45s ease-out}
+@keyframes whPop{0%{transform:scale(.7);opacity:0}100%{transform:scale(1);opacity:1}}
+.whSent{font-size:18px;min-height:24px;color:rgba(244,238,246,.92);line-height:1.45}
+.whSent b.when{color:#E9CCFF} .whSent b.while{color:var(--go)}
+.whQuiz{width:100%;max-width:420px;border-top:1px solid rgba(244,238,246,.12);padding-top:12px;opacity:.35;pointer-events:none;transition:opacity .4s}
+.whQuiz.ready{opacity:1;pointer-events:auto}
+.whAsk{font-size:15px;color:rgba(244,238,246,.85);margin-bottom:10px}
+.whChips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.whChip{min-height:44px;padding:8px 14px;border-radius:22px;border:1.5px dashed rgba(244,238,246,.35);background:transparent;color:var(--ink);
+ font-family:'Poppins',system-ui,sans-serif;font-size:14.5px;cursor:pointer;transition:all .25s}
+.whChip.when{border:1.5px solid #D9A6FF;background:rgba(217,166,255,.16);color:#E9CCFF}
+.whChip.while{border:1.5px solid var(--go);background:rgba(255,190,0,.16);color:var(--go)}
+html.dFit .whStage,html.dFit .whTabs,html.dFit .whQuiz{max-width:520px}
+@media (prefers-reduced-motion:reduce){.whBar{transition:none!important}.whBolt.drop,.whBig.pop,.whTrack.shake{animation:none;opacity:1}}
+</style>
+<script>
+(function(){
+  function reset(scr){
+    clearTimeout(scr._whT); clearTimeout(scr._whT2);
+    scr.querySelectorAll('.whBar').forEach(b => { b.style.transition = 'none'; b.style.width = '0'; b.classList.remove('cut'); });
+    const bolt = scr.querySelector('.whBolt'); bolt.classList.remove('drop');
+    scr.querySelector('.whSame').classList.remove('on');
+    void scr.offsetWidth;
+  }
+  function big(scr, mode, html, sent){
+    const b = scr.querySelector('[data-whbig]'); b.className = 'whBig ' + mode; void b.offsetWidth; b.classList.add('pop'); b.innerHTML = html;
+    scr.querySelector('[data-whsent]').innerHTML = sent;
+  }
+  function play(scr, mode){
+    reset(scr);
+    const d = scr.dataset, q = s => scr.querySelector(s);
+    scr.classList.toggle('mWhile', mode === 'while');
+    scr.querySelectorAll('.whTab').forEach(t => t.classList.toggle('on', t.dataset.mode === mode));
+    scr._whSeen = scr._whSeen || {}; scr._whSeen[mode] = true;
+    const a = q('.whLane.a'), b = q('.whLane.b'), ba = a.querySelector('.whBar'), bb = b.querySelector('.whBar');
+    if (mode === 'when'){
+      b.classList.add('dim');
+      a.querySelector('.whLbl').textContent = d.whenA;
+      b.querySelector('.whLbl').textContent = '';
+      big(scr, 'when', '⚡ when · it interrupts', d.whenSent);
+      ba.style.transition = 'width 1.8s linear'; ba.style.width = '60%';
+      scr._whT = setTimeout(() => {
+        q('.whBolt span').textContent = d.whenB; q('.whBolt').classList.add('drop');
+        ba.classList.add('cut'); const tr = a.querySelector('.whTrack'); tr.classList.remove('shake'); void tr.offsetWidth; tr.classList.add('shake');
+      }, 1800);
+    } else {
+      b.classList.remove('dim');
+      a.querySelector('.whLbl').textContent = d.whileA;
+      b.querySelector('.whLbl').textContent = d.whileB;
+      big(scr, 'while', '⏸⏸ while · at the same time', d.whileSent);
+      [ba, bb].forEach(x => { x.style.transition = 'width 2.4s linear'; x.style.width = '92%'; });
+      scr._whT2 = setTimeout(() => q('.whSame').classList.add('on'), 2400);
+    }
+    check(scr);
+  }
+  function check(scr){
+    const s = scr._whSeen || {};
+    if (s.when && s.while) scr.querySelector('.whQuiz').classList.add('ready');
+    const left = scr.querySelectorAll('.whChip:not(.when):not(.while)').length;
+    if (s.when && s.while && left === 0){ const n = scr.querySelector('[data-next]'); if (n) n.style.display = 'block'; }
+  }
+  document.addEventListener('click', e => {
+    const tab = e.target.closest('.whTab');
+    if (tab){ const scr = tab.closest('.scr'); clearTimeout(scr._whAuto); play(scr, tab.dataset.mode); return; }
+    const chip = e.target.closest('.whChip');
+    if (chip && !chip.classList.contains('when') && !chip.classList.contains('while')){
+      const k = chip.dataset.k; chip.classList.add(k);
+      chip.textContent = (k === 'when' ? '⚡ when ' : '⏸ while ') + chip.textContent;
+      if (window.dFeedback) dFeedback(chip, true);
+      check(chip.closest('.scr'));
+    }
+  });
+  new MutationObserver(ms => ms.forEach(m => {
+    const t = m.target;
+    if (!t.matches || !t.matches('.scr[data-wh]')) return;
+    const wasOn = (m.oldValue || '').split(' ').includes('on');
+    if (t.classList.contains('on') && !wasOn){
+      clearTimeout(t._whAuto);
+      t._whAuto = setTimeout(() => { play(t, 'when'); t._whAuto = setTimeout(() => play(t, 'while'), 3800); }, 450);
+    } else if (!t.classList.contains('on') && wasOn){ clearTimeout(t._whAuto); reset(t); }
+  })).observe(document.body, {subtree:true, attributes:true, attributeOldValue:true, attributeFilter:['class']});
+})();
+</script>
+<!-- MOTION:while-when:END -->
+
 
 <!-- DELIGHT:FIT:START — desktop fit v1 (ts-class-app). Landscape computer windows only: the app fills the window at any browser zoom, and each screen shrinks to fit before it scrolls. Phones and portrait windows are untouched. -->
 <style>
