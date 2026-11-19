@@ -238,7 +238,7 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 <div id="classHeader">
   <span class="brand">TEACHER'S STATION</span>
-  <button id="classSelect" onclick="toggleMenu()">Class 9 ▾</button>
+  <button id="classSelect" onclick="toggleMenu()">Class 10 ▾</button>
 </div>
 <div id="classMenu">
   <div class="item" onclick="selectClass(1)">Class 1: Customer calls — open a call without freezing <span>✓</span></div>
@@ -250,7 +250,8 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
   <div class="item" onclick="selectClass(6)">Class 6: When it went wrong &mdash; report a problem in the past</div>
   <div class="item" onclick="selectClass(7)">Class 7: Weekend stories &mdash; tell what happened</div>
   <div class="item" onclick="selectClass(8)">Class 8: Reading 2 &mdash; Camila's worst Tuesday</div>
-  <div class="item active" onclick="selectClass(9)">Class 9: Who you work for &mdash; for, at, in, on</div>
+  <div class="item" onclick="selectClass(9)">Class 9: Who you work for &mdash; for, at, in, on</div>
+  <div class="item active" onclick="selectClass(10)">Class 10: Directions &amp; drop-offs &mdash; where you left it</div>
 </div>
 
 <div id="bar"></div>
@@ -3474,6 +3475,329 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 </div>
 
+<div class="classBlock" data-class="10" data-mech="explain,flash,match,flip,timer,boss">
+
+<div class="scr" data-t="open">
+ <div class="bg" data-img="photos/open10.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="cue">Class 10 · Danna</div>
+  <div class="big">Directions &amp; drop-offs: say exactly where you left the package</div>
+  <div class="es" style="font-size:16px;line-height:1.55">By the end of this class, you can tell a customer or your dispatcher <b>exactly where you left a package, and how you got there</b>, so they find it the first time.</div>
+  <button class="btn go" data-next>Start</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Warm-up · Your Mission</div>
+  <img class="sceneImg" src="photos/c8_drivethru.jpg" alt="A drive-thru window">
+  <div class="think">First: how motivated are you today, from <b>1 to 10</b>?<br><br>Then: did you talk to a coworker, or order at a counter or drive-thru, <b>in English</b>? Tell me in 2 sentences, in the past.</div>
+  <div class="es" style="font-size:15px">Didn't do it? No problem. Just tell me what stopped you.</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Warm-up · Two Questions</div>
+  <div class="howTo">Start each answer in <b>3 seconds</b> with: <i>Sure, let me explain… · Okay, so basically… · Good question, let me think…</i></div>
+  <div class="think" style="font-size:19px">1. The app tells you to leave a package somewhere bad, like <b>behind the AC</b>. Do you follow the app or your own judgment? Why?<br><br>2. A package goes "missing". Whose fault is it most of the time: the <b>driver</b>, the <b>app</b> or the <b>customer</b>? Pick one and defend it.</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Your Voice Note · Catch It</div>
+  <div class="howTo"><b>What to do</b><ol><li>We play the voice note you recorded after Class 9: where you left 3 packages.</li><li>Listen for the little words before each place: <i>at, on, by, behind…</i></li><li>Catch your own mistakes before I say anything.</li></ol></div>
+  <div class="es">No voice note? Tell me the air-conditioner story in 4 sentences instead.</div>
+  <div class="trapWrong" style="font-size:19px">"It has to be with on the right house."<br>"I left it on the front door."</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Say the right versions, then check</button>
+  <div class="keyBox"><b>It has to be at the right house.</b><br><b>I left it at the front door.</b></div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="grammar" data-gstep="0">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge" data-gbadge>Guided · The Shape</div>
+
+  <div class="gPart on" data-gpart data-badge="Guided · The Shape">
+   <div class="gSlots">
+    <div class="slotLbls">
+     <div class="slotLbl">what you did</div><div class="slotLbl">little word</div><div class="slotLbl">the place</div>
+    </div>
+    <div class="slotRow">
+     <div class="slotChip" style="--i:0"><span class="w">I left it</span></div><div class="slotChip" style="--i:1"><span class="w">behind</span></div><div class="slotChip" style="--i:2"><span class="w">the planter.</span></div>
+    </div>
+    <div class="slotRow">
+     <div class="slotChip" style="--i:3"><span class="w">I put it</span></div><div class="slotChip" style="--i:4"><span class="w">under</span></div><div class="slotChip" style="--i:5"><span class="w">the doormat.</span></div>
+    </div>
+    <div class="slotRow">
+     <div class="slotChip" style="--i:6"><span class="w">I walked</span></div><div class="slotChip" style="--i:7"><span class="w">through</span></div><div class="slotChip" style="--i:8"><span class="w">the side gate.</span></div>
+    </div>
+    <div class="slotRow">
+     <div class="slotChip" style="--i:9"><span class="w">I went</span></div><div class="slotChip" style="--i:10"><span class="w">up</span></div><div class="slotChip" style="--i:11"><span class="w">the stairs.</span></div>
+    </div>
+   </div>
+   <button class="toggleBtn" onclick="slotBuild(this)">Build the sentences</button>
+   <div class="slotNote">The first two say <b>where the box is</b>. The last two say <b>the path you took</b>.</div>
+  </div>
+
+  <div class="gPart" data-gpart data-badge="Guided · When You Use It">
+   <div class="useRow"><span class="useKey">📍 where it IS</span><span class="useArrow">→</span><span class="useVal">the spot now: <i>at · on · in · by · next to · behind · under</i></span></div>
+   <div class="useRow"><span class="useKey">➡️ where you WENT</span><span class="useArrow">→</span><span class="useVal">the path: <i>to · into · through · up · around</i></span></div>
+   <div class="useRow"><span class="useKey">a good report</span><span class="useArrow">→</span><span class="useVal"><b>path first, then the spot</b>: <i>I walked through the side gate and left it behind the planter.</i></span></div>
+  </div>
+
+  <div class="gPart" data-gpart data-badge="Guided · The Trap">
+   <div class="trapItem">
+    <div class="trapWrong">It has to be with on the right house.</div>
+    <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Say the fixed version, then tap</button>
+    <div class="keyBox"><b>It has to be <span class="hl">at</span> the right house.</b> One little word only. In Spanish, <i>en</i> covers at, on and in. In English, you pick one.</div>
+   </div>
+   <div class="trapItem">
+    <div class="trapWrong">I left it on the front door.</div>
+    <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Say the fixed version, then tap</button>
+    <div class="keyBox"><b>I left it <span class="hl">at</span> the front door.</b> <i>On</i> the door means stuck to it, like a note. A box is <b>at</b> the door.</div>
+   </div>
+  </div>
+
+  <div class="dots" data-gdots><div class="dot lit"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="row" style="max-width:300px">
+   <button class="opt mid" data-gprev onclick="gramNav(this,-1)" style="flex:0 0 60px" disabled>&#8249;</button>
+   <button class="opt mid" data-gnext onclick="gramNav(this,1)" style="flex:1">Next &#8250;</button>
+  </div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="explain">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Explainer · The Path, Then The Spot</div>
+  <div class="es">Tap each one. Watch your path to the package, then say the sentence out loud.</div>
+  <div class="exTimeline" data-title="Drop-off map" data-left="your van" data-right="the package" data-items='[
+   {"chip":"through","arc":true,"ev":[{"t":"parked the van","x":8},{"t":"through the side gate","x":45}],"pin":{"x":86,"t":"behind the planter"},"sent":"I walked <b>through</b> the side gate and left it <b>behind</b> the planter.","say":"Tell me a drop-off from this week: the path, then the spot."},
+   {"chip":"up","arc":true,"ev":[{"t":"into the building","x":8},{"t":"up the stairs","x":45}],"pin":{"x":86,"t":"next to the door"},"sent":"I went <b>up</b> the stairs and left it <b>next to</b> the door of 216.","say":"Describe an apartment delivery: the path, then the spot."},
+   {"chip":"into","arc":true,"ev":[{"t":"the dog was out","x":8},{"t":"into the lobby","x":45}],"pin":{"x":86,"t":"in the mail room"},"sent":"The dog was out, so I took it <b>into</b> the lobby and left it <b>in</b> the mail room.","say":"Why did you change the spot? Tell me in one sentence."},
+   {"chip":"the trap","ev":[{"t":"walked to the door","x":14},{"bad":"on","fix":"at","t":"left it … the front door","x":68}],"sent":"I walked to the house and left it <b>at</b> the front door.","say":"Say it again: at the front door, not on."}
+  ]'></div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="grammarcheck" data-idx="0"
+ data-items='[
+  {"tag":"the spot","q":"I left it ___ the front door.","a":"I left it at the front door."},
+  {"tag":"the path","q":"I walked ___ the side gate to the backyard.","a":"I walked through the side gate to the backyard."},
+  {"tag":"hidden","q":"It&apos;s ___ the doormat, so nobody can see it.","a":"It&apos;s under the doormat, so nobody can see it."},
+  {"tag":"the path","q":"I took it ___ the mail room.","a":"I took it into the mail room."},
+  {"tag":"fix the error","q":"I left it on the front door.","a":"I left it at the front door."},
+  {"tag":"fix the error","q":"It has to be with on the right house.","a":"It has to be at the right house."}
+ ]'>
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Guided · Check It</div>
+  <div class="gcTag" data-gctag>the spot</div>
+  <div class="gcQ" data-gcq>&nbsp;</div>
+  <button class="toggleBtn" onclick="gcReveal(this)">Say it out loud, then check</button>
+  <div class="keyBox" data-gckey></div>
+  <div class="dots" data-gcdots></div>
+  <div class="row" style="max-width:300px">
+   <button class="opt mid" data-gcprev onclick="gcNav(this,-1)" style="flex:0 0 60px" disabled>&#8249;</button>
+   <button class="opt mid" data-gcnext onclick="gcNav(this,1)" style="flex:1">Next &#8250;</button>
+  </div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="flash">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Flashcards · Drop-off Spots</div>
+  <div class="howTo">Look at the photo and <b>say the full phrase out loud</b>. Then tap the card to check. Use ‹ › for the next card.</div>
+  <div data-flash data-items='[{"img":"photos/c10_frontdoor.jpg","q":"The box is right here. Where is it?","w":"at the front door","m":"Right in front of the main door.","s":"I left it at the front door.","a":"audio/c10_frontdoor.mp3"},{"img":"photos/c10_sidegate.jpg","q":"The small door in the fence, at the side of the house.","w":"by the side gate","m":"Near the gate at the side of the house.","s":"I left it by the side gate.","a":"audio/c10_sidegate.mp3"},{"img":"photos/c10_planter.jpg","q":"The big pots with flowers. Where can you hide a box?","w":"behind the planter","m":"On the other side of the big flower pot, hard to see.","s":"I left it behind the planter.","a":"audio/c10_planter.mp3"},{"img":"photos/c10_porchroof.jpg","q":"It’s raining. Where does the box stay dry?","w":"under the porch roof","m":"Below the roof of the porch, out of the rain.","s":"I left it under the porch roof, so it stays dry.","a":"audio/c10_porchroof.mp3"},{"img":"photos/c10_mailbox.jpg","q":"It’s a small envelope. Where does it go?","w":"in the mailbox","m":"Inside the box for letters.","s":"I put it in the mailbox.","a":"audio/c10_mailbox.mp3"},{"img":"photos/c10_garage.jpg","q":"The big door for the car. Where is the box?","w":"next to the garage","m":"Right beside the garage door.","s":"I left it next to the garage.","a":"audio/c10_garage.mp3"}]'></div>
+  <button class="btn go" data-next style="display:none">Next</button>
+ </div></div>
+
+<div class="scr" data-t="explain">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Explainer · How Hidden?</div>
+  <div class="es">Tap each spot. The meter shows how easy it is to see the box. Then answer the problem out loud.</div>
+  <div class="exMeter" data-title="Hidden meter" data-left="anyone can see it" data-right="out of sight" data-items='[
+   {"w":"at the front door","v":10,"tag":"everyone sees it","sent":"I left it <b>at the front door</b>.","say":"The customer is home and waiting. Where do you leave it?"},
+   {"w":"next to the garage","v":32,"tag":"easy to see","sent":"I left it <b>next to the garage</b>.","say":"Note on the door: use the garage. Where is it?"},
+   {"w":"by the side gate","v":48,"tag":"half hidden","sent":"I left it <b>by the side gate</b>.","say":"Note on the door: dog inside. Where do you leave it?"},
+   {"w":"under the porch roof","v":62,"tag":"dry, a bit hidden","sent":"I left it <b>under the porch roof</b>.","say":"It’s pouring. Where do you leave it?"},
+   {"w":"behind the planter","v":84,"tag":"out of sight","sent":"I left it <b>behind the planter</b>.","say":"Porch pirates on this street. Where do you leave it?"},
+   {"w":"in the mailbox","v":95,"tag":"locked away","sent":"I put it <b>in the mailbox</b>.","say":"It’s a small envelope. Where does it go?"}
+  ]'></div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrasal Verbs · Same Words, Different Meaning</div>
+  <div class="useRow"><span class="useKey">drop off</span><span class="useArrow">→</span><span class="useVal">deliver it: <i>I <b>dropped off</b> the package at 2:15.</i></span></div>
+  <div class="useRow"><span class="useKey">left it behind…</span><span class="useArrow">→</span><span class="useVal">a place: <i>I left it <b>behind the planter</b>.</i></span></div>
+  <div class="useRow"><span class="useKey">left … behind</span><span class="useArrow">→</span><span class="useVal">you forgot it: <i>I left my scanner <b>behind</b>.</i></span></div>
+  <div class="think" style="font-size:18px">Which one is a problem for your dispatcher?<br>1. "I dropped off 180 packages."<br>2. "I left the box behind the bins."<br>3. "I left two packages behind at the station."</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Say your answer, then check</button>
+  <div class="keyBox" style="text-align:left">Number 3: you <b>forgot</b> two packages at the station. Numbers 1 and 2 are normal deliveries.</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr tall" data-t="match">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · Match-Up</div>
+  <div class="es">Three new phrases. Tap a phrase, then tap what it means.</div>
+  <div class="matchWrap" data-items='[{"p":"I kept it out of sight.","m":"I hid it, so nobody can see it or take it.","img":"photos/c10_sight.jpg","ex":"“There are porch pirates on this street, so I kept it out of sight.”","a":"audio/c10_sight.mp3","tag":"+ past: kept"},{"p":"Keep an eye out for…","m":"Watch and look carefully for something.","img":"photos/c10_eye.jpg","ex":"“Keep an eye out for a small box behind the planter.”","a":"audio/c10_eye.mp3","tag":"+ the thing to find"},{"p":"I apologize for the inconvenience.","m":"A formal “I’m sorry” for a problem you caused a customer.","img":"photos/c10_apol.jpg","ex":"“I apologize for the inconvenience. Let me tell you exactly where it is.”","a":"audio/c10_apol.mp3","tag":"customers · call centre"}]'></div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="flip">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · Use Them</div>
+  <div class="howTo">Flip a card. Answer <b>out loud</b> with one of the 3 phrases, then tap <b>"I said it"</b>.</div>
+  <div class="flipCount"></div>
+  <div class="flipGrid" data-items='[{"k":"📞","p":"A customer calls, angry: “Where is my package?!”"},{"k":"🌿","p":"You hid a box behind the trash bins. Tell the customer."},{"k":"✉️","p":"The customer can’t find a small envelope. Tell her what to look for."},{"k":"🙊","p":"You told an angry customer “My bad!” Fix it."}]'></div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Check the phrases</button>
+  <div class="keyBox" style="text-align:left">1. I apologize for the inconvenience. · 2. I kept it out of sight, behind the bins. · 3. Keep an eye out for a small envelope in the mailbox. · 4. <i>My bad</i> is for coworkers and friends. To a customer: <b>I apologize for the inconvenience.</b></div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Ear · Delivery Notes</div>
+  <div class="howTo"><b>What to do</b><ol><li>Play each note <b>once</b>.</li><li>Say back <b>where</b> to leave the package.</li><li>Say back the <b>code</b> in groups: "oh-five… three-eight".</li></ol></div>
+  <div class="row"><button class="opt mid" data-audio="audio/c10_note1.mp3" onclick="playAudio(this)">Note 1 🔊</button></div>
+  <div class="row"><button class="opt mid" data-audio="audio/c10_note2.mp3" onclick="playAudio(this)">Note 2 🔊</button></div>
+  <div class="row"><button class="opt mid" data-audio="audio/c10_note3.mp3" onclick="playAudio(this)">Note 3 🔊</button></div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Check yourself</button>
+  <div class="keyBox" style="text-align:left">1. Behind the big planter, by the side gate · code <b>4471</b><br>2. In the mail room (the dog is on the porch) · code <b>0538</b><br>3. Apartment <b>216</b>: up the stairs, next to the door, not under the mat</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="stack">
+  <div class="badge">Pronunciation · Stress The Place</div>
+  <div class="es">The little word is quick. The <b>place</b> is loud and clear, because that's what the customer needs. Tap, listen, copy it twice.</div>
+  <div class="row"><button class="opt mid" data-audio="audio/c10_sh1.mp3" onclick="playAudio(this)">I left it behind the <b>plan</b>ter. 🔊</button></div>
+  <div class="row"><button class="opt mid" data-audio="audio/c10_sh2.mp3" onclick="playAudio(this)">It's by the <b>side</b> gate. 🔊</button></div>
+  <div class="row"><button class="opt mid" data-audio="audio/c10_sh3.mp3" onclick="playAudio(this)">Not by the <b>gate</b>. By the <b>ga</b>rage. 🔊</button></div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Review · Mixed Up</div>
+  <div class="es">One full sentence each, with the phrase it reminds you of.</div>
+  <div class="think" style="font-size:18px">1. Your job is physical. →<br>2. The scanner was hard at first. →<br>3. Who pays you? Who's your boss? →<br>4. You always take a photo of the drop-off. →<br>5. Your dispatcher will call you back. →</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Check the phrases</button>
+  <div class="keyBox" style="text-align:left">1. I'm on my feet all day. · 2. I got the hang of it. · 3. I work for… I report to… · 4. Better safe than sorry. · 5. Keep me posted.</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/c10_upset.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">Phone Call · Round 1 · With Help</div>
+  <div class="howTo">I'm a customer: <b>"Hi, the app says delivered, but I don't see it."</b> I show you where the package is. Explain it to me. <b>Use the card.</b></div>
+  <div class="picRow two"><figure><img src="photos/c10_pD.jpg" alt="A package at a grey door"><figcaption>House 1</figcaption></figure><figure><img src="photos/c10_planter.jpg" alt="Planters next to a front door"><figcaption>House 2</figcaption></figure></div>
+  <div class="sent" style="font-size:16px;text-align:left">Sure, let me explain… I <b>dropped it off</b> at… I walked <b>through</b>… I left it <b>behind / next to / under</b>…</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr tall" data-t="core">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phone Call · Round 2 · Find The Package</div>
+  <div class="howTo"><b>Camera off.</b> Pick one photo <b>in secret</b>. Describe where the package is. I have to guess which photo it is. Then we swap.</div>
+  <div class="picRow two"><figure><img src="photos/c10_pA.jpg" alt="Packages at a white door"><figcaption>A</figcaption></figure><figure><img src="photos/c10_pB.jpg" alt="A box on porch steps"><figcaption>B</figcaption></figure><figure><img src="photos/c10_pC.jpg" alt="Boxes by a door"><figcaption>C</figcaption></figure><figure><img src="photos/open10.jpg" alt="Packages at a green door"><figcaption>D</figcaption></figure></div>
+  <div class="es" style="font-size:14px"><b>Checklist:</b> a phone opener · 3 place words · 1 path sentence · dropped off · out of sight · keep an eye out for · I apologize for the inconvenience · no "my bad"!</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/c10_upset.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">Phone Call · Round 3 · On Your Own</div>
+  <div class="think">"I've looked everywhere. Where did you put it?"</div>
+  <div class="howTo"><b>How it works</b><ol><li>Camera off. Nothing on screen helps you now.</li><li>The app told you to leave it behind the AC. Tell her the path, the exact spot, why, and what to look for.</li><li>Talk for 90 seconds. <b>I stay quiet and listen.</b></li></ol></div>
+  <div class="timerRing" data-seconds="90">
+   <svg width="96" height="96" viewBox="0 0 96 96">
+    <circle cx="48" cy="48" r="44" fill="none" stroke="rgba(244,238,246,.15)" stroke-width="6"></circle>
+    <circle class="timerArc" cx="48" cy="48" r="44" fill="none" stroke="#FFBE00" stroke-width="6"
+      stroke-linecap="round" stroke-dasharray="276.46" stroke-dashoffset="0" transform="rotate(-90 48 48)"></circle>
+   </svg>
+   <span class="timerNum">90</span>
+  </div>
+  <button class="btn go" onclick="timerStart(this)">Start 90 seconds</button>
+  <button class="btn go" data-next style="display:none">Next</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Listen To Yourself</div>
+  <div class="howTo"><b>What to do</b><ol><li>Listen to your recording.</li><li>Find your own mistakes with <b>at, on, by, behind, through</b> before I say anything.</li><li>Say each sentence the right way.</li></ol></div>
+  <button class="btn go" data-next>Done, next</button>
+ </div></div>
+
+<div class="scr" data-t="boss">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="bossWrap" data-lives="3" data-items='["A customer can’t find her package. Tell her the path and the exact spot, in 2 sentences.","Fix it out loud: “I left it on the front door.”","Fix it out loud: “It has to be with on the right house.”","It’s pouring and there are porch pirates. Where do you leave it, and why?","Tell her what to look for, starting with Keep an eye out for…","She’s upset. Apologize like a call-centre agent, then tell her where it is."]'>
+   <div class="bossTop"><span class="bossName">⚔ Boss Round</span><span class="bossLives"></span></div>
+   <div class="bossBar"><i></i></div>
+   <div class="bossCard"><div class="think" data-bprompt></div></div>
+   <div class="row"><button class="btn" onclick="bossHit(this,false)">Not yet</button><button class="btn go" onclick="bossHit(this,true)">Nailed it</button></div>
+   <button class="btn bossRetry" style="display:none" onclick="bossRetry(this)">Run it again</button>
+   <div class="bossMsg"></div>
+  </div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Real Life · Your Dispatcher Calls</div>
+  <img class="sceneImg" src="photos/c10_dispatch.jpg" alt="A delivery driver on the phone">
+  <div class="howTo">"A customer on Oak Street says her package never showed up. Where did you leave it?" Answer in your own words. Use: dropped off · a note on the front door · through the side gate · behind the planter · out of sight · a photo in the app · keep an eye out.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Need help? Show an example</button>
+  <div class="keyBox" style="text-align:left;font-size:15px;line-height:1.6"><b>Dispatcher:</b> Hey Danna, quick one. A customer on Oak Street says her package never showed up.<br><b>You:</b> Okay, let me think… Which house?<br><b>Dispatcher:</b> 1450 Oak Street. The app says delivered at 2:15.<br><b>You:</b> Right, I remember. I dropped it off at the back, because there was a note on the front door: "Dog inside, use the side gate."<br><b>Dispatcher:</b> So where exactly did you leave it?<br><b>You:</b> I walked through the side gate and left it behind the planter, next to the back door. I kept it out of sight, because the street is busy.<br><b>Dispatcher:</b> Did you take a picture?<br><b>You:</b> Yes, better safe than sorry. It's in the app.<br><b>Dispatcher:</b> Perfect. I'll tell her to keep an eye out behind the planter.<br><b>You:</b> Sounds good. Keep me posted.</div>
+  <div class="think" style="font-size:17px">1. Why didn't she use the front door?<br>2. Where exactly is the package?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Check yourself</button>
+  <div class="keyBox" style="text-align:left">1. A note on the front door said "Dog inside, use the side gate."<br>2. Behind the planter, next to the back door.</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="homework">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Homework</div>
+  <div class="picRow two"><figure><img src="photos/c10_stairs.jpg" alt="Stairs in an apartment building"><figcaption>The path…</figcaption></figure><figure><img src="photos/c10_planter.jpg" alt="Planters by a front door"><figcaption>…then the spot.</figcaption></figure></div>
+  <div class="sent" style="text-align:left;font-size:17px">1. 🎙️ <b>App voice check:</b> a customer texts, "Where did you leave my package?" Record <b>60 seconds</b> about <b>3 real deliveries</b> from your next shift. For each one, give the path (<i>through / up / around</i>) and the exact spot (<i>behind / next to / under</i>). Use <i>keep an eye out for</i> once.</div>
+  <div class="sent" style="text-align:left;font-size:17px">2. ✍️ <b>Notebook, by hand</b> (autocorrect off): write today's 6 spot phrases, with a tiny drawing of each.</div>
+  <div class="es" style="font-size:15px">Why: Class 12 is a full mock customer call, with a timer. "Where did you leave it?" and a gate code will both be in it.</div>
+  <div class="es" style="font-size:14px">ES: En la app, graba 60 segundos sobre 3 entregas reales: el camino y el lugar exacto de cada paquete. Usa "keep an eye out for" una vez. En tu cuaderno, a mano, escribe las 6 frases de lugar con un dibujito.</div>
+  <button class="btn go" data-next>Done for today</button>
+ </div></div>
+
+<div class="scr" data-t="close">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="big">You told a customer exactly where her package was, with no camera.</div>
+  <div class="es">Send your voice check. See you at Class 11.</div>
+  <div class="credits">Teacher's Station · The Milestone Method</div>
+ </div></div>
+
+</div>
+
 
 </div>
 <script>
@@ -3664,7 +3988,7 @@ function tprNav(btn, delta){
   audioBtn._player = null;
   scr.querySelectorAll('[data-tprdots] .dot').forEach((d,n)=>d.classList.toggle('lit', n===i));
 }
-loadScreens(9);
+loadScreens(10);
 </script>
 <!-- DELIGHT:SHELL:START — motion layer v1 (ts-class-app). Additive: wraps show(), touches no class content. Safe to retrofit into any live student file. -->
 <style id="delight-shell">
