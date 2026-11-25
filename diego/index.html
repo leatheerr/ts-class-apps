@@ -206,7 +206,7 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 <div id="classHeader">
   <span class="brand">TEACHER'S STATION</span>
-  <button id="classSelect" onclick="toggleMenu()">Class 30 ▾</button>
+  <button id="classSelect" onclick="toggleMenu()">Class 31 ▾</button>
 </div>
 <div id="classMenu">
   <div class="item" onclick="selectClass(24)">Class 24: Phase 1 Final Assessment <span>✓</span></div>
@@ -215,7 +215,8 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
   <div class="item" onclick="selectClass(27)">Class 27: Calling It In <span>✓</span></div>
   <div class="item" onclick="selectClass(28)">Class 28: Resume Builder 1 <span></span></div>
   <div class="item" onclick="selectClass(29)">Class 29: Resume Builder 2 <span></span></div>
-  <div class="item active" onclick="selectClass(30)">Class 30: Have You Ever…? <span></span></div>
+  <div class="item" onclick="selectClass(30)">Class 30: Have You Ever…? <span></span></div>
+  <div class="item active" onclick="selectClass(31)">Class 31: The Full Story <span></span></div>
 </div>
 
 <div id="bar"></div>
@@ -2166,6 +2167,306 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 </div>
 
+<div class="classBlock" data-class="31" data-mech="flip,concept,expansion,match,timer,boss">
+
+<div class="scr" data-t="open">
+ <div class="bg" data-img="photos/c31_open.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="cue">Class 31 · Telling the Full Story</div>
+  <div class="big">Zoom out, zoom in — tell it like a native</div>
+  <div class="es" style="font-size:16px;line-height:1.5;color:rgba(244,238,246,.85)">By the end of this class, you can tell a real story: <b>zoom out</b> with <i>I've…</i> (your life in general), then <b>zoom in</b> with the past on one moment — with a time.</div>
+  <button class="btn go" data-next>Begin</button>
+ </div></div>
+
+<div class="scr" data-t="flip">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Warm-Up · Mystery Cards</div>
+  <div class="es">Flip a card and answer out loud — at least 3 sentences.</div>
+  <div class="flipCount"></div>
+  <div class="flipGrid" data-items='[{"k": "🎮", "p": "You call GTA a “real-life simulator.” What have you done in GTA that you’ve <b>never</b> done in real life?"}, {"k": "📖", "p": "Every detail, or straight to the point? What makes a story <b>boring</b>?"}, {"k": "🦃", "p": "Thanksgiving is this week. What American tradition have you tried — and which one do you still not get?"}, {"k": "🔁", "p": "Have you ever been to a real Thanksgiving dinner? Has your girlfriend ever played GTA?"}]'></div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr tall" data-t="concept" data-zm>
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Zoom Out vs Zoom In</div>
+  <div class="zmTabs">
+   <button class="zmTab out" data-mode="out" type="button"><span class="zmIco">🔭</span>ZOOM OUT<small>I've played · no date</small></button>
+   <button class="zmTab in" data-mode="in" type="button"><span class="zmIco">🔍</span>ZOOM IN<small>I played · a time</small></button>
+  </div>
+  <div class="zmStage"><div class="zmWorld">
+   <div class="zmSpan"><span>your whole life — no date</span></div>
+   <div class="zmLine"></div>
+   <div class="zmDot" style="left:14%"></div><div class="zmDot key" style="left:30%"></div><div class="zmDot" style="left:44%"></div>
+   <div class="zmDot" style="left:57%"></div><div class="zmDot" style="left:70%"></div><div class="zmDot" style="left:84%"></div>
+   <div class="zmPin"><span>2013 · cousin's house</span></div>
+   <div class="zmLbl" style="left:8%">kid</div><div class="zmLbl" style="left:30%">2013</div><div class="zmLbl" style="left:57%">2021</div>
+   <div class="zmLbl" style="left:78%">2025</div><div class="zmLbl now" style="left:93%">NOW</div>
+  </div></div>
+  <div class="zmBig" data-zmbig>&nbsp;</div>
+  <div class="zmSent" data-zmsent>&nbsp;</div>
+  <div class="zmQuiz">
+   <div class="zmAsk">⚡ Lightning Sort: zoom out or zoom in? <b>Say a sentence</b>, then tap.</div>
+   <div class="zmChips"><button class="zmChip" type="button" data-k="in">yesterday</button><button class="zmChip" type="button" data-k="out">ever</button><button class="zmChip" type="button" data-k="in">in 2021</button><button class="zmChip" type="button" data-k="out">recently</button><button class="zmChip" type="button" data-k="in">last Thanksgiving</button><button class="zmChip" type="button" data-k="out">never</button><button class="zmChip" type="button" data-k="in">a few days ago</button><button class="zmChip" type="button" data-k="out">since I moved</button><button class="zmChip" type="button" data-k="in">when I was a kid</button><button class="zmChip" type="button" data-k="out">so far</button></div>
+  </div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr tall" data-t="grammar" data-gstep="0">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge" data-gbadge>Guided · The Shape</div>
+  <div class="gPart on" data-gpart data-badge="Guided · The Shape">
+   <div class="gSlots">
+    <div class="slotLbls">
+     <div class="slotLbl">who</div><div class="slotLbl">verb</div>
+     <div class="slotLbl">the rest</div><div class="slotLbl">when</div>
+    </div>
+    <div class="slotRow">
+     <div class="slotChip" style="--i:0"><span class="w">I</span></div><div class="slotChip" style="--i:1"><span class="w">'ve played</span></div>
+     <div class="slotChip" style="--i:2"><span class="w">GTA</span></div><div class="slotChip" style="--i:3"><span class="w">many times</span></div>
+    </div>
+    <div class="slotRow">
+     <div class="slotChip" style="--i:4"><span class="w">I</span></div><div class="slotChip" style="--i:5"><span class="w">played</span></div>
+     <div class="slotChip" style="--i:6"><span class="w">GTA V</span></div><div class="slotChip" style="--i:7"><span class="w">in 2013</span></div>
+    </div>
+   </div>
+   <button class="toggleBtn" onclick="slotBuild(this)">Build both sentences</button>
+   <div class="slotNote">Row 1 = 🔭 <b>zoom out</b> (no date). Row 2 = 🔍 <b>zoom in</b> (a time you can point to).</div>
+  </div>
+  <div class="gPart" data-gpart data-badge="Guided · When You Use It">
+   <div class="useRow"><span class="useKey">No time</span><span class="useArrow">→</span>
+    <span class="useVal">your life so far → <b>I've…</b> <i>I've lived in Charleston since 2021.</i></span></div>
+   <div class="useRow"><span class="useKey">A time</span><span class="useArrow">→</span>
+    <span class="useVal">one moment → past. <i>I moved here in November 2021.</i></span></div>
+   <div class="useRow"><span class="useKey">When…?</span><span class="useArrow">→</span>
+    <span class="useVal">always zoom in → <i>When <b>did</b> you move?</i></span></div>
+  </div>
+  <div class="gPart" data-gpart data-badge="Guided · The Trap">
+   <div class="trapItem">
+    <div class="trapWrong">I've played GTA 6 last night.</div>
+    <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Say the fixed version, then tap</button>
+    <div class="keyBox"><b>I <span class="hl">played</span> it last night.</b> — a time you can point to sends it to the past.</div>
+   </div>
+   <div class="trapItem">
+    <div class="trapWrong">When have you moved to the US?</div>
+    <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Say the fixed version, then tap</button>
+    <div class="keyBox"><b>When <span class="hl">did</span> you move to the US?</b> — <i>when</i> = zoom in = <i>did</i>.</div>
+   </div>
+  </div>
+  <div class="dots" data-gdots><div class="dot lit"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="row" style="max-width:300px">
+   <button class="opt mid" data-gprev onclick="gramNav(this,-1)" style="flex:0 0 60px" disabled>‹</button>
+   <button class="opt mid" data-gnext onclick="gramNav(this,1)" style="flex:1">Next ›</button>
+  </div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="grammarcheck" data-idx="0"
+ data-items='[{"tag": "play — this week is still open", "q": "I ___ GTA 6 every night this week.", "a": "I’ve played GTA 6 every night this week."}, {"tag": "buy — on Monday", "q": "I ___ it on Monday.", "a": "I bought it on Monday."}, {"tag": "fix it", "q": "When have you started working here?", "a": "When did you start working here?"}, {"tag": "fix it", "q": "I’ve seen my girlfriend’s family last Thanksgiving.", "a": "I saw my girlfriend’s family last Thanksgiving."}, {"tag": "never / eat", "q": "I ___ turkey with marshmallows.", "a": "I’ve never eaten turkey with marshmallows."}, {"tag": "no time — just experience", "q": "I went to a Chinese restaurant.", "a": "I’ve been to a Chinese restaurant."}]'>
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Guided · Check It</div>
+  <div class="gcTag" data-gctag>&nbsp;</div>
+  <div class="gcQ" data-gcq>&nbsp;</div>
+  <button class="toggleBtn" onclick="gcReveal(this)">Say it out loud, then check</button>
+  <div class="keyBox" data-gckey></div>
+  <div class="dots" data-gcdots></div>
+  <div class="row" style="max-width:300px">
+   <button class="opt mid" data-gcprev onclick="gcNav(this,-1)" style="flex:0 0 60px" disabled>‹</button>
+   <button class="opt mid" data-gcnext onclick="gcNav(this,1)" style="flex:1">Next ›</button>
+  </div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="meetfix">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Meet Fix</div>
+  <div class="think" style="color:rgba(244,238,246,.5);text-decoration:line-through;text-decoration-color:rgba(255,100,100,.75)">"I've played it last night" · "When have you…?"</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Tap to fix</button>
+  <div class="keyBox show" style="text-align:center">
+   <div class="pbPhrase">"I played it last night" · "When did you…?"</div>
+   <div style="margin-top:10px;font-size:13px;color:rgba(244,238,246,.6)">a time → <b style="color:var(--go)">past</b> · when → <b style="color:var(--go)">did</b> · no time → <b style="color:var(--go)">have / has</b></div>
+  </div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Expansion Drill · One Breath</div>
+  <div class="es">Say the line. Tap to add a piece, then say the <b>whole</b> line again — in one breath.</div>
+  <div class="expLine show">I've played GTA.</div>
+  <div class="expLine">I've played every GTA.</div>
+  <div class="expLine">I've played every GTA since I was a kid,</div>
+  <div class="expLine last">I've played every GTA since I was a kid, but the first time I played one, I was twelve.</div>
+  <button class="btn go" onclick="expandNext(this)">Add one more piece</button>
+  <div class="chunkRow"><button class="audio" data-audio="audio/c31_exp.mp3" onclick="playAudio(this)">🔊</button><div><div class="chunkKey">Hear the full line</div><div class="chunkEx">Listen for the /v/ in <i>I've played</i>, then the switch to <i>I played</i>.</div></div></div>
+  <button class="btn" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr tall" data-t="match">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · Match-Up</div>
+  <div class="es">Three phrases for telling stories. Tap a phrase, then tap what it means.</div>
+  <div class="matchWrap" data-items='[{"p": "You won’t believe what happened.", "m": "The hook — it makes people want to hear your story.", "img": "photos/c31_believe.jpg", "ex": "“You won’t believe what happened at the store today.”", "a": "audio/c31_pb1.mp3", "tag": "the start of a story"}, {"p": "Out of nowhere,…", "m": "Suddenly, with no warning.", "img": "photos/c31_nowhere.jpg", "ex": "“We were driving home, and out of nowhere, it started pouring.”", "a": "audio/c31_pb2.mp3", "tag": "+ past: the moment it turns"}, {"p": "Long story short,…", "m": "Skipping to the end of the story.", "img": "photos/c31_short.jpg", "ex": "“Long story short, we missed the flight.”", "a": "audio/c31_pb3.mp3", "tag": "the ending"}]'></div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr tall" data-t="production">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Describe the Photo</div>
+  <img class="sceneImg" src="photos/c31_turkey.jpg" alt="Someone checking a turkey in the oven">
+  <div class="think">🔭 Zoom out: has a meal ever gone wrong when you — or someone you know — cooked for people?<br>🔍 Zoom in: tell the one time it did. (Or invent it!)</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Only open this if you get stuck</button>
+  <div class="keyBox">“I've cooked for my girlfriend's family a few times, and it's usually fine. But last Christmas, out of nowhere, the oven stopped working. Long story short, we ordered pizza.”</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr tall" data-t="core">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">CORE · Round 1 — Tell Your Story (2 min)</div>
+  <div class="think">Pick one: the first time you played GTA · your first week in the US · a holiday that went wrong · the craziest thing that's happened at work. Zoom out first, then zoom in.</div>
+  <div class="checkList">
+   <div><b>✓</b> Open zoomed out — 2 sentences with <b>I've…</b></div>
+   <div><b>✓</b> Zoom in with a time + past (2 irregular verbs)</div>
+   <div><b>✓</b> 2 story phrases + 1 filler</div>
+  </div>
+  <div class="timerRing" data-seconds="120">
+   <svg width="96" height="96" viewBox="0 0 96 96" style="transform:rotate(-90deg)">
+    <circle cx="48" cy="48" r="44" fill="none" stroke="rgba(244,238,246,.12)" stroke-width="6"/>
+    <circle class="timerArc" cx="48" cy="48" r="44" fill="none" stroke="#FFBE00" stroke-width="6" stroke-linecap="round" stroke-dasharray="276.46" stroke-dashoffset="0"/>
+   </svg>
+   <div class="timerNum">2:00</div>
+  </div>
+  <button class="btn" onclick="timerStart(this)">Start 2 min</button>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr tall" data-t="core">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">CORE · Round 2 — Same Story, 90 Seconds</div>
+  <div class="think">Your boss just got back from his trip. Tell him the same story — tighter, faster.</div>
+  <div class="checkList">
+   <div><b>✓</b> Open zoomed out — 2 sentences with <b>I've…</b></div>
+   <div><b>✓</b> Zoom in with a time + past (2 irregular verbs)</div>
+   <div><b>✓</b> 2 story phrases + 1 filler</div>
+  </div>
+  <div class="timerRing" data-seconds="90">
+   <svg width="96" height="96" viewBox="0 0 96 96" style="transform:rotate(-90deg)">
+    <circle cx="48" cy="48" r="44" fill="none" stroke="rgba(244,238,246,.12)" stroke-width="6"/>
+    <circle class="timerArc" cx="48" cy="48" r="44" fill="none" stroke="#FFBE00" stroke-width="6" stroke-linecap="round" stroke-dasharray="276.46" stroke-dashoffset="0"/>
+   </svg>
+   <div class="timerNum">1:30</div>
+  </div>
+  <button class="btn" onclick="timerStart(this)">Start 90 s</button>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr tall" data-t="core">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">CORE · Round 3 — The Final Cut (60 s)</div>
+  <div class="think">One minute. Same story — your cleanest, fastest version. This is the one that counts.</div>
+  <div class="checkList">
+   <div><b>✓</b> Open zoomed out — 2 sentences with <b>I've…</b></div>
+   <div><b>✓</b> Zoom in with a time + past (2 irregular verbs)</div>
+   <div><b>✓</b> 2 story phrases + 1 filler</div>
+  </div>
+  <div class="timerRing" data-seconds="60">
+   <svg width="96" height="96" viewBox="0 0 96 96" style="transform:rotate(-90deg)">
+    <circle cx="48" cy="48" r="44" fill="none" stroke="rgba(244,238,246,.12)" stroke-width="6"/>
+    <circle class="timerArc" cx="48" cy="48" r="44" fill="none" stroke="#FFBE00" stroke-width="6" stroke-linecap="round" stroke-dasharray="276.46" stroke-dashoffset="0"/>
+   </svg>
+   <div class="timerNum">1:00</div>
+  </div>
+  <button class="btn" onclick="timerStart(this)">Start 60 s</button>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Model — only after your round</button>
+  <div class="keyBox">“You won't believe what happened. I've played every GTA since I was a kid — I've probably spent more hours on GTA than on anything else in my life. But the first time I played one, I was twelve, at my cousin's house. We stayed up all night. Out of nowhere, his mom walked in at 4 a.m. and unplugged the TV. Long story short, I wasn't allowed back for a month.”</div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="boss">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Final Check · Boss Round</div>
+  <div class="bossWrap" data-lives="3" data-items='["Ask Juan when he started teaching — “When ___ you…?”", "Fix it out loud: “I’ve played GTA 6 last night.”", "Ask about your girlfriend: “___ she ever played GTA?” — then “When did she…?”", "Zoom out, then zoom in: your first week in the US — 3 sentences.", "Start with a filler, then answer: What’s the best game you’ve ever played?"]'>
+   <div class="bossTop"><span class="bossName">⚔ Boss Round</span><span class="bossLives"></span></div>
+   <div class="bossBar"><i></i></div>
+   <div class="bossCard"><div class="think" data-bprompt></div></div>
+   <div class="row"><button class="btn" onclick="bossHit(this,false)">Not yet</button><button class="btn go" onclick="bossHit(this,true)">Nailed it</button></div>
+   <button class="btn bossRetry" style="display:none" onclick="bossRetry(this)">Run it again</button>
+   <div class="bossMsg"></div>
+  </div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr tall" data-t="pronunciation">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Pronunciation · Hear the /v/</div>
+  <div class="es">The only difference is one tiny <b>/v/</b>. <b>I've played</b> = “ayv-played” (my life) · <b>I played</b> = “ay-played” (that one time).</div>
+  <div class="chunkRow"><button class="audio" data-audio="audio/c31_pron1.mp3" onclick="playAudio(this)">🔊</button><div><div class="chunkKey">🔭 I've played it a lot.</div><div class="chunkEx">ayv-played — still true</div></div></div>
+  <div class="chunkRow"><button class="audio" data-audio="audio/c31_pron2.mp3" onclick="playAudio(this)">🔊</button><div><div class="chunkKey">🔍 I played it a lot.</div><div class="chunkEx">ay-played — back then</div></div></div>
+  <div class="chunkRow"><button class="audio" data-audio="audio/c31_pron3.mp3" onclick="playAudio(this)">🔊</button><div><div class="chunkKey">🔭 I've lived there.</div><div class="chunkEx">I still live there</div></div></div>
+  <div class="chunkRow"><button class="audio" data-audio="audio/c31_pron4.mp3" onclick="playAudio(this)">🔊</button><div><div class="chunkKey">🔍 I lived there.</div><div class="chunkEx">not anymore</div></div></div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr tall" data-t="core">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Real-Life Conversation · After Thanksgiving</div>
+  <img class="sceneImg" src="photos/c31_coworkers.jpg" alt="Two coworkers chatting over coffee">
+  <div class="think">Friday after Thanksgiving. A coworker asks about your week. Answer first — then open the model.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Only open this if you get stuck</button>
+  <div class="keyBox">
+   <b>Coworker:</b> So, have you played GTA 6 yet?<br>
+   <b>You:</b> Man, I've played it every night this week. I bought it on Monday and I haven't stopped.<br>
+   <b>Coworker:</b> Have you finished the story?<br>
+   <b>You:</b> Not yet. To be completely honest with you, the story is kind of slow. But last night, out of nowhere, a police chase started in the middle of a mission — it was crazy.<br>
+   <b>Coworker:</b> Ha! And did you do anything for Thanksgiving?<br>
+   <b>You:</b> Yeah, we went to her parents' house. I've never eaten so much in my life. Long story short, I slept on the couch at 7 p.m.
+  </div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="recognition">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Comprehension Check</div>
+  <div class="think" style="font-size:20px">1. Find 3 zoom-out and 3 zoom-in sentences. What word makes each zoom-in one a specific moment?<br><br>2. Why “I've played it every night <b>this week</b>” but “I bought it <b>on Monday</b>”?</div>
+  <button class="btn go" data-next>Continue</button>
+ </div></div>
+
+<div class="scr" data-t="homework">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Homework · Your Story</div>
+  <div class="homeItem">1. 🎙️ Your Round 3 story as a 60-second voice note in the app — zoom out, then zoom in. Juan corrects it there.</div>
+  <div class="homeItem">2. ✍️ 5 sentences about this Thanksgiving: 3 zoom out (“I've never… / I've always…”), 2 zoom in (“On Thursday we…”).</div>
+  <div class="homeItem">3. 🗂️ Add the 3 story phrases to My Phrases.</div>
+  <div class="es" style="font-size:14px">Why: Class 32 is “just / already” — “I've just finished…” lives right between zoom out and zoom in.</div>
+  <button class="btn go" data-next>Done for today</button>
+ </div></div>
+
+<div class="scr" data-t="close">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="big">Nice work today.</div>
+  <div class="es">See you at Class 32.</div>
+  <div class="credits">Teacher's Station · The Milestone Method</div>
+ </div></div>
+
+</div>
+
 </div><!-- /appRoot -->
 
 <script>
@@ -2331,7 +2632,7 @@ document.querySelectorAll('.bg[data-img]').forEach(el=>{
   const src = el.getAttribute('data-img');
   el.style.backgroundImage = "url('" + src + "')";
 });
-loadScreens(30);
+loadScreens(31);
 
 // Keyboard page-turning: arrow keys press the same nav buttons as a tap (so class boundaries still hold)
 document.addEventListener('keydown', e=>{
@@ -3286,6 +3587,132 @@ html.dFit .hfWrap{max-width:560px}
 </script>
 <!-- DELIGHT:HEAR:END -->
 
+<!-- MOTION:zoom-story:START — concept motion (ts-class-app motion_library "zoom-out-zoom-in"): present perfect vs past simple. ZOOM OUT = many moments light up across a whole-life ruler, no date; ZOOM IN = the camera pulls into one moment and a dated pin drops. Auto-plays OUT then IN when the screen opens; tabs replay; a say-then-tap chip sort (bank: Lightning Sort) unlocks Continue. -->
+<style>
+.scr[data-zm] .stack{gap:14px}
+.zmTabs{display:flex;gap:10px;width:100%;max-width:420px}
+.zmTab{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;padding:10px 8px;border-radius:16px;
+ border:2px solid rgba(244,238,246,.14);background:rgba(244,238,246,.05);color:var(--ink);cursor:pointer;
+ font-family:'Poppins',system-ui,sans-serif;font-size:18px;font-weight:700;letter-spacing:.5px;transition:all .25s}
+.zmTab small{font-size:13px;font-weight:500;letter-spacing:0;opacity:.8}
+.zmTab .zmIco{font-size:22px;line-height:1}
+.zmTab.out.on{border-color:var(--go);background:rgba(255,190,0,.16);color:var(--go)}
+.zmTab.in.on{border-color:#D9A6FF;background:rgba(217,166,255,.16);color:#E9CCFF}
+.zmStage{position:relative;width:100%;max-width:420px;height:150px;border-radius:16px;overflow:hidden;
+ background:radial-gradient(ellipse at 50% 60%,rgba(68,2,73,.55),rgba(13,0,20,.9));border:1px solid rgba(244,238,246,.1)}
+.zmWorld{position:absolute;inset:0;transition:transform 1.4s cubic-bezier(.6,0,.2,1);transform-origin:30% 62%}
+.zmStage.in .zmWorld{transform:scale(2.4)}
+.zmLine{position:absolute;left:6%;right:6%;top:62%;height:3px;margin-top:-1.5px;background:rgba(244,238,246,.22);border-radius:2px}
+.zmDot{position:absolute;top:62%;width:12px;height:12px;margin:-6px 0 0 -6px;border-radius:50%;background:rgba(255,190,0,.25);transition:background .3s,box-shadow .3s,opacity .5s}
+.zmDot.lit{background:var(--go);box-shadow:0 0 12px rgba(255,190,0,.8)}
+.zmStage.in .zmDot:not(.key){opacity:.15}
+.zmStage.in .zmDot.key.lit{background:#D9A6FF;box-shadow:0 0 14px rgba(217,166,255,.9)}
+.zmLbl{position:absolute;top:74%;transform:translateX(-50%);font-family:'Poppins',system-ui,sans-serif;font-size:11px;color:rgba(244,238,246,.7);white-space:nowrap}
+.zmLbl.now{color:var(--go);font-weight:700}
+.zmLbl{transition:opacity .4s}
+.zmStage.in .zmLbl{opacity:0}
+.zmSpan{position:absolute;left:6%;width:0;top:24%;height:24px;border:2px solid var(--go);border-bottom:none;border-radius:10px 10px 0 0;
+ display:flex;align-items:flex-start;justify-content:center;opacity:0;transition:width 1.6s ease,opacity .3s}
+.zmSpan span{transform:translateY(-120%);font-family:'Poppins',system-ui,sans-serif;font-size:12px;color:var(--go);white-space:nowrap;font-weight:600}
+.zmStage.out .zmSpan{width:88%;opacity:1}
+.zmPin{position:absolute;left:30%;top:62%;transform:translate(-50%,-100%);opacity:0;display:flex;flex-direction:column;align-items:center}
+.zmPin span{background:#D9A6FF;color:#2D0130;font-family:'Poppins',system-ui,sans-serif;font-weight:700;font-size:7px;padding:2px 5px;border-radius:5px;white-space:nowrap}
+.zmPin::after{content:"";width:1.5px;height:12px;background:#D9A6FF}
+.zmPin.drop{animation:zmDrop .55s cubic-bezier(.3,1.6,.5,1) forwards}
+@keyframes zmDrop{0%{opacity:0;transform:translate(-50%,-260%)}100%{opacity:1;transform:translate(-50%,-100%)}}
+.zmBig{font-family:'Poppins',system-ui,sans-serif;font-size:24px;font-weight:700;line-height:1.2;min-height:30px;text-align:center}
+.zmBig.out{color:var(--go)} .zmBig.in{color:#E9CCFF}
+.zmBig.pop{animation:zmPop .45s ease-out}
+@keyframes zmPop{0%{transform:scale(.7);opacity:0}100%{transform:scale(1);opacity:1}}
+.zmSent{font-size:18px;min-height:24px;text-align:center;color:rgba(244,238,246,.92)}
+.zmSent b.out{color:var(--go)} .zmSent b.in{color:#E9CCFF}
+.zmQuiz{width:100%;max-width:420px;border-top:1px solid rgba(244,238,246,.12);padding-top:12px;opacity:.35;pointer-events:none;transition:opacity .4s}
+.zmQuiz.ready{opacity:1;pointer-events:auto}
+.zmAsk{font-size:15px;color:rgba(244,238,246,.85);margin-bottom:10px;text-align:center}
+.zmChips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.zmChip{min-height:44px;padding:8px 14px;border-radius:22px;border:1.5px dashed rgba(244,238,246,.35);background:transparent;color:var(--ink);
+ font-family:'Poppins',system-ui,sans-serif;font-size:15px;cursor:pointer;transition:all .25s}
+.zmChip.out{border:1.5px solid var(--go);background:rgba(255,190,0,.16);color:var(--go)}
+.zmChip.in{border:1.5px solid #D9A6FF;background:rgba(217,166,255,.16);color:#E9CCFF}
+html.dFit .zmStage,html.dFit .zmTabs,html.dFit .zmQuiz{max-width:540px}
+@media (prefers-reduced-motion:reduce){.zmWorld,.zmSpan,.zmDot{transition:none!important}.zmPin.drop,.zmBig.pop{animation:none;opacity:1}}
+/* expansion drilling — grow one sentence outward, one piece at a time (pattern from milton/, 18 Aug 2026) */
+.expLine{width:100%;text-align:center;font-size:19px;line-height:1.5;color:var(--ink);
+ padding:10px 12px;border-radius:10px;background:rgba(255,255,255,.04);display:none}
+.expLine.show{display:block}
+.expLine.last{color:var(--go);font-family:'Poppins',system-ui,sans-serif;font-weight:600}
+</style>
+<script>
+(function(){
+  function say(scr, mode, big, sent){
+    const b = scr.querySelector('[data-zmbig]');
+    b.className = 'zmBig ' + mode; void b.offsetWidth; b.classList.add('pop'); b.innerHTML = big;
+    scr.querySelector('[data-zmsent]').innerHTML = sent;
+  }
+  function reset(scr){
+    clearTimeout(scr._zmT); (scr._zmTs || []).forEach(clearTimeout); scr._zmTs = [];
+    const st = scr.querySelector('.zmStage'); st.classList.remove('out', 'in');
+    scr.querySelectorAll('.zmDot').forEach(d => d.classList.remove('lit'));
+    scr.querySelector('.zmPin').classList.remove('drop');
+  }
+  function play(scr, mode){
+    reset(scr);
+    scr.querySelectorAll('.zmTab').forEach(t => t.classList.toggle('on', t.dataset.mode === mode));
+    scr._zmSeen = scr._zmSeen || {}; scr._zmSeen[mode] = true;
+    const st = scr.querySelector('.zmStage');
+    if (mode === 'out'){
+      say(scr, 'out', '🔭 Zoom out — no date', 'I<b class="out">’ve played</b> GTA many times.');
+      st.classList.add('out');
+      scr.querySelectorAll('.zmDot').forEach((d, i) => scr._zmTs.push(setTimeout(() => d.classList.add('lit'), 200 + i * 220)));
+    } else {
+      say(scr, 'in', '🔍 Zoom in — one moment', 'I <b class="in">played</b> GTA V for the first time <b class="in">in 2013</b>.');
+      void st.offsetWidth; st.classList.add('in');
+      scr._zmTs.push(setTimeout(() => { scr.querySelector('.zmDot.key').classList.add('lit'); scr.querySelector('.zmPin').classList.add('drop'); }, 1300));
+    }
+    check(scr);
+  }
+  function check(scr){
+    const seen = scr._zmSeen || {};
+    if (seen.out && seen.in) scr.querySelector('.zmQuiz').classList.add('ready');
+    const left = scr.querySelectorAll('.zmChip:not(.out):not(.in)').length;
+    if (seen.out && seen.in && left === 0){ const n = scr.querySelector('[data-next]'); if (n) n.style.display = 'block'; }
+  }
+  document.addEventListener('click', e => {
+    const tab = e.target.closest('.zmTab');
+    if (tab){ const scr = tab.closest('.scr'); clearTimeout(scr._zmAuto); play(scr, tab.dataset.mode); return; }
+    const chip = e.target.closest('.zmChip');
+    if (chip && !chip.classList.contains('out') && !chip.classList.contains('in')){
+      const k = chip.dataset.k;
+      chip.classList.add(k);
+      chip.textContent = (k === 'out' ? '🔭 ' : '🔍 ') + chip.textContent;
+      if (window.dFeedback) dFeedback(chip, true);
+      check(chip.closest('.scr'));
+    }
+  });
+  new MutationObserver(ms => ms.forEach(m => {
+    const t = m.target;
+    if (!t.matches || !t.matches('.scr[data-zm]')) return;
+    const wasOn = (m.oldValue || '').split(' ').includes('on');
+    if (t.classList.contains('on') && !wasOn){
+      clearTimeout(t._zmAuto);
+      t._zmAuto = setTimeout(() => { play(t, 'out'); t._zmAuto = setTimeout(() => play(t, 'in'), 3400); }, 450);
+    } else if (!t.classList.contains('on') && wasOn){ clearTimeout(t._zmAuto); reset(t); }
+  })).observe(document.body, {subtree:true, attributes:true, attributeOldValue:true, attributeFilter:['class']});
+})();
+// Expansion drill: reveal the next line; when none are left, hide the button and show [data-next]
+function expandNext(btn){
+  const stack = btn.closest('.stack');
+  const lines = [...stack.querySelectorAll('.expLine')];
+  const next = lines.find(l => !l.classList.contains('show'));
+  if(next){ next.classList.add('show'); }
+  if(!lines.find(l => !l.classList.contains('show'))){
+    btn.style.display = 'none';
+    const nextBtn = stack.querySelector('[data-next]');
+    if(nextBtn) nextBtn.style.display = 'block';
+  }
+}
+</script>
+<!-- MOTION:zoom-story:END -->
 <!-- DELIGHT:FIT:START — desktop fit v1 (ts-class-app). Landscape computer windows only: the app fills the window at any browser zoom, and each screen shrinks to fit before it scrolls. Phones and portrait windows are untouched. -->
 <style>
 html.dFit,html.dFit body{background:var(--ob)}
