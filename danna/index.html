@@ -238,7 +238,7 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 <div id="classHeader">
   <span class="brand">TEACHER'S STATION</span>
-  <button id="classSelect" onclick="toggleMenu()">Class 10 ▾</button>
+  <button id="classSelect" onclick="toggleMenu()">Class 11 ▾</button>
 </div>
 <div id="classMenu">
   <div class="item" onclick="selectClass(1)">Class 1: Customer calls — open a call without freezing <span>✓</span></div>
@@ -251,7 +251,7 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
   <div class="item" onclick="selectClass(7)">Class 7: Weekend stories &mdash; tell what happened</div>
   <div class="item" onclick="selectClass(8)">Class 8: Reading 2 &mdash; Camila's worst Tuesday</div>
   <div class="item" onclick="selectClass(9)">Class 9: Who you work for &mdash; for, at, in, on</div>
-  <div class="item active" onclick="selectClass(10)">Class 10: Directions &amp; drop-offs &mdash; where you left it</div>
+  <div class="item active" onclick="selectClass(11)">Class 11: Small talk &mdash; Have you ever&hellip;?</div>
 </div>
 
 <div id="bar"></div>
@@ -3798,6 +3798,349 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 </div>
 
+<div class="classBlock" data-class="11" data-mech="scramble,explain,flash,match,flip,wheel,timer,boss">
+
+<div class="scr" data-t="open">
+ <div class="bg" data-img="photos/open11.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="cue">Class 11 · Danna</div>
+  <div class="big">Break-room small talk: ask "Have you ever…?" and keep the conversation going</div>
+  <div class="es" style="font-size:16px;line-height:1.55">By the end of this class, you can <b>keep a 2-minute conversation going with a coworker</b>: ask <i>Have you ever…?</i>, answer <i>Yes, I have / No, I haven't</i>, and switch to the past when you talk about when it happened.</div>
+  <button class="btn go" data-next>Start</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Warm-up · Your Mission</div>
+  <img class="sceneImg" src="photos/c8_coworkers.jpg" alt="Two coworkers talking">
+  <div class="think">First: how motivated are you today, from <b>1 to 10</b>?<br><br>Then: did you speak <b>English</b> with a coworker this week? Tell me in 2 sentences, in the past.</div>
+  <div class="es" style="font-size:15px">Didn't do it? No problem. Just tell me what stopped you.</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Warm-up · Two Questions</div>
+  <div class="howTo">Start each answer in <b>3 seconds</b> with: <i>Hey, how's it going? · So, quick question… · Honestly, I'd say…</i></div>
+  <div class="think" style="font-size:19px">1. Last week you said you'd rather <b>not</b> turn something you love into a job. Why? Could that change?<br><br>2. Is small talk at work a <b>waste of time</b>, or does it help you? Give one example from your station.</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Catch It · The Echo</div>
+  <div class="howTo">I ask: <b>"Have you heard about GTA VI?"</b> Answer me. Then look at this answer. What's wrong?</div>
+  <div class="trapWrong" style="font-size:20px">"Have you heard about GTA VI?" — "Yes, I do."</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Say the right answer, then check</button>
+  <div class="keyBox"><b>Yes, I have.</b> The answer copies the <b>first word</b> of the question: <i>Have</i> you…? → I <b>have</b>.</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="grammar" data-gstep="0">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge" data-gbadge>Guided · The Shape</div>
+
+  <div class="gPart on" data-gpart data-badge="Guided · The Shape">
+   <div class="es" style="font-size:15px">Last week you said: <i>"I <b>haven't</b> thought about it."</i> You already know this one.</div>
+   <div class="gSlots">
+    <div class="slotLbls">
+     <div class="slotLbl">the helper</div><div class="slotLbl">3rd form</div><div class="slotLbl">the rest</div>
+    </div>
+    <div class="slotRow">
+     <div class="slotChip" style="--i:0"><span class="w">Have you ever</span></div><div class="slotChip" style="--i:1"><span class="w">played</span></div><div class="slotChip" style="--i:2"><span class="w">GTA?</span></div>
+    </div>
+    <div class="slotRow">
+     <div class="slotChip" style="--i:3"><span class="w">Have you ever</span></div><div class="slotChip" style="--i:4"><span class="w">been</span></div><div class="slotChip" style="--i:5"><span class="w">to a rock concert?</span></div>
+    </div>
+    <div class="slotRow">
+     <div class="slotChip" style="--i:6"><span class="w">I've never</span></div><div class="slotChip" style="--i:7"><span class="w">tried</span></div><div class="slotChip" style="--i:8"><span class="w">sushi.</span></div>
+    </div>
+   </div>
+   <button class="toggleBtn" onclick="slotBuild(this)">Build the sentences</button>
+   <div class="slotNote">Answer with the same helper: <b>Yes, I have.</b> / <b>No, I haven't.</b></div>
+  </div>
+
+  <div class="gPart" data-gpart data-badge="Guided · When You Use It">
+   <div class="useRow"><span class="useKey">your life</span><span class="useArrow">→</span><span class="useVal">any time up to now, <b>no time said</b>: <i>Have you ever tried Korean food?</i></span></div>
+   <div class="useRow"><span class="useKey">small talk</span><span class="useArrow">→</span><span class="useVal">it <b>opens a topic</b>, and then the other person talks.</span></div>
+   <div class="useRow"><span class="useKey">then the past</span><span class="useArrow">→</span><span class="useVal">ask <b>when / how</b> in the past: <i>When did you go? How was it?</i></span></div>
+  </div>
+
+  <div class="gPart" data-gpart data-badge="Guided · The Trap">
+   <div class="trapItem">
+    <div class="trapWrong">Have you heard…? — Yes, I do.</div>
+    <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Say the fixed version, then tap</button>
+    <div class="keyBox"><b>Yes, I <span class="hl">have</span>.</b> The answer copies the helper from the question.</div>
+   </div>
+   <div class="trapItem">
+    <div class="trapWrong">I have been there last year.</div>
+    <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Say the fixed version, then tap</button>
+    <div class="keyBox"><b>I <span class="hl">went</span> there last year.</b> As soon as there's a time (last year, on Sunday, in 2023), use the past.</div>
+   </div>
+  </div>
+
+  <div class="dots" data-gdots><div class="dot lit"></div><div class="dot"></div><div class="dot"></div></div>
+  <div class="row" style="max-width:300px">
+   <button class="opt mid" data-gprev onclick="gramNav(this,-1)" style="flex:0 0 60px" disabled>&#8249;</button>
+   <button class="opt mid" data-gnext onclick="gramNav(this,1)" style="flex:1">Next &#8250;</button>
+  </div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Build The Question</div>
+  <div class="es">Tap the pieces in order, then check your question. Then ask it to me out loud.</div>
+  <div class="scramble" data-answer="Have you ever been to a rock concert?">
+   <div class="scrambleRow scrambleBank">
+    <button class="chip" onclick="scrambleTap(this)">to a rock concert?</button>
+    <button class="chip" onclick="scrambleTap(this)">ever</button>
+    <button class="chip" onclick="scrambleTap(this)">Have</button>
+    <button class="chip" onclick="scrambleTap(this)">been</button>
+    <button class="chip" onclick="scrambleTap(this)">you</button>
+   </div>
+   <div class="scrambleRow scrambleBuilt"></div>
+   <div class="row">
+    <button class="btn" onclick="scrambleReset(this)">Reset</button>
+    <button class="btn go" onclick="scrambleCheck(this)">Check</button>
+   </div>
+   <div class="correct scrambleFeedback" style="display:none"></div>
+   <button class="btn go scrambleNext" data-next style="display:none">Continue</button>
+  </div>
+ </div></div>
+
+<div class="scr" data-t="explain">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Explainer · Your Life Up To Now</div>
+  <div class="es">Tap each one. Watch the line of your life, then say the sentence out loud.</div>
+  <div class="exTimeline" data-title="Your life" data-left="you were born" data-right="now" data-items='[
+   {"chip":"ever","ev":[{"t":"a concert?","x":45}],"span":{"from":0,"to":100,"t":"any time in your life"},"sent":"Have you <b>ever</b> been to a rock concert?","say":"Ask me a Have you ever question about games."},
+   {"chip":"never","ev":[{"t":"no sushi","x":25},{"t":"still no sushi","x":70}],"span":{"from":0,"to":100,"t":"not once, up to now"},"sent":"I&#39;ve <b>never</b> tried sushi.","say":"Tell me something you have never done."},
+   {"chip":"+ a time → past","ev":[{"t":"Have you ever been…?","x":15}],"pin":{"x":72,"t":"last year"},"sent":"Yes, I have. I <b>went</b> last year.","say":"Answer yes, then say when, in the past."},
+   {"chip":"the trap","ev":[{"bad":"have been","fix":"went","t":"I … there last year","x":62}],"sent":"I <b>went</b> there last year.","say":"Fix it out loud: I have been there last year."}
+  ]'></div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="grammarcheck" data-idx="0"
+ data-items='[
+  {"tag":"the helper","q":"___ you ever played Zelda? — Yes, I have.","a":"Have you ever played Zelda? — Yes, I have."},
+  {"tag":"3rd form","q":"Have you ever ___ (be) to New York?","a":"Have you ever been to New York?"},
+  {"tag":"never","q":"I&apos;ve never ___ (try) sushi.","a":"I&apos;ve never tried sushi."},
+  {"tag":"short answer","q":"Have you seen the new trailer? — No, I ___.","a":"Have you seen the new trailer? — No, I haven&apos;t."},
+  {"tag":"fix the error","q":"Have you ever went to a concert?","a":"Have you ever been to a concert?"},
+  {"tag":"fix the error","q":"I have seen that movie yesterday.","a":"I saw that movie yesterday."}
+ ]'>
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Guided · Check It</div>
+  <div class="gcTag" data-gctag>the helper</div>
+  <div class="gcQ" data-gcq>&nbsp;</div>
+  <button class="toggleBtn" onclick="gcReveal(this)">Say it out loud, then check</button>
+  <div class="keyBox" data-gckey></div>
+  <div class="dots" data-gcdots></div>
+  <div class="row" style="max-width:300px">
+   <button class="opt mid" data-gcprev onclick="gcNav(this,-1)" style="flex:0 0 60px" disabled>&#8249;</button>
+   <button class="opt mid" data-gcnext onclick="gcNav(this,1)" style="flex:1">Next &#8250;</button>
+  </div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="flash">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Flashcards · Small-Talk Chunks</div>
+  <div class="howTo">Look at the photo. What would this person say? <b>Say it out loud</b>, then tap the card to check. Use ‹ › for the next card.</div>
+  <div data-flash data-items='[{"img":"photos/c11_hows.jpg","q":"You see a coworker at 6 a.m. Say hi.","w":"How’s it going?","m":"A friendly “How are you?”","s":"Hey, how’s it going?","a":"audio/c11_hows.mp3"},{"img":"photos/c11_slow.jpg","q":"Not many packages today. Not much is happening.","w":"pretty slow today","m":"Quiet, not busy.","s":"It’s pretty slow today.","a":"audio/c11_slow.mp3"},{"img":"photos/c11_hear.jpg","q":"Your coworker complains. You understand and agree.","w":"I hear you","m":"I understand how you feel.","s":"I hear you. Mondays are hard.","a":"audio/c11_hear.mp3"},{"img":"photos/c11_noworries.jpg","q":"Someone says sorry for something small.","w":"No worries","m":"It’s okay, no problem.","s":"No worries, it happens.","a":"audio/c11_noworries.mp3"},{"img":"photos/c11_forreal.jpg","q":"You can’t believe what you just heard.","w":"For real?","m":"Really? Are you serious?","s":"For real? You worked fourteen hours?","a":"audio/c11_forreal.mp3"},{"img":"photos/c11_beat.jpg","q":"After a 12-hour route. How do you feel?","w":"I’m beat","m":"I’m very, very tired.","s":"I’m beat. I need a nap.","a":"audio/c11_beat.mp3"}]'></div>
+  <button class="btn go" data-next style="display:none">Next</button>
+ </div></div>
+
+<div class="scr" data-t="explain">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Explainer · How's Your Day?</div>
+  <div class="es">Five answers to <b>"How's it going?"</b> Tap each one and watch the meter. Then answer for a real day this week.</div>
+  <div class="exMeter" data-title="Day meter" data-left="a terrible day" data-right="a great day" data-items='[
+   {"w":"I’m beat.","v":8,"tag":"very tired","sent":"<b>I’m beat.</b> Twelve hours on the road.","say":"Tell me about a day this week when you were beat."},
+   {"w":"It’s been a long day.","v":28,"tag":"tired, a lot happened","sent":"<b>It’s been a long day.</b> The route changed twice.","say":"Why was a day this week long?"},
+   {"w":"Pretty slow today.","v":48,"tag":"quiet, not busy","sent":"<b>Pretty slow today.</b> Only 90 stops.","say":"Describe a slow day at the station."},
+   {"w":"Can’t complain.","v":70,"tag":"good, nothing bad","sent":"<b>Can’t complain.</b> I finished early.","say":"Answer How is it going? for today."},
+   {"w":"Pretty good, actually!","v":92,"tag":"a good day","sent":"<b>Pretty good, actually!</b> I got my GTA copy.","say":"Tell me about your best day this week."}
+  ]'></div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr tall" data-t="match">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · Match-Up</div>
+  <div class="es">Three new phrases. Tap a phrase, then tap what it means.</div>
+  <div class="matchWrap" data-items='[{"p":"No way!","m":"I’m surprised! Tell me more.","img":"photos/c11_noway.jpg","ex":"“You’ve been to a Scorpions concert? No way!”","a":"audio/c11_noway.mp3","tag":"keeps them talking"},{"p":"That makes two of us.","m":"I feel the same. Me too.","img":"photos/c11_twoofus.jpg","ex":"“You’re tired? That makes two of us.”","a":"audio/c11_twoofus.mp3","tag":"agree, friendly"},{"p":"Speaking of which…","m":"That reminds me of something, so I change the topic.","img":"photos/c11_speaking.jpg","ex":"“Speaking of which, have you played GTA VI yet?”","a":"audio/c11_speaking.mp3","tag":"+ a new question"}]'></div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="flip">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Phrase Bank · Use Them</div>
+  <div class="howTo">Flip a card. React <b>out loud</b> with one of the 3 phrases and add one sentence. Then tap <b>"I said it"</b>.</div>
+  <div class="flipCount"></div>
+  <div class="flipGrid" data-items='[{"k":"😴","p":"Mike: “I worked 12 hours today. I’m so tired.”"},{"k":"🎸","p":"Sarah: “I went to a Marilyn Manson concert last night.”"},{"k":"🎮","p":"Mike: “I just bought a new Xbox controller.” Change the topic to GTA VI."},{"k":"🚚","p":"Tony: “My route was 14 hours yesterday.”"}]'></div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Check the phrases</button>
+  <div class="keyBox" style="text-align:left">1. That makes two of us. · 2. No way! How was it? · 3. Speaking of which, have you played GTA VI yet? · 4. No way! / For real?</div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Ear · Copy The Helper</div>
+  <div class="howTo"><b>What to do</b><ol><li>Play each question <b>once</b>.</li><li>Listen for the <b>first word</b>: have, do, did, are, can…</li><li>Answer with the <b>same</b> helper: <i>Yes, I have · No, I don't…</i></li></ol></div>
+  <div class="row"><button class="opt mid" data-audio="audio/c11_q1.mp3" onclick="playAudio(this)">Question 1 🔊</button><button class="opt mid" data-audio="audio/c11_q2.mp3" onclick="playAudio(this)">Question 2 🔊</button></div>
+  <div class="row"><button class="opt mid" data-audio="audio/c11_q3.mp3" onclick="playAudio(this)">Question 3 🔊</button><button class="opt mid" data-audio="audio/c11_q4.mp3" onclick="playAudio(this)">Question 4 🔊</button></div>
+  <div class="row"><button class="opt mid" data-audio="audio/c11_q5.mp3" onclick="playAudio(this)">Question 5 🔊</button><button class="opt mid" data-audio="audio/c11_q6.mp3" onclick="playAudio(this)">Question 6 🔊</button></div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Check yourself</button>
+  <div class="keyBox" style="text-align:left">1. <i>Have</i> you ever been to Mexico City? → Yes, I <b>have</b> / No, I <b>haven't</b><br>2. <i>Do</i> you like your route? → Yes, I <b>do</b> / No, I <b>don't</b><br>3. <i>Did</i> you work on Sunday? → Yes, I <b>did</b> / No, I <b>didn't</b><br>4. <i>Are</i> you tired today? → Yes, I <b>am</b> / No, I'm <b>not</b><br>5. <i>Have</i> you played GTA VI yet? → Yes, I <b>have</b> / No, I <b>haven't</b><br>6. <i>Can</i> you drive a big truck? → Yes, I <b>can</b> / No, I <b>can't</b></div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="stack">
+  <div class="badge">Pronunciation · Say It Warm</div>
+  <div class="es">Short answers sound friendly when your voice goes <b>up</b>, not flat. Tap, listen, copy it twice.</div>
+  <div class="row"><button class="opt mid" data-audio="audio/c11_sh1.mp3" onclick="playAudio(this)">Yes, I <b>have</b>! 🔊</button></div>
+  <div class="row"><button class="opt mid" data-audio="audio/c11_sh2.mp3" onclick="playAudio(this)">No, I <b>ha</b>ven't. Have <b>you</b>? 🔊</button></div>
+  <div class="row"><button class="opt mid" data-audio="audio/c11_sh3.mp3" onclick="playAudio(this)">Me <b>nei</b>ther. 🔊</button></div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="wheel">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Review · Spin And Say It</div>
+  <div class="howTo">Spin and say <b>one full sentence</b> with the phrase it reminds you of.</div>
+  <div class="wheelWrap" data-items='[{"k":"🙅","p":"Your boss offered you Saturday hours, and you said no."},{"k":"🎮","p":"Xbox or PlayStation? You can’t see which is better."},{"k":"😤","p":"A customer was rude. Give advice to a new driver."},{"k":"📱","p":"The app was confusing at first. Now it’s easy."},{"k":"📞","p":"Your dispatcher will call you about a route change."},{"k":"🌿","p":"You hid the box so nobody could see it. Where?"}]'>
+   <div class="wheelPointer"></div>
+   <svg class="wheelSvg" viewBox="-100 -100 200 200"></svg>
+   <div class="wheelHub"></div>
+  </div>
+  <div class="wheelCard"><div class="think" data-wprompt></div><div class="es">One full sentence.</div></div>
+  <button class="btn go" onclick="wheelSpin(this)">Spin</button>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Check the phrases</button>
+  <div class="keyBox" style="text-align:left">🙅 turn down · 🎮 tell the difference · 😤 don't take it personally · 📱 I got the hang of it · 📞 keep me posted · 🌿 behind the planter</div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="bg" data-img="photos/c11_gamer.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">Find A Coworker Who Has… · Round 1 · With Help</div>
+  <div class="howTo">I'm <b>Mike</b>, a gamer coworker. Find out what I've done. <b>Use the card.</b></div>
+  <div class="sent" style="font-size:16px;text-align:left"><b>Find someone who has…</b> played GTA VI · been to a rock concert · worked a 12-hour shift · tried Mexican food in Charleston · had a dog bite on a route</div>
+  <div class="sent" style="font-size:16px;text-align:left"><b>The loop:</b> Have you ever…? → Yes, I have / No, I haven't → <b>When did you…? How was it?</b> → No way! / That makes two of us → Speaking of which…</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr tall" data-t="core">
+ <div class="bg" data-img="photos/c11_twoofus.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">Round 2 · Keep It Going</div>
+  <div class="howTo">I'm <b>Sarah</b>, a mom on the morning shift, a bit tired. No card now. <b>Keep the conversation going for 2 minutes.</b> Silence over 3 seconds counts!</div>
+  <div class="es" style="font-size:14px"><b>Checklist:</b> an opener · 3 <i>Have you ever</i> questions · matching short answers · 2 switches to the past · No way! · That makes two of us · Speaking of which… · 1 small-talk chunk</div>
+  <div class="timerRing" data-seconds="120">
+   <svg width="96" height="96" viewBox="0 0 96 96">
+    <circle cx="48" cy="48" r="44" fill="none" stroke="rgba(244,238,246,.15)" stroke-width="6"></circle>
+    <circle class="timerArc" cx="48" cy="48" r="44" fill="none" stroke="#FFBE00" stroke-width="6"
+      stroke-linecap="round" stroke-dasharray="276.46" stroke-dashoffset="0" transform="rotate(-90 48 48)"></circle>
+   </svg>
+   <span class="timerNum">120</span>
+  </div>
+  <button class="btn go" onclick="timerStart(this)">Start 2 minutes</button>
+  <button class="btn go" data-next style="display:none">Next</button>
+ </div></div>
+
+<div class="scr tall" data-t="core">
+ <div class="bg" data-img="photos/open11.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">Round 3 · On Your Own</div>
+  <div class="think">"Hey, how's it going?"</div>
+  <div class="howTo"><b>How it works</b><ol><li>I'm <b>Tony</b>, a new driver. Nothing on screen helps you now.</li><li>Ask me <b>at least 3 questions</b>, 2 of them <i>Have you ever…?</i></li><li>I answer, but I don't help you. 2 minutes.</li></ol></div>
+  <div class="timerRing" data-seconds="120">
+   <svg width="96" height="96" viewBox="0 0 96 96">
+    <circle cx="48" cy="48" r="44" fill="none" stroke="rgba(244,238,246,.15)" stroke-width="6"></circle>
+    <circle class="timerArc" cx="48" cy="48" r="44" fill="none" stroke="#FFBE00" stroke-width="6"
+      stroke-linecap="round" stroke-dasharray="276.46" stroke-dashoffset="0" transform="rotate(-90 48 48)"></circle>
+   </svg>
+   <span class="timerNum">120</span>
+  </div>
+  <button class="btn go" onclick="timerStart(this)">Start 2 minutes</button>
+  <button class="btn go" data-next style="display:none">Next</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Listen To Yourself</div>
+  <div class="howTo"><b>What to do</b><ol><li>Listen to your recording.</li><li>Find your own mistakes: <b>have or do?</b> · <b>been or went?</b> · a time with <i>have</i>?</li><li>Say each sentence the right way.</li></ol></div>
+  <button class="btn go" data-next>Done, next</button>
+ </div></div>
+
+<div class="scr" data-t="boss">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="bossWrap" data-lives="3" data-items='["Ask me 2 Have you ever questions about music.","Answer: Have you heard about the new Zelda? Then say when you heard about it.","Fix it out loud: “Have you ever went to Mexico City?”","Fix it out loud: “I have seen the GTA VI trailer yesterday.”","Your coworker says “I’m beat.” React, then keep the conversation going.","Change the topic with Speaking of which, and ask a Have you ever question."]'>
+   <div class="bossTop"><span class="bossName">⚔ Boss Round</span><span class="bossLives"></span></div>
+   <div class="bossBar"><i></i></div>
+   <div class="bossCard"><div class="think" data-bprompt></div></div>
+   <div class="row"><button class="btn" onclick="bossHit(this,false)">Not yet</button><button class="btn go" onclick="bossHit(this,true)">Nailed it</button></div>
+   <button class="btn bossRetry" style="display:none" onclick="bossRetry(this)">Run it again</button>
+   <div class="bossMsg"></div>
+  </div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Real Life · 6 a.m. At The Station</div>
+  <img class="sceneImg" src="photos/c11_station.jpg" alt="Delivery vans parked in the morning">
+  <div class="howTo">You're waiting for routes. Your coworker Mike starts talking. Answer in your own words. Use: how's it going · beat · GTA VI · have you ever · when did you · no way · speaking of which.</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Need help? Show an example</button>
+  <div class="keyBox" style="text-align:left;font-size:15px;line-height:1.6"><b>Mike:</b> Hey, how's it going?<br><b>You:</b> Can't complain. I'm a little beat, though. Long weekend.<br><b>Mike:</b> I hear you. Hey, have you played GTA VI yet?<br><b>You:</b> No, I haven't! No spoilers, please. Have you?<br><b>Mike:</b> Yeah, I played it all night on Saturday.<br><b>You:</b> No way! How was it?<br><b>Mike:</b> Insane. The map is huge.<br><b>You:</b> Speaking of which, have you ever played Zelda?<br><b>Mike:</b> Never. I don't have a Switch.<br><b>You:</b> Me neither, it's sold out everywhere.<br><b>Mike:</b> For real? That makes two of us, then.</div>
+  <div class="think" style="font-size:17px">1. Has Danna played GTA VI?<br>2. When did Mike play it?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Check yourself</button>
+  <div class="keyBox" style="text-align:left">1. No, she hasn't.<br>2. All night on Saturday.</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="homework">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Homework</div>
+  <div class="picRow two"><figure><img src="photos/c11_concert.jpg" alt="A rock concert crowd"><figcaption>Have you ever…?</figcaption></figure><figure><img src="photos/c8_coworkers.jpg" alt="Two coworkers talking"><figcaption>Mission: ask a coworker.</figcaption></figure></div>
+  <div class="sent" style="text-align:left;font-size:17px">1. 🎙️ <b>App voice check, 60 seconds:</b> ask 3 <i>Have you ever…?</i> questions you'd ask a coworker. Then answer each one yourself: short answer + <i>When did you…?</i> in the past. Use <i>No way</i> or <i>That makes two of us</i> once.</div>
+  <div class="sent" style="text-align:left;font-size:17px">2. 🌍 <b>Mission:</b> ask one coworker a <i>Have you ever…?</i> question <b>in English</b> and listen to the answer. Tell me about it in 2 sentences at the start of Class 12.</div>
+  <div class="es" style="font-size:15px">Why: Class 13 is "How long have you…?". It uses the same helper, <i>have</i>.</div>
+  <div class="es" style="font-size:14px">ES: En la app, graba 60 segundos: 3 preguntas "Have you ever…?" para un compañero, y contéstalas tú: respuesta corta + "When did you…?" en pasado. Misión: hazle a un compañero una pregunta "Have you ever…?" en inglés.</div>
+  <button class="btn go" data-next>Done for today</button>
+ </div></div>
+
+<div class="scr" data-t="close">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="big">You kept a conversation going, and you asked the questions.</div>
+  <div class="es">Send your voice check. See you at Class 12.</div>
+  <div class="credits">Teacher's Station · The Milestone Method</div>
+ </div></div>
+
+</div>
+
 
 </div>
 <script>
@@ -3988,7 +4331,7 @@ function tprNav(btn, delta){
   audioBtn._player = null;
   scr.querySelectorAll('[data-tprdots] .dot').forEach((d,n)=>d.classList.toggle('lit', n===i));
 }
-loadScreens(10);
+loadScreens(11);
 </script>
 <!-- DELIGHT:SHELL:START — motion layer v1 (ts-class-app). Additive: wraps show(), touches no class content. Safe to retrofit into any live student file. -->
 <style id="delight-shell">
