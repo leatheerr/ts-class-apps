@@ -238,7 +238,7 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 <div id="classHeader">
   <span class="brand">TEACHER'S STATION</span>
-  <button id="classSelect" onclick="toggleMenu()">Class 11 ▾</button>
+  <button id="classSelect" onclick="toggleMenu()">Class 12 ▾</button>
 </div>
 <div id="classMenu">
   <div class="item" onclick="selectClass(1)">Class 1: Customer calls — open a call without freezing <span>✓</span></div>
@@ -251,7 +251,8 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
   <div class="item" onclick="selectClass(7)">Class 7: Weekend stories &mdash; tell what happened</div>
   <div class="item" onclick="selectClass(8)">Class 8: Reading 2 &mdash; Camila's worst Tuesday</div>
   <div class="item" onclick="selectClass(9)">Class 9: Who you work for &mdash; for, at, in, on</div>
-  <div class="item active" onclick="selectClass(11)">Class 11: Small talk &mdash; Have you ever&hellip;?</div>
+  <div class="item" onclick="selectClass(11)">Class 11: Small talk &mdash; Have you ever&hellip;?</div>
+  <div class="item active" onclick="selectClass(12)">Class 12: Keep it going &mdash; fillers &amp; no freezing</div>
 </div>
 
 <div id="bar"></div>
@@ -4141,6 +4142,280 @@ h1,h2,.hd{font-family:'Poppins','Segoe UI',system-ui,sans-serif;font-weight:600}
 
 </div>
 
+<div class="classBlock" data-class="12" data-mech="wheel,explain,match,flip,flash,expansion,timer,boss">
+
+<div class="scr" data-t="open">
+ <div class="bg" data-img="photos/open12.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="cue">Class 12 · Danna</div>
+  <div class="big">Keep it going: small talk, fillers and no freezing</div>
+  <div class="es" style="font-size:16px;line-height:1.55">By the end of this class, you can <b>start talking in under 3 seconds</b>, buy time with a filler instead of freezing, and keep a small-talk conversation going for <b>2 minutes</b>, even with a stranger.</div>
+  <button class="btn go" data-next>Start</button>
+ </div></div>
+
+<div class="scr" data-t="critical">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Warm-up · Check-in</div>
+  <img class="sceneImg" src="photos/c12_catchup.jpg" alt="A family meal with Mexican food">
+  <div class="think">How motivated are you today, from <b>1 to 10</b>?<br><br>Did you use any <b>English</b> in Mexico this week? Tell me in 2 sentences, in the past.</div>
+  <div class="es" style="font-size:15px">Didn't do it? No problem. Just tell me what happened instead.</div>
+  <button class="btn go" data-next>Answer out loud, then continue</button>
+ </div></div>
+
+<div class="scr" data-t="wheel">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Warm-up · Spin And Start In 3 Seconds</div>
+  <div class="howTo">Spin. Start your answer <b>in 3 seconds</b> with: <i>Honestly… · So basically… · Now that you ask me…</i></div>
+  <div class="wheelWrap" data-items='[{"k":"🚗","p":"A 2-day drive or a flight: which is better, and why?"},{"k":"🎭","p":"Are you a different person when you speak English and when you speak Spanish?"},{"k":"🇺🇸","p":"Why do Americans make so much small talk, even with strangers?"},{"k":"🌮","p":"What did you eat yesterday?"},{"k":"☀️","p":"How’s the weather there right now?"},{"k":"📅","p":"What have you done this week?"}]'>
+   <div class="wheelPointer"></div>
+   <svg class="wheelSvg" viewBox="-100 -100 200 200"></svg>
+   <div class="wheelHub"></div>
+  </div>
+  <div class="wheelCard"><div class="think" data-wprompt></div><div class="es">Start in 3 seconds, with a filler.</div></div>
+  <button class="btn go" onclick="wheelSpin(this)">Spin</button>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Catch It · From Last Class</div>
+  <div class="es">Two mistakes from last class. Say the right version first, then check.</div>
+  <div class="trapWrong" style="font-size:19px">"I have not never been to a concert."</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Say it right, then check</button>
+  <div class="keyBox"><b>I have never been to a concert.</b> One negative only: <i>never</i> already means "not ever".</div>
+  <div class="trapWrong" style="font-size:19px">"Have you ever been to Texas?" — "Yes, I do."</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Say it right, then check</button>
+  <div class="keyBox"><b>Yes, I have.</b> Copy the helper from the question.</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="explain">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Explainer · Your Filler Toolkit</div>
+  <div class="es">A conversation has moments where people freeze. Tap each one and see which filler saves you. Then say it out loud.</div>
+  <div class="exTimeline" data-title="A conversation" data-left="they ask you" data-right="your turn ends" data-items='[
+   {"chip":"start","ev":[{"t":"“How was the drive?”","x":10},{"t":"Honestly…","x":40,"surprise":true}],"sent":"<b>Honestly</b>, it was a long drive.","say":"How was your week? Start with Honestly or So basically.","a":"audio/c12_honestly.mp3"},
+   {"chip":"think","ev":[{"t":"“How long was it?”","x":10},{"t":"Let me think…","x":45,"surprise":true}],"sent":"<b>Let me think…</b> about two days.","say":"How many people live in your house? Buy time first.","a":"audio/c12_think.mp3"},
+   {"chip":"no word","ev":[{"t":"you start…","x":12},{"t":"How can I put it…","x":48,"surprise":true},{"t":"you find it","x":82}],"arc":true,"sent":"It was, <b>how can I put it</b>… too short.","say":"Describe your boyfriend in one word. Use How can I put it.","a":"audio/c12_putit.mp3"},
+   {"chip":"check","ev":[{"t":"a messy idea","x":20},{"t":"You know what I mean?","x":65,"surprise":true}],"sent":"It was fun, but tiring, <b>you know what I mean?</b>","say":"Explain a feeling that is hard to explain. End with You know what I mean?","a":"audio/c12_knowwhat.mp3"},
+   {"chip":"keep going","ev":[{"t":"your story ends","x":20},{"t":"Anyway… what about you?","x":70,"surprise":true}],"pin":{"x":92,"t":"their turn"},"sent":"<b>Anyway</b>, what about you?","say":"Finish a short story, then hand it back with Anyway, what about you?","a":"audio/c12_anyway.mp3"}
+  ]'></div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr tall" data-t="match">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Fillers · Match-Up</div>
+  <div class="es">Three are new: <b>How can I put it · You know what I mean? · Anyway</b>. Tap a filler, then tap its job.</div>
+  <div class="matchWrap" data-items='[{"p":"Honestly…","m":"Start an answer, so you never freeze on the first word.","ex":"“Honestly, it was a long drive.”","a":"audio/c12_honestly.mp3","tag":"start"},{"p":"Let me think…","m":"Buy a few seconds while you find the answer.","ex":"“Let me think… about two days.”","a":"audio/c12_think.mp3","tag":"think"},{"p":"How can I put it…","m":"You know the idea, but you can’t find the word.","ex":"“It was, how can I put it… too short.”","a":"audio/c12_putit.mp3","tag":"new · think"},{"p":"You know what I mean?","m":"You explained it a bit messily and want them to say “yeah”.","ex":"“It was fun, but tiring, you know what I mean?”","a":"audio/c12_knowwhat.mp3","tag":"new · check"},{"p":"Anyway…","m":"Come back to the topic, or close it and move on.","ex":"“Anyway, what about you?”","a":"audio/c12_anyway.mp3","tag":"new · keep going"}]'></div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="flip">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Fillers · Fire Them</div>
+  <div class="howTo">Flip a card. <b>Start in 3 seconds with a filler</b>, then answer. Tap <b>"I said it"</b>.</div>
+  <div class="flipCount"></div>
+  <div class="flipGrid" data-items='[{"k":"❓","p":"What’s the best thing about Mexico?"},{"k":"❓","p":"Describe your dad in two sentences."},{"k":"❓","p":"What would you change about your job?"},{"k":"❓","p":"What’s a word in Spanish that is hard to translate?"},{"k":"❓","p":"What have you never done but want to do?"},{"k":"❓","p":"Tell me something funny from the trip."}]'></div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="flash">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Flashcards · Your Trip</div>
+  <div class="howTo">Look at the photo and <b>say the phrase</b>. Tap to check. Then say <b>one true sentence</b> about your trip.</div>
+  <div data-flash data-items='[{"img":"photos/c12_roadtrip.jpg","q":"A long trip by car, on the highway.","w":"road trip","m":"A long trip by car.","s":"It was a two-day road trip to Mexico.","a":"audio/c12_roadtrip.mp3"},{"img":"photos/c12_turns.jpg","q":"First your dad drives, then you, then your dad…","w":"take turns driving","m":"Drive one after the other.","s":"My dad and I took turns driving.","a":"audio/c12_turns.mp3"},{"img":"photos/c12_catchup.jpg","q":"You haven’t seen them in months. Now you talk about everything.","w":"catch up with","m":"Talk about what happened since you last met.","s":"I’m catching up with my family.","a":"audio/c12_catchup.mp3"},{"img":"photos/c12_hangout.jpg","q":"Spending relaxed time with friends, no plan.","w":"hang out with","m":"Spend free time with someone.","s":"I hung out with my boyfriend and his friends.","a":"audio/c12_hangout.mp3"},{"img":"photos/c12_backhome.jpg","q":"Where you live, where you come from.","w":"back home","m":"In your home town or country.","s":"Back home, everything is the same.","a":"audio/c12_backhome.mp3"}]'></div>
+  <button class="btn go" data-next style="display:none">Next</button>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Reactions · Make THEM Talk</div>
+  <div class="howTo">I tell you some news. <b>React</b>, then ask <b>one question back</b>. You talk less, and they talk more.</div>
+  <div class="es" style="font-size:15px">React with: <i>No way! · For real? · That's pretty crazy · You don't say · I feel you</i></div>
+  <div class="think" style="font-size:18px">1. "My car broke down in the desert."<br>2. "I've worked 12 hours today."<br>3. "I met Marilyn Manson once."<br>4. "My son started college this year."<br>5. "I'm moving to Mexico next month."</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Need ideas?</button>
+  <div class="keyBox" style="text-align:left">1. No way! What did you do? · 2. I feel you. Are you on the night shift? · 3. For real? Where did you meet him? · 4. That's great! What is he studying? · 5. You don't say! Which city?</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="pronunciation">
+ <div class="stack">
+  <div class="badge">Pronunciation · Fast And Linked</div>
+  <div class="es">Fillers are <b>fast and quiet</b>, the words join together. Tap, listen, copy it three times.</div>
+  <div class="row"><button class="opt mid" data-audio="audio/c12_sh1.mp3" onclick="playAudio(this)">"lemme think…" (Let me think) 🔊</button></div>
+  <div class="row"><button class="opt mid" data-audio="audio/c12_sh2.mp3" onclick="playAudio(this)">"how can I pud it…" (put it) 🔊</button></div>
+  <div class="row"><button class="opt mid" data-audio="audio/c12_sh3.mp3" onclick="playAudio(this)">"y'know what I mean?" 🔊</button></div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="production">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Grow Your Answer</div>
+  <div class="es">Say each line out loud: the <b>whole</b> answer, every time, not just the new piece.</div>
+  <div class="expLine show">I went to Mexico.</div>
+  <div class="expLine">Honestly, I went to Mexico with my dad.</div>
+  <div class="expLine">Honestly, I went to Mexico with my dad. It was a two-day road trip.</div>
+  <div class="expLine">… We took turns driving, but basically I slept the whole time.</div>
+  <div class="expLine last">… Now I'm catching up with my family. What about you? Have you ever been to Mexico?</div>
+  <button class="btn go" onclick="expandNext(this)">Add one more piece</button>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr tall" data-t="core">
+ <div class="bg" data-img="photos/open12.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">The Ladder · Round 1 · 30 Seconds</div>
+  <div class="think">"So, how was the drive?"</div>
+  <div class="es" style="font-size:14px"><b>Toolkit:</b> start: Honestly / So basically · think: Let me think / How can I put it · check: You know what I mean? · keep going: Anyway / What about you?</div>
+  <div class="timerRing" data-seconds="30">
+   <svg width="96" height="96" viewBox="0 0 96 96">
+    <circle cx="48" cy="48" r="44" fill="none" stroke="rgba(244,238,246,.15)" stroke-width="6"></circle>
+    <circle class="timerArc" cx="48" cy="48" r="44" fill="none" stroke="#FFBE00" stroke-width="6"
+      stroke-linecap="round" stroke-dasharray="276.46" stroke-dashoffset="0" transform="rotate(-90 48 48)"></circle>
+   </svg>
+   <span class="timerNum">30</span>
+  </div>
+  <button class="btn go" onclick="timerStart(this)">Start 30 seconds</button>
+  <button class="btn go" data-next style="display:none">Next round</button>
+ </div></div>
+
+<div class="scr tall" data-t="core">
+ <div class="bg" data-img="photos/c12_roadtrip.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">The Ladder · Round 2 · 60 Seconds</div>
+  <div class="think">Mike: "Hey, long time no see! Where have you been?"</div>
+  <div class="es" style="font-size:14px"><b>Checklist:</b> a start filler · a thinking filler · Anyway or What about you? · 1 <i>Have you ever</i> question · 1 reaction + a question back</div>
+  <div class="timerRing" data-seconds="60">
+   <svg width="96" height="96" viewBox="0 0 96 96">
+    <circle cx="48" cy="48" r="44" fill="none" stroke="rgba(244,238,246,.15)" stroke-width="6"></circle>
+    <circle class="timerArc" cx="48" cy="48" r="44" fill="none" stroke="#FFBE00" stroke-width="6"
+      stroke-linecap="round" stroke-dasharray="276.46" stroke-dashoffset="0" transform="rotate(-90 48 48)"></circle>
+   </svg>
+   <span class="timerNum">60</span>
+  </div>
+  <button class="btn go" onclick="timerStart(this)">Start 60 seconds</button>
+  <button class="btn go" data-next style="display:none">Next round</button>
+ </div></div>
+
+<div class="scr tall" data-t="core">
+ <div class="bg" data-img="photos/c12_hangout.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">The Ladder · Round 3 · 90 Seconds</div>
+  <div class="think">Sarah: "Oh, you were in Mexico? Tell me everything!"</div>
+  <div class="es" style="font-size:15px">No checklist now. Ask her <b>at least 2 questions</b> back.</div>
+  <div class="timerRing" data-seconds="90">
+   <svg width="96" height="96" viewBox="0 0 96 96">
+    <circle cx="48" cy="48" r="44" fill="none" stroke="rgba(244,238,246,.15)" stroke-width="6"></circle>
+    <circle class="timerArc" cx="48" cy="48" r="44" fill="none" stroke="#FFBE00" stroke-width="6"
+      stroke-linecap="round" stroke-dasharray="276.46" stroke-dashoffset="0" transform="rotate(-90 48 48)"></circle>
+   </svg>
+   <span class="timerNum">90</span>
+  </div>
+  <button class="btn go" onclick="timerStart(this)">Start 90 seconds</button>
+  <button class="btn go" data-next style="display:none">Next round</button>
+ </div></div>
+
+<div class="scr tall" data-t="core">
+ <div class="bg" data-img="photos/c12_trucker.jpg"></div><div class="veil"></div>
+ <div class="stack">
+  <div class="badge">The Ladder · Round 4 · The Stranger</div>
+  <div class="think">"Long drive, huh? Where you headed?"</div>
+  <div class="howTo"><b>How it works</b><ol><li><b>Camera off.</b> A trucker you don't know, at a gas station in Texas.</li><li>Start in <b>3 seconds</b>. Keep it going for <b>2 minutes</b>.</li><li>He answers, but he won't help you.</li></ol></div>
+  <div class="timerRing" data-seconds="120">
+   <svg width="96" height="96" viewBox="0 0 96 96">
+    <circle cx="48" cy="48" r="44" fill="none" stroke="rgba(244,238,246,.15)" stroke-width="6"></circle>
+    <circle class="timerArc" cx="48" cy="48" r="44" fill="none" stroke="#FFBE00" stroke-width="6"
+      stroke-linecap="round" stroke-dasharray="276.46" stroke-dashoffset="0" transform="rotate(-90 48 48)"></circle>
+   </svg>
+   <span class="timerNum">120</span>
+  </div>
+  <button class="btn go" onclick="timerStart(this)">Start 2 minutes</button>
+  <button class="btn go" data-next style="display:none">Next</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Listen To Yourself</div>
+  <div class="howTo"><b>What to do</b><ol><li>Listen to your recording.</li><li>Count your fillers. Did you use all 3 jobs: <b>start, think, keep going</b>?</li><li>Find the moments you froze. What filler could you use there next time?</li></ol></div>
+  <button class="btn go" data-next>Done, next</button>
+ </div></div>
+
+<div class="scr" data-t="boss">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="bossWrap" data-lives="3" data-items='["“What’s your favorite thing about your job?” Start in 3 seconds with a filler.","Fix it out loud: “I have not never driven a truck.”","I say: “I’ve worked 14 hours today.” React, then ask one question back.","Ask me a Have you ever question. When I say yes, ask when.","You can’t find a word. Use How can I put it… and finish the sentence.","You went off-topic. Come back with Anyway… and hand it back."]'>
+   <div class="bossTop"><span class="bossName">⚔ Boss Round</span><span class="bossLives"></span></div>
+   <div class="bossBar"><i></i></div>
+   <div class="bossCard"><div class="think" data-bprompt></div></div>
+   <div class="row"><button class="btn" onclick="bossHit(this,false)">Not yet</button><button class="btn go" onclick="bossHit(this,true)">Nailed it</button></div>
+   <button class="btn bossRetry" style="display:none" onclick="bossRetry(this)">Run it again</button>
+   <div class="bossMsg"></div>
+  </div>
+  <button class="btn go" data-next style="display:none">Continue</button>
+ </div></div>
+
+<div class="scr" data-t="core">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Real Life · A Gas Station In Texas</div>
+  <img class="sceneImg" src="photos/c12_gas.jpg" alt="A gas station at night">
+  <div class="howTo">On the drive back, a trucker starts talking to you. Answer in your own words. Use: Honestly · Let me think · take turns driving · catch up with · how can I put it · you know what I mean · Anyway, what about you?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Need help? Show an example</button>
+  <div class="keyBox" style="text-align:left;font-size:15px;line-height:1.6"><b>Trucker:</b> Long drive, huh? Where you headed?<br><b>You:</b> Honestly, pretty far. I'm driving back to South Carolina from Mexico.<br><b>Trucker:</b> No kidding! How long does that take?<br><b>You:</b> Let me think… about two days. My dad and I take turns driving. Well, basically he drives and I sleep.<br><b>Trucker:</b> Ha! Smart. Were you visiting family?<br><b>You:</b> Yeah, I was catching up with my family and my boyfriend. It was, how can I put it… too short, you know what I mean?<br><b>Trucker:</b> I hear you. Vacations always are.<br><b>You:</b> For real. Anyway, what about you? Have you ever been to Mexico?<br><b>Trucker:</b> Once, years ago. I went to Monterrey for work.<br><b>You:</b> No way! That's close to my family.</div>
+  <div class="think" style="font-size:17px">1. Who drives most of the time?<br>2. When did the trucker go to Mexico? Has he been more than once?</div>
+  <button class="toggleBtn" onclick="this.nextElementSibling.classList.toggle('show')">Check yourself</button>
+  <div class="keyBox" style="text-align:left">1. Her dad. She sleeps.<br>2. Years ago, for work. No, only once.</div>
+  <button class="btn go" data-next>Next</button>
+ </div></div>
+
+<div class="scr" data-t="homework">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="badge">Homework</div>
+  <div class="picRow two"><figure><img src="photos/c12_trucker.jpg" alt="A trucker next to his truck"><figcaption>Tell a stranger.</figcaption></figure><figure><img src="photos/c12_catchup.jpg" alt="A family meal"><figcaption>Mission: one question in English.</figcaption></figure></div>
+  <div class="sent" style="text-align:left;font-size:17px">1. 🎙️ <b>App voice check, 60 seconds:</b> tell a stranger about your trip. Start with a filler, use <i>How can I put it</i> or <i>You know what I mean</i> once, and end with <i>What about you?</i></div>
+  <div class="sent" style="text-align:left;font-size:17px">2. 🌍 <b>Mission (small):</b> while you're in Mexico, ask <b>one</b> person a question in English: a tourist, a cousin, anyone. Tell me about it in 2 sentences at the start of Class 13.</div>
+  <div class="es" style="font-size:14px">ES: En la app, graba 60 segundos contándole tu viaje a un desconocido: empieza con un filler, usa "How can I put it" o "You know what I mean" una vez, y termina con "What about you?". Misión: hazle una pregunta en inglés a una persona mientras estás en México.</div>
+  <button class="btn go" data-next>Done for today</button>
+ </div></div>
+
+<div class="scr" data-t="close">
+ <div class="plain"></div>
+ <div class="stack">
+  <div class="big">You talked to a stranger for 2 minutes, and you didn't freeze.</div>
+  <div class="es">Send your voice check. See you at Class 13.</div>
+  <div class="credits">Teacher's Station · The Milestone Method</div>
+ </div></div>
+
+<style>.classBlock[data-class="12"] .mCard .mTxt{padding-left:14px}</style>
+<script>
+if(typeof window.expandNext!=='function'){
+ window.expandNext=function(btn){
+  const stack=btn.closest('.stack');
+  const lines=[...stack.querySelectorAll('.expLine')];
+  const next=lines.find(l=>!l.classList.contains('show'));
+  if(next){ next.classList.add('show'); }
+  if(!lines.find(l=>!l.classList.contains('show'))){
+   btn.style.display='none';
+   const nb=stack.querySelector('[data-next]'); if(nb) nb.style.display='block';
+  }
+ };
+}
+</script>
+
+</div>
+
 
 </div>
 <script>
@@ -4331,7 +4606,7 @@ function tprNav(btn, delta){
   audioBtn._player = null;
   scr.querySelectorAll('[data-tprdots] .dot').forEach((d,n)=>d.classList.toggle('lit', n===i));
 }
-loadScreens(11);
+loadScreens(12);
 </script>
 <!-- DELIGHT:SHELL:START — motion layer v1 (ts-class-app). Additive: wraps show(), touches no class content. Safe to retrofit into any live student file. -->
 <style id="delight-shell">
